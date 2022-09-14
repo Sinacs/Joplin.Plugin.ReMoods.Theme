@@ -704,6 +704,10 @@ body,
 
 
 /* || BASIC | ELEMENTS MARGIN ****************************** */
+/* first element of render viewer -------------------------- */
+#rendered-md > :first-child {
+  margin-top: 15px !important;
+}
 /* margin between headings and other elements -------------- */
 #rendered-md > h1 + *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(hr) {
   margin-top: 1.2em !important;
@@ -834,12 +838,12 @@ body {
   font-weight: 600;
   border: none;
 }
-#rendered-md h1:not(#rendered-md > :first-child),
-#rendered-md h2:not(#rendered-md > :first-child),
-#rendered-md h3:not(#rendered-md > :first-child),
-#rendered-md h4:not(#rendered-md > :first-child),
-#rendered-md h5:not(#rendered-md > :first-child),
-#rendered-md h6:not(#rendered-md > :first-child) {
+#rendered-md h1:not(#rendered-md > :first-child):not(#rendered-md > .table-of-contents:first-child + h1),
+#rendered-md h2:not(#rendered-md > :first-child):not(#rendered-md > .table-of-contents:first-child + h2),
+#rendered-md h3:not(#rendered-md > :first-child):not(#rendered-md > .table-of-contents:first-child + h3),
+#rendered-md h4:not(#rendered-md > :first-child):not(#rendered-md > .table-of-contents:first-child + h4),
+#rendered-md h5:not(#rendered-md > :first-child):not(#rendered-md > .table-of-contents:first-child + h5),
+#rendered-md h6:not(#rendered-md > :first-child):not(#rendered-md > .table-of-contents:first-child + h6) {
   margin-top: 1.5em;
 }
 /* heading border group: h1 to h6 -------------------------- */

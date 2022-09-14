@@ -446,7 +446,9 @@
   padding-left: 8px;
   padding-bottom: 43px;
 }
-
+.CodeMirror-lines .CodeMirror-line:first-child {
+  margin-top: 15px !important;
+}
 
 
 /* || BASIC 2/2 | OTHERS *********************************** */
@@ -554,6 +556,7 @@
 .CodeMirror-line .cm-header {
   font-weight: var(--usp-headings-font-weight);
   text-shadow: var(--heading-text-shadow);
+  line-height: 1em !important;
 }
 
 /* HEADINGS > H1 =========================================== */
