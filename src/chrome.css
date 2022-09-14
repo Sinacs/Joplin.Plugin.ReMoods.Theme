@@ -1,0 +1,2459 @@
+/*
+  #REMARKS:
+
+  - Due to the DOM's lack of CSS classes to customize the theme, this 
+  CSS document might include complex CSS Selectors, which is necessary 
+  to avoid the CSS styles affecting the non-related elements. So, It 
+  is not recommended to edit the selectors without understanding them.
+
+  - :not(#fake) / :not(.fake) are use for increasing the CSS specificity.
+
+  - Long selectors which start from the #react-root are use for avoiding
+  the styles affecting to the `View > Change Application Layout` panel.
+
+  #CODE STRUCTURE OVERVIEW:
+
+  ROOT
+  - USER SETTING PROPERTIES
+  - CODE MIRROR PROPERTIES
+  - JOPLIN UI: GROUP PROPERTIES
+  - JOPLIN UI: STANDALONE PROPERTIES
+  CODE MIRROR
+  - BASIC
+  - FONT
+  - MARKDOWN
+  - PLUGINS
+  JOPLIN UI
+  - LAYOUT
+  - NOTEBOOK PANEL
+  - NOTE LIST PANEL
+  - EDITOR PANEL
+  - MODAL DIALOG
+  - OPTIONS PANEL
+*/
+
+:root {
+
+  /* ******************************************************* */
+  /* !!!!            USER SETTING PROPERTIES            !!!! */
+  /* ******************************************************* */
+  
+
+
+  /* THEME COLOR ******************************************* */
+  --usp-remoods-hue: 60deg;
+
+  /* FONT ************************************************** */
+  --usp-base-font: "Montserrat", "Chiron Sans HK PRO Extralight";
+  --usp-monospace-font: "Cascadia Mono light", "Chiron Sans HK PRO Extralight";
+  --usp-font-size: 14px;
+  --usp-smaller-monospace-font-size: 86%;
+  
+  /* HEADINGS ********************************************** */
+  /* effect ------------------------------------------------ */
+  --usp-headings-font-weight: 600;
+  --usp-h1-text-transform: capitalize;
+  --usp-h1-font-variant: small-caps;
+  /* size -------------------------------------------------- */
+  --usp-h1-font-size: 200%;
+  --usp-h2-font-size: 170%;
+  --usp-h3-font-size: 150%;
+  --usp-h4-font-size: 130%;
+  --usp-h5-font-size: 120%;
+  --usp-h6-font-size: 110%;
+
+  
+
+
+  /* **************************************************************************************** */
+  /* !!!!                              CODE MIRROR PROPERTIES                            !!!! */
+  /* **************************************************************************************** */
+  
+
+
+
+  /* BASIC ================================================================================== */
+  --code-mirror-bg-color:                               hsl(var(--usp-remoods-hue),   8%,  27%);
+  --code-mirror-text-color:                             hsl(var(--usp-remoods-hue),   0%,  90%);
+  --code-mirror-scrollbar-track-bg-color:               hsl(var(--usp-remoods-hue),  70%,  70%, 20%);
+  --code-mirror-scrollbar-thumb-bg-color:               linear-gradient(to bottom,
+                                                        hsl(var(--usp-remoods-hue), 100%,  70%)  3px,
+                                                        hsl(var(--usp-remoods-hue),  10%,  28%)  4px,
+                                                        hsl(var(--usp-remoods-hue),  10%,  28%) calc(100% - 4px),
+                                                        hsl(var(--usp-remoods-hue), 100%,  70%) calc(100% - 3px));
+  --code-mirror-scrollbar-thumb-bd-color:               hsl(var(--usp-remoods-hue), 100%,  70%);
+
+  --horizontal-line-syntax-color:                       hsl(var(--usp-remoods-hue),   0%,  90%);
+  --horizontal-line-bg-color:                           hsl(var(--usp-remoods-hue), 100%,  70%);
+  
+  --cursor-bd-color:                          2px solid hsl(var(--usp-remoods-hue), 100%,  70%);
+  --selected-text-bg-color:                             hsl(calc(var(--usp-remoods-hue) + 180deg),  20%,  30%);
+  --code-block-selected-text-bg-color:                  hsl(calc(var(--usp-remoods-hue) + 180deg),  20%,  30%,  60%);
+
+  /* HEADING ================================================================================ */
+  --h1-text-color:                                      hsl(var(--usp-remoods-hue), 100%,  80%);
+  --h2-text-color:                                      hsl(var(--usp-remoods-hue), 100%,  90%);
+  --h3-text-color:                                      hsl(var(--usp-remoods-hue), 100%,  90%);
+  --h4-text-color:                                      hsl(var(--usp-remoods-hue), 100%,  90%);
+  --h5-text-color:                                      hsl(var(--usp-remoods-hue),  30%,  80%);
+  --h6-text-color:                                      hsl(var(--usp-remoods-hue),  30%,  80%);
+  --heading-text-shadow:                        0 0 2px hsl(var(--usp-remoods-hue), 100%,  60%);
+
+  /* BLOCKQUOTE ============================================================================= */
+  --blockquote-text-color:                              hsl(var(--usp-remoods-hue),  30%,  80%);
+
+  /* LIST =================================================================================== */
+  --list-text-color:                                    hsl(var(--usp-remoods-hue),  30%,  80%);
+  --checkbox-color:                                     hsl(var(--usp-remoods-hue), 100%,  70%);
+  
+  /* LINK =================================================================================== */
+  --link-text-color:                                    hsl(var(--usp-remoods-hue),  80%,  80%);
+
+  /* SPECIAL TEXT =========================================================================== */
+  --special-text-color:                                 hsl(var(--usp-remoods-hue), 100%,  20%);
+  --special-bg-color:                                   hsl(var(--usp-remoods-hue),  30%,  70%);
+
+  --mark-text-bd-color:                                 hsl(var(--usp-remoods-hue), 100%,  50%);
+
+  --strikethrough-text-color:                         hsl(  0, 100%,  75%);
+  --strikethrough-text-bg-color:                      hsl(  0,  30%,  20%);
+
+  --insert-text-color:                                hsl(100,  70%,  75%);
+  --insert-text-bg-color:                             hsl(100,  30%,  20%);
+
+  --sub-sup-text-color:                                 hsl(var(--usp-remoods-hue),  50%,  80%);
+  
+  --inline-code-color:                                  hsl(var(--usp-remoods-hue), 100%,  20%);
+  --inline-code-bd-color:                     2px solid hsl(var(--usp-remoods-hue),  20%,  40%);
+  --inline-code-bg-color:                               hsl(var(--usp-remoods-hue),  20%,  80%);
+
+  /* HTML =================================================================================== */
+  --html-tag-text-color:                              hsl(  0, 100%,  70%);
+  --html-tag-text-shadow:                           0 0 none;
+
+  --html-attribute-text-color:                        hsl(145, 100%,  70%);
+  --html-attribute-text-shadow:                     0 0 none;
+
+  --html-string-text-color:                           hsl(300, 100%,  70%);
+  --html-string-text-shadow:                        0 0 none;
+
+  /* CODE BLOCK ============================================================================= */
+  --code-block-bg-color:                                hsl(var(--usp-remoods-hue), 100%,  8%);
+  --code-block-bd-width:                                0 3px;
+  --code-block-bd-color:                                hsl(var(--usp-remoods-hue),  40%,  60%);
+  
+  /* syntax highlight ----------------------------------------------------------------------- */
+  --code-block-comment-color:                           hsl(var(--usp-remoods-hue),   0%,  60%);
+  --code-block-comment-shadow:                      0 0 none;
+  
+  --code-block-number-color:                            hsl(calc(var(--usp-remoods-hue) + 110deg), 100%,  66%);
+  --code-block-number-shadow:                       0 0 none;
+
+  --code-block-string-color:                            hsl(calc(var(--usp-remoods-hue) + 180deg), 100%,  75%);
+  --code-block-string-shadow:                       0 0 none;
+  
+  --code-block-string-2-color:                          hsl(calc(var(--usp-remoods-hue) +  90deg), 100%,  75%);
+  --code-block-string-2-shadow:                     0 0 none;
+
+  --code-block-keyword-color:                           hsl(var(--usp-remoods-hue), 100%,  70%);
+  --code-block-keyword-shadow:                      0 0 none;
+  
+  --code-block-variable-color:                          hsl(var(--usp-remoods-hue),   0%,  90%);
+  --code-block-variable-shadow:                     0 0 none;
+
+  --code-block-variable-2-color:                        hsl(var(--usp-remoods-hue),   0%,  90%);
+  --code-block-variable-2-shadow:                   0 0 none;
+
+  --code-block-variable-3-color:                        hsl(calc(var(--usp-remoods-hue) + 323deg), 100%,  85%);
+  --code-block-variable-3-shadow:                   0 0 none;
+
+  --code-block-property-color:                          hsl(var(--usp-remoods-hue), 100%,  85%);
+  --code-block-property-shadow:                     0 0 none;
+
+  --code-block-atom-color:                              hsl(calc(var(--usp-remoods-hue) + 148deg), 100%,  65%);
+  --code-block-atom-shadow:                         0 0 none;
+
+  --code-block-qualifier-color:                         hsl(calc(var(--usp-remoods-hue) + 260deg), 100%,  75%);
+  --code-block-qualifier-shadow:                    0 0 none;
+
+  --code-block-tag-color:                               hsl(calc(var(--usp-remoods-hue) + 120deg), 100%,  70%);
+  --code-block-tag-shadow:                          0 0 none;
+
+  --code-block-attribute-color:                         hsl(calc(var(--usp-remoods-hue) + 240deg), 100%,  75%);
+  --code-block-attribute-shadow:                    0 0 none;
+
+  --code-block-type-color:                              hsl(calc(var(--usp-remoods-hue) + 260deg), 100%,  75%);
+  --code-block-type-shadow:                         0 0 none;
+
+  --code-block-meta-color:                              hsl(calc(var(--usp-remoods-hue) + 148deg), 100%,  65%);
+  --code-block-meta-shadow:                         0 0 none;
+
+  --code-block-builtin-color:                           hsl(calc(var(--usp-remoods-hue) + 260deg), 100%,  75%);
+  --code-block-builtin-shadow:                      0 0 none;
+
+  --code-block-def-color:                               hsl(var(--usp-remoods-hue), 0%,  90%);
+  --code-block-def-shadow:                          0 0 none;
+
+  --code-block-undefined-color:                         hsl(var(--usp-remoods-hue), 0%,  90%);
+  --code-block-undefined-shadow:                    0 0 none;
+
+  --code-block-operator-color:                          hsl(var(--usp-remoods-hue), 0%,  90%);
+  --code-block-operator-shadow:                     0 0 none;
+
+  --code-block-null-color:                              hsl(var(--usp-remoods-hue), 0%,  90%);
+  --code-block-null-shadow:                         0 0 none;
+
+  --code-block-matching-bracket-color:                  hsl(var(--usp-remoods-hue), 0%,  90%);
+  --code-block-matching-bracket-shadow:             0 0 none;
+
+  --code-block-error-bd-color:             2px dotted hsl(  0, 100%,  50%);
+
+  --code-block-invalidchar-color:                     hsl(  0, 100%,  50%);
+  --code-block-invalidchar-shadow:                  0 0 none;
+
+
+  /* PLUGIN: MARKDOWN TABLE COLORIZE ******************************************************** */
+  /* markdown > table text ------------------------------------------------------------------ */
+  --mtc-table-text-color:                               hsl(var(--usp-remoods-hue),   0%,  100%);
+  --mtc-table-vertical-bar-color:                       hsl(var(--usp-remoods-hue),   0%,  70%);
+  
+  /* table row separate --------------------------------------------------------------------- */
+  --mtc-separate-bg-color:                              hsl(var(--usp-remoods-hue),   0%, 100%,  10%);
+  --mtc-separate-head-text-color:                       hsl(var(--usp-remoods-hue),  40%,  70%);
+
+  /* table column mark ---------------------------------------------------------------------- */
+  --mtc-column-mark-color-1:                          hsl(  0, 100%,  80%);
+  --mtc-column-mark-shadow-1:                       0 0 none;
+
+  --mtc-column-mark-color-2:                          hsl(240,  70%,  80%);
+  --mtc-column-mark-shadow-2:                       0 0 none;
+  
+  --mtc-column-mark-color-3:                          hsl(160,  80%,  60%);
+  --mtc-column-mark-shadow-3:                       0 0 none;
+  
+  --mtc-column-mark-color-4:                          hsl( 40,  90%,  60%);
+  --mtc-column-mark-shadow-4:                       0 0 none;
+  
+  --mtc-column-mark-color-5:                          hsl( 60,  60%,  60%);
+  --mtc-column-mark-shadow-5:                       0 0 none;
+  
+  --mtc-column-mark-color-6:                          hsl(190,  80%,  60%);
+  --mtc-column-mark-shadow-6:                       0 0 none;
+  
+  --mtc-column-mark-color-7:                          hsl(100,  70%,  60%);
+  --mtc-column-mark-shadow-7:                       0 0 none;
+  
+  --mtc-column-mark-color-8:                          hsl(210, 100%,  55%);
+  --mtc-column-mark-shadow-8:                       0 0 none;
+  
+  --mtc-column-mark-color-9:                          hsl(270, 100%,  75%);
+  --mtc-column-mark-shadow-9:                       0 0 n0 0 
+  
+  --mtc-column-mark-color-10:                         hsl(310,  70%,  70%);
+  --mtc-column-mark-shadow-10:                      0 0 none;
+
+
+
+
+  /* **************************************************************************************** */
+  /* !!!!                           JOPLIN UI: GROUP PROPERTIES                          !!!! */
+  /* **************************************************************************************** */
+
+
+
+
+  /* app body | notebook panel | note list panel | tagbar | option panel menu & table & plugin card & switcher btn & confirm btn */
+  --g-main-bg-color-1:                                  hsl(var(--usp-remoods-hue),  11%,  13%);
+  
+  /* notebook panel | note list | editor panel ----------------------------------------------- */
+  --g-panel-header-bg-color:                            hsl(var(--usp-remoods-hue), 100%,  45%);
+  --g-panel-header-text-color:                          hsl(var(--usp-remoods-hue),   0%, 100%);
+  --g-panel-header-text-shadow:                         hsl(var(--usp-remoods-hue),   0%,   0%);
+  
+  /* notebook list | note list | option panel menu ------------------------------------------- */
+  --g-item-bg-color-hover:                              hsl(var(--usp-remoods-hue), 100%,  10%);
+  --g-item-bg-color-selected:                           hsl(var(--usp-remoods-hue), 100%,  25%);
+  --g-item-shadow-hover:                                hsl(var(--usp-remoods-hue), 100%,  60%);
+  --g-item-divider-color:                               hsl(var(--usp-remoods-hue),  20%,  20%);
+  --g-item-text-color:                                  hsl(var(--usp-remoods-hue), 100%,  95%);
+
+  /* notebook panel all notes button & tag list ---------------------------------------------- */
+  --g-item-text-color-2:                                hsl(var(--usp-remoods-hue), 100%,  70%);
+  
+  /* note list panel toolbar | editor header side toolbar ------------------------------------ */
+  --g-lighter-square-btn-bg-color:                      none;
+  --g-lighter-square-btn-bg-color-hover:                hsl(var(--usp-remoods-hue),  20%,  20%);
+  --g-lighter-square-btn-bd-color:                      transparent;
+  --g-lighter-square-btn-bd-color-hover:                hsl(var(--usp-remoods-hue),  80%,  80%);
+  --g-lighter-square-btn-icon-color:                    hsl(var(--usp-remoods-hue), 100%,  20%);
+  --g-lighter-square-btn-icon-color-hover:              hsl(var(--usp-remoods-hue), 100%,  80%);
+  
+  /* editor main toolbar & tar bar ----------------------------------------------------------- */
+  --g-darker-square-btn-bg-color:                       none;
+  --g-darker-square-btn-bg-color-hover:                 hsl(var(--usp-remoods-hue),  20%,  20%);
+  --g-darker-square-btn-bd-color:                       transparent;
+  --g-darker-square-btn-bd-color-hover:                 hsl(var(--usp-remoods-hue), 100%,  50%);
+  --g-darker-square-btn-icon-color:                     hsl(var(--usp-remoods-hue),  60%,  90%);
+  --g-darker-square-btn-icon-color-hover:               hsl(var(--usp-remoods-hue), 100%,  70%);
+  
+  /* notebook panel | note list panel -------------------------------------------------------- */
+  --g-scrollbar-thumb-bg-color-1:                       hsl(var(--usp-remoods-hue), 100%,  50%);
+  --g-scrollbar-track-bg-color-1:                       hsl(var(--usp-remoods-hue),  20%,  20%);
+
+  /* note list panel search bar | editor panel search bar | command palette search bar | option panel select & input */
+  --g-input-text-color-1:                               hsl(var(--usp-remoods-hue), 100%,  70%);
+  --g-input-bg-color-1:                                 hsl(var(--usp-remoods-hue),  11%,  13%);
+  --g-input-bd-color-1:                                 hsl(var(--usp-remoods-hue),  50%,  40%);
+
+  /* editor toolbar & editor search bar ------------------------------------------------------ */
+  --g-toolbar-bg-color:                                 hsl(var(--usp-remoods-hue),  50%,  15%);
+  --g-toolbar-bd-color:                                 hsl(var(--usp-remoods-hue), 100%,  70%);
+  --g-toolbar-shadow:                                   hsl(var(--usp-remoods-hue), 100%,  70%);
+
+  /* editor & tagbar ------------------------------------------------------------------------- */
+  --g-editor-panel-divider-color:                       hsl(var(--usp-remoods-hue), 100%,  40%);
+
+  /* option panel menu & table & table kbd --------------------------------------------------- */
+  --g-option-main-bg-color:                             hsl(var(--usp-remoods-hue),  10%,  30%);
+
+
+
+
+  /* **************************************************************************************** */
+  /* !!!!                       JOPLIN UI: STANDALONE PROPERTIES                         !!!! */
+  /* **************************************************************************************** */
+
+
+
+
+  /* NOTEBOOK PANEL ========================================================================= */
+  --s-directory-icon-open-color:                        hsl(var(--usp-remoods-hue),  20%,  70%);
+  --s-directory-icon-open-shadow:                       hsl(var(--usp-remoods-hue), 100%,  40%);
+  --s-directory-icon-close-color:                       hsl(var(--usp-remoods-hue), 100%,  70%);
+  --s-directory-icon-close-shadow:                      hsl(var(--usp-remoods-hue), 100%,  80%);
+
+  --s-note-count-label-text-color:                      hsl(var(--usp-remoods-hue),   0%, 100%);
+  --s-note-count-label-bg-color:                        hsl(var(--usp-remoods-hue),  40%,  20%);
+  --s-note-count-label-bd-color:                        hsl(var(--usp-remoods-hue),  50%,  80%);
+  --s-note-count-label-shadow:                          hsl(var(--usp-remoods-hue), 100%,  80%);
+
+  --s-sync-info-text-color:                             hsl(var(--usp-remoods-hue), 100%,  95%);
+  --s-sync-info-symbol-color:                           radial-gradient(
+                                                        hsl(var(--usp-remoods-hue), 100%,  80%)  25%,
+                                                        hsl(var(--usp-remoods-hue), 100%,  50%)  55%,
+                                                        hsl(var(--usp-remoods-hue), 100%,  80%)  80%);
+  
+  --s-sync-btn-bg-color:                                transparent;
+  --s-sync-btn-bd-color:                                hsl(var(--usp-remoods-hue),  20%,  20%);
+  --s-sync-btn-bg-color-hover:                          hsl(var(--usp-remoods-hue),  30%,  10%);
+  --s-sync-btn-bd-color-hover:                          hsl(var(--usp-remoods-hue), 100%,  30%);
+  --s-sync-btn-text-color:                              hsl(var(--usp-remoods-hue),   0%,  50%);
+  --s-sync-btn-text-color-hover:                        hsl(var(--usp-remoods-hue),  20%,  70%);
+  --s-sync-btn-icon-text-shadow:                        none;
+  --s-sync-btn-icon-text-shadow-hover:                  hsl(var(--usp-remoods-hue),  20%,  70%);
+  
+  /* NOTE LIST PANEL ======================================================================== */
+  --s-todo-text-color:                                  hsl(var(--usp-remoods-hue), 100%,  70%);
+
+  --s-notelist-search-btn-color:                        hsl(var(--usp-remoods-hue),   0%,  70%);
+  --s-notelist-search-btn-color-hover:                  hsl(var(--usp-remoods-hue), 100%,  70%);
+
+  /* EDITOR PANEL =========================================================================== */
+  --s-notebook-nav-btn-bg-color:                        hsl(var(--usp-remoods-hue),  30%,  20%);
+  --s-notebook-nav-btn-bd-color:                        hsl(var(--usp-remoods-hue), 100%,  30%);
+  --s-notebook-nav-btn-shadow:                          hsl(var(--usp-remoods-hue), 100%,  80%);
+  --s-notebook-nav-btn-text-color:                      hsl(var(--usp-remoods-hue), 100%,  70%);
+  
+  --s-batch-menu-btn-text-color:                        hsl(var(--usp-remoods-hue),  60%,  90%);
+  --s-batch-menu-btn-bg-color:                          hsl(var(--usp-remoods-hue),  50%,  10%);
+  --s-batch-menu-btn-bd-color:                          hsl(var(--usp-remoods-hue), 100%,  30%);
+
+  --s-update-time-label-bg-color:                       hsl(var(--usp-remoods-hue), 100%,  20%);
+  --s-update-time-label-text-color:                     hsl(var(--usp-remoods-hue), 100%,  70%);
+
+  --s-tagbar-tag-text-color:                            hsl(var(--usp-remoods-hue),  20%,  80%);
+  --s-tagbar-tag-text-shadow-hover:                     hsl(var(--usp-remoods-hue), 100%,  30%);
+  --s-tagbar-tag-divider-color:                         hsl(var(--usp-remoods-hue), 100%,  90%);
+  --s-tagbar-hint-text-color:                           hsl(var(--usp-remoods-hue),  40%,  40%);
+
+  /* MODAL DIALOG =========================================================================== */
+  --s-modal-dialog-bg-color:                            hsl(var(--usp-remoods-hue),  30%,  20%);
+  --s-modal-dialog-label-color:                         hsl(var(--usp-remoods-hue),  60%,  90%);
+  --s-modal-dialog-title-text-color:                    hsl(var(--usp-remoods-hue),  60%,  90%);
+  --s-modal-dialog-confirm-btn-text-color:              hsl(var(--usp-remoods-hue),  60%,  90%);
+  --s-modal-dialog-confirm-btn-bg-color:                hsl(var(--usp-remoods-hue),  40%,  15%);
+  --s-modal-dialog-confirm-btn-bd-color:                hsl(var(--usp-remoods-hue), 100%,  30%);
+  
+  --s-notebook-creator-icon-select-btn-bg-color:        hsl(var(--usp-remoods-hue),  50%,  20%);
+  --s-notebook-creator-icon-select-btn-bd-color:        hsl(var(--usp-remoods-hue), 100%,  30%);
+  --s-notebook-creator-icon-select-btn-text-color:      hsl(var(--usp-remoods-hue),  60%,  90%);
+  
+  --s-tag-selector-bg-color:                            hsl(var(--usp-remoods-hue),  50%,  10%);
+  --s-tag-selector-bd-color:                            hsl(var(--usp-remoods-hue), 100%,  30%);
+  --s-tag-selector-input-text-color:                    hsl(var(--usp-remoods-hue), 100%,  40%);
+  --s-tag-selector-divider-color:                       hsl(var(--usp-remoods-hue), 100%,  30%);
+  --s-tag-selector-text-color:                          hsl(var(--usp-remoods-hue),  20%,  80%);
+
+  --s-command-palette-item-bg-color:                    hsl(var(--usp-remoods-hue),  30%,  20%);
+  --s-command-palette-item-bg-color-selected:           hsl(var(--usp-remoods-hue),  30%,  30%);
+  --s-command-palette-item-bd-color:                    hsl(var(--usp-remoods-hue),  30%,  30%);
+  --s-command-palette-item-text-color:                  hsl(var(--usp-remoods-hue),  60%,  90%);
+
+  /* OPTION PANEL =========================================================================== */
+  --s-option-guide-text-color:                          hsl(var(--usp-remoods-hue),  30%,  80%);
+  --s-option-guide-bg-color:                            hsl(var(--usp-remoods-hue), 100%,  10%,  30%);
+  
+  --s-option-label-text-color:                          hsl(var(--usp-remoods-hue),  20%,  90%);
+  
+  --s-option-btn-bg-color:                              hsl(var(--usp-remoods-hue),  50%,  20%);
+  --s-option-btn-bd-color:                              hsl(var(--usp-remoods-hue), 100%,  30%);
+  --s-option-btn-text-color:                            hsl(var(--usp-remoods-hue),  60%,  90%);
+  
+  --s-option-description-text-color:                    hsl(var(--usp-remoods-hue),  20%,  60%);
+  
+  --s-option-table-text-color:                          hsl(var(--usp-remoods-hue),  40%,  70%);
+  
+  --s-plugin-card-bd-color:                             hsl(var(--usp-remoods-hue), 100%,  30%);
+  --s-plugin-card-shadow:                               hsl(var(--usp-remoods-hue), 100%,  30%);
+  --s-plugin-card-text-color:                           hsl(var(--usp-remoods-hue),  20%,  80%);
+  --s-plugin-card-switcher-bg-color:                    hsl(var(--usp-remoods-hue), 100%,  80%);
+  
+  --s-option-confirm-btn-bg-color:                      hsl(var(--usp-remoods-hue),  50%,  10%);
+  --s-option-confirm-btn-bd-color:                      hsl(var(--usp-remoods-hue), 100%,  80%);
+  --s-option-confirm-btn-shadow:                        hsl(var(--usp-remoods-hue), 100%,  80%);
+  --s-option-confirm-btn-text-color:                    hsl(var(--usp-remoods-hue),  60%,  90%);
+
+}
+
+
+
+
+/* ********************************************************* */
+/* !!!!                   CODE MIRROR                   !!!! */
+/* ********************************************************* */
+/* --------------------------------------------------------- */
+/*                           BASIC                           */
+/* --------------------------------------------------------- */
+
+
+
+
+/* || BASIC 1/2 | CONTAINER ******************************** */
+.codeMirrorEditor {
+  background: var(--code-mirror-bg-color) !important;
+}
+.codeMirrorEditor > .CodeMirror {
+  padding-left: 8px;
+  padding-bottom: 43px;
+}
+
+
+
+/* || BASIC 2/2 | OTHERS *********************************** */
+/* OTHERS > SCROLLBAR ====================================== */
+/* thumb --------------------------------------------------- */
+.codeMirrorEditor ::-webkit-scrollbar-thumb {
+  background: var(--code-mirror-scrollbar-thumb-bg-color);
+  border: 1px solid var(--code-mirror-scrollbar-thumb-bd-color);
+  visibility: hidden;
+}
+.rli-editor > div > div > div > div:nth-child(2) > div:hover ::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+/* track --------------------------------------------------- */ 
+.codeMirrorEditor ::-webkit-scrollbar-track:hover {
+  background: var(--code-mirror-scrollbar-track-bg-color);
+}
+
+/* OTHERS > CURSOR ========================================= */
+.CodeMirror-cursor {
+  border-left: var(--cursor-bd-color) !important;
+}
+
+/* OTHERS > SELECTED TEXT ================================== */
+.CodeMirror-selectedtext:not(#fake) {
+  background: var(--selected-text-bg-color) !important;
+}
+.cm-jn-code-block .CodeMirror-selectedtext:not(#fake) {
+  background: var(--code-block-selected-text-bg-color) !important;
+}
+.CodeMirror-line:not(#fake)::selection,
+.CodeMirror-line:not(#fake) > span::selection,
+.CodeMirror-line:not(#fake) > span > span::selection {
+  background: var(--selected-text-bg-color) !important;
+}
+.CodeMirror-line:not(#fake)::-moz-selection,
+.CodeMirror-line:not(#fake) > span::-moz-selection,
+.CodeMirror-line:not(#fake) > span > span::-moz-selection {
+  background: var(--selected-text-bg-color) !important;
+}
+.CodeMirror-lines .CodeMirror-line .cm-em.CodeMirror-selectedtext,
+.CodeMirror-lines .CodeMirror-line .cm-strong.CodeMirror-selectedtext,
+.CodeMirror-lines .CodeMirror-line .cm-strikethrough.CodeMirror-selectedtext,
+.CodeMirror-lines .CodeMirror-line .cm-rm-ins.CodeMirror-selectedtext,
+.CodeMirror-lines .CodeMirror-line .cm-rm-highlight.CodeMirror-selectedtext {
+  opacity: 0.5;
+}
+
+
+/* --------------------------------------------------------- */
+/*                           FONT                            */
+/* --------------------------------------------------------- */
+/* || FONT 1/2 | BASE FONT ********************************* */
+.CodeMirror *:not(.cm-jn-monospace),
+.CodeMirror-lines .CodeMirror-line:not(.cm-jn-code-block) .cm-comment.cm-jn-monospace {
+  font-family: var(--usp-base-font) !important;
+  line-height: 1.5em;
+  font-size: var(--usp-font-size) !important;
+}
+/* || FONT 2/2 | MONOSPACE FONT **************************** */
+/* | anchor text | list token | horizontal line | abbreviation description | katex | */
+.CodeMirror-lines .CodeMirror-line [class*="cm-variable"].cm-rm-list-token,
+.CodeMirror-lines .CodeMirror-line .cm-keyword.cm-rm-list-token,
+.CodeMirror-lines .CodeMirror-line .cm-rm-list-token.cm-rm-checkbox,
+.CodeMirror-lines .CodeMirror-line .cm-link-text, /* anchor text */
+.CodeMirror-lines .CodeMirror-line .cm-em.cm-link-text, /* abbr des */
+.CodeMirror-lines .CodeMirror-line .cm-em.cm-link-text ~ .cm-em, /* abbr des */
+.CodeMirror-lines .CodeMirror-line [class|="cm-katex"],
+.CodeMirror-lines .CodeMirror-line [class|="cm-katex"] ~ *,
+.CodeMirror-lines .CodeMirror-line .cm-hr  {
+  font-family: var(--usp-monospace-font) !important;
+  font-size: var(--usp-font-size) !important;
+}
+/* || FONT 3/3 | SMALLER MONOSPACE FONT ******************** */
+/* | anchor link | html | image link | file link | sup | sub | footnote ref. | table | code block | inline code | */
+.CodeMirror-lines .CodeMirror-line .cm-url.cm-rm-link, /* anchor link */
+.CodeMirror-lines .CodeMirror-line .cm-tag,
+.CodeMirror-lines .CodeMirror-line .cm-attribute,
+.CodeMirror-lines .CodeMirror-line .cm-string:not(.cm-url), /* avoid the first word of footnote */
+.CodeMirror-lines .CodeMirror-line .cm-image,
+.CodeMirror-lines .CodeMirror-line .cm-rm-sup,
+.CodeMirror-lines .CodeMirror-line .cm-rm-sub,
+.CodeMirror-lines .CodeMirror-line .cm-number,
+.CodeMirror-lines .CodeMirror-line .cm-bracket,
+.CodeMirror-lines .CodeMirror-line .cm-rm-link.cm-rm-image,
+.CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em), /* footnote ref. */
+.CodeMirror-lines .CodeMirror-line .cm-null.cm-jn-monospace, /* table */
+.CodeMirror-lines .CodeMirror-line .cm-comment.cm-jn-inline-code.cm-jn-monospace,
+.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-jn-monospace {
+  font-family: var(--usp-monospace-font) !important;
+  font-size: var(--usp-smaller-monospace-font-size) !important;
+}
+
+
+
+/* --------------------------------------------------------- */
+/*                         MARKDOWN                          */
+/* --------------------------------------------------------- */
+
+
+
+
+/* || MARKDOWN 1/11 | HEADINGS ***************************** */
+/* HEADINGS > GROUP: H1 to H6 ============================== */
+.CodeMirror-line .cm-header {
+  font-weight: var(--usp-headings-font-weight);
+  text-shadow: var(--heading-text-shadow);
+}
+
+/* HEADINGS > H1 =========================================== */
+.CodeMirror-line .cm-header.cm-header-1 {
+  font-size: var(--usp-h1-font-size) !important;
+  font-variant: var(--usp-h1-font-variant);
+  text-transform: var(--usp-h1-text-transform);
+  color: var(--h1-text-color);
+}
+
+/* HEADINGS > H2 =========================================== */
+.CodeMirror-line .cm-header.cm-header-2 {
+  font-size: var(--usp-h2-font-size) !important;
+  color: var(--h2-text-color);
+}
+
+/* HEADINGS > H3 =========================================== */
+.CodeMirror-line .cm-header.cm-header-3 {
+  font-size: var(--usp-h3-font-size) !important;
+  color: var(--h3-text-color);
+}
+
+/* HEADINGS > H4 =========================================== */
+.CodeMirror-line .cm-header.cm-header-4 {
+  font-size: var(--usp-h4-font-size) !important;
+  color: var(--h4-text-color);
+}
+
+/* HEADINGS > H5 =========================================== */
+.CodeMirror-line .cm-header.cm-header-5 {
+  font-size: var(--usp-h5-font-size) !important;
+  color: var(--h5-text-color);
+}
+
+/* HEADINGS > H6 =========================================== */
+.CodeMirror-line .cm-header.cm-header-6 {
+  font-size: var(--usp-h6-font-size) !important;
+  color: var(--h6-text-color);
+}
+
+
+
+/* || MARKDOWN 2/11 | PARAGRAPH **************************** */
+/* PARAGRAPH > PARAGRAPH TEXT ============================== */
+.CodeMirror-line:not(.cm-jn-code-block) > span[role="presentation"]:only-child {
+  color: var(--code-mirror-text-color);
+}
+/* PARAGRAPH > HORIZONTAL LINE ============================= */
+.CodeMirror-lines .CodeMirror-line .cm-hr {
+  color: var(--horizontal-line-syntax-color);
+}
+.CodeMirror-lines .CodeMirror-line .cm-hr::before {
+  content: "";
+  display: inline-block;
+  width: 95%;
+  max-width: auto;
+  height: 1px;
+  background: var(--horizontal-line-bg-color);
+}
+
+
+
+/* || MARKDOWN 3/11 | LINK ********************************* */
+.CodeMirror-lines .CodeMirror-line:not(.cm-jn-code-block) .cm-rm-link:not(.cm-link-text):not(.cm-string),
+.CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-em),
+.CodeMirror-lines .CodeMirror-line .cm-string.cm-url,
+.cm-rm-image {
+  color: var(--link-text-color);
+}
+.CodeMirror-lines .CodeMirror-line .cm-string.cm-url {
+  opacity: 0.6;
+}
+
+
+
+/* || MARKDOWN 4/11 | SPECIAL TEXT ************************* */
+/* special text group: | emphasize | strong | highlight | */
+.CodeMirror-lines .CodeMirror-line .cm-em,
+.CodeMirror-lines .CodeMirror-line .cm-strong,
+.CodeMirror-lines .CodeMirror-line .cm-rm-highlight {
+  color: var(--special-text-color) !important;
+  background: var(--special-bg-color);
+}
+/* strong -------------------------------------------------- */
+.CodeMirror-lines .CodeMirror-line .cm-strong {
+  font-weight: 700;
+}
+/* strikethrough ------------------------------------------- */
+.CodeMirror-lines .CodeMirror-line .cm-strikethrough {
+  text-decoration: line-through;
+  background: var(--strikethrough-text-bg-color);
+  color: var(--strikethrough-text-color);
+}
+.CodeMirror-lines .CodeMirror-line .cm-strikethrough:hover {
+  text-decoration: none;
+}
+/* insert -------------------------------------------------- */
+.CodeMirror-lines .CodeMirror-line .cm-rm-ins {
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  background: var(--insert-text-bg-color);
+  color: var(--insert-text-color);
+}
+.CodeMirror-lines .CodeMirror-line .cm-rm-ins:hover {
+  border: none;
+}
+/* mark ---------------------------------------------------- */
+.CodeMirror-lines .CodeMirror-line .cm-rm-highlight {
+  border-width: 2px 0;
+  border-style: solid;
+  border-color: var(--mark-text-bd-color);
+}
+/* sup & sub ----------------------------------------------- */
+.cm-rm-sup,
+.cm-rm-sub {
+  color: var(--sub-sup-text-color);
+  line-height: 0 !important;
+}
+/* inline code --------------------------------------------- */
+.CodeMirror-lines .CodeMirror-line .cm-jn-inline-code.cm-jn-monospace:not(.CodeMirror-selectedtext) {
+  color: var(--inline-code-color);
+  background: var(--inline-code-bg-color) !important;
+  border: var(--inline-code-bd-color) !important;
+  border-radius: 5px !important;
+}
+/* search -------------------------------------------------- */
+.CodeMirror-lines .CodeMirror-line .cm-search-marker:not(#fake),
+.CodeMirror-lines .CodeMirror-line .cm-overlay.cm-search-marker.CodeMirror-selectedtext.cm-search-marker-selected:not(#fake) {
+  display: inline-block;
+  padding: 3px 6px;
+  color: white !important;
+  background: black !important;
+  border-radius: 5px;
+}
+.CodeMirror-lines .CodeMirror-line .cm-search-marker:not(#fake) {
+  border: 2px solid red;
+}
+.CodeMirror-lines .CodeMirror-line .cm-overlay.cm-search-marker.CodeMirror-selectedtext.cm-search-marker-selected:not(#fake) {
+  border: 5px solid red;
+  opacity: 1;
+}
+
+
+
+/* || MARKDOWN 5/11 | KATEX ******************************** */
+.CodeMirror-lines .CodeMirror-line:not(.cm-jn-code-block) .cm-variable-2 {
+  color: var(--list-text-color);
+}
+
+
+
+/* || MARKDOWN 6/11 | HTML ********************************* */
+.CodeMirror-line:not(.cm-jn-code-block) .cm-tag,
+.CodeMirror-line .cm-jn-monospace.cm-tabcolor-row[class*="cm-tabcolor-col"].cm-tag {
+  color: var(--html-tag-text-color) !important;
+  text-shadow: var(--html-tag-text-shadow);
+}
+.CodeMirror-line:not(.cm-jn-code-block) .cm-attribute,
+.CodeMirror-line .cm-jn-monospace.cm-tabcolor-row[class*="cm-tabcolor-col"].cm-attribute {
+  color: var(--html-attribute-text-color) !important;
+  text-shadow: var(--html-attribute-text-shadow);
+}
+.CodeMirror-line:not(.cm-jn-code-block) .cm-string:not(.cm-url),
+.CodeMirror-line .cm-jn-monospace.cm-tabcolor-row[class*="cm-tabcolor-col"].cm-string {
+  color: var(--html-string-text-color) !important;
+  text-shadow: var(--html-string-text-shadow);
+}
+
+
+
+/* || MARKDOWN 7/11 | LIST ********************************* */
+/* list group: | unordered list | ordered list | checklist | list token | */
+[class*="cm-variable"].cm-rm-list-token:not(.cm-rm-checkbox),
+.CodeMirror-line .cm-keyword.cm-rm-list-token,
+.CodeMirror-line .cm-rm-list-token ~ .cm-keyword,
+.CodeMirror-line .cm-rm-list-token ~ [class*="cm-variable"],
+.cm-variable-2.cm-rm-list-token.cm-rm-checkbox {
+  color: var(--list-text-color);
+}
+/* checklist > checkbox ------------------------------------ */
+.cm-meta.cm-rm-checkbox,
+.cm-property.cm-rm-checkbox {
+  font-weight: 600;
+  color: var(--checkbox-color) !important;
+}
+/* checklist > checked ------------------------------------- */
+/* checked group: | checkbox | checklist | ----------------- */
+.cm-property.cm-rm-checkbox,
+.cm-property.cm-rm-checkbox ~ .cm-rm-checkbox {
+  text-decoration: line-through;
+  filter: grayscale(0.6);
+  opacity: 0.6;
+}
+
+
+
+/* || MARKDOWN 8/11 | BLOCKQUOTE *************************** */
+.CodeMirror-lines .CodeMirror-line .cm-quote {
+  color: var(--blockquote-text-color);
+  opacity: 1;
+}
+
+
+
+/* || MARKDOWN 9/11 | FOOTNOTE ***************************** */
+.CodeMirror-lines .CodeMirror-line .cm-comment.cm-jn-monospace {
+  color: var(--code-mirror-text-color);
+}
+
+
+
+/* || MARKDOWN 10/11 | CODE BLOCK ************************** */
+/* code block body ----------------------------------------- */
+.cm-jn-code-block {
+  background: var(--code-block-bg-color) !important;
+  border-width: var(--code-block-bd-width) !important;
+  border-style: solid;
+  border-color: var(--code-block-bd-color);
+}
+.CodeMirror-lines .cm-jn-code-block.CodeMirror-line > :first-child {
+  padding-left: 8px;
+}
+/* code block syntax highlight ----------------------------- */
+.CodeMirror-line.cm-jn-code-block .cm-keyword {
+  color: var(--code-block-keyword-color);
+  text-shadow: 0 0 var(--code-block-keyword-shadow);
+}
+.CodeMirror-line.cm-jn-code-block .cm-def {
+  color: var(--code-block-def-color);
+  text-shadow: 0 0 var(--code-block-def-shadow);
+}
+.CodeMirror-line.cm-jn-code-block .cm-property {
+  color: var(--code-block-property-color);
+  text-shadow: 0 0 var(--code-block-property-shadow);
+}
+.CodeMirror-line.cm-jn-code-block .cm-variable {
+  color: var(--code-block-variable-color);
+  text-shadow: 0 0 var(--code-block-variable-shadow);
+}
+.CodeMirror-line.cm-jn-code-block .cm-variable-2 {
+  color: var(--code-block-variable-2-color);
+  text-shadow: 0 0 var(--code-block-variable-2-shadow);
+}
+.CodeMirror-line.cm-jn-code-block .cm-variable-3 {
+  color: var(--code-block-variable-3-color);
+  text-shadow: 0 0 var(--code-block--variable-3-shadow);
+}
+.CodeMirror-line.cm-jn-code-block .cm-number {
+  color: var(--code-block-number-color);
+  text-shadow: 0 0 var(--code-block-number-shadow);
+}
+.CodeMirror-line.cm-jn-code-block .cm-comment.cm-jn-monospace:not([class*="cm-tabcolor-"]) {
+  color: var(--code-block-comment-color);
+  text-shadow: 0 0 var(--code-block-comment-shadow);
+}
+.CodeMirror-line.cm-jn-code-block .cm-string {
+  color: var(--code-block-string-color);
+  text-shadow: 0 0 var(--code-block-string-shadow);
+}
+.CodeMirror-line.cm-jn-code-block .cm-string-2 {
+  color: var(--code-block-string-2-color);
+  text-shadow: 0 0 var(--code-block-string-2-shadow);
+}
+.CodeMirror-line.cm-jn-code-block .cm-atom {
+  color: var(--code-block-atom-color);
+  text-shadow: 0 0 var(--code-block-atom-color);
+}
+.CodeMirror-line.cm-jn-code-block .cm-qualifier {
+  color: var(--code-block-qualifier-color);
+  text-shadow: 0 0 var(--code-block-qualifier-shadow);
+}
+.CodeMirror-line.cm-jn-code-block .cm-tag {
+  color: var(--code-block-tag-color);
+  text-shadow: 0 0 var(--code-block-tag-shadow);
+}
+.CodeMirror-line.cm-jn-code-block .cm-attribute {
+  color: var(--code-block-attribute-color);
+  text-shadow: 0 0 var(--code-block-attribute-shadow);
+}
+.CodeMirror-line.cm-jn-code-block .cm-type {
+  color: var(--code-block-type-color);
+  text-shadow: 0 0 var(--code-block-type-shadow);
+}
+.CodeMirror-line.cm-jn-code-block .cm-meta {
+  color: var(--code-block-meta-color);
+  text-shadow: 0 0 var(--code-block-meta-shadow);
+}
+.CodeMirror-line.cm-jn-code-block .cm-undefined {
+  color: var(--code-block-undefined-color);
+  text-shadow: 0 0 var(--code-block-undefined-shadow);
+}
+.CodeMirror-line.cm-jn-code-block .cm-operator {
+  color: var(--code-block-operator-color);
+  text-shadow: 0 0 var(--code-block-operator-shadow);
+}
+.CodeMirror-line.cm-jn-code-block .cm-null {
+  color: var(--code-block-null-color);
+  text-shadow: 0 0 var(--code-block-null-shadow);
+}
+.CodeMirror-line.cm-jn-code-block .cm-error {
+  border-bottom: var(--code-block-error-bd-color);
+}
+.CodeMirror-line.cm-jn-code-block .cm-invalidchar {
+  color: var(--code-block-invalidchar-color);
+  text-shadow: 0 0 var(--code-block-invalidchar-color);
+}
+.CodeMirror-line.cm-jn-code-block .cm-builtin {
+  color: var(--code-block-builtin-color);
+  text-shadow: 0 0 var(--code-block-builtin-shadow);
+}
+.CodeMirror-line.cm-jn-code-block .CodeMirror-matching-bracket {
+  color: var(--code-block-matching-bracket-color);
+}
+
+
+
+
+/* --------------------------------------------------------- */
+/*                         PLUGINS                           */
+/* --------------------------------------------------------- */
+
+
+
+
+/* || PLUGINS | MARKDOWN TABLE COLORIZE ******************** */
+/* markdown table > column --------------------------------- */
+.CodeMirror-lines .CodeMirror-line [class*="cm-tabcolor-col"] {
+  background: none;
+}
+/* markdown table > vertical bar --------------------------- */
+.CodeMirror-lines .CodeMirror-line .cm-tabcolor-pipe {
+  color: var(--mtc-table-vertical-bar-color) !important;
+}
+/* markdown table > text ----------------------------------- */
+.CodeMirror-lines .CodeMirror-line [class*="cm-tabcolor-col"]:not(.cm-tabcolor-pipe) {
+  color: var(--mtc-table-text-color) !important;
+}
+/* markdown table > separate header & row ------------------ */
+.CodeMirror-line .cm-tabcolor-firstch:first-child::before {
+  display: block;
+  content: " ";
+  width: 100%;
+  height: 5px;
+  background: var(--mtc-separate-bg-color);
+  border-radius: 4px;
+}
+.CodeMirror-line .cm-tabcolor-header.cm-tabcolor-firstch:first-child::before {
+  content: "  H E A D >";
+  height: 20px;
+  color: var(--mtc-separate-head-text-color);
+}
+.CodeMirror-line .cm-tabcolor-header {
+  font-weight: normal;
+}
+/* markdown table > column mark ---------------------------- */
+[class*="cm-tabcolor-col"].cm-tabcolor-pipe::after {
+  content: "";
+  position: relative;
+  display: inline-block;
+  margin: 0 8px 0 5px;
+  font-size: 100%;
+  font-weight: normal;
+  transition: font-size 0.5s;
+  transition-delay: 1.5s;
+}
+[class*="cm-tabcolor-col"].cm-tabcolor-pipe:hover::after {
+  font-size: 150%;
+  transition: font-size 0.3s;
+  transition-delay: 0.6s;
+}
+/* hide last colum mark ------------------------------------ */
+[class*="cm-tabcolor-col"].cm-tabcolor-pipe:last-child::after {
+  display: none;
+}
+/* column mark color --------------------------------------- */
+[class*="cm-tabcolor-col"].cm-tabcolor-firstch::after,
+.cm-tabcolor-col10.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col20.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col30.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col40.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col50.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {
+  color: var(--mtc-column-mark-color-1);
+  text-shadow: 0 0 var(--mtc-column-mark-shadow-1);
+}
+.cm-tabcolor-col1.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col11.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col21.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col31.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col41.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col51.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {
+  color: var(--mtc-column-mark-color-2);
+  text-shadow: 0 0 var(--mtc-column-mark-shadow-2);
+}
+.cm-tabcolor-col2.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col12.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col22.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col32.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col42.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col52.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {
+  color: var(--mtc-column-mark-color-3);
+  text-shadow: 0 0 var(--mtc-column-mark-shadow-3);
+}
+.cm-tabcolor-col3.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col13.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col23.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col33.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col43.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {
+  color: var(--mtc-column-mark-color-4);
+  text-shadow: 0 0 var(--mtc-column-mark-shadow-4);
+}
+.cm-tabcolor-col4.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col14.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col24.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col34.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col44.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {
+  color: var(--mtc-column-mark-color-5);
+  text-shadow: 0 0 var(--mtc-column-mark-shadow-5);
+}
+.cm-tabcolor-col5.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col15.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col25.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col35.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col45.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {
+  color: var(--mtc-column-mark-color-6);
+  text-shadow: 0 0 var(--mtc-column-mark-shadow-6);
+}
+.cm-tabcolor-col6.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col16.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col26.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col36.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col46.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {
+  color: var(--mtc-column-mark-color-7);
+  text-shadow: 0 0 var(--mtc-column-mark-shadow-7);
+}
+.cm-tabcolor-col7.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col17.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col27.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col37.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col47.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {
+  color: var(--mtc-column-mark-color-8);
+  text-shadow: 0 0 var(--mtc-column-mark-shadow-8);
+}
+.cm-tabcolor-col8.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col18.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col28.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col38.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col48.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {
+  color: var(--mtc-column-mark-color-9);
+  text-shadow: 0 0 var(--mtc-column-mark-shadow-9);
+}
+.cm-tabcolor-col9.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col19.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col29.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col39.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
+.cm-tabcolor-col49.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {
+  color: var(--mtc-column-mark-color-10);
+  text-shadow: 0 0 var(--mtc-column-mark-shadow-10);
+}
+/* column mark symbol -------------------------------------- */
+[class*="cm-tabcolor-col"].cm-tabcolor-firstch::after {content: "\24b6";}
+.cm-tabcolor-col1.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24b7";}
+.cm-tabcolor-col2.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24b8";}
+.cm-tabcolor-col3.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24b9";}
+.cm-tabcolor-col4.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24ba";}
+.cm-tabcolor-col5.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24bb";}
+.cm-tabcolor-col6.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24bc";}
+.cm-tabcolor-col7.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24bd";}
+.cm-tabcolor-col8.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24be";}
+.cm-tabcolor-col9.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24bf";}
+.cm-tabcolor-col10.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24c0";}
+.cm-tabcolor-col11.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24c1";}
+.cm-tabcolor-col12.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24c2";}
+.cm-tabcolor-col13.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24c3";}
+.cm-tabcolor-col14.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24c4";}
+.cm-tabcolor-col15.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24c5";}
+.cm-tabcolor-col16.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24c6";}
+.cm-tabcolor-col17.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24c7";}
+.cm-tabcolor-col18.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24c8";}
+.cm-tabcolor-col19.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24c9";}
+.cm-tabcolor-col20.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24ca";}
+.cm-tabcolor-col21.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24cb";}
+.cm-tabcolor-col22.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24cc";}
+.cm-tabcolor-col23.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24cd";}
+.cm-tabcolor-col24.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24ce";}
+.cm-tabcolor-col25.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24cf";}
+.cm-tabcolor-col26.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24d0";}
+.cm-tabcolor-col27.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24d1";}
+.cm-tabcolor-col28.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24d2";}
+.cm-tabcolor-col29.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24d3";}
+.cm-tabcolor-col30.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24d4";}
+.cm-tabcolor-col31.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24d5";}
+.cm-tabcolor-col32.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24d6";}
+.cm-tabcolor-col33.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24d7";}
+.cm-tabcolor-col34.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24d8";}
+.cm-tabcolor-col35.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24d9";}
+.cm-tabcolor-col36.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24da";}
+.cm-tabcolor-col37.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24db";}
+.cm-tabcolor-col38.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24dc";}
+.cm-tabcolor-col39.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24dd";}
+.cm-tabcolor-col40.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24de";}
+.cm-tabcolor-col41.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24df";}
+.cm-tabcolor-col42.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24e0";}
+.cm-tabcolor-col43.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24e1";}
+.cm-tabcolor-col44.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24e2";}
+.cm-tabcolor-col45.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24e3";}
+.cm-tabcolor-col46.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24e4";}
+.cm-tabcolor-col47.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24e5";}
+.cm-tabcolor-col48.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24e6";}
+.cm-tabcolor-col49.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24e7";}
+.cm-tabcolor-col50.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24e8";}
+.cm-tabcolor-col51.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24e9";}
+
+
+
+
+/* ********************************************************* */
+/* !!!!                    JOPLIN UI                    !!!! */
+/* ********************************************************* */
+
+
+
+
+/* --------------------------------------------------------- */
+/*                          LAYOUT                           */
+/* --------------------------------------------------------- */
+
+
+
+
+/* || LAYOUT 1/3 | CONTAINER ******************************* */
+/* CONTAINER > AAP ========================================= */
+#react-root > div:not(.master-password-dialog) > div,
+body {
+  background-color: var(--g-main-bg-color-1) !important;
+}
+
+/* editor panel > group column > not last ------------------ */
+#react-root > [class*="profile-"] .rli-root:nth-child(3) > [class*="rli-tempContainer-"] .rli-editor:first-child > div > div > div {
+  height: calc(100% + 5px) !important;
+}
+
+
+
+/* --------------------------------------------------------- */
+/*                      NOTEBOOK PANEL                       */
+/* --------------------------------------------------------- */
+
+
+
+
+/* || NOTEBOOK PANEL 1/4 | HEADER ************************** */
+/* header container ---------------------------------------- */
+.sidebar > div:first-child > div:first-child {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  margin-bottom: 8px;
+  min-height: 35px;
+  max-height: 35px;
+  background: var(--g-panel-header-bg-color);
+  z-index: 2;
+}
+/* header content ------------------------------------------ */
+.sidebar > div:first-child > div:first-child > div > .icon-notebooks,
+.sidebar > div:first-child > div:first-child > div > .icon-notebooks ~ span,
+.sidebar > div:first-child > div:first-child > button > span {
+  position: absolute;
+  color: var(--g-panel-header-text-color);
+  text-shadow: 0 0 3px var(--g-panel-header-text-shadow);
+  cursor: pointer;
+}
+.sidebar > div:first-child > div:first-child > div > .icon-notebooks {
+  top: 9px;
+  left: 6px;
+}
+.sidebar > div:first-child > div:first-child > div > .icon-notebooks ~ span {
+  top: 11px;
+  left: 29px;
+}
+/* new notebook button ------------------------------------- */
+.sidebar > div:first-child > div:first-child > button > span {
+  top: 4px;
+  left: 115px;
+  padding: 9px;
+  font-size: 12px;
+}
+/* new notebook button hover > icon ------------------------ */
+.sidebar > div:first-child > div:first-child > button:hover > span {
+  transform: rotate(1turn);
+  transition: transform 0.3s;
+}
+
+
+
+/* || NOTEBOOK PANEL 2/4 | BODY **************************** */
+/* BODY > ALL NOTES BUTTON ================================= */
+/* button container ---------------------------------------- */
+.sidebar .all-notes {
+  padding-left: 0px;
+}
+/* button icon --------------------------------------------- */
+.sidebar .all-notes > .icon-notes {
+  margin: 0 4px 0 -4px;
+  font-size: 13px;
+  color: var(--g-item-text-color-2);
+}
+/* button text --------------------------------------------- */
+.sidebar .all-notes > a {
+  width: 8px;
+  min-width: 8px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--g-item-text-color-2);
+}
+
+/* BODY > NOTEBOOK LIST ==================================== */
+/* notebook list container --------------------------------- */
+.sidebar > div:first-child {
+  padding-bottom: 10px;
+  background-color: var(--g-main-bg-color-1);
+}
+
+/* BODY > NOTEBOOK ITEM ==================================== */
+/* notebook item container --------------------------------- */
+.sidebar .list-item-container {
+  border-radius: 4px 9px;
+}
+.sidebar .list-item-container,
+.sidebar .list-item-container > .list-item {
+  margin: 0 5px 0 4px;
+  height: auto;
+  min-height: 33px;
+  transition: background 0.3s;
+}
+/* notebook item ------------------------------------------- */
+.sidebar .list-item-container > .list-item {
+  display: flex;
+  border-bottom: 1px solid var(--g-item-divider-color);
+  overflow-x: scroll;
+}
+.sidebar .list-item-container:hover {
+  background-color: var(--g-item-bg-color-hover);
+  filter: 0 0 2px drop-shadow(var(--g-item-shadow-hover));
+  transition: background 0s;
+}
+.sidebar .list-item-container:hover > .list-item {
+  border-color: var(--g-item-bg-color-hover);
+}
+.sidebar .list-item-container.selected {
+  background-color: var(--g-item-bg-color-selected);
+}
+.sidebar .list-item-container.selected > .list-item {
+  border-color: var(--g-item-bg-color-selected);
+}
+/* notebook title ------------------------------------------ */
+.sidebar .list-item-container > .list-item > .title {
+  display: block;
+  margin: 4px 0;
+  width: 100%;
+  line-height: normal !important;
+  color: var(--g-item-text-color);
+  overflow-y: hidden;
+  white-space: normal;
+}
+/* directory icon ------------------------------------------ */
+.sidebar i.fas.fa-caret-down,
+.sidebar i.fas.fa-caret-right {
+  opacity: 1 !important;
+}
+.sidebar i.fas.fa-caret-right {
+  color: var(--s-directory-icon-close-color);
+  filter: drop-shadow(0 0 2px var(--s-directory-icon-close-shadow));
+}
+.sidebar i.fas.fa-caret-down {
+  color: var(--s-directory-icon-open-color);
+  filter: drop-shadow(0 0 0px var(--s-directory-icon-open-shadow));
+}
+/* note count label ---------------------------------------- */
+.sidebar .note-count-label {
+  position: -webkit-sticky;
+  position: sticky;
+  right: 0;
+  margin: 0 3px 0 10px;
+  padding: 0 6px !important;
+  min-height: 15px;
+  max-height: 15px;
+  font-size: 10px;
+  color: var(--s-note-count-label-text-color);
+  background-color: var(--s-note-count-label-bg-color);
+  border: 1px solid var(--s-note-count-label-bd-color);
+  border-radius: 2em;
+  filter: 0 0 1px drop-shadow(var(--s-note-count-label-shadow));
+  opacity: 1 !important;
+  z-index: 1;
+}
+
+/* BODY > NOTEBOOK ITEM INDENT ============================= */
+.sidebar .list-item-depth-0:not(.all-notes) {
+  padding-left: 8px;
+}
+.sidebar .list-item-depth-1 {
+  padding-left: 18px;
+}
+.sidebar .list-item-depth-2 {
+  padding-left: 28px;
+}
+.sidebar .list-item-depth-3 {
+  padding-left: 38px;
+}
+.sidebar .list-item-depth-4 {
+  padding-left: 48px;
+}
+.sidebar .list-item-depth-5 {
+  padding-left: 58px;
+}
+.sidebar .list-item-depth-6 {
+  padding-left: 68px;
+}
+.sidebar .list-item-depth-7 {
+  padding-left: 78px;
+}
+.sidebar .list-item-depth-8 {
+  padding-left: 88px;
+}
+.sidebar .list-item-depth-9 {
+  padding-left: 98px;
+}
+.sidebar .list-item-depth-10 {
+  padding-left: 108px;
+}
+.sidebar .list-item-depth-11 {
+  padding-left: 118px;
+}
+.sidebar .list-item-depth-12 {
+  padding-left: 128px;
+}
+.sidebar .list-item-depth-13 {
+  padding-left: 138px;
+}
+.sidebar .list-item-depth-14 {
+  padding-left: 148px;
+}
+.sidebar .list-item-depth-15 {
+  padding-left: 158px;
+}
+
+/* NOTEBOOK PANEL: BODY > TAG LIST ========================= */
+/* divide title container ---------------------------------- */
+.sidebar > div > div:nth-child(3) > div {
+  padding: 10px 0 15px 0;
+}
+/* divide title -------------------------------------------- */
+.sidebar .icon-tags,
+.sidebar .icon-tags ~ span {
+  color: var(--g-item-text-color-2);
+}
+.sidebar .icon-tags {
+  padding-left: 7px;
+  font-size: 16px;
+}
+.sidebar .icon-tags ~ span {
+  margin: 0 0 0 -1px !important;
+}
+/* tag list ------------------------------------------------ */
+.sidebar .tags .list-item-container {
+  padding-left: 7px !important;
+}
+/* tag item ------------------------------------------------ */
+.sidebar .tag-label {
+  width: 100%;
+  color: var(--g-item-text-color-2);
+}
+
+
+
+/* || NOTEBOOK PANEL 3/4 | FOOTER ************************** */
+/* footer container ---------------------------------------- */
+.sidebar > div:last-child {
+  padding: 5px !important;
+  background: var(--g-main-bg-color-1);
+}
+
+/* FOOTER > SYNC INFO ====================================== */
+/* sync info text ------------------------------------------ */
+.sidebar > div:last-child > div > div {
+  color: var(--s-sync-info-text-color);
+}
+/* sync info symbol ---------------------------------------- */
+.sidebar > div:last-child > div > div::before {
+  content: "";
+  margin-right: 5px;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  vertical-align: baseline;
+  background: var(--s-sync-info-symbol-color);
+  border-radius: 1em;
+
+}
+
+/* FOOTER > SYNC BUTTON ==================================== */
+/* sync button --------------------------------------------- */
+.sidebar > div:last-child > button {
+  margin: 10px 0 4px 0;
+  padding-bottom: 1px;
+  min-height: 22px;
+  max-height: 22px;
+  background: var(--s-sync-btn-bg-color);
+  border: 1px solid var(--s-sync-btn-bd-color);
+  border-radius: 1em;
+  transition: background 0.5s, border-color 0.5s;
+}
+.sidebar > div:last-child > button:hover {
+  background: var(--s-sync-btn-bg-color-hover);
+  border-color: var(--s-sync-btn-bd-color-hover);
+  transition: background 0.5s, border-color 0.5s;
+
+}
+/* sync button text ---------------------------------------- */
+.sidebar > div:last-child > button > span {
+  color: var(--s-sync-btn-text-color);
+}
+.sidebar > div:last-child > button:hover > span {
+  color: var(--s-sync-btn-text-color-hover);
+}
+/* sync button icon ---------------------------------------- */
+.sidebar .icon-sync {
+  font-size: 15px;
+  text-shadow: var(--s-sync-btn-icon-text-shadow);
+  transition: font-size 0.8s, text-shadow 0.8s;
+}
+.sidebar > div > button:hover .icon-sync {
+  font-size: 18px;
+  text-shadow: 0 0 3px var(--s-sync-btn-icon-text-shadow-hover) !important;
+  transform: rotateZ(22000deg);
+  transition: transform 20s, font-size 1s, text-shadow 3s;
+}
+
+
+
+/* || NOTEBOOK PANEL 4/4 | SCROLLBAR *********************** */
+.rli-sideBar ::-webkit-scrollbar {
+  height: 1px !important;
+  width: 1px !important;
+}
+.rli-sideBar .list-item::-webkit-scrollbar {
+  display: none;
+}
+.rli-sideBar :hover::-webkit-scrollbar {
+  height: 6px !important;
+  width: 3px !important;
+}
+.rli-sideBar ::-webkit-scrollbar-thumb {
+  background: var(--g-scrollbar-thumb-bg-color-1);
+}
+.rli-sideBar ::-webkit-scrollbar-track {
+  background: var(--g-scrollbar-track-bg-color-1);
+}
+
+
+
+
+/* --------------------------------------------------------- */
+/*                      NOTE LIST PANEL                      */
+/* --------------------------------------------------------- */
+
+
+
+
+/* || NOTE LIST PANEL 1/4 | ANIMATIONS ********************* */
+@keyframes rtl-auto {
+  0% {transform: translateX(0%);}
+  100% {transform: translateX(-70%);}
+}
+
+
+
+/* || NOTE LIST PANEL 2/4 | HEADER ************************* */
+/* header container ---------------------------------------- */
+.rli-noteList > div > div > div[height="50"] {
+  min-height: 35px;
+  max-height: 35px;
+  padding: 5px;
+  background: var(--g-panel-header-bg-color);
+}
+
+/* HEADER > SEARCH BAR ===================================== */
+/* input --------------------------------------------------- */
+.rli-noteList .search-bar > div > input,
+.rli-noteList .search-bar > div > input:focus {
+  margin: 1px 6px 0 0;
+  height: 24px;
+  color: var(--g-input-text-color-1);
+  background: var(--g-input-bg-color-1);
+  caret-color: var(--g-input-text-color-1);
+  border: 1px solid var(--g-input-bd-color-1);
+  border-radius: 7px;
+}
+/* search button ------------------------------------------- */
+.rli-noteList .search-bar > div > input ~ button {
+  top: 1px;
+}
+.rli-noteList .search-bar > div > input ~ button > .icon-search {
+  margin: 0 6px 0 0;
+  font-size: 16px;
+  color: var(--s-notelist-search-btn-color);
+}
+/* close button -------------------------------------------- */
+.rli-noteList .search-bar > div > input ~ button > .fa-times {
+  margin: -1px 5px 0 0;
+  padding: 3px;
+  font-size: 16px;
+  color: var(--s-notelist-search-btn-color);
+}
+.rli-noteList .search-bar > div > input ~ button > .fa-times:hover {
+  transform: rotate(1turn);
+  transition: transform 0.3s;
+}
+
+/* HEADER > BUTTON ========================================= */
+/* button container ---------------------------------------- */
+.rli-noteList .search-bar ~ div {
+  max-width: 0;
+  transition: max-width 1s;
+  transition-delay: 1.2s;
+}
+.rli-noteList > div > div > div:hover .search-bar ~ div {
+  max-width: 100%;
+  transition: max-width 0.5s;
+}
+/* button -------------------------------------------------- */
+.rli-noteList .sort-order-field-button,
+.rli-noteList .sort-order-reverse-button,
+.rli-noteList .new-todo-button,
+.rli-noteList .new-note-button {
+  margin: 0 3px;
+  max-width: 26px;
+  min-width: 26px;
+  max-height: 26px;
+  min-height: 26px;
+  background: var(--g-lighter-square-btn-bg-color);
+  border: 0px solid var(--g-lighter-square-btn-bd-color);
+  border-radius: 0px;
+  transition: background 0.8s, border 0.8s, border-radius 0.8s;
+}
+.rli-noteList .sort-order-field-button:hover,
+.rli-noteList .sort-order-reverse-button:hover,
+.rli-noteList .new-todo-button:hover,
+.rli-noteList .new-note-button:hover {
+  background: var(--g-lighter-square-btn-bg-color-hover);
+  border: 2px solid var(--g-lighter-square-btn-bd-color-hover);
+  border-radius: 7px;
+  transition: background, 0.3s, border 0.1s, border-radius 0.3s;
+}
+/* button icon --------------------------------------------- */
+.rli-noteList .sort-order-field-button > span,
+.rli-noteList .sort-order-reverse-button > span,
+.rli-noteList .new-todo-button > span,
+.rli-noteList .new-note-button > span {
+  color: var(--g-lighter-square-btn-icon-color) !important;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+.rli-noteList .new-todo-button > span {
+  font-size: 17px !important;
+}
+.rli-noteList .new-note-button > span {
+  font-size: 20px !important;
+}
+.rli-noteList .sort-order-field-button:hover > span,
+.rli-noteList .sort-order-reverse-button:hover > span,
+.rli-noteList .new-todo-button:hover > span,
+.rli-noteList .new-note-button:hover > span {
+  color: var(--g-lighter-square-btn-icon-color-hover) !important;
+}
+
+
+
+/* || NOTE LIST PANEL 3/4 | BODY *************************** */
+/* BODY > NOTE LIST ======================================== */
+/* note list container ------------------------------------- */
+#react-root > div > div > .rli-root:nth-child(3) .rli-noteList > div > div > div:last-child {
+  background: var(--g-main-bg-color-1);
+}
+/* note list ----------------------------------------------- */
+.item-list.note-list {
+  display: block;
+  padding: 3px 0 0 5px;
+  height: 100% !important;
+}
+
+/* BODY > NOTE & TODO ITEM ================================= */
+/* item container ------------------------------------------ */
+.note-list > .list-item-container {
+  border-radius: 4px 9px;
+  max-width: calc(100% - 3px) !important;
+}
+/* item divider -------------------------------------------- */
+.rli-noteList .note-list-item::before,
+.todo-list-item::before {
+  width: calc(100% - 22px);
+  border-color: var(--g-item-divider-color);
+}
+
+/* BODY > TODO ITEM ======================================== */
+/* todo list item container -------------------------------- */
+.rli-noteList .todo-list-item {
+  background: none;
+  transition: background 0.3s;
+}
+/* todo list item container hover -------------------------- */
+.rli-noteList .todo-list-item:hover {
+  background: var(--g-item-bg-color-hover) !important;
+  filter: 0 0 2px drop-shadow(var(--g-item-shadow-hover));
+  transition: background 0s;
+}
+/* todo list item container selected ----------------------- */
+.rli-noteList .todo-list-item.selected {
+  background: var(--g-item-bg-color-selected) !important;
+}
+.rli-noteList .todo-list-item.selected::before {
+  border-color: var(--g-item-bg-color-selected);
+}
+/* todo list item text ------------------------------------- */
+.rli-noteList .todo-list-item > a > span {
+  color: var(--s-todo-text-color);
+}
+/* todo list item hover > text ----------------------------- */
+.rli-noteList .todo-list-item > a:hover > span {
+  animation: rtl-auto 4s linear 0.6s infinite;
+}
+/* checkbox ------------------------------------------------ */
+.rli-noteList .todo-list-item  input[type="checkbox"] {
+  filter: hue-rotate(calc(var(--usp-remoods-hue) + 145deg));
+}
+
+/* BODY > NOTE ITEM ======================================== */
+/* note list item container -------------------------------- */
+.rli-noteList .note-list-item {
+  background: none;
+  transition: background 0.3s;
+}
+/* note list item hover ------------------------------------ */
+.rli-noteList .note-list-item:hover {
+  background: var(--g-item-bg-color-hover) !important;
+  filter: 0 0 2px drop-shadow(var(--g-item-shadow-hover));
+  transition: background 0s;
+}
+/* note list item selected --------------------------------- */
+.rli-noteList .note-list-item.selected {
+  background: var(--g-item-bg-color-selected);
+}
+/* note list item text ------------------------------------- */
+.rli-noteList .note-list-item > a > span {
+  color: var(--g-item-text-color);
+  opacity: 0.8;
+}
+/* note list item hover > text ----------------------------- */
+.rli-noteList .note-list-item > a:hover > span {
+  animation: rtl-auto 4s linear 0.6s infinite;
+}
+
+
+
+/* || NOTE LIST PANEL 4/4 | SCROLLBAR ********************** */
+.rli-noteList ::-webkit-scrollbar {
+  height: 1px !important;
+  width: 1px !important;
+}
+.rli-noteList :hover::-webkit-scrollbar {
+  height: 6px !important;
+  width: 3px !important;
+}
+.rli-noteList ::-webkit-scrollbar-thumb {
+  background: var(--g-scrollbar-thumb-bg-color-1);
+}
+.rli-noteList ::-webkit-scrollbar-track {
+  background: var(--g-scrollbar-track-bg-color-1);
+}
+
+
+
+
+/* --------------------------------------------------------- */
+/*                       EDITOR PANEL                        */
+/* --------------------------------------------------------- */
+
+
+
+
+/* || EDITOR PANEL 1/3 | HEADER **************************** */
+/* header container ---------------------------------------- */
+#react-root > div > div > .rli-root:nth-child(3) .rli-editor > div > div > div > div:first-child {
+  min-height: 35px !important;
+  max-height: 35px !important;
+  background: var(--g-panel-header-bg-color) !important;
+}
+
+/* HEADER > TITLE INPUT ==================================== */
+.title-input {
+  padding: 0 0 0 20px !important;
+  max-height: 35px !important;
+  min-height: 35px !important;
+  color: var(--g-panel-header-text-color) !important;
+  text-shadow: 0 0 3px var(--g-panel-header-text-shadow);
+  background: var(--g-panel-header-bg-color) !important;
+  transition: opacity 0.8s;
+}
+.rli-editor .title-input:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+/* HEADER > SIDE TOOLBAR ==================================== */
+/* side toolbar container ----------------------------------- */
+.title-input ~ div {
+  width: 0;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  overflow: hidden;
+  transition: width 1s;
+  transition-delay: 1.2s;
+}
+.rli-editor .title-input:hover ~ div,
+.rli-editor .title-input ~ div:hover {
+  width: 100%;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  transition: width 1s;
+}
+/* updated time label -------------------------------------- */
+.updated-time-label {
+  margin-right: 3px;
+  padding: 3px 8px 0 0;
+  color: var(--s-update-time-label-text-color) !important;
+  background: var(--s-update-time-label-bg-color);
+  border-radius: 1em;
+}
+/* button container ---------------------------------------- */
+.updated-time-label ~ .editor-toolbar {
+  padding: 0 10px 0 0 !important;
+  background: none !important;
+}
+/* button -------------------------------------------------- */
+.updated-time-label ~ .editor-toolbar a {
+  margin: 0 1px;
+  background: var(--g-lighter-square-btn-bg-color);
+  border: 0px solid var(--g-lighter-square-btn-bd-color);
+  border-radius: 0px;
+  transition: background 0.8s, border 0.8s, border-radius 0.8s;
+}
+.updated-time-label ~ .editor-toolbar a:hover {
+  background: var(--g-lighter-square-btn-bg-color-hover);
+  border: 2px solid var(--g-lighter-square-btn-bd-color-hover);
+  border-radius: 7px;
+  transition: background 0.3s, border 0.1s, border-radius 0.3s;
+}
+/* spell checker button ------------------------------------ */
+.updated-time-label ~ .editor-toolbar a[title="Spell checker"] {
+  box-sizing: border-box;
+  width: 50px;
+}
+/* button icon --------------------------------------------- */
+.updated-time-label ~ .editor-toolbar > div:nth-child(2) > a,
+.updated-time-label ~ .editor-toolbar > div:nth-child(2) > a > i,
+.updated-time-label ~ .editor-toolbar > div:nth-child(2) > a > span {
+  color: var(--g-lighter-square-btn-icon-color);
+}
+.updated-time-label ~ .editor-toolbar > div:nth-child(2) > a:hover,
+.updated-time-label ~ .editor-toolbar > div:nth-child(2) > a:hover > i,
+.updated-time-label ~ .editor-toolbar > div:nth-child(2) > a:hover > span {
+  color: var(--g-lighter-square-btn-icon-color-hover);
+}
+
+/* HEADER > NOTEBOOK NAVIGATION BUTTON ===================== */
+/* notebook navigation button container -------------------- */
+.rli-editor > div > div > div > div:nth-child(2)[style="padding-top: 10px; padding-bottom: 10px; padding-left: 8px;"] {
+  position: relative;
+  top: 5px;
+  left: 5px;
+  margin: 0px !important;
+  padding: 0 0 0 6px !important;
+}
+/* notebook navigation button ------------------------------ */
+.rli-editor > div > div > div > div:nth-child(2)[style="padding-top: 10px; padding-bottom: 10px; padding-left: 8px;"] > button {
+  padding: 0 10px;
+  min-height: 28px;
+  max-height: 28px;
+  background: var(--s-notebook-nav-btn-bg-color);
+  border: 1px solid var(--s-notebook-nav-btn-bd-color);
+  border-radius: 7px;
+  box-shadow: 0 0 3px var(--s-notebook-nav-btn-shadow);
+}
+/* notebook navigation button > text ----------------------- */
+.rli-editor > div > div > div > div:nth-child(2)[style="padding-top: 10px; padding-bottom: 10px; padding-left: 8px;"] > button > span {
+  color: var(--s-notebook-nav-btn-text-color);
+}
+
+
+
+/* || EDITOR PANEL 2/3 | BODY ****************************** */
+/* body container ------------------------------------------ */
+#react-root > div > div > .rli-root:nth-child(3) .rli-editor > div > div > div > div {
+  padding-left: 0px !important;
+}
+/* editor container ---------------------------------------- */
+.rli-editor > div > div > div > div:nth-child(2) > div:not(.joplin-tinymce) > div:nth-child(2) {
+  padding: 0 !important;
+}
+/* editor divider ------------------------------------------ */
+.rli-editor > div > div > div > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) {
+  border-left: 1px solid var(--g-editor-panel-divider-color) !important;
+}
+
+/* BODY > TOOLBAR ========================================== */
+/* toolbar ------------------------------------------------- */
+.rli-editor > div > div > div > div > div > div > .editor-toolbar {
+  position: absolute;
+  margin: 5px 0 0 6px !important;
+  padding: 3px 3px 2px 3px !important;
+  width: calc(100% - 12px);
+  height: 0;
+  background: var(--g-toolbar-bg-color) !important;
+  border-radius: 7px;
+  border: 1px solid var(--g-toolbar-bd-color);
+  filter: drop-shadow(0 0 2px var(--g-toolbar-bg-shadow));
+  overflow: hidden;
+  opacity: 0;
+  visibility: collapse;
+  transition: height 1s, opacity 1s, visibility 1s;
+  transition-delay: 1.2s;
+  z-index: 99;
+}
+.rli-editor > div > div > div > div:nth-child(1):hover ~ div:nth-child(2) > div > div:first-child > .editor-toolbar,
+.rli-editor > div > div > div > div > div > div > .editor-toolbar:hover {
+  height: 34px;
+  opacity: 1;
+  visibility: visible;
+  transition: height 0.1s, opacity 0.2s, visibility 0.2s;
+}
+/* toolbar button ------------------------------------------ */
+.rli-editor > div > div > div > div > div > div > .editor-toolbar > div > a {
+  margin: 0 1px;
+  background: var(--g-darker-square-btn-bg-color);
+  border: 0px solid var(--g-darker-square-btn-bd-color);
+  border-radius: 0px;
+  transition: background 0.8s, border 0.8s, border-radius 0.8s;
+}
+.rli-editor > div > div > div > div > div > div > .editor-toolbar > div > a:hover {
+  background: var(--g-darker-square-btn-bg-color-hover);
+  border: 2px solid var(--g-darker-square-btn-bd-color-hover);
+  border-radius: 7px;
+  transition: background 0.3s, border 0.1s, border-radius 0.3s;
+}
+/* toolbar button icon ------------------------------------- */
+.rli-editor > div > div > div > div > div > div > .editor-toolbar > div > a > span,
+.rli-editor > div > div > div > div > div > div > .editor-toolbar > div > a > i,
+.rli-editor > div > div > div > div > div > div > .editor-toolbar > div:last-child > button > div > i {
+  color: var(--g-darker-square-btn-icon-color) !important;
+}
+.rli-editor > div > div > div > div > div > div > .editor-toolbar > div > a:hover > span,
+.rli-editor > div > div > div > div > div > div > .editor-toolbar > div > a:hover > i,
+.rli-editor > div > div > div > div > div > div > .editor-toolbar > div:last-child > button:hover > div > i {
+  color: var(--g-darker-square-btn-icon-color-hover) !important;
+}
+/* editor toggle button ------------------------------------ */
+.rli-editor > div > div > div > div > div > div > .editor-toolbar > div:last-child > button {
+  padding: 4px 6px !important;
+  height: 27px;
+  background: var(--g-darker-square-btn-bg-color) !important;
+  border: 0px solid var(--g-darker-square-btn-bd-color) !important;
+  border-radius: 0px;
+  transition: background 0.8s, border 0.8s, border-radius 0.8s;
+}
+.rli-editor > div > div > div > div > div > div > .editor-toolbar > div:last-child > button:hover {
+  background: var(--g-darker-square-btn-bg-color-hover) !important;
+  border: 2px solid var(--g-darker-square-btn-bd-color-hover) !important;
+  border-radius: 7px;
+  transition: background 0.3s, border 0.1s, border-radius 0.3s;
+}
+/* editor toggle button icon ------------------------------- */
+.rli-editor > div > div > div > div > div > div > .editor-toolbar > div:last-child > button > div {
+  width: 30px !important;
+  background: none !important;
+  border-color: var(--g-darker-square-btn-icon-color) !important;
+}
+.rli-editor > div > div > div > div > div > div > .editor-toolbar > div:last-child > button:hover > div {
+  border-color: var(--g-darker-square-btn-icon-color-hover) !important;
+}
+
+/* BODY > TOOLBAR (RICH TEXT EDITOR) ======================= */
+/* rich text editor > toolbar container -------------------- */
+.joplin-tinymce:not(#fake) .tox-editor-header {
+  border-bottom: 1px solid var(--g-editor-panel-divider-color);
+}
+/* rich text editor > toolbar item container --------------- */
+.joplin-tinymce:not(#fake) > div:first-child,
+.joplin-tinymce:not(#fake) > div:nth-child(2) {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 34px !important;
+}
+.tox-editor-header:not(#fake),
+.tox-editor-header:not(#fake) > .tox-toolbar-overlord {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.tox-editor-header:not(#fake)  > .tox-toolbar-overlord > .tox-toolbar__primary {
+  padding-left:  82px !important;
+}
+.tox-editor-header:not(#fake)  > .tox-toolbar-overlord > .tox-toolbar__primary > div {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 34px;
+  max-height: 34px;
+}
+.joplin-tinymce:not(#fake) > div:first-child,
+.joplin-tinymce:not(#fake) > div:nth-child(2),
+.tox-editor-header:not(#fake)  > .tox-toolbar-overlord > .tox-toolbar__primary,
+.tox-editor-header:not(#fake)  > .tox-toolbar-overlord > .tox-toolbar__primary > div {
+  background: var(--g-toolbar-bg-color) !important;
+}
+/* rich text editor > toolbar button ----------------------- */
+.joplin-tinymce:not(#fake) > div:first-child > a {
+  margin-top: 4px;
+}
+.joplin-tinymce:not(#fake) button,
+.joplin-tinymce:not(#fake) a {
+  margin-left: 1px !important;
+  background: var(--g-darker-square-btn-bg-color);
+  border: 0px solid var(--g-darker-square-btn-bd-color);
+  border-radius: 0px;
+  transition: background 0.8s, border 0.8s, border-radius 0.8s;
+}
+.joplin-tinymce:not(#fake) button:hover,
+.joplin-tinymce:not(#fake) a:hover {
+  background: var(--g-darker-square-btn-bg-color-hover);
+  border: 2px solid var(--g-darker-square-btn-bd-color-hover);
+  border-radius: 7px;
+  transition: background 0.3s, border 0.1s, border-radius 0.3s;
+}
+/* rich text editor > toolbar button icon ------------------ */
+.joplin-tinymce:not(#fake) > div:first-child > a > span,
+.tox-toolbar__group:not(#fake) .tox-tbtn svg,
+.tox-toolbar__group:not(#fake) .tox-tbtn span {
+  color: var(--g-darker-square-btn-icon-color)  !important;
+  fill: var(--g-darker-square-btn-icon-color)  !important;
+}
+.joplin-tinymce:not(#fake) > div:first-child > a:hover > span,
+.tox-toolbar__group:not(#fake) .tox-tbtn:hover svg,
+.tox-toolbar__group:not(#fake) .tox-tbtn:hover span {
+  color: var(--g-darker-square-btn-icon-color-hover) !important;
+  fill: var(--g-darker-square-btn-icon-color-hover) !important;
+}
+/* rich text editor > editor toggle button ----------------- */
+.joplin-tinymce:not(#fake) > div:nth-child(2) > button {
+  padding: 3px 6px !important;
+  background: var(--g-darker-square-btn-bg-color) !important;
+  border: 0px solid var(--g-darker-square-btn-bd-color) !important;
+  border-radius: 0px;
+  transition: background 0.8s, border 0.8s, border-radius 0.8s;
+}
+.joplin-tinymce:not(#fake) > div:nth-child(2) > button:hover {
+  background: var(--g-darker-square-btn-bg-color-hover) !important;
+  border: 2px solid var(--g-darker-square-btn-bd-color-hover) !important;
+  border-radius: 7px;
+  transition: background 0.3s, border 0.1s, border-radius 0.3s;
+}
+/* rich text editor > editor toggle button > icon ---------- */
+.joplin-tinymce:not(#fake) > div:nth-child(2) > button > div {
+  background: none !important;
+  border-color: var(--g-darker-square-btn-icon-color) !important;
+}
+.joplin-tinymce:not(#fake) > div:nth-child(2) > button > div > i {
+  color: var(--g-darker-square-btn-icon-color) !important;
+}
+.joplin-tinymce:not(#fake) > div:nth-child(2) > button:hover > div {
+  border-color: var(--g-darker-square-btn-icon-color-hover) !important;
+}
+.joplin-tinymce:not(#fake) > div:nth-child(2) > button:hover > div > i {
+  color: var(--g-darker-square-btn-icon-color-hover) !important;
+}
+
+/* BODY > SEARCH BAR ======================================= */
+/* search bar container ------------------------------------ */
+.rli-editor > div > div > div > div:nth-last-child(2)[style="display: flex; flex-direction: row; align-items: center;"] {
+  position: absolute;
+  bottom: 23px;
+  left: 8px;
+}
+/* search bar ---------------------------------------------- */
+.note-search-bar {
+  position: relative;
+  padding: 10px;
+  height: 36px;
+  margin: 0 0 5px 1px;
+  background: var(--g-toolbar-bg-color);
+  border-radius: 7px;
+  border: 1px solid var(--g-toolbar-bd-color) !important;
+  filter: drop-shadow(0 0 2px var(--g-toolbar-shadow));
+  z-index: 99;
+}
+/* input bar ----------------------------------------------- */
+.note-search-bar input {
+  height: 23px;
+  padding-left: 6px;
+  color: var(--g-input-text-color-1) !important;
+  background: var(--g-input-bg-color-1) !important;
+  border: 1px solid var(--g-input-bd-color-1);
+  border-radius: 7px;
+}
+/* arrow button -------------------------------------------- */
+.note-search-bar > div > a:nth-child(3),
+.note-search-bar > div > a:nth-child(4) {
+  margin: 1px !important;
+  background: var(--g-darker-square-btn-bg-color) !important;
+  border: 2px solid var(--g-darker-square-btn-bd-color);
+  border-radius: 0px;
+  transition: background 0.8s, border 0.8s, border-radius 0.8s;
+}
+.note-search-bar > div > a:nth-child(4) {
+  margin-right: 5px !important;
+}
+.note-search-bar > div > a:nth-child(3):hover,
+.note-search-bar > div > a:nth-child(4):hover {
+  background: var(--g-darker-square-btn-bg-color-hover) !important;
+  border: 2px solid var(--g-darker-square-btn-bd-color-hover);
+  border-radius: 7px;
+  transition: background 0.3s, border 0.1s, border-radius 0.3s;
+}
+/* arrow button > icon ------------------------------------- */
+.note-search-bar > div > a:nth-child(3) > i,
+.note-search-bar > div > a:nth-child(4) > i {
+  padding: 5px;
+  width: 22px;
+  height: 22px;
+  color: var(--g-darker-square-btn-icon-color) !important;
+  opacity: 1 !important;
+}
+.note-search-bar > div > a:nth-child(3):hover > i,
+.note-search-bar > div > a:nth-child(4):hover > i {
+  color: var(--g-darker-square-btn-icon-color-hover) !important;
+}
+/* close button > icon ------------------------------------- */
+.note-search-bar > div > a:first-child > i {
+  color: var(--g-darker-square-btn-icon-color) !important;
+}
+.note-search-bar > div > a:first-child:hover > i {
+  color: var(--g-darker-square-btn-icon-color) !important;
+  transform: rotate(1turn);
+  transition: transform 0.3s;
+}
+/* search target count numbers ----------------------------- */
+.note-search-bar > div > div {
+  color: var(--g-darker-square-btn-icon-color) !important;
+  background: none !important;
+}
+
+/* BODY > BATCH MENU ======================================= */
+/* button -------------------------------------------------- */
+.rli-editor > div > div[style="display: inline-flex; justify-content: center; padding-top: 15px; width: 100%;"] > div > button {
+  color: var(--s-batch-menu-btn-text-color) !important;
+  background: var(--s-batch-menu-btn-bg-color) !important;
+  border: 1px solid var(--s-batch-menu-btn-bd-color) !important;
+  border-radius: 7px !important;
+}
+.rli-editor > div > div[style="display: inline-flex; justify-content: center; padding-top: 15px; width: 100%;"] > div > button:hover {
+  filter: brightness(120%);
+}
+
+
+
+/* || EDITOR PANEL 3/3 | FOOTER **************************** */
+/* FOOTER > TAG BAR ======================================== */
+/* tag bar container --------------------------------------- */
+.tag-bar {
+  height: 27px;
+  min-height: 27px;
+  max-height: 27px;
+  background: var(--g-main-bg-color-1);
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: var(--g-editor-panel-divider-color);
+  transition: height 0.8s, max-height 0.8s, min-height 0.8s;
+}
+.tag-bar:hover {
+  height: 50px;
+  min-height: 50px;
+  max-height: 50px;
+  transition: height 0.3s, max-height 0.3s, min-height 0.3s;
+}
+/* tag list container -------------------------------------- */
+.tag-bar > div {
+  margin: 0 15px 0 0;
+  max-height: 30px;
+  overflow: scroll !important;
+}
+.tag-bar .tag-list {
+  padding: 0 !important; 
+}
+/* tag button ---------------------------------------------- */
+.tag-bar > a {
+  margin: 0 0 0 5px;
+  background: var(--g-darker-square-btn-bg-color);
+  border: 0px solid var(--g-darker-square-btn-bd-color) !important;
+  border-radius: 0px;
+  transition: background 0.8s, border 0.8s, border-radius 0.8s;
+}
+.tag-bar > a:hover {
+  background: var(--g-darker-square-btn-bg-color-hover);
+  border: 2px solid var(--g-darker-square-btn-bd-color-hover) !important;
+  border-radius: 7px;
+  transition: background 0.3s, border 0.1s, border-radius 0.3s;
+}
+/* tag button icon ----------------------------------------- */
+.tag-bar .icon-tags {
+  padding: 0;
+  color: var(--g-darker-square-btn-icon-color);
+}
+.tag-bar > a:hover > .icon-tags {
+  color: var(--g-darker-square-btn-icon-color-hover);
+}
+/* tag ----------------------------------------------------- */
+.tag-bar > div > div > button {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 14px !important;
+  color: var(--s-tagbar-tag-text-color) !important;
+  background: none !important;
+  text-shadow: none;
+  transition: font-size 0.3s, color 0.3s, text-shadow 0.3s;
+}
+/* tag hover ----------------------------------------------- */
+.tag-bar > div > div > button:hover {
+  font-size: 18px !important;
+  color: var(--g-tag-bar-tag-text-color) !important;
+  text-shadow: -1px -1px 2px var(--s-tagbar-tag-text-shadow-hover), 
+                1px -1px 2px var(--s-tagbar-tag-text-shadow-hover),
+               -1px  1px 2px var(--s-tagbar-tag-text-shadow-hover), 
+                1px  1px 2px var(--s-tagbar-tag-text-shadow-hover);
+  transition: font-size 0.3s, color 0.1s, text-shadow 0.6s;
+}
+/* tag divider --------------------------------------------- */
+.tag-bar > div > div > button:after {
+  content: "|";
+  display: block;
+  margin: 0 10px 4px 10px;
+  font-weight: 100;
+  font-size: 20px;
+  color: var(--s-tagbar-tag-divider-color);
+}
+/* tag bar hint -------------------------------------------- */
+.tag-bar > div > span {
+  color: var(--s-tagbar-hint-text-color) !important;
+}
+/* tag bar scrollbar --------------------------------------- */
+.tag-bar ::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
+/* --------------------------------------------------------- */
+/*                       MODAL DIALOG                        */
+/* --------------------------------------------------------- */
+
+
+
+
+/* || POPUP DIALOG 1/3 | TAG CREATOR *********************** */
+/* tag creator container ----------------------------------- */
+.modal-layer > .modal-dialog,
+.modal-layer > .modal-dialog > div {
+  background: var(--s-modal-dialog-bg-color) !important;
+  border-radius: 7px;
+}
+/* label --------------------------------------------------- */
+.modal-layer > .modal-dialog > label {
+  color: var(--s-modal-dialog-label-color) !important;
+}
+
+/* TAG CREATOR > TAG SELECTOR ============================== */
+/* tags selector container --------------------------------- */
+.modal-layer > .modal-dialog .tag-selector > div {
+  margin: 5px 0 0 0;
+  background: var(--s-tag-selector-bg-color);
+  border: 1px solid var(--s-tag-selector-bd-color);
+  border-radius: 7px;
+}
+/* tags selector input ------------------------------------- */
+.modal-layer > .modal-dialog .tag-selector input[id*="react-select-"] {
+  font-size: 110% !important;
+  color: var(--s-tag-selector-input-text-color) !important;
+}
+/* tag list divider ---------------------------------------- */
+.modal-layer > .modal-dialog .tag-selector span {
+  background: var(--s-tag-selector-divider-color) !important;
+}
+/* tag list button icon ------------------------------------ */
+.modal-layer > .modal-dialog .tag-selector > div > div:last-child svg {
+  color: var(--s-tag-selector-text-color);
+}
+/* tags ---------------------------------------------------- */
+.modal-layer > .modal-dialog .tag-selector div[class$="-multiValue"] {
+  margin: 0;
+  background: none;
+}
+/* tags text ----------------------------------------------- */
+.modal-layer > .modal-dialog .tag-selector div[class$="-multiValue"] > div:first-child {
+  font-size: 110%;
+  color: var(--s-tag-selector-text-color);
+}
+/* tag delete button --------------------------------------- */
+.modal-layer > .modal-dialog .tag-selector div[class$="-multiValue"] > div:last-child {
+  color: var(--s-tag-selector-text-color);
+}
+
+/* TAG CREATOR > CONFIRM BUTTON ============================ */
+/* button -------------------------------------------------- */
+.modal-layer > .modal-dialog > div:last-of-type > button {
+  min-width: 80px !important;
+  color: var(--s-modal-dialog-confirm-btn-text-color) !important;
+  background: var(--s-modal-dialog-confirm-btn-bg-color) !important;
+  border: 1px solid var(--s-modal-dialog-confirm-btn-bd-color) !important;
+  border-radius: 7px;
+}
+.modal-layer > .modal-dialog > div:last-of-type > button:hover {
+  filter: brightness(120%);
+}
+
+
+
+/* MODAL DIALOG 2/3 | COMMAND PALETTE ********************** */
+/* input --------------------------------------------------- */
+.modal-layer > .modal-dialog > div > input {
+  margin-bottom: 10px;
+  min-height: 30px;
+  max-height: 30px;
+  font-size: 16px;
+  color: var(--g-input-text-color-1) !important;
+  background: var(--g-input-bg-color-1) !important;
+  border: 1px solid var(--g-input-bd-color-1) !important;
+  border-radius: 7px;
+}
+
+/* COMMAND PALETTE > COMMAND LIST ========================== */
+.modal-layer > .modal-dialog > div:nth-child(2) {
+  border-radius: 0px;
+}
+/* item list ----------------------------------------------- */
+.modal-layer > .modal-dialog > div ~ .item-list {
+  background: var(--s-command-palette-item-bg-color) !important;
+}
+.modal-layer > .modal-dialog > div ~ .item-list .selected {
+  background: var(--s-command-palette-item-bg-color-selected) !important;
+}
+/* item container ------------------------------------------ */
+.modal-layer > .modal-dialog > div ~ .item-list > div {
+  border-bottom: 1px solid var(--s-command-palette-item-bd-color) !important;
+}
+/* item text ----------------------------------------------- */
+.modal-layer > .modal-dialog > div ~ .item-list * {
+  font-size: 16px !important;
+  color: var(--s-command-palette-item-text-color) !important;
+}
+
+
+
+/* || POPUP DIALOG 3/3 | NOTEBOOK CREATOR ****************** */
+/* container ----------------------------------------------- */
+.master-password-dialog > div,
+.master-password-dialog .dialog-root,
+.master-password-dialog .dialog-root > div {
+  background: var(--s-modal-dialog-bg-color) !important;
+  border-radius: 7px;
+}
+
+/* NOTEBOOK CREATOR > TITLE INPUT ========================== */
+/* title --------------------------------------------------- */
+.master-password-dialog .dialog-root > div:first-child {
+  color: var(--s-modal-dialog-title-text-color);
+  background: var(--s-modal-dialog-bg-color) !important;
+}
+/* label --------------------------------------------------- */
+.master-password-dialog .dialog-root label {
+  color: var(--s-modal-dialog-title-text-color);
+}
+/* input --------------------------------------------------- */
+.master-password-dialog .dialog-root input {
+  color: var(--g-input-text-color-1);
+  background: var(--g-input-bg-color-1);
+  border: 1px solid var(--g-input-bd-color-1);
+  border-radius: 7px;
+}
+
+/* NOTEBOOK CREATOR > ICON SELECTOR ======================== */
+/* button -------------------------------------------------- */
+.icon-selector-row > button {
+  background: var(--s-notebook-creator-icon-select-btn-bg-color);
+  border: 2px solid var(--s-notebook-creator-icon-select-btn-bd-color);
+  border-radius: 7px !important;
+}
+.icon-selector-row > button > span {
+  color: var(--s-notebook-creator-icon-select-btn-text-color) !important;
+}
+
+/* NOTEBOOK CREATOR > CONFIRM BUTTON ======================= */
+/* button -------------------------------------------------- */
+.master-password-dialog > div > .dialog-root > div:nth-child(3) > button {
+  min-width: 80px !important;
+  color: var(--s-modal-dialog-confirm-btn-text-color) !important;
+  background: var(--s-modal-dialog-confirm-btn-bg-color) !important;
+  border: 1px solid var(--s-modal-dialog-confirm-btn-bd-color) !important;
+  border-radius: 7px !important;
+}
+.master-password-dialog > div > .dialog-root > div:nth-child(3) > button:hover {
+  filter: brightness(120%);
+}
+
+
+
+
+/* --------------------------------------------------------- */
+/*                      OPTION PANEL                         */
+/* --------------------------------------------------------- */
+
+
+
+
+/* || OPTION PANEL 1/6 | MENU ****************************** */
+/* menu container ------------------------------------------ */
+.config-screen > div:first-child {
+  background: var(--g-main-bg-color-1);
+}
+/* option menu item ---------------------------------------- */
+.config-screen > div:first-child > a:hover {
+  background: var(--g-item-bg-color-hover);
+  box-shadow: 0 0 2px var(--g-item-shadow-hover);
+}
+.config-screen > div:first-child > a.hWxWTS,/* light theme selected */
+.config-screen > div:first-child > a.kpFtJJ/* dark theme selected */ {
+  background: var(--g-item-bg-color-selected);
+}
+/* option menu item > icon & text -------------------------- */
+.config-screen > div:first-child > a > i,
+.config-screen > div:first-child > a > span {
+  color: var(--g-item-text-color);
+}
+/* option split menu title --------------------------------- */
+.config-screen > div:first-child > div {
+  background: var(--s-option-menu-sub-title-bg-color);
+  --s-option-menu-sub-title-bg-color: hsl(var(--usp-remoods-hue), 0%, 0%);
+}
+
+
+
+/* || OPTION PANEL 2/6 | MAIN ****************************** */
+/* main container ------------------------------------------ */
+.config-screen > div:nth-child(2),
+.config-screen-content-wrapper,
+.config-screen-content-wrapper > div > div  {
+  background: var(--g-option-main-bg-color) !important;
+}
+
+/* MAIN > GUIDE ============================================ */
+.config-screen > div:nth-child(2) > div > div > div[style="font-family: Roboto; font-size: 12px; line-height: 1.6em; color: rgb(50, 55, 63); margin-bottom: 15px;"],
+.config-screen > div:nth-child(2) > div > div > div[style="font-family: Roboto; font-size: 12px; line-height: 1.6em; color: rgb(221, 221, 221); margin-bottom: 15px;"] {
+  padding: 5px 10px;
+  color: var(--s-option-guide-text-color) !important;
+  background: var(--s-option-guide-bg-color) !important;
+  border-radius: 7px;
+}
+
+/* MAIN > LABEL ============================================ */
+.config-screen > div:nth-child(2) label,
+.config-screen div[style="margin-bottom: 5px;"] > div {
+  color: var(--s-option-label-text-color) !important;
+}
+
+/* MAIN > SELECT & INPUT =================================== */
+.config-screen > div:nth-child(2) input,
+.config-screen > div:nth-child(2) select {
+  color: var(--op-input-color) !important;
+  background: var(--g-input-bg-color-1) !important;
+  border: 1px solid var(--g-input-bd-color-1) !important;
+  border-radius: 7px !important;
+}
+
+/* MAIN > CHECKBOX ========================================= */
+.config-screen > div:nth-child(2) [type^="checkbox"] {
+  filter: hue-rotate(calc(var(--usp-remoods-hue) + 145deg));
+}
+/* checkbox text ------------------------------------------- */
+.config-screen > div:nth-child(2) [type^="checkbox"] ~ label {
+  color: var(--s-option-label-text-color) !important;
+}
+
+/* MAIN > BUTTON =========================================== */
+.config-screen > div:nth-child(2) > div:not(:last-child) button:not(div[style="margin-bottom: 10px; width: 320px;"] input ~ button) {
+  background: var(--s-option-btn-bg-color) !important;
+  border: 2px solid var(--s-option-btn-bd-color) !important;
+  border-radius: 7px !important;
+}
+.config-screen > div:nth-child(2) > div:not(:last-child) button:hover:not(div[style="margin-bottom: 10px; width: 320px;"] input ~ button) {
+  filter: brightness(120%);
+}
+/* button text --------------------------------------------- */
+.config-screen > div:nth-child(2) > div:not(:last-child) button > span,
+.config-screen > div:nth-child(2) > div:not(:last-child) button {
+  color: var(--s-option-btn-text-color) !important;
+}
+
+/* MAIN > DESCRIPTION ====================================== */
+.config-screen > div:nth-child(2) div[style*="font-style: italic;"] {
+  font-size: 13px !important;
+  color: var(--s-option-description-text-color) !important;
+}
+
+/* MAIN > TABLE ============================================ */
+.config-screen-content-wrapper table {
+  background: var(--g-main-bg-color-1) !important;
+}
+/* table > head & row -------------------------------------- */
+.config-screen-content-wrapper table > thead > tr > th,
+.config-screen-content-wrapper table > tbody > tr > th,
+.config-screen-content-wrapper table > tbody > tr > td {
+  color: var(--s-option-table-text-color) !important;
+  border: 1px solid var(--g-option-main-bg-color) !important;
+}
+/* table > kbd --------------------------------------------- */
+.config-screen-content-wrapper table kbd {
+  background: var(--g-option-main-bg-color) !important;
+  border: none !important;
+}
+
+
+
+/* || OPTION PANEL 3/6 | PLUGIN PAGE *********************** */
+/* plugin card --------------------------------------------- */
+.config-screen div[style="margin-bottom: 0px;"] ~ div > div ~ div > div,
+.config-screen div[style="margin-bottom: 10px; width: 320px;"] ~ div > div {
+  background: var(--g-main-bg-color-1);
+  border: 1px solid var(--s-plugin-card-bd-color);
+  border-radius: 7px;
+  box-shadow: 0 0 3px var(--s-plugin-card-shadow);
+}
+/* plugin card content ------------------------------------- */
+.config-screen div[style="margin-bottom: 0px;"] ~ div > div ~ div > div *,
+.config-screen div[style="margin-bottom: 10px; width: 320px;"] ~ div > div * {
+  font-size: 13px;
+  color: var(--s-plugin-card-text-color);
+}
+/* switcher ------------------------------------------------ */
+.config-screen div[style*="padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; opacity: 1; background-color:"] {
+  background: var(--s-plugin-card-switcher-bg-color) !important;
+  border: none;
+}
+.config-screen div[style*="padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; opacity: 1; background-color:"] ~ div > div {
+  background: var(--g-main-bg-color-1) !important;
+}
+
+
+
+/* || OPTION PANEL 4/6 | ENCRYPTION PAGE ******************* */
+.encryption-section > h2,
+.encryption-section > p,
+.manage-password-section > h2,
+.manage-password-section > p,
+.config-screen-content-wrapper p {
+  color: var(--s-option-label-text-color) !important;
+}
+
+
+
+/* || OPTION PANEL 5/6 | WEB CLIPPER PAGE ****************** */
+.config-screen-content-wrapper > div > div > div > div {
+  padding: 20px !important;
+  background: var(--g-main-bg-color-1) !important;
+  border: none !important;
+  border-radius: 7px;
+}
+
+
+
+/* || OPTION PANEL 6/6 | FOOTER **************************** */
+/* confirm button ------------------------------------------ */
+.config-screen > div:nth-child(2) > div:last-child {
+  background: var(--g-main-bg-color-1) !important;
+  border-top: none !important;
+}
+.config-screen > div:nth-child(2) > div:last-child button {
+  background: var(--s-option-confirm-btn-bg-color);
+  border: 1px solid var(--s-option-confirm-btn-bd-color);
+  border-radius: 7px;
+  box-shadow: 0 0 3px var(--s-option-confirm-btn-shadow);
+}
+.config-screen > div:nth-child(2) > div:last-child button:hover {
+  filter: brightness(120%) !important;
+}
+.config-screen > div:nth-child(2) > div:last-child button > span {
+  color: var(--s-option-confirm-btn-text-color);
+}
