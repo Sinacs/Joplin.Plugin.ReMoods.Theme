@@ -239,10 +239,10 @@
   --cb-scrollbar-thumb-bd-color:                        transparent;
   --cb-scrollbar-thumb-bg-color:                        radial-gradient(
                                                         hsl(var(--usp-remoods-hue),  30%,  60%)  30%,
-                                                        hsl(var(--usp-remoods-hue),  30%,  70%)  70%);
+                                                        hsl(var(--usp-remoods-hue),  40%,  70%)  70%);
   --cb-scrollbar-thumb-bg-color-hover:                  radial-gradient(
                                                         hsl(var(--usp-remoods-hue),  50%,  60%)  30%, 
-                                                        hsl(var(--usp-remoods-hue),  50%,  70%)  70%);
+                                                        hsl(var(--usp-remoods-hue),  60%,  70%)  70%);
   /* syntax highlight ---------------------------------------------------------------------- */
   --cb-comment-color:                                   hsl(var(--usp-remoods-hue),   0%,  60%);
   --cb-comment-shadow:                              0 0 none;
@@ -698,7 +698,22 @@ body,
 /* thumb ----------------------------------------------------*/
 #tinymce::-webkit-scrollbar-thumb,
 #joplin-container-content::-webkit-scrollbar-thumb {
-  background: hsl(var(--usp-remoods-hue), 100%, 70%);
+  background: hsl(var(--usp-remoods-hue), 100%, 50%);
+  border-radius: 0;
+}
+#tinymce::-webkit-scrollbar-track,
+#joplin-container-content::-webkit-scrollbar-track {
+  background: hsl(var(--usp-remoods-hue), 11%, 13%);
+}
+#tinymce::-webkit-scrollbar,
+#joplin-container-content::-webkit-scrollbar {
+  width: 5px !important;
+  height: 1px !important;
+}
+#tinymce:hover::-webkit-scrollbar,
+#joplin-container-content:hover::-webkit-scrollbar {
+  width: 5px !important;
+  height: 5px !important;
 }
 
 
