@@ -61,9 +61,13 @@
   /* EFFECTS *********************************************** */
   --usp-h1-text-transform: capitalize;
   --usp-h1-font-variant: small-caps;
+  --usp-notebook-title-wrap: normal;
+  
 
   /* DISPLAY *********************************************** */
   --usp-evident-horizontal-line-switcher: inline-block;
+  --usp-notebook-title-scrollbar-switcher: block;
+
   
   
 
@@ -1229,7 +1233,7 @@ body {
   line-height: normal !important;
   color: var(--g-item-text-color);
   overflow-y: hidden;
-  white-space: normal;
+  white-space: var(--usp-notebook-title-wrap);
 }
 /* directory icon ------------------------------------------ */
 .sidebar i.fas.fa-caret-down,
@@ -1424,6 +1428,10 @@ body {
 }
 .rli-sideBar ::-webkit-scrollbar-track {
   background: var(--g-scrollbar-track-bg-color-1);
+}
+/* notebook title scrollbar -------------------------------- */
+.sidebar .list-item-container > .list-item > .title::-webkit-scrollbar {
+  display: var(--usp-notebook-title-scrollbar-switcher);
 }
 
 
