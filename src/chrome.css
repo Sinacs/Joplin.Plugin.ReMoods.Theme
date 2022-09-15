@@ -568,6 +568,12 @@
   line-height: 1em !important;
 }
 
+/* HEADINGS > INLINE CODE ================================== */
+#react-root .cm-header.cm-jn-inline-code {
+  color: white;
+  background: none !important;
+  border: none !important;
+}
 /* HEADINGS > H1 =========================================== */
 .CodeMirror-line .cm-header.cm-header-1 {
   font-size: var(--usp-h1-font-size) !important;
@@ -581,11 +587,19 @@
   font-size: var(--usp-h2-font-size) !important;
   color: var(--h2-text-color);
 }
+/* h2 > inline code ---------------------------------------- */
+#react-root .cm-header-2.cm-jn-inline-code {
+  font-size: var(--usp-h2-font-size) !important;
+}
 
 /* HEADINGS > H3 =========================================== */
 .CodeMirror-line .cm-header.cm-header-3 {
   font-size: var(--usp-h3-font-size) !important;
   color: var(--h3-text-color);
+}
+/* h3 > inline code ---------------------------------------- */
+#react-root .cm-header-3.cm-jn-inline-code {
+  font-size: var(--usp-h3-font-size) !important;
 }
 
 /* HEADINGS > H4 =========================================== */
@@ -593,17 +607,29 @@
   font-size: var(--usp-h4-font-size) !important;
   color: var(--h4-text-color);
 }
+/* h4 > inline code ---------------------------------------- */
+#react-root .cm-header-4.cm-jn-inline-code {
+  font-size: var(--usp-h4-font-size) !important;
+}
 
 /* HEADINGS > H5 =========================================== */
 .CodeMirror-line .cm-header.cm-header-5 {
   font-size: var(--usp-h5-font-size) !important;
   color: var(--h5-text-color);
 }
+/* h5 > inline code ---------------------------------------- */
+#react-root .cm-header-5.cm-jn-inline-code {
+  font-size: var(--usp-h5-font-size) !important;
+}
 
 /* HEADINGS > H6 =========================================== */
 .CodeMirror-line .cm-header.cm-header-6 {
   font-size: var(--usp-h6-font-size) !important;
   color: var(--h6-text-color);
+}
+/* h6 > inline code ---------------------------------------- */
+#react-root .cm-header-6.cm-jn-inline-code {
+  font-size: var(--usp-h6-font-size) !important;
 }
 
 
@@ -1678,14 +1704,21 @@ body {
 
 /* HEADER > TITLE INPUT ==================================== */
 .title-input {
-  padding: 0 0 0 20px !important;
+  padding: 0 !important;
   max-height: 35px !important;
   min-height: 35px !important;
+  text-indent: 8px;
   color: var(--g-panel-header-text-color) !important;
   text-shadow: 0 0 3px var(--g-panel-header-text-shadow);
   background: var(--g-panel-header-bg-color) !important;
 }
-
+.title-input[placeholder="Creating new note..."] {
+  text-shadow: none;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: black;
+  opacity: 0.6;
+}
 
 
 /* HEADER > SIDE TOOLBAR ==================================== */
@@ -2135,6 +2168,11 @@ body {
   display: none;
 }
 
+/* FOOTER > POPUP MESSAGE ================================== */
+.tag-bar ~ div:last-child {
+  text-indent: 10px;
+  background: hsl(0, 60%, 55%) !important;
+}
 
 
 
