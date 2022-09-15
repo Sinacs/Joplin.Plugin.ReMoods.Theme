@@ -109,6 +109,7 @@
   --blockquote-text-color:                              hsl(var(--usp-remoods-hue),  30%,  80%);
 
   /* LIST =================================================================================== */
+  --list-token-color:                                   hsl(calc(var(--usp-remoods-hue) + 180deg),  80%,  80%);
   --list-text-color:                                    hsl(var(--usp-remoods-hue),  30%,  80%);
   --checkbox-color:                                     hsl(var(--usp-remoods-hue), 100%,  70%);
   
@@ -385,7 +386,7 @@
   --s-tagbar-hint-text-color:                           hsl(var(--usp-remoods-hue),  40%,  40%);
 
   /* MODAL DIALOG =========================================================================== */
-  --s-modal-dialog-bg-color:                            hsl(var(--usp-remoods-hue),  30%,  20%);
+  --s-modal-dialog-bg-color:                            hsl(var(--usp-remoods-hue),  11%,  13%);
   --s-modal-dialog-label-color:                         hsl(var(--usp-remoods-hue),  60%,  90%);
   --s-modal-dialog-title-text-color:                    hsl(var(--usp-remoods-hue),  60%,  90%);
   --s-modal-dialog-confirm-btn-text-color:              hsl(var(--usp-remoods-hue),  60%,  90%);
@@ -402,7 +403,7 @@
   --s-tag-selector-divider-color:                       hsl(var(--usp-remoods-hue), 100%,  30%);
   --s-tag-selector-text-color:                          hsl(var(--usp-remoods-hue),  20%,  80%);
 
-  --s-command-palette-item-bg-color:                    hsl(var(--usp-remoods-hue),  30%,  20%);
+  --s-command-palette-item-bg-color:                    hsl(var(--usp-remoods-hue),  11%,  13%);
   --s-command-palette-item-bg-color-selected:           hsl(var(--usp-remoods-hue),  30%,  30%);
   --s-command-palette-item-bd-color:                    hsl(var(--usp-remoods-hue),  30%,  30%);
   --s-command-palette-item-text-color:                  hsl(var(--usp-remoods-hue),  60%,  90%);
@@ -748,7 +749,9 @@
 .CodeMirror-line .cm-keyword.cm-rm-list-token,
 .CodeMirror-line .cm-rm-checkbox.cm-rm-list-token:not(.cm-meta) {
   color: var(--list-token-color);
-  --list-token-color: hsl(calc(var(--usp-remoods-hue) + 180deg),  80%,  80%);
+}
+.CodeMirror-lines .CodeMirror-line .cm-rm-checkbox:hover {
+  text-decoration: none;
 }
 /* checklist > checkbox ------------------------------------ */
 .cm-meta.cm-rm-checkbox,
