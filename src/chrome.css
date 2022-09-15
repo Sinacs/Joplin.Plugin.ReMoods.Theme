@@ -97,7 +97,6 @@
   --h4-text-color:                                      hsl(var(--usp-remoods-hue), 100%,  90%);
   --h5-text-color:                                      hsl(var(--usp-remoods-hue),  30%,  80%);
   --h6-text-color:                                      hsl(var(--usp-remoods-hue),  30%,  80%);
-  --heading-text-shadow:                        0 0 2px hsl(var(--usp-remoods-hue), 100%,  60%);
 
   /* BLOCKQUOTE ============================================================================= */
   --blockquote-text-color:                              hsl(var(--usp-remoods-hue),  30%,  80%);
@@ -118,14 +117,15 @@
   --strikethrough-text-color:                         hsl(  0, 100%,  75%);
   --strikethrough-text-bg-color:                      hsl(  0,  30%,  20%);
 
-  --insert-text-color:                                hsl(100,  70%,  75%);
-  --insert-text-bg-color:                             hsl(100,  30%,  20%);
+  --insert-text-color:                                hsl(100,  50%,  75%);
+  --insert-text-bg-color:                             hsl(100,  70%,  15%);
+  --insert-text-bd-color:                             hsl(100,  70%,  35%);
 
   --sub-sup-text-color:                                 hsl(var(--usp-remoods-hue),  50%,  80%);
   
-  --inline-code-color:                                  hsl(var(--usp-remoods-hue), 100%,  20%);
+  --inline-code-color:                                  hsl(var(--usp-remoods-hue), 100%,  85%);
   --inline-code-bd-color:                     2px solid hsl(var(--usp-remoods-hue),  20%,  40%);
-  --inline-code-bg-color:                               hsl(var(--usp-remoods-hue),  20%,  80%);
+  --inline-code-bg-color:                               hsl(var(--usp-remoods-hue),  30%,  25%);
 
   /* HTML =================================================================================== */
   --html-tag-text-color:                              hsl(  0, 100%,  70%);
@@ -138,7 +138,7 @@
   --html-string-text-shadow:                        0 0 none;
 
   /* CODE BLOCK ============================================================================= */
-  --code-block-bg-color:                                hsl(var(--usp-remoods-hue), 100%,  8%);
+  --code-block-bg-color:                                hsl(var(--usp-remoods-hue), 8%,  17%);
   --code-block-bd-width:                                0 3px;
   --code-block-bd-color:                                hsl(var(--usp-remoods-hue),  40%,  60%);
   
@@ -247,7 +247,7 @@
   --mtc-column-mark-shadow-8:                       0 0 none;
   
   --mtc-column-mark-color-9:                          hsl(270, 100%,  75%);
-  --mtc-column-mark-shadow-9:                       0 0 n0 0 
+  --mtc-column-mark-shadow-9:                       0 0 none; 
   
   --mtc-column-mark-color-10:                         hsl(310,  70%,  70%);
   --mtc-column-mark-shadow-10:                      0 0 none;
@@ -268,7 +268,7 @@
   /* notebook panel | note list | editor panel ----------------------------------------------- */
   --g-panel-header-bg-color:                            hsl(var(--usp-remoods-hue), 100%,  45%);
   --g-panel-header-text-color:                          hsl(var(--usp-remoods-hue),   0%, 100%);
-  --g-panel-header-text-shadow:                         hsl(var(--usp-remoods-hue),   0%,   0%);
+  --g-panel-header-text-shadow:                         hsl(var(--usp-remoods-hue), 100%,  10%);
   
   /* notebook list | note list | option panel menu ------------------------------------------- */
   --g-item-bg-color-hover:                              hsl(var(--usp-remoods-hue), 100%,  10%);
@@ -311,7 +311,7 @@
   --g-toolbar-shadow:                                   hsl(var(--usp-remoods-hue), 100%,  70%);
 
   /* editor & tagbar ------------------------------------------------------------------------- */
-  --g-editor-panel-divider-color:                       hsl(var(--usp-remoods-hue), 100%,  40%);
+  --g-editor-panel-divider-color:                       hsl(var(--usp-remoods-hue),  20%,  40%);
 
   /* option panel menu & table & table kbd --------------------------------------------------- */
   --g-option-main-bg-color:                             hsl(var(--usp-remoods-hue),  10%,  30%);
@@ -372,7 +372,8 @@
   --s-update-time-label-text-color:                     hsl(var(--usp-remoods-hue), 100%,  70%);
 
   --s-tagbar-tag-text-color:                            hsl(var(--usp-remoods-hue),  20%,  80%);
-  --s-tagbar-tag-text-shadow-hover:                     hsl(var(--usp-remoods-hue), 100%,  30%);
+  --s-tagbar-tag-text-color-hover:                      hsl(var(--usp-remoods-hue),  20%,  95%);
+  --s-tagbar-tag-text-shadow-hover:                     hsl(var(--usp-remoods-hue), 100%,  25%);
   --s-tagbar-tag-divider-color:                         hsl(var(--usp-remoods-hue), 100%,  90%);
   --s-tagbar-hint-text-color:                           hsl(var(--usp-remoods-hue),  40%,  40%);
 
@@ -505,8 +506,8 @@
 .CodeMirror *:not(.cm-jn-monospace),
 .CodeMirror-lines .CodeMirror-line:not(.cm-jn-code-block) .cm-comment.cm-jn-monospace {
   font-family: var(--usp-base-font) !important;
-  line-height: 1.5em;
   font-size: var(--usp-font-size) !important;
+  line-height: 1.5em;
 }
 /* || FONT 2/2 | MONOSPACE FONT **************************** */
 /* | anchor text | list token | horizontal line | abbreviation description | katex | */
@@ -555,7 +556,6 @@
 /* HEADINGS > GROUP: H1 to H6 ============================== */
 .CodeMirror-line .cm-header {
   font-weight: var(--usp-headings-font-weight);
-  text-shadow: var(--heading-text-shadow);
   line-height: 1em !important;
 }
 
@@ -656,7 +656,7 @@
 /* insert -------------------------------------------------- */
 .CodeMirror-lines .CodeMirror-line .cm-rm-ins {
   text-decoration: none;
-  border-bottom: 1px dashed;
+  border-bottom: 1px solid var(--insert-text-bd-color);
   background: var(--insert-text-bg-color);
   color: var(--insert-text-color);
 }
@@ -680,7 +680,7 @@
   color: var(--inline-code-color);
   background: var(--inline-code-bg-color) !important;
   border: var(--inline-code-bd-color) !important;
-  border-radius: 5px !important;
+  border-radius: 4px !important;
 }
 /* search -------------------------------------------------- */
 .CodeMirror-lines .CodeMirror-line .cm-search-marker:not(#fake),
@@ -729,12 +729,18 @@
 
 /* || MARKDOWN 7/11 | LIST ********************************* */
 /* list group: | unordered list | ordered list | checklist | list token | */
-[class*="cm-variable"].cm-rm-list-token:not(.cm-rm-checkbox),
-.CodeMirror-line .cm-keyword.cm-rm-list-token,
+/* [class*="cm-variable"].cm-rm-list-token:not(.cm-rm-checkbox), */
+/* .CodeMirror-line .cm-keyword.cm-rm-list-token, */
 .CodeMirror-line .cm-rm-list-token ~ .cm-keyword,
 .CodeMirror-line .cm-rm-list-token ~ [class*="cm-variable"],
 .cm-variable-2.cm-rm-list-token.cm-rm-checkbox {
   color: var(--list-text-color);
+}
+.CodeMirror-line [class*="cm-variable"].cm-rm-list-token:not(.cm-meta),
+.CodeMirror-line .cm-keyword.cm-rm-list-token,
+.CodeMirror-line .cm-rm-checkbox.cm-rm-list-token:not(.cm-meta) {
+  color: var(--list-token-color);
+  --list-token-color: hsl(calc(var(--usp-remoods-hue) + 180deg),  80%,  80%);
 }
 /* checklist > checkbox ------------------------------------ */
 .cm-meta.cm-rm-checkbox,
@@ -1663,12 +1669,9 @@ body {
   color: var(--g-panel-header-text-color) !important;
   text-shadow: 0 0 3px var(--g-panel-header-text-shadow);
   background: var(--g-panel-header-bg-color) !important;
-  transition: opacity 0.8s;
 }
-.rli-editor .title-input:hover {
-  opacity: 0.6;
-  transition: opacity 0.3s;
-}
+
+
 
 /* HEADER > SIDE TOOLBAR ==================================== */
 /* side toolbar container ----------------------------------- */
@@ -2092,7 +2095,7 @@ body {
 /* tag hover ----------------------------------------------- */
 .tag-bar > div > div > button:hover {
   font-size: 18px !important;
-  color: var(--g-tag-bar-tag-text-color) !important;
+  color: var(--s-tagbar-tag-text-color-hover) !important;
   text-shadow: -1px -1px 2px var(--s-tagbar-tag-text-shadow-hover), 
                 1px -1px 2px var(--s-tagbar-tag-text-shadow-hover),
                -1px  1px 2px var(--s-tagbar-tag-text-shadow-hover), 

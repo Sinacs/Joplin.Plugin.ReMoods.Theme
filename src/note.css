@@ -113,7 +113,7 @@
 
   /* GENERAL ================================================================================ */
   --render-viewer-bg-color:                             hsl(var(--usp-remoods-hue),   8%,  27%);
-  --render-viewer-bg-color-2:                           hsl(var(--usp-remoods-hue), 100%,   8%);
+  --render-viewer-bg-color-2:                           hsl(var(--usp-remoods-hue),   8%,  17%);
   --render-viewer-text-color:                           hsl(var(--usp-remoods-hue),   0%,  90%);
   
   --horizontal-line-color:                              repeating-linear-gradient(114deg,
@@ -234,7 +234,7 @@
   --cb-bg-color:                                        var(--render-viewer-bg-color-2);
   --cb-bd-color:                                        hsl(var(--usp-remoods-hue), 100%,  70%);
   
-  --cb-shadow:                                  0 0 8px hsl(var(--usp-remoods-hue), 100%,  50%);
+  --cb-shadow:                                  0 0 4px hsl(var(--usp-remoods-hue), 100%,  50%);
  
   --cb-scrollbar-thumb-bd-color:                        transparent;
   --cb-scrollbar-thumb-bg-color:                        radial-gradient(
@@ -332,14 +332,14 @@
   /* CUSTOM ELEMENT: ART GALLERY ============================================================ */
   --ag-bg-color:                                        hsl(var(--usp-remoods-hue),  15%,  15%);
   --ag-bd-color:                                        hsl(var(--usp-remoods-hue), 100%,  70%);
-  --ag-drop-shadow:                             0 0 2px hsl(var(--usp-remoods-hue), 100%,  60%);
+  --ag-drop-shadow:                             0 0 2px hsl(var(--usp-remoods-hue), 100%,  50%);
 
   /* CUSTOM ELEMENT: STICKY NOTES =========================================================== */
   /* sticky notes body group:  not including the sticky note - "Important" ------------------ */
   --sn-text-color:                                      var(--render-viewer-text-color);
   --sn-bg-color:                                        var(--render-viewer-bg-color-2);
   --sn-bd-color:                                        hsl(var(--usp-remoods-hue), 100%,  70%);
-  --sn-drop-shadow:                         0px 0px 3px hsl(var(--usp-remoods-hue), 100%,  50%);
+  --sn-drop-shadow:                         0px 0px 2px hsl(var(--usp-remoods-hue), 100%,  50%);
   /* sticky notes - "important" > body ------------------------------------------------------ */
   --sn-important-text-color:                          hsl( 40,  40%,  70%);
   --sn-important-bg-color:                            hsl(  0, 100%,  25%);
@@ -383,7 +383,7 @@
   /* PLUGINS: SPOILER ======================================================================= */
   /* spoiler block -------------------------------------------------------------------------- */
   --spoiler-block-bg-color:                             hsl(var(--usp-remoods-hue),  10%,  20%);
-  --spoiler-block-box-shadow:                   0 0 6px hsl(var(--usp-remoods-hue), 100%,  80%);
+  --spoiler-block-box-shadow:                   0 0 4px hsl(var(--usp-remoods-hue), 100%,  80%);
   /* spoiler title -------------------------------------------------------------------------- */
   --spoiler-title-color:                                hsl(var(--usp-remoods-hue), 100%,  90%);
   /* spoiler > list ------------------------------------------------------------------------- */
@@ -752,7 +752,7 @@ body,
 }
 body {
   color: var(--render-viewer-text-color);
-
+  line-height: 1.5em;
 }
 /* || FONT 2/2 | MONOSPACE FONT **************************** */
 /* monospace font group: | code block | inline code | insert & strikethrough symbol | inline spoiler symbol | footnote ref num | */
