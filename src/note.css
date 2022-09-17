@@ -1,4 +1,13 @@
 /*
+  #REMARKS:
+
+  - All styles have spread into two parts - "screen" and "Print",
+    but here also include some of the extra adjustments that only
+    affect the "Export HTML File".
+
+  - Screen: Render Viewer, Rich Text Editor, Export HTML File.
+  - Print: Print & Export PDF.
+
   #CODE STRUCTURE OVERVIEW:
 
   ROOT
@@ -32,7 +41,7 @@
 
 
   /* THEME COLOR ******************************************* */
-  --usp-remoods-hue: 60deg;
+  --usp-remoods-hue: 213deg;
 
   /* FONT ************************************************** */
   --usp-base-font: "Montserrat", "Chiron Hei HK Text Extralight";
@@ -49,6 +58,7 @@
   --usp-h6-font-size: 110%;
 
   /* EFFECTS *********************************************** */
+  --usp-heading-ref-switcher: inline-block;
   --usp-h1-font-variant: small-caps;
   --usp-h1-text-transform: capitalize;
   --usp-paragraph-justify: justify;
@@ -57,7 +67,6 @@
   --usp-mermaid-eye-protector-transition: filter 2s;
   --usp-image-eye-protector-filter: brightness(80%);
   --usp-image-eye-protector-transition: filter 2s;
-
   
   /* DISPLAY *********************************************** */
   --usp-h1-border-switcher: block;
@@ -92,10 +101,11 @@
   
   /* PRINT: DISPLAY **************************************** */
   --usp-print-note-title-display: block;
+  --print-heading-ref-switcher: none;
   --usp-print-h1-bd-display: block;
   --usp-print-toc-display: block;
   --usp-print-sticky-notes-display: block;
-  --usp-print-key-reference-display: block;
+  --usp-print-key-mention-display: block;
   /* print sticky notes > key mention ---------------------- */
   --usp-print-sn-km-display: block;
   /* print spoiler inline text ----------------------------- */
@@ -122,6 +132,8 @@
                                                         hsl(var(--usp-remoods-hue), 100%,  80%)  3px);
 
   /* HEADING ================================================================================ */
+  --heading-ref-text-color:                             hsl(  0,   0%,  65%);
+
   /* h1 ------------------------------------------------------------------------------------- */
   --h1-color:                                           hsl(var(--usp-remoods-hue), 100%,  50%);
   --h1-bg-color:                                        repeating-linear-gradient( 114deg,
@@ -686,6 +698,7 @@ body,
 #rendered-md,
 #tinymce {
   background: var(--render-viewer-bg-color);
+  padding-right: 1px;
 }
 /* rich text editor container ------------------------------ */
 #tinymce {
@@ -698,22 +711,17 @@ body,
 /* thumb ----------------------------------------------------*/
 #tinymce::-webkit-scrollbar-thumb,
 #joplin-container-content::-webkit-scrollbar-thumb {
-  background: hsl(var(--usp-remoods-hue), 100%, 50%);
-  border-radius: 0;
-}
-#tinymce::-webkit-scrollbar-track,
-#joplin-container-content::-webkit-scrollbar-track {
-  background: hsl(var(--usp-remoods-hue), 11%, 13%);
+  background: hsl(var(--usp-remoods-hue), 100%, 75%);
 }
 #tinymce::-webkit-scrollbar,
 #joplin-container-content::-webkit-scrollbar {
-  width: 5px !important;
+  width: 7px !important;
   height: 1px !important;
 }
 #tinymce:hover::-webkit-scrollbar,
 #joplin-container-content:hover::-webkit-scrollbar {
-  width: 5px !important;
-  height: 5px !important;
+  width: 7px !important;
+  height: 7px !important;
 }
 
 
@@ -770,13 +778,19 @@ body {
   line-height: 1.5em;
 }
 /* || FONT 2/2 | MONOSPACE FONT **************************** */
-/* monospace font group: | code block | inline code | insert & strikethrough symbol | inline spoiler symbol | footnote ref num | */
+/* monospace font group: | code block | inline code | insert & strikethrough symbol | inline spoiler symbol | footnote ref num | headings ref | */
 #rendered-md a[id*="fnref"],
 #rendered-md .hljs *,
 #rendered-md .inline-code,
 #rendered-md ins::before,
 #rendered-md s::before,
-#rendered-md label.spoiler-inline::before {
+#rendered-md label.spoiler-inline::before,
+#rendered-md h1:before,
+#rendered-md h2:before,
+#rendered-md h3:before,
+#rendered-md h4:before,
+#rendered-md h5:before,
+#rendered-md h6:before {
   font-family: var(--usp-monospace-font, monospace);
 }
 
@@ -853,12 +867,12 @@ body {
   font-weight: 600;
   border: none;
 }
-#rendered-md h1:not(#rendered-md > :first-child):not(#rendered-md > .table-of-contents:first-child + h1),
-#rendered-md h2:not(#rendered-md > :first-child):not(#rendered-md > .table-of-contents:first-child + h2),
-#rendered-md h3:not(#rendered-md > :first-child):not(#rendered-md > .table-of-contents:first-child + h3),
-#rendered-md h4:not(#rendered-md > :first-child):not(#rendered-md > .table-of-contents:first-child + h4),
-#rendered-md h5:not(#rendered-md > :first-child):not(#rendered-md > .table-of-contents:first-child + h5),
-#rendered-md h6:not(#rendered-md > :first-child):not(#rendered-md > .table-of-contents:first-child + h6) {
+#rendered-md h1:not(#rendered-md > .table-of-contents:first-child + h1),
+#rendered-md h2:not(#rendered-md > .table-of-contents:first-child + h2),
+#rendered-md h3:not(#rendered-md > .table-of-contents:first-child + h3),
+#rendered-md h4:not(#rendered-md > .table-of-contents:first-child + h4),
+#rendered-md h5:not(#rendered-md > .table-of-contents:first-child + h5),
+#rendered-md h6:not(#rendered-md > .table-of-contents:first-child + h6) {
   margin-top: 1.5em;
 }
 /* heading border group: h1 to h6 -------------------------- */
@@ -872,6 +886,20 @@ body {
   content: "";
   width: 100%;
   height: 1px;
+}
+/* heading reference group: h1 to h6 ----------------------- */
+#rendered-md h1:before,
+#rendered-md h2:before,
+#rendered-md h3:before,
+#rendered-md h4:before,
+#rendered-md h5:before,
+#rendered-md h6:before {
+  display: var(--usp-heading-ref-switcher);
+  margin-right: 8px;
+  font-weight: 400;
+  line-height: 0;
+  font-size: 11px;
+  -webkit-text-fill-color: var(--heading-ref-text-color);
 }
 
 /* h1 ====================================================== */
@@ -894,6 +922,9 @@ body {
   height: 3px;
   background-image: var(--h1-bg-color);
 }
+#rendered-md h1::before {
+  content: "H1";
+}
 /* h1 > span ----------------------------------------------- */
 #rendered-md h1 > span {
   -webkit-background-clip: initial; 
@@ -911,6 +942,9 @@ body {
   display: var(--usp-h2-border-switcher);
   background-image: var(--h2-bd-color);
 }
+#rendered-md h2::before {
+  content: "H2";
+}
 
 /* h3 ====================================================== */
 #rendered-md h3 {
@@ -921,6 +955,9 @@ body {
 #rendered-md h3::after {
   display: var(--usp-h3-border-switcher);
   background-image: var(--h3-bd-color);
+}
+#rendered-md h3::before {
+  content: "H3";
 }
 
 /* h4 ====================================================== */
@@ -933,6 +970,9 @@ body {
   display: var(--usp-h4-border-switcher);
   background-image: var(--h4-bd-color);
 }
+#rendered-md h4::before {
+  content: "H4";
+}
 
 /* h5 ====================================================== */
 #rendered-md h5 {
@@ -944,6 +984,9 @@ body {
   display: var(--usp-h5-border-switcher);
   background-image: var(--h5-bd-color);
 }
+#rendered-md h5::before {
+  content: "H5";
+}
 
 /* h6 ====================================================== */
 #rendered-md h6 {
@@ -954,6 +997,9 @@ body {
 #rendered-md h6::after {
   display: var(--usp-h6-border-switcher);
   background-image: var(--h6-bd-color);
+}
+#rendered-md h6::before {
+  content: "H6";
 }
 
 
@@ -994,7 +1040,7 @@ body {
 #rendered-md ins {
   color: var(--insert-text-color);
   text-decoration: none;
-  border-bottom: 1px dashed var(--insert-text-bd-color);
+  border-bottom: 1px solid var(--insert-text-bd-color);
 }
 #rendered-md ins::before {
   content: "++";
@@ -2157,6 +2203,15 @@ ag12::-webkit-scrollbar-track {
   #rendered-md .exported-note-title {
     display: var(--usp-print-note-title-display);
   }
+  /* heading ref ------------------------------------------- */
+  #rendered-md h1:before,
+  #rendered-md h2:before,
+  #rendered-md h3:before,
+  #rendered-md h4:before,
+  #rendered-md h5:before,
+  #rendered-md h6:before {
+    display: var(--print-heading-ref-switcher);
+  }
   /* h1 border --------------------------------------------- */
   #rendered-md > h1:after {
     display: var(--usp-print-h1-bd-display);
@@ -2178,7 +2233,7 @@ ag12::-webkit-scrollbar-track {
   }
   /* key mention ------------------------------------------- */
   #rendered-md km {
-    display: var(--usp-print-key-reference-display);
+    display: var(--usp-print-key-mention-display);
   }
   #rendered-md note km,
   #rendered-md tip km,
