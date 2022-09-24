@@ -6,8 +6,8 @@
 	"name": "ReMoods Theme (BETA)",
 	"description": "The theme beautifies your screen and documents, and takes care of your writing moods and eyes-health! (Visit GitHub Repo to check out the user guide.) ",
 	"author": "Sinacs",
-	"homepage_url": "",
-	"repository_url": "",
-	"keywords": [],
-	"categories": []
+	"homepage_url": "https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme",
+	"repository_url": "https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme",
+	"keywords": ["joplin", "joplin-plugin", "theme", "ReMoods", "Ohmine Dark Theme"],
+	"categories": ["appearance", "themes", "editor", "viewer"]
 }

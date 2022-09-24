@@ -13,9 +13,9 @@ export type ThemeSettings = {
 	smallerMonospaceFontSize: number;
 	h1TextTransform: boolean;
 	h1FontVariant: boolean;
-  evidentHorizontalLine: boolean;
-  headingRef: boolean;
-  paragraphJustify: boolean;
+	evidentHorizontalLine: boolean;
+	headingRef: boolean;
+	paragraphJustify: boolean;
 	katexTextAlignLeft: boolean;
 	mermaidEyeProtector: boolean;
 	imageEyeProtector: boolean;
