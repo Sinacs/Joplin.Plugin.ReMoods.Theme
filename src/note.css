@@ -80,8 +80,8 @@
   --usp-custom-title-block-symbol-switcher: inline-block;
   
   /* BLOCK MAX-HEIGHT LIMITATION *************************** */
-  --usp-code-block-max-height: 60vh;
-  --usp-art-gallery-max-height: 60vh;
+  --usp-code-block-max-height: 56vh;
+  --usp-art-gallery-max-height: 56vh;
 
 
 
@@ -101,15 +101,14 @@
   
   /* PRINT: DISPLAY **************************************** */
   --usp-print-note-title-display: block;
-  --print-heading-ref-switcher: none;
+  --usp-print-heading-ref-switcher: inline-block;
   --usp-print-h1-bd-display: block;
   --usp-print-toc-display: block;
   --usp-print-sticky-notes-display: block;
   --usp-print-key-mention-display: block;
+  --usp-print-spoiler-inline-text-visibility: visible;
   /* print sticky notes > key mention ---------------------- */
   --usp-print-sn-km-display: block;
-  /* print spoiler inline text ----------------------------- */
-  --usp-print-spoiler-inline-text-visibility: visible;
 
   
 
@@ -923,7 +922,7 @@ body {
   background-image: var(--h1-bg-color);
 }
 #rendered-md h1::before {
-  content: "H1";
+  content: "H1:";
 }
 /* h1 > span ----------------------------------------------- */
 #rendered-md h1 > span {
@@ -943,7 +942,7 @@ body {
   background-image: var(--h2-bd-color);
 }
 #rendered-md h2::before {
-  content: "H2";
+  content: "H2:";
 }
 
 /* h3 ====================================================== */
@@ -957,7 +956,7 @@ body {
   background-image: var(--h3-bd-color);
 }
 #rendered-md h3::before {
-  content: "H3";
+  content: "H3:";
 }
 
 /* h4 ====================================================== */
@@ -971,7 +970,7 @@ body {
   background-image: var(--h4-bd-color);
 }
 #rendered-md h4::before {
-  content: "H4";
+  content: "H4:";
 }
 
 /* h5 ====================================================== */
@@ -985,7 +984,7 @@ body {
   background-image: var(--h5-bd-color);
 }
 #rendered-md h5::before {
-  content: "H5";
+  content: "H5:";
 }
 
 /* h6 ====================================================== */
@@ -999,7 +998,7 @@ body {
   background-image: var(--h6-bd-color);
 }
 #rendered-md h6::before {
-  content: "H6";
+  content: "H6:";
 }
 
 
@@ -2210,7 +2209,7 @@ ag12::-webkit-scrollbar-track {
   #rendered-md h4:before,
   #rendered-md h5:before,
   #rendered-md h6:before {
-    display: var(--print-heading-ref-switcher);
+    display: var(--usp-print-heading-ref-switcher);
   }
   /* h1 border --------------------------------------------- */
   #rendered-md > h1:after {

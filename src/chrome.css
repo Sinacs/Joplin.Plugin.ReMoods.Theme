@@ -46,7 +46,7 @@
   /* FONT ************************************************** */
   --usp-base-font: "Montserrat", "Chiron Sans HK PRO Extralight";
   --usp-monospace-font: "Cascadia Mono light", "Chiron Sans HK PRO Extralight";
-  --usp-font-size: 14px;
+  --usp-base-font-size: 14px;
   --usp-smaller-monospace-font-size: 86%;
   
   /* SIZES ************************************************* */
@@ -523,7 +523,7 @@
 .CodeMirror *:not(.cm-jn-monospace),
 .CodeMirror-lines .CodeMirror-line:not(.cm-jn-code-block) .cm-comment.cm-jn-monospace {
   font-family: var(--usp-base-font) !important;
-  font-size: var(--usp-font-size) !important;
+  font-size: var(--usp-base-font-size) !important;
   line-height: 1.5em;
 }
 /* || FONT 2/2 | MONOSPACE FONT **************************** */
@@ -539,7 +539,7 @@
 .CodeMirror-lines .CodeMirror-line [class|="cm-katex"] ~ *,
 .CodeMirror-lines .CodeMirror-line .cm-hr  {
   font-family: var(--usp-monospace-font) !important;
-  font-size: var(--usp-font-size) !important;
+  font-size: var(--usp-base-font-size) !important;
 }
 /* || FONT 3/3 | SMALLER MONOSPACE FONT ******************** */
 /* | anchor link | html | image link | file link | sup | sub | footnote ref. | table | code block | inline code | */
