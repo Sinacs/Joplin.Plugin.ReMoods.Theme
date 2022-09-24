@@ -17,7 +17,7 @@ When simple and clear documentation makes it easy to understand, adding a beauti
 
 ## Recommend Fonts 
 
-ReMoods Theme tested over 50 free fonts from 10px to 16px, light to dark background, long hours reading, etc. I finally picked the fonts below: 
+ReMoods Theme tested over 50 free fonts from 10px to 16px, light to dark background, long hours of reading, etc. I finally picked the fonts below: 
 
 - Base Font Winner: Montserrat
 - Monospace Font Winner: Cascadia Mono Light 
@@ -46,8 +46,8 @@ Alternatively, if you are interested to download the original complete packages,
 ![Screenshot 2022-09-25 025311](https://user-images.githubusercontent.com/110529913/192114170-8a5c1864-c42a-4a99-9a58-ffbd7cfe5e86.png)
 
 1. For the headings you always use with a border, you can enable the heading's border through the settings page.
-2. For the headings you want to add border flexibly, you can manually adding `---` behind the heading any time.
-3. Enable the heading reference will appeare in front of the headings.
+2. For the headings you want to add border flexibly, you can manually be adding `---` behind the heading at any time.
+3. Enable the heading reference will appear in front of the headings.
 4. When using emoji within the H1 heading, you should use `<span></span>` to wrap it up.
 
 
@@ -67,6 +67,11 @@ Alternatively, if you are interested to download the original complete packages,
 ![Screenshot 2022-09-25 032314](https://user-images.githubusercontent.com/110529913/192115112-9432ac02-94de-4894-b0a6-3fcc8333d32f.png)
 
 ## Custom Elements 
+
+ReMoods Theme provides a lot of custom elements to help you create a better reading experience on the Render Viewer and Export HTML File. If Joplin is your only place to taking notes, you can just use Custom Elements without thinking. Otherwise, you should notice the below:
+
+1. Custom Elements are unique HTML Elements and CSS Styles for ReMoods Theme, so it might become plain text format when you transfer your notes to other software.
+2. Even if other software is support customize CSS, you should still need to copy the related codes from ReMoods to your new software manually.
 
 ### Art Gallery 
 
@@ -103,7 +108,7 @@ EXAMPLE:
 
 ```
 <note>
-For notics, remarks, info, descriptions…
+For notices, remarks, info, descriptions…
 </note> 
 <tip>
 For tips, hints, ideas, concepts, inspirations…
@@ -112,10 +117,10 @@ For tips, hints, ideas, concepts, inspirations…
 For explain, examples…
 </explain>
 <question>
-For problems, conisderations, questions…
+For problems, considerations, questions…
 </question> 
 <warning>
-For ugrent, danger…
+For urgent, danger…
 </warning>
 <comment>
 For leaving a message to someone...
