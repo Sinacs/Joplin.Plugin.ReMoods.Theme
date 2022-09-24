@@ -72,15 +72,18 @@ async function prepareThemeSettings(): Promise<void> {
 	await joplin.settings.registerSection('remoodsThemeSection', {
 		label: 'ReMoods Theme',
 		iconName: 'fas fa-palette',
-		description: `1) It is required to restart Joplin to take effect after any changes below.
-		\n\n2) You can have different font settings for Print & Export PDF. (See below setting properties that start with the word "Print")
-		\n\n3) Please notice that you should be always edit font-related settings in this page, the original font settings which in the "Options > Appearance" will no longer work when using ReMoods Theme.`
+		description: `
+			1) It is required to restart Joplin to take effect after any changes below.
+			2) Some setting properties are invalid for the moment.
+		`
+		// 2) You can have different font settings for Print & Export PDF. (See below setting properties that start with the word "Print")
+		// 3) Please notice that you should be always edit font-related settings in this page, the original font settings which in the "Options > Appearance" will no longer work when using ReMoods Theme.
 	});
 
 	await joplin.settings.registerSettings({
 		'remoodsHue': {
 			section: 'remoodsThemeSection',
-			label: 'ReMoods Hue',
+			label: 'ReMoods Hue(INVALID)',
 			type: SettingItemType.Int,
 			value: 213,
 			description: 'Set color hue for the theme. (Number between 0 to 360)',
@@ -89,7 +92,7 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'baseFont': {
 			section: 'remoodsThemeSection',
-			label: 'Base Font',
+			label: 'Base Font(INVALID)',
 			type: SettingItemType.String,
 			value: '"montserrat","chiron hei hk text extralight"',
 			description: 'The non-monospace font for editor and render viewer.',
@@ -98,7 +101,7 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'monospaceFont': {
 			section: 'remoodsThemeSection',
-			label: 'Monospace Font',
+			label: 'Monospace Font(INVALID)',
 			type: SettingItemType.String,
 			value: '"Cascadia Mono Light", "chiron hei hk text extralight"',
 			description: 'The monospace font for editor and render viewer.',
@@ -107,7 +110,7 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'baseFontSize': {
 			section: 'remoodsThemeSection',
-			label: 'Base Font Size',
+			label: 'Base Font Size(INVALID)',
 			type: SettingItemType.Int,
 			value: 14,
 			description: 'The font size of both monospace & non-monospace font. ("px")',
@@ -116,7 +119,7 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'smallerMonospaceFontSize': {
 			section: 'remoodsThemeSection',
-			label: 'Smaller Monospace Font Size',
+			label: 'Smaller Monospace Font Size(INVALID)',
 			type: SettingItemType.Int,
 			value: 86,
 			description: 'The smaller font size for some of the markdown syntax. (Percentage that based of the "base font size")',
@@ -294,7 +297,7 @@ async function prepareThemeSettings(): Promise<void> {
 		
 		'printBaseFont': {
 			section: 'remoodsThemeSection',
-			label: '[Print] Base font',
+			label: '[Print] Base font(INVALID)',
 			type: SettingItemType.String,
 			value: '"montserrat", "chiron hei hk extralight"',
 			description: 'The non-monospace font for print & export PDF.',
@@ -303,7 +306,7 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'printMonospaceFont': {
 			section: 'remoodsThemeSection',
-			label: '[Print] Monospace font',
+			label: '[Print] Monospace font(INVALID)',
 			type: SettingItemType.String,
 			value: '"Cascadia Mono Light", "chiron hei hk text extralight"',
 			description: 'The monospace font for print & export PDF.',
@@ -312,7 +315,7 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'printBaseFontSize': {
 			section: 'remoodsThemeSection',
-			label: '[Print] Base font size',
+			label: '[Print] Base font size(INVALID)',
 			type: SettingItemType.Int,
 			value: 12,
 			description: 'The font size of "non-monospace" font for print & export PDF. (in "px")',
@@ -321,7 +324,7 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'printMonospaceFontSize': {
 			section: 'remoodsThemeSection',
-			label: '[Print] Monospace font size',
+			label: '[Print] Monospace font size(INVALID)',
 			type: SettingItemType.Int,
 			value: 10,
 			description: 'The font size of "monospace" font for print & export PDF. (in "px")',
