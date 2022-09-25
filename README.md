@@ -139,13 +139,15 @@ You can disable it by go to `Options > ReMoods Theme` and unchecked the `Enable 
 
 # CUSTOM ELEMENTS
 
-ReMoods Theme provides a lot of custom elements to help you create a better reading experience on the Render Viewer and Export HTML File.
+ReMoods Theme provides a lot of custom elements to help you create a better reading experience, and here are the 6 major kinds:
 
 - Art Gallery
 - Sticky Notes
 - Custom Title Block
 - Key Point
 - Key Mention
+
+### Hints
 
 If Joplin is your only place to taking notes, you can just use the Custom Elements without thinking. Otherwise, you should notice the below:
 
@@ -188,7 +190,19 @@ Below is the sample of the art gallery(ag6) with 30 images:
 
 ## Sticky Notes 
 
+ReMoods has 8 custom elements for creating the Sticky Notes: `note` , `tip` , `question` , `explain` , `warning` , `comment`, `keyword` , `important`. They can help you build the article structure. Normally, you would be removed them from the content when you have completed your article. 
+
+Let’s see what are the Sticky Notes for:
+
 ![Screenshot 2022-09-25 193253](https://user-images.githubusercontent.com/110529913/192141288-388a53d8-e9d2-4177-9ef8-40ebb4149d01.png)
+
+### Hints
+
+1. Make sure there is a blank line *before the open tag*, otherwise it may cause the format problem.
+2. Start typing your content in a *new line*.
+3. Use plain text within a custom element.
+4. Use `ENTER` to add a line break.
+5. Do not including any blank line within the Sticky Notes, if you want to adding a *blank line* please use  `<br>`.
 
 [:arrow_up:Back](#table-of-contents)
 
