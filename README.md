@@ -3,8 +3,7 @@ The ReMoods Theme project is inherited from the past Ohmine Dark Theme and drive
 
 ![Screenshot 2022-09-25 032654-tile](https://user-images.githubusercontent.com/110529913/192116296-82e79460-48b3-4d84-8575-a0daa459bd28.png)
 
-
-## Why use ReMoods? 
+## Why ReMoods? 
 
 When simple and clear documentation makes it easy to understand, adding a beautiful appearance would make everyone enjoy reading more. As a theme for a documentation tool, ReMoods is designed for those who work often based on sharing screens or documents with others. As a theme for personal notetaker, ReMoods is tailored for your writing moods and eyes-health.
 
@@ -15,7 +14,34 @@ When simple and clear documentation makes it easy to understand, adding a beauti
 - Provide certain helpful HTML custom elements to increase your notetaking experience. 
 - Provide third-party plugins’ CSS styles to add extra uses in ReMoods.
 
-## Recommend Fonts 
+# Table Of Contents
+- [REMOODS THEME GETTING START](#remoods-theme-getting-start)
+  - [Recommended Fonts](#recommended-fonts)
+  - [Customizable Heading](#customizable-heading)
+  - [Text Styles](#text-styles)
+  - [Code Block Syntax Highlight](#code-block-syntax-highlight)
+  - [Floating TOC](#floating-toc)
+  - [Eye-Protector](#eye-protector)
+- [CUSTOM ELEMENTS](#custom-elements)
+  - [Art Gallery](#art-gallery)
+  - [Sticky Notes](#sticky-notes)
+  - [Custom Title Block](#custom-title-block)
+  - [Key Point](#key-point)
+  - [Key Mention](#key-mention)
+- [THIRD-PARTY PLUGINS STYLING](#third-party-plugins-styling)
+  - [Spoiler](#spoiler)
+  - [Markdown Table Colorize](#markdown-table-colorize)
+- [PRINT & EXPORT](#print--export)
+  - [Export HTML File](#export-html-file)
+  - [Export PDF Document](#export-pdf-document)
+- [TESTED PLUGINS](#tested-plugins)
+- [CONTRIBUTION](#contribute)
+
+# REMOODS THEME GETTING START
+
+[:arrow_up:Back](#table-of-contents)
+
+## Recommended Fonts 
 
 ReMoods Theme tested over 50 free fonts from 10px to 16px, light to dark background, long hours of reading, etc. I finally picked the fonts below: 
 
@@ -41,7 +67,9 @@ Alternatively, if you are interested to download the original complete packages,
 - Cascadia Code: https://github.com/microsoft/cascadia-code/releases 
 - Chiron Hei HK: https://github.com/chiron-fonts/chiron-hei-hk/releases 
 
-## Heading 
+[:arrow_up:Back](#table-of-contents)
+
+## Customizable Heading 
 
 ![Screenshot 2022-09-25 164824](https://user-images.githubusercontent.com/110529913/192136884-4a05f5e1-8e36-45c0-b880-fb8252b1ebce.png)
 
@@ -55,6 +83,7 @@ Alternatively, if you are interested to download the original complete packages,
 ![Screenshot 2022-09-25 203245](https://user-images.githubusercontent.com/110529913/192143564-00ae82a5-55ac-4c87-abec-5baa9bbc1f0b.png)
 ![Screenshot 2022-09-25 203723](https://user-images.githubusercontent.com/110529913/192143773-76b71e07-7310-44b2-a34e-1022f4d02ff6.png)
 
+[:arrow_up:Back](#table-of-contents)
 
 ## Text Styles
 
@@ -66,6 +95,8 @@ Let's compare the difference after the theme color changed:
 
 ![Screenshot 2022-09-26 002351](https://user-images.githubusercontent.com/110529913/192154325-b19c269b-2c6c-42ab-82d9-87751f96e7aa.png)
 
+[:arrow_up:Back](#table-of-contents)
+
 ## Code Block Syntax Highlight
 
 ReMoods Theme provides over 80% consistent syntax highlighting styles for the code block of Markdown Editor and Render Viewer.
@@ -75,6 +106,8 @@ ReMoods Theme provides over 80% consistent syntax highlighting styles for the co
 Syntax Highlight would change with the theme color too:
 
 ![Screenshot 2022-09-26 003511](https://user-images.githubusercontent.com/110529913/192154770-10349a7e-6364-4ff4-a9f7-3caa95771865.png)
+
+[:arrow_up:Back](#table-of-contents)
 
 ## Floating TOC 
 
@@ -90,6 +123,8 @@ To enable the TOC feature:
 1. Go to `Options > Markdown`
 2. Checked `Enable table of contents extension (wysiwyg:no)`
 
+[:arrow_up:Back](#table-of-contents)
+
 ## Eye-Protector
 
 All attached images and mermaid charts will default to 20% darker than the original, to avoid bright light flickering your eyes while reading the notes. Hovering over them will restore the original brightness slowly.
@@ -97,6 +132,8 @@ All attached images and mermaid charts will default to 20% darker than the origi
 You can disable it by go to `Options > ReMoods Theme` and unchecked the `Enable Eye-Protector effect for mermaid charts` or `Enable Eye-Protector effect for images`.
 
 ![EyeProtector](https://user-images.githubusercontent.com/86870826/154980775-2df6b700-ae1a-4a4d-b0f8-a9f99a60484f.jpg)
+
+[:arrow_up:Back](#table-of-contents)
 
 # Custom Elements 
 
@@ -112,6 +149,8 @@ If Joplin is your only place to taking notes, you can just use the Custom Elemen
 
 1. Custom Elements are unique HTML Elements and CSS Styles for ReMoods Theme, so it might become plain text format when you transfer your notes to other software.
 2. Even if other software is support customize CSS, you should still need to copy the related codes from ReMoods to your new software manually.
+
+[:arrow_up:Back](#table-of-contents)
 
 ## Art Gallery 
 
@@ -143,9 +182,13 @@ Below is the sample of the art gallery(ag6) with 30 images:
 2. The art gallery tag must use *right behind the plain text* .
 3. Do not including any blank line within this part of the codes, *blank line will break the format* .
 
+[:arrow_up:Back](#table-of-contents)
+
 ## Sticky Notes 
 
 ![Screenshot 2022-09-25 193253](https://user-images.githubusercontent.com/110529913/192141288-388a53d8-e9d2-4177-9ef8-40ebb4149d01.png)
+
+[:arrow_up:Back](#table-of-contents)
 
 ## Custom Title Block
 
@@ -163,6 +206,8 @@ Let's see what it looks like:
 4. Start typing your content *in the second line*.
 5. Use plain text within a custom element.
 6. Please mention that *within one line* means it's *according to your panel width*.
+
+[:arrow_up:Back](#table-of-contents)
 
 ## Key Point
 
@@ -183,6 +228,8 @@ See it below:
 1. The custom element name `kp` stands for *Key Point*.
 2. I recommend **only** use it at *the beginning of line*.
 3. It **cannot** be used within *any other block elements* such as Custom Title Block, Spoiler Block, Sticky Notes, etc...
+
+[:arrow_up:Back](#table-of-contents)
 
 ## Key Mention
 
@@ -214,8 +261,11 @@ More use cases:
 <km>Reference: [Joplin Home Page](https://www.joplin.org)</km>
 
 ```
+[:arrow_up:Back](#table-of-contents)
 
 # Third-Party Plugins Styling 
+
+[:arrow_up:Back](#table-of-contents)
 
 ## Spoiler 
 
@@ -241,6 +291,8 @@ Quick setting up:
 3. Search the plugin by inputting the word `spoiler`
 4. Click `Install` which is on the `Spoiler`
 5. Quit & restart Joplin app
+
+[:arrow_up:Back](#table-of-contents)
 
 ## Markdown Table Colorize
 
@@ -293,11 +345,19 @@ Quick setting up:
 4. Click `Install` on the `Markdown Table: Colorize`
 5. Quit & restart Joplin app
 
+[:arrow_up:Back](#table-of-contents)
+
 # PRINT & EXPORT
+
+[:arrow_up:Back](#table-of-contents)
 
 ## Export HTML File 
 
+[:arrow_up:Back](#table-of-contents)
+
 ## Export PDF Document
+
+[:arrow_up:Back](#table-of-contents)
 
 # Tested Plugins
 
@@ -314,4 +374,8 @@ This table will keep up to date
 |Draw.io|Tested|25AUG2022|-|-|
 |||||
 
+[:arrow_up:Back](#table-of-contents)
+
 ## Contribution
+
+[:arrow_up:Back](#table-of-contents)
