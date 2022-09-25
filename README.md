@@ -58,7 +58,20 @@ Alternatively, if you are interested to download the original complete packages,
 
 ## Text Styles
 
+Some of the text color would change with the theme color.
+
 ![Screenshot 2022-09-25 025053](https://user-images.githubusercontent.com/110529913/192114108-06e98831-c1f6-4dc4-b754-3a98bb6315dc.png)
+
+Let's compare the difference after the theme color changed:
+
+![Screenshot 2022-09-26 002351](https://user-images.githubusercontent.com/110529913/192154325-b19c269b-2c6c-42ab-82d9-87751f96e7aa.png)
+
+## Code Block Syntax Highlight
+
+ReMoods Theme provides over 80% consistent syntax highlighting styles for the code block of Markdown Editor and Render Viewer.
+
+![Screenshot 2022-09-26 000631](https://user-images.githubusercontent.com/110529913/192153453-4d51e804-769d-47f8-abac-0794ad4266a1.png)
+
 
 ## Floating TOC 
 
