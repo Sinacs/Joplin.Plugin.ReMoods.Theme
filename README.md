@@ -43,7 +43,7 @@ Alternatively, if you are interested to download the original complete packages,
 
 ## Heading 
 
-![Screenshot 2022-09-25 025311](https://user-images.githubusercontent.com/110529913/192114170-8a5c1864-c42a-4a99-9a58-ffbd7cfe5e86.png)
+![Screenshot 2022-09-25 164824](https://user-images.githubusercontent.com/110529913/192136884-4a05f5e1-8e36-45c0-b880-fb8252b1ebce.png)
 
 1. For the headings you always use with a border, you can enable the heading's border through the settings page.
 2. For the headings you want to add border flexibly, you can manually be adding `---` behind the heading at any time.
@@ -66,43 +66,44 @@ Alternatively, if you are interested to download the original complete packages,
 
 ![Screenshot 2022-09-25 032314](https://user-images.githubusercontent.com/110529913/192115112-9432ac02-94de-4894-b0a6-3fcc8333d32f.png)
 
-## Custom Elements 
+# Custom Elements 
 
 ReMoods Theme provides a lot of custom elements to help you create a better reading experience on the Render Viewer and Export HTML File. If Joplin is your only place to taking notes, you can just use Custom Elements without thinking. Otherwise, you should notice the below:
 
 1. Custom Elements are unique HTML Elements and CSS Styles for ReMoods Theme, so it might become plain text format when you transfer your notes to other software.
 2. Even if other software is support customize CSS, you should still need to copy the related codes from ReMoods to your new software manually.
 
-### Art Gallery 
+## Art Gallery 
 
-EXAMPLE:
+Art Gallery provides 11 custom elements for you to split attached images into columns. It would be helpful if you have many images needed to attach to your note. 
 
-```
-<ag4>
-![anton-maksimov-juvnsky-7L0dMoYIgCU-unsplash.jpg](:/ed6f56f54493448280719373f679827e)
-![alex-knight--4pZ_YqcSFc-unsplash.jpg](:/5a1e938c265349dfac42e355a0a4bece)
-![4028206607bfa59034d79f0bc481ec51_m.jpg](:/c448bdc2f98b4eaaa66f8d986884afc4)
-![6379080aa5186d039ae94775a4fc5c7a_m.jpg](:/cf7f78841054441c9a1240d8a4b8d441)
-![93136ed8018aa9eb9ffd36c3841e3c38_m.jpg](:/08183c883d65414fb1dde2ae678b2164)
-![8672cda04982de71d5d9ecace32304aa_m.jpg](:/20e73cb1dc634c7bafd13e9f1e0154df)
-![4500a6ef6db4168c88f3b18c946b1d32.jpg](:/0b1df958f3164e909e93bc6de1fba736)
-![3750d04840e4bd3da8f87fac8845b01f_m.jpg](:/c1be3864e3814bdb9eda1b0d7099e943)
-![2021-09-13_23-16-53.png](:/bba9b9b957e84e3eb93a9650c088a711)
-![1952(8)-800x800.jpg](:/44981445b1fb45edbfc2f8e87a769471)
-![545c7b49596d0805be953e294641ccef_m.jpg](:/7502b8b96cbd4864bee882bb20e2ff62)
-![340dd96f25bf2c867fd4cd9eb3d6eb54_m.jpg](:/8f394e2c7c8b4977a50d2a4aee7f8c72)
-![250b00a86d666fce85e0ec077f608a46.jpg](:/0bf6facfa82a4ebe8dd2b60668c6c0be)
-![121acf06069f498bf5a034c8d8f579ac_m.jpg](:/b4a3fdd307c7401e98751e7a1ddc0c36)
-![96b9ef64f2bc3b1101b3617c22fa4515_m.jpg](:/a323020c2041425f840a58dee00262d6)
-![94f6acd4b38559022e2634818cca91e0_m.jpg](:/28ed516111bc477399e765de37287099)
-![89f39be75641ae3a2e86fb8a03311ad0_m.jpg](:/48fd6aecd6b84612aac0ca9b03a80fd9)
-![5b4750681594583b8007be3d02526651_m.jpg](:/c740b77c94354dcd8f4007eb36982a43)
-![3f3ff1e3d731be0060f46c2a41128b97_m.jpg](:/5937a620e0f94629bb4d57d47f66117b)
-</ag4>
-```
-OUTPUT:
+Art Gallery has limited the `max-height` to 60% viewport height by default. Let's see how its work:
 
-### Sticky Notes 
+| Custom Elements | Force Columns |
+|:---------------:|:-------------:|
+|       ag2       |       2       |
+|       ag3       |       3       |
+|       ag4       |       4       |
+|       ag5       |       5       |
+|       ag6       |       6       |
+|       ag7       |       7       |
+|       ag8       |       8       |
+|       ag9       |       9       |
+|       ag10      |       10      |
+|       ag11      |       11      |
+|       ag12      |       12      |
+
+Below is the sample of the art gallery(ag6) with 30 images: 
+
+![Screenshot 2022-09-25 171257](https://user-images.githubusercontent.com/110529913/192136954-9ef7c0e7-9bf7-466d-a945-dcc222df3ff1.png)
+
+### Hints
+
+1. The custom element name `ag` stands for *Art Gallery*.
+2. The art gallery tag must use *right behind the plain text* .
+3. Do not including any blank line within this part of the codes, *blank line will break the format* .
+
+## Sticky Notes 
 
 EXAMPLE: 
 
@@ -135,36 +136,44 @@ For write down whatever is important.
 
 OUTPUT:
 
-### Custom Title Block
+## Custom Title Block
 
-EXAMPLE: 
+Custom Title Block would be suitable for supplementing information that you think is important to readers. The usage is very similar to a blockquote but come up with a clear heading, it's making a key concept more outstanding.
 
-```
-<ctb>This is a title for the Custom Title Block
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-</ctb>
-```
+Let's see what it looks like:
 
-OUTPUT:
+![Screenshot 2022-09-25 180612](https://user-images.githubusercontent.com/110529913/192138206-2c66c33d-5121-40bf-a5aa-2227d17c8260.png)
 
-### Key Point
+### Hints
 
-EXAMPLE:
+1. The custom element name `ctb` stands for *Custom Title Block*.
+2. Type your title *next to the open tag* .
+3. Keep your title *within one line*.
+4. Start typing your content *in the second line*.
+5. Use plain text within a custom element.
+6. Please mention that *within one line* means it's *according to your panel width*.
 
-```
-<kp>Key Point Sample 1</kp>- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+## Key Point
 
-<kp>Key Point Sample 2</kp>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+The custom element Key Point is super useful while you want to split out a paragraph without using the Heading or Strong Text. It also can keeps your mind clear from the sense of overly using the Strong Text or Heading. The usage is very similar to the HTML Description List element.
 
-<kp>Key Point Sample 3</kp>
+3 best timing to use the Key Point:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+1. To keep *multiple paragraph* of contents stay within *one heading*.
+2. To *explain a part of content* that with *multiple key points* and each one have *a paragraph of description*.
+3. To avoiding using Strong Text to *create a paragraph*. (keep your strong text only appear within a paragraph content.)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-```
+See it below:
 
-### Key Mention
+![Screenshot 2022-09-25 181155](https://user-images.githubusercontent.com/110529913/192138395-287ca10b-4abf-4b57-99e7-eb7f89634120.png)
+
+### Hints
+
+1. The custom element name `kp` stands for *Key Point*.
+2. I recommend **only** use it at *the beginning of line*.
+3. It **cannot** be used within *any other block elements* such as Custom Title Block, Spoiler Block, Sticky Notes, etc...
+
+## Key Mention
 
 EXAMPLE:
 
