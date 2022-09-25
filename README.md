@@ -173,6 +173,7 @@ The custom element Key Mention is use for
 3. Use with the Joplin built-in function `Insert Date Time` make you easy.
 4. You can also use `km` within any Sticky Notes, and if you do that, please make sure `km` is always the **first child** inside the Sticky Notes.
 5. The text strong, emphasize, insert, and strikethrough will present as red color when inside the `km`.
+6. Mouse hover on it to zoom bigger.
 
 More use cases:
 
@@ -190,24 +191,26 @@ More use cases:
 
 ```
 
-## Third-Party Plugins Styling 
+# Third-Party Plugins Styling 
 
-### Spoiler 
+## Spoiler 
 
 This plugin allows you to create inline spoilers and spoiler blocks with title and extendable body. And the below shows what Spoiler looks like in ReMoods:
 
 Let's take a look to the spoiler block:
 
-(picture)
+![Screenshot 2022-09-25 233436](https://user-images.githubusercontent.com/110529913/192151983-f7da56cc-add8-4638-9224-60abeb4894c7.png)
 
-In addition, ReMoods has been created 4 more custom styles that you can use within the Spoiler block for advanced usage:
+### Hints
+
+ReMoods has been created 4 more custom styles that you can use within the Spoiler block for advanced usage:
 
 1. Spoiler Block > Span
 2. Spoiler Block > List
 3. Spoiler Block > List > Span
 4. Spoiler Block > Custom Title Block
 
-(picture)
+Quick setting up:
 
 1. Open Joplin
 2. Go to `tools` > `Options` > `Plugins`
@@ -215,23 +218,24 @@ In addition, ReMoods has been created 4 more custom styles that you can use with
 4. Click `Install` which is on the `Spoiler`
 5. Quit & restart Joplin app
 
-### Markdown Table Colorize
+## Markdown Table Colorize
 
 This plugin adds colors to Joplin markdown table syntax so you can quickly identify what column the content belongs to.
 
 Sometimes, Markdown table syntax can be very messy when too much information is within the table. Thanks to the Markdown Table Colorize plugin, OhmineDT can create a better style for the markdown table now!
 
-After installing the Markdown Table Colorize plugin and OhmineDT, you will see the markdown table syntax looks like below:
+After installing the Markdown Table Colorize plugin and ReMoods, you will see the markdown table syntax looks like below:
 
-(picture)
+![Screenshot 2022-09-25 234159](https://user-images.githubusercontent.com/110529913/192152301-b4e3608d-f4f7-4191-a80e-8f804b117dc9.png)
 
 - Separating table rows into independent sections
 - Use colored letters as a column mark
-- Support up to 20 columns
+- Column marks support up to 52 columns
+- Mouse hover on the column mark to zoom bigger
 
-**Use Tips:**
+### Hints
 
-I would like to share the steps of how I create a markdown table. And these steps are perfect for use with this plugin style.
+I would like to share the steps of how I create a markdown table. And these steps are perfect for this plugin style.
 
 First to create the table structure:
 
@@ -265,11 +269,13 @@ Quick setting up:
 4. Click `Install` on the `Markdown Table: Colorize`
 5. Quit & restart Joplin app
 
+# PRINT & EXPORT
+
 ## Export HTML File 
 
 ## Export PDF Document
 
-## Tested Plugins
+# Tested Plugins
 
 When I'm free, I will test different plugins and see what can be improve. If you are interested to know what I did for those plugins you can check out the below:
 
