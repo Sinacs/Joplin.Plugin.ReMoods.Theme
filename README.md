@@ -15,8 +15,10 @@ When simple and clear documentation makes it easy to understand, adding a beauti
 - Provide third-party plugins’ CSS styles to add extra uses in ReMoods.
 
 # Table Of Contents
+P.S. Some of the contents are incomplete at the moment.
+
 - [REMOODS THEME GETTING START](#remoods-theme-getting-start)
-  - [Recommended Fonts](#recommended-fonts)
+  - [Download Recommended Fonts](#download-recommended-fonts)
   - [Customizable Heading](#customizable-heading)
   - [Text Styles](#text-styles)
   - [Code Block Syntax Highlight](#code-block-syntax-highlight)
@@ -35,13 +37,13 @@ When simple and clear documentation makes it easy to understand, adding a beauti
   - [Export HTML File](#export-html-file)
   - [Export PDF Document](#export-pdf-document)
 - [TESTED PLUGINS](#tested-plugins)
-- [CONTRIBUTION](#contribute)
+- [CONTRIBUTION](#contribution)
 
 # REMOODS THEME GETTING START
 
 [:arrow_up:Back](#table-of-contents)
 
-## Recommended Fonts 
+## Download Recommended Fonts 
 
 ReMoods Theme tested over 50 free fonts from 10px to 16px, light to dark background, long hours of reading, etc. I finally picked the fonts below: 
 
@@ -135,7 +137,7 @@ You can disable it by go to `Options > ReMoods Theme` and unchecked the `Enable 
 
 [:arrow_up:Back](#table-of-contents)
 
-# Custom Elements 
+# CUSTOM ELEMENTS
 
 ReMoods Theme provides a lot of custom elements to help you create a better reading experience on the Render Viewer and Export HTML File.
 
@@ -263,7 +265,7 @@ More use cases:
 ```
 [:arrow_up:Back](#table-of-contents)
 
-# Third-Party Plugins Styling 
+# THIRD-PARTY PLUGINS STYLING
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -359,7 +361,7 @@ Quick setting up:
 
 [:arrow_up:Back](#table-of-contents)
 
-# Tested Plugins
+# TESTED PLUGINS
 
 When I'm free, I will test different plugins and see what can be improve. If you are interested to know what I did for those plugins you can check out the below:
 
@@ -376,6 +378,6 @@ This table will keep up to date
 
 [:arrow_up:Back](#table-of-contents)
 
-## Contribution
+## CONTRIBUTION
 
 [:arrow_up:Back](#table-of-contents)
