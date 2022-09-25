@@ -175,10 +175,21 @@ See it below:
 
 ## Key Mention
 
-EXAMPLE:
+The custom element Key Mention is use for 
+
+![Screenshot 2022-09-25 185512](https://user-images.githubusercontent.com/110529913/192140048-a6384ac9-069b-4d88-924c-9eb4a64c778a.png)
+
+### Hints
+
+1. The custom element name `km` stands for *Key Mention*.
+2. Always use `km` **right behind the target element** which you want to describe for.
+3. Use with the Joplin built-in function `Insert Date Time` make you easy.
+4. You can also use `km` within any Sticky Notes, and if you do that, please make sure `km` is always the **first child** inside the Sticky Notes.
+5. The text strong, emphasize, insert, and strikethrough will present as red color when inside the `km`.
+
+More use cases:
 
 ```
-<km>Updated: 25/08/2022 22:50</km>
 
 <km>Call Me: [+12345678910](tel:+12345678910)</km>
 
@@ -191,8 +202,6 @@ EXAMPLE:
 <km>Reference: [Joplin Home Page](https://www.joplin.org)</km>
 
 ```
-
-OUTPUT:
 
 ## Third-Party Plugins Styling 
 
