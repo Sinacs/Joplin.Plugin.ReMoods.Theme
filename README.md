@@ -72,6 +72,9 @@ ReMoods Theme provides over 80% consistent syntax highlighting styles for the co
 
 ![Screenshot 2022-09-26 000631](https://user-images.githubusercontent.com/110529913/192153453-4d51e804-769d-47f8-abac-0794ad4266a1.png)
 
+Syntax Highlight would change with the theme color too:
+
+![Screenshot 2022-09-26 003511](https://user-images.githubusercontent.com/110529913/192154770-10349a7e-6364-4ff4-a9f7-3caa95771865.png)
 
 ## Floating TOC 
 
@@ -79,9 +82,9 @@ Joplin provides us a great built-in Markdown TOC feature which let you create th
 
 ![Screenshot 2022-09-25 032314](https://user-images.githubusercontent.com/110529913/192115112-9432ac02-94de-4894-b0a6-3fcc8333d32f.png)
 
-The Markdown TOC feature is disable by Joplin default. To use the Markdown TOC, you should enable the the extension manually.
-
 ### Hints
+
+The Markdown TOC feature is disable by Joplin default. To use the Markdown TOC, you should enable the the extension manually.
 
 To enable the TOC feature:
 1. Go to `Options > Markdown`
@@ -97,7 +100,15 @@ You can disable it by go to `Options > ReMoods Theme` and unchecked the `Enable 
 
 # Custom Elements 
 
-ReMoods Theme provides a lot of custom elements to help you create a better reading experience on the Render Viewer and Export HTML File. If Joplin is your only place to taking notes, you can just use Custom Elements without thinking. Otherwise, you should notice the below:
+ReMoods Theme provides a lot of custom elements to help you create a better reading experience on the Render Viewer and Export HTML File.
+
+- Art Gallery
+- Sticky Notes
+- Custom Title Block
+- Key Point
+- Key Mention
+
+If Joplin is your only place to taking notes, you can just use the Custom Elements without thinking. Otherwise, you should notice the below:
 
 1. Custom Elements are unique HTML Elements and CSS Styles for ReMoods Theme, so it might become plain text format when you transfer your notes to other software.
 2. Even if other software is support customize CSS, you should still need to copy the related codes from ReMoods to your new software manually.
