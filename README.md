@@ -22,8 +22,8 @@ P.S. Some of the contents are incomplete at the moment.
   - [Change The Joplin Built-in Markdown Settings](#change-the-joplin-built-in-markdown-settings)
   - [Install And Setting The Required Plugin](#install-and-setting-the-required-plugin-rich-markdown)
   - [Install And Setting The Helpful Plugin: Quick HTML Tags](#install-and-setting-the-helpful-plugin-quick-html-tags-optional) [Optional]
-  - [Download And Install Recommended Fonts](#download-and-install-recommended-fonts) [Optional]
-  - [A Temporary Solution Of Customize The Font-Related Settings](#a-temporary-solution-of-customize-the-font-related-settings)
+  - [Download And Install Recommended Fonts](#download-and-install-recommended-fonts-optional) [Optional]
+  - [A Temporary Solution Of Customize The Font-Related Settings](#a-temporary-solution-of-customize-the-font-related-settings-important) [IMPORTANT]
 - [LOOK & FEEL](#look--feel)
   - [Customizable Heading](#customizable-heading)
   - [Text Styles](#text-styles)
@@ -120,7 +120,7 @@ Please mention that the `<ag>` is not a complete custom element name. You should
 
 [:arrow_up:Back](#table-of-contents)
 
-## Download And Install Recommended Fonts
+## Download And Install Recommended Fonts [OPTIONAL]
 
 **ReMoods Theme has been tested over 50 free fonts from 10px to 16px, and I was developing everything for this theme based on using the below fonts, so I recommend you use them: (They are the default fonts for ReMoods)**
 
@@ -146,38 +146,50 @@ Alternatively, if you are interested to download the original complete packages,
 
 [:arrow_up:Back](#table-of-contents)
 
-## A Temporary Solution Of Customize The Font-Related Settings
+## A Temporary Solution Of Customize The Font-Related Settings [IMPORTANT]
 
 Currently, some of the core settings properties are doesn't work in the ReMoods Theme settings page due to I don't know how to implement it. So, for an alternative, you could edit the theme color and font-related settings through your `userstyle.css` and `chromestyle.css` manually:
 
-In `chromestyle.css`:
+Please copy the below codes and paste it to the correct CSS stylesheet:
 
+1. Copy the below codes
 ```
 :root {
-  --usp-remoods-hue: 213deg;
-  --usp-base-font: "montserrat","chiron hei hk text extralight";
-  --usp-monospace-font: "cascadia mono light", "chiron hei hk text extralight";
-  --usp-base-font-size: 14px;
-  --usp-smaller-monospace-font-size: 86%;
-}
-```
-
-In `userstyle.css`:
-
-```
-:root {
-  --usp-remoods-hue: 213deg;
+  // For render viewer and rich text editor
+  --usp-remoods-hue: 213deg; // The theme color hue setting, it must including "deg" after the numbers between 0 to 360.
   --usp-base-font: "montserrat","chiron hei hk text extralight";
   --usp-monospace-font: "cascadia mono light", "chiron hei hk text extralight";
   --usp-base-font-size: 14px;
   --usp-smaller-monospace-font-size: 86%;
   
+  // For print & export pdf
   --usp-print-base-font: "montserrat","chiron hei hk text extralight";
   --usp-print-monospace-font: "cascadia mono light", "chiron hei hk text extralight";
   --usp-print-base-font-size: 12px;
   --usp-print-monospace-font-size: 10px;
 }
 ```
+1. Open Joplin
+2. Go to `Options > Appearance`
+3. Click `Show Advanced Settings`
+4. Click `Custom Stylesheet for rendered Markdown` and it will open the `userstyle.css` file
+6. Paste the codes to the `userstyle.css` and back to the guide
+7. Then, copy the below codes
+```
+:root {
+  // For markdown editor
+  --usp-remoods-hue: 213deg; // The theme color hue setting, it must including "deg" after the numbers between 0 to 360.
+  --usp-base-font: "montserrat","chiron hei hk text extralight";
+  --usp-monospace-font: "cascadia mono light", "chiron hei hk text extralight";
+  --usp-base-font-size: 14px;
+  --usp-smaller-monospace-font-size: 86%;
+}
+```
+8. Back to Joplin
+9. Click `Custom Stylesheet for Joplin-wide app styles` and it will open the `chromestyle.css` file
+10. Paste the codes to the `userstyle.css` and it's done.
+
+Now, you can edit the value of these two stylesheet to control those settings.
 
 [:arrow_up:Back](#table-of-contents)
 
