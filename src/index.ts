@@ -73,11 +73,11 @@ async function prepareThemeSettings(): Promise<void> {
 		label: 'ReMoods Theme',
 		iconName: 'fas fa-palette',
 		description: `
-			1) It is required to restart Joplin to take effect after any changes below.
-			2) Some setting properties are invalid for the moment.
+			#1: It is required to quit and restart Joplin to take effect after any changes below.
+			#2: In the beta version, you should edit font-related settings through the external CSS, please visit the github repo and read about the temporary solution.
+			#3: The original font settings which in the "Options > Appearance" will no longer work when using ReMoods Theme.
 		`
-		// 2) You can have different font settings for Print & Export PDF. (See below setting properties that start with the word "Print")
-		// 3) Please notice that you should be always edit font-related settings in this page, the original font settings which in the "Options > Appearance" will no longer work when using ReMoods Theme.
+		// ) Please notice that you should be always edit font-related settings in this page, the original font settings which in the "Options > Appearance" will no longer work when using ReMoods Theme.
 	});
 
 	await joplin.settings.registerSettings({
@@ -87,7 +87,7 @@ async function prepareThemeSettings(): Promise<void> {
 			type: SettingItemType.Int,
 			value: 213,
 			description: 'Set color hue for the theme. (Number between 0 to 360)',
-			public: true,
+			public: false,
 		},
 
 		'baseFont': {
@@ -96,7 +96,7 @@ async function prepareThemeSettings(): Promise<void> {
 			type: SettingItemType.String,
 			value: '"montserrat","chiron hei hk text extralight"',
 			description: 'The non-monospace font for editor and render viewer.',
-			public: true,
+			public: false,
 		},
 
 		'monospaceFont': {
@@ -105,7 +105,7 @@ async function prepareThemeSettings(): Promise<void> {
 			type: SettingItemType.String,
 			value: '"Cascadia Mono Light", "chiron hei hk text extralight"',
 			description: 'The monospace font for editor and render viewer.',
-			public: true,
+			public: false,
 		},
 
 		'baseFontSize': {
@@ -114,7 +114,7 @@ async function prepareThemeSettings(): Promise<void> {
 			type: SettingItemType.Int,
 			value: 14,
 			description: 'The font size of both monospace & non-monospace font. ("px")',
-			public: true,
+			public: false,
 		},
 
 		'smallerMonospaceFontSize': {
@@ -123,7 +123,7 @@ async function prepareThemeSettings(): Promise<void> {
 			type: SettingItemType.Int,
 			value: 86,
 			description: 'The smaller font size for some of the markdown syntax. (Percentage that based of the "base font size")',
-			public: true,
+			public: false,
 		},
 		
 		'h1TextTransform': {
@@ -297,43 +297,43 @@ async function prepareThemeSettings(): Promise<void> {
 		
 		'printBaseFont': {
 			section: 'remoodsThemeSection',
-			label: '[Print] Base font(INVALID)',
+			label: '[Print & Export PDF] Base font(INVALID)',
 			type: SettingItemType.String,
 			value: '"montserrat", "chiron hei hk extralight"',
 			description: 'The non-monospace font for print & export PDF.',
-			public: true,
+			public: false,
 		},
 
 		'printMonospaceFont': {
 			section: 'remoodsThemeSection',
-			label: '[Print] Monospace font(INVALID)',
+			label: '[Print & Export PDF] Monospace font(INVALID)',
 			type: SettingItemType.String,
 			value: '"Cascadia Mono Light", "chiron hei hk text extralight"',
 			description: 'The monospace font for print & export PDF.',
-			public: true,
+			public: false,
 		},
 
 		'printBaseFontSize': {
 			section: 'remoodsThemeSection',
-			label: '[Print] Base font size(INVALID)',
+			label: '[Print & Export PDF] Base font size(INVALID)',
 			type: SettingItemType.Int,
 			value: 12,
 			description: 'The font size of "non-monospace" font for print & export PDF. (in "px")',
-			public: true,
+			public: false,
 		},
 
 		'printMonospaceFontSize': {
 			section: 'remoodsThemeSection',
-			label: '[Print] Monospace font size(INVALID)',
+			label: '[Print & Export PDF] Monospace font size(INVALID)',
 			type: SettingItemType.Int,
 			value: 10,
 			description: 'The font size of "monospace" font for print & export PDF. (in "px")',
-			public: true,
+			public: false,
 		},
 
 		'printNoteTitle': {
 			section: 'remoodsThemeSection',
-			label: '[Print] Display notebook title',
+			label: '[Print & Export PDF] Display notebook title',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -341,7 +341,7 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'printHeadingRef': {
 			section: 'remoodsThemeSection',
-			label: '[Print] Display heading reference in front of headings',
+			label: '[Print & Export PDF] Display heading reference in front of headings',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
@@ -349,7 +349,7 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'printH1Border': {
 			section: 'remoodsThemeSection',
-			label: '[Print] Display H1 border',
+			label: '[Print & Export PDF] Display H1 border',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -357,7 +357,7 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'printTOC': {
 			section: 'remoodsThemeSection',
-			label: '[Print] Display table of contents (If the syntax `[[toc]]` is used in the notes)',
+			label: '[Print & Export PDF] Display table of contents (If the syntax `[[toc]]` is used in the notes)',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -365,7 +365,7 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'printStickyNotes': {
 			section: 'remoodsThemeSection',
-			label: '[Print] Display "Sticky Notes"',
+			label: '[Print & Export PDF] Display "Sticky Notes"',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -373,7 +373,7 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'printKeyMention': {
 			section: 'remoodsThemeSection',
-			label: '[Print] Display "Key Mention"',
+			label: '[Print & Export PDF] Display "Key Mention"',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -381,7 +381,7 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'printSnKm': {
 			section: 'remoodsThemeSection',
-			label: '[Print] Display "Key Mention" which is inside the Sticky Notes.',
+			label: '[Print & Export PDF] Display "Key Mention" which is inside the Sticky Notes.',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -389,7 +389,7 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'printSpoilerInlineText': {
 			section: 'remoodsThemeSection',
-			label: '[Print] Display the text of Spoiler Inline',
+			label: '[Print & Export PDF] Display the text of Spoiler Inline',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
