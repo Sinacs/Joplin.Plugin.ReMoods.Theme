@@ -18,6 +18,12 @@ When simple and clear documentation makes it easy to understand, adding a beauti
 P.S. Some of the contents are incomplete at the moment.
 
 - [REMOODS THEME GETTING START](#remoods-theme-getting-start-important) [IMPORTANT]
+  - [Change The Joplin Built-in Theme](#change-the-joplin-built-in-theme)
+  - [Change The Joplin Built-in Markdown Settings](#change-the-joplin-built-in-markdown-settings)
+  - [Install And Setting The Required Plugin](#install-and-setting-the-required-plugin-rich-markdown)
+  - [Install And Setting The Helpful Plugin: Quick HTML Tags](#install-and-setting-the-helpful-plugin-quick-html-tags-optional) [Optional]
+  - [Download And Install Recommended Fonts](#download-and-install-recommended-fonts) [Optional]
+  - [A Temporary Solution Of Customize The Font-Related Settings](#a-temporary-solution-of-customize-the-font-related-settings)
 - [LOOK & FEEL](#look--feel)
   - [Customizable Heading](#customizable-heading)
   - [Text Styles](#text-styles)
@@ -36,14 +42,14 @@ P.S. Some of the contents are incomplete at the moment.
 - [PRINT & EXPORT](#print--export)
   - [Export HTML File](#export-html-file)
   - [Export PDF Document](#export-pdf-document)
-- [TESTED PLUGINS](#tested-plugins)
+- [TESTED THIRD-PARTY PLUGINS](#tested-third-party-plugins)
 - [CONTRIBUTION](#contribution)
 
 # REMOODS THEME GETTING START [IMPORTANT]
 
 ReMoods has been styling lots of Joplin elements, and all of them are helpful to you. Some of the effects are highly rely on the Joplin built-in settings and third-party plugins to get work, so you may need to follow the below guides to get 100% of what ReMoods Theme brings to you!
 
-***
+## Change The Joplin Built-in Theme
 
 **ReMoods needs to run with the Joplin built-in Dark theme. Otherwise, it might cause some of the colors abnormal:**
 
@@ -52,20 +58,9 @@ ReMoods has been styling lots of Joplin elements, and all of them are helpful to
 3. Choose `Dark`
 4. Click `Apply`
 
-***
+[:arrow_up:Back](#table-of-contents)
 
-**ReMoods is relying on the "Rich Markdown" plugin to style the text because Joplin didn't provide enough CSS classes to specify those elements. So, it would cause some styles to be missing from ReMoods while you didn't install this plugin, or you didn't enable the settings:**
-
-1. Open Joplin
-2. Go to `tools` > `Options` > `Plugins`
-3. Search the plugin by inputting the word `rich`
-4. Click `Install` on the `Rich Markdown`
-5. Quit & restart Joplin app
-6. Go to `Tools` , `Options`, `Rich Markdown`
-7. Enable the `Add additional CSS classes for enhanced customization`
-8. Click `Apply`
-
-***
+## Change The Joplin Built-in Markdown Settings
 
 **ReMoods has styled the Special Text, but some of them didn't turn on by Joplin default, so you should turn them on manually:**
 
@@ -83,7 +78,24 @@ ReMoods has been styling lots of Joplin elements, and all of them are helpful to
 	- `Enable ++insert++ syntax (wysiwyg: yes)`
 4. Click `Apply`
 
-***
+[:arrow_up:Back](#table-of-contents)
+
+## Install And Setting The Required Plugin: Rich Markdown
+
+**ReMoods is relying on the "Rich Markdown" plugin to style the text because Joplin didn't provide enough CSS classes to specify those elements. So, it would cause some styles to be missing from ReMoods while you didn't install this plugin, or you didn't enable the settings:**
+
+1. Open Joplin
+2. Go to `tools` > `Options` > `Plugins`
+3. Search the plugin by inputting the word `rich`
+4. Click `Install` on the `Rich Markdown`
+5. Quit & restart Joplin app
+6. Go to `Tools` , `Options`, `Rich Markdown`
+7. Enable the `Add additional CSS classes for enhanced customization`
+8. Click `Apply`
+
+[:arrow_up:Back](#table-of-contents)
+
+## Install And Setting The Helpful Plugin: Quick HTML Tags [Optional] 
 
 **The "Quick HTML Tags" plugin provides you with a quick and easy way to create HTML tags in your notes, and it's helpful to create the custom elements of ReMoods:**
 
@@ -106,7 +118,9 @@ After this, you can use this plugin like below:
 
 Please mention that the `<ag>` is not a complete custom element name. You should add a number on it every time, such as `<ag4>`, `<ag8>` etc... Art Gallery lets you create 2 to 12 columns for images, so each time you create an `ag` tag with the Quick HTML Tags plugin, just don't forget to give it a number.
 
-***
+[:arrow_up:Back](#table-of-contents)
+
+## Download And Install Recommended Fonts
 
 **ReMoods Theme has been tested over 50 free fonts from 10px to 16px, and I was developing everything for this theme based on using the below fonts, so I recommend you use them: (They are the default fonts for ReMoods)**
 
@@ -132,7 +146,40 @@ Alternatively, if you are interested to download the original complete packages,
 
 [:arrow_up:Back](#table-of-contents)
 
-***
+## A Temporary Solution Of Customize The Font-Related Settings
+
+Currently, some of the core settings properties are doesn't work in the ReMoods Theme settings page due to I don't know how to implement it. So, for an alternative, you could edit the theme color and font-related settings through your `userstyle.css` and `chromestyle.css` manually:
+
+In `chromestyle.css`:
+
+```
+:root {
+  --usp-remoods-hue: 213deg;
+  --usp-base-font: "montserrat","chiron hei hk text extralight";
+  --usp-monospace-font: "cascadia mono light", "chiron hei hk text extralight";
+  --usp-base-font-size: 14px;
+  --usp-smaller-monospace-font-size: 86%;
+}
+```
+
+In `userstyle.css`:
+
+```
+:root {
+  --usp-remoods-hue: 213deg;
+  --usp-base-font: "montserrat","chiron hei hk text extralight";
+  --usp-monospace-font: "cascadia mono light", "chiron hei hk text extralight";
+  --usp-base-font-size: 14px;
+  --usp-smaller-monospace-font-size: 86%;
+  
+  --usp-print-base-font: "montserrat","chiron hei hk text extralight";
+  --usp-print-monospace-font: "cascadia mono light", "chiron hei hk text extralight";
+  --usp-print-base-font-size: 12px;
+  --usp-print-monospace-font-size: 10px;
+}
+```
+
+[:arrow_up:Back](#table-of-contents)
 
 # LOOK & FEEL
 
