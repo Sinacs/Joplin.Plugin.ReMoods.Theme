@@ -333,7 +333,7 @@ Let’s see what are the Sticky Notes for:
 
 ## Custom Title Block
 
-Custom Title Block would be suitable for supplementing information that you think is important to readers. The usage is very similar to a blockquote but come up with a clear heading, it's making a key concept more outstanding.
+Custom Title Block would be suitable for supplementing information that you think is important to readers. The use is very similar to a blockquote but come up with a clear heading, it's making a key concept more outstanding.
 
 Let's see what it looks like:
 
@@ -352,7 +352,7 @@ Let's see what it looks like:
 
 ## Key Point
 
-The custom element Key Point is super useful while you want to split out a paragraph without using the Heading or Strong Text. It also can keeps your mind clear from the sense of overly using the Strong Text or Heading. The usage is very similar to the HTML Description List element.
+The custom element Key Point is super useful while you want to split out a paragraph without using the Heading or Strong Text. It also can keeps your mind clear from the sense of overly using the Strong Text or Heading. The use is very similar to the HTML Description List element.
 
 3 best timing to use the Key Point:
 
@@ -406,6 +406,8 @@ More use cases:
 
 # THIRD-PARTY PLUGINS STYLING
 
+The third-party plugin styling is aimed to keep the plugin styles consistent with the theme, and secondly is to add extra functions for using them in ReMoods. Let's keep reading the below.
+
 [:arrow_up:Back](#table-of-contents)
 
 ## Spoiler 
@@ -418,7 +420,7 @@ Let's take a look to the spoiler block:
 
 ### Hints
 
-ReMoods has been created 4 more custom styles that you can use within the Spoiler block for advanced usage:
+ReMoods has been created 4 more custom styles that you can use within the Spoiler block for advanced use:
 
 1. Spoiler Block > Span
 2. Spoiler Block > List
@@ -490,13 +492,22 @@ Quick setting up:
 
 # PRINT & EXPORT
 
+
+
 [:arrow_up:Back](#table-of-contents)
 
 ## Export HTML File 
 
+
+
 [:arrow_up:Back](#table-of-contents)
 
 ## Export PDF Document
+
+- In ReMoods, Print & Export PDF is the standlone part that separated from the Render Viewer styles. So, it means you can set different fonts and font size for Print & Export PDF use, and it won't affects to the styles within Joplin.
+- You can also control what elements should show on the PDF through the ReMoods Theme settings page, such as hide the Sticky Notes, hide the Key Mention, hide the notebook title, etc.
+
+![Screenshot 2022-09-26 190704](https://user-images.githubusercontent.com/110529913/192261498-b95ee279-65f3-4dc3-9a1f-609023f62859.png)
 
 [:arrow_up:Back](#table-of-contents)
 
