@@ -18,7 +18,7 @@ When simple and clear documentation makes it easy to understand, adding a beauti
 P.S. Some of the contents are incomplete at the moment.
 
 - [REMOODS THEME GETTING START](#remoods-theme-getting-start-important) [IMPORTANT]
-  - [Download Recommended Fonts](#download-recommended-fonts)
+- [LOOK & FEEL](#look--feel)
   - [Customizable Heading](#customizable-heading)
   - [Text Styles](#text-styles)
   - [Code Block Syntax Highlight](#code-block-syntax-highlight)
@@ -134,8 +134,7 @@ Alternatively, if you are interested to download the original complete packages,
 
 ***
 
-## Download Recommended Fonts 
-
+# LOOK & FEEL
 
 
 ## Customizable Heading 
@@ -442,9 +441,9 @@ Quick setting up:
 
 [:arrow_up:Back](#table-of-contents)
 
-# TESTED PLUGINS
+# TESTED THIRD-PARTY PLUGINS
 
-When I'm free, I will test different plugins and see what can be improve. If you are interested to know what I did for those plugins you can check out the below:
+When I'm free, I would test different plugins and see what can I do to it. If you are interested to know what plugins I've tested you can check out the below:
 
 This table will keep up to date
 
