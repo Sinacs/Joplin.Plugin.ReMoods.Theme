@@ -143,7 +143,7 @@
   --h2-color:                                           hsl(var(--usp-remoods-hue), 100%,  90%);
   --h2-bd-color:                                        linear-gradient(to right,
                                                         hsl(var(--usp-remoods-hue), 100%,  80%)  50%,
-                                                      transparent);
+                                                        transparent);
   /* h3 ------------------------------------------------------------------------------------- */
   --h3-color:                                           var(--h2-color);
   --h3-bd-color:                                        var(--h2-bd-color);
@@ -153,12 +153,12 @@
   /* h5 ------------------------------------------------------------------------------------- */
   --h5-color:                                           hsl(var(--usp-remoods-hue),  30%,  80%);
   --h5-bd-color:                                        linear-gradient(to right, 
-                                                      transparent 50%,
+                                                        transparent 50%,
                                                         var(--render-viewer-bg-color) 100%),
                                                         repeating-linear-gradient(to right,
                                                         hsl(var(--usp-remoods-hue),  30%,  80%),
-                                                      transparent,
-                                                      transparent 4px);
+                                                        transparent,
+                                                        transparent 4px);
   /* h6 ------------------------------------------------------------------------------------- */
   --h6-color:                                           var(--h5-color);
   --h6-bd-color:                                        var(--h5-bd-color);
@@ -336,7 +336,7 @@
   --cb-regexp-shadow:                                   var(--cb-subst-shadow);
   
   --cb-selector-tag-color:                              hsl(calc(var(--usp-remoods-hue) + 120deg), 100%,  70%);
-  --cb-selector-tag-shadow:                        0 0 none;
+  --cb-selector-tag-shadow:                         0 0 none;
   --cb-tag-color:                                       var(--cb-selector-tag-color);
   --cb-tag-shadow:                                      var(--cb-selector-tag-shadow);
 
