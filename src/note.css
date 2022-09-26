@@ -94,8 +94,8 @@
 
   
   /* PRINT FONT ******************************************** */
-  --usp-print-base-font: "Montserrat", "Chiron Sans HK PRO Extralight";
-  --usp-print-monospace-font: "Cascadia Mono Light", "Chiron Sans HK PRO Extralight";
+  --usp-print-base-font: "Montserrat", "Chiron Hei HK Text Extralight";
+  --usp-print-monospace-font: "Cascadia Mono Light", "Chiron Hei HK Text Extralight";
   --usp-print-base-font-size: 12px;
   --usp-print-monospace-font-size: 10px;
   
