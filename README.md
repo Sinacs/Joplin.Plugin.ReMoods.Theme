@@ -17,7 +17,7 @@ When simple and clear documentation makes it easy to understand, adding a beauti
 # Table Of Contents
 P.S. Some of the contents are incomplete at the moment.
 
-- [REMOODS THEME GETTING START [IMPORTANT]](#remoods-theme-getting-start-important)
+- [REMOODS THEME GETTING START](#remoods-theme-getting-start-important) [IMPORTANT]
   - [Download Recommended Fonts](#download-recommended-fonts)
   - [Customizable Heading](#customizable-heading)
   - [Text Styles](#text-styles)
@@ -41,6 +41,10 @@ P.S. Some of the contents are incomplete at the moment.
 
 # REMOODS THEME GETTING START [IMPORTANT]
 
+ReMoods has been styling lots of Joplin elements, and all of them are helpful to you. Some of the effects are highly rely on the Joplin built-in settings and third-party plugins to get work, so you may need to follow the below guides to get 100% of what ReMoods Theme brings to you!
+
+***
+
 **ReMoods needs to run with the Joplin built-in Dark theme. Otherwise, it might cause some of the colors abnormal:**
 
 1. Open Joplin
@@ -50,7 +54,7 @@ P.S. Some of the contents are incomplete at the moment.
 
 ***
 
-**ReMoods is relying on the "Rich Markdown" plugin to style the text because Joplin didn't provide enough CSS classes to specify those elements. So, it might cause some styles missing from ReMoods while you didn't install this plugin, or you didn't enable the settings:**
+**ReMoods is relying on the "Rich Markdown" plugin to style the text because Joplin didn't provide enough CSS classes to specify those elements. So, it would cause some styles to be missing from ReMoods while you didn't install this plugin, or you didn't enable the settings:**
 
 1. Open Joplin
 2. Go to `tools` > `Options` > `Plugins`
@@ -59,7 +63,7 @@ P.S. Some of the contents are incomplete at the moment.
 5. Quit & restart Joplin app
 6. Go to `Tools` , `Options`, `Rich Markdown`
 7. Enable the `Add additional CSS classes for enhanced customization`
-8. Press `OK` it's done!
+8. Click `Apply`
 
 ***
 
@@ -92,7 +96,7 @@ P.S. Some of the contents are incomplete at the moment.
 7. Go to `Tools` > `Options` > `Quick HTML Tags`
 8. Go to `HTML predefined tags` 
 9. Paste the text in the input bar
-10. Press `Ok` it's done!
+10. Click `OK`
 
 After this, you can use this plugin like below:
 
@@ -102,20 +106,13 @@ After this, you can use this plugin like below:
 
 Please mention that the `<ag>` is not a complete custom element name. You should add a number on it every time, such as `<ag4>`, `<ag8>` etc... Art Gallery lets you create 2 to 12 columns for images, so each time you create an `ag` tag with the Quick HTML Tags plugin, just don't forget to give it a number.
 
-
-[:arrow_up:Back](#table-of-contents)
-
 ***
 
-## Download Recommended Fonts 
+**ReMoods Theme has been tested over 50 free fonts from 10px to 16px, and I was developing everything for this theme based on using the below fonts, so I recommend you use them: (They are the default fonts for ReMoods)**
 
-ReMoods Theme tested over 50 free fonts from 10px to 16px, light to dark background, long hours of reading, etc. I finally picked the fonts below: 
-
-- Base Font Winner: Montserrat
-- Monospace Font Winner: Cascadia Mono Light 
-- Traditional & Simplified Chinese Font Winner: Chiron Hei Hk Text Extralight 
-
-They are all working great with ReMoods, and I was developing everything for this theme based on using these fonts. 
+- Base Font: Montserrat
+- Monospace Font: Cascadia Mono Light 
+- Traditional & Simplified Chinese Font: Chiron Hei Hk Text Extralight 
 
 Here is the abridged version of the font packages I have uploaded to my Google Drive; you can download the exact files you need at the below link: 
 
@@ -134,6 +131,12 @@ Alternatively, if you are interested to download the original complete packages,
 - Chiron Hei HK: https://github.com/chiron-fonts/chiron-hei-hk/releases 
 
 [:arrow_up:Back](#table-of-contents)
+
+***
+
+## Download Recommended Fonts 
+
+
 
 ## Customizable Heading 
 
