@@ -194,9 +194,9 @@ body {
 ```
 8. Back to Joplin
 9. Click `Custom Stylesheet for Joplin-wide app styles` and it will open the `chromestyle.css` file
-10. Paste the codes to the `userstyle.css` and it's done.
-
-Now, you can edit the value of these two stylesheet to control those settings.
+10. Paste the codes to the `userstyle.css`.
+11. Now, you can edit the value of these two stylesheet to control those settings.
+12. After edit the values, close the files then quit and restart Joplin. It's done! 
 
 [:arrow_up:Back](#table-of-contents)
 
