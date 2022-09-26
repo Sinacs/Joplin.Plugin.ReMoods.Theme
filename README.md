@@ -49,6 +49,8 @@ P.S. Some of the contents are incomplete at the moment.
 
 ReMoods has been styling lots of Joplin elements, and all of them are helpful to you. Some of the effects are highly rely on the Joplin built-in settings and third-party plugins to get work, so you may need to follow the below guides to get 100% of what ReMoods Theme brings to you!
 
+Let's follow the below step one by one!
+
 ## Change The Joplin Built-in Theme
 
 **ReMoods needs to run with the Joplin built-in Dark theme. Otherwise, it might cause some of the colors abnormal:**
@@ -155,14 +157,14 @@ Please copy the below codes and paste it to the correct CSS stylesheet:
 1. Copy the below codes
 ```
 :root {
-  // For render viewer and rich text editor
+  /* For render viewer and rich text editor */
   --usp-remoods-hue: 213deg; // The theme color hue setting, it must including "deg" after the numbers between 0 to 360.
   --usp-base-font: "montserrat","chiron hei hk text extralight";
   --usp-monospace-font: "cascadia mono light", "chiron hei hk text extralight";
   --usp-base-font-size: 14px;
   --usp-smaller-monospace-font-size: 86%;
   
-  // For print & export pdf
+  /* For print & export pdf */
   --usp-print-base-font: "montserrat","chiron hei hk text extralight";
   --usp-print-monospace-font: "cascadia mono light", "chiron hei hk text extralight";
   --usp-print-base-font-size: 12px;
@@ -177,12 +179,17 @@ Please copy the below codes and paste it to the correct CSS stylesheet:
 7. Then, copy the below codes
 ```
 :root {
-  // For markdown editor
-  --usp-remoods-hue: 213deg; // The theme color hue setting, it must including "deg" after the numbers between 0 to 360.
+  /* For markdown editor */
+  --usp-remoods-hue: 213deg; /* The theme color hue setting, it must including "deg" after the numbers between 0 to 360. */
   --usp-base-font: "montserrat","chiron hei hk text extralight";
   --usp-monospace-font: "cascadia mono light", "chiron hei hk text extralight";
   --usp-base-font-size: 14px;
   --usp-smaller-monospace-font-size: 86%;
+}
+
+/* Avoid white background when starting Joplin */
+body {
+  background-color: hsl(var(--usp-remoods-hue),  8%,  27%) !important;
 }
 ```
 8. Back to Joplin
