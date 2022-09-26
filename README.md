@@ -41,6 +41,62 @@ P.S. Some of the contents are incomplete at the moment.
 
 # REMOODS THEME GETTING START
 
+**ReMoods needs to run with the Joplin built-in Dark theme. Otherwise, it might cause some of the colors abnormal:**
+
+1. Open Joplin
+2. Go to `tools` > `Options` >`Appearance` > `Theme`
+3. Choose `Dark`
+4. Click `Apply`
+
+**ReMoods is relying on the "Rich Markdown" plugin to style the text because Joplin didn't provide enough CSS classes to specify those elements. So, it might cause some styles missing from ReMoods while you didn't install this plugin, or you didn't enable the settings:**
+
+1. Open Joplin
+2. Go to `tools` > `Options` > `Plugins`
+3. Search the plugin by inputting the word `rich`
+4. Click `Install` on the `Rich Markdown`
+5. Quit & restart Joplin app
+6. Go to `Tools` , `Options`, `Rich Markdown`
+7. Enable the `Add additional CSS classes for enhanced customization`
+8. Press `OK` it's done!
+
+**ReMoods has styled the Special Text, but some of them didn't turn on by Joplin default, so you should turn them on manually:**
+
+1. Open Joplin
+2. Go to `tools` > `Options` >`Markdown` 
+3. Enable all of the below: 
+	- `Enable math expressions (wysiwyg: yes)`
+	- `Enable Mermaid diagrams support (wysiwyg: yes)`
+	- `Enable ==mark== syntax (wysiwyg: yes)`
+	- `Enable footnotes (wysiwyg: no)`
+	- `Enable table of contents extension (wysiwyg: no)`
+	- `Enable ~sub~ syntax (wysiwyg: yes)`
+	- `Enable ^sup^ syntax (wysiwyg: yes)`
+	- `Enable abbreviation syntax (wysiwyg: no)`
+	- `Enable ++insert++ syntax (wysiwyg: yes)`
+4. Click `Apply`
+
+**The "Quick HTML Tags" plugin provides you with a quick and easy way to create HTML tags in your notes, and it's helpful to create the custom elements of ReMoods:**
+
+1. Copy this line of text:  `kp;span;ctb;km;ag;note;tip;explain;question;comment;keyword;important;`
+2. Open Joplin
+3. Go to `Tools` > `Options` > `Plugins`
+4. Search plugin by input the word `html`
+5. Click `Install` which on the `Quick HTML Tags` plugin
+6. Quit & restart Joplin app
+7. Go to `Tools` > `Options` > `Quick HTML Tags`
+8. Go to `HTML predefined tags` 
+9. Paste the text in the input bar
+10. Press `Ok` it's done!
+
+After this, you can use this plugin like below:
+
+1. Whenever you want to use an HTML tag just press  `ctrl + h`
+2. Then, press the `Down` key on your keyboard to find the right tag
+3. Press the `Enter` key. It's done!
+
+Please mention that the `<ag>` is not a complete custom element name. You should add a number on it every time, such as `<ag4>`, `<ag8>` etc... Art Gallery lets you create 2 to 12 columns for images, so each time you create an `ag` tag with the Quick HTML Tags plugin, just don't forget to give it a number.
+
+
 [:arrow_up:Back](#table-of-contents)
 
 ## Download Recommended Fonts 
