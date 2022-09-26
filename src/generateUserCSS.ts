@@ -10,6 +10,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     monospaceFont,
     baseFontSize,
     smallerMonospaceFontSize,
+    darkerEditorBackground,
     h1TextTransform,
     h1FontVariant,
     evidentHorizontalLine,
@@ -73,6 +74,18 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
    * smallerMonospaceFontSize: int + '%'
    * --usp-smaller-monospace-font-size: 86%;
    */
+
+  if(!darkerEditorBackground) {
+    chromeCSS = chromeCSS.replace(/^  --code-mirror-bg-color:.+?;/m, '  --code-mirror-bg-color: hsl(var(--usp-remoods-hue),  8%, 27%);');
+    chromeCSS = chromeCSS.replace(/^  --code-block-bg-color:.+?;/m, '  --code-block-bg-color: hsl(var(--usp-remoods-hue),  8%, 17%);');
+    noteCSS = noteCSS.replace(/^  --render-viewer-bg-color:.+?;/m, '  --render-viewer-bg-color: hsl(var(--usp-remoods-hue),  8%, 27%);');
+    noteCSS = noteCSS.replace(/^  --render-viewer-bg-color-2:.+?;/m, '  --render-viewer-bg-color-2: hsl(var(--usp-remoods-hue),  8%, 17%);');
+  } else {
+    chromeCSS = chromeCSS.replace(/^  --code-mirror-bg-color:.+?;/m, '  --code-mirror-bg-color: hsl(var(--usp-remoods-hue),  8%, 20%);');
+    chromeCSS = chromeCSS.replace(/^  --code-block-bg-color:.+?;/m, '  --code-block-bg-color: hsl(var(--usp-remoods-hue),  8%, 13%);');
+    noteCSS = noteCSS.replace(/^  --render-viewer-bg-color:.+?;/m, '  --render-viewer-bg-color: hsl(var(--usp-remoods-hue),  8%, 20%);');
+    noteCSS = noteCSS.replace(/^  --render-viewer-bg-color-2:.+?;/m, '  --render-viewer-bg-color-2: hsl(var(--usp-remoods-hue),  8%, 13%);');
+  }
 
   if(!h1TextTransform) {
     chromeCSS = chromeCSS.replace(/^  --usp-h1-text-transform:.+?;/m, '  --usp-h1-text-transform: unset;');

@@ -11,6 +11,7 @@ export type ThemeSettings = {
 	monospaceFont: string;
 	baseFontSize: number;
 	smallerMonospaceFontSize: number;
+	darkerEditorBackground: boolean;
 	h1TextTransform: boolean;
 	h1FontVariant: boolean;
 	evidentHorizontalLine: boolean;
@@ -126,6 +127,14 @@ async function prepareThemeSettings(): Promise<void> {
 			public: false,
 		},
 		
+		'darkerEditorBackground': {
+			section: 'remoodsThemeSection',
+			label: '[Markdown Editor & Render Viewer] Enable darker background color (EXPERIMENTAL)',
+			type: SettingItemType.Bool,
+			value: false,
+			public: true,
+		},
+
 		'h1TextTransform': {
 			section: 'remoodsThemeSection',
 			label: '[Markdown Editor & Render Viewer] Enable capitalize for the first character of each words on H1 heading',
@@ -136,7 +145,7 @@ async function prepareThemeSettings(): Promise<void> {
 		
 		'h1FontVariant': {
 			section: 'remoodsThemeSection',
-			label: '[Markdown Editor & Render Viewer] Enable Small-caps effect on H1 heading ',
+			label: '[Markdown Editor & Render Viewer] Enable Small-caps effect on H1 heading',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -409,6 +418,7 @@ async function writeUserCSS(): Promise<void> {
 	const monospaceFont = await joplin.settings.value('monospaceFont');
 	const baseFontSize = await joplin.settings.value('baseFontSize');
 	const smallerMonospaceFontSize = await joplin.settings.value('smallerMonospaceFontSize');
+	const darkerEditorBackground = await joplin.settings.value('darkerEditorBackground');
 	const h1TextTransform = await joplin.settings.value('h1TextTransform');
 	const h1FontVariant = await joplin.settings.value('h1FontVariant');
 	const evidentHorizontalLine = await joplin.settings.value('evidentHorizontalLine');
@@ -449,6 +459,7 @@ async function writeUserCSS(): Promise<void> {
 		monospaceFont,
 		baseFontSize,
 		smallerMonospaceFontSize,
+		darkerEditorBackground,
 		h1TextTransform,
 		h1FontVariant,
 		evidentHorizontalLine,
