@@ -374,7 +374,7 @@ See it below:
 
 ## Key Mention
 
-The custom element Key Mention is use for 
+The custom element Key Mention is good to use as an additional short information. Use it right behind a target element, and you will see it presented to the right. You can use it to remark on the last update time of the table and paragraph. Or you can use it like the HTML `<cite>` tag.
 
 ![Screenshot 2022-09-25 185512](https://user-images.githubusercontent.com/110529913/192140048-a6384ac9-069b-4d88-924c-9eb4a64c778a.png)
 
