@@ -1591,7 +1591,17 @@ ag12 img {
   max-width: calc(100% / 12 - 12px);
 }
 /* art gallery scrollbar ----------------------------------- */
-ag6::-webkit-scrollbar {
+ag2::-webkit-scrollbar,
+ag3::-webkit-scrollbar,
+ag4::-webkit-scrollbar,
+ag5::-webkit-scrollbar,
+ag6::-webkit-scrollbar,
+ag7::-webkit-scrollbar,
+ag8::-webkit-scrollbar,
+ag9::-webkit-scrollbar,
+ag10::-webkit-scrollbar,
+ag11::-webkit-scrollbar,
+ag12::-webkit-scrollbar {
   width: 15px;
   height: 15px;
 }
