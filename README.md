@@ -169,10 +169,10 @@ Please copy the below codes and paste it to the correct CSS stylesheet:
   --usp-print-monospace-font-size: 10px;
 }
 ```
-1. Open Joplin
-2. Go to `Options > Appearance`
-3. Click `Show Advanced Settings`
-4. Click `Custom Stylesheet for rendered Markdown` and it will open the `userstyle.css` file
+2. Open Joplin
+3. Go to `Options > Appearance`
+4. Click `Show Advanced Settings`
+5. Click `Custom Stylesheet for rendered Markdown` and it will open the `userstyle.css` file
 6. Paste the codes to the `userstyle.css` and back to the guide
 7. Then, copy the below codes
 ```
