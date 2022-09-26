@@ -17,7 +17,7 @@ When simple and clear documentation makes it easy to understand, adding a beauti
 # Table Of Contents
 P.S. Some of the contents are incomplete at the moment.
 
-- [REMOODS THEME GETTING START](#remoods-theme-getting-start)
+- [REMOODS THEME GETTING START [IMPORTANT]](#remoods-theme-getting-start-important)
   - [Download Recommended Fonts](#download-recommended-fonts)
   - [Customizable Heading](#customizable-heading)
   - [Text Styles](#text-styles)
@@ -39,7 +39,7 @@ P.S. Some of the contents are incomplete at the moment.
 - [TESTED PLUGINS](#tested-plugins)
 - [CONTRIBUTION](#contribution)
 
-# REMOODS THEME GETTING START
+# REMOODS THEME GETTING START [IMPORTANT]
 
 **ReMoods needs to run with the Joplin built-in Dark theme. Otherwise, it might cause some of the colors abnormal:**
 
@@ -47,6 +47,8 @@ P.S. Some of the contents are incomplete at the moment.
 2. Go to `tools` > `Options` >`Appearance` > `Theme`
 3. Choose `Dark`
 4. Click `Apply`
+
+***
 
 **ReMoods is relying on the "Rich Markdown" plugin to style the text because Joplin didn't provide enough CSS classes to specify those elements. So, it might cause some styles missing from ReMoods while you didn't install this plugin, or you didn't enable the settings:**
 
@@ -58,6 +60,8 @@ P.S. Some of the contents are incomplete at the moment.
 6. Go to `Tools` , `Options`, `Rich Markdown`
 7. Enable the `Add additional CSS classes for enhanced customization`
 8. Press `OK` it's done!
+
+***
 
 **ReMoods has styled the Special Text, but some of them didn't turn on by Joplin default, so you should turn them on manually:**
 
@@ -74,6 +78,8 @@ P.S. Some of the contents are incomplete at the moment.
 	- `Enable abbreviation syntax (wysiwyg: no)`
 	- `Enable ++insert++ syntax (wysiwyg: yes)`
 4. Click `Apply`
+
+***
 
 **The "Quick HTML Tags" plugin provides you with a quick and easy way to create HTML tags in your notes, and it's helpful to create the custom elements of ReMoods:**
 
@@ -98,6 +104,8 @@ Please mention that the `<ag>` is not a complete custom element name. You should
 
 
 [:arrow_up:Back](#table-of-contents)
+
+***
 
 ## Download Recommended Fonts 
 
