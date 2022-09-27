@@ -24,7 +24,7 @@ P.S. Some of the contents are incomplete at the moment.
   - [Install And Setting The Helpful Plugin: Quick HTML Tags](#install-and-setting-the-helpful-plugin-quick-html-tags-optional) [Optional]
   - [Download And Install Recommended Fonts](#download-and-install-recommended-fonts-optional) [Optional]
   - [A Temporary Solution Of Customize The Font-Related Settings](#a-temporary-solution-of-customize-the-font-related-settings-important) [IMPORTANT]
-- [LOOK & FEEL](#look--feel)
+- [INTERFACE](#interface)
   - [Customizable Heading](#customizable-heading)
   - [Text Styles](#text-styles)
   - [Code Block Syntax Highlight](#code-block-syntax-highlight)
@@ -172,7 +172,7 @@ Please copy the below codes and paste them to the correct CSS stylesheet:
 }
 ```
 2. Open Joplin
-3. Go to `Options > Appearance`
+3. Go to `Options` > `Appearance`
 4. Click `Show Advanced Settings`
 5. Click `Custom Stylesheet for rendered Markdown` and it will open the `userstyle.css` file
 6. Paste the codes to the `userstyle.css` and back to the guide
@@ -200,8 +200,11 @@ body {
 
 [:arrow_up:Back](#table-of-contents)
 
-# LOOK & FEEL
+# INTERFACE
 
+Remoods is expecting to try its best to create a comfortable and useful theme for you. Maybe you wouldn't feel it at once by reading this document, but I believe that you would feel it slowly throughout the time you use it.
+
+While I did many little pieces of stuff for this theme, I can't show you everything in this document, but I would like to show you some of them! Below show you some screenshots and tell you some key concepts of use.
 
 ## Customizable Heading 
 
@@ -254,16 +257,16 @@ Joplin provides us a great built-in Markdown TOC feature which let you create th
 The Markdown TOC feature is disabled by Joplin default. To use the Markdown TOC, you should enable the extension manually.
 
 To enable the TOC feature:
-1. Go to `Options > Markdown`
+1. Go to `Options` > `Markdown`
 2. Checked `Enable table of contents extension (wysiwyg:no)`
 
 [:arrow_up:Back](#table-of-contents)
 
 ## Eye-Protector
 
-All attached images and mermaid charts will default to 20% darker than the original, to avoid bright light flickering your eyes while reading the notes. Hovering over them will restore the original brightness slowly.
+All attached images and mermaid charts will default to 20% darker than the original, to avoid bright light flashing your eyes while reading the notes. Hovering over them will restore the original brightness slowly.
 
-You can disable it by going to `Options > ReMoods Theme` and unchecking the `Enable Eye-Protector effect for mermaid charts` or `Enable Eye-Protector effect for images`.
+You can disable it by going to `Options` > `ReMoods Theme` and unchecking the `Enable Eye-Protector effect for mermaid charts` or `Enable Eye-Protector effect for images`.
 
 ![EyeProtector](https://user-images.githubusercontent.com/86870826/154980775-2df6b700-ae1a-4a4d-b0f8-a9f99a60484f.jpg)
 
