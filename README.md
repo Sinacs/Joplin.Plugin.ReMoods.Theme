@@ -47,9 +47,9 @@ P.S. Some of the contents are incomplete at the moment.
 
 # REMOODS THEME GETTING START [IMPORTANT]
 
-ReMoods has been styling lots of Joplin elements, and all of them are helpful to you. Some of the effects are highly rely on the Joplin built-in settings and third-party plugins to get work, so you may need to follow the below guides to get 100% of what ReMoods Theme brings to you!
+ReMoods has been styling lots of Joplin elements, and all of them are helpful to you. Some of the effects are highly reliant on the Joplin built-in settings and third-party plugins to get work, so you may need to follow the below guides to get 100% of what ReMoods Theme brings to you!
 
-Let's follow the below step one by one!
+Let's go for it one by one!
 
 ## Change The Joplin Built-in Theme
 
@@ -91,7 +91,7 @@ Let's follow the below step one by one!
 3. Search the plugin by inputting the word `rich`
 4. Click `Install` on the `Rich Markdown`
 5. Quit & restart Joplin app
-6. Go to `Tools` , `Options`, `Rich Markdown`
+6. Go to `Tools`, `Options`, `Rich Markdown`
 7. Enable the `Add additional CSS classes for enhanced customization`
 8. Click `Apply`
 
@@ -104,8 +104,8 @@ Let's follow the below step one by one!
 1. Copy this line of text:  `kp;span;ctb;km;ag;note;tip;explain;question;comment;keyword;important;`
 2. Open Joplin
 3. Go to `Tools` > `Options` > `Plugins`
-4. Search plugin by input the word `html`
-5. Click `Install` which on the `Quick HTML Tags` plugin
+4. Search the plugin by inputting the word `html`
+5. Click `Install` on the `Quick HTML Tags` plugin
 6. Quit & restart Joplin app
 7. Go to `Tools` > `Options` > `Quick HTML Tags`
 8. Go to `HTML predefined tags` 
@@ -150,15 +150,15 @@ Alternatively, if you are interested to download the original complete packages,
 
 ## A Temporary Solution Of Customize The Font-Related Settings [IMPORTANT]
 
-Currently, some of the core settings properties are doesn't work in the ReMoods Theme settings page due to I don't know how to implement it. So, for an alternative, you could edit the theme color and font-related settings through your `userstyle.css` and `chromestyle.css` manually:
+Currently, some of the core settings properties are doesn't work in the ReMoods Theme settings page due to I don't know how to implement them. So, for an alternative, you could edit the theme color and font-related settings through your `userstyle.css` and `chromestyle.css` manually:
 
-Please copy the below codes and paste it to the correct CSS stylesheet:
+Please copy the below codes and paste them to the correct CSS stylesheet:
 
 1. Copy the below codes
 ```
 :root {
   /* For render viewer and rich text editor */
-  --usp-remoods-hue: 213deg; // The theme color hue setting, it must including "deg" after the numbers between 0 to 360.
+  --usp-remoods-hue: 213deg; // The theme color hue setting, must include "deg" after the numbers between 0 to 360.
   --usp-base-font: "montserrat","chiron hei hk text extralight";
   --usp-monospace-font: "cascadia mono light", "chiron hei hk text extralight";
   --usp-base-font-size: 14px;
@@ -180,7 +180,7 @@ Please copy the below codes and paste it to the correct CSS stylesheet:
 ```
 :root {
   /* For markdown editor */
-  --usp-remoods-hue: 213deg; /* The theme color hue setting, it must including "deg" after the numbers between 0 to 360. */
+  --usp-remoods-hue: 213deg; /* The theme color hue setting, must include "deg" after the numbers between 0 to 360. */
   --usp-base-font: "montserrat","chiron hei hk text extralight";
   --usp-monospace-font: "cascadia mono light", "chiron hei hk text extralight";
   --usp-base-font-size: 14px;
@@ -195,8 +195,8 @@ body {
 8. Back to Joplin
 9. Click `Custom Stylesheet for Joplin-wide app styles` and it will open the `chromestyle.css` file
 10. Paste the codes to the `userstyle.css`.
-11. Now, you can edit the value of these two stylesheet to control those settings.
-12. After edit the values, close the files then quit and restart Joplin. It's done! 
+11. Now, you can edit the value of these two stylesheets to control those settings.
+12. After editing the values, close the files then quit and restart Joplin. It's done! 
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -221,7 +221,7 @@ body {
 
 ## Text Styles
 
-Some of the text color would change with the theme color.
+Some of the text colors would change with the theme color.
 
 ![Screenshot 2022-09-25 025053](https://user-images.githubusercontent.com/110529913/192114108-06e98831-c1f6-4dc4-b754-3a98bb6315dc.png)
 
@@ -245,13 +245,13 @@ Syntax Highlight would change with the theme color too:
 
 ## Floating TOC 
 
-Joplin provides us a great built-in Markdown TOC feature which let you create the TOC by typing a simple command `[[toc]]` within your notes. ReMoods has restyle it and made it floating at the bottom right of the Render Viewer.
+Joplin provides us a great built-in Markdown TOC feature which let you create the TOC by typing a simple command `[[toc]]` within your notes. ReMoods has restyled it and made it floating at the bottom right of the Render Viewer.
 
 ![Screenshot 2022-09-25 032314](https://user-images.githubusercontent.com/110529913/192115112-9432ac02-94de-4894-b0a6-3fcc8333d32f.png)
 
 ### Hints
 
-The Markdown TOC feature is disable by Joplin default. To use the Markdown TOC, you should enable the the extension manually.
+The Markdown TOC feature is disabled by Joplin default. To use the Markdown TOC, you should enable the extension manually.
 
 To enable the TOC feature:
 1. Go to `Options > Markdown`
@@ -263,7 +263,7 @@ To enable the TOC feature:
 
 All attached images and mermaid charts will default to 20% darker than the original, to avoid bright light flickering your eyes while reading the notes. Hovering over them will restore the original brightness slowly.
 
-You can disable it by go to `Options > ReMoods Theme` and unchecked the `Enable Eye-Protector effect for mermaid charts` or `Enable Eye-Protector effect for images`.
+You can disable it by going to `Options > ReMoods Theme` and unchecking the `Enable Eye-Protector effect for mermaid charts` or `Enable Eye-Protector effect for images`.
 
 ![EyeProtector](https://user-images.githubusercontent.com/86870826/154980775-2df6b700-ae1a-4a4d-b0f8-a9f99a60484f.jpg)
 
@@ -281,7 +281,7 @@ ReMoods Theme provides a lot of custom elements to help you create a better read
 
 ### Hints
 
-If Joplin is your only place to taking notes, you can just use the Custom Elements without thinking. Otherwise, you should notice the below:
+If Joplin is your only place to take notes, you can just use the Custom Elements without thinking. Otherwise, you should notice the below:
 
 1. Custom Elements are unique HTML Elements and CSS Styles for ReMoods Theme, so it might become plain text format when you transfer your notes to other software.
 2. Even if other software is support customize CSS, you should still need to copy the related codes from ReMoods to your new software manually.
@@ -292,7 +292,7 @@ If Joplin is your only place to taking notes, you can just use the Custom Elemen
 
 Art Gallery provides 11 custom elements for you to split attached images into columns. It would be helpful if you have many images needed to attach to your note. 
 
-Art Gallery has limited the `max-height` to 60% viewport height by default. Let's see how its work:
+Art Gallery has limited the `max-height` to 60% viewport height by default. Let's see how its works:
 
 | Custom Elements | Force Columns |
 |:---------------:|:-------------:|
@@ -316,7 +316,7 @@ Below is the sample of the art gallery(ag6) with 30 images:
 
 1. The custom element name `ag` stands for *Art Gallery*.
 2. The art gallery tag must use *right behind the plain text* .
-3. Do not including any blank line within this part of the codes, *blank line will break the format* .
+3. Do not include any blank line within this part of the codes, *blank line will break the format* .
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -334,13 +334,13 @@ Let’s see what are the Sticky Notes for:
 2. Start typing your content in a *new line*.
 3. Use plain text within a custom element.
 4. Use `ENTER` to add a line break.
-5. Do not including any blank line within the Sticky Notes, if you want to adding a *blank line* please use  `<br>`.
+5. Do not include any blank line within the Sticky Notes, if you want to add a *blank line* please use  `<br>`.
 
 [:arrow_up:Back](#table-of-contents)
 
 ## Custom Title Block
 
-Custom Title Block would be suitable for supplementing information that you think is important to readers. The use is very similar to a blockquote but come up with a clear heading, it's making a key concept more outstanding.
+Custom Title Block would be suitable for supplementing information that you think is important to readers. The use is very similar to a blockquote but coming up with a clear heading, it's making a key concept more outstanding.
 
 Let's see what it looks like:
 
@@ -359,13 +359,13 @@ Let's see what it looks like:
 
 ## Key Point
 
-The custom element Key Point is super useful while you want to split out a paragraph without using the Heading or Strong Text. It also can keeps your mind clear from the sense of overly using the Strong Text or Heading. The use is very similar to the HTML Description List element.
+The custom element Key Point is super useful when you want to split out a paragraph without using the Heading or Strong Text. It also can keep your mind clear from the sense of overly using the Strong Text or Heading. The use is very similar to the HTML Description List element.
 
 3 best timing to use the Key Point:
 
-1. To keep *multiple paragraph* of contents stay within *one heading*.
-2. To *explain a part of content* that with *multiple key points* and each one have *a paragraph of description*.
-3. To avoiding using Strong Text to *create a paragraph*. (keep your strong text only appear within a paragraph content.)
+1. To keep *multiple paragraphs* of content stay within *one heading*.
+2. To *explain a part of content* that with *multiple key points* and each one has *a paragraph of description*.
+3. To avoid using Strong Text to *create a paragraph*. (keep your strong text only appearing within a paragraph's content.)
 
 See it below:
 
@@ -374,7 +374,7 @@ See it below:
 ### Hints
 
 1. The custom element name `kp` stands for *Key Point*.
-2. I recommend **only** use it at *the beginning of line*.
+2. I recommend **only** use it at *the beginning of the line*.
 3. It **cannot** be used within *any other block elements* such as Custom Title Block, Spoiler Block, Sticky Notes, etc...
 
 [:arrow_up:Back](#table-of-contents)
@@ -388,8 +388,8 @@ The custom element Key Mention is good to use as an additional short information
 ### Hints
 
 1. The custom element name `km` stands for *Key Mention*.
-2. Always use `km` **right behind the target element** which you want to describe for.
-3. Use with the Joplin built-in function `Insert Date Time` make you easy.
+2. Always use `km` **right behind the target element** which you want to describe.
+3. Use the Joplin built-in function `Insert Date Time` to make it easy.
 4. You can also use `km` within any Sticky Notes, and if you do that, please make sure `km` is always the **first child** inside the Sticky Notes.
 5. The text strong, emphasize, insert, and strikethrough will present as red color when inside the `km`.
 6. Mouse hover on it to zoom bigger.
@@ -421,13 +421,13 @@ The third-party plugin styling is aimed to keep the plugin styles consistent wit
 
 This plugin allows you to create inline spoilers and spoiler blocks with title and extendable body. And the below shows what Spoiler looks like in ReMoods:
 
-Let's take a look to the spoiler block:
+Let's take a look at the spoiler block:
 
 ![Screenshot 2022-09-25 233436](https://user-images.githubusercontent.com/110529913/192151983-f7da56cc-add8-4638-9224-60abeb4894c7.png)
 
 ### Hints
 
-ReMoods has been created 4 more custom styles that you can use within the Spoiler block for advanced use:
+ReMoods has created 4 more custom styles that you can use within the Spoiler block for advanced use:
 
 1. Spoiler Block > Span
 2. Spoiler Block > List
@@ -511,7 +511,7 @@ Quick setting up:
 
 ## Export PDF Document
 
-- In ReMoods, Print & Export PDF is the standlone part that separated from the Render Viewer styles. So, it means you can set different fonts and font size for Print & Export PDF use, and it won't affects to the styles within Joplin.
+- In ReMoods, Print & Export PDF is the standalone part that is separated from the Render Viewer styles. So, it means you can set different fonts and font sizes for Print & Export PDF use, and it won't affect the styles within Joplin.
 - You can also control what elements should show on the PDF through the ReMoods Theme settings page, such as hide the Sticky Notes, hide the Key Mention, hide the notebook title, etc.
 
 ![Screenshot 2022-09-26 190704](https://user-images.githubusercontent.com/110529913/192261498-b95ee279-65f3-4dc3-9a1f-609023f62859.png)
@@ -520,7 +520,7 @@ Quick setting up:
 
 # TESTED THIRD-PARTY PLUGINS
 
-When I'm free, I would test different plugins and see what can I do to it. If you are interested to know what plugins I've tested you can check out the below:
+When I'm free, I would test different plugins and see what can I do to them. If you are interested to know what plugins I've tested you can check out the below:
 
 This table will keep up to date
 
