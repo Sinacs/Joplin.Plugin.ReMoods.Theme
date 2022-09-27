@@ -20,7 +20,7 @@ P.S. Some of the contents are incomplete at the moment.
 - [REMOODS THEME GETTING START](#remoods-theme-getting-start-important) [IMPORTANT]
   - [Change The Joplin Built-in Theme](#change-the-joplin-built-in-theme)
   - [Change The Joplin Built-in Markdown Settings](#change-the-joplin-built-in-markdown-settings)
-  - [Install And Setting The Required Plugin](#install-and-setting-the-required-plugin-rich-markdown)
+  - [Install And Setting The Required Plugin: Rich Markdown](#install-and-setting-the-required-plugin-rich-markdown)
   - [Install And Setting The Helpful Plugin: Quick HTML Tags](#install-and-setting-the-helpful-plugin-quick-html-tags-optional) [Optional]
   - [Download And Install Recommended Fonts](#download-and-install-recommended-fonts-optional) [Optional]
   - [A Temporary Solution Of Customize The Font-Related Settings](#a-temporary-solution-of-customize-the-font-related-settings-important) [IMPORTANT]
@@ -47,7 +47,7 @@ P.S. Some of the contents are incomplete at the moment.
 
 # REMOODS THEME GETTING START [IMPORTANT]
 
-ReMoods has been styling lots of Joplin elements, and all of them are helpful to you. Some of the effects are highly reliant on the Joplin built-in settings and third-party plugins to get work, so you may need to follow the below guides to get 100% of what ReMoods Theme brings to you!
+ReMoods has been styling lots of Joplin elements, and all of them are helpful to you. However, some of the effects are highly reliant on the Joplin built-in settings and third-party plugins to get work, so you may need to follow the below guides to get 100% of what ReMoods Theme brings to you!
 
 Let's go for it one by one!
 
@@ -64,11 +64,11 @@ Let's go for it one by one!
 
 ## Change The Joplin Built-in Markdown Settings
 
-**ReMoods has styled the Special Text, but some of them didn't turn on by Joplin default, so you should turn them on manually:**
+**ReMoods has styled the special text, but some of them didn't turn on by Joplin default, so you should turn them on manually:**
 
 1. Open Joplin
 2. Go to `tools` > `Options` >`Markdown` 
-3. Enable all of the below: 
+3. Enable the below options depend on yourr needs: 
 	- `Enable math expressions (wysiwyg: yes)`
 	- `Enable Mermaid diagrams support (wysiwyg: yes)`
 	- `Enable ==mark== syntax (wysiwyg: yes)`
@@ -130,7 +130,7 @@ Please mention that the `<ag>` is not a complete custom element name. You should
 - Monospace Font: Cascadia Mono Light 
 - Traditional & Simplified Chinese Font: Chiron Hei Hk Text Extralight 
 
-Here is the abridged version of the font packages I have uploaded to my Google Drive; you can download the exact files you need at the below link: 
+Here is the abridged version of the font packages, and I have uploaded them to my Google Drive; you can download the exact files you need at the below link: 
 
 https://drive.google.com/drive/folders/1SEBEVGpBrXFlmOtVzyqnhEVuO7Vrp61Y?usp=sharing 
 
@@ -150,7 +150,7 @@ Alternatively, if you are interested to download the original complete packages,
 
 ## A Temporary Solution Of Customize The Font-Related Settings [IMPORTANT]
 
-Currently, some of the core settings properties are not available on the ReMoods Theme settings page because I don't know how to implement them. So, for an alternative, you could edit the theme color and font-related settings through your `userstyle.css` and `chromestyle.css` manually:
+Currently, some of the core settings properties are not available on the ReMoods Theme's settings page because I don't know how to implement them. So, for an alternative, you could edit the theme color and font-related settings through your `userstyle.css` and `chromestyle.css` manually:
 
 Please copy the below codes and paste them to the correct CSS stylesheet:
 
@@ -245,7 +245,7 @@ Syntax Highlight would change with the theme color too:
 
 ## Floating TOC 
 
-Joplin provides us a great built-in Markdown TOC feature which let you create the TOC by typing a simple command `[[toc]]` within your notes. ReMoods has restyled it and made it floating at the bottom right of the Render Viewer.
+Joplin provides us a great built-in Markdown TOC feature which let you create the TOC by typing a simple command `[[toc]]` within your notes. ReMoods has restyled it and made it floating at the bottom right of the Render Viewer. It would open up when mouse hovers on the TOC button.
 
 ![Screenshot 2022-09-25 032314](https://user-images.githubusercontent.com/110529913/192115112-9432ac02-94de-4894-b0a6-3fcc8333d32f.png)
 
@@ -284,15 +284,15 @@ ReMoods Theme provides a lot of custom elements to help you create a better read
 If Joplin is your only place to take notes, you can just use the Custom Elements without thinking. Otherwise, you should notice the below:
 
 1. Custom Elements are unique HTML Elements and CSS Styles for ReMoods Theme, so it might become plain text format when you transfer your notes to other software.
-2. Even if other software is support customize CSS, you should still need to copy the related codes from ReMoods to your new software manually.
+2. Even if other software is support customize CSS, you should still need to copy the related codes from ReMoods to another software manually.
 
 [:arrow_up:Back](#table-of-contents)
 
 ## Art Gallery 
 
-Art Gallery provides 11 custom elements for you to split attached images into columns. It would be helpful if you have many images needed to attach to your note. 
+Art Gallery provides 11 custom elements for you to split attached images into multiple columns. It would be helpful if you have many images needed to attach to your note. 
 
-Art Gallery has limited the `max-height` to 60% viewport height by default. Let's see how it works:
+Art Gallery has limited the `max-height` to 56% viewport height by default. Let's see how it works:
 
 | Custom Elements | Force Columns |
 |:---------------:|:-------------:|
@@ -359,7 +359,7 @@ Let's see what it looks like:
 
 ## Key Point
 
-The custom element Key Point is super useful when you want to split out a paragraph without using the Heading or Strong Text. It also can keep your mind clear from the sense of overly using the Strong Text or Heading. The use is very similar to the HTML Description List element.
+The custom element Key Point is super useful when you want to split out a paragraph without using the Heading or Strong Text. It also can keep your mind clear from the sense of overly using the Strong Text or Heading. The usage is very similar to the HTML Description List element.
 
 3 best timing to use the Key Point:
 
@@ -446,9 +446,9 @@ Quick setting up:
 
 ## Markdown Table Colorize
 
-This plugin adds colors to Joplin markdown table syntax so you can quickly identify what column the content belongs to.
+This plugin adds colors to the markdown table syntax, so you can quickly identify what column the content belongs to.
 
-Sometimes, Markdown table syntax can be very messy when too much information is within the table. Thanks to the Markdown Table Colorize plugin, OhmineDT can create a better style for the markdown table now!
+Sometimes, Markdown table syntax can be very messy when too much information is within the table. Thanks to the Markdown Table Colorize plugin, ReMoods can create a better style for the markdown table now!
 
 After installing the Markdown Table Colorize plugin and ReMoods, you will see the markdown table syntax looks like below:
 
