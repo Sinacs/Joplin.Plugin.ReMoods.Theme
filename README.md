@@ -150,7 +150,7 @@ Alternatively, if you are interested to download the original complete packages,
 
 ## A Temporary Solution Of Customize The Font-Related Settings [IMPORTANT]
 
-Currently, some of the core settings properties are doesn't work in the ReMoods Theme settings page due to I don't know how to implement them. So, for an alternative, you could edit the theme color and font-related settings through your `userstyle.css` and `chromestyle.css` manually:
+Currently, some of the core settings properties are not available on the ReMoods Theme settings page because I don't know how to implement them. So, for an alternative, you could edit the theme color and font-related settings through your `userstyle.css` and `chromestyle.css` manually:
 
 Please copy the below codes and paste them to the correct CSS stylesheet:
 
@@ -292,7 +292,7 @@ If Joplin is your only place to take notes, you can just use the Custom Elements
 
 Art Gallery provides 11 custom elements for you to split attached images into columns. It would be helpful if you have many images needed to attach to your note. 
 
-Art Gallery has limited the `max-height` to 60% viewport height by default. Let's see how its works:
+Art Gallery has limited the `max-height` to 60% viewport height by default. Let's see how it works:
 
 | Custom Elements | Force Columns |
 |:---------------:|:-------------:|
