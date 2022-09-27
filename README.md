@@ -24,7 +24,7 @@ P.S. Some of the contents are incomplete at the moment.
   - [Install And Setting The Helpful Plugin: Quick HTML Tags](#install-and-setting-the-helpful-plugin-quick-html-tags-optional) [Optional]
   - [Download And Install Recommended Fonts](#download-and-install-recommended-fonts-optional) [Optional]
   - [A Temporary Solution Of Customize The Font-Related Settings](#a-temporary-solution-of-customize-the-font-related-settings-important) [IMPORTANT]
-- [INTERFACE](#interface)
+- [LOOK & FEEL](#look--feel)
   - [Customizable Heading](#customizable-heading)
   - [Text Styles](#text-styles)
   - [Code Block Syntax Highlight](#code-block-syntax-highlight)
@@ -200,11 +200,11 @@ body {
 
 [:arrow_up:Back](#table-of-contents)
 
-# INTERFACE
+# LOOK & FEEL
 
 Remoods is expecting to try its best to create a comfortable and useful theme for you. Maybe you wouldn't feel it at once by reading this document, but I believe that you would feel it slowly throughout the time you use it.
 
-While I did many little pieces of stuff for this theme, I can't show you everything in this document, but I would like to show you some of them! Below show you some screenshots and tell you some key concepts of use.
+While I did many little pieces of stuff for this theme, I can't show you everything through this document, but I would like to show you some of them! Below show you some screenshots and tell you some key concepts of use.
 
 ## Customizable Heading 
 
