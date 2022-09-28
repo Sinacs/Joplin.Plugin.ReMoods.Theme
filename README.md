@@ -23,7 +23,7 @@ P.S. Some of the contents are incomplete at the moment.
   - [Install And Setting The Required Plugin: Rich Markdown](#install-and-setting-the-required-plugin-rich-markdown)
   - [Install And Setting The Helpful Plugin: Quick HTML Tags](#install-and-setting-the-helpful-plugin-quick-html-tags-optional) [Optional]
   - [Download And Install Recommended Fonts](#download-and-install-recommended-fonts-optional) [Optional]
-  - [A Temporary Solution Of Customize The Font-Related Settings](#a-temporary-solution-of-customize-the-font-related-settings-important) [IMPORTANT]
+  - [A Temporary Solution Of Customize The Theme Color & Font-Related Settings](#a-temporary-solution-of-customize-the-theme-color--font-related-settings-important) [IMPORTANT]
 - [LOOK & FEEL](#look--feel)
   - [Customizable Heading](#customizable-heading)
   - [Text Styles](#text-styles)
@@ -148,7 +148,7 @@ Alternatively, if you are interested to download the original complete packages,
 
 [:arrow_up:Back](#table-of-contents)
 
-## A Temporary Solution Of Customize The Font-Related Settings [IMPORTANT]
+## A Temporary Solution Of Customize The Theme Color & Font-Related Settings [IMPORTANT]
 
 Currently, some of the core settings properties are not available on the ReMoods Theme's settings page because I don't know how to implement them. So, for an alternative, you could edit the theme color and font-related settings through your `userstyle.css` and `chromestyle.css` manually:
 
@@ -196,7 +196,7 @@ body {
 9. Click `Custom Stylesheet for Joplin-wide app styles` and it will open the `chromestyle.css` file
 10. Paste the codes to the `userstyle.css`.
 11. Now, you can edit the value of these two stylesheets to control those settings.
-12. After editing the values, close the files then quit and restart Joplin. It's done! 
+12. After editing the values, close the files then quit and restart Joplin. It's done!
 
 [:arrow_up:Back](#table-of-contents)
 
