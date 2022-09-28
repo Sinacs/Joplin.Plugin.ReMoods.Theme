@@ -264,11 +264,11 @@ To enable the TOC feature:
 
 ## Eye-Protector
 
+![IMG_20211114_145258_HDR1](https://user-images.githubusercontent.com/110529913/192705530-e3a3329c-2419-4f00-a9fa-fa246a5e6699.jpg)
+
 All attached images and mermaid charts will default to 20% darker than the original, to avoid bright light flashing your eyes while reading the notes. Hovering over them will restore the original brightness slowly.
 
 You can disable it by going to `Options` > `ReMoods Theme` and unchecking the `Enable Eye-Protector effect for mermaid charts` or `Enable Eye-Protector effect for images`.
-
-![EyeProtector](https://user-images.githubusercontent.com/86870826/154980775-2df6b700-ae1a-4a4d-b0f8-a9f99a60484f.jpg)
 
 [:arrow_up:Back](#table-of-contents)
 
