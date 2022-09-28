@@ -35,7 +35,7 @@ P.S. Some of the contents are incomplete at the moment.
   - [Sticky Notes](#sticky-notes)
   - [Custom Title Block](#custom-title-block)
   - [Key Point](#key-point)
-  - [Key Mention](#key-mention)
+  - [Key Mention](#key-mention) [NEW]
 - [THIRD-PARTY PLUGINS STYLING](#third-party-plugins-styling)
   - [Spoiler](#spoiler)
   - [Markdown Table Colorize](#markdown-table-colorize)
