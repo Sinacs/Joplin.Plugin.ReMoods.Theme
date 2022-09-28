@@ -152,7 +152,11 @@ Alternatively, if you are interested to download the original complete packages,
 
 Currently, some of the core settings properties are not available on the ReMoods Theme's settings page because I don't know how to implement them. So, for an alternative, you could edit the theme color and font-related settings through your `userstyle.css` and `chromestyle.css` manually:
 
-Please copy the below codes and paste them to the correct CSS stylesheet:
+> To OhmineDT old users:
+>
+> Please remove all the OhmineDT codes from your `userstyle.css` and `userchrome.css` first, because those codes will affects to ReMoods.
+
+Let's follow the below steps:
 
 1. Copy the below codes
 ```
@@ -197,6 +201,12 @@ body {
 10. Paste the codes to the `userstyle.css`.
 11. Now, you can edit the value of these two stylesheets to control those settings.
 12. After editing the values, close the files then quit and restart Joplin. It's done!
+
+> TIPS FOR BEGINNERS:
+>
+> If you don't understand CSS, don't worry! After you finish the above steps, you would be ready to edit the values. And the word "value" is mean the text where between the `:` and `;`. For example, `--usp-remoods-hue: 213deg;` and `--usp-base-font-size: 14px;`. As you will see the `213deg` and `14px`. Ya right! They are the values! After you edit them, you can close those files, then, quit and restart Joplin, and it's done!
+>
+> One more remind, you can leave me a message when you getting stuck in any problems of ReMoods: https://discourse.joplinapp.org/t/plugin-remoods-theme/27547
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -416,7 +426,7 @@ More use cases:
 
 # THIRD-PARTY PLUGINS STYLING
 
-The third-party plugin styling is aimed to keep the plugin styles consistent with the theme, and secondly is to add extra functions for using them in ReMoods. Let's keep reading the below.
+The third-party plugins styling is aimed to keep the plugin styles consistent with the theme, and secondly is to add extra usage for using them in ReMoods. Let's keep reading the below.
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -516,6 +526,7 @@ Quick setting up:
 
 - In ReMoods, Print & Export PDF is the standalone part that is separated from the Render Viewer styles. So, it means you can set different fonts and font sizes for Print & Export PDF use, and it won't affect the styles within Joplin.
 - You can also control what elements should show on the PDF through the ReMoods Theme settings page, such as hide the Sticky Notes, hide the Key Mention, hide the notebook title, etc.
+
 
 ![Screenshot 2022-09-26 190704](https://user-images.githubusercontent.com/110529913/192261498-b95ee279-65f3-4dc3-9a1f-609023f62859.png)
 
