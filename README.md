@@ -152,7 +152,7 @@ Alternatively, if you are interested to download the original complete packages,
 
 Currently, some of the core settings properties are not available on the ReMoods Theme's settings page because I don't know how to implement them. So, for an alternative, you could edit the theme color and font-related settings through your `userstyle.css` and `chromestyle.css` manually:
 
-> To OhmineDT old users:
+> A remind to the old OhmineDT users:
 >
 > Please remove all the OhmineDT codes from your `userstyle.css` and `userchrome.css` first, because those codes will affects to ReMoods.
 
@@ -241,6 +241,11 @@ Some of the text colors would change with the theme color.
 Let's compare the difference after the theme color changed:
 
 ![Screenshot 2022-09-26 002351](https://user-images.githubusercontent.com/110529913/192154325-b19c269b-2c6c-42ab-82d9-87751f96e7aa.png)
+
+### Hints
+
+1. About links, we usually use anchor text link like `[Joplin](https://www.joplin.org)` but that wouldn't be showing up the URL when print or export PDF. So, if you want to display the URL on the PDF, you should use the anchor text link with title like `[Joplin](https://www.joplin.org "Joplin")`.
+
 
 [:arrow_up:Back](#table-of-contents)
 
