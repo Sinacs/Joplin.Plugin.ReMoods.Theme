@@ -158,7 +158,7 @@ Please copy the below codes and paste them to the correct CSS stylesheet:
 ```
 :root {
   /* For render viewer and rich text editor */
-  --usp-remoods-hue: 213deg; // The theme color hue setting, must include "deg" after the numbers between 0 to 360.
+  --usp-remoods-hue: 213deg; /* The theme color hue setting, must include "deg" after the numbers between 0 to 360. */
   --usp-base-font: "montserrat","chiron hei hk text extralight";
   --usp-monospace-font: "cascadia mono light", "chiron hei hk text extralight";
   --usp-base-font-size: 14px;
