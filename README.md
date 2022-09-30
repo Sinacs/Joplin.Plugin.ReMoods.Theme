@@ -149,7 +149,7 @@ Alternatively, if you are interested to download the original complete packages,
 
 [:arrow_up:Back](#table-of-contents)
 
-## Install ReMoods Themme
+## Install ReMoods Theme
 
 This theme is a plugin, so you should:
 
