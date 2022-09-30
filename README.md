@@ -23,6 +23,7 @@ P.S. Some of the contents are incomplete at the moment.
   - [Install And Setting The Required Plugin: Rich Markdown](#install-and-setting-the-required-plugin-rich-markdown)
   - [Install And Setting The Helpful Plugin: Quick HTML Tags](#install-and-setting-the-helpful-plugin-quick-html-tags-optional) [Optional]
   - [Download And Install Recommended Fonts](#download-and-install-recommended-fonts-optional) [Optional]
+  - [Install ReMoods Theme](#install-remoods-theme)
   - [A Temporary Solution Of Customize The Theme Color & Font-Related Settings](#a-temporary-solution-of-customize-the-theme-color--font-related-settings-important) [IMPORTANT]
 - [LOOK & FEEL](#look--feel)
   - [Customizable Heading](#customizable-heading)
@@ -88,8 +89,8 @@ Let's go for it one by one!
 
 1. Open Joplin
 2. Go to `tools` > `Options` > `Plugins`
-3. Search the plugin by inputting the word `rich`
-4. Click `Install` on the `Rich Markdown`
+3. Search the word `rich`
+4. Click `Install` Rich Markdown
 5. Quit & restart Joplin app
 6. Go to `Tools`, `Options`, `Rich Markdown`
 7. Enable the `Add additional CSS classes for enhanced customization`
@@ -104,8 +105,8 @@ Let's go for it one by one!
 1. Copy this line of text:  `kp;span;ctb;km;ag;note;tip;explain;question;comment;keyword;important;`
 2. Open Joplin
 3. Go to `Tools` > `Options` > `Plugins`
-4. Search the plugin by inputting the word `html`
-5. Click `Install` on the `Quick HTML Tags` plugin
+4. Search the word `html`
+5. Click `Install` Quick HTML Tags
 6. Quit & restart Joplin app
 7. Go to `Tools` > `Options` > `Quick HTML Tags`
 8. Go to `HTML predefined tags` 
@@ -148,13 +149,23 @@ Alternatively, if you are interested to download the original complete packages,
 
 [:arrow_up:Back](#table-of-contents)
 
-## A Temporary Solution Of Customize The Theme Color & Font-Related Settings [IMPORTANT]
+## Install ReMoods Themme
 
-Currently, some of the core settings properties are not available on the ReMoods Theme's settings page because I don't know how to implement them. So, for an alternative, you could edit the theme color and font-related settings through your `userstyle.css` and `chromestyle.css` manually:
+This theme is a plugin, so you should:
+
+1. Go to `Tools` > `Options` > `Plugins`
+2. Search the word `remoods`
+3. Click `Install` ReMoods Theme
+4. Quit and restart Joplin
 
 > A remind to the old OhmineDT users:
 >
-> Please remove all the OhmineDT codes from your `userstyle.css` and `userchrome.css` first, because those codes will affects to ReMoods.
+> You should first to remove all the old OhmineDT codes from your `userstyle.css` and `userchrome.css`, this is important. While ReMoods seems very similar to the OhmineDT, they are two completely different things. The code base has changed, and they are running under different logic. So, remove all the OhmineDT codes now, forget the old theme and then give ReMoods a hug!
+
+
+## A Temporary Solution Of Customize The Theme Color & Font-Related Settings [IMPORTANT]
+
+Currently, some of the core settings properties are not available on the ReMoods Theme's settings page because I don't know how to implement them. So, for an alternative, you could edit the theme color and font-related settings through your `userstyle.css` and `chromestyle.css` manually:
 
 Let's follow the below steps:
 
@@ -176,7 +187,7 @@ Let's follow the below steps:
 }
 ```
 2. Open Joplin
-3. Go to `Options` > `Appearance`
+3. Go to `Tools` > `Options` > `Appearance`
 4. Click `Show Advanced Settings`
 5. Click `Custom Stylesheet for rendered Markdown` and it will open the `userstyle.css` file
 6. Paste the codes to the `userstyle.css` and back to the guide
@@ -272,7 +283,7 @@ Joplin provides us a great built-in Markdown TOC feature which let you create th
 The Markdown TOC feature is disabled by Joplin default. To use the Markdown TOC, you should enable the extension manually.
 
 To enable the TOC feature:
-1. Go to `Options` > `Markdown`
+1. Go to `Tools` > `Options` > `Markdown`
 2. Checked `Enable table of contents extension (wysiwyg:no)`
 
 [:arrow_up:Back](#table-of-contents)
@@ -283,7 +294,7 @@ To enable the TOC feature:
 
 All attached images and mermaid charts will default to 20% darker than the original, to avoid bright light flashing your eyes while reading the notes. Hovering over them will restore the original brightness slowly.
 
-You can disable it by going to `Options` > `ReMoods Theme` and unchecking the `Enable Eye-Protector effect for mermaid charts` or `Enable Eye-Protector effect for images`.
+You can disable it by going to `Tools` > `Options` > `ReMoods Theme` and unchecking the `Enable Eye-Protector effect for mermaid charts` or `Enable Eye-Protector effect for images`.
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -455,9 +466,9 @@ ReMoods has created 4 more custom styles that you can use within the Spoiler blo
 Quick setting up:
 
 1. Open Joplin
-2. Go to `tools` > `Options` > `Plugins`
-3. Search the plugin by inputting the word `spoiler`
-4. Click `Install` which is on the `Spoiler`
+2. Go to `Tools` > `Options` > `Plugins`
+3. Search the word `spoiler`
+4. Click `Install` Spoiler
 5. Quit & restart Joplin app
 
 [:arrow_up:Back](#table-of-contents)
@@ -508,9 +519,9 @@ Last, add content to it:
 Quick setting up:
 
 1. Open Joplin
-2. Go to `tools` > `Options` > `Plugins`
-3. Search the plugin by inputting the word `color`
-4. Click `Install` on the `Markdown Table: Colorize`
+2. Go to `Tools` > `Options` > `Plugins`
+3. Search the word `color`
+4. Click `Install` Markdown Table: Colorize
 5. Quit & restart Joplin app
 
 [:arrow_up:Back](#table-of-contents)
