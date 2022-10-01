@@ -165,7 +165,7 @@ This theme is a plugin, so you should:
 
 ## A Temporary Solution Of Customize The Theme Color & Font-Related Settings [IMPORTANT]
 
-Currently, some of the core settings properties are not available on the ReMoods Theme's settings page because I don't know how to implement them. So, for an alternative, you could edit the theme color and font-related settings through your `userstyle.css` and `chromestyle.css` manually:
+Currently, some of the core settings properties are not available on the ReMoods Theme's settings page because I don't know how to implement them. So, for an alternative, you could edit the theme color and font-related settings through your `userstyle.css` and `userchrome.css` manually:
 
 Let's follow the below steps:
 
@@ -208,7 +208,7 @@ body {
 }
 ```
 8. Back to Joplin
-9. Click `Custom Stylesheet for Joplin-wide app styles` and it will open the `chromestyle.css` file
+9. Click `Custom Stylesheet for Joplin-wide app styles` and it will open the `userchrome.css` file
 10. Paste the codes to the `userstyle.css`.
 11. Now, you can edit the value of these two stylesheets to control those settings.
 12. After editing the values, close the files then quit and restart Joplin. It's done!
