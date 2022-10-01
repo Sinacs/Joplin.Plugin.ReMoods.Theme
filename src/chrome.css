@@ -2391,6 +2391,10 @@ body {
 .config-screen-content-wrapper {
   padding: 20px 50px !important;
 }
+/* main content bottom padding ----------------------------- */
+.config-screen > div > div > div > div > div:last-child > div:last-child {
+  padding-bottom: 18px !important;
+}
 
 /* MAIN > GUIDE ============================================ */
 .config-screen > div:nth-child(2) > div > div > div[style="font-family: Roboto; font-size: 12px; line-height: 1.6em; color: rgb(50, 55, 63); margin-bottom: 15px;"],
@@ -2515,6 +2519,7 @@ body {
 /* || OPTION PANEL 6/6 | FOOTER **************************** */
 /* confirm button ------------------------------------------ */
 .config-screen > div:nth-child(2) > div:last-child {
+  margin-top: 3px;
   background: var(--g-main-bg-color-1) !important;
   border-top: none !important;
 }
