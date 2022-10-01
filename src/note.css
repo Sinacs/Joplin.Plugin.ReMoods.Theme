@@ -1028,6 +1028,9 @@ body {
   display: var(--usp-special-text-add-remove-symbol-switcher);
   margin-right: 1px;
   padding: 0 3px;
+  min-width: calc(var(--usp-base-font-size) + 2px);
+  text-align: center;
+  white-space: nowrap;
   color: var(--strikethrough-symbol-color);
   background: var(--strikethrough-symbol-bg-color);
   border-radius: 3px;
@@ -1046,6 +1049,9 @@ body {
   display: var(--usp-special-text-add-remove-symbol-switcher);
   margin-right: 1px;
   padding: 0 3px;
+  min-width: calc(var(--usp-base-font-size) + 2px);
+  text-align: center;
+  white-space: nowrap;
   color: var(--insert-symbol-color);
   background: var(--insert-symbol-bg-color);
   border-radius: 3px;
