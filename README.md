@@ -173,17 +173,17 @@ Let's follow the below steps:
 ```
 :root {
   /* For render viewer and rich text editor */
-  --usp-remoods-hue: 213deg; /* The theme color hue setting, must include "deg" after the numbers which between 0 to 360. */
-  --usp-base-font: "montserrat","chiron hei hk text extralight";
-  --usp-monospace-font: "cascadia mono light", "chiron hei hk text extralight";
-  --usp-base-font-size: 14px;
-  --usp-smaller-monospace-font-size: 86%;
+  --usp-remoods-hue: 213deg !important; /* The theme color hue setting, must include "deg" after the numbers which between 0 to 360. */
+  --usp-base-font: "montserrat","chiron hei hk text extralight" !important;
+  --usp-monospace-font: "cascadia mono light", "chiron hei hk text extralight" !important;
+  --usp-base-font-size: 14px !important;
+  --usp-smaller-monospace-font-size: 86% !important;
   
   /* For print & export pdf */
-  --usp-print-base-font: "montserrat","chiron hei hk text extralight";
-  --usp-print-monospace-font: "cascadia mono light", "chiron hei hk text extralight";
-  --usp-print-base-font-size: 12px;
-  --usp-print-monospace-font-size: 10px;
+  --usp-print-base-font: "montserrat","chiron hei hk text extralight" !important;
+  --usp-print-monospace-font: "cascadia mono light", "chiron hei hk text extralight" !important;
+  --usp-print-base-font-size: 12px !important;
+  --usp-print-monospace-font-size: 10px !important;
 }
 ```
 2. Open Joplin
@@ -195,11 +195,11 @@ Let's follow the below steps:
 ```
 :root {
   /* For markdown editor */
-  --usp-remoods-hue: 213deg; /* The theme color hue setting, must include "deg" after the numbers which between 0 to 360. */
-  --usp-base-font: "montserrat","chiron hei hk text extralight";
-  --usp-monospace-font: "cascadia mono light", "chiron hei hk text extralight";
-  --usp-base-font-size: 14px;
-  --usp-smaller-monospace-font-size: 86%;
+  --usp-remoods-hue: 213deg !important; /* The theme color hue setting, must include "deg" after the numbers which between 0 to 360. */
+  --usp-base-font: "montserrat","chiron hei hk text extralight" !important;
+  --usp-monospace-font: "cascadia mono light", "chiron hei hk text extralight" !important;
+  --usp-base-font-size: 14px !important;
+  --usp-smaller-monospace-font-size: 86% !important;
 }
 
 /* Avoid white background when starting Joplin */
@@ -215,7 +215,7 @@ body {
 
 > TIPS FOR BEGINNERS:
 >
-> If you don't understand CSS, don't worry! After you finish the above steps, you would be ready to edit the values. And the word "value" is mean the text where between the `:` and `;`. For example, `--usp-remoods-hue: 213deg;` and `--usp-base-font-size: 14px;`. As you will see the `213deg` and `14px`. Ya right! They are the values! After you edit them, you can close those files, then, quit and restart Joplin, and it's done!
+> If you don't understand CSS, don't worry! After you finish the above steps, you would be ready to edit the values. And the word "value" is mean the text where between the `:` and `;`. For example, `--usp-remoods-hue: 213deg !important;` and `--usp-base-font-size: 14px !important;`. As you will see the `213deg !important` and `14px !important`. Ya right! They are the values! Please don't edit the `!important` keyword, and only edit the value in front of it. After that, you can close those files, then, quit and restart Joplin, and it's done!
 >
 > One more remind, you can leave me a message when you getting stuck in any problems of ReMoods: https://discourse.joplinapp.org/t/plugin-remoods-theme/27547
 
