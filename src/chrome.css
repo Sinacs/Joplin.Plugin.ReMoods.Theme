@@ -1596,6 +1596,7 @@ body {
 /* note list container ------------------------------------- */
 #react-root > div > div > .rli-root:nth-child(3) .rli-noteList > div > div > div:last-child {
   background: var(--g-main-bg-color-1);
+  border: none;
 }
 /* note list ----------------------------------------------- */
 .item-list.note-list {
