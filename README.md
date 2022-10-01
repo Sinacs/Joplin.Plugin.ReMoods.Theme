@@ -24,7 +24,7 @@ P.S. Some of the contents are incomplete at the moment.
   - [Install And Setting The Helpful Plugin: Quick HTML Tags](#install-and-setting-the-helpful-plugin-quick-html-tags-optional) [Optional]
   - [Download And Install Recommended Fonts](#download-and-install-recommended-fonts-optional) [Optional]
   - [Install ReMoods Theme](#install-remoods-theme)
-  - [A Temporary Solution Of Customize The Theme Color & Font-Related Settings](#a-temporary-solution-of-customize-the-theme-color--font-related-settings-important) [IMPORTANT]
+  - [A Temporary Solution Of Customize The Theme Color & Font-Related Settings](#a-temporary-solution-of-customize-the-theme-color--font-related-settings-important) [IMPORTANT] (2022-OCT-1 Updated)
 - [LOOK & FEEL](#look--feel)
   - [Customizable Heading](#customizable-heading)
   - [Text Styles](#text-styles)
