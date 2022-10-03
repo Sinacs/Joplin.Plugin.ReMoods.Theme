@@ -163,7 +163,7 @@ async function prepareThemeSettings(): Promise<void> {
 			section: 'remoodsThemeSection',
 			label: '[Render Viewer] Enable heading reference in front of headings',
 			type: SettingItemType.Bool,
-			value: true,
+			value: false,
 			public: true,
 		},
 		
@@ -267,7 +267,7 @@ async function prepareThemeSettings(): Promise<void> {
 			section: 'remoodsThemeSection',
 			label: '[Render Viewer] Enable the symbol in front of insert text and strikethrough text',
 			type: SettingItemType.Bool,
-			value: true,
+			value: false,
 			public: true,
 		},
 		
