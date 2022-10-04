@@ -134,8 +134,12 @@
   --heading-ref-text-color:                             hsl(  0,   0%,  65%);
 
   /* h1 ------------------------------------------------------------------------------------- */
-  --h1-color:                                           hsl(var(--usp-remoods-hue), 100%,  50%);
+  --h1-color:                                           hsl(var(--usp-remoods-hue), 100%,  80%);
   --h1-bg-color:                                        repeating-linear-gradient( 114deg,
+                                                        hsl(var(--usp-remoods-hue), 100%,  80%),
+                                                        hsl(var(--usp-remoods-hue), 100%,  65%,  30%),
+                                                        hsl(var(--usp-remoods-hue), 100%,  80%)  3px);
+  --h1-bd-color:                                        repeating-linear-gradient( 114deg,
                                                         hsl(var(--usp-remoods-hue), 100%,  80%),
                                                         hsl(var(--usp-remoods-hue), 100%,  65%,  30%),
                                                         hsl(var(--usp-remoods-hue), 100%,  80%)  3px);
@@ -171,11 +175,13 @@
   --emphasize-text-color:                               hsl(var(--usp-remoods-hue), 100%,  70%);
   
   --strikethrough-text-color:                           hsl(var(--usp-remoods-hue),  25%,  60%);
+  --strikethrough-text-bg-color:                        none;
   --strikethrough-symbol-color:                       hsl(  0,   0%, 100%);
   --strikethrough-symbol-bg-color:                    hsl(  0,  70%,  55%);
 
   --insert-text-color:                                  hsl(var(--usp-remoods-hue), 100%,  70%);
-  --insert-text-bd-color:                               var(--strikethrough-text-color);
+  --insert-text-bg-color:                               none;
+  --insert-text-bd-color:                               hsl(var(--usp-remoods-hue),  25%,  60%);
   --insert-symbol-color:                              hsl(  0,   0%, 100%);
   --insert-symbol-bg-color:                           hsl(100,  60%,  45%);
 
@@ -919,7 +925,7 @@ body {
 #rendered-md h1::after {
   display: var(--usp-h1-border-switcher);
   height: 3px;
-  background-image: var(--h1-bg-color);
+  background-image: var(--h1-bd-color);
 }
 #rendered-md h1::before {
   content: "H1:";
@@ -1022,6 +1028,7 @@ body {
 /* strikethrough ------------------------------------------- */
 #rendered-md s {
   color: var(--strikethrough-text-color);
+  background: var(--strikethrough-text-bg-color);
 }
 #rendered-md s::before {
   content: "--";
@@ -1041,6 +1048,7 @@ body {
 /* insert -------------------------------------------------- */
 #rendered-md ins {
   color: var(--insert-text-color);
+  background: var(--insert-text-bg-color);
   text-decoration: none;
   border-bottom: 1px solid var(--insert-text-bd-color);
 }

@@ -14,6 +14,8 @@ export type ThemeSettings = {
 	darkerEditorBackground: boolean;
 	h1TextTransform: boolean;
 	h1FontVariant: boolean;
+	emphasizeAddRemove: boolean,
+	emphasizeAddRemoveBg: boolean;
 	evidentHorizontalLine: boolean;
 	headingRef: boolean;
 	paragraphJustify: boolean;
@@ -148,6 +150,24 @@ async function prepareThemeSettings(): Promise<void> {
 			label: '[Markdown Editor & Render Viewer] Enable Small-caps effect on H1 heading',
 			type: SettingItemType.Bool,
 			value: true,
+			public: true,
+		},
+
+		'emphasizeAddRemove': {
+			section: 'remoodsThemeSection',
+			label: 'Markdown Editor & Render Viewer - Enable emphasize colors of insert text and strikethrough text',
+			type: SettingItemType.Bool,
+			value: false,
+			description: 'Enable: Insert text is green, strikethrough text is red, and it would not change with the theme color. | Disable: Follow theme color.',
+			public: true,
+		},
+    
+		'emphasizeAddRemoveBg': {
+			section: 'remoodsThemeSection',
+			label: 'Markdown Editor & Render Viewer - Enable background color for insert text and strikethrough text',
+			type: SettingItemType.Bool,
+			value: false,
+			description: 'The background color depends on its text color.',
 			public: true,
 		},
 
@@ -421,6 +441,8 @@ async function writeUserCSS(): Promise<void> {
 	const darkerEditorBackground = await joplin.settings.value('darkerEditorBackground');
 	const h1TextTransform = await joplin.settings.value('h1TextTransform');
 	const h1FontVariant = await joplin.settings.value('h1FontVariant');
+	const emphasizeAddRemove = await joplin.settings.value('emphasizeAddRemove');
+	const emphasizeAddRemoveBg = await joplin.settings.value('emphasizeAddRemoveBg');
 	const evidentHorizontalLine = await joplin.settings.value('evidentHorizontalLine');
 	const headingRef = await joplin.settings.value('headingRef');
 	const paragraphJustify = await joplin.settings.value('paragraphJustify');
@@ -462,6 +484,8 @@ async function writeUserCSS(): Promise<void> {
 		darkerEditorBackground,
 		h1TextTransform,
 		h1FontVariant,
+		emphasizeAddRemove,
+		emphasizeAddRemoveBg,
 		evidentHorizontalLine,
 		headingRef,
 		paragraphJustify,

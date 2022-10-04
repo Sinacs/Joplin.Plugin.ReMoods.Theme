@@ -122,12 +122,12 @@
 
   --mark-text-bd-color:                                 hsl(var(--usp-remoods-hue), 100%,  50%);
 
-  --strikethrough-text-color:                         hsl(  0, 100%,  75%);
-  --strikethrough-text-bg-color:                      hsl(  0,  30%,  20%);
+  --strikethrough-text-color:                           hsl(var(--usp-remoods-hue),  25%,  60%);
+  --strikethrough-text-bg-color:                        none;
 
-  --insert-text-color:                                hsl(100,  50%,  75%);
-  --insert-text-bg-color:                             hsl(100,  70%,  15%);
-  --insert-text-bd-color:                             hsl(100,  70%,  35%);
+  --insert-text-color:                                  hsl(var(--usp-remoods-hue), 100%,  70%);
+  --insert-text-bg-color:                               none;
+  --insert-text-bd-color:                               hsl(var(--usp-remoods-hue),  25%,  60%);
 
   --sub-sup-text-color:                                 hsl(var(--usp-remoods-hue),  50%,  80%);
   
