@@ -198,7 +198,7 @@
   --inline-code-color:                                  hsl(var(--usp-remoods-hue), 100%,  85%);
   --inline-code-bg-color:                               hsl(var(--usp-remoods-hue),  30%,  25%);
   --inline-code-bd-color:                     2px solid hsl(var(--usp-remoods-hue),  20%,  40%);
-  --inline-code-symbol-color:                           hsl(var(--usp-remoods-hue),  20%,  40%);
+  --inline-code-symbol-color:                           hsl(var(--usp-remoods-hue),  40%,  60%);
 
   --katex-text-color:                                   hsl(var(--usp-remoods-hue), 100%,  85%);
 
