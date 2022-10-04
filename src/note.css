@@ -481,13 +481,16 @@
   
   --print-emphasize-text-color:                         hsl(var(--usp-remoods-hue), 100%,  30%);
   
-  --print-strikethrough-text-color:                     hsl(var(--usp-remoods-hue), 25%,  70%);
+  --print-strikethrough-text-color:                     hsl(var(--usp-remoods-hue),  25%,  50%);
+  --print-strikethrough-text-bg-color:                  none;
   --print-strikethrough-symbol-color:                 hsl(  0,   0%, 100%);
   --print-strikethrough-symbol-bg-color:              hsl(  0,  70%,  55%);
 
-  --print-insert-text-color:                            hsl(var(--usp-remoods-hue), 100%,  30%);
-  --print-insert-symbol-color:                        hsl(  0,   0%, 100%);
-  --print-insert-symbol-bg-color:                     hsl(100,  60%,  45%);
+  --print-insert-text-color:                            hsl(var(--usp-remoods-hue), 100%,  40%);
+  --print-insert-text-bg-color:                         none;
+  --print-insert-text-bd-color:                         hsl(var(--usp-remoods-hue),  25%,  50%);
+  --print-insert-symbol-color:                          hsl(  0,   0%, 100%);
+  --print-insert-symbol-bg-color:                       hsl(100,  60%,  45%);
 
   --print-abbreviation-text-color:                      hsl(var(--usp-remoods-hue),  80%,  50%);
   --print-abbreviation-bd-color:                        hsl(var(--usp-remoods-hue),  80%,  50%);
@@ -2213,6 +2216,8 @@ ag12::-webkit-scrollbar-track {
   #tinymce,
   #rendered-md,
   #rendered-md .hljs,
+  #rendered-md km ins,
+  #rendered-md km s,
   #rendered-md km,
   body {
     background: var(--print-render-viewer-bg-color) !important;
@@ -2315,10 +2320,10 @@ ag12::-webkit-scrollbar-track {
   #rendered-md h1 {
     font-size: calc(var(--usp-print-base-font-size) * 2.0);
     color: var(--print-h1-color);
-    background: var(--print-h1-bg-color);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: initial;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    -webkit-text-fill-color: initial;
     filter: none;
   }
   /* print h1 border --------------------------------------- */
@@ -2404,6 +2409,7 @@ ag12::-webkit-scrollbar-track {
   /* strikethrough ----------------------------------------- */
   #rendered-md s {
     color: var(--print-strikethrough-text-color);
+    background-color: var(--print-strikethrough-text-bg-color);
   }
   #rendered-md s::before {
     color: var(--print-strikethrough-symbol-color);
@@ -2412,6 +2418,8 @@ ag12::-webkit-scrollbar-track {
   /* insert ------------------------------------------------ */
   #rendered-md ins {
     color: var(--print-insert-text-color);
+    background: var(--print-insert-text-bg-color);
+    border-bottom: 1px solid var(--print-insert-text-bd-color);
   }
   #rendered-md ins::before {
     color: var(--print-insert-symbol-color);

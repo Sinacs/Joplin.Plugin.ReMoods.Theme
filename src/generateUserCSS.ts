@@ -116,6 +116,11 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --insert-text-bg-color:.+?;/m, '  --insert-text-bg-color: none;');
     noteCSS = noteCSS.replace(/^  --strikethrough-text-color:.+?;/m, '  --strikethrough-text-color: hsl(var(--usp-remoods-hue),  25%,  60%);');
     noteCSS = noteCSS.replace(/^  --strikethrough-text-bg-color:.+?;/m, '  --strikethrough-text-bg-color: none;');
+    noteCSS = noteCSS.replace(/^  --print-insert-text-color:.+?;/m, '  --print-insert-text-color: hsl(var(--usp-remoods-hue), 100%,  40%);');
+    noteCSS = noteCSS.replace(/^  --print-insert-text-bd-color:.+?;/m, '  --print-insert-text-bd-color: hsl(var(--usp-remoods-hue),  25%,  50%);');
+    noteCSS = noteCSS.replace(/^  --print-insert-text-bg-color:.+?;/m, '  --print-insert-text-bg-color: none;');
+    noteCSS = noteCSS.replace(/^  --print-strikethrough-text-color:.+?;/m, '  --print-strikethrough-text-color: hsl(var(--usp-remoods-hue),  25%,  50%);');
+    noteCSS = noteCSS.replace(/^  --print-strikethrough-text-bg-color:.+?;/m, '  --print-strikethrough-text-bg-color: none;');
 
   } else if(!emphasizeAddRemove && emphasizeAddRemoveBg) {
     chromeCSS = chromeCSS.replace(/^  --insert-text-color:.+?;/m, '  --insert-text-color: hsl(var(--usp-remoods-hue), 100%,  70%);');
@@ -128,6 +133,11 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --insert-text-bg-color:.+?;/m, '  --insert-text-bg-color: hsl(var(--usp-remoods-hue),  35%,  25%);');
     noteCSS = noteCSS.replace(/^  --strikethrough-text-color:.+?;/m, '  --strikethrough-text-color: hsl(var(--usp-remoods-hue),  25%,  60%);');
     noteCSS = noteCSS.replace(/^  --strikethrough-text-bg-color:.+?;/m, '  --strikethrough-text-bg-color: hsl(var(--usp-remoods-hue),  30%,  20%);');
+    noteCSS = noteCSS.replace(/^  --print-insert-text-color:.+?;/m, '  --print-insert-text-color: hsl(var(--usp-remoods-hue), 100%,  40%);');
+    noteCSS = noteCSS.replace(/^  --print-insert-text-bd-color:.+?;/m, '  --print-insert-text-bd-color: hsl(var(--usp-remoods-hue),  25%,  50%);');
+    noteCSS = noteCSS.replace(/^  --print-insert-text-bg-color:.+?;/m, '  --print-insert-text-bg-color: hsl(var(--usp-remoods-hue), 40%,  95%);');
+    noteCSS = noteCSS.replace(/^  --print-strikethrough-text-color:.+?;/m, '  --print-strikethrough-text-color: hsl(var(--usp-remoods-hue),  25%,  50%);');
+    noteCSS = noteCSS.replace(/^  --print-strikethrough-text-bg-color:.+?;/m, '  --print-strikethrough-text-bg-color: hsl(var(--usp-remoods-hue), 25%,  85%);');
   
   } else if(emphasizeAddRemove && !emphasizeAddRemoveBg) {
     chromeCSS = chromeCSS.replace(/^  --insert-text-color:.+?;/m, '  --insert-text-color: hsl(100,  50%,  75%);');
@@ -140,7 +150,12 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --insert-text-bg-color:.+?;/m, '  --insert-text-bg-color: none;');
     noteCSS = noteCSS.replace(/^  --strikethrough-text-color:.+?;/m, '  --strikethrough-text-color: hsl(0, 100%,  75%);');
     noteCSS = noteCSS.replace(/^  --strikethrough-text-bg-color:.+?;/m, '  --strikethrough-text-bg-color: none;');
-  
+    noteCSS = noteCSS.replace(/^  --print-insert-text-color:.+?;/m, '  --print-insert-text-color: hsl(100,  40%,  45%);');
+    noteCSS = noteCSS.replace(/^  --print-insert-text-bd-color:.+?;/m, '  --print-insert-text-bd-color: hsl(100,  70%,  35%);');
+    noteCSS = noteCSS.replace(/^  --print-insert-text-bg-color:.+?;/m, '  --print-insert-text-bg-color: none;');
+    noteCSS = noteCSS.replace(/^  --print-strikethrough-text-color:.+?;/m, '  --print-strikethrough-text-color: hsl(0, 100%,  65%);');
+    noteCSS = noteCSS.replace(/^  --print-strikethrough-text-bg-color:.+?;/m, '  --print-strikethrough-text-bg-color: none;');
+
   } else {
     chromeCSS = chromeCSS.replace(/^  --insert-text-color:.+?;/m, '  --insert-text-color: hsl(100,  50%,  75%);');
     chromeCSS = chromeCSS.replace(/^  --insert-text-bd-color:.+?;/m, '  --insert-text-bd-color: hsl(100,  70%,  35%);');
@@ -152,6 +167,11 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --insert-text-bg-color:.+?;/m, '  --insert-text-bg-color: hsl(100,  70%,  15%);');
     noteCSS = noteCSS.replace(/^  --strikethrough-text-color:.+?;/m, '  --strikethrough-text-color: hsl(0, 100%,  75%);');
     noteCSS = noteCSS.replace(/^  --strikethrough-text-bg-color:.+?;/m, '  --strikethrough-text-bg-color: hsl(0,  30%,  20%);');
+    noteCSS = noteCSS.replace(/^  --print-insert-text-color:.+?;/m, '  --print-insert-text-color: hsl(100,  40%,  45%);');
+    noteCSS = noteCSS.replace(/^  --print-insert-text-bd-color:.+?;/m, '  --print-insert-text-bd-color: hsl(100,  70%,  35%);');
+    noteCSS = noteCSS.replace(/^  --print-insert-text-bg-color:.+?;/m, '  --print-insert-text-bg-color: hsl(100,  35%,  95%);');
+    noteCSS = noteCSS.replace(/^  --print-strikethrough-text-color:.+?;/m, '  --print-strikethrough-text-color: hsl(0, 100%,  65%);');
+    noteCSS = noteCSS.replace(/^  --print-strikethrough-text-bg-color:.+?;/m, '  --print-strikethrough-text-bg-color: hsl(0,  35%,  90%);');
   }
 
   if(!evidentHorizontalLine) {
