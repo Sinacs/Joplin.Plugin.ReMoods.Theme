@@ -40,11 +40,11 @@ P.S. Some of the contents are incomplete at the moment.
 - [THIRD-PARTY PLUGINS STYLING](#third-party-plugins-styling)
   - [Spoiler](#spoiler)
   - [Markdown Table Colorize](#markdown-table-colorize)
-- [PRINT & EXPORT](#print--export)
-  - [Export HTML File](#export-html-file)
-  - [Export PDF Document](#export-pdf-document)
+- [PRINT & EXPORT](#print--export) (soon...)
+  - [Export HTML File](#export-html-file) (soon...)
+  - [Export PDF Document](#export-pdf-document) 
 - [TESTED THIRD-PARTY PLUGINS](#tested-third-party-plugins) (07.OCT.2022)
-- [CONTRIBUTION](#contribution)
+<!-- - [CONTRIBUTION](#contribution) -->
 
 # REMOODS THEME GETTING START [IMPORTANT]
 
@@ -152,6 +152,8 @@ Alternatively, if you are interested to download the original complete packages,
 ## Install ReMoods Theme
 
 This theme is a plugin, so you should:
+
+Notice: Don't use more than one themeing plugin at the same time, it might be conflict to each other. Eeve if you want to install more than one theme, you should keep only one is turn on.
 
 1. Go to `Tools` > `Options` > `Plugins`
 2. Search the word `remoods`
@@ -527,14 +529,13 @@ Quick setting up:
 [:arrow_up:Back](#table-of-contents)
 
 # PRINT & EXPORT
-
+(soon...)
 
 
 [:arrow_up:Back](#table-of-contents)
 
 ## Export HTML File 
-
-
+(soon...)
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -565,6 +566,6 @@ This table will keep up to date
 
 [:arrow_up:Back](#table-of-contents)
 
-## CONTRIBUTION
+<!-- ## CONTRIBUTION -->
 
-[:arrow_up:Back](#table-of-contents)
+
