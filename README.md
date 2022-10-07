@@ -561,7 +561,7 @@ This table will keep up to date
 |Inline Todo|Done|25AUG2022|1. Improved alignment for Montserrat font.<br>2. Changed assignee tag style.<br>3. Improved text clarity for tags.<br>4. Added line-through effect for checked items. (hover for hiding the line)|- |
 |Markdown Table Colorize|Done|25AUG2022|1. Added column marks, max support up to 52 columns.<br>2. Added row separation.<br>3. Added hover zoom effect for column marks.|- |
 |Draw.io|Tested|25AUG2022|-|-|
-|||||
+|*** Joplin Enhancement|Tested|07OCT2022|-|*** Due to ReMoods and Jopin Enhancement are both edited tons of things in Joplin, our codes are having too much conflicts. So, this plugins is not compatible with ReMoods.|
 
 [:arrow_up:Back](#table-of-contents)
 
