@@ -24,7 +24,7 @@ P.S. Some of the contents are incomplete at the moment.
   - [Install And Setting The Helpful Plugin: Quick HTML Tags](#install-and-setting-the-helpful-plugin-quick-html-tags-optional) [Optional]
   - [Download And Install Recommended Fonts](#download-and-install-recommended-fonts-optional) [Optional]
   - [Install ReMoods Theme](#install-remoods-theme)
-  - [A Temporary Solution Of Customize The Theme Color & Font-Related Settings](#a-temporary-solution-of-customize-the-theme-color--font-related-settings-important) [IMPORTANT] (2022-OCT-1 Updated)
+  - [A Temporary Solution Of Customize The Theme Color & Font-Related Settings](#a-temporary-solution-of-customize-the-theme-color--font-related-settings-important) [IMPORTANT] (01.OCT.2022)
 - [LOOK & FEEL](#look--feel)
   - [Customizable Heading](#customizable-heading)
   - [Text Styles](#text-styles)
@@ -43,7 +43,7 @@ P.S. Some of the contents are incomplete at the moment.
 - [PRINT & EXPORT](#print--export)
   - [Export HTML File](#export-html-file)
   - [Export PDF Document](#export-pdf-document)
-- [TESTED THIRD-PARTY PLUGINS](#tested-third-party-plugins)
+- [TESTED THIRD-PARTY PLUGINS](#tested-third-party-plugins) (07.OCT.2022)
 - [CONTRIBUTION](#contribution)
 
 # REMOODS THEME GETTING START [IMPORTANT]
