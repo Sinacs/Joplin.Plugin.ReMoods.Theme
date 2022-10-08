@@ -76,11 +76,10 @@ async function prepareThemeSettings(): Promise<void> {
 		label: 'ReMoods Theme',
 		iconName: 'fas fa-palette',
 		description: `
-			#1: It is required to quit and restart Joplin to take effect after any changes below.
-			#2: In the beta version, you should edit font-related settings through the external CSS, please visit the github repo and read about the temporary solution.
-			#3: The original font settings which in the "Options > Appearance" will no longer work when using ReMoods Theme.
+      ----- 1: It is required to quit and restart Joplin to take effect after any changes below.
+      ----- 2: In the beta version, you should edit font-related settings through the external CSS, please visit the github repo and read about the temporary solution.
+			----- 3: The original font settings which in the "Tools > Options > Appearance" will no longer work when using ReMoods Theme. 
 		`
-		// ) Please notice that you should be always edit font-related settings in this page, the original font settings which in the "Options > Appearance" will no longer work when using ReMoods Theme.
 	});
 
 	await joplin.settings.registerSettings({
