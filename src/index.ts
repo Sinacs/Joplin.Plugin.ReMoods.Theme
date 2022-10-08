@@ -20,6 +20,7 @@ export type ThemeSettings = {
 	headingRef: boolean;
 	paragraphJustify: boolean;
 	h1TwillPattern: boolean;
+	dottedBlockquote: boolean;
 	katexTextAlignLeft: boolean;
 	mermaidEyeProtector: boolean;
 	imageEyeProtector: boolean;
@@ -201,6 +202,15 @@ async function prepareThemeSettings(): Promise<void> {
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'If enabled, you would need to use the HTML span tag for emoji to avoid the twill pattern affecting it.',
+			public: true,
+		},
+
+		'dottedBlockquote': {
+			section: 'remoodsThemeSection',
+			label: 'Render Viewer - Enable dotted styles for blockquote',
+			type: SettingItemType.Bool,
+			value: true,
+			description: 'Enable: dotted border (better for single layer blockquote) | Disable: solid border (better for nested blockquote).',
 			public: true,
 		},
 
@@ -456,6 +466,7 @@ async function writeUserCSS(): Promise<void> {
 	const headingRef = await joplin.settings.value('headingRef');
 	const paragraphJustify = await joplin.settings.value('paragraphJustify');
 	const h1TwillPattern = await joplin.settings.value('h1TwillPattern');
+	const dottedBlockquote = await joplin.settings.value('dottedBlockquote');
 	const katexTextAlignLeft = await joplin.settings.value('katexTextAlignLeft');
 	const mermaidEyeProtector = await joplin.settings.value('mermaidEyeProtector');
 	const imageEyeProtector = await joplin.settings.value('imageEyeProtector');
@@ -500,6 +511,7 @@ async function writeUserCSS(): Promise<void> {
 		headingRef,
 		paragraphJustify,
 		h1TwillPattern,
+		dottedBlockquote,
 		katexTextAlignLeft,
 		mermaidEyeProtector,
 		imageEyeProtector,

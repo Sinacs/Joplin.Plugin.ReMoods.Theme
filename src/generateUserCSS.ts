@@ -19,6 +19,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     headingRef,
     paragraphJustify,
     h1TwillPattern,
+    dottedBlockquote,
     katexTextAlignLeft,
     mermaidEyeProtector,
     imageEyeProtector,
@@ -201,6 +202,12 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --usp-h1-text-fill-color:.+?;/m, '  --usp-h1-text-fill-color: transparent;');
     noteCSS = noteCSS.replace(/^  --usp-h1-font-weight:.+?;/m, '  --usp-h1-font-weight: 800;');
     noteCSS = noteCSS.replace(/^  --h1-bd-color:.+?;/m, '  --h1-bd-color: repeating-linear-gradient( 114deg, hsl(var(--usp-remoods-hue), 100%,  80%), hsl(var(--usp-remoods-hue), 100%,  65%,  30%), hsl(var(--usp-remoods-hue), 100%,  80%)  3px);');
+  }
+
+  if(!dottedBlockquote) {
+    noteCSS = noteCSS.replace(/^  --blockquote-bd-color:.+?;/m, '  --blockquote-bd-color: 3px solid hsl(var(--usp-remoods-hue),  20%,  60%);');
+  } else {
+    noteCSS = noteCSS.replace(/^  --blockquote-bd-color:.+?;/m, '  --blockquote-bd-color: 5px dotted hsl(var(--usp-remoods-hue),  20%,  60%);');
   }
 
   if(!katexTextAlignLeft) {
