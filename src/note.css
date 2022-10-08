@@ -58,7 +58,6 @@
   --usp-h6-font-size: 110%;
 
   /* EFFECTS *********************************************** */
-  --usp-heading-ref-switcher: inline-block;
   --usp-h1-font-variant: small-caps;
   --usp-h1-text-transform: capitalize;
   --usp-h1-text-fill-color: none;
@@ -71,6 +70,7 @@
   --usp-image-eye-protector-transition: filter 2s;
   
   /* DISPLAY *********************************************** */
+  --usp-heading-ref-switcher: inline-block;
   --usp-h1-border-switcher: block;
   --usp-h2-border-switcher: block;
   --usp-h3-border-switcher: none;
@@ -1244,10 +1244,14 @@ body {
   opacity: 1;
 }
 #rendered-md blockquote > p {
-  margin: 5px 0 !important;
+  margin: 7px 0 !important;
   color: var(--blockquote-text-color);
 }
-
+/* nested blockquote --------------------------------------- */
+#rendered-md blockquote blockquote {
+  margin: 0 0 -2px 5px;
+  padding: 2px 0 2px 10px;
+}
 
 
 /* || ELEMENTS | TABLE ************************************* */
