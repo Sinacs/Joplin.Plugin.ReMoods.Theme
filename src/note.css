@@ -61,6 +61,8 @@
   --usp-heading-ref-switcher: inline-block;
   --usp-h1-font-variant: small-caps;
   --usp-h1-text-transform: capitalize;
+  --usp-h1-text-fill-color: none;
+  --usp-h1-font-weight: 600;
   --usp-paragraph-justify: justify;
   --usp-katex-text-align: center;
   --usp-mermaid-eye-protector-filter: brightness(80%);
@@ -915,13 +917,13 @@ body {
   margin-bottom: 0.8em;
   text-transform: var(--usp-h1-text-transform);
   font-variant: var(--usp-h1-font-variant);
-  font-weight: 800;
+  font-weight: var(--usp-h1-font-weight);
   font-size: var(--usp-h1-font-size);
   color: var(--h1-color);
   background: var(--h1-bg-color);
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: var(--usp-h1-text-fill-color);
   filter: drop-shadow(var(--h1-drop-shadow));
 }
 /* h1 border ----------------------------------------------- */

@@ -19,6 +19,7 @@ export type ThemeSettings = {
 	evidentHorizontalLine: boolean;
 	headingRef: boolean;
 	paragraphJustify: boolean;
+	h1TwillPattern: boolean;
 	katexTextAlignLeft: boolean;
 	mermaidEyeProtector: boolean;
 	imageEyeProtector: boolean;
@@ -191,6 +192,15 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Render Viewer - Enable "Justify" effect for paragraph text',
 			type: SettingItemType.Bool,
 			value: true,
+			public: true,
+		},
+
+		'h1TwillPattern': {
+			section: 'remoodsThemeSection',
+			label: 'Render Viewer - Enable twill pattern for H1 heading',
+			type: SettingItemType.Bool,
+			value: false,
+			description: 'If enabled, you would need to use the HTML span tag for emoji to avoid the twill pattern affecting it.',
 			public: true,
 		},
 
@@ -445,6 +455,7 @@ async function writeUserCSS(): Promise<void> {
 	const evidentHorizontalLine = await joplin.settings.value('evidentHorizontalLine');
 	const headingRef = await joplin.settings.value('headingRef');
 	const paragraphJustify = await joplin.settings.value('paragraphJustify');
+	const h1TwillPattern = await joplin.settings.value('h1TwillPattern');
 	const katexTextAlignLeft = await joplin.settings.value('katexTextAlignLeft');
 	const mermaidEyeProtector = await joplin.settings.value('mermaidEyeProtector');
 	const imageEyeProtector = await joplin.settings.value('imageEyeProtector');
@@ -488,6 +499,7 @@ async function writeUserCSS(): Promise<void> {
 		evidentHorizontalLine,
 		headingRef,
 		paragraphJustify,
+		h1TwillPattern,
 		katexTextAlignLeft,
 		mermaidEyeProtector,
 		imageEyeProtector,
