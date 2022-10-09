@@ -381,7 +381,7 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'printNoteTitle': {
 			section: 'remoodsThemeSection',
-			label: 'Print & Export PDF - Display notebook title',
+			label: 'Print & Export PDF - Display note title',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,

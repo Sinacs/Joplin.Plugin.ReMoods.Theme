@@ -2233,7 +2233,7 @@ ag12::-webkit-scrollbar-track {
 
 
   /* || PRINT READY | DISPLAY ELEMENTS ********************* */
-  /* notebook title ---------------------------------------- */
+  /* notes title ------------------------------------------- */
   #rendered-md .exported-note-title {
     display: var(--usp-print-note-title-display);
   }
