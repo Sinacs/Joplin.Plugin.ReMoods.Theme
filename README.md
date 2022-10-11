@@ -15,11 +15,6 @@ ReMoods is a multi-purpose theming plugin that was inherited from the past Ohmin
 # Table Of Contents
 P.S. Some of the contents are incomplete at the moment.
 
-- [THE FOUR CORE VALUES OF REMOODS](#the-four-core-values-of-remoods)
-  - [Eye-Health](#eye-health-)
-  - [Writing & Reading Moods](#writing--reading-moods-)
-  - [Writing & Reading Experience](#writing--reading-experience-)
-  - [Basic Solutions](#basic-solutions-)
 - [REMOODS THEME GETTING START](#remoods-theme-getting-start-important) [IMPORTANT]
   - [Change The Joplin Built-in Theme](#change-the-joplin-built-in-theme)
   - [Change The Joplin Built-in Markdown Settings](#change-the-joplin-built-in-markdown-settings)
@@ -28,6 +23,11 @@ P.S. Some of the contents are incomplete at the moment.
   - [Download And Install Recommended Fonts](#download-and-install-recommended-fonts-optional) [Optional]
   - [Install ReMoods Theme](#install-remoods-theme)
   - [A Temporary Solution Of Customize The Theme Color & Font-Related Settings](#a-temporary-solution-of-customize-the-theme-color--font-related-settings-important) [IMPORTANT] (01.OCT.2022)
+- [THE FOUR CORE VALUES OF REMOODS](#the-four-core-values-of-remoods)
+  - [Eye-Health](#eye-health-)
+  - [Writing & Reading Moods](#writing--reading-moods-)
+  - [Writing & Reading Experience](#writing--reading-experience-)
+  - [Basic Solutions](#basic-solutions-)
 - [LOOK & FEEL](#look--feel)
   - [Customizable Heading](#customizable-heading)
   - [Text Styles](#text-styles)
@@ -48,46 +48,6 @@ P.S. Some of the contents are incomplete at the moment.
   - [Export PDF Document](#export-pdf-document) 
 - [TESTED THIRD-PARTY PLUGINS](#tested-third-party-plugins) (07.OCT.2022)
 <!-- - [CONTRIBUTION](#contribution) -->
-
-# THE FOUR CORE VALUES OF REMOODS
-
-While ReMoods is a multi-purpose theme, the word "fashionable" is not one of the core values. But I'm happy to show you the below four core values of ReMoods:
-
-## Eye-Health >>>
-  
-For the users who stare at the screen for a long time every day, screens are hurting our eyes slowly. And I think we should pay extra attention to the tools we often use and improve the eye-health experience. Here I'm the first heavy user who already tested this theme for you with my eyes before it was published.
-  
-ReMoods care about every tiny difference within this theme and completely fine-tune every color contrast to ensure it's comfortable for long-time reading, even switching between any theme colors. 
-  
-In the beta version, ReMoods is now only providing you the Dusk Mode by default, but I'm happy to tell you that there are upcoming Day Mode and Night Mode in the future. And I hope to bring you a Joplin theme that is fit for use under different lighting environments.
-
-[:arrow_up:Back](#table-of-contents)
-
-## Writing & Reading Moods >>>
-  
-For users who are used to thinking while writing, colors are good helpers for you! ReMoods uses single-tone theme colors to boost your writing moods. It would be nice to switch to assorted colors when you are getting stuck in writing. Every minor change within your environment would be a chance to generate new inspiration.
-
-You can also switch colors based on your needs of moods [(Reference - The Power and Symbolism of Colors)](https://www.color-meanings.com), and then feel the fantastic magic effects that finally come up for you!
-  
-On the other hand, ReMoods auto-hides all unnecessary UI elements and increases the editor panel area as big as possible to boost your focus on writing. 
-
-[:arrow_up:Back](#table-of-contents)
-
-## Writing & Reading Experience >>>
-  
-For users who often share their screen or documentation with other readers, ReMoods shows your passion for caring about the reading experience. ReMoods cares about every content separation, making your core concepts obvious and outstanding from the regular content.
-
-ReMoods paid most of the time on the reading and typing tests, and I care about the balanced of them. I found that most people used to move their heads forward to the screen in some situations. Such as when they discover a typing mistake, reviewing, searching, etc. 
-
-So I've tried my most to fight for a little chance that might stop it from happening to anyone. All is to ensure we could feel comfortable with reading and writing at a stable distance between the screen and our eyes.
-
-[:arrow_up:Back](#table-of-contents)
-
-## Basic Solutions >>>
-  
-ReMoods would keep discovering the basic solutions for everyone. Sometimes, we might meet some limitations due to the original function of a plugin or Joplin itself. While ReMoods is not a functional-based plugin, I will still try to fulfill all the basic needs in the note-taking process by creating helpful custom elements or adding additional CSS styles for them.
-
-[:arrow_up:Back](#table-of-contents)
 
 # REMOODS THEME GETTING START [IMPORTANT]
 
@@ -263,6 +223,46 @@ body {
 > If you don't understand CSS, don't worry! After you finish the above steps, you would be ready to edit the values. And the word "value" is mean the text between the `:` and `;`. For example, `--usp-remoods-hue: 213deg !important;` and `--usp-base-font-size: 14px !important;`. As you will see the `213deg !important` and `14px !important`. Ya right! They are the values! Please don't edit the `!important` keyword, and only edit the value in front of it. After that, you can close those files, then, quit and restart Joplin, and you will see it works!
 >
 > One more reminder, it's welcome to leave me a message when you are running into any problems with this getting started guide: https://discourse.joplinapp.org/t/plugin-remoods-theme/27547
+
+[:arrow_up:Back](#table-of-contents)
+
+# THE FOUR CORE VALUES OF REMOODS
+
+While ReMoods is a multi-purpose theme, the word "fashionable" is not one of the core values. But I'm happy to show you the below four core values of ReMoods:
+
+## Eye-Health >>>
+  
+For the users who stare at the screen for a long time every day, screens are hurting our eyes slowly. And I think we should pay extra attention to the tools we often use and improve the eye-health experience. Here I'm the first heavy user who already tested this theme for you with my eyes before it was published.
+  
+ReMoods care about every tiny difference within this theme and completely fine-tune every color contrast to ensure it's comfortable for long-time reading, even switching between any theme colors. 
+  
+In the beta version, ReMoods is now only providing you the Dusk Mode by default, but I'm happy to tell you that there are upcoming Day Mode and Night Mode in the future. And I hope to bring you a Joplin theme that is fit for use under different lighting environments.
+
+[:arrow_up:Back](#table-of-contents)
+
+## Writing & Reading Moods >>>
+  
+For users who are used to thinking while writing, colors are good helpers for you! ReMoods uses single-tone theme colors to boost your writing moods. It would be nice to switch to assorted colors when you are getting stuck in writing. Every minor change within your environment would be a chance to generate new inspiration.
+
+You can also switch colors based on your needs of moods [(Reference - The Power and Symbolism of Colors)](https://www.color-meanings.com), and then feel the fantastic magic effects that finally come up for you!
+  
+On the other hand, ReMoods auto-hides all unnecessary UI elements and increases the editor panel area as big as possible to boost your focus on writing. 
+
+[:arrow_up:Back](#table-of-contents)
+
+## Writing & Reading Experience >>>
+  
+For users who often share their screen or documentation with other readers, ReMoods shows your passion for caring about the reading experience. ReMoods cares about every content separation, making your core concepts obvious and outstanding from the regular content.
+
+ReMoods paid most of the time on the reading and typing tests, and I care about the balanced of them. I found that most people used to move their heads forward to the screen in some situations. Such as when they discover a typing mistake, reviewing, searching, etc. 
+
+So I've tried my most to fight for a little chance that might stop it from happening to anyone. All is to ensure we could feel comfortable with reading and writing at a stable distance between the screen and our eyes.
+
+[:arrow_up:Back](#table-of-contents)
+
+## Basic Solutions >>>
+  
+ReMoods would keep discovering the basic solutions for everyone. Sometimes, we might meet some limitations due to the original function of a plugin or Joplin itself. While ReMoods is not a functional-based plugin, I will still try to fulfill all the basic needs in the note-taking process by creating helpful custom elements or adding additional CSS styles for them.
 
 [:arrow_up:Back](#table-of-contents)
 
