@@ -1,7 +1,9 @@
 # ReMoods Theme (BETA)
-The ReMoods is a multi-purpose theming plugin that inherited from the past Ohmine Dark Theme and drives it to an entirely new stage. 
 
-- Use single-color tones to boost your writing moods - You can switch to assorted colors anytime! 
+ReMoods is a multi-purpose theming plugin that inherited from the past Ohmine Dark Theme project and drives it to an entirely new stage. 
+
+- Use single-color tones to boost your writing moods.
+- Available to change the theme colors any time.
 - Auto hiding unnecessary UI elements from your screen and bring you to focus on writing. 
 - Provide over 80% consistent syntax highlighting styles for the code block of Markdown Editor and Render Viewer. 
 - Extra formatting adjustments for the Exported HTML File and PDF Document to increase the reading experience. 
@@ -11,27 +13,36 @@ The ReMoods is a multi-purpose theming plugin that inherited from the past Ohmin
 ![Screenshot 2022-09-25 032654-tile](https://user-images.githubusercontent.com/110529913/192116296-82e79460-48b3-4d84-8575-a0daa459bd28.png)
 
 ## The Four Core Values of ReMoods
+
+While ReMoods is a multi-purpose theme, the word "fashionable" is not one of the core values. But I'm happy to show you the below four core values of ReMoods:
+
 ### Eye-Health >>>
   
-For the users who stare at the screen for a long time every day, screens are hurting our eyes slowly. And I think we should pay extra attention to the tools we mostly use and improve the eye-health experience. Here I'm the first heavy user who already tested this theme for you with my eyes before it was published.
+For the users who stare at the screen for a long time every day, screens are hurting our eyes slowly. And I think we should pay extra attention to the tools we often use and improve the eye-health experience. Here I'm the first heavy user who already tested this theme for you with my eyes before it was published.
   
 ReMoods care about every tiny difference within this theme and completely fine-tune every color contrast to ensure it's comfortable for long-time reading, even switching between any theme colors. 
   
-In the beta version of ReMoods is now only providing you the Dusk Mode by default, but I'm happy to tell you that there are the upcoming Day Mode and Night Mode in the future. I hope to bring you a Joplin theme that is fit fot the needs of using under different lighting environments.
+In the beta version, ReMoods is now only providing you the Dusk Mode by default, but I'm happy to tell you that there are upcoming Day Mode and Night Mode in the future. And I hope to bring you a Joplin theme that is fit for use under different lighting environments.
   
-### Writing Moods >>>
+### Writing & Reading Moods >>>
   
-For users who are used to thinking while writing, colors are good helpers for you! ReMoods uses single-tone theme colors to boost your writing moods. Try switching to assorted colors when you are getting stuck in writing. Every minor change in your environment would be a chance to generate new inspiration. You can also switch colors based on the moods you need [(Reference - The Power and Symbolism of Colors)](https://www.color-meanings.com) and then feel the fantastic magic effects that finally come up for you!
+For users who are used to thinking while writing, colors are good helpers for you! ReMoods uses single-tone theme colors to boost your writing moods. It would be nice to switch to assorted colors when you are getting stuck in writing. Every minor change within your environment would be a chance to generate new inspiration.
+
+You can also switch colors based on your needs of moods [(Reference - The Power and Symbolism of Colors)](https://www.color-meanings.com), and then feel the fantastic magic effects that finally come up for you!
   
-On the other hand, ReMoods auto-hides all unnecessary UI elements and increases the editor panel area as big as possible to boost your focus on writing.
+On the other hand, ReMoods auto-hides all unnecessary UI elements and increases the editor panel area as big as possible to boost your focus on writing. 
   
-### Reading Experience >>>
+### Writing & Reading Experience >>>
   
-For users who often share their screen or documentation with other readers, ReMoods shows your passion for caring about the reading experience. ReMoods cares about every content separation, making the core concepts of your documents clear and outstanding from general contents. 
-  
+For users who often share their screen or documentation with other readers, ReMoods shows your passion for caring about the reading experience. ReMoods cares about every content separation, making your core concepts obvious and outstanding from the regular content.
+
+ReMoods paid most of the time on the reading and typing tests, and I care about the balanced of them. I found that most people used to move their heads forward to the screen in some situations. Such as when they discover a typing mistake, reviewing, searching, etc. 
+
+So I've tried my most to fight for a little chance that might stop it from happening to anyone. All is to ensure we could feel comfortable reading and writing with a stable distance between the screen and eyes.
+
 ### Basic Solutions >>>
   
-ReMoods would discover the basic solutions for everyone. While ReMoods is not a functional-based plugin, I will still try to fulfill all the basic needs and reduce the limitations of using Joplin. 
+ReMoods would keep discovering the basic solutions for everyone. Sometimes, we might meet some limitations due to the original function of a plugin or Joplin itself. While ReMoods is not a functional-based plugin, I will still try to fulfill all the basic needs in the note-taking process by creating helpful custom elements or adding additional CSS styles for them.
 
 # Table Of Contents
 P.S. Some of the contents are incomplete at the moment.
