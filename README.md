@@ -1,9 +1,9 @@
 # ReMoods Theme (BETA)
 
-ReMoods is a multi-purpose theming plugin that inherited from the past Ohmine Dark Theme project and drives it to an entirely new stage. 
+ReMoods is a multi-purpose theming plugin that was inherited from the past Ohmine Dark Theme project and drives it to an entirely new stage. 
 
 - Use single-color tones to boost your writing moods.
-- Available to change the theme colors any time.
+- Available to change the theme colors at any time.
 - Auto hiding unnecessary UI elements from your screen and bring you to focus on writing. 
 - Provide over 80% consistent syntax highlighting styles for the code block of Markdown Editor and Render Viewer. 
 - Extra formatting adjustments for the Exported HTML File and PDF Document to increase the reading experience. 
@@ -79,7 +79,7 @@ For users who often share their screen or documentation with other readers, ReMo
 
 ReMoods paid most of the time on the reading and typing tests, and I care about the balanced of them. I found that most people used to move their heads forward to the screen in some situations. Such as when they discover a typing mistake, reviewing, searching, etc. 
 
-So I've tried my most to fight for a little chance that might stop it from happening to anyone. All is to ensure we could feel comfortable reading and writing with a stable distance between the screen and eyes.
+So I've tried my most to fight for a little chance that might stop it from happening to anyone. All is to ensure we could feel comfortable with reading and writing at a stable distance between the screen and our eyes.
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -112,7 +112,7 @@ Let's go for it one by one!
 
 1. Open Joplin
 2. Go to `tools` > `Options` >`Markdown` 
-3. Enable the below options depend on yourr needs: 
+3. Enable the below options depending on needs: 
 	- `Enable math expressions (wysiwyg: yes)`
 	- `Enable Mermaid diagrams support (wysiwyg: yes)`
 	- `Enable ==mark== syntax (wysiwyg: yes)`
@@ -145,7 +145,7 @@ Let's go for it one by one!
 
 **The "Quick HTML Tags" plugin provides you with a quick and easy way to create HTML tags in your notes, and it's helpful to create the custom elements of ReMoods:**
 
-1. Copy this line of text:  `kp;span;ctb;km;ag;note;tip;explain;question;comment;keyword;important;`
+1. Copy this line of text:  `span;kp;ctb;km;ag;note;tip;explain;question;comment;keyword;important;`
 2. Open Joplin
 3. Go to `Tools` > `Options` > `Plugins`
 4. Search the word `html`
@@ -156,23 +156,23 @@ Let's go for it one by one!
 9. Paste the text in the input bar
 10. Click `OK`
 
-After this, you can use this plugin like below:
+After this, you can use this plugin like the below:
 
 1. Whenever you want to use an HTML tag just press  `ctrl + h`
 2. Then, press the `Down` key on your keyboard to find the right tag
 3. Press the `Enter` key. It's done!
 
-Please mention that the `<ag>` is not a complete custom element name. You should add a number on it every time, such as `<ag4>`, `<ag8>` etc... Art Gallery lets you create 2 to 12 columns for images, so each time you create an `ag` tag with the Quick HTML Tags plugin, just don't forget to give it a number.
+Please mention that the `<ag>` is not a complete custom element name. You should add a number to it manually, such as `<ag4>`, `<ag8>`, etc. Art Gallery lets you create 2 to 12 columns for wrapping the images, so each time you create an `ag` tag with the Quick HTML Tags plugin, just don't forget to give it a number.
 
 [:arrow_up:Back](#table-of-contents)
 
 ## Download And Install Recommended Fonts [OPTIONAL]
 
-**ReMoods Theme has been tested over 50 free fonts from 10px to 16px, and I was developing everything for this theme based on using the below fonts, so I recommend you use them: (They are the default fonts for ReMoods)**
+**ReMoods Theme has been tested over 50 free fonts from 10px to 16px, and I was developing everything for this theme based on using the below fonts, so I recommend you use them:**
 
 - Base Font: Montserrat
 - Monospace Font: Cascadia Mono Light 
-- Traditional & Simplified Chinese Font: Chiron Hei Hk Text Extralight 
+- Traditional & Simplified Chinese Font: Chiron Hei Hk Text Extralight
 
 Here is the abridged version of the font packages, and I have uploaded them to my Google Drive; you can download the exact files you need at the below link: 
 
@@ -194,23 +194,23 @@ Alternatively, if you are interested to download the original complete packages,
 
 ## Install ReMoods Theme
 
-This theme is a plugin, so you should:
+Notice: Don't use more than one theming plugin at the same time, they might conflict with each other. Even if you want to install more than one theme, you should keep only one that is turning on at the time.
 
-Notice: Don't use more than one themeing plugin at the same time, it might be conflict to each other. Eeve if you want to install more than one theme, you should keep only one is turn on.
+To install ReMoods:
 
 1. Go to `Tools` > `Options` > `Plugins`
 2. Search the word `remoods`
 3. Click `Install` ReMoods Theme
 4. Quit and restart Joplin
 
-> A remind to the old OhmineDT users:
+> A reminder to the old OhmineDT users:
 >
-> You should first to remove all the old OhmineDT codes from your `userstyle.css` and `userchrome.css`, this is important. While ReMoods seems very similar to the OhmineDT, they are two completely different things. The code base has changed, and they are running under different logic. So, remove all the OhmineDT codes now, forget the old theme and then give ReMoods a hug!
+> You should first remove all the old OhmineDT codes from your `userstyle.css` and `userchrome.css`, this is important. While ReMoods seems very similar to OhmineDT, they are two completely different things. The code base has changed, and they are running under different logic. So, remove all the OhmineDT codes now, forget the old theme and then give ReMoods a hug!
 
 
 ## A Temporary Solution Of Customize The Theme Color & Font-Related Settings [IMPORTANT]
 
-Currently, some of the core settings properties are not available on the ReMoods Theme's settings page because I don't know how to implement them. So, for an alternative, you could edit the theme color and font-related settings through your `userstyle.css` and `userchrome.css` manually:
+Currently, some of the core settings properties are not available on the settings page because I don't know how to implement them. So, for an alternative, you could edit the theme color and font-related settings through your `userstyle.css` and `userchrome.css` manually:
 
 Let's follow the below steps:
 
@@ -260,9 +260,9 @@ body {
 
 > TIPS FOR BEGINNERS:
 >
-> If you don't understand CSS, don't worry! After you finish the above steps, you would be ready to edit the values. And the word "value" is mean the text where between the `:` and `;`. For example, `--usp-remoods-hue: 213deg !important;` and `--usp-base-font-size: 14px !important;`. As you will see the `213deg !important` and `14px !important`. Ya right! They are the values! Please don't edit the `!important` keyword, and only edit the value in front of it. After that, you can close those files, then, quit and restart Joplin, and it's done!
+> If you don't understand CSS, don't worry! After you finish the above steps, you would be ready to edit the values. And the word "value" is mean the text between the `:` and `;`. For example, `--usp-remoods-hue: 213deg !important;` and `--usp-base-font-size: 14px !important;`. As you will see the `213deg !important` and `14px !important`. Ya right! They are the values! Please don't edit the `!important` keyword, and only edit the value in front of it. After that, you can close those files, then, quit and restart Joplin, and you will see it works!
 >
-> One more remind, you can leave me a message when you getting stuck in any problems of ReMoods: https://discourse.joplinapp.org/t/plugin-remoods-theme/27547
+> One more reminder, it's welcome to leave me a message when you are running into any problems with this getting started guide: https://discourse.joplinapp.org/t/plugin-remoods-theme/27547
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -300,7 +300,7 @@ Let's compare the difference after the theme color changed:
 
 ### Hints
 
-1. About links, we usually use anchor text link like `[Joplin](https://www.joplin.org)` but that wouldn't be showing up the URL when print or export PDF. So, if you want to display the URL on the PDF, you should use the anchor text link with title like `[Joplin](https://www.joplin.org "Joplin")`.
+1. About links, we usually use anchor text links like `[Joplin](https://www.joplin.org)` but that wouldn't be showing up the URL when print or export PDF. So, if you want to display the URL on the PDF, you should use the anchor text link with a title like `[Joplin](https://www.joplin.org "Joplin")`.
 
 
 [:arrow_up:Back](#table-of-contents)
@@ -319,7 +319,7 @@ Syntax Highlight would change with the theme color too:
 
 ## Floating TOC 
 
-Joplin provides us a great built-in Markdown TOC feature which let you create the TOC by typing a simple command `[[toc]]` within your notes. ReMoods has restyled it and made it floating at the bottom right of the Render Viewer. It would open up when mouse hovers on the TOC button.
+Joplin provides us with a great built-in Markdown TOC feature which let you create the TOC by typing a simple command `[[toc]]` within your notes. ReMoods has restyled it and made it float at the bottom right of the Render Viewer. It would open up when mouse hovers on the TOC button.
 
 ![Screenshot 2022-09-25 032314](https://user-images.githubusercontent.com/110529913/192115112-9432ac02-94de-4894-b0a6-3fcc8333d32f.png)
 
@@ -404,7 +404,7 @@ Let’s see what are the Sticky Notes for:
 
 ### Hints
 
-1. Make sure there is a blank line *before the open tag*, otherwise it may cause the format problem.
+1. Make sure there is a blank line *before the open tag*, otherwise it may cause a format problem.
 2. Start typing your content in a *new line*.
 3. Use plain text within a custom element.
 4. Use `ENTER` to add a line break.
@@ -437,9 +437,9 @@ The custom element Key Point is super useful when you want to split out a paragr
 
 3 best timing to use the Key Point:
 
-1. To keep *multiple paragraphs* of content stay within *one heading*.
-2. To *explain a part of content* that with *multiple key points* and each one has *a paragraph of description*.
-3. To avoid using Strong Text to *create a paragraph*. (keep your strong text only appearing within a paragraph's content.)
+1. To keep *multiple subtitles* stay within *one heading*.
+2. To *explain a part of content* with *multiple key points* and each one has *a paragraph of description*.
+3. To avoid using Strong Text to *create a heading*. (keep your strong text only appearing within a paragraph's content.)
 
 See it below:
 
@@ -455,7 +455,7 @@ See it below:
 
 ## Key Mention
 
-The custom element Key Mention is good to use as an additional short information. Use it right behind a target element, and you will see it presented to the right. You can use it to remark on the last update time of the table and paragraph. Or you can use it like the HTML `<cite>` tag.
+The custom element Key Mention is good to use as additional short information. Use it right behind a target element, and you will see it presented to the right. You can use it to remark on the last update time of the table and paragraph. Or you can use it like the HTML `<cite>` tag.
 
 ![Screenshot 2022-09-25 185512](https://user-images.githubusercontent.com/110529913/192140048-a6384ac9-069b-4d88-924c-9eb4a64c778a.png)
 
@@ -466,7 +466,7 @@ The custom element Key Mention is good to use as an additional short information
 3. Use the Joplin built-in function `Insert Date Time` to make it easy.
 4. You can also use `km` within any Sticky Notes, and if you do that, please make sure `km` is always the **first child** inside the Sticky Notes.
 5. The text strong, emphasize, insert, and strikethrough will present as red color when inside the `km`.
-6. Mouse hover on it to zoom bigger.
+6. Mouse hovers on it to zoom bigger.
 
 More use cases:
 
@@ -487,13 +487,13 @@ More use cases:
 
 # THIRD-PARTY PLUGINS STYLING
 
-The third-party plugins styling is aimed to keep the plugin styles consistent with the theme, and secondly is to add extra usage for using them in ReMoods. Let's keep reading the below.
+The third-party plugin styling is aimed to keep the plugin styles consistent with the theme, and secondly is to add extra usage for using them in ReMoods. Let's keep reading the below.
 
 [:arrow_up:Back](#table-of-contents)
 
 ## Spoiler 
 
-This plugin allows you to create inline spoilers and spoiler blocks with title and extendable body. And the below shows what Spoiler looks like in ReMoods:
+This plugin allows you to create inline spoilers and spoiler blocks with a title and extendable body. And the below shows what Spoiler looks like in ReMoods:
 
 Let's take a look at the spoiler block:
 
@@ -585,7 +585,7 @@ Quick setting up:
 ## Export PDF Document
 
 - In ReMoods, Print & Export PDF is the standalone part that is separated from the Render Viewer styles. So, it means you can set different fonts and font sizes for Print & Export PDF use, and it won't affect the styles within Joplin.
-- You can also control what elements should show on the PDF through the ReMoods Theme settings page, such as hide the Sticky Notes, hide the Key Mention, hide the notebook title, etc.
+- You can also control what elements should show on the PDF through the ReMoods Theme settings page, such as hiding the Sticky Notes, hiding the Key Mention, hiding the notebook title, etc.
 
 
 ![Screenshot 2022-09-26 190704](https://user-images.githubusercontent.com/110529913/192261498-b95ee279-65f3-4dc3-9a1f-609023f62859.png)
@@ -605,10 +605,8 @@ This table will keep up to date
 |Inline Todo|Done|25AUG2022|1. Improved alignment for Montserrat font.<br>2. Changed assignee tag style.<br>3. Improved text clarity for tags.<br>4. Added line-through effect for checked items. (hover for hiding the line)|- |
 |Markdown Table Colorize|Done|25AUG2022|1. Added column marks, max support up to 52 columns.<br>2. Added row separation.<br>3. Added hover zoom effect for column marks.|- |
 |Draw.io|Tested|25AUG2022|-|-|
-|*** Joplin Enhancement|Tested|07OCT2022|-|*** Due to ReMoods and Jopin Enhancement are both edited tons of things in Joplin, our codes are having too much conflicts. So, this plugins is not compatible with ReMoods.|
+|*** Joplin Enhancement|Tested|07OCT2022|-|*** Due to ReMoods and Joplin Enhancement both editing tons of things in Joplin, our codes are having too many conflicts. So, this plugin is not compatible with ReMoods.|
 
 [:arrow_up:Back](#table-of-contents)
 
 <!-- ## CONTRIBUTION -->
-
-
