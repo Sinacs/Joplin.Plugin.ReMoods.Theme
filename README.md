@@ -28,13 +28,13 @@ P.S. Some of the contents are incomplete at the moment.
   - [Writing & Reading Moods](#writing--reading-moods-)
   - [Writing & Reading Experience](#writing--reading-experience-)
   - [Basic Solutions](#basic-solutions-)
-- [LOOK & FEEL](#look--feel)
+- [GENERAL ELEMENTS & USE TIPS](#general-elements--use-tips)
   - [Customizable Heading](#customizable-heading)
   - [Text Styles](#text-styles)
   - [Code Block Syntax Highlight](#code-block-syntax-highlight)
   - [Floating TOC](#floating-toc)
   - [Eye-Protector](#eye-protector)
-- [CUSTOM ELEMENTS](#custom-elements)
+- [CUSTOM ELEMENTS & USE TIPS](#custom-elements--use-tips)
   - [Art Gallery](#art-gallery)
   - [Sticky Notes](#sticky-notes)
   - [Custom Title Block](#custom-title-block)
@@ -95,7 +95,7 @@ Let's go for it one by one!
 3. Search the word `rich`
 4. Click `Install` Rich Markdown
 5. Quit & restart Joplin app
-6. Go to `Tools`, `Options`, `Rich Markdown`
+6. Go to `Tools` > `Options` > `Rich Markdown`
 7. Enable the `Add additional CSS classes for enhanced customization`
 8. Click `Apply`
 
@@ -122,7 +122,7 @@ After this, you can use this plugin like the below:
 2. Then, press the `Down` key on your keyboard to find the right tag
 3. Press the `Enter` key. It's done!
 
-Please mention that the `<ag>` is not a complete custom element name. You should add a number to it manually, such as `<ag4>`, `<ag8>`, etc. Art Gallery lets you create 2 to 12 columns for wrapping the images, so each time you create an `ag` tag with the Quick HTML Tags plugin, just don't forget to give it a number.
+Please mention that the `<ag>` is not a complete custom element name. You should add a number to it manually, such as `<ag4>`, `<ag8>`, etc. Art Gallery lets you create 2 to 12 columns for wrapping the images, so each time you create an `ag` tag with this plugin, just don't forget to add a number for `ag`.
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -154,7 +154,7 @@ Alternatively, if you are interested to download the original complete packages,
 
 ## Install ReMoods Theme
 
-Notice: Don't use more than one theming plugin at the same time, they might conflict with each other. Even if you want to install more than one theme, you should keep only one that is turning on at the time.
+Notice: Please don't use more than one theming plugin at the same time, they might conflict with each other. Even if you want to install more than one theme, you should keep only one that is turning on at the time.
 
 To install ReMoods:
 
@@ -266,11 +266,12 @@ ReMoods would keep discovering the basic solutions for everyone. Sometimes, we m
 
 [:arrow_up:Back](#table-of-contents)
 
-# LOOK & FEEL
+[[toc]]
+# GENERAL ELEMENTS & USE TIPS
 
-Remoods is expecting to try its best to create a comfortable and useful theme for you. Maybe you wouldn't feel it at once by reading this document, but I believe that you would feel it slowly throughout the time you use it.
+ReMoods is expecting to try its best to create a comfortable and helpful theme for you. Maybe you wouldn't feel it at once by reading this document, but I believe that you would feel it slowly throughout the time you use it.
 
-While I did many little pieces of stuff for this theme, I can't show you everything through this document, but I would like to show you some of them! Below show you some screenshots and tell you some key concepts of use.
+While I did many little pieces of stuff for this theme, I can't show you everything through this document, but I'm happy to show you some of them! Below have some screenshots and useful tips:
 
 ## Customizable Heading 
 
@@ -278,10 +279,10 @@ While I did many little pieces of stuff for this theme, I can't show you everyth
 
 ### Hints
 
-1. For the headings you always use with a border, you can enable the heading's border through the settings page.
-2. For the headings you want to add border flexibly, you can manually be adding `---` behind the heading at any time.
-3. Enable the heading reference will appear in front of the headings.
-4. When using emoji within the H1 heading, you should use `<span></span>` to wrap it up.
+1. You can enable the heading's border through the settings page for the headings you always use with a border.
+2. You can add `---` behind the heading manually for which you want to add a border flexibly.
+3. The heading's reference will appear right before each heading when you enable it.
+4. If the H1 twill pattern style is enabled, it's required to use HTML `span` for the emoji to avoid the styles affecting it. (H1 only)
 
 ![Screenshot 2022-09-25 203245](https://user-images.githubusercontent.com/110529913/192143564-00ae82a5-55ac-4c87-abec-5baa9bbc1f0b.png)
 ![Screenshot 2022-09-25 203723](https://user-images.githubusercontent.com/110529913/192143773-76b71e07-7310-44b2-a34e-1022f4d02ff6.png)
@@ -290,24 +291,25 @@ While I did many little pieces of stuff for this theme, I can't show you everyth
 
 ## Text Styles
 
-Some of the text colors would change with the theme color.
+Some of the text colors would change with the theme color. Let's compare the difference after the theme color changed:
 
 ![Screenshot 2022-09-25 025053](https://user-images.githubusercontent.com/110529913/192114108-06e98831-c1f6-4dc4-b754-3a98bb6315dc.png)
-
-Let's compare the difference after the theme color changed:
 
 ![Screenshot 2022-09-26 002351](https://user-images.githubusercontent.com/110529913/192154325-b19c269b-2c6c-42ab-82d9-87751f96e7aa.png)
 
 ### Hints
 
 1. About links, we usually use anchor text links like `[Joplin](https://www.joplin.org)` but that wouldn't be showing up the URL when print or export PDF. So, if you want to display the URL on the PDF, you should use the anchor text link with a title like `[Joplin](https://www.joplin.org "Joplin")`.
+2. While I personally prefer using *Mark Text* as an alternative to underline text, some users might prefer using *Insert Text* as underline text. For that reason, *Insert Text* might have different meanings to users. So, I create a few different styles of *Insert Text* for options. If you mostly use *Insert Text and Strikethrough Text* as the meanings of add & remove, you would feel comfortable with the red & green colors style. If using *Insert Text* as underline text, it's better to use the theme color style.
+3. You can use the HTML `span` tag within a list element to describe a list item, and it would present in a different color.
+4. For other text settings, you can find them on the settings page.
 
 
 [:arrow_up:Back](#table-of-contents)
 
 ## Code Block Syntax Highlight
 
-ReMoods Theme provides over 80% consistent syntax highlighting styles for the code block of Markdown Editor and Render Viewer.
+ReMoods provides over 80% consistent syntax highlighting styles for the code block of Markdown Editor and Render Viewer.
 
 ![Screenshot 2022-09-26 000631](https://user-images.githubusercontent.com/110529913/192153453-4d51e804-769d-47f8-abac-0794ad4266a1.png)
 
@@ -319,17 +321,17 @@ Syntax Highlight would change with the theme color too:
 
 ## Floating TOC 
 
-Joplin provides us with a great built-in Markdown TOC feature which let you create the TOC by typing a simple command `[[toc]]` within your notes. ReMoods has restyled it and made it float at the bottom right of the Render Viewer. It would open up when mouse hovers on the TOC button.
+Joplin provides a great built-in Markdown TOC feature which helps you create the TOC by typing a simple command `[[toc]]` within your notes. ReMoods has restyled the TOC and made it float at the bottom right of the Render Viewer. It would open up when the mouse hovers on the TOC button.
 
 ![Screenshot 2022-09-25 032314](https://user-images.githubusercontent.com/110529913/192115112-9432ac02-94de-4894-b0a6-3fcc8333d32f.png)
 
 ### Hints
 
-The Markdown TOC feature is disabled by Joplin default. To use the Markdown TOC, you should enable the extension manually.
+The Markdown TOC feature is disabled by Joplin default. To use the Markdown TOC, you should enable the extension manually:
 
-To enable the TOC feature:
 1. Go to `Tools` > `Options` > `Markdown`
 2. Checked `Enable table of contents extension (wysiwyg:no)`
+3. Click `OK`
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -337,36 +339,38 @@ To enable the TOC feature:
 
 ![IMG_20211114_145258_HDR1](https://user-images.githubusercontent.com/110529913/192705530-e3a3329c-2419-4f00-a9fa-fa246a5e6699.jpg)
 
-All attached images and mermaid charts will default to 20% darker than the original, to avoid bright light flashing your eyes while reading the notes. Hovering over them will restore the original brightness slowly.
-
-You can disable it by going to `Tools` > `Options` > `ReMoods Theme` and unchecking the `Enable Eye-Protector effect for mermaid charts` or `Enable Eye-Protector effect for images`.
-
-[:arrow_up:Back](#table-of-contents)
-
-# CUSTOM ELEMENTS
-
-ReMoods Theme provides a lot of custom elements to help you create a better reading experience, and here are the 6 major kinds:
-
-- Art Gallery
-- Sticky Notes
-- Custom Title Block
-- Key Point
-- Key Mention
+All attached images and mermaid charts will default to 20% darker than the original to avoid bright light flashing your eyes while reading the notes. Hovering over them will restore the original brightness slowly.
 
 ### Hints
 
-If Joplin is your only place to take notes, you can just use the Custom Elements without thinking. Otherwise, you should notice the below:
+1. You can disable it by going to `Tools` > `Options` > `ReMoods Theme` and disabling the `Enable Eye-Protector effect for mermaid charts` or `Enable Eye-Protector effect for images`.
+
+[:arrow_up:Back](#table-of-contents)
+
+# CUSTOM ELEMENTS & USE TIPS
+
+ReMoods provides a lot of custom elements to help you create a better reading experience, and here are the 6 major kinds below:
+
+- Art Gallery - Splitting attached images into multiple columns
+- Sticky Notes - To help you build the notes structure
+- Custom Title Block - Emphasizing the key concepts of the content
+- Key Point - Create multiple key points or key steps
+- Key Mention - Adding additional short information for reference
+
+### Hints
+
+If Joplin is your only place to take notes, you can just use the Custom Elements without thinking. Otherwise, you should notice the belows:
 
 1. Custom Elements are unique HTML Elements and CSS Styles for ReMoods Theme, so it might become plain text format when you transfer your notes to other software.
-2. Even if other software is support customize CSS, you should still need to copy the related codes from ReMoods to another software manually.
+2. Even if other software is supported custom CSS, you should still need to copy the related codes from ReMoods to another software manually.
 
 [:arrow_up:Back](#table-of-contents)
 
 ## Art Gallery 
 
-Art Gallery provides 11 custom elements for you to split attached images into multiple columns. It would be helpful if you have many images needed to attach to your note. 
+Art Gallery provides 11 custom elements for you to split attached images into multiple columns. It would be helpful if you have many images attached to your note. 
 
-Art Gallery has limited the `max-height` to 56% viewport height by default. Let's see how it works:
+Art Gallery has default limited the `max-height` to 56% viewport height. Let's see how it works:
 
 | Custom Elements | Force Columns |
 |:---------------:|:-------------:|
@@ -389,14 +393,14 @@ Below is the sample of the art gallery(ag6) with 30 images:
 ### Hints
 
 1. The custom element name `ag` stands for *Art Gallery*.
-2. The art gallery tag must use *right behind the plain text* .
-3. Do not include any blank line within this part of the codes, *blank line will break the format* .
+2. The `ag` tag must use *right behind the plain text* .
+3. Do not include any blank line within the body, *blank line will break the format* .
 
 [:arrow_up:Back](#table-of-contents)
 
 ## Sticky Notes 
 
-ReMoods has 8 custom elements for creating the Sticky Notes: `note` , `tip` , `question` , `explain` , `warning` , `comment`, `keyword` , `important`. They can help you build the article structure. Normally, you would be removed them from the content when you have completed your article. 
+ReMoods has 8 custom elements for creating the Sticky Notes: `note` , `tip` , `question` , `explain` , `warning` , `comment`, `keyword` , `important`. They can help you build the article structure. Normally, you would remove them from the content once you have completed your article.
 
 Let’s see what are the Sticky Notes for:
 
@@ -407,14 +411,14 @@ Let’s see what are the Sticky Notes for:
 1. Make sure there is a blank line *before the open tag*, otherwise it may cause a format problem.
 2. Start typing your content in a *new line*.
 3. Use plain text within a custom element.
-4. Use `ENTER` to add a line break.
+4. Use  `<br>` for line break.
 5. Do not include any blank line within the Sticky Notes, if you want to add a *blank line* please use  `<br>`.
 
 [:arrow_up:Back](#table-of-contents)
 
 ## Custom Title Block
 
-Custom Title Block would be suitable for supplementing information that you think is important to readers. The use is very similar to a blockquote but coming up with a clear heading, it's making a key concept more outstanding.
+Custom Title Block would be suitable for emphasizing a key concept for the heading, making it more outstanding from other content.
 
 Let's see what it looks like:
 
@@ -427,18 +431,19 @@ Let's see what it looks like:
 3. Keep your title *within one line*.
 4. Start typing your content *in the second line*.
 5. Use plain text within a custom element.
-6. Please mention that *within one line* means it's *according to your panel width*.
+6. Use  `<br>` for line break.
+7. Please mention that *"within one line"* means it's *according to your panel width*.
 
 [:arrow_up:Back](#table-of-contents)
 
 ## Key Point
 
-The custom element Key Point is super useful when you want to split out a paragraph without using the Heading or Strong Text. It also can keep your mind clear from the sense of overly using the Strong Text or Heading. The usage is very similar to the HTML Description List element.
+The custom element Key Point is super useful when you want to separate the content without using the Heading or Strong Text. It also can keep your mind clear from the sense of overly using the Strong Text or Heading.
 
 3 best timing to use the Key Point:
 
 1. To keep *multiple subtitles* stay within *one heading*.
-2. To *explain a part of content* with *multiple key points* and each one has *a paragraph of description*.
+2. To *explain a part of content* with *multiple key points* and each has *a paragraph of description*.
 3. To avoid using Strong Text to *create a heading*. (keep your strong text only appearing within a paragraph's content.)
 
 See it below:
@@ -448,21 +453,24 @@ See it below:
 ### Hints
 
 1. The custom element name `kp` stands for *Key Point*.
-2. I recommend **only** use it at *the beginning of the line*.
-3. It **cannot** be used within *any other block elements* such as Custom Title Block, Spoiler Block, Sticky Notes, etc...
+2. I recommend **only** use it at **the beginning of the line**.
+3. It **cannot** be used within **any other block elements** such as Custom Title Block, Spoiler Block, Sticky Notes, etc...
+4. If a Key Point **only have one paragraph of content**, it's better to type your description **right next to it**.
+5. If there are multiple Key Points and **each of them with one paragraph of description**, it's better to type your description **right below to it**.
+6. If your Key Points is a **long title**, such as a whole sentence, a question, etc. and **with multiple paragraphs of descriptions**, it's better to **add a blank line between all of them**.
 
 [:arrow_up:Back](#table-of-contents)
 
 ## Key Mention
 
-The custom element Key Mention is good to use as additional short information. Use it right behind a target element, and you will see it presented to the right. You can use it to remark on the last update time of the table and paragraph. Or you can use it like the HTML `<cite>` tag.
+The custom element Key Mention is good for adding additional short information for reference. Use it right behind a target element, and you will see it presented to the right. You can use it to markup the last update time of the table or paragraph. Or you can use it like the HTML `<cite>` tag.
 
 ![Screenshot 2022-09-25 185512](https://user-images.githubusercontent.com/110529913/192140048-a6384ac9-069b-4d88-924c-9eb4a64c778a.png)
 
 ### Hints
 
 1. The custom element name `km` stands for *Key Mention*.
-2. Always use `km` **right behind the target element** which you want to describe.
+2. Always use `km` **right behind the target element** you want to describe.
 3. Use the Joplin built-in function `Insert Date Time` to make it easy.
 4. You can also use `km` within any Sticky Notes, and if you do that, please make sure `km` is always the **first child** inside the Sticky Notes.
 5. The text strong, emphasize, insert, and strikethrough will present as red color when inside the `km`.
@@ -487,7 +495,7 @@ More use cases:
 
 # THIRD-PARTY PLUGINS STYLING
 
-The third-party plugin styling is aimed to keep the plugin styles consistent with the theme, and secondly is to add extra usage for using them in ReMoods. Let's keep reading the below.
+The third-party plugin styling aims to keep the plugin styles consistent with the theme, and secondly is to add extra usage for using them in ReMoods. Let's keep reading the below:
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -522,7 +530,7 @@ Quick setting up:
 
 This plugin adds colors to the markdown table syntax, so you can quickly identify what column the content belongs to.
 
-Sometimes, Markdown table syntax can be very messy when too much information is within the table. Thanks to the Markdown Table Colorize plugin, ReMoods can create a better style for the markdown table now!
+Markdown table syntax can be very messy when too much information is within the table. Thanks to the Markdown Table Colorize plugin, ReMoods can now create a better style for the markdown table!
 
 After installing the Markdown Table Colorize plugin and ReMoods, you will see the markdown table syntax looks like below:
 
@@ -561,6 +569,8 @@ Last, add content to it:
 |TD|TD|TD|TD|TD|
 ```
 
+1. You might find that the typing-cursor will position to the left of column's mark sometimes, but it's fine to start typing without problem. It would be back to the right place after you enter something.
+
 Quick setting up:
 
 1. Open Joplin
@@ -584,8 +594,8 @@ Quick setting up:
 
 ## Export PDF Document
 
-- In ReMoods, Print & Export PDF is the standalone part that is separated from the Render Viewer styles. So, it means you can set different fonts and font sizes for Print & Export PDF use, and it won't affect the styles within Joplin.
-- You can also control what elements should show on the PDF through the ReMoods Theme settings page, such as hiding the Sticky Notes, hiding the Key Mention, hiding the notebook title, etc.
+- In ReMoods, Print & Export PDF has separated from the Render Viewer styles. It means you can set different fonts and font sizes for Print & Export PDF use, and it won't affect the styles within Joplin.
+- You can also control which elements should show on the PDF through the settings page, such as hiding the Sticky Notes, hiding the Key Mention, hiding the notebook title, etc.
 
 
 ![Screenshot 2022-09-26 190704](https://user-images.githubusercontent.com/110529913/192261498-b95ee279-65f3-4dc3-9a1f-609023f62859.png)
@@ -594,7 +604,7 @@ Quick setting up:
 
 # TESTED THIRD-PARTY PLUGINS
 
-When I'm free, I would test different plugins and see what can I do to them. If you are interested to know what plugins I've tested you can check out the below:
+When I'm free, I would test different plugins and see what I can do to them. If you are interested to know what plugins I've tested, you can check out the below:
 
 This table will keep up to date
 
@@ -605,7 +615,7 @@ This table will keep up to date
 |Inline Todo|Done|25AUG2022|1. Improved alignment for Montserrat font.<br>2. Changed assignee tag style.<br>3. Improved text clarity for tags.<br>4. Added line-through effect for checked items. (hover for hiding the line)|- |
 |Markdown Table Colorize|Done|25AUG2022|1. Added column marks, max support up to 52 columns.<br>2. Added row separation.<br>3. Added hover zoom effect for column marks.|- |
 |Draw.io|Tested|25AUG2022|-|-|
-|*** Joplin Enhancement|Tested|07OCT2022|-|*** Due to ReMoods and Joplin Enhancement both editing tons of things in Joplin, our codes are having too many conflicts. So, this plugin is not compatible with ReMoods.|
+|*** Joplin Enhancement|Tested|07OCT2022|-|*** Due to Joplin Enhancement editing tons of things in Joplin, our codes are too many conflicts. So, this plugin is not compatible with ReMoods.|
 
 [:arrow_up:Back](#table-of-contents)
 
