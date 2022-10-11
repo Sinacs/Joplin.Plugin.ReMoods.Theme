@@ -1,3 +1,5 @@
+![ReMoods GitHub Social Preview 2](https://user-images.githubusercontent.com/110529913/195153547-0029b001-c7a2-47c6-93fa-c5cb3b6fe74e.png)
+
 # ReMoods Theme (BETA)
 
 ReMoods is a multi-purpose theming plugin that was inherited from the past Ohmine Dark Theme project and drives it to an entirely new stage. 
