@@ -53,7 +53,6 @@ P.S. Some of the contents are incomplete at the moment.
   - [Send Me A User Feedback](#send-me-a-user-feedback)
   - [Report An Issue](#report-an-issue)
   - [Click A Button For Me](#click-a-button-for-me)
-  - [Be My Hero](#be-my-hero)
 
 # REMOODS THEME GETTING START [IMPORTANT]
 
@@ -663,40 +662,5 @@ This is the easiest way to show me your passion for ReMoods, it's an encourageme
 
 - Give a star to this [ReMoods Theme Repository](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme)
 - Give a heart to the [ReMoods post in Joplin forum](https://discourse.joplinapp.org/t/plugin-remoods-theme/27547?u=sinacs)
-
-[:arrow_up:Back](#table-of-contents)
-
-## Be My Hero 
-I love to learn programming, but I found this interest a bit late in my life, so I don't have any friends around me with the same interest.
-
-Since I start learning English and coding from scratch in DEC2020, and launched my first OhmineDT in SEP2021, till the current ReMoods which launched in SEP2022. I think I'm learning in a very slow process and once wanted to give up. Although I did learning something by huge amount of online sources, It made me very confused, and now I still don't know how to build what I want. Everything for me is just like there are all little pieces of leaves and I don't know how to turn them back into a tree in the right way.
-
-So, I realized that I need some stable people to be my hero: 
-
-- Being my stable learning sources.
-- Be patient to give me some advice.
-- Answer my questions sometimes.
-
-For respecting to your private time:
-
-- I promise I won't asking any questions without thinking.
-- I won't care how long to wait for your reply, but please let me know if you want to stop replying to me.
-
-I'm interested in the below areas:
-
-- Vanilla JS
-- NodeJS
-- Typescript
-- Sass
-- Serverless
-- PostgreSQL 
-- MongoDB
-- Version Control
-- Npm, Yarn
-- WebAssembly
-- Progressive Web App
-- Plugins
-
-So, if you are a descriptive person and feel comfortable with English / Mandarin / Cantonese, and willing to save me before I die into the codes ocean, please <a href="mailto:sinacs.dev@gmial.com?subject=Hey! Let Me Save You From The Codes Ocean!">let me know it</a>. Many thanks!
 
 [:arrow_up:Back](#table-of-contents)
