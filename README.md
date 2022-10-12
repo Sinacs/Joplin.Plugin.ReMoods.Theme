@@ -49,7 +49,11 @@ P.S. Some of the contents are incomplete at the moment.
   - [Export HTML File](#export-html-file) (soon...)
   - [Export PDF Document](#export-pdf-document) 
 - [TESTED THIRD-PARTY PLUGINS](#tested-third-party-plugins) (07.OCT.2022)
-<!-- - [CONTRIBUTION](#contribution) -->
+- [CONTRIBUTION](#contribution)
+  - [Send Me A User Feedback](#send-me-a-user-feedback)
+  - [Report An Issue](#report-an-issue)
+  - [Click A Button For Me](#click-a-button-for-me)
+  - [Be My Hero](#be-my-hero)
 
 # REMOODS THEME GETTING START [IMPORTANT]
 
@@ -621,4 +625,78 @@ This table will keep up to date
 
 [:arrow_up:Back](#table-of-contents)
 
-<!-- ## CONTRIBUTION -->
+# CONTRIBUTION
+At the very first, please let me give you a BIG HUGGG! Thank you! I'm glad you scrolling down here and looking for a way to support me!
+
+There are many ways to contributing, and I'm so excited to let you know all of them:
+
+## Send Me A User Feedback
+I'm interested to know any of your feelings through the time you use ReMoods, and it would help inspire me.
+
+**2 ways to let me know your story:**
+
+- Write a reply to the [ReMoods post in Joplin forum](https://discourse.joplinapp.org/t/plugin-remoods-theme/27547?u=sinacs)
+- <a href="mailto:sinacs.dev@gmial.com?subject=Hey! Here Is My User Feedback For You!">Send me an email</a> to tell me all about it.
+
+**For reference, you can tell me about...**
+
+- What is your use case? For work? For personal?
+- What are your favorite fonts for using ReMoods? / How do you feel about the recommended fonts of ReMoods?
+- What makes you love to use ReMoods? / What is your favorite feature?
+- Did ReMoods make any changes to you?
+- Did someone know you are using ReMoods? And what they said?
+- Do you have any suggestion for me or ReMoods?
+- Or others...
+
+Your feedback means everything to me! Whatever you want to tell me you hate this theme, just let me know the reason, and it would be valuable for me!
+
+[:arrow_up:Back](#table-of-contents)
+
+## Report An Issue
+
+ReMoods has styled tons of elements and sometimes it's easy to miss the small visual bugs. So, [create an issue post](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/issues/new) to let me know if you see anything that seems like a problem to you. If it's finally not a bug, it's still a chance for me to learn from your point of view. Whatever it is, it would be always helpful!
+
+[:arrow_up:Back](#table-of-contents)
+
+## Click A Button For Me 
+This is the easiest way to show me your passion for ReMoods, it's an encouragement for me and your mental way to keep the theme moving forward.
+
+- Give a star to this [ReMoods Theme Repository](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme)
+- Give a heart to the [ReMoods post in Joplin forum](https://discourse.joplinapp.org/t/plugin-remoods-theme/27547?u=sinacs)
+
+[:arrow_up:Back](#table-of-contents)
+
+## Be My Hero 
+I love to learn programming, but I found this interest a bit late in my life, so I don't have any friends around me with the same interest.
+
+Since I start learning English and coding from scratch in DEC2020, and launched my first OhmineDT in SEP2021, till the current ReMoods which launched in SEP2022. I think I'm learning in a very slow process and once wanted to give up. Although I did learning something by huge amount of online sources, It made me very confused, and now I still don't know how to build what I want. Everything for me is just like there are all little pieces of leaves and I don't know how to turn them back into a tree in the right way.
+
+So, I realized that I need some stable people to be my hero: 
+
+- Being my stable learning sources.
+- Be patient to give me some advice.
+- Answer my questions sometimes.
+
+For respecting to your private time:
+
+- I promise I won't asking any questions without thinking.
+- I won't care how long to wait for your reply, but please let me know if you want to stop replying to me.
+
+I'm interested in the below areas:
+
+- Vanilla JS
+- NodeJS
+- Typescript
+- Sass
+- Serverless
+- PostgreSQL 
+- MongoDB
+- Version Control
+- Npm, Yarn
+- WebAssembly
+- Progressive Web App
+- Plugins
+
+So, if you are a descriptive person and feel comfortable with English / Mandarin / Cantonese, and willing to save me before I die into the codes ocean, please <a href="mailto:sinacs.dev@gmial.com?subject=Hey! Let Me Save You From The Codes Ocean!">let me know it</a>. Many thanks!
+
+[:arrow_up:Back](#table-of-contents)
