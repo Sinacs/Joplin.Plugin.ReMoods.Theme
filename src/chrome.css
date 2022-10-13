@@ -412,7 +412,8 @@
   --s-option-guide-bg-color:                            hsl(var(--usp-remoods-hue),  17%,  20%);
   
   --s-option-label-text-color:                          hsl(var(--usp-remoods-hue),  20%,  90%);
-  
+  --s-op-input-color:                                   hsl(var(--usp-remoods-hue),  20%,  80%);
+    
   --s-option-btn-bg-color:                              hsl(var(--usp-remoods-hue),  30%,  25%);
   --s-option-btn-bd-color:                              hsl(var(--usp-remoods-hue),  40%,  60%);
   --s-option-btn-text-color:                            hsl(var(--usp-remoods-hue),  60%,  90%);
@@ -2416,7 +2417,7 @@ body {
 /* MAIN > SELECT & INPUT =================================== */
 .config-screen > div:nth-child(2) input,
 .config-screen > div:nth-child(2) select {
-  color: var(--op-input-color) !important;
+  color: var(--s-op-input-color) !important;
   background: var(--g-input-bg-color-1) !important;
   border: 1px solid var(--g-input-bd-color-1) !important;
   border-radius: 7px !important;
