@@ -635,7 +635,7 @@ I'm interested to know any of your feelings through the time you use ReMoods, an
 **2 ways to let me know your story:**
 
 - Write a reply to the [ReMoods post in Joplin forum](https://discourse.joplinapp.org/t/plugin-remoods-theme/27547?u=sinacs)
-- <a href="mailto:sinacs.dev@gmial.com?subject=Hey! Here Is My User Feedback For You!">Send me an email</a> to tell me all about it.
+- <a href="mailto:sinacs.dev@gmail.com?subject=Hey! Here Is My User Feedback For You!">Send me an email</a> to tell me all about it.
 
 **For reference, you can tell me about...**
 
