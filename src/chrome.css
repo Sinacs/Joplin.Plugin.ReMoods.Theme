@@ -833,7 +833,7 @@
   border-style: solid;
   border-color: var(--code-block-bd-color);
 }
-.CodeMirror-lines .cm-jn-code-block.CodeMirror-line > :first-child {
+.CodeMirror-lines .cm-jn-code-block.CodeMirror-line {
   padding-left: 8px;
 }
 /* code block syntax highlight ----------------------------- */
