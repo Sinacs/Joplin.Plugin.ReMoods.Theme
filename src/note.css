@@ -1,12 +1,22 @@
 /*
   #REMARKS:
 
-  - All styles have spread into two parts - "screen" and "Print",
+  - All styles have separated into two parts - "screen" and "Print",
     but here also include some of the extra adjustments that only
     affect the "Export HTML File".
 
   - Screen: Render Viewer, Rich Text Editor, Export HTML File.
   - Print: Print & Export PDF.
+
+  - :not(#fake) / :not(.fake) are use for increasing the CSS specificity.
+
+  - The `#rendered-md` is use on all selectors to avoid the styles 
+  overwrite by other plugins.
+  
+   - Make sure always compare to the code mirror when editing the render
+   viewer text colors, especially the code block syntax highlight.
+
+
 
   #CODE STRUCTURE OVERVIEW:
 

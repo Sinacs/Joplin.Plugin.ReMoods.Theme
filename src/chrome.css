@@ -1,5 +1,8 @@
 /*
   #REMARKS:
+  
+  - All styles have separated into two parts - "code mirror" and 
+  "joplin ui".
 
   - Due to the DOM's lack of CSS classes to customize the theme, this 
   CSS document might include complex CSS Selectors, which is necessary 
@@ -10,6 +13,14 @@
 
   - Long selectors which start from the #react-root are use for avoiding
   the styles affecting to the `View > Change Application Layout` panel.
+
+  - Long selectors which including multiple compare operators are use for
+  specifying an exact element, and to avoid affecting other elements.
+
+  - Make sure always compare to the render viewer when editing the code 
+  mirror text colors, especially the code block syntax highlight.
+
+
 
   #CODE STRUCTURE OVERVIEW:
 
@@ -144,7 +155,7 @@
 
   --html-string-text-color:                           hsl(300, 100%,  70%);
   --html-string-text-shadow:                        0 0 none;
-
+  
   /* CODE BLOCK ============================================================================= */
   --code-block-bg-color:                                hsl(var(--usp-remoods-hue), 8%,  17%);
   --code-block-bd-width:                                0 3px;
@@ -156,68 +167,60 @@
   
   --code-block-number-color:                            hsl(calc(var(--usp-remoods-hue) + 110deg), 100%,  66%);
   --code-block-number-shadow:                       0 0 none;
-
+  
   --code-block-string-color:                            hsl(calc(var(--usp-remoods-hue) + 180deg), 100%,  75%);
   --code-block-string-shadow:                       0 0 none;
   
-  --code-block-string-2-color:                          hsl(calc(var(--usp-remoods-hue) +  90deg), 100%,  75%);
-  --code-block-string-2-shadow:                     0 0 none;
-
-  --code-block-keyword-color:                           hsl(var(--usp-remoods-hue), 100%,  70%);
-  --code-block-keyword-shadow:                      0 0 none;
-  
-  --code-block-variable-color:                          hsl(var(--usp-remoods-hue),   0%,  90%);
-  --code-block-variable-shadow:                     0 0 none;
-
-  --code-block-variable-2-color:                        hsl(var(--usp-remoods-hue),   0%,  90%);
-  --code-block-variable-2-shadow:                   0 0 none;
-
   --code-block-variable-3-color:                        hsl(calc(var(--usp-remoods-hue) + 323deg), 100%,  85%);
   --code-block-variable-3-shadow:                   0 0 none;
-
-  --code-block-property-color:                          hsl(var(--usp-remoods-hue), 100%,  85%);
-  --code-block-property-shadow:                     0 0 none;
-
-  --code-block-atom-color:                              hsl(calc(var(--usp-remoods-hue) + 148deg), 100%,  65%);
-  --code-block-atom-shadow:                         0 0 none;
-
-  --code-block-qualifier-color:                         hsl(calc(var(--usp-remoods-hue) + 260deg), 100%,  75%);
-  --code-block-qualifier-shadow:                    0 0 none;
-
-  --code-block-tag-color:                               hsl(calc(var(--usp-remoods-hue) + 120deg), 100%,  70%);
-  --code-block-tag-shadow:                          0 0 none;
-
+  
   --code-block-attribute-color:                         hsl(calc(var(--usp-remoods-hue) + 240deg), 100%,  75%);
   --code-block-attribute-shadow:                    0 0 none;
-
-  --code-block-type-color:                              hsl(calc(var(--usp-remoods-hue) + 260deg), 100%,  75%);
-  --code-block-type-shadow:                         0 0 none;
-
-  --code-block-meta-color:                              hsl(calc(var(--usp-remoods-hue) + 148deg), 100%,  65%);
-  --code-block-meta-shadow:                         0 0 none;
-
-  --code-block-builtin-color:                           hsl(calc(var(--usp-remoods-hue) + 260deg), 100%,  75%);
-  --code-block-builtin-shadow:                      0 0 none;
-
-  --code-block-def-color:                               hsl(var(--usp-remoods-hue), 0%,  90%);
-  --code-block-def-shadow:                          0 0 none;
-
-  --code-block-undefined-color:                         hsl(var(--usp-remoods-hue), 0%,  90%);
-  --code-block-undefined-shadow:                    0 0 none;
-
-  --code-block-operator-color:                          hsl(var(--usp-remoods-hue), 0%,  90%);
-  --code-block-operator-shadow:                     0 0 none;
-
-  --code-block-null-color:                              hsl(var(--usp-remoods-hue), 0%,  90%);
-  --code-block-null-shadow:                         0 0 none;
-
-  --code-block-matching-bracket-color:                  hsl(var(--usp-remoods-hue), 0%,  90%);
-  --code-block-matching-bracket-shadow:             0 0 none;
-
+  
   --code-block-error-bd-color:             2px dotted hsl(  0, 100%,  50%);
 
   --code-block-invalidchar-color:                     hsl(  0, 100%,  50%);
   --code-block-invalidchar-shadow:                  0 0 none;
+
+  --code-block-variable-color:                          hsl(var(--usp-remoods-hue),   0%,  90%);
+  --code-block-variable-shadow:                     0 0 none;
+  --code-block-variable-2-color:                        var(--code-block-variable-color);
+  --code-block-variable-2-shadow:                       var(--code-block-variable-shadow);
+  --code-block-def-color:                               var(--code-block-variable-color);
+  --code-block-def-shadow:                              var(--code-block-variable-shadow);
+  --code-block-undefined-color:                         var(--code-block-variable-color);
+  --code-block-undefined-shadow:                        var(--code-block-variable-shadow);
+  --code-block-operator-color:                          var(--code-block-variable-color);
+  --code-block-operator-shadow:                         var(--code-block-variable-shadow);
+  --code-block-null-color:                              var(--code-block-variable-color);
+  --code-block-null-shadow:                             var(--code-block-variable-shadow);
+  --code-block-matching-bracket-color:                  var(--code-block-variable-color);
+  --code-block-matching-bracket-shadow:                 var(--code-block-variable-shadow);
+  
+  --code-block-keyword-color:                           hsl(var(--usp-remoods-hue), 100%,  70%);
+  --code-block-keyword-shadow:                      0 0 none;
+  
+  --code-block-property-color:                          hsl(var(--usp-remoods-hue), 100%,  85%);
+  --code-block-property-shadow:                     0 0 none;
+  
+  --code-block-qualifier-color:                         hsl(calc(var(--usp-remoods-hue) + 260deg), 100%,  75%);
+  --code-block-qualifier-shadow:                    0 0 none;
+  --code-block-type-color:                              var(--code-block-qualifier-color);
+  --code-block-type-shadow:                             var(--code-block-qualifier-shadow);
+  --code-block-builtin-color:                           var(--code-block-qualifier-color);
+  --code-block-builtin-shadow:                          var(--code-block-qualifier-shadow);
+  
+  --code-block-atom-color:                              hsl(calc(var(--usp-remoods-hue) + 148deg), 100%,  65%);
+  --code-block-atom-shadow:                         0 0 none;
+  --code-block-meta-color:                              var(--code-block-atom-color);
+  --code-block-meta-shadow:                             var(--code-block-atom-shadow);
+  
+  --code-block-string-2-color:                          hsl(calc(var(--usp-remoods-hue) +  90deg), 100%,  75%);
+  --code-block-string-2-shadow:                     0 0 none;
+  
+  --code-block-tag-color:                               hsl(calc(var(--usp-remoods-hue) + 120deg), 100%,  70%);
+  --code-block-tag-shadow:                          0 0 none;
+
 
 
   /* PLUGIN: MARKDOWN TABLE COLORIZE ******************************************************** */
