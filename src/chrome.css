@@ -461,7 +461,7 @@
   padding-left: 8px;
   padding-bottom: 43px;
 }
-.CodeMirror-lines .CodeMirror-line:first-child {
+.CodeMirror-lines .CodeMirror-code > .CodeMirror-line:first-child {
   margin-top: 15px !important;
 }
 
