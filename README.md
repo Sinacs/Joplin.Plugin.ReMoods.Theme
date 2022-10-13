@@ -93,7 +93,7 @@ Let's go for it one by one!
 
 ## Install And Set The Required Plugin: Rich Markdown
 
-**ReMoods is relying on the "Rich Markdown" plugin to style the text because Joplin didn't provide enough CSS classes to specify those elements. So, it would cause some styles to be missing from ReMoods while you didn't install this plugin, or you didn't enable the settings:**
+**ReMoods relies on the 'Rich Markdown' plugin to style text because Joplin doesn't natively provide all of the CSS classes required to specify those elements. Without the Rich Markdown plugin enabled, there would be styles missing from ReMoods:**
 
 1. Open Joplin
 2. Go to `tools` > `Options` > `Plugins`
