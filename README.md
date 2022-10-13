@@ -65,7 +65,7 @@ Let's go for it one by one!
 **ReMoods needs to run with the Joplin built-in Dark theme. Otherwise, it might cause some of the colors abnormal:**
 
 1. Open Joplin
-2. Go to `tools` > `Options` >`Appearance` > `Theme`
+2. Go to `tools` > `Options` > `Appearance` > `Theme`
 3. Choose `Dark`
 4. Click `Apply`
 
@@ -73,10 +73,10 @@ Let's go for it one by one!
 
 ## Change The Joplin Built-in Markdown Settings
 
-**ReMoods has styled the special text, but some of them didn't turn on by Joplin default, so you should turn them on manually:**
+**ReMoods has styled the special text. However, some of the required settings aren't enabled by default in Joplin. Enable these settings in Joplin:**
 
 1. Open Joplin
-2. Go to `tools` > `Options` >`Markdown` 
+2. Go to `tools` > `Options` > `Markdown` 
 3. Enable the below options depending on needs: 
 	- `Enable math expressions (wysiwyg: yes)`
 	- `Enable Mermaid diagrams support (wysiwyg: yes)`
