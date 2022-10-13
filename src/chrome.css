@@ -721,8 +721,8 @@
   border-color: var(--mark-text-bd-color);
 }
 /* sup & sub ----------------------------------------------- */
-.cm-rm-sup,
-.cm-rm-sub {
+.CodeMirror-lines .CodeMirror-line .cm-rm-sup,
+.CodeMirror-lines .CodeMirror-line .cm-rm-sub {
   color: var(--sub-sup-text-color);
   line-height: 0 !important;
 }
@@ -826,6 +826,16 @@
 
 
 /* || MARKDOWN 10/11 | CODE BLOCK ************************** */
+/* avoid special text in code block ------------------------ */
+.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-em,
+.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-strong,
+.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-rm-ins,
+.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-strikethrough,
+.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-rm-highlight,
+.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-rm-sup,
+.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-rm-sub {
+  all: unset;
+}
 /* code block body ----------------------------------------- */
 .cm-jn-code-block {
   background: var(--code-block-bg-color) !important;
@@ -838,95 +848,95 @@
 }
 /* code block syntax highlight ----------------------------- */
 .CodeMirror-line.cm-jn-code-block .cm-keyword {
-  color: var(--code-block-keyword-color);
+  color: var(--code-block-keyword-color) !important;
   text-shadow: 0 0 var(--code-block-keyword-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-def {
-  color: var(--code-block-def-color);
+  color: var(--code-block-def-color) !important;
   text-shadow: 0 0 var(--code-block-def-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-property {
-  color: var(--code-block-property-color);
+  color: var(--code-block-property-color) !important;
   text-shadow: 0 0 var(--code-block-property-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-variable {
-  color: var(--code-block-variable-color);
+  color: var(--code-block-variable-color) !important;
   text-shadow: 0 0 var(--code-block-variable-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-variable-2 {
-  color: var(--code-block-variable-2-color);
+  color: var(--code-block-variable-2-color) !important;
   text-shadow: 0 0 var(--code-block-variable-2-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-variable-3 {
-  color: var(--code-block-variable-3-color);
+  color: var(--code-block-variable-3-color) !important;
   text-shadow: 0 0 var(--code-block--variable-3-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-number {
-  color: var(--code-block-number-color);
+  color: var(--code-block-number-color) !important;
   text-shadow: 0 0 var(--code-block-number-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-comment.cm-jn-monospace:not([class*="cm-tabcolor-"]) {
-  color: var(--code-block-comment-color);
+  color: var(--code-block-comment-color) !important;
   text-shadow: 0 0 var(--code-block-comment-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-string {
-  color: var(--code-block-string-color);
+  color: var(--code-block-string-color) !important;
   text-shadow: 0 0 var(--code-block-string-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-string-2 {
-  color: var(--code-block-string-2-color);
+  color: var(--code-block-string-2-color) !important;
   text-shadow: 0 0 var(--code-block-string-2-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-atom {
-  color: var(--code-block-atom-color);
+  color: var(--code-block-atom-color) !important;
   text-shadow: 0 0 var(--code-block-atom-color);
 }
 .CodeMirror-line.cm-jn-code-block .cm-qualifier {
-  color: var(--code-block-qualifier-color);
+  color: var(--code-block-qualifier-color) !important;
   text-shadow: 0 0 var(--code-block-qualifier-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-tag {
-  color: var(--code-block-tag-color);
+  color: var(--code-block-tag-color) !important;
   text-shadow: 0 0 var(--code-block-tag-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-attribute {
-  color: var(--code-block-attribute-color);
+  color: var(--code-block-attribute-color) !important;
   text-shadow: 0 0 var(--code-block-attribute-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-type {
-  color: var(--code-block-type-color);
+  color: var(--code-block-type-color) !important;
   text-shadow: 0 0 var(--code-block-type-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-meta {
-  color: var(--code-block-meta-color);
+  color: var(--code-block-meta-color) !important;
   text-shadow: 0 0 var(--code-block-meta-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-undefined {
-  color: var(--code-block-undefined-color);
+  color: var(--code-block-undefined-color) !important;
   text-shadow: 0 0 var(--code-block-undefined-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-operator {
-  color: var(--code-block-operator-color);
+  color: var(--code-block-operator-color) !important;
   text-shadow: 0 0 var(--code-block-operator-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-null {
-  color: var(--code-block-null-color);
+  color: var(--code-block-null-color) !important;
   text-shadow: 0 0 var(--code-block-null-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-error {
-  color: var(--code-block-error-color);
+  color: var(--code-block-error-color) !important;
   border-bottom: var(--code-block-error-bd-color);
 }
 .CodeMirror-line.cm-jn-code-block .cm-invalidchar {
-  color: var(--code-block-invalidchar-color);
+  color: var(--code-block-invalidchar-color) !important;
   text-shadow: 0 0 var(--code-block-invalidchar-color);
 }
 .CodeMirror-line.cm-jn-code-block .cm-builtin {
-  color: var(--code-block-builtin-color);
+  color: var(--code-block-builtin-color) !important;
   text-shadow: 0 0 var(--code-block-builtin-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .CodeMirror-matching-bracket {
-  color: var(--code-block-matching-bracket-color);
+  color: var(--code-block-matching-bracket-color) !important;
 }
 
 
