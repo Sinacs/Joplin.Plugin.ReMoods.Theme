@@ -177,6 +177,7 @@
   --code-block-attribute-color:                         hsl(calc(var(--usp-remoods-hue) + 240deg), 100%,  75%);
   --code-block-attribute-shadow:                    0 0 none;
   
+  --code-block-error-color:                           hsl(   0, 100%, 65%);
   --code-block-error-bd-color:             2px dotted hsl(  0, 100%,  50%);
 
   --code-block-invalidchar-color:                     hsl(  0, 100%,  50%);
@@ -913,6 +914,7 @@
   text-shadow: 0 0 var(--code-block-null-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-error {
+  color: var(--code-block-error-color);
   border-bottom: var(--code-block-error-bd-color);
 }
 .CodeMirror-line.cm-jn-code-block .cm-invalidchar {
