@@ -159,7 +159,7 @@ Alternatively, if you are interested to download the original complete packages,
 
 ## Install ReMoods Theme
 
-Notice: Please don't use more than one theming plugin at the same time, they might conflict with each other. Even if you want to install more than one theme, you should keep only one that is turning on at the time.
+Note: Don't use more than one theming plugin at the same time. The theming plugins may conflict with each other. If you want to install more than one theme at a time, only enable the theme you would like to use.
 
 To install ReMoods:
 
