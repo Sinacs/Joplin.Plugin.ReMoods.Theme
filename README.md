@@ -17,11 +17,11 @@ ReMoods is a multi-purpose theming plugin that was inherited from the past Ohmin
 # Table Of Contents
 P.S. Some of the contents are incomplete at the moment.
 
-- [REMOODS THEME GETTING START](#remoods-theme-getting-start-important) [IMPORTANT]
+- [REMOODS THEME GETTING STARTED](#remoods-theme-getting-started-important) [IMPORTANT]
   - [Change The Joplin Built-in Theme](#change-the-joplin-built-in-theme)
   - [Change The Joplin Built-in Markdown Settings](#change-the-joplin-built-in-markdown-settings)
-  - [Install And Setting The Required Plugin: Rich Markdown](#install-and-setting-the-required-plugin-rich-markdown)
-  - [Install And Setting The Helpful Plugin: Quick HTML Tags](#install-and-setting-the-helpful-plugin-quick-html-tags-optional) [Optional]
+  - [Install And Set The Required Plugin: Rich Markdown](#install-and-set-the-required-plugin-rich-markdown)
+  - [Install And Set The Helpful Plugin: Quick HTML Tags](#install-and-set-the-helpful-plugin-quick-html-tags-optional) [Optional]
   - [Download And Install Recommended Fonts](#download-and-install-recommended-fonts-optional) [Optional]
   - [Install ReMoods Theme](#install-remoods-theme)
   - [A Temporary Solution Of Customize The Theme Color & Font-Related Settings](#a-temporary-solution-of-customize-the-theme-color--font-related-settings-important) [IMPORTANT] (01.OCT.2022)
@@ -54,7 +54,7 @@ P.S. Some of the contents are incomplete at the moment.
   - [Report An Issue](#report-an-issue)
   - [Click A Button For Me](#click-a-button-for-me)
 
-# REMOODS THEME GETTING START [IMPORTANT]
+# REMOODS THEME GETTING STARTED [IMPORTANT]
 
 ReMoods has been styling lots of Joplin elements, and all of them are helpful to you. However, some of the effects are highly reliant on the Joplin built-in settings and third-party plugins to get work, so you may need to follow the below guides to get 100% of what ReMoods Theme brings to you!
 
@@ -91,7 +91,7 @@ Let's go for it one by one!
 
 [:arrow_up:Back](#table-of-contents)
 
-## Install And Setting The Required Plugin: Rich Markdown
+## Install And Set The Required Plugin: Rich Markdown
 
 **ReMoods is relying on the "Rich Markdown" plugin to style the text because Joplin didn't provide enough CSS classes to specify those elements. So, it would cause some styles to be missing from ReMoods while you didn't install this plugin, or you didn't enable the settings:**
 
@@ -106,7 +106,7 @@ Let's go for it one by one!
 
 [:arrow_up:Back](#table-of-contents)
 
-## Install And Setting The Helpful Plugin: Quick HTML Tags [Optional] 
+## Install And Set The Helpful Plugin: Quick HTML Tags [Optional] 
 
 **The "Quick HTML Tags" plugin provides you with a quick and easy way to create HTML tags in your notes, and it's helpful to create the custom elements of ReMoods:**
 
