@@ -1185,6 +1185,7 @@ body {
   min-height: 35px;
   max-height: 35px;
   background: var(--g-panel-header-bg-color);
+  border-radius: 3px;
   z-index: 2;
 }
 /* header content ------------------------------------------ */
@@ -1514,6 +1515,7 @@ body {
   max-height: 35px;
   padding: 5px;
   background: var(--g-panel-header-bg-color);
+  border-radius: 3px;
 }
 
 /* HEADER > SEARCH BAR ===================================== */
@@ -1726,6 +1728,7 @@ body {
   min-height: 35px !important;
   max-height: 35px !important;
   background: var(--g-panel-header-bg-color) !important;
+  border-radius: 3px;
 }
 
 /* HEADER > TITLE INPUT ==================================== */
@@ -1737,6 +1740,7 @@ body {
   color: var(--g-panel-header-text-color) !important;
   text-shadow: 0 0 3px var(--g-panel-header-text-shadow);
   background: var(--g-panel-header-bg-color) !important;
+  border-radius: 3px;
 }
 .title-input[placeholder="Creating new note..."] {
   text-shadow: none;
