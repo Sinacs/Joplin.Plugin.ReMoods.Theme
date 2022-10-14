@@ -74,6 +74,7 @@
   --usp-h1-font-weight: 600;
   --usp-paragraph-justify: justify;
   --usp-katex-text-align: center;
+  --usp-code-block-bd-style: dotted;
   --usp-mermaid-eye-protector-filter: brightness(80%);
   --usp-mermaid-eye-protector-transition: filter 2s;
   --usp-image-eye-protector-filter: brightness(80%);
@@ -1390,7 +1391,7 @@ img:hover {
   max-height: var(--usp-code-block-max-height);
   background: var(--cb-bg-color);
   border-width: 0 2px;
-  border-style: dotted;
+  border-style: var(--usp-code-block-bd-style);
   border-color: var(--cb-bd-color);
   border-radius: 7px;
   box-shadow: var(--cb-shadow);
