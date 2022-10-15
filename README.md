@@ -24,7 +24,7 @@ Note: some of the contents are incomplete at the moment.
   - [Install And Set The Helpful Plugin: Quick HTML Tags](#install-and-set-the-helpful-plugin-quick-html-tags-optional) [Optional]
   - [Download And Install Recommended Fonts](#download-and-install-recommended-fonts-optional) [Optional]
   - [Install ReMoods Theme Plugin](#install-remoods-theme-plugin)
-  - [A Temporary Solution To Customize The Theme Color & Font Settings](#a-temporary-solution-to-customize-the-theme-color--font-settings)
+  - [A Temporary Solution To Customize The Theme Color & Font Settings](#a-temporary-solution-to-customize-the-theme-color--font-settings) (Latest: 1.OCT.2022)
 - [THE FOUR CORE VALUES OF REMOODS](#the-four-core-values-of-remoods)
   - [Eye-Health](#eye-health-)
   - [Writing & Reading Moods](#writing--reading-moods-)
