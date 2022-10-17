@@ -13,9 +13,6 @@
   - The `#rendered-md` is use on all selectors to avoid the styles 
   overwrite by other plugins.
   
-   - Make sure always compare to the code mirror when editing the render
-   viewer text colors, especially the code block syntax highlight.
-
 
 
   #CODE STRUCTURE OVERVIEW:
@@ -56,10 +53,10 @@
   /* FONT ************************************************** */
   --usp-base-font: "Montserrat", "Chiron Hei HK Text Extralight";
   --usp-monospace-font: "Cascadia Mono Light", "Chiron Hei HK Text Extralight";
-  --usp-base-font-size: 14px;
-  --usp-smaller-monospace-font-size: 86%;
-
+  
   /* SIZES ************************************************* */
+  --usp-base-font-size: 14px;
+  --usp-smaller-code-block-font-size: var(--usp-base-font-size);
   --usp-h1-font-size: 200%;
   --usp-h2-font-size: 170%;
   --usp-h3-font-size: 150%;
@@ -110,7 +107,7 @@
   --usp-print-base-font: "Montserrat", "Chiron Hei HK Text Extralight";
   --usp-print-monospace-font: "Cascadia Mono Light", "Chiron Hei HK Text Extralight";
   --usp-print-base-font-size: 12px;
-  --usp-print-monospace-font-size: 10px;
+  --usp-print-smaller-code-block-font-size: var(--usp-print-base-font-size);
   
   /* PRINT: DISPLAY **************************************** */
   --usp-print-note-title-display: block;
@@ -1386,7 +1383,7 @@ img:hover {
 /* || ELEMENTS | CODE BLOCK ******************************** */
 /* code block body ----------------------------------------- */
 #rendered-md .joplin-editable > .hljs {
-  font-size: var(--usp-smaller-monospace-font-size);
+  font-size: var(--usp-smaller-code-block-font-size);
   padding: 1em 0 1em 8px;
   max-height: var(--usp-code-block-max-height);
   background: var(--cb-bg-color);
@@ -2201,10 +2198,9 @@ ag12::-webkit-scrollbar-track {
 
 
   /* || PRINT READY | MONOSPACE FONT *********************** */
-  #rendered-md .hljs code,
-  #rendered-md .hljs code span {
+  #rendered-md .hljs * {
     font-family: var(--usp-print-monospace-font, monospace);
-    font-size: var(--usp-print-monospace-font-size);
+    font-size: var(--usp-print-smaller-code-block-font-size);
   }
 
 

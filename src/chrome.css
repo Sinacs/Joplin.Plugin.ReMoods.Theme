@@ -17,9 +17,6 @@
   - Long selectors which including multiple compare operators are use for
   specifying an exact element, and to avoid affecting other elements.
 
-  - Make sure always compare to the render viewer when editing the code 
-  mirror text colors, especially the code block syntax highlight.
-
 
 
   #CODE STRUCTURE OVERVIEW:
@@ -57,10 +54,12 @@
   /* FONT ************************************************** */
   --usp-base-font: "Montserrat", "Chiron Sans HK PRO Extralight";
   --usp-monospace-font: "Cascadia Mono light", "Chiron Sans HK PRO Extralight";
-  --usp-base-font-size: 14px;
-  --usp-smaller-monospace-font-size: 86%;
   
   /* SIZES ************************************************* */
+  --usp-base-font-size: 14px;
+  --usp-smaller-monospace-font-size: 100%;
+  --usp-smaller-code-block-font-size: 100%;
+  --usp-smaller-markdown-table-font-size: 100%;
   --usp-h1-font-size: 200%;
   --usp-h2-font-size: 170%;
   --usp-h3-font-size: 150%;
@@ -524,15 +523,17 @@
 
 
 
-/* || FONT 1/2 | BASE FONT ********************************* */
-.CodeMirror *:not(.cm-jn-monospace),
-.CodeMirror-lines .CodeMirror-line:not(.cm-jn-code-block) .cm-comment.cm-jn-monospace {
-  font-family: var(--usp-base-font) !important;
+/* || FONT 1/5 | BASE FONT ********************************* */
+.CodeMirror * {
+  font-family: var(--usp-base-font, sans-serif) !important;
   font-size: var(--usp-base-font-size) !important;
   line-height: 1.5em;
 }
-/* || FONT 2/2 | MONOSPACE FONT **************************** */
-/* | anchor text | list token | horizontal line | abbreviation description | katex | */
+
+
+
+/* || FONT 2/5 | MONOSPACE FONT **************************** */
+.CodeMirror-lines .CodeMirror-line .cm-comment.cm-jn-inline-code.cm-jn-monospace,
 .CodeMirror-lines .CodeMirror-line [class*="cm-variable"].cm-rm-list-token,
 .CodeMirror-lines .CodeMirror-line .cm-keyword.cm-rm-list-token,
 .CodeMirror-lines .CodeMirror-line .cm-rm-list-token.cm-rm-checkbox,
@@ -540,31 +541,55 @@
 .CodeMirror-lines .CodeMirror-line .cm-em.cm-link-text, /* abbr des */
 .CodeMirror-lines .CodeMirror-line .cm-em.cm-link-text ~ .cm-em, /* abbr des */
 .CodeMirror-lines .CodeMirror-line .cm-overlay.cm-rm-link,
-.CodeMirror-lines .CodeMirror-line [class|="cm-katex"],
-.CodeMirror-lines .CodeMirror-line [class|="cm-katex"] ~ *,
-.CodeMirror-lines .CodeMirror-line .cm-hr  {
-  font-family: var(--usp-monospace-font) !important;
-  font-size: var(--usp-base-font-size) !important;
-}
-/* || FONT 3/3 | SMALLER MONOSPACE FONT ******************** */
-/* | anchor link | html | image link | file link | sup | sub | footnote ref. | table | code block | inline code | */
-.CodeMirror-lines .CodeMirror-line .cm-url.cm-rm-link, /* anchor link */
+.CodeMirror-lines .CodeMirror-line .cm-bracket,
 .CodeMirror-lines .CodeMirror-line .cm-tag,
 .CodeMirror-lines .CodeMirror-line .cm-attribute,
 .CodeMirror-lines .CodeMirror-line .cm-string:not(.cm-url), /* avoid the first word of footnote */
+.CodeMirror-lines .CodeMirror-line .cm-number,
+.CodeMirror-lines .CodeMirror-line [class|="cm-katex"],
+.CodeMirror-lines .CodeMirror-line [class|="cm-katex"] ~ *,
+.CodeMirror-lines .CodeMirror-line .cm-hr,
+.CodeMirror-lines .CodeMirror-line .cm-url.cm-rm-link, /* anchor link */
 .CodeMirror-lines .CodeMirror-line .cm-image,
+.CodeMirror-lines .CodeMirror-line .cm-rm-link.cm-rm-image,
 .CodeMirror-lines .CodeMirror-line .cm-rm-sup,
 .CodeMirror-lines .CodeMirror-line .cm-rm-sub,
-.CodeMirror-lines .CodeMirror-line .cm-number,
-.CodeMirror-lines .CodeMirror-line .cm-bracket,
-.CodeMirror-lines .CodeMirror-line .cm-rm-link.cm-rm-image,
 .CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em), /* footnote ref. */
-.CodeMirror-lines .CodeMirror-line .cm-null.cm-jn-monospace, /* table */
-.CodeMirror-lines .CodeMirror-line .cm-comment.cm-jn-inline-code.cm-jn-monospace,
+.CodeMirror-lines .CodeMirror-line .cm-null.cm-jn-monospace /* table */,
+.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-string.cm-jn-monospace,
 .CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-jn-monospace {
-  font-family: var(--usp-monospace-font) !important;
+  font-family: var(--usp-monospace-font, monospace) !important;
+  font-size: var(--usp-base-font-size) !important;
+}
+
+
+
+/* || FONT 3/5 | SMALLER MONOSPACE FONT ******************** */
+/* | link path | image link | sup | sub | footnote ref. | */
+.CodeMirror-lines .CodeMirror-line .cm-url.cm-rm-link, /* anchor link */
+.CodeMirror-lines .CodeMirror-line .cm-image,
+.CodeMirror-lines .CodeMirror-line .cm-rm-link.cm-rm-image,
+.CodeMirror-lines .CodeMirror-line .cm-rm-sup,
+.CodeMirror-lines .CodeMirror-line .cm-rm-sub,
+.CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em) /* footnote ref. */ {
   font-size: var(--usp-smaller-monospace-font-size) !important;
 }
+
+
+
+/* || FONT 4/5 | CODE BLOCK FONT SIZE ********************** */
+.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-string.cm-jn-monospace,
+.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-jn-monospace {
+  font-size: var(--usp-smaller-code-block-font-size) !important;
+}
+
+
+
+/* || FONT 5/5 | MARKDOWN TABLE FONT SIZE ****************** */
+.CodeMirror-lines .CodeMirror-line .cm-null.cm-jn-monospace { /* table */
+  font-size: var(--usp-smaller-markdown-table-font-size) !important;
+}
+
 
 
 
@@ -673,7 +698,7 @@
 .CodeMirror-lines .CodeMirror-line:not(.cm-jn-code-block) .cm-rm-link:not(.cm-link-text):not(.cm-string),
 .CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-em),
 .CodeMirror-lines .CodeMirror-line .cm-string.cm-url,
-.cm-rm-image {
+.CodeMirror-lines .CodeMirror-line .cm-rm-image {
   color: var(--link-text-color);
 }
 .CodeMirror-lines .CodeMirror-line .cm-string.cm-url,
@@ -755,6 +780,12 @@
 /* || MARKDOWN 5/11 | KATEX ******************************** */
 .CodeMirror-lines .CodeMirror-line:not(.cm-jn-code-block) .cm-variable-2 {
   color: var(--list-text-color);
+}
+/* katex > sup & sub */
+.CodeMirror-lines .CodeMirror-line [class|="cm-katex"] ~ .cm-rm-sup,
+.CodeMirror-lines .CodeMirror-line [class|="cm-katex"] ~ .cm-rm-sub {
+  vertical-align: initial !important;
+  font-size: var(--usp-base-font-size) !important;
 }
 
 
@@ -961,6 +992,10 @@
 /* markdown table > text ----------------------------------- */
 .CodeMirror-lines .CodeMirror-line [class*="cm-tabcolor-col"]:not(.cm-tabcolor-pipe) {
   color: var(--mtc-table-text-color) !important;
+}
+/* markdown table > anchor link path ----------------------- */
+.CodeMirror-lines .CodeMirror-line .cm-string.cm-url[class*="cm-tabcolor-"]:not(#fake) {
+  color: var(--link-text-color) !important;
 }
 /* markdown table > separate header & row ------------------ */
 .CodeMirror-line .cm-tabcolor-firstch:first-child::before {

@@ -6,20 +6,33 @@ import { generateUserCSS } from './generateUserCSS';
 export type ThemeSettings = {
 
 	// SCREEN ***************************************
+	// Markdown Editor & Render Viewer ==============
 	remoodsHue: number;
 	baseFont: string;
 	monospaceFont: string;
 	baseFontSize: number;
-	smallerMonospaceFontSize: number;
 	darkerEditorBackground: boolean;
 	h1TextTransform: boolean;
 	h1FontVariant: boolean;
 	emphasizeAddRemove: boolean,
 	emphasizeAddRemoveBg: boolean;
+	smallerCodeBlockFontSize: boolean;
+
+  // Markdown Editor ==============================
+	smallerMarkdownTableFontSize: number;
+	smallerMonospaceFontSize: number;
 	evidentHorizontalLine: boolean;
+
+	// Render Viewer ================================
 	headingRef: boolean;
-	paragraphJustify: boolean;
+	h1Border: boolean;
+	h2Border: boolean;
+	h3Border: boolean;
+	h4Border: boolean;
+	h5Border: boolean;
+	h6Border: boolean;
 	h1TwillPattern: boolean;
+	paragraphJustify: boolean;
 	dottedBlockquote: boolean;
 	dottedCodeBlock: boolean;
 	katexTextAlignLeft: boolean;
@@ -27,15 +40,11 @@ export type ThemeSettings = {
 	imageEyeProtector: boolean;
 	codeBlockMaxHeight: boolean;
 	artGalleryMaxHeight: boolean;
-	h1Border: boolean;
-	h2Border: boolean;
-	h3Border: boolean;
-	h4Border: boolean;
-	h5Border: boolean;
-	h6Border: boolean;
 	addRemoveSymbol: boolean;
 	inlineCodeSymbol: boolean;
 	customTitleBlockSymbol: boolean;
+
+	// Joplin UI ====================================
 	notebookTitleWrap: boolean;
 	notebookTitleScrollbar: boolean;
 
@@ -43,15 +52,15 @@ export type ThemeSettings = {
 	printBaseFont: string;
 	printMonospaceFont: string;
 	printBaseFontSize: Number;
-	printMonospaceFontSize: Number;
+	printSmallerCodeBlockFontSize: boolean;
 	printNoteTitle: boolean;
 	printHeadingRef: boolean;
 	printH1Border: boolean;
 	printTOC: boolean;
 	printStickyNotes: boolean;
 	printKeyMention: boolean;
-	printSpoilerInlineText: boolean;
 	printSnKm: boolean;
+	printSpoilerInlineText: boolean;
 
 };
 
@@ -121,16 +130,7 @@ async function prepareThemeSettings(): Promise<void> {
 			description: 'The font size of both monospace & non-monospace font. ("px")',
 			public: false,
 		},
-
-		'smallerMonospaceFontSize': {
-			section: 'remoodsThemeSection',
-			label: 'Smaller Monospace Font Size(INVALID)',
-			type: SettingItemType.Int,
-			value: 86,
-			description: 'The smaller font size for some of the markdown syntax. (Percentage that based of the "base font size")',
-			public: false,
-		},
-		
+    
 		'darkerEditorBackground': {
 			section: 'remoodsThemeSection',
 			label: 'Markdown Editor & Render Viewer - Enable darker background color (EXPERIMENTAL)',
@@ -157,19 +157,46 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'emphasizeAddRemove': {
 			section: 'remoodsThemeSection',
-			label: 'Markdown Editor & Render Viewer - Enable emphasize colors of insert text and strikethrough text',
+			label: 'Markdown Editor & Render Viewer - Enable emphasize colors for insert text and strikethrough text',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'Enable: Insert text is green, strikethrough text is red, and it would not change with the theme color. | Disable: Follow theme color.',
 			public: true,
 		},
-    
+		
 		'emphasizeAddRemoveBg': {
 			section: 'remoodsThemeSection',
 			label: 'Markdown Editor & Render Viewer - Enable background color for insert text and strikethrough text',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'The background color depends on its text color.',
+			public: true,
+		},
+
+		'smallerCodeBlockFontSize': {
+			section: 'remoodsThemeSection',
+			label: 'Markdown Editor & Render Viewer - Enable smaller font size for code block',
+			type: SettingItemType.Bool,
+			value: false,
+			description: '(2px smaller than regular size)',
+			public: true,
+		},
+
+		'smallerMarkdownTableFontSize': {
+			section: 'remoodsThemeSection',
+			label: 'Markdown Editor - Enable smaller font size for markdown table syntax',
+			type: SettingItemType.Bool,
+			value: false,
+			description: '(2px smaller than regular size)',
+			public: true,
+		},
+
+		'smallerMonospaceFontSize': {
+			section: 'remoodsThemeSection',
+			label: 'Markdown Editor - Enable smaller font size for non-essential contents',
+			type: SettingItemType.Bool,
+			value: false,
+			description: 'Set smaller font size for anchor link path, image link, and footnote reference number. (2px smaller than regular size)',
 			public: true,
 		},
 
@@ -189,11 +216,51 @@ async function prepareThemeSettings(): Promise<void> {
 			public: true,
 		},
 		
-		'paragraphJustify': {
+		'h1Border': {
 			section: 'remoodsThemeSection',
-			label: 'Render Viewer - Enable "Justify" effect for paragraph text',
+			label: 'Render Viewer - Enable H1 border',
 			type: SettingItemType.Bool,
 			value: true,
+			public: true,
+		},
+		
+		'h2Border': {
+			section: 'remoodsThemeSection',
+			label: 'Render Viewer - Enable H2 border',
+			type: SettingItemType.Bool,
+			value: true,
+			public: true,
+		},
+		
+		'h3Border': {
+			section: 'remoodsThemeSection',
+			label: 'Render Viewer - Enable H3 border',
+			type: SettingItemType.Bool,
+			value: false,
+			public: true,
+		},
+		
+		'h4Border': {
+			section: 'remoodsThemeSection',
+			label: 'Render Viewer - Enable H4 border',
+			type: SettingItemType.Bool,
+			value: false,
+			public: true,
+		},
+		
+		'h5Border': {
+			section: 'remoodsThemeSection',
+			label: 'Render Viewer - Enable H5 border',
+			type: SettingItemType.Bool,
+			value: true,
+			public: true,
+		},
+		
+		'h6Border': {
+			section: 'remoodsThemeSection',
+			label: 'Render Viewer - Enable H6 border',
+			type: SettingItemType.Bool,
+			value: false,
 			public: true,
 		},
 
@@ -203,6 +270,14 @@ async function prepareThemeSettings(): Promise<void> {
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'If enabled, you would need to use the HTML span tag for emoji to avoid the twill pattern affecting it.',
+			public: true,
+		},
+
+		'paragraphJustify': {
+			section: 'remoodsThemeSection',
+			label: 'Render Viewer - Enable "Justify" effect for paragraph text',
+			type: SettingItemType.Bool,
+			value: true,
 			public: true,
 		},
 
@@ -264,54 +339,6 @@ async function prepareThemeSettings(): Promise<void> {
 			public: true,
 		},
 		
-		'h1Border': {
-			section: 'remoodsThemeSection',
-			label: 'Render Viewer - Enable H1 border',
-			type: SettingItemType.Bool,
-			value: true,
-			public: true,
-		},
-		
-		'h2Border': {
-			section: 'remoodsThemeSection',
-			label: 'Render Viewer - Enable H2 border',
-			type: SettingItemType.Bool,
-			value: true,
-			public: true,
-		},
-		
-		'h3Border': {
-			section: 'remoodsThemeSection',
-			label: 'Render Viewer - Enable H3 border',
-			type: SettingItemType.Bool,
-			value: false,
-			public: true,
-		},
-		
-		'h4Border': {
-			section: 'remoodsThemeSection',
-			label: 'Render Viewer - Enable H4 border',
-			type: SettingItemType.Bool,
-			value: false,
-			public: true,
-		},
-		
-		'h5Border': {
-			section: 'remoodsThemeSection',
-			label: 'Render Viewer - Enable H5 border',
-			type: SettingItemType.Bool,
-			value: true,
-			public: true,
-		},
-		
-		'h6Border': {
-			section: 'remoodsThemeSection',
-			label: 'Render Viewer - Enable H6 border',
-			type: SettingItemType.Bool,
-			value: false,
-			public: true,
-		},
-		
 		'addRemoveSymbol': {
 			section: 'remoodsThemeSection',
 			label: 'Render Viewer - Enable the symbol in front of insert text and strikethrough text',
@@ -346,7 +373,7 @@ async function prepareThemeSettings(): Promise<void> {
 		
 		'notebookTitleScrollbar': {
 			section: 'remoodsThemeSection',
-			label: 'Notebook Panel - Showing the horizontal scrollbar for the notebook title',
+			label: 'Notebook Panel - Enable showing the horizontal scrollbar for the notebook title',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'If turn off, you can still use `shift + scroll` for scrolling.',
@@ -380,13 +407,13 @@ async function prepareThemeSettings(): Promise<void> {
 			public: false,
 		},
 
-		'printMonospaceFontSize': {
+		'printSmallerCodeBlockFontSize': {
 			section: 'remoodsThemeSection',
-			label: 'Print & Export PDF - Monospace font size(INVALID)',
-			type: SettingItemType.Int,
-			value: 10,
-			description: 'The font size of "monospace" font for print & export PDF. (in "px")',
-			public: false,
+			label: 'Print & Export PDF - Enable smaller font size for code block',
+			type: SettingItemType.Bool,
+			value: true,
+			description: '2px smaller than the regular Print & Export PDF font size.',
+			public: true,
 		},
 
 		'printNoteTitle': {
@@ -466,16 +493,26 @@ async function writeUserCSS(): Promise<void> {
 	const baseFont = await joplin.settings.value('baseFont');
 	const monospaceFont = await joplin.settings.value('monospaceFont');
 	const baseFontSize = await joplin.settings.value('baseFontSize');
-	const smallerMonospaceFontSize = await joplin.settings.value('smallerMonospaceFontSize');
 	const darkerEditorBackground = await joplin.settings.value('darkerEditorBackground');
 	const h1TextTransform = await joplin.settings.value('h1TextTransform');
 	const h1FontVariant = await joplin.settings.value('h1FontVariant');
 	const emphasizeAddRemove = await joplin.settings.value('emphasizeAddRemove');
 	const emphasizeAddRemoveBg = await joplin.settings.value('emphasizeAddRemoveBg');
+	const smallerCodeBlockFontSize = await joplin.settings.value('smallerCodeBlockFontSize');
+	
+	const smallerMonospaceFontSize = await joplin.settings.value('smallerMonospaceFontSize');
+	const smallerMarkdownTableFontSize = await joplin.settings.value('smallerMarkdownTableFontSize');
 	const evidentHorizontalLine = await joplin.settings.value('evidentHorizontalLine');
+	
 	const headingRef = await joplin.settings.value('headingRef');
-	const paragraphJustify = await joplin.settings.value('paragraphJustify');
+	const h1Border = await joplin.settings.value('h1Border');
+	const h2Border = await joplin.settings.value('h2Border');
+	const h3Border = await joplin.settings.value('h3Border');
+	const h4Border = await joplin.settings.value('h4Border');
+	const h5Border = await joplin.settings.value('h5Border');
+	const h6Border = await joplin.settings.value('h6Border');
 	const h1TwillPattern = await joplin.settings.value('h1TwillPattern');
+	const paragraphJustify = await joplin.settings.value('paragraphJustify');
 	const dottedBlockquote = await joplin.settings.value('dottedBlockquote');
 	const dottedCodeBlock = await joplin.settings.value('dottedCodeBlock');
 	const katexTextAlignLeft = await joplin.settings.value('katexTextAlignLeft');
@@ -483,21 +520,17 @@ async function writeUserCSS(): Promise<void> {
 	const imageEyeProtector = await joplin.settings.value('imageEyeProtector');
 	const codeBlockMaxHeight = await joplin.settings.value('codeBlockMaxHeight');
 	const artGalleryMaxHeight = await joplin.settings.value('artGalleryMaxHeight');
-	const h1Border = await joplin.settings.value('h1Border');
-	const h2Border = await joplin.settings.value('h2Border');
-	const h3Border = await joplin.settings.value('h3Border');
-	const h4Border = await joplin.settings.value('h4Border');
-	const h5Border = await joplin.settings.value('h5Border');
-	const h6Border = await joplin.settings.value('h6Border');
 	const addRemoveSymbol = await joplin.settings.value('addRemoveSymbol');
 	const inlineCodeSymbol = await joplin.settings.value('inlineCodeSymbol');
 	const customTitleBlockSymbol = await joplin.settings.value('customTitleBlockSymbol');
+	
 	const notebookTitleWrap = await joplin.settings.value('notebookTitleWrap');
 	const notebookTitleScrollbar = await joplin.settings.value('notebookTitleScrollbar');
+	
 	const printBaseFont = await joplin.settings.value('printBaseFont');
 	const printMonospaceFont = await joplin.settings.value('printMonospaceFont');
 	const printBaseFontSize = await joplin.settings.value('printBaseFontSize');
-	const printMonospaceFontSize = await joplin.settings.value('printMonospaceFontSize');
+	const printSmallerCodeBlockFontSize = await joplin.settings.value('printSmallerCodeBlockFontSize');
 	const printNoteTitle = await joplin.settings.value('printNoteTitle');
 	const printHeadingRef = await joplin.settings.value('printHeadingRef');
 	const printH1Border = await joplin.settings.value('printH1Border');
@@ -512,16 +545,26 @@ async function writeUserCSS(): Promise<void> {
 		baseFont,
 		monospaceFont,
 		baseFontSize,
-		smallerMonospaceFontSize,
 		darkerEditorBackground,
 		h1TextTransform,
 		h1FontVariant,
 		emphasizeAddRemove,
 		emphasizeAddRemoveBg,
+		smallerCodeBlockFontSize,
+
+		smallerMarkdownTableFontSize,
+		smallerMonospaceFontSize,
 		evidentHorizontalLine,
+
 		headingRef,
-		paragraphJustify,
+		h1Border,
+		h2Border,
+		h3Border,
+		h4Border,
+		h5Border,
+		h6Border,
 		h1TwillPattern,
+		paragraphJustify,
 		dottedBlockquote,
 		dottedCodeBlock,
 		katexTextAlignLeft,
@@ -529,29 +572,25 @@ async function writeUserCSS(): Promise<void> {
 		imageEyeProtector,
 		codeBlockMaxHeight,
 		artGalleryMaxHeight,
-		h1Border,
-		h2Border,
-		h3Border,
-		h4Border,
-		h5Border,
-		h6Border,
 		addRemoveSymbol,
 		inlineCodeSymbol,
 		customTitleBlockSymbol,
+
 		notebookTitleWrap,
 		notebookTitleScrollbar,
+
 		printBaseFont,
 		printMonospaceFont,
 		printBaseFontSize,
-		printMonospaceFontSize,
+		printSmallerCodeBlockFontSize,
 		printNoteTitle,
 		printHeadingRef,
 		printH1Border,
 		printTOC,
 		printStickyNotes,
 		printKeyMention,
-		printSpoilerInlineText,
 		printSnKm,
+		printSpoilerInlineText,
 	};
 
 	await generateUserCSS(settings);
