@@ -15,16 +15,16 @@ ReMoods is a multi-purpose theming plugin that was inherited from the past Ohmin
 ![Screenshot 2022-09-25 032654-tile](https://user-images.githubusercontent.com/110529913/192116296-82e79460-48b3-4d84-8575-a0daa459bd28.png)
 
 # Table Of Contents
-P.S. Some of the contents are incomplete at the moment.
+Note: some of the contents are incomplete at the moment.
 
-- [REMOODS THEME GETTING START](#remoods-theme-getting-start-important) [IMPORTANT]
-  - [Change The Joplin Built-in Theme](#change-the-joplin-built-in-theme)
-  - [Change The Joplin Built-in Markdown Settings](#change-the-joplin-built-in-markdown-settings)
-  - [Install And Setting The Required Plugin: Rich Markdown](#install-and-setting-the-required-plugin-rich-markdown)
-  - [Install And Setting The Helpful Plugin: Quick HTML Tags](#install-and-setting-the-helpful-plugin-quick-html-tags-optional) [Optional]
+- [REMOODS THEME GETTING STARTED](#remoods-theme-getting-started)
+  - [Set Joplin's Built-in Theme to Dark](#set-joplins-built-in-theme-to-dark)
+  - [Update Joplin's Built-in Markdown Settings](#update-joplins-built-in-markdown-settings)
+  - [Install And Configure The Required Plugin: Rich Markdown](#install-and-configure-the-required-plugin-rich-markdown)
+  - [Install And Set The Helpful Plugin: Quick HTML Tags](#install-and-set-the-helpful-plugin-quick-html-tags-optional) [Optional]
   - [Download And Install Recommended Fonts](#download-and-install-recommended-fonts-optional) [Optional]
-  - [Install ReMoods Theme](#install-remoods-theme)
-  - [A Temporary Solution Of Customize The Theme Color & Font-Related Settings](#a-temporary-solution-of-customize-the-theme-color--font-related-settings-important) [IMPORTANT] (01.OCT.2022)
+  - [Install ReMoods Theme Plugin](#install-remoods-theme-plugin)
+  - [A Temporary Solution To Customize The Theme Color & Font Settings](#a-temporary-solution-to-customize-the-theme-color--font-settings) (Latest: 1.OCT.2022)
 - [THE FOUR CORE VALUES OF REMOODS](#the-four-core-values-of-remoods)
   - [Eye-Health](#eye-health-)
   - [Writing & Reading Moods](#writing--reading-moods-)
@@ -48,36 +48,36 @@ P.S. Some of the contents are incomplete at the moment.
 - [PRINT & EXPORT](#print--export) (soon...)
   - [Export HTML File](#export-html-file) (soon...)
   - [Export PDF Document](#export-pdf-document) 
-- [TESTED THIRD-PARTY PLUGINS](#tested-third-party-plugins) (13.OCT.2022)
+- [TESTED THIRD-PARTY PLUGINS](#tested-third-party-plugins) (Latest: 13.OCT.2022)
 - [CONTRIBUTION](#contribution)
   - [Send Me A User Feedback](#send-me-a-user-feedback)
   - [Report An Issue](#report-an-issue)
   - [Click A Button For Me](#click-a-button-for-me)
 
-# REMOODS THEME GETTING START [IMPORTANT]
+# REMOODS THEME GETTING STARTED
 
 ReMoods has been styling lots of Joplin elements, and all of them are helpful to you. However, some of the effects are highly reliant on the Joplin built-in settings and third-party plugins to get work, so you may need to follow the below guides to get 100% of what ReMoods Theme brings to you!
 
 Let's go for it one by one!
 
-## Change The Joplin Built-in Theme
+## Set Joplin's Built-in Theme to Dark
 
-**ReMoods needs to run with the Joplin built-in Dark theme. Otherwise, it might cause some of the colors abnormal:**
+**ReMoods relies on Joplins built in Dark Theme to function properly. Enable the Dark Theme:**
 
-1. Open Joplin
-2. Go to `tools` > `Options` >`Appearance` > `Theme`
-3. Choose `Dark`
-4. Click `Apply`
+1. Open Joplin.
+2. Navigate to `tools` > `Options` > `Appearance` > `Theme`.
+3. Select `Dark` from the drop down.
+4. Click `Apply`.
 
 [:arrow_up:Back](#table-of-contents)
 
-## Change The Joplin Built-in Markdown Settings
+## Update Joplin's Built-in Markdown Settings
 
-**ReMoods has styled the special text, but some of them didn't turn on by Joplin default, so you should turn them on manually:**
+**ReMoods has styled the special text. However, some of the required settings aren't enabled by default in Joplin. Enable these settings in Joplin:**
 
-1. Open Joplin
-2. Go to `tools` > `Options` >`Markdown` 
-3. Enable the below options depending on needs: 
+1. Open Joplin.
+2. Navigate to `tools` > `Options` > `Markdown`.
+3. Enable the following options: 
 	- `Enable math expressions (wysiwyg: yes)`
 	- `Enable Mermaid diagrams support (wysiwyg: yes)`
 	- `Enable ==mark== syntax (wysiwyg: yes)`
@@ -87,26 +87,26 @@ Let's go for it one by one!
 	- `Enable ^sup^ syntax (wysiwyg: yes)`
 	- `Enable abbreviation syntax (wysiwyg: no)`
 	- `Enable ++insert++ syntax (wysiwyg: yes)`
-4. Click `Apply`
+4. Click `Apply`.
 
 [:arrow_up:Back](#table-of-contents)
 
-## Install And Setting The Required Plugin: Rich Markdown
+## Install And Configure The Required Plugin: Rich Markdown
 
-**ReMoods is relying on the "Rich Markdown" plugin to style the text because Joplin didn't provide enough CSS classes to specify those elements. So, it would cause some styles to be missing from ReMoods while you didn't install this plugin, or you didn't enable the settings:**
+**ReMoods relies on the 'Rich Markdown' plugin to style text because Joplin doesn't natively provide all of the CSS classes required to specify those elements. Without the Rich Markdown plugin enabled, there would be styles missing from ReMoods:**
 
-1. Open Joplin
-2. Go to `tools` > `Options` > `Plugins`
-3. Search the word `rich`
-4. Click `Install` Rich Markdown
-5. Quit & restart Joplin app
-6. Go to `Tools` > `Options` > `Rich Markdown`
-7. Enable the `Add additional CSS classes for enhanced customization`
-8. Click `Apply`
+1. Open Joplin.
+2. Navigate to `tools` > `Options` > `Plugins`.
+3. Search the word `rich`.
+4. Click `Install` Rich Markdown.
+5. Quit & restart Joplin.
+6. Navigate to `Tools` > `Options` > `Rich Markdown`.
+7. Enable the `Add additional CSS classes for enhanced customization`.
+8. Click `Apply`.
 
 [:arrow_up:Back](#table-of-contents)
 
-## Install And Setting The Helpful Plugin: Quick HTML Tags [Optional] 
+## Install And Set The Helpful Plugin: Quick HTML Tags [Optional] 
 
 **The "Quick HTML Tags" plugin provides you with a quick and easy way to create HTML tags in your notes, and it's helpful to create the custom elements of ReMoods:**
 
@@ -157,29 +157,34 @@ Alternatively, if you are interested to download the original complete packages,
 
 [:arrow_up:Back](#table-of-contents)
 
-## Install ReMoods Theme
+## Install ReMoods Theme Plugin
 
-Notice: Please don't use more than one theming plugin at the same time, they might conflict with each other. Even if you want to install more than one theme, you should keep only one that is turning on at the time.
+Note: Don't use more than one theming plugin at the same time. The theming plugins may conflict with each other. If you want to install more than one theme at a time, only enable the theme you would like to use.
 
 To install ReMoods:
 
-1. Go to `Tools` > `Options` > `Plugins`
-2. Search the word `remoods`
-3. Click `Install` ReMoods Theme
-4. Quit and restart Joplin
+1. Navigate to `Tools` > `Options` > `Plugins`.
+2. Search the word `remoods`.
+3. Click `Install` ReMoods Theme.
+4. Quit and restart Joplin.
 
 > A reminder to the old OhmineDT users:
 >
 > You should first remove all the old OhmineDT codes from your `userstyle.css` and `userchrome.css`, this is important. While ReMoods seems very similar to OhmineDT, they are two completely different things. The code base has changed, and they are running under different logic. So, remove all the OhmineDT codes now, forget the old theme and then give ReMoods a hug!
 
 
-## A Temporary Solution Of Customize The Theme Color & Font-Related Settings [IMPORTANT]
+## A Temporary Solution To Customize The Theme Color & Font Settings
 
-Currently, some of the core settings properties are not available on the settings page because I don't know how to implement them. So, for an alternative, you could edit the theme color and font-related settings through your `userstyle.css` and `userchrome.css` manually:
 
-Let's follow the below steps:
+Currently, some of the core settings are not available on the ReMoods plugin settings page because I don't know how to implement them. As a temporary workaround, you can edit the theme color and font settings through your `userstyle.css` and `userchrome.css` manually:
 
-1. Copy the below codes
+Note: The codes provided below might have chances to change due to the plugin updates. It will be noted in the [release information](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/releases) if the plugin updates require you to manually update the below codes to your custom CSS.
+
+1. Open Joplin.
+2. Navigate to `Tools` > `Options` > `Appearance`.
+3. Click `Show Advanced Settings`.
+4. Click `Custom Stylesheet for rendered Markdown` and it will open the `userstyle.css` file.
+5. Copy / paste the below codes into `userstyle.css` and save the file:
 ```
 :root {
   /* For render viewer and rich text editor */
@@ -196,12 +201,8 @@ Let's follow the below steps:
   --usp-print-monospace-font-size: 10px !important;
 }
 ```
-2. Open Joplin
-3. Go to `Tools` > `Options` > `Appearance`
-4. Click `Show Advanced Settings`
-5. Click `Custom Stylesheet for rendered Markdown` and it will open the `userstyle.css` file
-6. Paste the codes to the `userstyle.css` and back to the guide
-7. Then, copy the below codes
+6. Click `Custom Stylesheet for Joplin-wide app styles` and it will open the `userchrome.css` file.
+7. Copy / paste the below codes into `userchrome.css` and save the file:
 ```
 :root {
   /* For markdown editor */
@@ -217,11 +218,9 @@ body {
   background-color: hsl(var(--usp-remoods-hue),  8%,  27%) !important;
 }
 ```
-8. Back to Joplin
-9. Click `Custom Stylesheet for Joplin-wide app styles` and it will open the `userchrome.css` file
-10. Paste the codes to the `userchrome.css`.
-11. Now, you can edit the value of these two stylesheets to control those settings.
-12. After editing the values, close the files then quit and restart Joplin. It's done!
+8. Now you can edit the values of these two stylesheets to adjust the settings.
+9. Quit and restart Joplin to apply the updates.
+
 
 > TIPS FOR BEGINNERS:
 >
@@ -635,7 +634,7 @@ I'm interested to know any of your feelings through the time you use ReMoods, an
 **2 ways to let me know your story:**
 
 - Write a reply to the [ReMoods post in Joplin forum](https://discourse.joplinapp.org/t/plugin-remoods-theme/27547?u=sinacs)
-- <a href="mailto:sinacs.dev@gmial.com?subject=Hey! Here Is My User Feedback For You!">Send me an email</a> to tell me all about it.
+- <a href="mailto:sinacs.dev@gmail.com?subject=Hey! Here Is My User Feedback For You!">Send me an email</a> to tell me all about it.
 
 **For reference, you can tell me about...**
 
