@@ -178,6 +178,8 @@ To install ReMoods:
 
 Currently, some of the core settings are not available on the ReMoods plugin settings page because I don't know how to implement them. As a temporary workaround, you can edit the theme color and font settings through your `userstyle.css` and `userchrome.css` manually:
 
+Note: The codes provided below might have chances to change due to the plugin updates. It will be noted in the [release information](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/releases) if the plugin updates require you to manually update the below codes to your custom CSS.
+
 1. Open Joplin.
 2. Navigate to `Tools` > `Options` > `Appearance`.
 3. Click `Show Advanced Settings`.
@@ -217,7 +219,7 @@ body {
 }
 ```
 8. Now you can edit the values of these two stylesheets to adjust the settings.
-9. Restart Joplin to apply the updates.
+9. Quit and restart Joplin to apply the updates.
 
 
 > TIPS FOR BEGINNERS:
