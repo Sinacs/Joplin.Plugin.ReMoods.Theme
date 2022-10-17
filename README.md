@@ -24,7 +24,7 @@ Note: some of the contents are incomplete at the moment.
   - [Install And Set The Helpful Plugin: Quick HTML Tags](#install-and-set-the-helpful-plugin-quick-html-tags-optional) [Optional]
   - [Download And Install Recommended Fonts](#download-and-install-recommended-fonts-optional) [Optional]
   - [Install ReMoods Theme Plugin](#install-remoods-theme-plugin)
-  - [A Temporary Solution To Customize The Theme Color & Font Settings](#a-temporary-solution-to-customize-the-theme-color--font-settings) (Latest: 1.OCT.2022)
+  - [A Temporary Solution To Customize The Theme Color & Font Settings](#a-temporary-solution-to-customize-the-theme-color--font-settings) (Latest: 17.OCT.2022)
 - [THE FOUR CORE VALUES OF REMOODS](#the-four-core-values-of-remoods)
   - [Eye-Health](#eye-health-)
   - [Writing & Reading Moods](#writing--reading-moods-)
@@ -192,13 +192,11 @@ Note: The codes provided below might have chances to change due to the plugin up
   --usp-base-font: "montserrat","chiron hei hk text extralight" !important;
   --usp-monospace-font: "cascadia mono light", "chiron hei hk text extralight" !important;
   --usp-base-font-size: 14px !important;
-  --usp-smaller-monospace-font-size: 86% !important;
   
   /* For print & export pdf */
   --usp-print-base-font: "montserrat","chiron hei hk text extralight" !important;
   --usp-print-monospace-font: "cascadia mono light", "chiron hei hk text extralight" !important;
   --usp-print-base-font-size: 12px !important;
-  --usp-print-monospace-font-size: 10px !important;
 }
 ```
 6. Click `Custom Stylesheet for Joplin-wide app styles` and it will open the `userchrome.css` file.
@@ -210,12 +208,11 @@ Note: The codes provided below might have chances to change due to the plugin up
   --usp-base-font: "montserrat","chiron hei hk text extralight" !important;
   --usp-monospace-font: "cascadia mono light", "chiron hei hk text extralight" !important;
   --usp-base-font-size: 14px !important;
-  --usp-smaller-monospace-font-size: 86% !important;
 }
 
 /* Avoid white background when starting Joplin */
 body {
-  background-color: hsl(var(--usp-remoods-hue),  8%,  27%) !important;
+  background-color: var(--code-mirror-bg-color) !important;
 }
 ```
 8. Now you can edit the values of these two stylesheets to adjust the settings.
