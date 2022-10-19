@@ -9,7 +9,7 @@ ReMoods is a multi-purpose theming plugin that was inherited from the past Ohmin
 - Auto hiding unnecessary UI elements from your screen and bring you to focus on writing. 
 - Provide over 80% consistent syntax highlighting styles for the code block of Markdown Editor and Render Viewer. 
 - Extra formatting adjustments for the Exported HTML File and PDF Document to increase the reading experience. 
-- Provide certain helpful HTML custom elements to increase your notetaking experience. 
+- Provide certain helpful HTML custom elements to increase your note-taking experience. 
 - Provide third-party plugins’ CSS styles to add extra uses in ReMoods.
 
 ![Screenshot 2022-09-25 032654-tile](https://user-images.githubusercontent.com/110529913/192116296-82e79460-48b3-4d84-8575-a0daa459bd28.png)
@@ -62,7 +62,7 @@ Let's go for it one by one!
 
 ## Set Joplin's Built-in Theme to Dark
 
-**ReMoods relies on Joplins built in Dark Theme to function properly. Enable the Dark Theme:**
+**ReMoods relies on Joplin's built-in Dark Theme to function properly. Enable the Dark Theme:**
 
 1. Open Joplin.
 2. Navigate to `tools` > `Options` > `Appearance` > `Theme`.
@@ -616,7 +616,7 @@ This table will keep up to date
 |Inline Todo|Done|25AUG2022|1. Improved alignment for Montserrat font.<br>2. Changed assignee tag style.<br>3. Improved text clarity for tags.<br>4. Added line-through effect for checked items. (hover for hiding the line)|- |
 |Markdown Table Colorize|Done|25AUG2022|1. Added column marks, max support up to 52 columns.<br>2. Added row separation.<br>3. Added hover zoom effect for column marks.|- |
 |Draw.io|Tested|25AUG2022|-|-|
-|*** Joplin Enhancement|Plainng for second test|13OCT2022|-|-|
+|*** Joplin Enhancement|Planning for second test|13OCT2022|-|-|
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -654,7 +654,7 @@ ReMoods has styled tons of elements and sometimes it's easy to miss the small vi
 [:arrow_up:Back](#table-of-contents)
 
 ## Click A Button For Me 
-This is the easiest way to show me your passion for ReMoods, it's an encouragement for me and your mental way to keep the theme moving forward.
+This is the easiest way to show me your passion for ReMoods, it's an encouragement for me and also your mental way to keep the theme moving forward.
 
 - Give a star to this [ReMoods Theme Repository](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme)
 - Give a heart to the [ReMoods post in Joplin forum](https://discourse.joplinapp.org/t/plugin-remoods-theme/27547?u=sinacs)
