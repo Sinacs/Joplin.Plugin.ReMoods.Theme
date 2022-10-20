@@ -264,8 +264,10 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
 
   if(!dottedBlockquote) {
     noteCSS = noteCSS.replace(/^  --blockquote-bd-color:.+?;/m, '  --blockquote-bd-color: 3px solid hsl(var(--usp-remoods-hue),  20%,  60%);');
+    noteCSS = noteCSS.replace(/^  --print-blockquote-bd-color:.+?;/m, '  --print-blockquote-bd-color: 2px solid hsl(var(--usp-remoods-hue),  20%,  60%);');
   } else {
     noteCSS = noteCSS.replace(/^  --blockquote-bd-color:.+?;/m, '  --blockquote-bd-color: 5px dotted hsl(var(--usp-remoods-hue),  20%,  60%);');
+    noteCSS = noteCSS.replace(/^  --print-blockquote-bd-color:.+?;/m, '  --print-blockquote-bd-color: 4px dotted hsl(var(--usp-remoods-hue),  20%,  60%);');
   }
   
   if(!dottedCodeBlock) {

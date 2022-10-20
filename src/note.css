@@ -170,9 +170,9 @@
                                                         transparent 50%,
                                                         var(--render-viewer-bg-color) 100%),
                                                         repeating-linear-gradient(to right,
-                                                        hsl(var(--usp-remoods-hue),  30%,  80%),
-                                                        transparent,
-                                                        transparent 4px);
+                                                        hsl(var(--usp-remoods-hue),  30%,  80%), 2px,
+                                                        transparent, 2px,
+                                                        transparent 5px);
   /* h6 ------------------------------------------------------------------------------------- */
   --h6-color:                                           var(--h5-color);
   --h6-bd-color:                                        var(--h5-bd-color);
@@ -432,7 +432,9 @@
   --spoiler-inline-symbol-color-hover:                hsl(  0, 100%,  50%);
 
   /* PLUGINS: TURNTOCHART =================================================================== */
-  --turntochart-info-bg-color:                          hsl(var(--usp-remoods-hue), 10%,  20%);
+  --turntochart-bg-color:                               none;
+  --turntochart-text-color:                             hsl(var(--usp-remoods-hue),   0%,  80%);
+  --turntochart-info-bg-color:                          hsl(var(--usp-remoods-hue),  10%,  20%);
 
 
 
@@ -452,10 +454,11 @@
                                                         hsl(var(--usp-remoods-hue), 100%,  80%),
                                                         hsl(var(--usp-remoods-hue), 100%,  35%,  50%),
                                                         hsl(var(--usp-remoods-hue), 100%,  80%)  3px);
+  --print-note-title-color:                           hsl(  0,   0%,  60%); 
   
   /* PRINT HEADING ========================================================================== */
   /* print h1 ------------------------------------------------------------------------------- */
-  --print-h1-color:                                     hsl(var(--usp-remoods-hue), 100%,  50%);
+  --print-h1-color:                                     hsl(var(--usp-remoods-hue), 100%,  45%);
   --print-h1-bg-color:                                  repeating-linear-gradient( 114deg,
                                                         hsl(var(--usp-remoods-hue), 100%,  80%),
                                                         hsl(var(--usp-remoods-hue), 100%,  35%,  30%),
@@ -472,17 +475,14 @@
   --print-h4-color:                                     var(--print-h2-color);
   --print-h4-bd-color:                                  var(--print-h2-bd-color);
   /* print h5 ------------------------------------------------------------------------------- */
-  --print-h5-color:                                     hsl(var(--usp-remoods-hue),  20%,  70%);
-  --print-h5-bd-color:                                  linear-gradient(to right, 
-                                                        transparent 50%,
-                                                        var(--print-render-viewer-bg-color) 100%),
-                                                        repeating-linear-gradient(to right,
-                                                        hsl(var(--usp-remoods-hue),  30%,  60%),
-                                                        transparent,
-                                                        transparent 4px);
+  --print-h5-color:                                     hsl(var(--usp-remoods-hue),  15%,  65%);
+  --print-h5-bd-color:                                  repeating-linear-gradient(to right,
+                                                        hsl(var(--usp-remoods-hue),  30%,  60%), 2px,
+                                                        transparent, 2px,
+                                                        transparent 5px);
   /* print h6 ------------------------------------------------------------------------------- */
   --print-h6-color:                                     var(--print-h5-color);
-  --print-h6-bd-color:                                  var(--print-h2-bd-color);
+  --print-h6-bd-color:                                  var(--print-h5-bd-color);
 
   /* PRINT SPECIAL TEXT ===================================================================== */
   --print-special-text-shadow:                      0 0 none;
@@ -694,7 +694,7 @@
   /* PRINT TURNTOCHART ====================================================================== */
   --print-turntochart-text-color:                     hsl(var(--usp-remoods-hue),   0%,  20%);
   --print-turntochart-info-bd-color:        3px solid hsl(var(--usp-remoods-hue),   0%,  80%);
-
+    
 } 
 
 
@@ -1290,8 +1290,15 @@ body {
 
 /* || ELEMENTS | MERMAID *********************************** */
 #rendered-md .mermaid {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100% !important;
+  border-radius: 7px;
   filter: var(--usp-mermaid-eye-protector-filter);
   transition: var(--usp-mermaid-eye-protector-transition);
+}
+#rendered-md .mermaid > svg {
+  max-width: 100% !important;
 }
 #rendered-md .mermaid:hover {
   filter: none;
@@ -2005,6 +2012,19 @@ ag12::-webkit-scrollbar-track {
   color: var(--spoiler-span-title-color);
   background: var(--spoiler-span-title-bg-color);
 }
+/* custom span --------------------------------------------- */
+#rendered-md .spoiler-block > .summary-content > p > span[style^="color:"]:not(.fake),
+#rendered-md .spoiler-block > .summary-content > p > span[style^="background"]:not(.fake) {
+  position: unset;
+  left: unset;
+  display: inline;
+  padding: unset;
+  margin: unset;
+  font-weight: inherit;
+  color: inherit;
+  border: none;
+  background: inherit;
+}
 /* list > span --------------------------------------------- */
 #rendered-md .spoiler-block > .summary-content li span {
   color: var(--spoiler-list-span-color);
@@ -2059,8 +2079,29 @@ ag12::-webkit-scrollbar-track {
 
 
 /* || PLUGINS | TURNTOCHART ******************************** */
+/* CHART =================================================== */
+/* background ---------------------------------------------- */
+#rendered-md > div > svg > rect {
+  fill: var(--turntochart-bg-color) !important;
+}
+/* text & line --------------------------------------------- */
+#rendered-md svg g text,
+#rendered-md svg g .visx-line{
+  fill: var(--turntochart-text-color);
+  color: var(--turntochart-text-color);
+}
+
+/* INFO BLOCK ============================================== */
+/* background ---------------------------------------------- */
 #rendered-md > div > svg ~ div {
+  padding: 1em !important;
   background: var(--turntochart-info-bg-color) !important;
+}
+/* title & label ------------------------------------------- */
+#rendered-md > div > svg ~ div > div:first-child,
+#rendered-md > div > svg ~ div > .visx-legend {
+  fill: var(--turntochart-text-color);
+  color: var(--turntochart-text-color);
 }
 
 
@@ -2138,7 +2179,7 @@ ag12::-webkit-scrollbar-track {
   /* || PRINT READY | REMOVE MAX-HEIGHT ******************** */
   ag2,ag3,ag4,ag5,ag6,ag7,ag8,ag9,ag10,ag11,ag12,
   #rendered-md .hljs {
-    max-height: unset;
+    max-height: unset !important;
   }
 
 
@@ -2162,9 +2203,13 @@ ag12::-webkit-scrollbar-track {
   #rendered-md svg,
   #rendered-md svg > g,
   #rendered-md > div,
+  #rendered-md .mermaid,
   #rendered-md img {
-    page-break-before: auto !important;
+    page-break-before: var(--print-render-viewer-bg-color) !important;
     page-break-inside: avoid !important;
+  }
+  #rendered-md > div .hljs {
+    page-break-inside: always !important;
   }
   #rendered-md h1,
   #rendered-md h2,
@@ -2225,7 +2270,7 @@ ag12::-webkit-scrollbar-track {
   #rendered-md table > tbody > tr:nth-child(even),
   #rendered-md label.spoiler-inline,
   #rendered-md .table-of-contents,
-  #rendered-md > div > svg ~ div,
+  #rendered-md > div > svg ~ div, /* turntochart info block */
   #tinymce,
   #rendered-md,
   #rendered-md .hljs,
@@ -2236,13 +2281,17 @@ ag12::-webkit-scrollbar-track {
     background: var(--print-render-viewer-bg-color) !important;
     filter: none !important;
   }
+  #rendered-md > div > svg > rect {
+    fill: none !important;
+  }
 
 
 
   /* || PRINT READY | DISPLAY ELEMENTS ********************* */
   /* notes title ------------------------------------------- */
-  #rendered-md .exported-note-title {
+  .exported-note-title {
     display: var(--usp-print-note-title-display);
+    color: var(--print-note-title-color) !important;
   }
   /* heading ref ------------------------------------------- */
   #rendered-md h1:before,
@@ -2952,16 +3001,24 @@ ag12::-webkit-scrollbar-track {
 
 
   /* PRINT TURNTOCHART ************************************* */
+  /* PRINT CHART =========================================== */
+  /* print text & line ------------------------------------- */
   #rendered-md svg g text,
-  #rendered-md > div > svg ~ div * {
+  #rendered-md svg g .visx-line {
     fill: var(--print-turntochart-text-color);
     color: var(--print-turntochart-text-color);
   }
-  #rendered-md svg g path {
-    color: var(--print-turntochart-text-color);
-  }
+  
+  /* PRINT INFO BLOCK ====================================== */
+  /* print background -------------------------------------- */
   #rendered-md > div > svg ~ div {
     border: var(--print-turntochart-info-bd-color);
+  }
+  /* print title & label ----------------------------------- */
+  #rendered-md > div > svg ~ div > div:first-child,
+  #rendered-md > div > svg ~ div > .visx-legend {
+    fill: var(--print-turntochart-text-color);
+    color: var(--print-turntochart-text-color);
   }
 
 
