@@ -48,7 +48,7 @@ Note: some of the contents are incomplete at the moment.
 - [PRINT & EXPORT](#print--export) (soon...)
   - [Export HTML File](#export-html-file) (soon...)
   - [Export PDF Document](#export-pdf-document) 
-- [TESTED THIRD-PARTY PLUGINS](#tested-third-party-plugins) (Latest: 13.OCT.2022)
+- [TESTED THIRD-PARTY PLUGINS](#tested-third-party-plugins) (Latest: 23.OCT.2022)
 - [CONTRIBUTION](#contribution)
   - [Send Me A User Feedback](#send-me-a-user-feedback)
   - [Report An Issue](#report-an-issue)
@@ -612,11 +612,11 @@ This table will keep up to date
 |Plugin|Status|Updated|Modified|Remarks|
 |:-----|:----:|:-----:|:-------|:-----|
 |Spoiler|Done|25AUG2022|1. Matching theme styles<br>2. Added use `<span>` within spoiler block as a title.<br>3. Added `<ctb>` style for spoiler block.<br>4. List text color changed.<br>5. Added use `<span>` within between list items for description.<br>6. Added symbol and hover effect for spoiler inline.<br>7. Adjustments for print & export PDF.|- |
-|TurnToChart|Done|25AUG2022|1. Color adjustments for Render Viewer & PDF.|-|
+|TurnToChart|Done|20OCT2022|1. Color adjustments for Render Viewer & PDF.<br>2.Removed chart background color.<br>3.|-|
 |Inline Todo|Done|25AUG2022|1. Improved alignment for Montserrat font.<br>2. Changed assignee tag style.<br>3. Improved text clarity for tags.<br>4. Added line-through effect for checked items. (hover for hiding the line)|- |
 |Markdown Table Colorize|Done|25AUG2022|1. Added column marks, max support up to 52 columns.<br>2. Added row separation.<br>3. Added hover zoom effect for column marks.|- |
 |Draw.io|Tested|25AUG2022|-|-|
-|*** Joplin Enhancement|Planning for second test|13OCT2022|-|-|
+|Enhancement|Done|22OCT2022|1.Removed the left color bar of admonition.<br>2.Changed footnote marker text to monospace font.<br>3.Changed cursor type when mouse hovering link marker.<br>4.Changed link and footnote colors.<br>5.Changed admonition color. |I'm not using this plugin, so I'll only fix bugs based on user requests. |
 
 [:arrow_up:Back](#table-of-contents)
 
