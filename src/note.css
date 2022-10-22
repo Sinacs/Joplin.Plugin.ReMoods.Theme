@@ -73,9 +73,9 @@
   --usp-katex-text-align: center;
   --usp-code-block-bd-style: dotted;
   --usp-mermaid-eye-protector-filter: brightness(80%);
-  --usp-mermaid-eye-protector-transition: filter 2s;
+  --usp-mermaid-eye-protector-transition: filter 1.2s;
   --usp-image-eye-protector-filter: brightness(80%);
-  --usp-image-eye-protector-transition: filter 2s;
+  --usp-image-eye-protector-transition: filter 1.2s;
   
   /* DISPLAY *********************************************** */
   --usp-heading-ref-switcher: inline-block;
@@ -225,7 +225,7 @@
   --fn-title-bd-color:                       3px double hsl(var(--usp-remoods-hue),   0%,  70%);
   
   --fn-list-text-color:                                 hsl(var(--usp-remoods-hue),   0%,  70%);
-  --fn-list-token-color:                                hsl(var(--usp-remoods-hue),   0%,  70%);
+  --fn-list-token-color:                                hsl(var(--usp-remoods-hue),   0%,  50%);
 
   /* BLOCKQUOTE ============================================================================= */
   --blockquote-bd-color:                     5px dotted hsl(var(--usp-remoods-hue),  20%,  60%);
@@ -1148,6 +1148,8 @@ body {
   transition-delay: 1s;
   cursor:  help;
 }
+
+
 
 /* || ELEMENTS | LIST ************************************** */
 #rendered-md > ul,

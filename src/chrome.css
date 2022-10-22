@@ -52,8 +52,8 @@
   --usp-remoods-hue: 213deg;
 
   /* FONT ************************************************** */
-  --usp-base-font: "Montserrat", "Chiron Sans HK PRO Extralight";
-  --usp-monospace-font: "Cascadia Mono light", "Chiron Sans HK PRO Extralight";
+  --usp-base-font: "Montserrat", "Chiron Hei HK Text Extralight";
+  --usp-monospace-font: "Cascadia Mono Light", "Chiron Hei HK Text Extralight";
   
   /* SIZES ************************************************* */
   --usp-base-font-size: 14px;
@@ -464,7 +464,9 @@
 .CodeMirror-lines .CodeMirror-code > .CodeMirror-line:first-child {
   margin-top: 15px !important;
 }
-
+.CodeMirror-wrap > .CodeMirror-scroll > .CodeMirror-sizer {
+  padding-left: 0 !important;
+}
 
 
 /* || BASIC 2/2 | OTHERS *********************************** */
@@ -557,7 +559,8 @@
 .CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em), /* footnote ref. */
 .CodeMirror-lines .CodeMirror-line .cm-null.cm-jn-monospace /* table */,
 .CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-string.cm-jn-monospace,
-.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-jn-monospace {
+.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-jn-monospace,
+.CodeMirror-lines .CodeMirror-line .enhancement-footnote-marker-text {
   font-family: var(--usp-monospace-font, monospace) !important;
   font-size: var(--usp-base-font-size) !important;
 }
@@ -571,7 +574,8 @@
 .CodeMirror-lines .CodeMirror-line .cm-rm-link.cm-rm-image,
 .CodeMirror-lines .CodeMirror-line .cm-rm-sup,
 .CodeMirror-lines .CodeMirror-line .cm-rm-sub,
-.CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em) /* footnote ref. */ {
+.CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em), /* footnote ref. */
+.CodeMirror-lines .CodeMirror-line .enhancement-footnote-marker-text {
   font-size: var(--usp-smaller-monospace-font-size) !important;
 }
 
@@ -1171,6 +1175,51 @@
 .cm-tabcolor-col49.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24e7";}
 .cm-tabcolor-col50.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24e8";}
 .cm-tabcolor-col51.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24e9";}
+
+
+
+/* || PLUGINS | ENHANCEMENT ******************************** */
+/* ENHANCEMENT LINK ======================================== */
+/* link marker --------------------------------------------- */
+.enhancement-link-marker:not(#fake) {
+  cursor: pointer;
+}
+/* link text ----------------------------------------------- */
+.enhancement-link-marker-text:not(#fake) {
+  color: var(--link-text-color);
+}
+/* link icon ----------------------------------------------- */
+.enhancement-link-marker-icon:not(#fake) {
+  margin-right: 3px;
+  color: var(--link-text-color);
+}
+.enhancement-joplin-icon:not(#fake) {
+  position: relative;
+  bottom: 1px;
+  margin-right: 2px;
+  width: 1.2em;
+  height: 1.2em;
+  background: var(--link-text-color);
+}
+
+/* ENHANCEMENT FOOTNOTE ==================================== */
+/* footnote marker ----------------------------------------- */
+.enhancement-footnote-marker:not(#fake) {
+  font-size: 12px !important;
+  margin-left: 2px;
+  padding: 0 3px;
+  background: var(--special-bg-color);
+}
+/* footnote marker text ------------------------------------ */
+.enhancement-footnote-marker-text:not(#fake) {
+  color: var(--special-text-color);
+}
+
+/* ENHANCEMENT ADMONITIONS ================================= */
+/* title text */
+.cm-admonition-type, .cm-admonition-end {
+  opacity: 1;
+}
 
 
 

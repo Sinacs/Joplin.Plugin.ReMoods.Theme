@@ -283,19 +283,19 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
   }
 
   if(!mermaidEyeProtector) {
-    noteCSS = noteCSS.replace(/^  usp-mermaid-eye-protector-filter:.+?;/m, '  usp-mermaid-eye-protector-filter: none;');
+    noteCSS = noteCSS.replace(/^  --usp-mermaid-eye-protector-filter:.+?;/m, '  --usp-mermaid-eye-protector-filter: none;');
     noteCSS = noteCSS.replace(/^  --usp-mermaid-eye-protector-transition:.+?;/m, '  --usp-mermaid-eye-protector-transition: none;');
   } else {
-    noteCSS = noteCSS.replace(/^  usp-mermaid-eye-protector-filter:.+?;/m, '  usp-mermaid-eye-protector-filter: brightness(80%);');
-    noteCSS = noteCSS.replace(/^  --usp-mermaid-eye-protector-transition:.+?;/m, '  --usp-mermaid-eye-protector-transition: filter 2s;');
+    noteCSS = noteCSS.replace(/^  --usp-mermaid-eye-protector-filter:.+?;/m, '  --usp-mermaid-eye-protector-filter: brightness(80%);');
+    noteCSS = noteCSS.replace(/^  --usp-mermaid-eye-protector-transition:.+?;/m, '  --usp-mermaid-eye-protector-transition: filter 1.2s;');
   }
 
   if(!imageEyeProtector) {
-    noteCSS = noteCSS.replace(/^  usp-image-eye-protector-filter:.+?;/m, '  usp-image-eye-protector-filter: none;');
+    noteCSS = noteCSS.replace(/^  --usp-image-eye-protector-filter:.+?;/m, '  --usp-image-eye-protector-filter: none;');
     noteCSS = noteCSS.replace(/^  --usp-image-eye-protector-transition:.+?;/m, '  --usp-image-eye-protector-transition: none;');
   } else {
-    noteCSS = noteCSS.replace(/^  usp-image-eye-protector-filter:.+?;/m, '  usp-image-eye-protector-filter: brightness(80%);');
-    noteCSS = noteCSS.replace(/^  --usp-image-eye-protector-transition:.+?;/m, '  --usp-image-eye-protector-transition: filter 2s;');
+    noteCSS = noteCSS.replace(/^  --usp-image-eye-protector-filter:.+?;/m, '  --usp-image-eye-protector-filter: brightness(80%);');
+    noteCSS = noteCSS.replace(/^  --usp-image-eye-protector-transition:.+?;/m, '  --usp-image-eye-protector-transition: filter 1.2s;');
   }
 
   if(!codeBlockMaxHeight) {
