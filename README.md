@@ -44,10 +44,6 @@ Note: some of the contents are incomplete at the moment.
   - [Export HTML File](#export-html-file) (soon...)
   - [Export PDF Document](#export-pdf-document) 
 - [TESTED THIRD-PARTY PLUGINS](#tested-third-party-plugins) (Latest: 23.OCT.2022)
-- [CONTRIBUTION](#contribution)
-  - [Send Me A User Feedback](#send-me-a-user-feedback)
-  - [Report An Issue](#report-an-issue)
-  - [Click A Button For Me](#click-a-button-for-me)
 
 # REMOODS THEME GETTING STARTED
 
