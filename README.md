@@ -25,11 +25,6 @@ Note: some of the contents are incomplete at the moment.
   - [Download And Install Recommended Fonts](#download-and-install-recommended-fonts-optional) [Optional]
   - [Install ReMoods Theme Plugin](#install-remoods-theme-plugin)
   - [A Temporary Solution To Customize The Theme Color & Font Settings](#a-temporary-solution-to-customize-the-theme-color--font-settings) (Latest: 17.OCT.2022)
-- [THE FOUR CORE VALUES OF REMOODS](#the-four-core-values-of-remoods)
-  - [Eye-Health](#eye-health-)
-  - [Writing & Reading Moods](#writing--reading-moods-)
-  - [Writing & Reading Experience](#writing--reading-experience-)
-  - [Basic Solutions](#basic-solutions-)
 - [GENERAL ELEMENTS & USE TIPS](#general-elements--use-tips)
   - [Customizable Heading](#customizable-heading)
   - [Text Styles](#text-styles)
@@ -227,47 +222,7 @@ body {
 
 [:arrow_up:Back](#table-of-contents)
 
-# THE FOUR CORE VALUES OF REMOODS
 
-While ReMoods is a multi-purpose theme, the word "fashionable" is not one of the core values. But I'm happy to show you the below four core values of ReMoods:
-
-## Eye-Health >>>
-  
-For the users who stare at the screen for a long time every day, screens are hurting our eyes slowly. And I think we should pay extra attention to the tools we often use and improve the eye-health experience. Here I'm the first heavy user who already tested this theme for you with my eyes before it was published.
-  
-ReMoods care about every tiny difference within this theme and completely fine-tune every color contrast to ensure it's comfortable for long-time reading, even switching between any theme colors. 
-  
-In the beta version, ReMoods is now only providing you the Dusk Mode by default, but I'm happy to tell you that there are upcoming Day Mode and Night Mode in the future. And I hope to bring you a Joplin theme that is fit for use under different lighting environments.
-
-[:arrow_up:Back](#table-of-contents)
-
-## Writing & Reading Moods >>>
-  
-For users who are used to thinking while writing, colors are good helpers for you! ReMoods uses single-tone theme colors to boost your writing moods. It would be nice to switch to assorted colors when you are getting stuck in writing. Every minor change within your environment would be a chance to generate new inspiration.
-
-You can also switch colors based on your needs of moods [(Reference - The Power and Symbolism of Colors)](https://www.color-meanings.com), and then feel the fantastic magic effects that finally come up for you!
-  
-On the other hand, ReMoods auto-hides all unnecessary UI elements and increases the editor panel area as big as possible to boost your focus on writing. 
-
-[:arrow_up:Back](#table-of-contents)
-
-## Writing & Reading Experience >>>
-  
-For users who often share their screen or documentation with other readers, ReMoods shows your passion for caring about the reading experience. ReMoods cares about every content separation, making your core concepts obvious and outstanding from the regular content.
-
-ReMoods paid most of the time on the reading and typing tests, and I care about the balanced of them. I found that most people used to move their heads forward to the screen in some situations. Such as when they discover a typing mistake, reviewing, searching, etc. 
-
-So I've tried my most to fight for a little chance that might stop it from happening to anyone. All is to ensure we could feel comfortable with reading and writing at a stable distance between the screen and our eyes.
-
-[:arrow_up:Back](#table-of-contents)
-
-## Basic Solutions >>>
-  
-ReMoods would keep discovering the basic solutions for everyone. Sometimes, we might meet some limitations due to the original function of a plugin or Joplin itself. While ReMoods is not a functional-based plugin, I will still try to fulfill all the basic needs in the note-taking process by creating helpful custom elements or adding additional CSS styles for them.
-
-[:arrow_up:Back](#table-of-contents)
-
-[[toc]]
 # GENERAL ELEMENTS & USE TIPS
 
 ReMoods is expecting to try its best to create a comfortable and helpful theme for you. Maybe you wouldn't feel it at once by reading this document, but I believe that you would feel it slowly throughout the time you use it.
@@ -617,46 +572,5 @@ This table will keep up to date
 |Markdown Table Colorize|Done|25AUG2022|1. Added column marks, max support up to 52 columns.<br>2. Added row separation.<br>3. Added hover zoom effect for column marks.|- |
 |Draw.io|Tested|25AUG2022|-|-|
 |Enhancement|Done|22OCT2022|1.Removed the left color bar of admonition.<br>2.Changed footnote marker text to monospace font.<br>3.Changed cursor type when mouse hovering link marker.<br>4.Changed link and footnote colors.<br>5.Changed admonition color. |I'm not using this plugin, so I'll only fix bugs based on user requests. |
-
-[:arrow_up:Back](#table-of-contents)
-
-# CONTRIBUTION
-At the very first, please let me give you a BIG HUGGG! Thank you! I'm glad you scrolling down here and looking for a way to support me!
-
-There are many ways to contributing, and I'm so excited to let you know all of them:
-
-## Send Me A User Feedback
-I'm interested to know any of your feelings through the time you use ReMoods, and it would help inspire me.
-
-**2 ways to let me know your story:**
-
-- Write a reply to the [ReMoods post in Joplin forum](https://discourse.joplinapp.org/t/plugin-remoods-theme/27547?u=sinacs)
-- <a href="mailto:sinacs.dev@gmail.com?subject=Hey! Here Is My User Feedback For You!">Send me an email</a> to tell me all about it.
-
-**For reference, you can tell me about...**
-
-- What is your use case? For work? For personal?
-- What are your favorite fonts for using ReMoods? / How do you feel about the recommended fonts of ReMoods?
-- What makes you love to use ReMoods? / What is your favorite feature?
-- Did ReMoods make any changes to you?
-- Did someone know you are using ReMoods? And what they said?
-- Do you have any suggestion for me or ReMoods?
-- Or others...
-
-Your feedback means everything to me! Whatever you want to tell me you hate this theme, just let me know the reason, and it would be valuable for me!
-
-[:arrow_up:Back](#table-of-contents)
-
-## Report An Issue
-
-ReMoods has styled tons of elements and sometimes it's easy to miss the small visual bugs. So, [create an issue post](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/issues/new) to let me know if you see anything that seems like a problem to you. If it's finally not a bug, it's still a chance for me to learn from your point of view. Whatever it is, it would be always helpful!
-
-[:arrow_up:Back](#table-of-contents)
-
-## Click A Button For Me 
-This is the easiest way to show me your passion for ReMoods, it's an encouragement for me and also your mental way to keep the theme moving forward.
-
-- Give a star to this [ReMoods Theme Repository](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme)
-- Give a heart to the [ReMoods post in Joplin forum](https://discourse.joplinapp.org/t/plugin-remoods-theme/27547?u=sinacs)
 
 [:arrow_up:Back](#table-of-contents)
