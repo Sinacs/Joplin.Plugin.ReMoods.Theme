@@ -54,7 +54,7 @@
   /* FONT ************************************************** */
   --usp-base-font: "Montserrat", "Chiron Hei HK Text Extralight";
   --usp-monospace-font: "Cascadia Mono Light", "Chiron Hei HK Text Extralight";
-  
+
   /* SIZES ************************************************* */
   --usp-base-font-size: 14px;
   --usp-smaller-monospace-font-size: 100%;
@@ -74,7 +74,6 @@
   --usp-h1-font-variant: small-caps;
   --usp-notebook-title-wrap: normal;
   
-
   /* DISPLAY *********************************************** */
   --usp-evident-horizontal-line-switcher: inline-block;
   --usp-notebook-title-scrollbar-switcher: block;
@@ -1396,6 +1395,54 @@ body {
 .sidebar .fa-folder::before {
   
   font-size: 90%;
+}
+.sidebar .list-item-depth-0 .fa-folder::before {
+  color: hsl(var(--usp-remoods-hue), 100%, 70%);
+}
+.sidebar .list-item-depth-1 .fa-folder::before {
+  color: hsl(calc(var(--usp-remoods-hue) + 22deg), 100%, 70%);
+}
+.sidebar .list-item-depth-2 .fa-folder::before {
+  color: hsl(calc(var(--usp-remoods-hue) + 44deg), 100%, 70%);
+}
+.sidebar .list-item-depth-3 .fa-folder::before {
+  color: hsl(calc(var(--usp-remoods-hue) + 66deg), 100%, 70%);
+}
+.sidebar .list-item-depth-4 .fa-folder::before {
+  color: hsl(calc(var(--usp-remoods-hue) + 88deg), 100%, 70%);
+}
+.sidebar .list-item-depth-5 .fa-folder::before {
+  color: hsl(calc(var(--usp-remoods-hue) + 110deg), 100%, 70%);
+}
+.sidebar .list-item-depth-6 .fa-folder::before {
+  color: hsl(calc(var(--usp-remoods-hue) + 132deg), 100%, 70%);
+}
+.sidebar .list-item-depth-7 .fa-folder::before {
+  color: hsl(calc(var(--usp-remoods-hue) + 154deg), 100%, 70%);
+}
+.sidebar .list-item-depth-8 .fa-folder::before {
+  color: hsl(calc(var(--usp-remoods-hue) + 176deg), 100%, 70%);
+}
+.sidebar .list-item-depth-9 .fa-folder::before {
+  color: hsl(calc(var(--usp-remoods-hue) + 198deg), 100%, 70%);
+}
+.sidebar .list-item-depth-10 .fa-folder::before {
+  color: hsl(calc(var(--usp-remoods-hue) + 220deg), 100%, 70%);
+}
+.sidebar .list-item-depth-11 .fa-folder::before {
+  color: hsl(calc(var(--usp-remoods-hue) + 242deg), 100%, 70%);
+}
+.sidebar .list-item-depth-12 .fa-folder::before {
+  color: hsl(calc(var(--usp-remoods-hue) + 264deg), 100%, 70%);
+}
+.sidebar .list-item-depth-13 .fa-folder::before {
+  color: hsl(calc(var(--usp-remoods-hue) + 286deg), 100%, 70%);
+}
+.sidebar .list-item-depth-14 .fa-folder::before {
+  color: hsl(calc(var(--usp-remoods-hue) + 308deg), 100%, 70%);
+}
+.sidebar .list-item-depth-15 .fa-folder::before {
+  color: hsl(calc(var(--usp-remoods-hue) + 330deg), 100%, 70%);
 }
 /* note count label ---------------------------------------- */
 .sidebar .note-count-label {
