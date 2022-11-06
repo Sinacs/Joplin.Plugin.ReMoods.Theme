@@ -78,6 +78,7 @@
   /* DISPLAY *********************************************** */
   --usp-evident-horizontal-line-switcher: inline-block;
   --usp-notebook-title-scrollbar-switcher: block;
+  --usp-notebook-icon-switcher: block;
 
   
   
@@ -1387,6 +1388,14 @@ body {
 .sidebar i.fas.fa-caret-down {
   color: var(--s-directory-icon-open-color);
   filter: drop-shadow(0 0 0px var(--s-directory-icon-open-shadow));
+}
+/* notebook icon ------------------------------------------- */
+.sidebar .fa-folder {
+  display: var(--usp-notebook-icon-switcher);
+}
+.sidebar .fa-folder::before {
+  
+  font-size: 90%;
 }
 /* note count label ---------------------------------------- */
 .sidebar .note-count-label {

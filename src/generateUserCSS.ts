@@ -43,6 +43,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     notebookNotelistPanelScrollbar,
     notebookTitleWrap,
     notebookTitleScrollbar,
+    notebookFolderIcon,
 
     printBaseFont,
     printMonospaceFont,
@@ -345,6 +346,12 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     chromeCSS = chromeCSS.replace(/^  --usp-notebook-title-scrollbar-switcher:.+?;/m, '  --usp-notebook-title-scrollbar-switcher: none;');
   } else {
     chromeCSS = chromeCSS.replace(/^  --usp-notebook-title-scrollbar-switcher:.+?;/m, '  --usp-notebook-title-scrollbar-switcher: block;');
+  }
+
+  if(!notebookFolderIcon) {
+    chromeCSS = chromeCSS.replace(/^ --usp-notebook-icon-switcher:.+?;/m, '  --usp-notebook-icon-switcher: none;');
+  } else {
+    chromeCSS = chromeCSS.replace(/^ --usp-notebook-icon-switcher:.+?;/m, '  --usp-notebook-icon-switcher: block;');
   }
 
 

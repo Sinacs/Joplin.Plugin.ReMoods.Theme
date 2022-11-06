@@ -48,6 +48,7 @@ export type ThemeSettings = {
 	notebookNotelistPanelScrollbar: boolean;
 	notebookTitleWrap: boolean;
 	notebookTitleScrollbar: boolean;
+	notebookFolderIcon: boolean;
 
 	// PRINT ****************************************
 	printBaseFont: string;
@@ -390,6 +391,15 @@ async function prepareThemeSettings(): Promise<void> {
 			public: true,
 		},
 
+		'notebookFolderIcon': {
+			section: 'remoodsThemeSection',
+			label: 'Notebook Panel - Enable folder icon',
+			type: SettingItemType.Bool,
+			value: true,
+			description: 'Enable: Show | Disable: Hide | (Joplin v2.9.12+)',
+			public: true,
+		},
+
 		'printBaseFont': {
 			section: 'remoodsThemeSection',
 			label: 'Print & Export PDF - Base font(INVALID)',
@@ -537,6 +547,7 @@ async function writeUserCSS(): Promise<void> {
 	const notebookNotelistPanelScrollbar = await joplin.settings.value('notebookNotelistPanelScrollbar');
 	const notebookTitleWrap = await joplin.settings.value('notebookTitleWrap');
 	const notebookTitleScrollbar = await joplin.settings.value('notebookTitleScrollbar');
+	const notebookFolderIcon = await joplin.settings.value('notebookFolderIcon');
 	
 	const printBaseFont = await joplin.settings.value('printBaseFont');
 	const printMonospaceFont = await joplin.settings.value('printMonospaceFont');
@@ -590,6 +601,7 @@ async function writeUserCSS(): Promise<void> {
 		notebookNotelistPanelScrollbar,
 		notebookTitleWrap,
 		notebookTitleScrollbar,
+		notebookFolderIcon,
 
 		printBaseFont,
 		printMonospaceFont,
