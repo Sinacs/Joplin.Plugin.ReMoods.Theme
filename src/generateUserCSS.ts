@@ -40,6 +40,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     inlineCodeSymbol,
     customTitleBlockSymbol,
 
+    notebookNotelistPanelScrollbar,
     notebookTitleWrap,
     notebookTitleScrollbar,
 
@@ -326,6 +327,12 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --usp-custom-title-block-symbol-switcher:.+?;/m, '  --usp-custom-title-block-symbol-switcher: none;');
   } else {
     noteCSS = noteCSS.replace(/^  --usp-custom-title-block-symbol-switcher:.+?;/m, '  --usp-custom-title-block-symbol-switcher: inline-block;');
+  }
+
+  if(!notebookNotelistPanelScrollbar) {
+    chromeCSS = chromeCSS.replace(/^  --usp-np-nlp-scrollbar-width:.+?;/m, '  --usp-np-nlp-scrollbar-width: 3px;');
+  } else {
+    chromeCSS = chromeCSS.replace(/^  --usp-np-nlp-scrollbar-width:.+?;/m, '  --usp-np-nlp-scrollbar-width: 8px;');
   }
 
   if(!notebookTitleWrap) {

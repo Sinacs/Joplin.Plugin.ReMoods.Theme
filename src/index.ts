@@ -45,6 +45,7 @@ export type ThemeSettings = {
 	customTitleBlockSymbol: boolean;
 
 	// Joplin UI ====================================
+	notebookNotelistPanelScrollbar: boolean;
 	notebookTitleWrap: boolean;
 	notebookTitleScrollbar: boolean;
 
@@ -362,6 +363,15 @@ async function prepareThemeSettings(): Promise<void> {
 			value: true,
 			public: true,
 		},
+		
+		'notebookNotelistPanelScrollbar': {
+			section: 'remoodsThemeSection',
+			label: 'Notebook Panel & Notelist Panel - Enable bolder scrollbar',
+			type: SettingItemType.Bool,
+			value: false,
+			description: 'Enable: 8px(hover) | Disable: 3px(hover)',
+			public: true,
+		},
 
 		'notebookTitleWrap': {
 			section: 'remoodsThemeSection',
@@ -379,7 +389,7 @@ async function prepareThemeSettings(): Promise<void> {
 			description: 'If turn off, you can still use `shift + scroll` for scrolling.',
 			public: true,
 		},
-		
+
 		'printBaseFont': {
 			section: 'remoodsThemeSection',
 			label: 'Print & Export PDF - Base font(INVALID)',
@@ -524,6 +534,7 @@ async function writeUserCSS(): Promise<void> {
 	const inlineCodeSymbol = await joplin.settings.value('inlineCodeSymbol');
 	const customTitleBlockSymbol = await joplin.settings.value('customTitleBlockSymbol');
 	
+	const notebookNotelistPanelScrollbar = await joplin.settings.value('notebookNotelistPanelScrollbar');
 	const notebookTitleWrap = await joplin.settings.value('notebookTitleWrap');
 	const notebookTitleScrollbar = await joplin.settings.value('notebookTitleScrollbar');
 	
@@ -576,6 +587,7 @@ async function writeUserCSS(): Promise<void> {
 		inlineCodeSymbol,
 		customTitleBlockSymbol,
 
+		notebookNotelistPanelScrollbar,
 		notebookTitleWrap,
 		notebookTitleScrollbar,
 

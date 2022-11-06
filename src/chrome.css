@@ -67,6 +67,7 @@
   --usp-h5-font-size: 120%;
   --usp-h6-font-size: 110%;
   --usp-headings-font-weight: 600;
+  --usp-np-nlp-scrollbar-width: 3px;
 
   /* EFFECTS *********************************************** */
   --usp-h1-text-transform: capitalize;
@@ -1561,7 +1562,7 @@ body {
 }
 .rli-sideBar :hover::-webkit-scrollbar {
   height: 6px !important;
-  width: 3px !important;
+  width: var(--usp-np-nlp-scrollbar-width) !important;
 }
 .rli-sideBar ::-webkit-scrollbar-thumb {
   background: var(--g-scrollbar-thumb-bg-color-1);
@@ -1787,7 +1788,7 @@ body {
 }
 .rli-noteList :hover::-webkit-scrollbar {
   height: 6px !important;
-  width: 3px !important;
+  width: var(--usp-np-nlp-scrollbar-width) !important;
 }
 .rli-noteList ::-webkit-scrollbar-thumb {
   background: var(--g-scrollbar-thumb-bg-color-1);
