@@ -14,6 +14,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     h1FontVariant,
     emphasizeAddRemove,
     emphasizeAddRemoveBg,
+    listTextColor,
     smallerCodeBlockFontSize,
 
 		smallerMarkdownTableFontSize,
@@ -180,6 +181,16 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --print-strikethrough-text-bg-color:.+?;/m, '  --print-strikethrough-text-bg-color: hsl(0,  35%,  90%);');
   }
   
+  if(!listTextColor) {
+    chromeCSS = chromeCSS.replace(/^  --list-text-color:.+?;/m, '  --list-text-color: var(--code-mirror-text-color);');
+    noteCSS = noteCSS.replace(/^  --list-text-color:.+?;/m, '  --list-text-color: var(--render-viewer-text-color);');
+    noteCSS = noteCSS.replace(/^  --list-span-color:.+?;/m, '  --list-span-color: hsl(var(--usp-remoods-hue), 30%, 80%);');
+  } else {
+    chromeCSS = chromeCSS.replace(/^  --list-text-color:.+?;/m, '  --list-text-color: hsl(var(--usp-remoods-hue), 30%, 80%);');
+    noteCSS = noteCSS.replace(/^  --list-text-color:.+?;/m, '  --list-text-color: hsl(var(--usp-remoods-hue), 30%, 80%);');
+    noteCSS = noteCSS.replace(/^  --list-span-color:.+?;/m, '  --list-span-color: var(--render-viewer-text-color);');
+  }
+
   if(!smallerCodeBlockFontSize) {
     chromeCSS = chromeCSS.replace(/^  --usp-smaller-code-block-font-size:.+?;/m, '  --usp-smaller-code-block-font-size: var(--usp-base-font-size);');
     noteCSS = noteCSS.replace(/^  --usp-smaller-code-block-font-size:.+?;/m, '  --usp-smaller-code-block-font-size: var(--usp-base-font-size);');

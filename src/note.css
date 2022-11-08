@@ -823,7 +823,7 @@ body {
 
 
 /* || ELEMENTS | PARAGRAPH ********************************* */
-#rendered-md p {
+#rendered-md > p {
   margin: 0 0 0 5px;
   text-align: var(--usp-paragraph-justify);
   color: var(--render-viewer-text-color);
