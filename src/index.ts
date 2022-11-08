@@ -7,7 +7,7 @@ export type ThemeSettings = {
 
 	// SCREEN ***************************************
 	// Markdown Editor & Render Viewer ==============
-	remoodsHue: number;
+	remoodsHue: string;
 	baseFont: string;
 	monospaceFont: string;
 	baseFontSize: number;
@@ -100,11 +100,50 @@ async function prepareThemeSettings(): Promise<void> {
 	await joplin.settings.registerSettings({
 		'remoodsHue': {
 			section: 'remoodsThemeSection',
-			label: 'ReMoods Hue(INVALID)',
-			type: SettingItemType.Int,
-			value: 213,
-			description: 'Set color hue for the theme. (Number between 0 to 360)',
-			public: false,
+			label: 'ReMoods Hue',
+			type: SettingItemType.String,
+			value: '170deg',
+			isEnum: true,
+			options: {
+				'350deg': 'Red -',
+				'0deg':   'Red 0deg',
+				'10deg':  'Red +',
+				'20deg':  'Orange -',
+				'30deg':  'Orange 30deg',
+				'40deg':  'Orange +',
+				'50deg':  'Yellow -',
+				'60deg':  'Yellow 60deg',
+				'70deg':  'Yellow +',
+				'80deg':  'Yellow-Green -',
+				'90deg':  'Yellow-Green 90deg',
+				'100deg': 'Yellow-Green +',
+				'110deg': 'Green -',
+				'120deg': 'Green 120deg',
+				'130deg': 'Green +1',
+				'140deg': 'Green-Cyan -',
+				'150deg': 'Green-Cyan 150deg',
+				'160deg': 'Green-Cyan +',
+				'170deg': 'Cyan -',
+				'180deg': 'Cyan 180deg',
+				'190deg': 'Cyan +',
+				'200deg': 'Cyan-Blue -',
+				'210deg': 'Cyan-Blue 210deg',
+				'220deg': 'Cyan-Blue +',
+				'230deg': 'Blue -',
+				'240deg': 'Blue 240deg',
+				'250deg': 'Blue +',
+				'260deg': 'Blue-Magenta -',
+				'270deg': 'Blue-Magenta 270deg',
+				'280deg': 'Blue-Magenta +',
+				'290deg': 'Magenta -',
+				'300deg': 'Magenta 300deg',
+				'310deg': 'Magenta +',
+				'320deg': 'Magenta-Red -',
+				'330deg': 'Magenta-Red 330deg',
+				'340deg': 'Magenta-Red +',
+			},
+			description: 'Set hue for theme color.',
+			public: true,
 		},
 
 		'baseFont': {

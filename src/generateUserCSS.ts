@@ -64,10 +64,155 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
   let chromeCSS = await fs.readFile(installDir + '/chrome.css', 'utf-8');
   let noteCSS = await fs.readFile(installDir + '/note.css', 'utf-8');
 
-  /*
-   * remoodsHue: int + 'deg'
-   * --usp-remoods-hue: 213deg;
-   */
+  switch(remoodsHue) {
+    case '0deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 0deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 0deg;');
+      break;
+    case '10deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 10deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 10deg;');
+      break;
+    case '20deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 20deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 20deg;');
+      break;
+    case '30deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 30deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 30deg;');
+      break;
+    case '40deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 40deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 40deg;');
+      break;
+    case '50deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 50deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 50deg;');
+      break;
+    case '60deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 60deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 60deg;');
+      break;
+    case '70deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 70deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 70deg;');
+      break;
+    case '80deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 80deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 80deg;');
+      break;
+    case '90deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 90deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 90deg;');
+      break;
+    case '100deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 100deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 100deg;');
+      break;
+    case '110deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 110deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 110deg;');
+      break;
+    case '120deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 120deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 120deg;');
+      break;
+    case '130deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 130deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 130deg;');
+      break;
+    case '140deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 140deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 140deg;');
+      break;
+    case '150deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 150deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 150deg;');
+      break;
+    case '160deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 160deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 160deg;');
+      break;
+    case '170deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 170deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 170deg;');
+      break;
+    case '180deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 180deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 180deg;');
+      break;
+    case '190deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 190deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 190deg;');
+      break;
+    case '200deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 200deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 200deg;');
+      break;
+    case '210deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 210deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 210deg;');
+      break;
+    case '220deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 220deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 220deg;');
+      break;
+    case '230deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 230deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 230deg;');
+      break;
+    case '240deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 240deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 240deg;');
+      break;
+    case '250deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 250deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 250deg;');
+      break;
+    case '260deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 260deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 260deg;');
+      break;
+    case '270deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 270deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 270deg;');
+      break;
+    case '280deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 280deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 280deg;');
+      break;
+    case '290deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 290deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 290deg;');
+      break;
+    case '300deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 300deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 300deg;');
+      break;
+    case '310deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 310deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 310deg;');
+      break;
+    case '320deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 320deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 320deg;');
+      break;
+    case '330deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 330deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 330deg;');
+      break;
+    case '340deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 340deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 340deg;');
+      break;
+    case '350deg':
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 350deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 350deg;');
+      break;
+    default:
+      chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 170deg;');
+      noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 170deg;');
+  }
 
   /*
    * baseFont: string
