@@ -105,6 +105,7 @@
   --horizontal-line-bg-color:                           hsl(var(--usp-remoods-hue), 100%,  70%);
   
   --cursor-bd-color:                          2px solid hsl(var(--usp-remoods-hue), 100%,  70%);
+  --selected-text-color:                                var(--render-viewer-text-color);
   --selected-text-bg-color:                             hsl(calc(var(--usp-remoods-hue) + 180deg),  20%,  30%);
   --code-block-selected-text-bg-color:                  hsl(calc(var(--usp-remoods-hue) + 180deg),  20%,  30%,  60%);
 
@@ -470,6 +471,7 @@
 }
 
 
+
 /* || BASIC 2/2 | OTHERS *********************************** */
 /* OTHERS > SCROLLBAR ====================================== */
 /* thumb --------------------------------------------------- */
@@ -478,10 +480,11 @@
   border: 1px solid var(--code-mirror-scrollbar-thumb-bd-color);
   visibility: hidden;
 }
+/* hover thumb --------------------------------------------- */
 .rli-editor > div > div > div > div:nth-child(2) > div:hover ::-webkit-scrollbar-thumb {
   visibility: visible;
 }
-/* track --------------------------------------------------- */ 
+/* hover track --------------------------------------------- */ 
 .codeMirrorEditor ::-webkit-scrollbar-track:hover {
   background: var(--code-mirror-scrollbar-track-bg-color);
 }
@@ -493,26 +496,32 @@
 
 /* OTHERS > SELECTED TEXT ================================== */
 .CodeMirror-selectedtext:not(#fake) {
-  background: var(--selected-text-bg-color) !important;
-}
-.cm-jn-code-block .CodeMirror-selectedtext:not(#fake) {
-  background: var(--code-block-selected-text-bg-color) !important;
+  color: var(--selected-text-color) !important;
+  background: none !important;
 }
 .CodeMirror-line:not(#fake)::selection,
 .CodeMirror-line:not(#fake) > span::selection,
 .CodeMirror-line:not(#fake) > span > span::selection {
-  background: var(--selected-text-bg-color) !important;
+  color: var(--selected-text-color) !important;
+  background: none !important;
 }
 .CodeMirror-line:not(#fake)::-moz-selection,
 .CodeMirror-line:not(#fake) > span::-moz-selection,
 .CodeMirror-line:not(#fake) > span > span::-moz-selection {
-  background: var(--selected-text-bg-color) !important;
+  color: var(--selected-text-color) !important;
+  background: none !important;
 }
-.CodeMirror-lines .CodeMirror-line .cm-em.CodeMirror-selectedtext,
-.CodeMirror-lines .CodeMirror-line .cm-strong.CodeMirror-selectedtext,
-.CodeMirror-lines .CodeMirror-line .cm-strikethrough.CodeMirror-selectedtext,
-.CodeMirror-lines .CodeMirror-line .cm-rm-ins.CodeMirror-selectedtext,
-.CodeMirror-lines .CodeMirror-line .cm-rm-highlight.CodeMirror-selectedtext {
+/* code block selected text -------------------------------- */
+.cm-jn-code-block .CodeMirror-selectedtext:not(#fake) {
+  background: var(--code-block-selected-text-bg-color) !important;
+}
+/* selected special text ----------------------------------- */
+.CodeMirror-line .cm-em.CodeMirror-selectedtext,
+.CodeMirror-line .cm-strong.CodeMirror-selectedtext,
+.CodeMirror-line .cm-strikethrough.CodeMirror-selectedtext,
+.CodeMirror-line .cm-rm-ins.CodeMirror-selectedtext,
+.CodeMirror-line .cm-rm-highlight.CodeMirror-selectedtext,
+.CodeMirror-line .cm-jn-inline-code.CodeMirror-selectedtext {
   opacity: 0.5;
 }
 
