@@ -578,12 +578,10 @@
 
 
 /* || FONT 3/5 | SMALLER MONOSPACE FONT ******************** */
-/* | link path | image link | sup | sub | footnote ref. | */
+/* | link path | image link | footnote ref. | */
 .CodeMirror-lines .CodeMirror-line .cm-url.cm-rm-link, /* anchor link */
 .CodeMirror-lines .CodeMirror-line .cm-image,
 .CodeMirror-lines .CodeMirror-line .cm-rm-link.cm-rm-image,
-.CodeMirror-lines .CodeMirror-line .cm-rm-sup,
-.CodeMirror-lines .CodeMirror-line .cm-rm-sub,
 .CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em), /* footnote ref. */
 .CodeMirror-lines .CodeMirror-line .enhancement-footnote-marker-text {
   font-size: var(--usp-smaller-monospace-font-size) !important;
