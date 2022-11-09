@@ -759,13 +759,21 @@
   border-style: solid;
   border-color: var(--mark-text-bd-color);
 }
-/* sup & sub ----------------------------------------------- */
+/* SUP & SUB =============================================== */
 .CodeMirror-lines .CodeMirror-line .cm-rm-sup,
 .CodeMirror-lines .CodeMirror-line .cm-rm-sub {
+  display: inline-block;
+  position: relative;
+  font-size: smaller !important;
   color: var(--sub-sup-text-color);
   line-height: 0 !important;
 }
-/* inline code --------------------------------------------- */
+.CodeMirror-lines .CodeMirror-line .cm-rm-sup {
+  top: 2px;
+}
+.CodeMirror-lines .CodeMirror-line .cm-rm-sub {
+  bottom: 2px;
+}
 .CodeMirror-lines .CodeMirror-line .cm-jn-inline-code.cm-jn-monospace:not(.CodeMirror-selectedtext) {
   color: var(--inline-code-color);
   background: var(--inline-code-bg-color) !important;
