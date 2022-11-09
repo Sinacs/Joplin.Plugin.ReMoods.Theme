@@ -51,11 +51,13 @@
   --usp-remoods-hue: 213deg;
 
   /* FONT ************************************************** */
-  --usp-base-font: "Montserrat", "Chiron Hei HK Text Extralight";
-  --usp-monospace-font: "Cascadia Mono Light", "Chiron Hei HK Text Extralight";
+  --usp-base-font: "Montserrat", "Chiron Hei HK";
+  --usp-monospace-font: "Cascadia Mono", "Chiron Hei HK";
+  --usp-headings-font: var(--usp-base-font);
   
   /* SIZES ************************************************* */
   --usp-base-font-size: 14px;
+  --usp-monospace-font-size: 14px;
   --usp-smaller-code-block-font-size: var(--usp-base-font-size);
   --usp-h1-font-size: 200%;
   --usp-h2-font-size: 170%;
@@ -104,9 +106,11 @@
 
   
   /* PRINT FONT ******************************************** */
-  --usp-print-base-font: "Montserrat", "Chiron Hei HK Text Extralight";
-  --usp-print-monospace-font: "Cascadia Mono Light", "Chiron Hei HK Text Extralight";
+  --usp-print-base-font: "Montserrat", "Chiron Hei HK";
+  --usp-print-monospace-font: "Cascadia Mono", "Chiron Hei HK";
+  --usp-print-headings-font: var(--usp-print-base-font);
   --usp-print-base-font-size: 12px;
+  --usp-print-monospace-font-size: 10px;
   --usp-print-smaller-code-block-font-size: var(--usp-print-base-font-size);
   
   /* PRINT: DISPLAY **************************************** */
@@ -409,6 +413,7 @@
 
   /* PLUGINS: SPOILER ======================================================================= */
   /* spoiler block -------------------------------------------------------------------------- */
+  --spoiler-block-text-color:                           var(--render-viewer-text-color);
   --spoiler-block-bg-color:                             hsl(var(--usp-remoods-hue),  10%,  20%);
   --spoiler-block-box-shadow:                   0 0 4px hsl(var(--usp-remoods-hue), 100%,  80%);
   /* spoiler title -------------------------------------------------------------------------- */
@@ -421,7 +426,7 @@
   /* spoiler > list > span ------------------------------------------------------------------ */
   --spoiler-list-span-color:                            hsl(var(--usp-remoods-hue),   0%,  90%);
   /* spoiler > custom title block ----------------------------------------------------------- */
-  --spoiler-ctb-text-color:                             hsl(var(--usp-remoods-hue),  60%,  90%);
+  --spoiler-ctb-text-color:                             var(--render-viewer-text-color);
   --spoiler-ctb-bg-color:                               hsl(var(--usp-remoods-hue),  10%,  30%);
   --spoiler-ctb-title-color:                            hsl(var(--usp-remoods-hue), 100%,  90%);
   /* spoiler inline ------------------------------------------------------------------------- */
@@ -447,8 +452,8 @@
 
 
   /* PRINT GENERAL ========================================================================== */
-  --print-render-viewer-bg-color:                     hsl(  0,   0%, 100%);
-  --print-render-viewer-text-color:                   hsl(  0,   0%,  25%);
+  --print-render-viewer-bg-color:                       hsl(  0,   0%, 100%);
+  --print-render-viewer-text-color:                     hsl(  0,   0%,  25%);
   
   --print-horizontal-line-color:                        repeating-linear-gradient(114deg,
                                                         hsl(var(--usp-remoods-hue), 100%,  80%),
@@ -692,8 +697,8 @@
   --print-spoiler-inline-symbol-color:                  hsl(var(--usp-remoods-hue),  70%,  70%);
 
   /* PRINT TURNTOCHART ====================================================================== */
-  --print-turntochart-text-color:                     hsl(var(--usp-remoods-hue),   0%,  20%);
-  --print-turntochart-info-bd-color:        3px solid hsl(var(--usp-remoods-hue),   0%,  80%);
+  --print-turntochart-text-color:                       hsl(var(--usp-remoods-hue),   0%,  20%);
+  --print-turntochart-info-bd-color:          3px solid hsl(var(--usp-remoods-hue),   0%,  80%);
     
 } 
 
@@ -726,16 +731,18 @@ body,
 
 
 /* || BASIC | SCROLLBAR ************************************ */
-/* thumb ----------------------------------------------------*/
-#tinymce::-webkit-scrollbar-thumb,
-#joplin-container-content::-webkit-scrollbar-thumb {
-  background: hsl(var(--usp-remoods-hue), 100%, 75%);
-}
+/* scrollbar ----------------------------------------------- */
 #tinymce::-webkit-scrollbar,
 #joplin-container-content::-webkit-scrollbar {
   width: 7px !important;
   height: 1px !important;
 }
+/* thumb ----------------------------------------------------*/
+#tinymce::-webkit-scrollbar-thumb,
+#joplin-container-content::-webkit-scrollbar-thumb {
+  background: hsl(var(--usp-remoods-hue), 100%, 75%);
+}
+/* hover ----------------------------------------------------*/
 #tinymce:hover::-webkit-scrollbar,
 #joplin-container-content:hover::-webkit-scrollbar {
   width: 7px !important;
@@ -765,6 +772,7 @@ body,
   margin-top: 1em;
   margin-bottom: 1em;
 }
+/* margin between manual border heading and paragraph ------ */
 #rendered-md > h2 + hr + p,
 #rendered-md > h3 + hr + p,
 #rendered-md > h4 + hr + p,
@@ -784,25 +792,24 @@ body,
 
 
 /* || FONT 1/2 | BASE FONT ********************************* */
-body,
-#rendered-md table > thead *,
-#rendered-md table > tbody *,
-#rendered-md .summary-title {
+body *,
+.spoiler-block .summary-title {
   font-family: var(--usp-base-font, sans-serif);
   font-size: var(--usp-base-font-size);
-}
-body {
-  color: var(--render-viewer-text-color);
   line-height: 1.5em;
+  color: var(--render-viewer-text-color);
 }
+
+
+
 /* || FONT 2/2 | MONOSPACE FONT **************************** */
 /* monospace font group: | code block | inline code | insert & strikethrough symbol | inline spoiler symbol | footnote ref num | headings ref | */
-#rendered-md a[id*="fnref"],
 #rendered-md .hljs *,
 #rendered-md .inline-code,
 #rendered-md ins::before,
 #rendered-md s::before,
 #rendered-md label.spoiler-inline::before,
+#rendered-md a[id*="fnref"],
 #rendered-md h1:before,
 #rendered-md h2:before,
 #rendered-md h3:before,
@@ -810,6 +817,7 @@ body {
 #rendered-md h5:before,
 #rendered-md h6:before {
   font-family: var(--usp-monospace-font, monospace);
+  font-size: var(--usp-monospace-font-size);
 }
 
 
@@ -871,6 +879,7 @@ body {
 }
 
 
+
 /* || ELEMENTS | HEADINGS ********************************** */
 /* heading group: h1 to h6 --------------------------------- */
 #rendered-md h1,
@@ -879,11 +888,11 @@ body {
 #rendered-md h4,
 #rendered-md h5,
 #rendered-md h6 {
+  font-family: var(--usp-headings-font);
   margin-bottom: 0;
   padding: 0;
   line-height: 1em;
   font-weight: 600;
-  border: none;
 }
 #rendered-md h1:not(#rendered-md > .table-of-contents:first-child + h1),
 #rendered-md h2:not(#rendered-md > .table-of-contents:first-child + h2),
@@ -940,6 +949,7 @@ body {
   height: 3px;
   background-image: var(--h1-bd-color);
 }
+/* h1 reference -------------------------------------------- */
 #rendered-md h1::before {
   content: "H1:";
 }
@@ -960,6 +970,7 @@ body {
   display: var(--usp-h2-border-switcher);
   background-image: var(--h2-bd-color);
 }
+/* h2 reference -------------------------------------------- */
 #rendered-md h2::before {
   content: "H2:";
 }
@@ -974,6 +985,7 @@ body {
   display: var(--usp-h3-border-switcher);
   background-image: var(--h3-bd-color);
 }
+/* h3 reference -------------------------------------------- */
 #rendered-md h3::before {
   content: "H3:";
 }
@@ -988,6 +1000,7 @@ body {
   display: var(--usp-h4-border-switcher);
   background-image: var(--h4-bd-color);
 }
+/* h4 reference -------------------------------------------- */
 #rendered-md h4::before {
   content: "H4:";
 }
@@ -1002,6 +1015,7 @@ body {
   display: var(--usp-h5-border-switcher);
   background-image: var(--h5-bd-color);
 }
+/* h5 reference -------------------------------------------- */
 #rendered-md h5::before {
   content: "H5:";
 }
@@ -1016,6 +1030,7 @@ body {
   display: var(--usp-h6-border-switcher);
   background-image: var(--h6-bd-color);
 }
+/* h6 reference -------------------------------------------- */
 #rendered-md h6::before {
   content: "H6:";
 }
@@ -1030,98 +1045,111 @@ body {
 #rendered-md ins {
   text-shadow: var(--special-text-shadow);
 }
-/* strong -------------------------------------------------- */
-#rendered-md strong {
-  color: var(--strong-text-color);
-}
-/* emphasize ----------------------------------------------- */
-#rendered-md em {
-  color: var(--emphasize-text-color);
-}
-/* strikethrough ------------------------------------------- */
-#rendered-md s {
-  color: var(--strikethrough-text-color);
-  background: var(--strikethrough-text-bg-color);
-}
-#rendered-md s::before {
-  content: "--";
+/* symbol group: | strikethrough | insert text --------------- */
+#rendered-md s::before,
+#rendered-md ins::before {
   display: var(--usp-special-text-add-remove-symbol-switcher);
-  margin-right: 1px;
+  margin-right: 3px;
   padding: 0 3px;
   min-width: calc(var(--usp-base-font-size) + 2px);
   text-align: center;
   white-space: nowrap;
-  color: var(--strikethrough-symbol-color);
-  background: var(--strikethrough-symbol-bg-color);
   border-radius: 3px;
 }
+
+/* STRONG ================================================== */
+#rendered-md strong {
+  color: var(--strong-text-color);
+}
+
+/* EMPHASIZE =============================================== */
+#rendered-md em {
+  color: var(--emphasize-text-color);
+}
+
+/* STRIKETHROUGH =========================================== */
+#rendered-md s {
+  color: var(--strikethrough-text-color);
+  background: var(--strikethrough-text-bg-color);
+}
+/* symbol ---------------------------------------------------*/
+#rendered-md s::before {
+  content: "--";
+  color: var(--strikethrough-symbol-color);
+  background: var(--strikethrough-symbol-bg-color);
+}
+/* hover --------------------------------------------------- */
 #rendered-md s:hover {
   text-decoration: none;
 }
-/* insert -------------------------------------------------- */
+
+/* INSERT ================================================== */
 #rendered-md ins {
   color: var(--insert-text-color);
   background: var(--insert-text-bg-color);
   text-decoration: none;
   border-bottom: 1px solid var(--insert-text-bd-color);
 }
+/* symbol -------------------------------------------------- */
 #rendered-md ins::before {
   content: "++";
-  display: var(--usp-special-text-add-remove-symbol-switcher);
-  margin-right: 1px;
-  padding: 0 3px;
-  min-width: calc(var(--usp-base-font-size) + 2px);
-  text-align: center;
-  white-space: nowrap;
   color: var(--insert-symbol-color);
   background: var(--insert-symbol-bg-color);
-  border-radius: 3px;
 }
+/* hover --------------------------------------------------- */
 #rendered-md ins:hover {
   border: none;
 }
-/* sup % sub ----------------------------------------------- */
+
+/* SUP & SUB =============================================== */
 #rendered-md sup,
 #rendered-md sub {
+  font-size: smaller;
   line-height: 0;
 }
-/* abbreviation -------------------------------------------- */
+
+/* ABBREVIATION ============================================ */
 #rendered-md abbr {
   color: var(--abbreviation-text-color);
   text-decoration: 2px dotted underline var(--abbreviation-bd-color);
 }
+/* hover --------------------------------------------------- */
 #rendered-md abbr:hover {
   cursor: help;
 }
-/* mark ---------------------------------------------------- */
+
+/* MARK ==================================================== */
 #rendered-md mark {
   padding: 0 6px;
   color: var(--mark-text-color);
   background: var(--mark-text-bg-color);
   border-radius: 1em;
 }
-/* search -------------------------------------------------- */
+
+/* SEARCH ================================================== */
 #rendered-md mark[data-markjs="true"] {
   display: inline-block;
   padding: 3px 6px;
+  font-size: inherit;
   color: var(--search-text-color) !important;
   background: var(--search-text-bg-color) !important;
   border: 2px solid var(--search-text-bd-color);
   border-radius: 5px;
 }
+/* avoid h1 clip text effect ------------------------------- */
 #rendered-md h1 > mark[data-markjs="true"] {
   -webkit-text-fill-color: var(--search-text-color);
 }
-/* inline code --------------------------------------------- */
+
+/* INLINE CODE ============================================= */
 #rendered-md .inline-code {
-  font-size: 86%;
   padding: 0 3px;
   color: var(--inline-code-color);
   background: var(--inline-code-bg-color);
   border: var(--inline-code-bd-color);
   border-radius: 4px;
 }
-/* inline code symbol -------------------------------------- */
+/* symbol -------------------------------------------------- */
 #rendered-md .inline-code::before {
   font-family: var(--usp-monospace-font, monospace);
   content: ">|";
@@ -1129,7 +1157,8 @@ body {
   margin-right: 2px;
   color: var(--inline-code-symbol-color);
 }
-/* katex --------------------------------------------------- */
+
+/* MATH NOTATION =========================================== */
 #rendered-md .katex-display {
   padding: 0 5px;
   font-size: var(--usp-katex-font-size);
@@ -1159,7 +1188,7 @@ body {
 }
 #rendered-md ul > li,
 #rendered-md ol > li {
-  margin: 0;
+  margin: 5px 0;
 }
 #rendered-md li > ul,
 #rendered-md li > ol {
@@ -1176,6 +1205,7 @@ body {
 #rendered-md .md-checkbox.joplin-checkbox {
   margin-left: 10px;
 }
+/* checked ------------------------------------------------- */
 #rendered-md .checkbox-label-checked {
   text-decoration: line-through;
 }
@@ -1202,25 +1232,31 @@ body {
   font-size: 78%;
   background: var(--link-source-icon-color);
 }
-/* footnote reference -------------------------------------- */
-#rendered-md a[id*="fnref"] {
-  position: static;
-  text-decoration: none;
-}
 
 
 
 /* || ELEMENTS | FOOTNOTE ********************************** */
-/* footnote: disable original border ----------------------- */
+/* FOOTNOTE REFERENCE ====================================== */
+[id*="fnref"] {
+  display: inline-block;
+  position: relative;
+  bottom: -1px !important;
+  margin: 0 2px 0 1px;
+  text-decoration: none;
+  font-size: smaller !important;
+}
+/* hover --------------------------------------------------- */
+[id*="fnref"]:hover {
+  transform: scale(1.4);
+  cursor: pointer;
+}
+
+/* FOOTNOTE ================================================ */
+/* disable original border --------------------------------- */
 #rendered-md .footnotes-sep {
   display: none;
 }
-/* footnote: reference number ------------------------------ */
-[id*="fnref"] {
-  position: relative;
-  bottom: -3px;
-}
-/* footnote: title ----------------------------------------- */
+/* footnote separate title --------------------------------- */
 #rendered-md .footnotes::before {
   content: "Footnotes";
   display: inline-block;
@@ -1232,14 +1268,14 @@ body {
   color: var(--fn-title-color);
   border-top: var(--fn-title-bd-color);
 }
-/* footnote: list text ------------------------------------- */
+/* footnote list text -------------------------------------- */
 #rendered-md .footnote-item > p {
   color: var(--fn-list-text-color);
 }
 #rendered-md .footnotes  {
-  text-align: none;
+  text-align: var(--usp-paragraph-justify);
 }
-/* footnote: list token ------------------------------------ */
+/* footnote list token ------------------------------------- */
 #rendered-md .footnote-item {
   color: var(--fn-list-token-color);
 }
@@ -1264,6 +1300,7 @@ body {
 }
 
 
+
 /* || ELEMENTS | TABLE ************************************* */
 #rendered-md table {
   width: 100%;
@@ -1274,7 +1311,7 @@ body {
   color: var(--table-text-color);
   border: var(--table-bd-color);
 }
-#rendered-md table > thead > tr > th{
+#rendered-md table > thead > tr > th {
   background: var(--table-header-bg-color);
   text-shadow: 0 0 2px black;
 }
@@ -1285,23 +1322,26 @@ body {
   background: var(--table-row-even-bg-color);
 }
 #rendered-md table tr:hover {
-  background-color: none;
+  background-color: none !important;
 }
 
 
 
 /* || ELEMENTS | MERMAID *********************************** */
+/* MERMAID BODY & EYE PROTECTOR ============================ */
 #rendered-md .mermaid {
   margin-left: auto;
   margin-right: auto;
   width: 100% !important;
-  border-radius: 7px;
+  border-radius: 5px;
   filter: var(--usp-mermaid-eye-protector-filter);
   transition: var(--usp-mermaid-eye-protector-transition);
 }
+/* svg ----------------------------------------------------- */
 #rendered-md .mermaid > svg {
   max-width: 100% !important;
 }
+/* hover --------------------------------------------------- */
 #rendered-md .mermaid:hover {
   filter: none;
 }
@@ -1309,10 +1349,12 @@ body {
 
 
 /* || ELEMENTS | IMAGE ************************************* */
+/* IMAGE EYE PROTECTOR ===================================== */
 img {
   filter: var(--usp-image-eye-protector-filter);
   transition: var(--usp-image-eye-protector-transition);
 }
+/* hover --------------------------------------------------- */
 img:hover {
   filter: none;
 }
@@ -1320,7 +1362,7 @@ img:hover {
 
 
 /* || ELEMENTS | MARKDOWN TOC ****************************** */
-/* toc block ----------------------------------------------- */
+/* TOC BODY ================================================ */
 #rendered-md .table-of-contents,
 #rendered-md .table-of-contents::before {
   position: fixed;
@@ -1336,6 +1378,7 @@ img:hover {
   z-index: 99;
   transition: height 0.1s, width 0.1s;
 }
+/* hover --------------------------------------------------- */
 #rendered-md .table-of-contents:hover {
   padding: 20px 10px;
   width: 400px;
@@ -1345,7 +1388,8 @@ img:hover {
   overflow: scroll;
   transition: height 0.3s, width 0.3s;
 }
-/* toc button ---------------------------------------------- */
+
+/* TOC FLOATING BUTTON ===================================== */
 #rendered-md .table-of-contents::before {
   content: "TOC";
   display: block;
@@ -1361,10 +1405,12 @@ img:hover {
   border: var(--toc-btn-bd-color);
   box-shadow: var(--toc-btn-box-shadow);
 }
+/* hover --------------------------------------------------- */
 #rendered-md .table-of-contents:hover::before {
   visibility: hidden; 
 }
-/* toc list ------------------------------------------------ */
+
+/* TOC LIST ================================================ */
 #rendered-md .table-of-contents li {
   list-style-type: none;
   padding-left: 8px;
@@ -1390,7 +1436,7 @@ img:hover {
 
 
 /* || ELEMENTS | CODE BLOCK ******************************** */
-/* code block body ----------------------------------------- */
+/* CODE BLOCK BODY ========================================= */
 #rendered-md .joplin-editable > .hljs {
   font-size: var(--usp-smaller-code-block-font-size);
   padding: 1em 0 1em 8px;
@@ -1402,12 +1448,13 @@ img:hover {
   border-radius: 7px;
   box-shadow: var(--cb-shadow);
 }
-/* code block scrollbar ------------------------------------ */
+
+/* CODE BLOCK SCROLLBAR ==================================== */
 #rendered-md .joplin-editable > .hljs::-webkit-scrollbar {
   width: 15px;
   height: 15px;
 }
-/* thumb --------------------------------------------------  */
+/* thumb --------------------------------------------------- */
 #rendered-md .joplin-editable > .hljs::-webkit-scrollbar-thumb {
   border: 5px solid var(--cb-scrollbar-thumb-bd-color);
   border-radius: 1em;
@@ -1415,6 +1462,7 @@ img:hover {
   -webkit-background-clip: content-box;
   background-clip: content-box;
 }
+/* thumb hover --------------------------------------------- */
 #rendered-md .joplin-editable > .hljs::-webkit-scrollbar-thumb:hover {
   background: var(--cb-scrollbar-thumb-bg-color-hover);
   -webkit-background-clip: content-box;
@@ -1578,7 +1626,18 @@ img:hover {
 
 
 /* || CUSTOM ELEMENTS | ART GALLERY ************************ */
-ag2,ag3,ag4,ag5,ag6,ag7,ag8,ag9,ag10,ag11,ag12 {
+/* ART GALLERY BODY ======================================== */
+ag2,
+ag3,
+ag4,
+ag5,
+ag6,
+ag7,
+ag8,
+ag9,
+ag10,
+ag11,
+ag12 {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -1593,10 +1652,21 @@ ag2,ag3,ag4,ag5,ag6,ag7,ag8,ag9,ag10,ag11,ag12 {
   filter: drop-shadow(var(--ag-drop-shadow)); 
   overflow: scroll;
 }
-ag2 img,ag3 img,ag4 img,ag5 img,ag6 img,ag7 img,
-ag8 img,ag9 img,ag10 img,ag11 img,ag12 img {
+/* image padding ------------------------------------------- */
+ag2 img,
+ag3 img,
+ag4 img,
+ag5 img,
+ag6 img,
+ag7 img,
+ag8 img,
+ag9 img,
+ag10 img,
+ag11 img,
+ag12 img {
   padding: 6px;
 }
+/* image align --------------------------------------------- */
 ag2 img {
   max-width: calc(100% / 2 - 12px);
 }
@@ -1630,7 +1700,8 @@ ag11 img {
 ag12 img {
   max-width: calc(100% / 12 - 12px);
 }
-/* art gallery scrollbar ----------------------------------- */
+
+/* ART GALLERY SCROLLBAR =================================== */
 ag2::-webkit-scrollbar,
 ag3::-webkit-scrollbar,
 ag4::-webkit-scrollbar,
@@ -1663,6 +1734,7 @@ ag12::-webkit-scrollbar-thumb {
   -webkit-background-clip: content-box;
   background-clip: content-box;
 }
+/* thumb hover --------------------------------------------- */
 ag2::-webkit-scrollbar-thumb:hover,
 ag3::-webkit-scrollbar-thumb:hover,
 ag4::-webkit-scrollbar-thumb:hover,
@@ -1694,6 +1766,7 @@ ag12::-webkit-scrollbar-track {
 }
 
 
+
 /* || CUSTOM ELEMENTS | STICK NOTES ************************ */
 /* STICKY NOTES BODY ======================================= */
 /* sticky notes body group: all ---------------------------- */
@@ -1714,7 +1787,7 @@ ag12::-webkit-scrollbar-track {
   border-style: solid;
   border-radius: 6px 15px;
 }
-/* sticky notes body group:  not including the stick note - "Important" */
+/* sticky notes body group:  without "Important" ----------- */
 #rendered-md note,
 #rendered-md tip,
 #rendered-md question,
@@ -1880,7 +1953,6 @@ ag12::-webkit-scrollbar-track {
   width: fit-content;
   line-height: 1.7em;
   font-weight: 600;
-  font-size: 75%;
   color: var(--km-text-color);
   background: var(--km-bg-color);
   border: var(--km-bd-color);
@@ -1888,12 +1960,20 @@ ag12::-webkit-scrollbar-track {
   box-shadow: 0 0 2px black;
   transition: font-size 0.3s;
 }
-#rendered-md km:hover {
-  font-size: 86%;
-  transition: font-size 0.3s;
-  cursor: none;
+#rendered-md km,
+#rendered-md km * {
+  font-size: x-small;
 }
-/* the first-child km element of sticky notes -------------- */
+#rendered-md km:hover,
+#rendered-md km:hover * {
+  font-size: 86% !important;
+  transition: font-size 0.1s;
+  cursor: default;
+}
+#rendered-md km:hover a {
+  cursor: pointer;
+}
+/* the first-child key mention of sticky notes ------------- */
 #rendered-md note > km:first-child,
 #rendered-md tip > km:first-child,
 #rendered-md explain > km:first-child,
@@ -1951,6 +2031,7 @@ ag12::-webkit-scrollbar-track {
 }
 /* spoiler block ------------------------------------------- */
 #rendered-md .spoiler-block {
+  color: var(--spoiler-block-text-color);
   box-shadow: var(--spoiler-block-box-shadow);
 }
 /* spoiler title ------------------------------------------- */
@@ -2003,16 +2084,15 @@ ag12::-webkit-scrollbar-track {
 /* SPOILER BLOCK > SPAN ==================================== */
 /* span title ---------------------------------------------- */
 #rendered-md .spoiler-block > .summary-content > p > span:first-child {
-  position: relative;
-  left: -20px;
   display: block;
   padding: 2px 17px;
   margin: 0;
-  width: 100%;
+  width: calc(100% - 33px);
   font-weight: 700;
   font-size: 105%;
   color: var(--spoiler-span-title-color);
   background: var(--spoiler-span-title-bg-color);
+  border-radius: 3px;
 }
 /* custom span --------------------------------------------- */
 #rendered-md .spoiler-block > .summary-content > p > span[style^="color:"]:not(.fake),
@@ -2092,6 +2172,10 @@ ag12::-webkit-scrollbar-track {
   fill: var(--turntochart-text-color);
   color: var(--turntochart-text-color);
 }
+/* text ---------------------------------------------------- */
+tspan {
+  font-size: smaller;
+}
 
 /* INFO BLOCK ============================================== */
 /* background ---------------------------------------------- */
@@ -2124,6 +2208,19 @@ ag12::-webkit-scrollbar-track {
   border-radius: 1em;
 }
 
+
+
+/* || PLUGINS | NOTE LINK SYSTEM =========================== */
+/* NOTE LINK SYSTEM > SPOILER ============================== */
+/* hide link hash ------------------------------------------ */
+.spoiler-block label > .note-link-identifier,
+.spoiler-block .summary-content > .note-link-identifier {
+  display: none;
+}
+/* hover --------------------------------------------------- */
+.spoiler-block label:hover > .note-link-identifier {
+  display: inline-block;
+}
 
 
 
@@ -2179,7 +2276,17 @@ ag12::-webkit-scrollbar-track {
 
 
   /* || PRINT READY | REMOVE MAX-HEIGHT ******************** */
-  ag2,ag3,ag4,ag5,ag6,ag7,ag8,ag9,ag10,ag11,ag12,
+  ag2,
+  ag3,
+  ag4,
+  ag5,
+  ag6,
+  ag7,
+  ag8,
+  ag9,
+  ag10,
+  ag11,
+  ag12,
   #rendered-md .hljs {
     max-height: unset !important;
   }
@@ -2239,7 +2346,7 @@ ag12::-webkit-scrollbar-track {
   #rendered-md important {
     font-family: var(--usp-print-base-font, sans-serif);
     font-size: var(--usp-print-base-font-size);
-    line-height: 1.5;
+    line-height: 1.5em;
   }
 
 
@@ -2253,7 +2360,17 @@ ag12::-webkit-scrollbar-track {
 
 
   /* || PRINT READY | AVOID BACKGROUND & FILTER ************ */
-  ag2,ag3,ag4,ag5,ag6,ag7,ag8,ag9,ag10,ag11,ag12,
+  ag2,
+  ag3,
+  ag4,
+  ag5,
+  ag6,
+  ag7,
+  ag8,
+  ag9,
+  ag10,
+  ag11,
+  ag12,
   #rendered-md note,
   #rendered-md tip,
   #rendered-md explain,
@@ -2513,13 +2630,12 @@ ag12::-webkit-scrollbar-track {
   }
   /* inline code symbol -------------------------------------- */
   #rendered-md .inline-code::before {
-    font-family: var(--usp-monospace-font, monospace);
+    font-family: var(--usp-print-monospace-font, monospace);
     content: ">|";
     color: var(--print-inline-code-symbol-color);
   }
   /* katex ------------------------------------------------- */
   #rendered-md .katex-display {
-    font-size: var(--usp-katex-font-size);
     color: var(--print-katex-text-color);
   }
   #rendered-md .katex * {
