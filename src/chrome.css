@@ -1232,7 +1232,9 @@
 /* ENHANCEMENT FOOTNOTE ==================================== */
 /* footnote marker ----------------------------------------- */
 .enhancement-footnote-marker:not(#fake) {
-  font-size: 12px !important;
+  position: relative;
+  top: 3px;
+  font-size: x-small !important;
   margin-left: 2px;
   padding: 0 3px;
   background: var(--special-bg-color);
