@@ -730,11 +730,13 @@
   color: var(--special-text-color) !important;
   background: var(--special-bg-color);
 }
-/* strong -------------------------------------------------- */
+
+/* STRONG ================================================== */
 .CodeMirror-lines .CodeMirror-line .cm-strong {
   font-weight: 700;
 }
-/* strikethrough ------------------------------------------- */
+
+/* STRIKETHROUGH =========================================== */
 .CodeMirror-lines .CodeMirror-line .cm-strikethrough {
   text-decoration: line-through;
   background: var(--strikethrough-text-bg-color);
@@ -743,7 +745,8 @@
 .CodeMirror-lines .CodeMirror-line .cm-strikethrough:hover {
   text-decoration: none;
 }
-/* insert -------------------------------------------------- */
+
+/* INSERT ================================================== */
 .CodeMirror-lines .CodeMirror-line .cm-rm-ins {
   text-decoration: none;
   border-bottom: 1px solid var(--insert-text-bd-color);
@@ -753,12 +756,14 @@
 .CodeMirror-lines .CodeMirror-line .cm-rm-ins:hover {
   border: none;
 }
-/* mark ---------------------------------------------------- */
+
+/* MARK ==================================================== */
 .CodeMirror-lines .CodeMirror-line .cm-rm-highlight {
   border-width: 2px 0;
   border-style: solid;
   border-color: var(--mark-text-bd-color);
 }
+
 /* SUP & SUB =============================================== */
 .CodeMirror-lines .CodeMirror-line .cm-rm-sup,
 .CodeMirror-lines .CodeMirror-line .cm-rm-sub {
@@ -774,13 +779,16 @@
 .CodeMirror-lines .CodeMirror-line .cm-rm-sub {
   bottom: 2px;
 }
+
+/* INLINE CODE ============================================= */
 .CodeMirror-lines .CodeMirror-line .cm-jn-inline-code.cm-jn-monospace:not(.CodeMirror-selectedtext) {
   color: var(--inline-code-color);
   background: var(--inline-code-bg-color) !important;
   border: var(--inline-code-bd-color) !important;
   border-radius: 4px !important;
 }
-/* search -------------------------------------------------- */
+
+/* SEARCH ================================================== */
 .CodeMirror-lines .CodeMirror-line .cm-search-marker:not(#fake),
 .CodeMirror-lines .CodeMirror-line .cm-overlay.cm-search-marker.CodeMirror-selectedtext.cm-search-marker-selected:not(#fake) {
   display: inline-block;
@@ -803,7 +811,7 @@
 .CodeMirror-lines .CodeMirror-line:not(.cm-jn-code-block) .cm-variable-2 {
   color: var(--list-text-color);
 }
-/* katex > sup & sub */
+/* katex > sup & sub --------------------------------------- */
 .CodeMirror-lines .CodeMirror-line [class|="cm-katex"] ~ .cm-rm-sup,
 .CodeMirror-lines .CodeMirror-line [class|="cm-katex"] ~ .cm-rm-sub {
   vertical-align: initial !important;
@@ -813,16 +821,19 @@
 
 
 /* || MARKDOWN 6/11 | HTML ********************************* */
+/* tag ----------------------------------------------------- */
 .CodeMirror-line:not(.cm-jn-code-block) .cm-tag,
 .CodeMirror-line .cm-jn-monospace.cm-tabcolor-row[class*="cm-tabcolor-col"].cm-tag {
   color: var(--html-tag-text-color) !important;
   text-shadow: var(--html-tag-text-shadow);
 }
+/* attribute ----------------------------------------------- */
 .CodeMirror-line:not(.cm-jn-code-block) .cm-attribute,
 .CodeMirror-line .cm-jn-monospace.cm-tabcolor-row[class*="cm-tabcolor-col"].cm-attribute {
   color: var(--html-attribute-text-color) !important;
   text-shadow: var(--html-attribute-text-shadow);
 }
+/* string -------------------------------------------------- */
 .CodeMirror-line:not(.cm-jn-code-block) .cm-string:not(.cm-url),
 .CodeMirror-line .cm-jn-monospace.cm-tabcolor-row[class*="cm-tabcolor-col"].cm-string {
   color: var(--html-string-text-color) !important;
@@ -1410,7 +1421,6 @@ body {
   display: var(--usp-notebook-icon-switcher);
 }
 .sidebar .fa-folder::before {
-  
   font-size: 90%;
 }
 .sidebar .list-item-depth-0 .fa-folder::before {
