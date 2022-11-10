@@ -137,8 +137,8 @@ https://drive.google.com/drive/folders/1SEBEVGpBrXFlmOtVzyqnhEVuO7Vrp61Y?usp=sha
 Each abridged version contains: 
 
 - Montserrat (TTF) 
-- Cascadia Mono (TTF/OTF) 
-- Chiron Hei HK Text (TTF/OTF) 
+- Cascadia Mono (OTF) 
+- Chiron Hei HK Text (OTF) 
 
 Alternatively, if you are interested to download the original complete packages, you can download them by visiting the official pages below: 
 
