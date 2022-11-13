@@ -1,0 +1,47 @@
+/* userstyle.css */
+
+/* ********************************************************* */
+/* !!!!              REMOODS THEME SECTION              !!!! */
+/* ********************************************************* */
+/* ReMoods theme font settings ============================= */
+
+:root {
+
+  /* EDIT FOR: RENDER VIEWER | RICH TEXT EDITOR | EXPORT HTML FILE */
+
+  --usp-base-font: "mulish", "montserrat", "chiron hei hk extralight" !important;
+  --usp-monospace-font: "cascadia mono light", "chiron hei hk extralight" !important;
+  --usp-headings-font: "montserrat", "mulish", "chiron Hei HK" !important;
+
+  --usp-base-font-size: 15px !important;
+  --usp-monospace-font-size: 14px !important;
+
+  --usp-h1-font-size: 200% !important;
+  --usp-h2-font-size: 170% !important;
+  --usp-h3-font-size: 150% !important;
+  --usp-h4-font-size: 130% !important;
+  --usp-h5-font-size: 120% !important;
+  --usp-h6-font-size: 110% !important;
+  
+  /* EDIT FOR: PRINT & EXPORT PDF */
+  
+  --usp-print-base-font: "mulish", "montserrat", "chiron hei hk extralight" !important;
+  --usp-print-monospace-font: "cascadia mono light", "chiron hei hk extralight" !important;
+  --usp-print-headings-font: "montserrat", "mulish", "chiron hei hk" !important;
+
+  --usp-print-base-font-size: 12px !important;
+  --usp-print-monospace-font-size: 10px !important;
+  
+  --usp-print-h1-font-size: calc(var(--usp-print-base-font-size) * 2) !important;
+  --usp-print-h2-font-size: calc(var(--usp-print-base-font-size) * 1.7) !important;
+  --usp-print-h3-font-size: calc(var(--usp-print-base-font-size) * 1.5) !important;
+  --usp-print-h4-font-size: calc(var(--usp-print-base-font-size) * 1.3) !important;
+  --usp-print-h5-font-size: calc(var(--usp-print-base-font-size) * 1.2) !important;
+  --usp-print-h6-font-size: calc(var(--usp-print-base-font-size) * 1.1) !important;
+  
+}
+
+/* ********************************************************* */
+/* !!!!               CUSTOM CODE SECTION               !!!! */
+/* ********************************************************* */
+/* You can add any custom code below for personal use ====== */
