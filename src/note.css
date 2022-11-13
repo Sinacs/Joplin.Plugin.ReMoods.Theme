@@ -144,6 +144,13 @@
                                                         hsl(var(--usp-remoods-hue), 100%,  35%,  50%),
                                                         hsl(var(--usp-remoods-hue), 100%,  80%)  3px);
 
+  --bc-scrollbar-thumb-bd-color:                        transparent;
+  --bc-scrollbar-thumb-bg-color:                        radial-gradient(
+                                                        hsl(var(--usp-remoods-hue),  30%,  60%)  30%,
+                                                        hsl(var(--usp-remoods-hue),  40%,  70%)  70%);
+  --bc-scrollbar-thumb-bg-color-hover:                  radial-gradient(
+                                                        hsl(var(--usp-remoods-hue),  50%,  60%)  30%, 
+                                                        hsl(var(--usp-remoods-hue),  60%,  70%)  70%);
   /* HEADING ================================================================================ */
   --heading-ref-text-color:                             hsl(  0,   0%,  65%);
 
@@ -266,15 +273,7 @@
   --cb-bd-color:                                        hsl(var(--usp-remoods-hue), 100%,  70%);
   
   --cb-shadow:                                  0 0 4px hsl(var(--usp-remoods-hue), 100%,  50%);
- 
-  --cb-scrollbar-thumb-bd-color:                        transparent;
-  --cb-scrollbar-thumb-bg-color:                        radial-gradient(
-                                                        hsl(var(--usp-remoods-hue),  30%,  60%)  30%,
-                                                        hsl(var(--usp-remoods-hue),  40%,  70%)  70%);
-  --cb-scrollbar-thumb-bg-color-hover:                  radial-gradient(
-                                                        hsl(var(--usp-remoods-hue),  50%,  60%)  30%, 
-                                                        hsl(var(--usp-remoods-hue),  60%,  70%)  70%);
-  /* syntax highlight ---------------------------------------------------------------------- */
+  /* syntax highlight ----------------------------------------------------------------------- */
   --cb-comment-color:                                   hsl(var(--usp-remoods-hue),   0%,  60%);
   --cb-comment-shadow:                              0 0 none;
 
@@ -731,7 +730,7 @@ body,
 
 
 /* || BASIC | SCROLLBAR ************************************ */
-/* scrollbar ----------------------------------------------- */
+/* RENDER VIEWER SCROLLBAR ================================= */
 #tinymce::-webkit-scrollbar,
 #joplin-container-content::-webkit-scrollbar {
   width: 7px !important;
@@ -747,6 +746,78 @@ body,
 #joplin-container-content:hover::-webkit-scrollbar {
   width: 7px !important;
   height: 7px !important;
+}
+
+/* BLOCK CONTENTS SCROLLBAR GROUP: | TOC | CODE BLOCK | ART GALLERY */
+#rendered-md .table-of-contents::-webkit-scrollbar,
+#rendered-md .joplin-editable > .hljs::-webkit-scrollbar,
+ag2::-webkit-scrollbar,
+ag3::-webkit-scrollbar,
+ag4::-webkit-scrollbar,
+ag5::-webkit-scrollbar,
+ag6::-webkit-scrollbar,
+ag7::-webkit-scrollbar,
+ag8::-webkit-scrollbar,
+ag9::-webkit-scrollbar,
+ag10::-webkit-scrollbar,
+ag11::-webkit-scrollbar,
+ag12::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
+}
+/* thumb --------------------------------------------------- */
+#rendered-md .table-of-contents::-webkit-scrollbar-thumb,
+#rendered-md .joplin-editable > .hljs::-webkit-scrollbar-thumb,
+ag2::-webkit-scrollbar-thumb,
+ag3::-webkit-scrollbar-thumb,
+ag4::-webkit-scrollbar-thumb,
+ag5::-webkit-scrollbar-thumb,
+ag6::-webkit-scrollbar-thumb,
+ag7::-webkit-scrollbar-thumb,
+ag8::-webkit-scrollbar-thumb,
+ag9::-webkit-scrollbar-thumb,
+ag10::-webkit-scrollbar-thumb,
+ag11::-webkit-scrollbar-thumb,
+ag12::-webkit-scrollbar-thumb {
+  border: 5px solid var(--bc-scrollbar-thumb-bd-color);
+  border-radius: 1em;
+  background: var(--bc-scrollbar-thumb-bg-color);
+  -webkit-background-clip: content-box;
+  background-clip: content-box;
+}
+/* thumb hover --------------------------------------------- */
+#rendered-md .table-of-contents::-webkit-scrollbar-thumb:hover,
+#rendered-md .joplin-editable > .hljs::-webkit-scrollbar-thumb:hover,
+ag2::-webkit-scrollbar-thumb:hover,
+ag3::-webkit-scrollbar-thumb:hover,
+ag4::-webkit-scrollbar-thumb:hover,
+ag5::-webkit-scrollbar-thumb:hover,
+ag6::-webkit-scrollbar-thumb:hover,
+ag7::-webkit-scrollbar-thumb:hover,
+ag8::-webkit-scrollbar-thumb:hover,
+ag9::-webkit-scrollbar-thumb:hover,
+ag10::-webkit-scrollbar-thumb:hover,
+ag11::-webkit-scrollbar-thumb:hover,
+ag12::-webkit-scrollbar-thumb:hover{
+  background: var(--bc-scrollbar-thumb-bg-color-hover);
+  -webkit-background-clip: content-box;
+  background-clip: content-box;
+}
+/* track --------------------------------------------------- */
+#rendered-md .table-of-contents::-webkit-scrollbar-track,
+#rendered-md .joplin-editable > .hljs::-webkit-scrollbar-track,
+ag2::-webkit-scrollbar-track,
+ag3::-webkit-scrollbar-track,
+ag4::-webkit-scrollbar-track,
+ag5::-webkit-scrollbar-track,
+ag6::-webkit-scrollbar-track,
+ag7::-webkit-scrollbar-track,
+ag8::-webkit-scrollbar-track,
+ag9::-webkit-scrollbar-track,
+ag10::-webkit-scrollbar-track,
+ag11::-webkit-scrollbar-track,
+ag12::-webkit-scrollbar-track {
+  visibility: hidden;
 }
 
 
@@ -1449,30 +1520,6 @@ img:hover {
   box-shadow: var(--cb-shadow);
 }
 
-/* CODE BLOCK SCROLLBAR ==================================== */
-#rendered-md .joplin-editable > .hljs::-webkit-scrollbar {
-  width: 15px;
-  height: 15px;
-}
-/* thumb --------------------------------------------------- */
-#rendered-md .joplin-editable > .hljs::-webkit-scrollbar-thumb {
-  border: 5px solid var(--cb-scrollbar-thumb-bd-color);
-  border-radius: 1em;
-  background: var(--cb-scrollbar-thumb-bg-color);
-  -webkit-background-clip: content-box;
-  background-clip: content-box;
-}
-/* thumb hover --------------------------------------------- */
-#rendered-md .joplin-editable > .hljs::-webkit-scrollbar-thumb:hover {
-  background: var(--cb-scrollbar-thumb-bg-color-hover);
-  -webkit-background-clip: content-box;
-  background-clip: content-box;
-}
-/* track --------------------------------------------------- */
-#rendered-md .joplin-editable > .hljs::-webkit-scrollbar-track {
-  visibility: hidden;
-}
-
 /* CODE BLOCK > SYNTAX HIGHLIGHT =========================== */
 #rendered-md .hljs {
   color: var(--cb-text-color);
@@ -1699,70 +1746,6 @@ ag11 img {
 }
 ag12 img {
   max-width: calc(100% / 12 - 12px);
-}
-
-/* ART GALLERY SCROLLBAR =================================== */
-ag2::-webkit-scrollbar,
-ag3::-webkit-scrollbar,
-ag4::-webkit-scrollbar,
-ag5::-webkit-scrollbar,
-ag6::-webkit-scrollbar,
-ag7::-webkit-scrollbar,
-ag8::-webkit-scrollbar,
-ag9::-webkit-scrollbar,
-ag10::-webkit-scrollbar,
-ag11::-webkit-scrollbar,
-ag12::-webkit-scrollbar {
-  width: 15px;
-  height: 15px;
-}
-/* thumb --------------------------------------------------- */
-ag2::-webkit-scrollbar-thumb,
-ag3::-webkit-scrollbar-thumb,
-ag4::-webkit-scrollbar-thumb,
-ag5::-webkit-scrollbar-thumb,
-ag6::-webkit-scrollbar-thumb,
-ag7::-webkit-scrollbar-thumb,
-ag8::-webkit-scrollbar-thumb,
-ag9::-webkit-scrollbar-thumb,
-ag10::-webkit-scrollbar-thumb,
-ag11::-webkit-scrollbar-thumb,
-ag12::-webkit-scrollbar-thumb {
-  border: 5px solid var(--cb-scrollbar-thumb-bd-color);
-  border-radius: 1em;
-  background: var(--cb-scrollbar-thumb-bg-color);
-  -webkit-background-clip: content-box;
-  background-clip: content-box;
-}
-/* thumb hover --------------------------------------------- */
-ag2::-webkit-scrollbar-thumb:hover,
-ag3::-webkit-scrollbar-thumb:hover,
-ag4::-webkit-scrollbar-thumb:hover,
-ag5::-webkit-scrollbar-thumb:hover,
-ag6::-webkit-scrollbar-thumb:hover,
-ag7::-webkit-scrollbar-thumb:hover,
-ag8::-webkit-scrollbar-thumb:hover,
-ag9::-webkit-scrollbar-thumb:hover,
-ag10::-webkit-scrollbar-thumb:hover,
-ag11::-webkit-scrollbar-thumb:hover,
-ag12::-webkit-scrollbar-thumb:hover {
-  background: var(--cb-scrollbar-thumb-bg-color-hover);
-  -webkit-background-clip: content-box;
-  background-clip: content-box;
-}
-/* track --------------------------------------------------- */
-ag2::-webkit-scrollbar-track,
-ag3::-webkit-scrollbar-track,
-ag4::-webkit-scrollbar-track,
-ag5::-webkit-scrollbar-track,
-ag6::-webkit-scrollbar-track,
-ag7::-webkit-scrollbar-track,
-ag8::-webkit-scrollbar-track,
-ag9::-webkit-scrollbar-track,
-ag10::-webkit-scrollbar-track,
-ag11::-webkit-scrollbar-track,
-ag12::-webkit-scrollbar-track {
-  visibility: hidden;
 }
 
 
