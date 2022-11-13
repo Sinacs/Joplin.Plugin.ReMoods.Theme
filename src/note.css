@@ -1271,6 +1271,10 @@ body *,
   margin: 0;
   color: var(--list-text-color);
 }
+#rendered-md li > ul,
+#rendered-md li > ol {
+  margin-top: 0;
+}
 /* token --------------------------------------------------- */
 #rendered-md ul > li::marker,
 #rendered-md ol:not(.footnotes-list) > li::marker {
@@ -1316,6 +1320,7 @@ body *,
   font-size: 78%;
   background: var(--link-source-icon-color);
 }
+
 
 
 
