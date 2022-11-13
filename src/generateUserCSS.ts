@@ -6,9 +6,6 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
 
   const {
     remoodsHue,
-    baseFont,
-    monospaceFont,
-    baseFontSize,
     darkerEditorBackground,
     h1TextTransform,
     h1FontVariant,
@@ -46,9 +43,6 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     notebookTitleScrollbar,
     notebookFolderIcon,
 
-    printBaseFont,
-    printMonospaceFont,
-    printBaseFontSize,
     printSmallerCodeBlockFontSize,
     printNoteTitle,
     printHeadingRef,
@@ -213,21 +207,6 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       chromeCSS = chromeCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 170deg;');
       noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 170deg;');
   }
-
-  /*
-   * baseFont: string
-   * --usp-base-font: "montserrat","chiron hei hk text extralight";
-   */
-
-  /*
-   * monospaceFont: string
-   * --usp-monospace-font: "Cascadia Mono Light", "chiron hei hk text extralight";
-   */
-
-  /*
-   * baseFontSize: int + 'px'
-   * --usp-monospace-font-size: 14px;
-   */
 
   if(!darkerEditorBackground) {
     chromeCSS = chromeCSS.replace(/^  --code-mirror-bg-color:.+?;/m, '  --code-mirror-bg-color: hsl(var(--usp-remoods-hue),  8%, 27%);');
@@ -512,21 +491,6 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
 
 
 
-  /*
-   * printBaseFont: string
-   * --usp-print-base-font: "montserrat","chiron hei hk text extralight";
-   */
-
-  /*
-   * printMonospaceFont: string
-   * --usp-print-monospace-font: "Cascadia Mono Light", "chiron hei hk text extralight";
-   */
-
-  /*
-   * printBaseFontSize: int + 'px'
-   * --usp-print-base-font-size: 12px;
-   */
-
   if(!printSmallerCodeBlockFontSize) {
     noteCSS = noteCSS.replace(/^  --usp-print-smaller-code-block-font-size:.+?;/m, '  --usp-print-smaller-code-block-font-size: var(--usp-print-base-font-size);');
   } else {
@@ -583,4 +547,5 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
 
   await fs.writeFile(installDir + '/chrome.css', chromeCSS, 'utf8');
   await fs.writeFile(installDir + '/note.css', noteCSS, 'utf8');
+
 }
