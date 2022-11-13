@@ -337,23 +337,23 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
   }
 
   if(!smallerCodeBlockFontSize) {
-    chromeCSS = chromeCSS.replace(/^  --usp-smaller-code-block-font-size:.+?;/m, '  --usp-smaller-code-block-font-size: var(--usp-base-font-size);');
-    noteCSS = noteCSS.replace(/^  --usp-smaller-code-block-font-size:.+?;/m, '  --usp-smaller-code-block-font-size: var(--usp-base-font-size);');
+    chromeCSS = chromeCSS.replace(/^  --usp-smaller-code-block-font-size:.+?;/m, '  --usp-smaller-code-block-font-size: var(--usp-monospace-font-size);');
+    noteCSS = noteCSS.replace(/^  --usp-smaller-code-block-font-size:.+?;/m, '  --usp-smaller-code-block-font-size: var(--usp-monospace-font-size);');
   } else {
-    chromeCSS = chromeCSS.replace(/^  --usp-smaller-code-block-font-size:.+?;/m, '  --usp-smaller-code-block-font-size: calc(var(--usp-base-font-size) - 2px);');
-    noteCSS = noteCSS.replace(/^  --usp-smaller-code-block-font-size:.+?;/m, '  --usp-smaller-code-block-font-size: calc(var(--usp-base-font-size) - 2px);');
+    chromeCSS = chromeCSS.replace(/^  --usp-smaller-code-block-font-size:.+?;/m, '  --usp-smaller-code-block-font-size: calc(var(--usp-monospace-font-size) - 2px);');
+    noteCSS = noteCSS.replace(/^  --usp-smaller-code-block-font-size:.+?;/m, '  --usp-smaller-code-block-font-size: calc(var(--usp-monospace-font-size) - 2px);');
   }
 
   if(!smallerMarkdownTableFontSize) {
-    chromeCSS = chromeCSS.replace(/^  --usp-smaller-markdown-table-font-size:.+?;/m, '  --usp-smaller-markdown-table-font-size: var(--usp-base-font-size);');
+    chromeCSS = chromeCSS.replace(/^  --usp-smaller-markdown-table-font-size:.+?;/m, '  --usp-smaller-markdown-table-font-size: var(--usp-monospace-font-size);');
   } else {
-    chromeCSS = chromeCSS.replace(/^  --usp-smaller-markdown-table-font-size:.+?;/m, '  --usp-smaller-markdown-table-font-size: calc(var(--usp-base-font-size) - 2px);');
+    chromeCSS = chromeCSS.replace(/^  --usp-smaller-markdown-table-font-size:.+?;/m, '  --usp-smaller-markdown-table-font-size: calc(var(--usp-monospace-font-size) - 2px);');
   }
 
   if(!smallerMonospaceFontSize) {
-    chromeCSS = chromeCSS.replace(/^  --usp-smaller-monospace-font-size:.+?;/m, '  --usp-smaller-monospace-font-size: var(--usp-base-font-size);');
+    chromeCSS = chromeCSS.replace(/^  --usp-smaller-monospace-font-size:.+?;/m, '  --usp-smaller-monospace-font-size: var(--usp-monospace-font-size);');
   } else {
-    chromeCSS = chromeCSS.replace(/^  --usp-smaller-monospace-font-size:.+?;/m, '  --usp-smaller-monospace-font-size: calc(var(--usp-base-font-size) - 2px);');
+    chromeCSS = chromeCSS.replace(/^  --usp-smaller-monospace-font-size:.+?;/m, '  --usp-smaller-monospace-font-size: calc(var(--usp-monospace-font-size) - 2px);');
   }
   
   if(!evidentHorizontalLine) {

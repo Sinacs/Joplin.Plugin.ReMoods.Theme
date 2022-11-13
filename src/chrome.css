@@ -49,14 +49,16 @@
 
 
   /* THEME COLOR ******************************************* */
-  --usp-remoods-hue: 213deg;
+  --usp-remoods-hue: 260deg;
 
   /* FONT ************************************************** */
-  --usp-base-font: "Montserrat", "Chiron Hei HK Text Extralight";
-  --usp-monospace-font: "Cascadia Mono Light", "Chiron Hei HK Text Extralight";
+  --usp-base-font: "mulish", "montserrat", "chiron hei hk extralight";
+  --usp-monospace-font: "cascadia mono light", "chiron hei hk extralight";
+  --usp-headings-font: "montserrat", "mulish", "chiron hei hk";
 
   /* SIZES ************************************************* */
-  --usp-base-font-size: 14px;
+  --usp-base-font-size: 15px;
+  --usp-monospace-font-size: 14px;
   --usp-smaller-monospace-font-size: 100%;
   --usp-smaller-code-block-font-size: 100%;
   --usp-smaller-markdown-table-font-size: 100%;
@@ -66,6 +68,7 @@
   --usp-h4-font-size: 130%;
   --usp-h5-font-size: 120%;
   --usp-h6-font-size: 110%;
+  --usp-h1-font-weight: 600;
   --usp-headings-font-weight: 600;
   --usp-np-nlp-scrollbar-width: 3px;
 
@@ -572,7 +575,7 @@
 .CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-jn-monospace,
 .CodeMirror-lines .CodeMirror-line .enhancement-footnote-marker-text {
   font-family: var(--usp-monospace-font, monospace) !important;
-  font-size: var(--usp-base-font-size) !important;
+  font-size: var(--usp-monospace-font-size) !important;
 }
 
 
@@ -589,7 +592,7 @@
 
 
 
-/* || FONT 4/5 | CODE BLOCK FONT SIZE ********************** */
+/* || FONT 4/5 | SMALLER CODE BLOCK FONT SIZE ************** */
 .CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-string.cm-jn-monospace,
 .CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-jn-monospace {
   font-size: var(--usp-smaller-code-block-font-size) !important;
@@ -597,7 +600,7 @@
 
 
 
-/* || FONT 5/5 | MARKDOWN TABLE FONT SIZE ****************** */
+/* || FONT 5/5 | SMALLER MARKDOWN TABLE SYNTAX FONT SIZE *** */
 .CodeMirror-lines .CodeMirror-line .cm-null.cm-jn-monospace { /* table */
   font-size: var(--usp-smaller-markdown-table-font-size) !important;
 }
@@ -615,7 +618,8 @@
 /* || MARKDOWN 1/11 | HEADINGS ***************************** */
 /* HEADINGS > GROUP: H1 to H6 ============================== */
 .CodeMirror-line .cm-header {
-  font-weight: var(--usp-headings-font-weight);
+  font-family: var(--usp-headings-font) !important;
+  font-weight: var(--usp-headings-font-weight) !important;
   line-height: 1em !important;
 }
 
@@ -628,6 +632,7 @@
 /* HEADINGS > H1 =========================================== */
 .CodeMirror-line .cm-header.cm-header-1 {
   font-size: var(--usp-h1-font-size) !important;
+  font-weight: var(--usp-h1-font-weight) !important;
   font-variant: var(--usp-h1-font-variant);
   text-transform: var(--usp-h1-text-transform);
   color: var(--h1-text-color);
@@ -1420,7 +1425,7 @@ body {
 .sidebar .fa-folder {
   display: var(--usp-notebook-icon-switcher);
 }
-.sidebar .fa-folder::before {
+.sidebar .fa-folder::before { 
   font-size: 90%;
 }
 .sidebar .list-item-depth-0 .fa-folder::before {
