@@ -595,8 +595,7 @@
 .CodeMirror-lines .CodeMirror-line .cm-url.cm-rm-link, /* anchor link */
 .CodeMirror-lines .CodeMirror-line .cm-image,
 .CodeMirror-lines .CodeMirror-line .cm-rm-link.cm-rm-image,
-.CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em), /* footnote ref. */
-.CodeMirror-lines .CodeMirror-line .enhancement-footnote-marker-text {
+.CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em) /* footnote ref. */ {
   font-size: var(--usp-smaller-monospace-font-size) !important;
 }
 
@@ -1256,13 +1255,14 @@
 .enhancement-footnote-marker:not(#fake) {
   position: relative;
   top: 1px;
-  font-size: x-small !important;
   margin-left: 2px;
   padding: 0 3px;
   background: var(--fn-ref-color);
 }
 /* footnote marker text ------------------------------------ */
+.enhancement-footnote-marker:not(#fake),
 .enhancement-footnote-marker-text:not(#fake) {
+  font-size: x-small !important;
   color: var(--eh-footnote-ref-color); 
 }
 /* bottom footnote ----------------------------------------- */
@@ -1272,7 +1272,8 @@
 
 /* ENHANCEMENT ADMONITIONS ================================= */
 /* title text */
-.cm-admonition-type, .cm-admonition-end {
+.cm-admonition-type:not(#fake),
+.cm-admonition-end:not(#fake) {
   opacity: 1;
 }
 
