@@ -131,6 +131,10 @@
   /* LINK =================================================================================== */
   --link-text-color:                                    hsl(var(--usp-remoods-hue),  80%,  80%);
 
+
+  /* FOOTNOTE =============================================================================== */
+  --fn-ref-color:                                       hsl(calc(var(--usp-remoods-hue) + 180deg), 100%, 85%);
+  
   /* SPECIAL TEXT =========================================================================== */
   --special-text-color:                                 hsl(var(--usp-remoods-hue), 100%,  20%);
   --special-bg-color:                                   hsl(var(--usp-remoods-hue),  30%,  70%);
@@ -270,7 +274,12 @@
 
 
 
+  /* PLUGIN: ENHANCEMENT ******************************************************************** */
+  --eh-footnote-ref-color:                           hsl(calc(var(--usp-remoods-hue) + 180deg), 100%, 10%);
 
+  
+  
+  
   /* **************************************************************************************** */
   /* !!!!                           JOPLIN UI: GROUP PROPERTIES                          !!!! */
   /* **************************************************************************************** */
@@ -569,6 +578,7 @@
 .CodeMirror-lines .CodeMirror-line .cm-rm-link.cm-rm-image,
 .CodeMirror-lines .CodeMirror-line .cm-rm-sup,
 .CodeMirror-lines .CodeMirror-line .cm-rm-sub,
+.CodeMirror-lines .CodeMirror-line .cm-rm-sup-token,
 .CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em), /* footnote ref. */
 .CodeMirror-lines .CodeMirror-line .cm-null.cm-jn-monospace /* table */,
 .CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-string.cm-jn-monospace,
@@ -886,10 +896,17 @@
 
 
 /* || MARKDOWN 9/11 | FOOTNOTE ***************************** */
+.CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em),
+.CodeMirror-lines .CodeMirror-line .cm-rm-sup-token:not(.cm-rm-sup) {
+  color: var(--fn-ref-color);
+}
 .CodeMirror-lines .CodeMirror-line .cm-comment.cm-jn-monospace {
   color: var(--code-mirror-text-color);
 }
-
+.CodeMirror-lines .CodeMirror-line .cm-rm-sup-token:not(.cm-rm-sup) ~ .cm-string.cm-url {
+  color: var(--code-mirror-text-color);
+  opacity: 1;
+}
 
 
 /* || MARKDOWN 10/11 | CODE BLOCK ************************** */
@@ -1238,15 +1255,19 @@
 /* footnote marker ----------------------------------------- */
 .enhancement-footnote-marker:not(#fake) {
   position: relative;
-  top: 3px;
+  top: 1px;
   font-size: x-small !important;
   margin-left: 2px;
   padding: 0 3px;
-  background: var(--special-bg-color);
+  background: var(--fn-ref-color);
 }
 /* footnote marker text ------------------------------------ */
 .enhancement-footnote-marker-text:not(#fake) {
-  color: var(--special-text-color);
+  color: var(--eh-footnote-ref-color); 
+}
+/* bottom footnote ----------------------------------------- */
+.CodeMirror-lines .footnote.CodeMirror-line {
+  padding: 0 !important;
 }
 
 /* ENHANCEMENT ADMONITIONS ================================= */
@@ -1254,7 +1275,6 @@
 .cm-admonition-type, .cm-admonition-end {
   opacity: 1;
 }
-
 
 
 

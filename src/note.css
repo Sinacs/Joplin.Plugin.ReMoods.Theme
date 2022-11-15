@@ -234,6 +234,8 @@
   --link-source-icon-color:                             hsl(var(--usp-remoods-hue), 100%,  85%);
   
   /* FOOTNOTE =============================================================================== */
+  --fn-ref-color:                                       hsl(calc(var(--usp-remoods-hue) + 180deg), 100%, 85%);
+  
   --fn-title-color:                                     hsl(var(--usp-remoods-hue),   0%,  70%);
   --fn-title-bd-color:                       3px double hsl(var(--usp-remoods-hue),   0%,  70%);
   
@@ -1326,13 +1328,14 @@ body *,
 
 /* || ELEMENTS | FOOTNOTE ********************************** */
 /* FOOTNOTE REFERENCE ====================================== */
-[id*="fnref"] {
+#rendered-md [id*="fnref"] {
   display: inline-block;
   position: relative;
   bottom: -1px !important;
   margin: 0 2px 0 1px;
   text-decoration: none;
   font-size: smaller !important;
+  color: var(--fn-ref-color);
 }
 /* hover --------------------------------------------------- */
 [id*="fnref"]:hover {
@@ -1356,6 +1359,14 @@ body *,
   font-size: 110%;
   color: var(--fn-title-color);
   border-top: var(--fn-title-bd-color);
+}
+/* footnote backref ---------------------------------------- */
+#rendered-md .footnote-backref {
+  color: var(--fn-ref-color);
+}
+/* footnote list ------------------------------------------- */
+#rendered-md .footnotes-list > .footnote-item {
+  margin: 0;
 }
 /* footnote list text -------------------------------------- */
 #rendered-md .footnote-item > p {
