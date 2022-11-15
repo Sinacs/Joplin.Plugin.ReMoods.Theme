@@ -11,7 +11,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     h1FontVariant,
     emphasizeAddRemove,
     emphasizeAddRemoveBg,
-    listTextColor,
+    themeColorListText,
     smallerCodeBlockFontSize,
 
 		smallerMarkdownTableFontSize,
@@ -305,14 +305,20 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --print-strikethrough-text-bg-color:.+?;/m, '  --print-strikethrough-text-bg-color: hsl(0,  35%,  90%);');
   }
   
-  if(!listTextColor) {
+  if(!themeColorListText) {
     chromeCSS = chromeCSS.replace(/^  --list-text-color:.+?;/m, '  --list-text-color: var(--code-mirror-text-color);');
+    chromeCSS = chromeCSS.replace(/^  --fn-ref-color:.+?;/m, '  --fn-ref-color: hsl(var(--usp-remoods-hue), 80%, 80%);');
+    chromeCSS = chromeCSS.replace(/^  --eh-footnote-ref-color:.+?;/m, '  --eh-footnote-ref-color: hsl(var(--usp-remoods-hue), 100%, 10%);');
     noteCSS = noteCSS.replace(/^  --list-text-color:.+?;/m, '  --list-text-color: var(--render-viewer-text-color);');
     noteCSS = noteCSS.replace(/^  --list-span-color:.+?;/m, '  --list-span-color: hsl(var(--usp-remoods-hue), 30%, 80%);');
+    noteCSS = noteCSS.replace(/^  --fn-ref-color:.+?;/m, '  --fn-ref-color: hsl(var(--usp-remoods-hue), 80%, 80%);');
   } else {
     chromeCSS = chromeCSS.replace(/^  --list-text-color:.+?;/m, '  --list-text-color: hsl(var(--usp-remoods-hue), 30%, 80%);');
+    chromeCSS = chromeCSS.replace(/^  --fn-ref-color:.+?;/m, '  --fn-ref-color: hsl(calc(var(--usp-remoods-hue) + 180deg), 80%, 80%);');
+    chromeCSS = chromeCSS.replace(/^  --eh-footnote-ref-color:.+?;/m, '  --eh-footnote-ref-color: hsl(calc(var(--usp-remoods-hue) + 180deg), 100%, 10%);');
     noteCSS = noteCSS.replace(/^  --list-text-color:.+?;/m, '  --list-text-color: hsl(var(--usp-remoods-hue), 30%, 80%);');
     noteCSS = noteCSS.replace(/^  --list-span-color:.+?;/m, '  --list-span-color: var(--render-viewer-text-color);');
+    noteCSS = noteCSS.replace(/^  --fn-ref-color:.+?;/m, '  --fn-ref-color: hsl(calc(var(--usp-remoods-hue) + 180deg), 80%, 80%);');
   }
 
   if(!smallerCodeBlockFontSize) {

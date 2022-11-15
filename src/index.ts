@@ -13,7 +13,7 @@ export type ThemeSettings = {
 	h1FontVariant: boolean;
 	emphasizeAddRemove: boolean,
 	emphasizeAddRemoveBg: boolean;
-	listTextColor: boolean;
+	themeColorListText: boolean;
 	smallerCodeBlockFontSize: boolean;
 
   // Markdown Editor ==============================
@@ -182,12 +182,12 @@ async function prepareThemeSettings(): Promise<void> {
 			public: true,
 		},
 
-		'listTextColor': {
+		'themeColorListText': {
 			section: 'remoodsThemeSection',
 			label: 'Markdown Editor & Render Viewer - Enable theme color for list text',
 			type: SettingItemType.Bool,
 			value: true,
-			description: 'Enable: Theme color | Disable: Equal to the paragraph text color | It will affects to ordered list, unordered list, and checklist.',
+			description: 'Enable: Set list text to theme color, and the footnote marker change to complementary color. | Disable: Set list text equal to the paragraph text color, and the footnote marker will change to theme color.',
 			public: true,
 		},
 
@@ -504,7 +504,7 @@ async function writeUserCSS(): Promise<void> {
 	const h1FontVariant = await joplin.settings.value('h1FontVariant');
 	const emphasizeAddRemove = await joplin.settings.value('emphasizeAddRemove');
 	const emphasizeAddRemoveBg = await joplin.settings.value('emphasizeAddRemoveBg');
-	const listTextColor = await joplin.settings.value('listTextColor');
+	const themeColorListText = await joplin.settings.value('themeColorListText');
 	const smallerCodeBlockFontSize = await joplin.settings.value('smallerCodeBlockFontSize');
 	
 	const smallerMonospaceFontSize = await joplin.settings.value('smallerMonospaceFontSize');
@@ -553,7 +553,7 @@ async function writeUserCSS(): Promise<void> {
 		h1FontVariant,
 		emphasizeAddRemove,
 		emphasizeAddRemoveBg,
-		listTextColor,
+		themeColorListText,
 		smallerCodeBlockFontSize,
 
 		smallerMarkdownTableFontSize,
