@@ -51,9 +51,12 @@
   --usp-remoods-hue: 260deg;
 
   /* FONT ************************************************** */
-  --usp-base-font: "mulish", "montserrat", "chiron hei hk extralight";
-  --usp-monospace-font: "cascadia mono light", "chiron hei hk extralight";
-  --usp-headings-font: "montserrat", "mulish", "chiron hei hk";
+  --usp-custom-base-font: none;
+  --usp-custom-monospace-font: none;
+  --usp-custom-heading-font: none;
+  --usp-base-font: var(--usp-custom-base-font), "mulish", "montserrat", "chiron hei hk extralight";
+  --usp-monospace-font: var(--usp-custom-monospace-font), "cascadia mono light", "chiron hei hk extralight";
+  --usp-heading-font: var(--usp-custom-heading-font), "montserrat", "mulish", "chiron hei hk";
   
   /* SIZES ************************************************* */
   --usp-base-font-size: 15px;
@@ -66,7 +69,7 @@
   --usp-h5-font-size: 120%;
   --usp-h6-font-size: 110%;
   --usp-h1-font-weight: 600;
-  --usp-headings-font-weight: 600;
+  --usp-heading-font-weight: 600;
 
   /* EFFECTS *********************************************** */
   --usp-h1-font-variant: small-caps;
@@ -107,14 +110,17 @@
 
   
   /* PRINT FONT ******************************************** */
-  --usp-print-base-font: "mulish", "montserrat", "chiron hei hk extralight";
-  --usp-print-monospace-font: "cascadia mono light", "chiron hei hk extralight";
-  --usp-print-headings-font: "montserrat", "mulish", "chiron hei hk";
+  --usp-print-custom-base-font: none;
+  --usp-print-custom-monospace-font: none;
+  --usp-print-custom-heading-font: none;
+  --usp-print-base-font: var(--usp-custom-base-font), "mulish", "montserrat", "chiron hei hk extralight";
+  --usp-print-monospace-font: var(--usp-custom-monospace-font), "cascadia mono light", "chiron hei hk extralight";
+  --usp-print-heading-font: var(--usp-custom-heading-font), "montserrat", "mulish", "chiron hei hk";
+  
+  /* PRINT: DISPLAY **************************************** */
   --usp-print-base-font-size: 13px;
   --usp-print-monospace-font-size: 10px;
   --usp-print-smaller-code-block-font-size: var(--usp-print-monospace-font-size);
-  
-  /* PRINT: DISPLAY **************************************** */
   --usp-print-note-title-display: block;
   --usp-print-heading-ref-switcher: inline-block;
   --usp-print-h1-bd-display: block;
@@ -145,6 +151,8 @@
                                                         hsl(var(--usp-remoods-hue), 100%,  35%,  50%),
                                                         hsl(var(--usp-remoods-hue), 100%,  80%)  3px);
   
+  --render-viewer-scrollbar-thumb-bg-color:             hsl(var(--usp-remoods-hue), 100%, 75%);
+  
   --bc-scrollbar-thumb-bd-color:                        transparent;
   --bc-scrollbar-thumb-bg-color:                        radial-gradient(
                                                         hsl(var(--usp-remoods-hue),  30%,  60%)  30%,
@@ -161,10 +169,7 @@
                                                         hsl(var(--usp-remoods-hue), 100%,  80%),
                                                         hsl(var(--usp-remoods-hue), 100%,  65%,  30%),
                                                         hsl(var(--usp-remoods-hue), 100%,  80%)  3px);
-  --h1-bd-color:                                        repeating-linear-gradient( 114deg,
-                                                        hsl(var(--usp-remoods-hue), 100%,  80%),
-                                                        hsl(var(--usp-remoods-hue), 100%,  65%,  30%),
-                                                        hsl(var(--usp-remoods-hue), 100%,  80%)  3px);
+  --h1-bd-color:                                        var(--h1-bg-color);
   /* h2 ------------------------------------------------------------------------------------- */
   --h2-color:                                           hsl(var(--usp-remoods-hue), 100%,  90%);
   --h2-bd-color:                                        linear-gradient(to right,
@@ -194,7 +199,7 @@
 
   --strong-text-color:                                  hsl(var(--usp-remoods-hue), 100%,  70%);
   
-  --emphasize-text-color:                               hsl(var(--usp-remoods-hue), 100%,  70%);
+  --emphasize-text-color:                               var(--strong-text-color);
   
   --strikethrough-text-color:                           hsl(var(--usp-remoods-hue),  25%,  60%);
   --strikethrough-text-bg-color:                        none;
@@ -234,7 +239,7 @@
   --link-source-icon-color:                             hsl(var(--usp-remoods-hue), 100%,  85%);
   
   /* FOOTNOTE =============================================================================== */
-  --fn-ref-color:                                       hsl(calc(var(--usp-remoods-hue) + 180deg), 100%, 85%);
+  --fn-ref-color:                                       hsl(calc(var(--usp-remoods-hue) + 180deg), 100%,  85%);
   
   --fn-title-color:                                     hsl(var(--usp-remoods-hue),   0%,  70%);
   --fn-title-bd-color:                       3px double hsl(var(--usp-remoods-hue),   0%,  70%);
@@ -249,6 +254,8 @@
   /* TABLE ================================================================================== */
   --table-text-color:                                   var(--render-viewer-text-color);
   --table-header-bg-color:                              hsl(var(--usp-remoods-hue),  80%,  40%);
+
+  --table-header-text-shadow:                 0 0 2px black; 
   
   --table-row-odd-bg-color:                             hsl(var(--usp-remoods-hue),  15%,  30%);
   --table-row-even-bg-color:                            hsl(var(--usp-remoods-hue),  10%,  35%);
@@ -259,7 +266,6 @@
   /* toc block ------------------------------------------------------------------------------ */
   --toc-bg-color:                                       var(--render-viewer-bg-color-2);
   --toc-bd-color:                                       hsl(var(--usp-remoods-hue), 100%,  60%);
-  --toc-text-shadow:                                0 0 hsl(var(--usp-remoods-hue),   0%,   0%);
   --toc-box-shadow:                            0 0 10px hsl(var(--usp-remoods-hue), 100%,  30%);
   /* toc button ----------------------------------------------------------------------------- */
   --toc-btn-text-color:                                 var(--render-viewer-bg-color);
@@ -279,31 +285,31 @@
   --cb-shadow:                                  0 0 4px hsl(var(--usp-remoods-hue), 100%,  50%);
   /* syntax highlight ----------------------------------------------------------------------- */
   --cb-comment-color:                                   hsl(var(--usp-remoods-hue),   0%,  60%);
-  --cb-comment-shadow:                              0 0 none;
+  --cb-comment-shadow:                                  none;
 
   --cb-number-color:                                    hsl(calc(var(--usp-remoods-hue) + 110deg), 100%,  66%);
-  --cb-number-shadow:                               0 0 none;
+  --cb-number-shadow:                                   none;
 
   --cb-string-color:                                    hsl(calc(var(--usp-remoods-hue) + 180deg), 100%,  75%);
-  --cb-string-shadow:                               0 0 none;
+  --cb-string-shadow:                                   none;
   
   --cb-params-color:                                    hsl(calc(var(--usp-remoods-hue) + 300deg), 100%,  70%);
-  --cb-params-shadow:                               0 0 none;
+  --cb-params-shadow:                                   none;
 
   --cb-title-color:                                     hsl(calc(var(--usp-remoods-hue) + 180deg), 100%,  85%);
-  --cb-title-shadow:                                0 0 none;
+  --cb-title-shadow:                                    none;
 
   --cb-selector-id-color:                               hsl(calc(var(--usp-remoods-hue) + 159deg), 100%,  75%);
-  --cb-selector-id-shadow:                          0 0 none;
+  --cb-selector-id-shadow:                              none;
   
   --cb-selector-pseudo-color:                           hsl(calc(var(--usp-remoods-hue) + 323deg),  87%,  75%);
-  --cb-selector-pseudo-shadow:                      0 0 none;
+  --cb-selector-pseudo-shadow:                          none;
   
   --cb-selector-attr-color:                             hsl(calc(var(--usp-remoods-hue) + 300deg), 100%,  85%);
-  --cb-selector-attr-shadow:                        0 0 none;
+  --cb-selector-attr-shadow:                            none;
 
   --cb-text-color:                                      hsl(var(--usp-remoods-hue),   0%,  90%);
-  --cb-text-shadow:                                0 0 none;
+  --cb-text-shadow:                                     none;
   --cb-title-class-color:                               var(--cb-text-color);
   --cb-title-class-shadow:                              var(--cb-text-shadow);
   --cb-function-color:                                  var(--cb-text-color);
@@ -318,14 +324,14 @@
   --cb-operator-shadow:                                 var(--cb-text-shadow);
 
   --cb-keyword-color:                                   hsl(var(--usp-remoods-hue), 100%,  70%);
-  --cb-keyword-shadow:                             0 0 none;
+  --cb-keyword-shadow:                                  none;
   --cb-variable-language-color:                         var(--cb-keyword-color);
   --cb-variable-language-shadow:                        var(--cb-keyword-shadow);
   --cb-doctag-color:                                    var(--cb-keyword-color);
   --cb-doctag-shadow:                                   var(--cb-keyword-shadow);
 
   --cb-title-function-color:                            hsl(var(--usp-remoods-hue), 100%,  85%);
-  --cb-title-function-shadow:                       0 0 none;
+  --cb-title-function-shadow:                           none;
   --cb-property-color:                                  var(--cb-title-function-color);
   --cb-property-shadow:                                 var(--cb-title-function-shadow);
   --cb-attr-color:                                      var(--cb-title-function-color);
@@ -334,7 +340,7 @@
   --cb-attribute-shadow:                                var(--cb-title-function-shadow);
 
   --cb-title-class-inherited-color:                     hsl(calc(var(--usp-remoods-hue) + 260deg), 100%,  75%);
-  --cb-title-class-inherited-shadow:                0 0 none;
+  --cb-title-class-inherited-shadow:                    none;
   --cb-built-in-color:                                  var(--cb-title-class-inherited-color);
   --cb-built-in-shadow:                                 var(--cb-title-class-inherited-shadow);
   --cb-selector-class-color:                            var(--cb-title-class-inherited-color);
@@ -345,21 +351,21 @@
   --cb-type-shadow:                                     var(--cb-title-class-inherited-shadow);
   
   --cb-literal-color:                                   hsl(calc(var(--usp-remoods-hue) + 148deg), 100%,  65%);
-  --cb-literal-shadow:                              0 0 none;
+  --cb-literal-shadow:                                  none;
   --cb-meta-color:                                      var(--cb-literal-color);
   --cb-meta-shadow:                                     var(--cb-literal-shadow);
   --cb-symbol-color:                                    var(--cb-literal-color);
   --cb-symbol-shadow:                                   var(--cb-literal-shadow);
   
   --cb-subst-color:                                     hsl(calc(var(--usp-remoods-hue) +  90deg), 100%,  75%);
-  --cb-subst-shadow:                                0 0 none;
+  --cb-subst-shadow:                                    none;
   --cb-variable-text-color:                             var(--cb-subst-color);
   --cb-variable-shadow:                                 var(--cb-subst-shadow);
   --cb-regexp-color:                                    var(--cb-subst-color);
   --cb-regexp-shadow:                                   var(--cb-subst-shadow);
   
   --cb-selector-tag-color:                              hsl(calc(var(--usp-remoods-hue) + 120deg), 100%,  70%);
-  --cb-selector-tag-shadow:                         0 0 none;
+  --cb-selector-tag-shadow:                             none;
   --cb-tag-color:                                       var(--cb-selector-tag-color);
   --cb-tag-shadow:                                      var(--cb-selector-tag-shadow);
 
@@ -375,12 +381,12 @@
   --sn-bd-color:                                        hsl(var(--usp-remoods-hue), 100%,  70%);
   --sn-drop-shadow:                         0px 0px 2px hsl(var(--usp-remoods-hue), 100%,  50%);
   /* sticky notes - "important" > body ------------------------------------------------------ */
-  --sn-important-text-color:                          hsl( 40,  40%,  70%);
-  --sn-important-bg-color:                            hsl(  0, 100%,  25%);
+  --sn-important-text-color:                          hsl( 40,  50%,  70%);
+  --sn-important-bg-color:                            hsl(  0, 100%,  30%);
   --sn-important-bd-color:                            hsl(  0, 100%,  50%);
-  --sn-important-box-shadow:                 0 0 10px hsl(  0, 100%,  10%);
+  --sn-important-box-shadow:                  0 0 6px hsl(  0, 100%,  10%);
   /* sticky notes tag group:  not including the stick note - "Important" -------------------- */
-  --sn-tags-text-color:                                 var(--render-viewer-text-color);
+  --sn-tags-text-color:                               hsl(  0,   0%,  90%);
   --sn-tags-text-shadow:                    1px 1px 2px hsl(var(--usp-remoods-hue),   0%,   0%);
   /* sticky notes tag ----------------------------------------------------------------------- */
   --sn-note-tag-bg-color:                             hsl(206, 100%,  38%);
@@ -743,7 +749,7 @@ body,
 /* thumb ----------------------------------------------------*/
 #tinymce::-webkit-scrollbar-thumb,
 #joplin-container-content::-webkit-scrollbar-thumb {
-  background: hsl(var(--usp-remoods-hue), 100%, 75%);
+  background: var(--render-viewer-scrollbar-thumb-bg-color);
 }
 /* hover ----------------------------------------------------*/
 #tinymce:hover::-webkit-scrollbar,
@@ -899,7 +905,7 @@ body *,
 
 
 /* || FONT 3/3 | SMALLER CODE BLOCK FONT SIZE ************** */
-#rendered-md .joplin-editable > .hljs {
+#rendered-md .joplin-editable > .hljs * {
   font-size: var(--usp-smaller-code-block-font-size);
 }
 
@@ -969,11 +975,11 @@ body *,
 #rendered-md h4,
 #rendered-md h5,
 #rendered-md h6 {
-  font-family: var(--usp-headings-font, sans-serif);
+  font-family: var(--usp-heading-font, sans-serif);
   margin-bottom: 0;
   padding: 0;
   line-height: 1em;
-  font-weight: var(--usp-headings-font-weight);
+  font-weight: var(--usp-heading-font-weight);
 }
 #rendered-md h1:not(#rendered-md > .table-of-contents:first-child + h1),
 #rendered-md h2:not(#rendered-md > .table-of-contents:first-child + h2),
@@ -1022,6 +1028,7 @@ body *,
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: var(--usp-h1-text-fill-color);
+  border: none;
   filter: drop-shadow(var(--h1-drop-shadow));
 }
 /* h1 border ----------------------------------------------- */
@@ -1410,7 +1417,7 @@ body *,
 }
 #rendered-md table > thead > tr > th {
   background: var(--table-header-bg-color);
-  text-shadow: 0 0 2px black;
+  text-shadow: var(--table-header-text-shadow);
 }
 #rendered-md table > tbody > tr:nth-child(odd) {
   background: var(--table-row-odd-bg-color);
@@ -1497,7 +1504,6 @@ img:hover {
   font-family: arial, sans-serif;
   font-size: 12px;
   color: var(--toc-btn-text-color);
-  text-shadow: var(--toc-btn-text-shadow);
   background: var(--toc-btn-bg-color);
   border: var(--toc-btn-bd-color);
   box-shadow: var(--toc-btn-box-shadow);
@@ -1546,145 +1552,146 @@ img:hover {
 }
 
 /* CODE BLOCK > SYNTAX HIGHLIGHT =========================== */
-#rendered-md .hljs {
+#rendered-md .hljs * {
   color: var(--cb-text-color);
-  text-shadow: var(--cb-text-shadow);
+  text-shadow: 0 0 var(--cb-text-shadow);
 }
 #rendered-md .hljs-keyword {
   color: var(--cb-keyword-color);
-  text-shadow: var(--cb-keyword-shadow);
+  text-shadow: 0 0 var(--cb-keyword-shadow);
 }
 #rendered-md .hljs-params {
   color: var(--cb-params-color);
-  text-shadow: var(--cb-params-shadow);
+  text-shadow: 0 0 var(--cb-params-shadow);
 }
 #rendered-md .hljs-title {
   color: var(--cb-title-color);
-  text-shadow: var(--cb-title-shadow);
+  text-shadow: 0 0 var(--cb-title-shadow);
 }
 #rendered-md .hljs-title.function_ {
   color: var(--cb-title-function-color);
-  text-shadow: var(--cb-title-function-shadow);
+  text-shadow: 0 0 var(--cb-title-function-shadow);
 }
 #rendered-md .hljs-property {
   color: var(--cb-property-color);
-  text-shadow: var(--cb-property-shadow);
+  text-shadow: 0 0 var(--cb-property-shadow);
 }
 #rendered-md .hljs-string {
   color: var(--cb-string-color);
-  text-shadow: var(--cb-string-shadow);
+  text-shadow: 0 0 var(--cb-string-shadow);
 }
 #rendered-md .hljs-function {
   color: var(--cb-function-color);
-  text-shadow: var(--cb-function-shadow);
+  text-shadow: 0 0 var(--cb-function-shadow);
 }
 #rendered-md .hljs-function .hljs-params {
   color: var(--cb-function-params-color);
-  text-shadow: var(--cb-function-params-shadow);
+  text-shadow: 0 0 var(--cb-function-params-shadow);
 }
 #rendered-md .hljs-variable {
   color: var(--cb-variable-text-color);
-  text-shadow: var(--cb-variable-shadow);
+  text-shadow: 0 0 var(--cb-variable-shadow);
 }
 #rendered-md .hljs-variable.language_ {
   color: var(--cb-variable-language-color);
-  text-shadow: var(--cb-variable-language-shadow);
+  text-shadow: 0 0 var(--cb-variable-language-shadow);
 }
 #rendered-md .hljs-title.class_ {
   color: var(--cb-title-class-color);
-  text-shadow: var(--cb-title-class-shadow);
+  text-shadow: 0 0 var(--cb-title-class-shadow);
 }
 #rendered-md .hljs-built_in {
   color: var(--cb-built-in-color);
-  text-shadow: var(--cb-built-in-shadow);
+  text-shadow: 0 0 var(--cb-built-in-shadow);
 }
 #rendered-md .hljs-literal {
   color: var(--cb-literal-color);
-  text-shadow: var(--cb-literal-shadow);
+  text-shadow: 0 0 var(--cb-literal-shadow);
 }
 #rendered-md .hljs-attr {
   color: var(--cb-attr-color);
-  text-shadow: var(--cb-attr-shadow);
+  text-shadow: 0 0 var(--cb-attr-shadow);
 }
 #rendered-md .hljs-title.class_.inherited__ {
   color: var(--cb-title-class-inherited-color);
-  text-shadow: var(--cb-title-class-inherited-shadow);
+  text-shadow: 0 0 var(--cb-title-class-inherited-shadow);
 }
 #rendered-md .hljs-comment {
   color: var(--cb-comment-color);
-  text-shadow: var(--cb-comment-shadow);
+  text-shadow: 0 0 var(--cb-comment-shadow);
 }
 #rendered-md .hljs-meta {
   color: var(--cb-meta-color);
-  text-shadow: var(--cb-meta-shadow);
+  text-shadow: 0 0 var(--cb-meta-shadow);
 }
 #rendered-md .hljs-subst {
   color: var(--cb-subst-color);
-  text-shadow: var(--cb-subst-shadow);
+  text-shadow: 0 0 var(--cb-subst-shadow);
 }
 #rendered-md .hljs-number {
   color: var(--cb-number-color);
-  text-shadow: var(--cb-number-shadow);
+  text-shadow: 0 0 var(--cb-number-shadow);
 }
 #rendered-md .hljs-selector-id {
   color: var(--cb-selector-id-color);
-  text-shadow: var(--cb-selector-id-shadow);
+  text-shadow: 0 0 var(--cb-selector-id-shadow);
 }
 #rendered-md .hljs-selector-class {
   color: var(--cb-selector-class-color);
-  text-shadow: var(--cb-selector-class-shadow);
+  text-shadow: 0 0 var(--cb-selector-class-shadow);
 }
 #rendered-md .hljs-selector-tag {
   color: var(--cb-selector-tag-color);
-  text-shadow: var(--cb-selector-tag-shadow);
+  text-shadow: 0 0 var(--cb-selector-tag-shadow);
 }
 #rendered-md .hljs-selector-pseudo {
   color: var(--cb-selector-pseudo-color);
-  text-shadow: var(--cb-selector-pseudo-shadow);
+  text-shadow: 0 0 var(--cb-selector-pseudo-shadow);
 }
 #rendered-md .hljs-selector-attr {
   color: var(--cb-selector-attr-color);
-  text-shadow: var(--cb-selector-attr-shadow);
+  text-shadow: 0 0 var(--cb-selector-attr-shadow);
 }
 #rendered-md .hljs-doctag {
   color: var(--cb-doctag-color);
-  text-shadow: var(--cb-doctag-shadow);
+  text-shadow: 0 0 var(--cb-doctag-shadow);
 }
 #rendered-md .hljs-attribute {
   color: var(--cb-attribute-color);
-  text-shadow: var(--cb-attribute-shadow);
+  text-shadow: 0 0 var(--cb-attribute-shadow);
 }
-#rendered-md .hljs-tag, .hljs-name {
+#rendered-md .hljs-tag,
+#rendered-md .hljs-name {
   color: var(--cb-tag-color);
-  text-shadow: var(--cb-tag-shadow);
+  text-shadow: 0 0 var(--cb-tag-shadow);
 }
 #rendered-md .hljs-tag .hljs-attr {
   color: var(--cb-html-attr-color);
-  text-shadow: var(--cb-html-attr-shadow);
+  text-shadow: 0 0 var(--cb-html-attr-shadow);
 }
 #rendered-md .hljs-symbol {
   color: var(--cb-symbol-color);
-  text-shadow: var(--cb-symbol-shadow);
+  text-shadow: 0 0 var(--cb-symbol-shadow);
 }
 #rendered-md .hljs-type {
   color: var(--cb-type-color);
-  text-shadow: var(--cb-type-shadow);
+  text-shadow: 0 0 var(--cb-type-shadow);
 }
 #rendered-md .hljs-operator {
   color: var(--cb-operator-color);
-  text-shadow: var(--cb-operator-shadow);
+  text-shadow: 0 0 var(--cb-operator-shadow);
 }
 #rendered-md .hljs-regexp {
   color: var(--cb-regexp-color);
-  text-shadow: var(--cb-regexp-shadow);
+  text-shadow: 0 0 var(--cb-regexp-shadow);
 }
 #rendered-md .hljs-class .hljs-title {
   color: var(--cb-class-title-color);
-  text-shadow: var(--cb-class-title-shadow);
+  text-shadow: 0 0 var(--cb-class-title-shadow);
 }
 #rendered-md .hljs-function .hljs-title {
   color: var(--cb-function-title-color);
-  text-shadow: var(--cb-function-title-shadow);
+  text-shadow: 0 0 var(--cb-function-title-shadow);
 }
 
 
@@ -1974,7 +1981,7 @@ ag12 img {
 }
 #rendered-md km:hover,
 #rendered-md km:hover * {
-  font-size: 86% !important;
+  font-size: small !important;
   transition: font-size 0.1s;
   cursor: default;
 }
