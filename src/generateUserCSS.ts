@@ -6,6 +6,11 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
 
   const {
     remoodsHue,
+    baseFont,
+		monospaceFont,
+		headingFont,
+		baseFontSize,
+		monospaceFontSize,
     darkerEditorBackground,
     h1TextTransform,
     h1FontVariant,
@@ -43,6 +48,11 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     notebookTitleScrollbar,
     notebookFolderIcon,
 
+    printBaseFont,
+		printMonospaceFont,
+		printHeadingFont,
+		printBaseFontSize,
+		printMonospaceFontSize,
     printSmallerCodeBlockFontSize,
     printNoteTitle,
     printHeadingRef,
@@ -208,84 +218,50 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --usp-remoods-hue:.+?;/m, '  --usp-remoods-hue: 170deg;');
   }
 
-  if(!darkerEditorBackground) {
-    chromeCSS = chromeCSS.replace(/^  --code-mirror-bg-color:.+?;/m, '  --code-mirror-bg-color: hsl(var(--usp-remoods-hue),  8%, 27%);');
-    chromeCSS = chromeCSS.replace(/^  --code-block-bg-color:.+?;/m, '  --code-block-bg-color: hsl(var(--usp-remoods-hue),  8%, 17%);');
-    noteCSS = noteCSS.replace(/^  --render-viewer-bg-color:.+?;/m, '  --render-viewer-bg-color: hsl(var(--usp-remoods-hue),  8%, 27%);');
-    noteCSS = noteCSS.replace(/^  --render-viewer-bg-color-2:.+?;/m, '  --render-viewer-bg-color-2: hsl(var(--usp-remoods-hue),  8%, 17%);');
+  if(baseFont !== 'none') {
+    const customBaseFont = baseFont.valueOf();
+    chromeCSS = chromeCSS.replace(/^  --usp-custom-base-font:.+?;/gms, `  --usp-custom-base-font: ${customBaseFont};`);
+    noteCSS = noteCSS.replace(/^  --usp-custom-base-font:.+?;/gms, `  --usp-custom-base-font: ${customBaseFont};`);
   } else {
-    chromeCSS = chromeCSS.replace(/^  --code-mirror-bg-color:.+?;/m, '  --code-mirror-bg-color: hsl(var(--usp-remoods-hue),  8%, 20%);');
-    chromeCSS = chromeCSS.replace(/^  --code-block-bg-color:.+?;/m, '  --code-block-bg-color: hsl(var(--usp-remoods-hue),  8%, 13%);');
-    noteCSS = noteCSS.replace(/^  --render-viewer-bg-color:.+?;/m, '  --render-viewer-bg-color: hsl(var(--usp-remoods-hue),  8%, 20%);');
-    noteCSS = noteCSS.replace(/^  --render-viewer-bg-color-2:.+?;/m, '  --render-viewer-bg-color-2: hsl(var(--usp-remoods-hue),  8%, 13%);');
+    chromeCSS = chromeCSS.replace(/^  --usp-custom-base-font:.+?;/gms, '  --usp-custom-base-font: none;');
+    noteCSS = noteCSS.replace(/^  --usp-custom-base-font:.+?;/gms, '  --usp-custom-base-font: none;');
   }
   
-  if(!h1TextTransform) {
-    chromeCSS = chromeCSS.replace(/^  --usp-h1-text-transform:.+?;/m, '  --usp-h1-text-transform: unset;');
-    noteCSS = noteCSS.replace(/^  --usp-h1-text-transform:.+?;/m, '  --usp-h1-text-transform: unset;');
+  if(monospaceFont !== 'none') {
+    const customMonospaceFont = monospaceFont.valueOf();
+    chromeCSS = chromeCSS.replace(/^  --usp-custom-monospace-font:.+?;/gms, `  --usp-custom-monospace-font: ${customMonospaceFont};`);
+    noteCSS = noteCSS.replace(/^  --usp-custom-monospace-font:.+?;/gms, `  --usp-custom-monospace-font: ${customMonospaceFont};`);
   } else {
-    chromeCSS = chromeCSS.replace(/^  --usp-h1-text-transform:.+?;/m, '  --usp-h1-text-transform: capitalize;');
-    noteCSS = noteCSS.replace(/^  --usp-h1-text-transform:.+?;/m, '  --usp-h1-text-transform: capitalize;');
+    chromeCSS = chromeCSS.replace(/^  --usp-custom-monospace-font:.+?;/gms, '  --usp-custom-monospace-font: none;');
+    noteCSS = noteCSS.replace(/^  --usp-custom-monospace-font:.+?;/gms, '  --usp-custom-monospace-font: none;');
   }
   
-  if(!h1FontVariant) {
-    chromeCSS = chromeCSS.replace(/^  --usp-h1-font-variant:.+?;/m, '  --usp-h1-font-variant: unset;');
-    noteCSS = noteCSS.replace(/^  --usp-h1-font-variant:.+?;/m, '  --usp-h1-font-variant: unset;');
+  if(headingFont !== 'none') {
+    const customHeadingFont = headingFont.valueOf();
+    chromeCSS = chromeCSS.replace(/^  --usp-custom-heading-font:.+?;/gms, `  --usp-custom-heading-font: ${customHeadingFont};`);
+    noteCSS = noteCSS.replace(/^  --usp-custom-heading-font:.+?;/gms, `  --usp-custom-heading-font: ${customHeadingFont};`);
   } else {
-    chromeCSS = chromeCSS.replace(/^  --usp-h1-font-variant:.+?;/m, '  --usp-h1-font-variant: small-caps;');
-    noteCSS = noteCSS.replace(/^  --usp-h1-font-variant:.+?;/m, '  --usp-h1-font-variant: small-caps;');
+    chromeCSS = chromeCSS.replace(/^  --usp-custom-heading-font:.+?;/gms, '  --usp-custom-heading-font: none;');
+    noteCSS = noteCSS.replace(/^  --usp-custom-heading-font:.+?;/gms, '  --usp-custom-heading-font: none;');
   }
   
-  if(!emphasizeAddRemove && !emphasizeAddRemoveBg) {
-    chromeCSS = chromeCSS.replace(/^  --insert-text-color:.+?;/m, '  --insert-text-color: hsl(var(--usp-remoods-hue), 100%,  70%);');
-    chromeCSS = chromeCSS.replace(/^  --insert-text-bd-color:.+?;/m, '  --insert-text-bd-color: hsl(var(--usp-remoods-hue),  25%,  60%);');
-    chromeCSS = chromeCSS.replace(/^  --insert-text-bg-color:.+?;/m, '  --insert-text-bg-color: none;');
-    chromeCSS = chromeCSS.replace(/^  --strikethrough-text-color:.+?;/m, '  --strikethrough-text-color: hsl(var(--usp-remoods-hue),  25%,  60%);');
-    chromeCSS = chromeCSS.replace(/^  --strikethrough-text-bg-color:.+?;/m, '  --strikethrough-text-bg-color: none;');
-    noteCSS = noteCSS.replace(/^  --insert-text-color:.+?;/m, '  --insert-text-color: hsl(var(--usp-remoods-hue), 100%,  70%);');
-    noteCSS = noteCSS.replace(/^  --insert-text-bd-color:.+?;/m, '  --insert-text-bd-color: hsl(var(--usp-remoods-hue),  25%,  60%);');
-    noteCSS = noteCSS.replace(/^  --insert-text-bg-color:.+?;/m, '  --insert-text-bg-color: none;');
-    noteCSS = noteCSS.replace(/^  --strikethrough-text-color:.+?;/m, '  --strikethrough-text-color: hsl(var(--usp-remoods-hue),  25%,  60%);');
-    noteCSS = noteCSS.replace(/^  --strikethrough-text-bg-color:.+?;/m, '  --strikethrough-text-bg-color: none;');
-    noteCSS = noteCSS.replace(/^  --print-insert-text-color:.+?;/m, '  --print-insert-text-color: hsl(var(--usp-remoods-hue), 100%,  40%);');
-    noteCSS = noteCSS.replace(/^  --print-insert-text-bd-color:.+?;/m, '  --print-insert-text-bd-color: hsl(var(--usp-remoods-hue),  25%,  50%);');
-    noteCSS = noteCSS.replace(/^  --print-insert-text-bg-color:.+?;/m, '  --print-insert-text-bg-color: none;');
-    noteCSS = noteCSS.replace(/^  --print-strikethrough-text-color:.+?;/m, '  --print-strikethrough-text-color: hsl(var(--usp-remoods-hue),  25%,  50%);');
-    noteCSS = noteCSS.replace(/^  --print-strikethrough-text-bg-color:.+?;/m, '  --print-strikethrough-text-bg-color: none;');
+  if(baseFontSize !== '15px') {
+    const baseSize = baseFontSize.valueOf();
+    chromeCSS = chromeCSS.replace(/^  --usp-base-font-size:.+?;/gms, `  --usp-base-font-size: ${baseSize};`);
+    noteCSS = noteCSS.replace(/^  --usp-base-font-size:.+?;/gms, `  --usp-base-font-size: ${baseSize};`);
+  } else {
+    chromeCSS = chromeCSS.replace(/^  --usp-base-font-size:.+?;/gms, '  --usp-base-font-size: 15px;');
+    noteCSS = noteCSS.replace(/^  --usp-base-font-size:.+?;/gms, '  --usp-base-font-size: 15px;');
+  }
     
-  } else if(!emphasizeAddRemove && emphasizeAddRemoveBg) {
-    chromeCSS = chromeCSS.replace(/^  --insert-text-color:.+?;/m, '  --insert-text-color: hsl(var(--usp-remoods-hue), 100%,  70%);');
-    chromeCSS = chromeCSS.replace(/^  --insert-text-bd-color:.+?;/m, '  --insert-text-bd-color: hsl(var(--usp-remoods-hue),  25%,  60%);');
-    chromeCSS = chromeCSS.replace(/^  --insert-text-bg-color:.+?;/m, '  --insert-text-bg-color: hsl(var(--usp-remoods-hue),  35%,  25%);');
-    chromeCSS = chromeCSS.replace(/^  --strikethrough-text-color:.+?;/m, '  --strikethrough-text-color: hsl(var(--usp-remoods-hue),  25%,  60%);');
-    chromeCSS = chromeCSS.replace(/^  --strikethrough-text-bg-color:.+?;/m, '  --strikethrough-text-bg-color: hsl(var(--usp-remoods-hue),  30%,  20%);');
-    noteCSS = noteCSS.replace(/^  --insert-text-color:.+?;/m, '  --insert-text-color: hsl(var(--usp-remoods-hue), 100%,  70%);');
-    noteCSS = noteCSS.replace(/^  --insert-text-bd-color:.+?;/m, '  --insert-text-bd-color: hsl(var(--usp-remoods-hue),  25%,  60%);');
-    noteCSS = noteCSS.replace(/^  --insert-text-bg-color:.+?;/m, '  --insert-text-bg-color: hsl(var(--usp-remoods-hue),  35%,  25%);');
-    noteCSS = noteCSS.replace(/^  --strikethrough-text-color:.+?;/m, '  --strikethrough-text-color: hsl(var(--usp-remoods-hue),  25%,  60%);');
-    noteCSS = noteCSS.replace(/^  --strikethrough-text-bg-color:.+?;/m, '  --strikethrough-text-bg-color: hsl(var(--usp-remoods-hue),  30%,  20%);');
-    noteCSS = noteCSS.replace(/^  --print-insert-text-color:.+?;/m, '  --print-insert-text-color: hsl(var(--usp-remoods-hue), 100%,  40%);');
-    noteCSS = noteCSS.replace(/^  --print-insert-text-bd-color:.+?;/m, '  --print-insert-text-bd-color: hsl(var(--usp-remoods-hue),  25%,  50%);');
-    noteCSS = noteCSS.replace(/^  --print-insert-text-bg-color:.+?;/m, '  --print-insert-text-bg-color: hsl(var(--usp-remoods-hue), 40%,  95%);');
-    noteCSS = noteCSS.replace(/^  --print-strikethrough-text-color:.+?;/m, '  --print-strikethrough-text-color: hsl(var(--usp-remoods-hue),  25%,  50%);');
-    noteCSS = noteCSS.replace(/^  --print-strikethrough-text-bg-color:.+?;/m, '  --print-strikethrough-text-bg-color: hsl(var(--usp-remoods-hue), 25%,  85%);');
-    
-  } else if(emphasizeAddRemove && !emphasizeAddRemoveBg) {
-    chromeCSS = chromeCSS.replace(/^  --insert-text-color:.+?;/m, '  --insert-text-color: hsl(100,  50%,  75%);');
-    chromeCSS = chromeCSS.replace(/^  --insert-text-bd-color:.+?;/m, '  --insert-text-bd-color: hsl(100,  70%,  35%);');
-    chromeCSS = chromeCSS.replace(/^  --insert-text-bg-color:.+?;/m, '  --insert-text-bg-color: none;');
-    chromeCSS = chromeCSS.replace(/^  --strikethrough-text-color:.+?;/m, '  --strikethrough-text-color: hsl(0, 100%,  75%);');
-    chromeCSS = chromeCSS.replace(/^  --strikethrough-text-bg-color:.+?;/m, '  --strikethrough-text-bg-color: none;');
-    noteCSS = noteCSS.replace(/^  --insert-text-color:.+?;/m, '  --insert-text-color: hsl(100,  50%,  75%);');
-    noteCSS = noteCSS.replace(/^  --insert-text-bd-color:.+?;/m, '  --insert-text-bd-color: hsl(100,  70%,  35%);');
-    noteCSS = noteCSS.replace(/^  --insert-text-bg-color:.+?;/m, '  --insert-text-bg-color: none;');
-    noteCSS = noteCSS.replace(/^  --strikethrough-text-color:.+?;/m, '  --strikethrough-text-color: hsl(0, 100%,  75%);');
-    noteCSS = noteCSS.replace(/^  --strikethrough-text-bg-color:.+?;/m, '  --strikethrough-text-bg-color: none;');
-    noteCSS = noteCSS.replace(/^  --print-insert-text-color:.+?;/m, '  --print-insert-text-color: hsl(100,  40%,  45%);');
-    noteCSS = noteCSS.replace(/^  --print-insert-text-bd-color:.+?;/m, '  --print-insert-text-bd-color: hsl(100,  70%,  35%);');
-    noteCSS = noteCSS.replace(/^  --print-insert-text-bg-color:.+?;/m, '  --print-insert-text-bg-color: none;');
-    noteCSS = noteCSS.replace(/^  --print-strikethrough-text-color:.+?;/m, '  --print-strikethrough-text-color: hsl(0, 100%,  65%);');
-    noteCSS = noteCSS.replace(/^  --print-strikethrough-text-bg-color:.+?;/m, '  --print-strikethrough-text-bg-color: none;');
+  if(monospaceFontSize !== '14px') {
+    const monospaceSize = monospaceFontSize.valueOf();
+    chromeCSS = chromeCSS.replace(/^  --usp-monospace-font-size:.+?;/gms, `  --usp-monospace-font-size: ${monospaceSize};`);
+    noteCSS = noteCSS.replace(/^  --usp-monospace-font-size:.+?;/gms, `  --usp-monospace-font-size: ${monospaceSize};`);
+  } else {
+    chromeCSS = chromeCSS.replace(/^  --usp-monospace-font-size:.+?;/gms, '  --usp-monospace-font-size: 14px;');
+    noteCSS = noteCSS.replace(/^  --usp-monospace-font-size:.+?;/gms, '  --usp-monospace-font-size: 14px;');
+  }
     
   } else {
     chromeCSS = chromeCSS.replace(/^  --insert-text-color:.+?;/m, '  --insert-text-color: hsl(100,  50%,  75%);');
@@ -490,12 +466,46 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
   }
 
   if(!notebookFolderIcon) {
-    chromeCSS = chromeCSS.replace(/^ --usp-notebook-icon-switcher:.+?;/m, '  --usp-notebook-icon-switcher: none;');
+  if(printBaseFont !== 'var(--usp-print-base-font)') {
+    const printCustomBaseFont = printBaseFont.valueOf();
+    chromeCSS = chromeCSS.replace(/^  --usp-print-custom-base-font:.+?;/gms, `  --usp-print-custom-base-font: ${printCustomBaseFont};`);
+    noteCSS = noteCSS.replace(/^  --usp-print-custom-base-font:.+?;/gms, `  --usp-print-custom-base-font: ${printCustomBaseFont};`);
   } else {
-    chromeCSS = chromeCSS.replace(/^ --usp-notebook-icon-switcher:.+?;/m, '  --usp-notebook-icon-switcher: block;');
+    chromeCSS = chromeCSS.replace(/^  --usp-print-custom-base-font:.+?;/gms, '  --usp-print-custom-base-font: var(--usp-print-base-font);');
+    noteCSS = noteCSS.replace(/^  --usp-print-custom-base-font:.+?;/gms, '  --usp-print-custom-base-font: var(--usp-print-base-font);');
   }
 
+  if(printMonospaceFont !== 'var(--usp-custom-monospace-font)') {
+    const printCustomMonospaceFont = printMonospaceFont.valueOf();
+    chromeCSS = chromeCSS.replace(/^  --usp-print-custom-monospace-font:.+?;/gms, `  --usp-print-custom-monospace-font: ${printCustomMonospaceFont};`);
+    noteCSS = noteCSS.replace(/^  --usp-print-custom-monospace-font:.+?;/gms, `  --usp-print-custom-monospace-font: ${printCustomMonospaceFont};`);
+  } else {
+    chromeCSS = chromeCSS.replace(/^  --usp-print-custom-monospace-font:.+?;/gms, '  --usp-print-custom-monospace-font: var(--usp-custom-monospace-font);');
+    noteCSS = noteCSS.replace(/^  --usp-print-custom-monospace-font:.+?;/gms, '  --usp-print-custom-monospace-font: var(--usp-custom-monospace-font);');
+  }
 
+  if(printHeadingFont !== 'var(--usp-custom-heading-font)') {
+    const printCustomHeadingFont = printHeadingFont.valueOf();
+    chromeCSS = chromeCSS.replace(/^  --usp-print-custom-heading-font:.+?;/gms, `  --usp-print-custom-heading-font: ${printCustomHeadingFont};`);
+    noteCSS = noteCSS.replace(/^  --usp-print-custom-heading-font:.+?;/gms, `  --usp-print-custom-heading-font: ${printCustomHeadingFont};`);
+  } else {
+    chromeCSS = chromeCSS.replace(/^  --usp-print-custom-heading-font:.+?;/gms, '  --usp-print-custom-heading-font: var(--usp-custom-heading-font);');
+    noteCSS = noteCSS.replace(/^  --usp-print-custom-heading-font:.+?;/gms, '  --usp-print-custom-heading-font: var(--usp-custom-heading-font);');
+  }
+
+  if(printBaseFontSize !== '13px') {
+    const printBaseSize = printBaseFontSize.valueOf();
+    noteCSS = noteCSS.replace(/^  --usp-print-base-font-size:.+?;/gms, `  --usp-print-base-font-size: ${printBaseSize};`);
+  } else {
+    noteCSS = noteCSS.replace(/^  --usp-print-base-font-size:.+?;/gms, '  --usp-print-base-font-size: 13px;');
+  }
+
+  if(printMonospaceFontSize !== '12px') {
+    const printMonospaceSize = printMonospaceFontSize.valueOf();
+    noteCSS = noteCSS.replace(/^  --usp-print-monospace-font-size:.+?;/gms, `  --usp-print-monospace-font-size: ${printMonospaceSize};`);
+  } else {
+    noteCSS = noteCSS.replace(/^  --usp-print-monospace-font-size:.+?;/gms, '  --usp-print-monospace-font-size: 12px;');
+  }
 
   if(!printSmallerCodeBlockFontSize) {
     noteCSS = noteCSS.replace(/^  --usp-print-smaller-code-block-font-size:.+?;/m, '  --usp-print-smaller-code-block-font-size: var(--usp-print-base-font-size);');

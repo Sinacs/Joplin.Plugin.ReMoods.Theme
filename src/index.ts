@@ -9,6 +9,11 @@ export type ThemeSettings = {
 	// Markdown Editor & Render Viewer ==============
 	themeMode: string;
 	remoodsHue: string;
+	baseFont: string;
+	monospaceFont: string;
+  headingFont: string;
+	baseFontSize: string;
+	monospaceFontSize: string;
 	darkerEditorBackground: boolean;
 	h1TextTransform: boolean;
 	h1FontVariant: boolean;
@@ -50,6 +55,11 @@ export type ThemeSettings = {
 	notebookFolderIcon: boolean;
 
 	// PRINT ****************************************
+	printBaseFont: string;
+	printMonospaceFont: string;
+	printHeadingFont: string;
+	printBaseFontSize: string;
+	printMonospaceFontSize: string;
 	printSmallerCodeBlockFontSize: boolean;
 	printNoteTitle: boolean;
 	printHeadingRef: boolean;
@@ -139,7 +149,50 @@ async function prepareThemeSettings(): Promise<void> {
 				'330deg': 'Magenta-Red 330deg',
 				'340deg': 'Magenta-Red +',
 			},
-			description: 'Set hue for theme color.',
+			description: 'Set color hue for the theme.',
+			public: true,
+		},
+    
+    'baseFont': {
+			section: 'remoodsThemeSection',
+			label: 'Markdown Editor & Render Viewer - Custom Base Font',
+			type: SettingItemType.String,
+			value: 'none',
+			description: 'none: "mulish", "montserrat", "chiron hei hk extralight"',
+			public: true,
+		},
+
+		'monospaceFont': {
+			section: 'remoodsThemeSection',
+			label: 'Markdown Editor & Render Viewer - Custom Monospace Font',
+			type: SettingItemType.String,
+			value: 'none',
+			description: 'none: "cascadia mono light", "chiron hei hk extralight"',
+			public: true,
+		},
+    
+		'headingFont': {
+			section: 'remoodsThemeSection',
+			label: 'Markdown Editor & Render Viewer - Custom Heading Font',
+			type: SettingItemType.String,
+			value: 'none',
+			description: 'none: "montserrat", "mulish", "chiron hei hk"',
+			public: true,
+		},
+
+		'baseFontSize': {
+			section: 'remoodsThemeSection',
+			label: 'Markdown Editor & Render Viewer - Base Font Size',
+			type: SettingItemType.String,
+			value: '15px',
+			public: true,
+		},
+
+		'monospaceFontSize': {
+			section: 'remoodsThemeSection',
+			label: 'Markdown Editor & Render Viewer - Monospace Font Size',
+			type: SettingItemType.String,
+			value: '14px',
 			public: true,
 		},
     
@@ -421,6 +474,51 @@ async function prepareThemeSettings(): Promise<void> {
 			public: true,
 		},
 
+		'printBaseFont': {
+			section: 'remoodsThemeSection',
+			label: 'Print & Export PDF - Custom Base Font',
+			type: SettingItemType.String,
+			value: 'var(--usp-print-base-font)',
+			public: true,
+			advanced: true,
+		},
+
+		'printMonospaceFont': {
+			section: 'remoodsThemeSection',
+			label: 'Print & Export PDF - Monospace Font',
+			type: SettingItemType.String,
+			value: 'var(--usp-custom-monospace-font)',
+			public: true,
+			advanced: true,
+		},
+    
+		'printHeadingFont': {
+			section: 'remoodsThemeSection',
+			label: 'Print & Export PDF - Heading Font',
+			type: SettingItemType.String,
+			value: 'var(--usp-custom-heading-font)',
+			public: true,
+			advanced: true,
+		},
+
+		'printBaseFontSize': {
+			section: 'remoodsThemeSection',
+			label: 'Print & Export PDF - Base Font Size',
+			type: SettingItemType.String,
+			value: '13px',
+			public: true,
+			advanced: true,
+		},
+
+		'printMonospaceFontSize': {
+			section: 'remoodsThemeSection',
+			label: 'Print & Export PDF - Monospace Font Size',
+			type: SettingItemType.String,
+			value: '12px',
+			public: true,
+			advanced: true,
+		},
+
 		'printSmallerCodeBlockFontSize': {
 			section: 'remoodsThemeSection',
 			label: 'Print & Export PDF - Enable smaller font size for code block',
@@ -513,6 +611,11 @@ async function writeUserCSS(): Promise<void> {
 	const fs = joplin.require('fs-extra');
 	
 	const remoodsHue = await joplin.settings.value('remoodsHue');
+	const baseFont = await joplin.settings.value('baseFont');
+	const monospaceFont = await joplin.settings.value('monospaceFont');
+	const headingFont = await joplin.settings.value('headingFont');
+	const baseFontSize = await joplin.settings.value('baseFontSize');
+	const monospaceFontSize = await joplin.settings.value('monospaceFontSize');
 	const darkerEditorBackground = await joplin.settings.value('darkerEditorBackground');
 	const h1TextTransform = await joplin.settings.value('h1TextTransform');
 	const h1FontVariant = await joplin.settings.value('h1FontVariant');
@@ -550,6 +653,11 @@ async function writeUserCSS(): Promise<void> {
 	const notebookTitleScrollbar = await joplin.settings.value('notebookTitleScrollbar');
 	const notebookFolderIcon = await joplin.settings.value('notebookFolderIcon');
 	
+	const printBaseFont = await joplin.settings.value('printBaseFont');
+	const printMonospaceFont = await joplin.settings.value('printMonospaceFont');
+	const printHeadingFont = await joplin.settings.value('printHeadingFont');
+	const printBaseFontSize = await joplin.settings.value('printBaseFontSize');
+	const printMonospaceFontSize = await joplin.settings.value('printMonospaceFontSize');
 	const printSmallerCodeBlockFontSize = await joplin.settings.value('printSmallerCodeBlockFontSize');
 	const printNoteTitle = await joplin.settings.value('printNoteTitle');
 	const printHeadingRef = await joplin.settings.value('printHeadingRef');
@@ -562,6 +670,11 @@ async function writeUserCSS(): Promise<void> {
 
 	const settings = {
 		remoodsHue,
+		baseFont,
+		monospaceFont,
+		headingFont,
+		baseFontSize,
+		monospaceFontSize,
 		darkerEditorBackground,
 		h1TextTransform,
 		h1FontVariant,
@@ -599,6 +712,11 @@ async function writeUserCSS(): Promise<void> {
 		notebookTitleScrollbar,
 		notebookFolderIcon,
 
+		printBaseFont,
+		printMonospaceFont,
+		printHeadingFont,
+		printBaseFontSize,
+		printMonospaceFontSize,
 		printSmallerCodeBlockFontSize,
 		printNoteTitle,
 		printHeadingRef,
