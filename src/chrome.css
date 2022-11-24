@@ -52,16 +52,19 @@
   --usp-remoods-hue: 260deg;
 
   /* FONT ************************************************** */
-  --usp-base-font: "mulish", "montserrat", "chiron hei hk extralight";
-  --usp-monospace-font: "cascadia mono light", "chiron hei hk extralight";
-  --usp-headings-font: "montserrat", "mulish", "chiron hei hk";
+  --usp-custom-base-font: none;
+  --usp-custom-monospace-font: none;
+  --usp-custom-heading-font: none;
+  --usp-base-font: var(--usp-custom-base-font), "mulish", "montserrat", "chiron hei hk extralight";
+  --usp-monospace-font: var(--usp-custom-monospace-font), "cascadia mono light", "chiron hei hk extralight";
+  --usp-heading-font: var(--usp-custom-heading-font), "montserrat", "mulish", "chiron hei hk";
 
   /* SIZES ************************************************* */
   --usp-base-font-size: 15px;
   --usp-monospace-font-size: 14px;
-  --usp-smaller-monospace-font-size: 100%;
-  --usp-smaller-code-block-font-size: 100%;
-  --usp-smaller-markdown-table-font-size: 100%;
+  --usp-smaller-monospace-font-size: var(--usp-monospace-font-size);
+  --usp-smaller-code-block-font-size: var(--usp-monospace-font-size);
+  --usp-smaller-markdown-table-font-size: var(--usp-monospace-font-size);
   --usp-h1-font-size: 200%;
   --usp-h2-font-size: 170%;
   --usp-h3-font-size: 150%;
@@ -69,7 +72,7 @@
   --usp-h5-font-size: 120%;
   --usp-h6-font-size: 110%;
   --usp-h1-font-weight: 600;
-  --usp-headings-font-weight: 600;
+  --usp-heading-font-weight: 600;
   --usp-np-nlp-scrollbar-width: 3px;
 
   /* EFFECTS *********************************************** */
@@ -131,7 +134,6 @@
   /* LINK =================================================================================== */
   --link-text-color:                                    hsl(var(--usp-remoods-hue),  80%,  80%);
 
-
   /* FOOTNOTE =============================================================================== */
   --fn-ref-color:                                       hsl(calc(var(--usp-remoods-hue) + 180deg), 100%, 85%);
   
@@ -156,13 +158,13 @@
 
   /* HTML =================================================================================== */
   --html-tag-text-color:                              hsl(  0, 100%,  70%);
-  --html-tag-text-shadow:                           0 0 none;
+  --html-tag-text-shadow:                               none;
 
   --html-attribute-text-color:                        hsl(145, 100%,  70%);
-  --html-attribute-text-shadow:                     0 0 none;
+  --html-attribute-text-shadow:                         none;
 
   --html-string-text-color:                           hsl(300, 100%,  70%);
-  --html-string-text-shadow:                        0 0 none;
+  --html-string-text-shadow:                            none;
   
   /* CODE BLOCK ============================================================================= */
   --code-block-bg-color:                                hsl(var(--usp-remoods-hue), 8%,  17%);
@@ -171,28 +173,28 @@
   
   /* syntax highlight ----------------------------------------------------------------------- */
   --code-block-comment-color:                           hsl(var(--usp-remoods-hue),   0%,  60%);
-  --code-block-comment-shadow:                      0 0 none;
+  --code-block-comment-shadow:                          none;
   
   --code-block-number-color:                            hsl(calc(var(--usp-remoods-hue) + 110deg), 100%,  66%);
-  --code-block-number-shadow:                       0 0 none;
+  --code-block-number-shadow:                           none;
   
   --code-block-string-color:                            hsl(calc(var(--usp-remoods-hue) + 180deg), 100%,  75%);
-  --code-block-string-shadow:                       0 0 none;
+  --code-block-string-shadow:                           none;
   
   --code-block-variable-3-color:                        hsl(calc(var(--usp-remoods-hue) + 323deg), 100%,  85%);
-  --code-block-variable-3-shadow:                   0 0 none;
+  --code-block-variable-3-shadow:                       none;
   
   --code-block-attribute-color:                         hsl(calc(var(--usp-remoods-hue) + 240deg), 100%,  75%);
-  --code-block-attribute-shadow:                    0 0 none;
+  --code-block-attribute-shadow:                        none;
   
   --code-block-error-color:                           hsl(   0, 100%, 65%);
   --code-block-error-bd-color:             2px dotted hsl(  0, 100%,  50%);
 
   --code-block-invalidchar-color:                     hsl(  0, 100%,  50%);
-  --code-block-invalidchar-shadow:                  0 0 none;
+  --code-block-invalidchar-shadow:                      none;
 
   --code-block-variable-color:                          hsl(var(--usp-remoods-hue),   0%,  90%);
-  --code-block-variable-shadow:                     0 0 none;
+  --code-block-variable-shadow:                         none;
   --code-block-variable-2-color:                        var(--code-block-variable-color);
   --code-block-variable-2-shadow:                       var(--code-block-variable-shadow);
   --code-block-def-color:                               var(--code-block-variable-color);
@@ -207,28 +209,28 @@
   --code-block-matching-bracket-shadow:                 var(--code-block-variable-shadow);
   
   --code-block-keyword-color:                           hsl(var(--usp-remoods-hue), 100%,  70%);
-  --code-block-keyword-shadow:                      0 0 none;
+  --code-block-keyword-shadow:                          none;
   
   --code-block-property-color:                          hsl(var(--usp-remoods-hue), 100%,  85%);
-  --code-block-property-shadow:                     0 0 none;
+  --code-block-property-shadow:                         none;
   
   --code-block-qualifier-color:                         hsl(calc(var(--usp-remoods-hue) + 260deg), 100%,  75%);
-  --code-block-qualifier-shadow:                    0 0 none;
+  --code-block-qualifier-shadow:                        none;
   --code-block-type-color:                              var(--code-block-qualifier-color);
   --code-block-type-shadow:                             var(--code-block-qualifier-shadow);
   --code-block-builtin-color:                           var(--code-block-qualifier-color);
   --code-block-builtin-shadow:                          var(--code-block-qualifier-shadow);
   
   --code-block-atom-color:                              hsl(calc(var(--usp-remoods-hue) + 148deg), 100%,  65%);
-  --code-block-atom-shadow:                         0 0 none;
+  --code-block-atom-shadow:                             none;
   --code-block-meta-color:                              var(--code-block-atom-color);
   --code-block-meta-shadow:                             var(--code-block-atom-shadow);
   
   --code-block-string-2-color:                          hsl(calc(var(--usp-remoods-hue) +  90deg), 100%,  75%);
-  --code-block-string-2-shadow:                     0 0 none;
+  --code-block-string-2-shadow:                         none;
   
   --code-block-tag-color:                               hsl(calc(var(--usp-remoods-hue) + 120deg), 100%,  70%);
-  --code-block-tag-shadow:                          0 0 none;
+  --code-block-tag-shadow:                              none;
 
 
 
@@ -243,34 +245,34 @@
 
   /* table column mark ---------------------------------------------------------------------- */
   --mtc-column-mark-color-1:                          hsl(  0, 100%,  80%);
-  --mtc-column-mark-shadow-1:                       0 0 none;
+  --mtc-column-mark-shadow-1:                           none;
 
   --mtc-column-mark-color-2:                          hsl(240,  70%,  80%);
-  --mtc-column-mark-shadow-2:                       0 0 none;
+  --mtc-column-mark-shadow-2:                           none;
   
   --mtc-column-mark-color-3:                          hsl(160,  80%,  60%);
-  --mtc-column-mark-shadow-3:                       0 0 none;
+  --mtc-column-mark-shadow-3:                           none;
   
   --mtc-column-mark-color-4:                          hsl( 40,  90%,  60%);
-  --mtc-column-mark-shadow-4:                       0 0 none;
+  --mtc-column-mark-shadow-4:                           none;
   
   --mtc-column-mark-color-5:                          hsl( 60,  60%,  60%);
-  --mtc-column-mark-shadow-5:                       0 0 none;
+  --mtc-column-mark-shadow-5:                           none;
   
   --mtc-column-mark-color-6:                          hsl(190,  80%,  60%);
-  --mtc-column-mark-shadow-6:                       0 0 none;
+  --mtc-column-mark-shadow-6:                           none;
   
   --mtc-column-mark-color-7:                          hsl(100,  70%,  60%);
-  --mtc-column-mark-shadow-7:                       0 0 none;
+  --mtc-column-mark-shadow-7:                           none;
   
   --mtc-column-mark-color-8:                          hsl(210, 100%,  55%);
-  --mtc-column-mark-shadow-8:                       0 0 none;
+  --mtc-column-mark-shadow-8:                           none;
   
   --mtc-column-mark-color-9:                          hsl(270, 100%,  75%);
-  --mtc-column-mark-shadow-9:                       0 0 none; 
+  --mtc-column-mark-shadow-9:                           none; 
   
   --mtc-column-mark-color-10:                         hsl(310,  70%,  70%);
-  --mtc-column-mark-shadow-10:                      0 0 none;
+  --mtc-column-mark-shadow-10:                          none;
 
 
 
@@ -293,7 +295,7 @@
   /* notebook panel | note list | editor panel ----------------------------------------------- */
   --g-panel-header-bg-color:                            hsl(var(--usp-remoods-hue),  80%,  50%);
   --g-panel-header-text-color:                          hsl(var(--usp-remoods-hue),   0%, 100%);
-  --g-panel-header-text-shadow:                         hsl(var(--usp-remoods-hue), 100%,  10%);
+  --g-panel-header-text-shadow:                 0 0 3px hsl(var(--usp-remoods-hue), 100%,  10%);
   
   /* notebook list | note list | option panel menu ------------------------------------------- */
   --g-item-bg-color-hover:                              hsl(var(--usp-remoods-hue),  30%,  20%);
@@ -359,7 +361,7 @@
   --s-note-count-label-text-color:                      hsl(var(--usp-remoods-hue),   0%, 100%);
   --s-note-count-label-bg-color:                        hsl(var(--usp-remoods-hue),  40%,  20%);
   --s-note-count-label-bd-color:                        hsl(var(--usp-remoods-hue),  50%,  80%);
-  --s-note-count-label-shadow:                          hsl(var(--usp-remoods-hue), 100%,  80%);
+  --s-note-count-label-shadow:                  0 0 1px hsl(var(--usp-remoods-hue), 100%,  80%);
 
   --s-sync-info-text-color:                             hsl(var(--usp-remoods-hue), 100%,  95%);
   --s-sync-info-symbol-color:                           radial-gradient(
@@ -627,8 +629,8 @@
 /* || MARKDOWN 1/11 | HEADINGS ***************************** */
 /* HEADINGS > GROUP: H1 to H6 ============================== */
 .CodeMirror-line .cm-header {
-  font-family: var(--usp-headings-font) !important;
-  font-weight: var(--usp-headings-font-weight) !important;
+  font-family: var(--usp-heading-font) !important;
+  font-weight: var(--usp-heading-font-weight) !important;
   line-height: 1em !important;
 }
 
@@ -837,19 +839,19 @@
 .CodeMirror-line:not(.cm-jn-code-block) .cm-tag,
 .CodeMirror-line .cm-jn-monospace.cm-tabcolor-row[class*="cm-tabcolor-col"].cm-tag {
   color: var(--html-tag-text-color) !important;
-  text-shadow: var(--html-tag-text-shadow);
+  text-shadow: 0 0 var(--html-tag-text-shadow);
 }
 /* attribute ----------------------------------------------- */
 .CodeMirror-line:not(.cm-jn-code-block) .cm-attribute,
 .CodeMirror-line .cm-jn-monospace.cm-tabcolor-row[class*="cm-tabcolor-col"].cm-attribute {
   color: var(--html-attribute-text-color) !important;
-  text-shadow: var(--html-attribute-text-shadow);
+  text-shadow: 0 0 var(--html-attribute-text-shadow);
 }
 /* string -------------------------------------------------- */
 .CodeMirror-line:not(.cm-jn-code-block) .cm-string:not(.cm-url),
-.CodeMirror-line .cm-jn-monospace.cm-tabcolor-row[class*="cm-tabcolor-col"].cm-string {
+.CodeMirror-line .cm-jn-monospace.cm-tabcolor-row[class*="cm-tabcolor-col"].cm-string:not(.cm-url) {
   color: var(--html-string-text-color) !important;
-  text-shadow: var(--html-string-text-shadow);
+  text-shadow: 0 0 var(--html-string-text-shadow);
 }
 
 
@@ -972,7 +974,7 @@
 }
 .CodeMirror-line.cm-jn-code-block .cm-atom {
   color: var(--code-block-atom-color) !important;
-  text-shadow: 0 0 var(--code-block-atom-color);
+  text-shadow: 0 0 var(--code-block-atom-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-qualifier {
   color: var(--code-block-qualifier-color) !important;
@@ -1012,7 +1014,7 @@
 }
 .CodeMirror-line.cm-jn-code-block .cm-invalidchar {
   color: var(--code-block-invalidchar-color) !important;
-  text-shadow: 0 0 var(--code-block-invalidchar-color);
+  text-shadow: 0 0 var(--code-block-invalidchar-shadow);
 }
 .CodeMirror-line.cm-jn-code-block .cm-builtin {
   color: var(--code-block-builtin-color) !important;
@@ -1333,7 +1335,7 @@ body {
 .sidebar > div:first-child > div:first-child > button > span {
   position: absolute;
   color: var(--g-panel-header-text-color);
-  text-shadow: 0 0 3px var(--g-panel-header-text-shadow);
+  text-shadow: var(--g-panel-header-text-shadow);
   cursor: pointer;
 }
 .sidebar > div:first-child > div:first-child > div > .icon-notebooks {
@@ -1512,7 +1514,7 @@ body {
   background-color: var(--s-note-count-label-bg-color);
   border: 1px solid var(--s-note-count-label-bd-color);
   border-radius: 2em;
-  filter: 0 0 1px drop-shadow(var(--s-note-count-label-shadow));
+  filter: drop-shadow(var(--s-note-count-label-shadow));
   opacity: 1 !important;
   z-index: 1;
 }
@@ -1932,7 +1934,7 @@ body {
   min-height: 35px !important;
   text-indent: 8px;
   color: var(--g-panel-header-text-color) !important;
-  text-shadow: 0 0 3px var(--g-panel-header-text-shadow);
+  text-shadow: var(--g-panel-header-text-shadow);
   background: var(--g-panel-header-bg-color) !important;
   border-radius: 3px;
 }
