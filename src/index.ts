@@ -7,6 +7,7 @@ export type ThemeSettings = {
 
 	// SCREEN ***************************************
 	// Markdown Editor & Render Viewer ==============
+	themeMode: string;
 	remoodsHue: string;
 	darkerEditorBackground: boolean;
 	h1TextTransform: boolean;
@@ -86,8 +87,10 @@ async function prepareThemeSettings(): Promise<void> {
 		iconName: 'fas fa-palette',
 		description: `
       ----- 1: It is required to quit and restart Joplin to take effect after any changes below.
-      ----- 2: In the beta version, you should edit font-related settings through the external CSS, please visit the github repo and read about the temporary solution.
-			----- 3: The original font settings which in the "Tools > Options > Appearance" will no longer work when using ReMoods Theme. 
+			----- 2: The original font settings which in the "Tools > Options > Appearance" will no longer work when using ReMoods Theme.
+			----- 3: The default font family will only work if you have already installed them on your computer.
+			----- 4: The below settings are affecting different parts of your Joplin, please note the beginning of them. (Render Viewer is also including the Rich Text Editor)
+			----- 5: The advanced settings section at the bottom contains all the settings of Print & Export PDF.
 		`
 	});
 
@@ -142,7 +145,7 @@ async function prepareThemeSettings(): Promise<void> {
     
 		'darkerEditorBackground': {
 			section: 'remoodsThemeSection',
-			label: 'Markdown Editor & Render Viewer - Enable darker background color (EXPERIMENTAL)',
+			label: 'Markdown Editor & Render Viewer - Enable darker background color (Dusk Mode Only)',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
@@ -169,7 +172,7 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Markdown Editor & Render Viewer - Enable emphasize colors for insert text and strikethrough text',
 			type: SettingItemType.Bool,
 			value: false,
-			description: 'Enable: Insert text is green, strikethrough text is red, and it would not change with the theme color. | Disable: Follow theme color.',
+			description: 'Enable: Insert text is green, strikethrough text is red, and it would not change with the theme color. | Disable: Follow the theme color.',
 			public: true,
 		},
 		
@@ -187,7 +190,7 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Markdown Editor & Render Viewer - Enable theme color for list text',
 			type: SettingItemType.Bool,
 			value: true,
-			description: 'Enable: Set list text to theme color, and the footnote marker change to complementary color. | Disable: Set list text equal to the paragraph text color, and the footnote marker will change to theme color.',
+			description: 'Enable: Set list text to theme color, and the footnote marker will change to complementary color. | Disable: Set list text equal to the paragraph text color, and the footnote marker will change to theme color.',
 			public: true,
 		},
 
@@ -213,8 +216,8 @@ async function prepareThemeSettings(): Promise<void> {
 			section: 'remoodsThemeSection',
 			label: 'Markdown Editor - Enable smaller font size for non-essential contents',
 			type: SettingItemType.Bool,
-			value: false,
-			description: 'Set smaller font size for anchor link path, image link, and footnote reference number. (2px smaller than regular size)',
+			value: true,
+			description: 'Set smaller font size for anchor link path, image link, and footnote marker. (2px smaller than regular size)',
 			public: true,
 		},
 
@@ -223,6 +226,7 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Markdown Editor - Enable evident horizontal line',
 			type: SettingItemType.Bool,
 			value: true,
+			description: 'It will add a long line in front of the horizontal line syntax `---` or `***`, It gives you better visual separation in the markdown editor.',
 			public: true,
 		},
 		
@@ -296,6 +300,7 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Render Viewer - Enable "Justify" effect for paragraph text',
 			type: SettingItemType.Bool,
 			value: true,
+			description: 'It will only affect common paragraphs and blockquotes.',
 			public: true,
 		},
 
@@ -327,7 +332,7 @@ async function prepareThemeSettings(): Promise<void> {
 		
 		'mermaidEyeProtector': {
 			section: 'remoodsThemeSection',
-			label: 'Render Viewer - Enable Eye-Protector effect for mermaid charts',
+			label: 'Render Viewer - Enable Eye-Protector effect for mermaid charts (Dusk Mode & Night Mode Only)',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -335,7 +340,7 @@ async function prepareThemeSettings(): Promise<void> {
 		
 		'imageEyeProtector': {
 			section: 'remoodsThemeSection',
-			label: 'Render Viewer - Enable Eye-Protector effect for images',
+			label: 'Render Viewer - Enable Eye-Protector effect for images (Dusk Mode & Night Mode Only)',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -359,7 +364,7 @@ async function prepareThemeSettings(): Promise<void> {
 		
 		'addRemoveSymbol': {
 			section: 'remoodsThemeSection',
-			label: 'Render Viewer - Enable the symbol in front of insert text and strikethrough text',
+			label: 'Render Viewer - Enable the `++` & `--` symbols in front of the insert text and strikethrough text',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
@@ -367,7 +372,7 @@ async function prepareThemeSettings(): Promise<void> {
 		
 		'inlineCodeSymbol': {
 			section: 'remoodsThemeSection',
-			label: 'Render Viewer - Enable the symbol in front of inline code',
+			label: 'Render Viewer - Enable the `>|` symbol in front of inline code',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -403,7 +408,7 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Notebook Panel - Enable showing the horizontal scrollbar for the notebook title',
 			type: SettingItemType.Bool,
 			value: true,
-			description: 'If turn off, you can still use `shift + scroll` for scrolling.',
+			description: 'If disabled, you can still use `shift + scroll` for scrolling.',
 			public: true,
 		},
 
@@ -423,6 +428,7 @@ async function prepareThemeSettings(): Promise<void> {
 			value: true,
 			description: '2px smaller than the regular Print & Export PDF font size.',
 			public: true,
+			advanced: true,
 		},
 
 		'printNoteTitle': {
@@ -431,6 +437,7 @@ async function prepareThemeSettings(): Promise<void> {
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
+			advanced: true,
 		},
 
 		'printHeadingRef': {
@@ -439,6 +446,7 @@ async function prepareThemeSettings(): Promise<void> {
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
+			advanced: true,
 		},
 
 		'printH1Border': {
@@ -447,6 +455,7 @@ async function prepareThemeSettings(): Promise<void> {
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
+			advanced: true,
 		},
 
 		'printTOC': {
@@ -455,6 +464,7 @@ async function prepareThemeSettings(): Promise<void> {
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
+			advanced: true,
 		},
 
 		'printStickyNotes': {
@@ -463,6 +473,7 @@ async function prepareThemeSettings(): Promise<void> {
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
+			advanced: true,
 		},
 
 		'printKeyMention': {
@@ -471,6 +482,7 @@ async function prepareThemeSettings(): Promise<void> {
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
+			advanced: true,
 		},
 
 		'printSnKm': {
@@ -479,6 +491,7 @@ async function prepareThemeSettings(): Promise<void> {
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
+			advanced: true,
 		},
 
 		'printSpoilerInlineText': {
@@ -487,6 +500,7 @@ async function prepareThemeSettings(): Promise<void> {
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
+			advanced: true,
 		},
 
 	});
