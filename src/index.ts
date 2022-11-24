@@ -105,6 +105,22 @@ async function prepareThemeSettings(): Promise<void> {
 	});
 
 	await joplin.settings.registerSettings({
+		
+		'themeMode': {
+			section: 'remoodsThemeSection',
+			label: 'Theme Mode',
+			type: SettingItemType.String,
+			value: 'duskMode',
+			isEnum: true,
+			options: {
+				'dayMode': 'Day Mode (EXPERIMENTAL)',
+				'duskMode': 'Dusk Mode',
+				'nightMode': 'Night Mode (EXPERIMENTAL)'
+			},
+			description: 'It would need to go to `Options > Appearance > Theme` and change the Joplin built-in theme to get a better experience with the theme modes of ReMoods. | Day Mode is better using with the built-in light theme. | Dusk Mode and Night Mode are better using with the built-in Dark theme.',
+			public: true,
+		},
+
 		'remoodsHue': {
 			section: 'remoodsThemeSection',
 			label: 'ReMoods Hue',
@@ -195,7 +211,7 @@ async function prepareThemeSettings(): Promise<void> {
 			value: '14px',
 			public: true,
 		},
-    
+
 		'darkerEditorBackground': {
 			section: 'remoodsThemeSection',
 			label: 'Markdown Editor & Render Viewer - Enable darker background color (Dusk Mode Only)',
@@ -610,6 +626,7 @@ async function writeUserCSS(): Promise<void> {
 
 	const fs = joplin.require('fs-extra');
 	
+	const themeMode = await joplin.settings.value('themeMode');
 	const remoodsHue = await joplin.settings.value('remoodsHue');
 	const baseFont = await joplin.settings.value('baseFont');
 	const monospaceFont = await joplin.settings.value('monospaceFont');
@@ -669,6 +686,7 @@ async function writeUserCSS(): Promise<void> {
 	const printSpoilerInlineText = await joplin.settings.value('printSpoilerInlineText');
 
 	const settings = {
+		themeMode,
 		remoodsHue,
 		baseFont,
 		monospaceFont,
