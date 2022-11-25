@@ -59,10 +59,10 @@ Let's go for it one by one!
 
 **ReMoods has tested the best fonts for you with both great performance of reading and writing, and I developed everything based on using those fonts, so I recommended you use them:** 
  
-Base Font: Mulish (For main note contents) 
-Monospace Font: Cascadia Mono Light (For markdown syntax, code block, list token, etc.) 
-Heading Font: Montserrat (For headings only) 
-Chiron Hei HK ExtraLight & Chiron Hei HK Light (For Traditional & Simplified Chinese) 
+- **Base Font:** Mulish (For main note contents)
+- **Monospace Font:** Cascadia Mono Light (For markdown syntax, code block, list token, etc.) 
+- **Heading Font:** Montserrat (For headings only) 
+- **Traditional & Simplified Chinese Font:** Chiron Hei HK ExtraLight & Chiron Hei HK Light
 
 Note: The Chiron Hei HK font will auto-switch to ExtraLight when using Dusk Mode and Night Mode, and switch to Light when using Day Mode.
  
