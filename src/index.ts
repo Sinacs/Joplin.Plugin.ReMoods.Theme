@@ -36,6 +36,7 @@ export type ThemeSettings = {
 	h5Border: boolean;
 	h6Border: boolean;
 	h1TwillPattern: boolean;
+	hrTwillPattern: boolean;
 	paragraphJustify: boolean;
 	dottedBlockquote: boolean;
 	dottedCodeBlock: boolean;
@@ -364,6 +365,15 @@ async function prepareThemeSettings(): Promise<void> {
 			public: true,
 		},
 
+		'hrTwillPattern': {
+			section: 'remoodsThemeSection',
+			label: 'Render Viewer - Enable twill pattern for horizontal line',
+			type: SettingItemType.Bool,
+			value: true,
+			description: 'Enable: Twill pattern | Disable: Solid',
+			public: true,
+		},
+
 		'paragraphJustify': {
 			section: 'remoodsThemeSection',
 			label: 'Render Viewer - Enable "Justify" effect for paragraph text',
@@ -653,6 +663,7 @@ async function writeUserCSS(): Promise<void> {
 	const h5Border = await joplin.settings.value('h5Border');
 	const h6Border = await joplin.settings.value('h6Border');
 	const h1TwillPattern = await joplin.settings.value('h1TwillPattern');
+	const hrTwillPattern = await joplin.settings.value('hrTwillPattern');
 	const paragraphJustify = await joplin.settings.value('paragraphJustify');
 	const dottedBlockquote = await joplin.settings.value('dottedBlockquote');
 	const dottedCodeBlock = await joplin.settings.value('dottedCodeBlock');
@@ -713,6 +724,7 @@ async function writeUserCSS(): Promise<void> {
 		h5Border,
 		h6Border,
 		h1TwillPattern,
+		hrTwillPattern,
 		paragraphJustify,
 		dottedBlockquote,
 		dottedCodeBlock,

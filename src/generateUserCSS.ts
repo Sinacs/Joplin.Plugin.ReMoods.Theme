@@ -32,6 +32,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     h5Border,
     h6Border,
     h1TwillPattern,
+    hrTwillPattern,
     paragraphJustify,
     dottedBlockquote,
     dottedCodeBlock,
@@ -602,6 +603,12 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --h1-bd-color:.+?;/gms, '  --h1-bd-color: var(--h1-bg-color);');
     }
 
+    if(!hrTwillPattern) {
+      noteCSS = noteCSS.replace(/^  --horizontal-line-color:.+?;/gms, '  --horizontal-line-color: hsl(var(--usp-remoods-hue), 100%, 45%);');
+    } else {
+      noteCSS = noteCSS.replace(/^  --horizontal-line-color:.+?;/gms, '  --horizontal-line-color: repeating-linear-gradient(114deg, hsl(var(--usp-remoods-hue), 100%, 30%), hsl(var(--usp-remoods-hue), 100%, 75%, 50%), hsl(var(--usp-remoods-hue), 100%, 30%) 3px);');
+    }
+
     if(!dottedBlockquote) {
       noteCSS = noteCSS.replace(/^  --blockquote-bd-color:.+?;/gms, '  --blockquote-bd-color: 3px solid hsl(var(--usp-remoods-hue),  50%,  85%);');
       noteCSS = noteCSS.replace(/^  --print-blockquote-bd-color:.+?;/gms, '  --print-blockquote-bd-color: 2px solid hsl(var(--usp-remoods-hue),  20%,  60%);');
@@ -1159,6 +1166,12 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --h1-bd-color:.+?;/gms, '  --h1-bd-color: var(--h1-bg-color);');
     }
 
+    if(!hrTwillPattern) {
+      noteCSS = noteCSS.replace(/^  --horizontal-line-color:.+?;/gms, '  --horizontal-line-color: hsl(var(--usp-remoods-hue), 60%, 60%);');
+    } else {
+      noteCSS = noteCSS.replace(/^  --horizontal-line-color:.+?;/gms, '  --horizontal-line-color: repeating-linear-gradient(114deg, hsl(var(--usp-remoods-hue), 100%, 80%), hsl(var(--usp-remoods-hue), 100%, 35%, 50%), hsl(var(--usp-remoods-hue), 100%, 80%) 3px);');
+    }
+
     if(!dottedBlockquote) {
       noteCSS = noteCSS.replace(/^  --blockquote-bd-color:.+?;/gms, '  --blockquote-bd-color: 3px solid hsl(var(--usp-remoods-hue),  20%,  60%);');
       noteCSS = noteCSS.replace(/^  --print-blockquote-bd-color:.+?;/gms, '  --print-blockquote-bd-color: 2px solid hsl(var(--usp-remoods-hue),  20%,  60%);');
@@ -1702,6 +1715,12 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --usp-h1-text-fill-color:.+?;/gms, '  --usp-h1-text-fill-color: transparent;');
       noteCSS = noteCSS.replace(/^  --usp-h1-font-weight:.+?;/gms, '  --usp-h1-font-weight: 800;');
       noteCSS = noteCSS.replace(/^  --h1-bd-color:.+?;/gms, '  --h1-bd-color: var(--h1-bg-color);');
+    }
+
+    if(!hrTwillPattern) {
+      noteCSS = noteCSS.replace(/^  --horizontal-line-color:.+?;/gms, '  --horizontal-line-color: hsl(var(--usp-remoods-hue), 40%, 50%);');
+    } else {
+      noteCSS = noteCSS.replace(/^  --horizontal-line-color:.+?;/gms, '  --horizontal-line-color: repeating-linear-gradient(114deg, hsl(var(--usp-remoods-hue), 100%, 80%), hsl(var(--usp-remoods-hue), 100%, 35%, 50%), hsl(var(--usp-remoods-hue), 100%, 80%)  3px);');
     }
 
     if(!dottedBlockquote) {
