@@ -7,8 +7,8 @@ export type ThemeSettings = {
 
 	// SCREEN ***************************************
 	// Markdown Editor & Render Viewer ==============
-	themeMode: string;
 	remoodsHue: string;
+	themeMode: string;
 	baseFont: string;
 	monospaceFont: string;
   headingFont: string;
@@ -107,21 +107,6 @@ async function prepareThemeSettings(): Promise<void> {
 
 	await joplin.settings.registerSettings({
 		
-		'themeMode': {
-			section: 'remoodsThemeSection',
-			label: 'Theme Mode',
-			type: SettingItemType.String,
-			value: 'duskMode',
-			isEnum: true,
-			options: {
-				'dayMode': 'Day Mode (EXPERIMENTAL)',
-				'duskMode': 'Dusk Mode',
-				'nightMode': 'Night Mode (EXPERIMENTAL)'
-			},
-			description: 'It would need to go to `Options > Appearance > Theme` and change the Joplin built-in theme to get a better experience with the theme modes of ReMoods. | Day Mode is better using with the built-in light theme. | Dusk Mode and Night Mode are better using with the built-in Dark theme.',
-			public: true,
-		},
-
 		'remoodsHue': {
 			section: 'remoodsThemeSection',
 			label: 'ReMoods Hue',
@@ -169,10 +154,25 @@ async function prepareThemeSettings(): Promise<void> {
 			description: 'Set color hue for the theme.',
 			public: true,
 		},
-    
+		
+		'themeMode': {
+			section: 'remoodsThemeSection',
+			label: 'Theme Mode',
+			type: SettingItemType.String,
+			value: 'duskMode',
+			isEnum: true,
+			options: {
+				'dayMode': 'Day Mode (EXPERIMENTAL)',
+				'duskMode': 'Dusk Mode',
+				'nightMode': 'Night Mode (EXPERIMENTAL)'
+			},
+			description: 'It would need to go to `Options > Appearance > Theme` and change the Joplin built-in theme to get a better experience with the theme modes of ReMoods. | Day Mode is better using with the built-in light theme. | Dusk Mode and Night Mode are better using with the built-in Dark theme.',
+			public: true,
+		},
+
     'baseFont': {
 			section: 'remoodsThemeSection',
-			label: 'Markdown Editor & Render Viewer - Custom Base Font',
+			label: 'Custom Base Font',
 			type: SettingItemType.String,
 			value: 'none',
 			description: 'none: "mulish", "montserrat", "chiron hei hk extralight"',
@@ -181,7 +181,7 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'monospaceFont': {
 			section: 'remoodsThemeSection',
-			label: 'Markdown Editor & Render Viewer - Custom Monospace Font',
+			label: 'Custom Monospace Font',
 			type: SettingItemType.String,
 			value: 'none',
 			description: 'none: "cascadia mono light", "chiron hei hk extralight"',
@@ -190,7 +190,7 @@ async function prepareThemeSettings(): Promise<void> {
     
 		'headingFont': {
 			section: 'remoodsThemeSection',
-			label: 'Markdown Editor & Render Viewer - Custom Heading Font',
+			label: 'Custom Heading Font',
 			type: SettingItemType.String,
 			value: 'none',
 			description: 'none: "montserrat", "mulish", "chiron hei hk"',
@@ -269,7 +269,7 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Markdown Editor & Render Viewer - Enable smaller font size for code block',
 			type: SettingItemType.Bool,
 			value: false,
-			description: '(2px smaller than regular size)',
+			description: '(2px smaller than the monospace font size)',
 			public: true,
 		},
 
@@ -278,7 +278,7 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Markdown Editor - Enable smaller font size for markdown table syntax',
 			type: SettingItemType.Bool,
 			value: false,
-			description: '(2px smaller than regular size)',
+			description: '(2px smaller than the monospace font size)',
 			public: true,
 		},
 
@@ -287,7 +287,7 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Markdown Editor - Enable smaller font size for non-essential contents',
 			type: SettingItemType.Bool,
 			value: true,
-			description: 'Set smaller font size for anchor link path, image link, and footnote marker. (2px smaller than regular size)',
+			description: 'Set smaller font size for anchor link path, image link, and footnote marker. (2px smaller than the monospace font size)',
 			public: true,
 		},
 
@@ -550,7 +550,7 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Print & Export PDF - Enable smaller font size for code block',
 			type: SettingItemType.Bool,
 			value: true,
-			description: '2px smaller than the regular Print & Export PDF font size.',
+			description: '2px smaller than the the monospace font Print & Export PDF font size.',
 			public: true,
 			advanced: true,
 		},
@@ -636,8 +636,8 @@ async function writeUserCSS(): Promise<void> {
 
 	const fs = joplin.require('fs-extra');
 	
-	const themeMode = await joplin.settings.value('themeMode');
 	const remoodsHue = await joplin.settings.value('remoodsHue');
+	const themeMode = await joplin.settings.value('themeMode');
 	const baseFont = await joplin.settings.value('baseFont');
 	const monospaceFont = await joplin.settings.value('monospaceFont');
 	const headingFont = await joplin.settings.value('headingFont');
@@ -697,8 +697,8 @@ async function writeUserCSS(): Promise<void> {
 	const printSpoilerInlineText = await joplin.settings.value('printSpoilerInlineText');
 
 	const settings = {
-		themeMode,
 		remoodsHue,
+		themeMode,
 		baseFont,
 		monospaceFont,
 		headingFont,
