@@ -72,10 +72,10 @@ Here is the abridged version of the font packages you can download from my Googl
  
 Alternatively, if you are interested to download the original complete packages, you can download them by visiting the official pages below:  
  
-Mulish: https://fonts.google.com/specimen/Mulish?query=mulish 
-Montserrat: https://fonts.google.com/specimen/Montserrat?query=montserrat 
-Cascadia Code: https://github.com/microsoft/cascadia-code/releases  
-Chiron Hei HK: https://github.com/chiron-fonts/chiron-hei-hk/releases 
+- Mulish: https://fonts.google.com/specimen/Mulish?query=mulish 
+- Montserrat: https://fonts.google.com/specimen/Montserrat?query=montserrat 
+- Cascadia Code: https://github.com/microsoft/cascadia-code/releases  
+- Chiron Hei HK: https://github.com/chiron-fonts/chiron-hei-hk/releases 
 
 [:arrow_up:Back](#table-of-contents)
 
