@@ -138,12 +138,18 @@ Please mention that the `<ag>` is not a complete custom element name. You should
 
 ## Set Joplin's Built-in Theme
 
-**ReMoods relies on Joplin's built-in Dark Theme to function properly. Enable the Dark Theme:**
+**ReMoods relies on Joplin's built-in theme to function properly.**
 
 1. Open Joplin.
 2. Navigate to `tools` > `Options` > `Appearance` > `Theme`.
-3. Select `Dark` from the drop down.
+3. Select the theme based on the ReMoods Theme Mode you use.
 4. Click `Apply`.
+
+|Theme Mode|Joplin Built-in Theme|
+|-|-|
+|Day Mode|Light Theme|
+|Dusk Mode|Dark Theme|
+|Night Mode|Dark Theme|
 
 [:arrow_up:Back](#table-of-contents)
 
