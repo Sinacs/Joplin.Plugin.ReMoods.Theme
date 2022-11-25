@@ -490,6 +490,11 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --turntochart-text-color:.+?;/gms, '  --turntochart-text-color: hsl(var(--usp-remoods-hue), 0%, 40%);');
     noteCSS = noteCSS.replace(/^  --turntochart-info-bg-color:.+?;/gms, '  --turntochart-info-bg-color: hsl(var(--usp-remoods-hue), 0%, 95%);');
 
+    chromeCSS = chromeCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "mulish", "montserrat", "chiron hei hk light";');
+    chromeCSS = chromeCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "cascadia mono light", "chiron hei hk light";');
+    noteCSS = noteCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "mulish", "montserrat", "chiron hei hk light";');
+    noteCSS = noteCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "cascadia mono light", "chiron hei hk light";');
+
     if(!darkerEditorBackground) {
       chromeCSS = chromeCSS.replace(/^  --code-mirror-bg-color:.+?;/gms, '  --code-mirror-bg-color: hsl(var(--usp-remoods-hue), 0%, 100%);');
       chromeCSS = chromeCSS.replace(/^  --code-block-bg-color:.+?;/gms, '  --code-block-bg-color: hsl(var(--usp-remoods-hue), 0%, 100%);');
@@ -1042,6 +1047,11 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --turntochart-text-color:.+?;/gms, '  --turntochart-text-color: hsl(var(--usp-remoods-hue), 0%, 80%);');
     noteCSS = noteCSS.replace(/^  --turntochart-info-bg-color:.+?;/gms, '  --turntochart-info-bg-color: hsl(var(--usp-remoods-hue), 10%, 20%);');
 
+    chromeCSS = chromeCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "mulish", "montserrat", "chiron hei hk extralight";');
+    chromeCSS = chromeCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "cascadia mono light", "chiron hei hk extralight";');
+    noteCSS = noteCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "mulish", "montserrat", "chiron hei hk extralight";');
+    noteCSS = noteCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "cascadia mono light", "chiron hei hk extralight";');
+
     if(!darkerEditorBackground) {
       chromeCSS = chromeCSS.replace(/^  --code-mirror-bg-color:.+?;/gms, '  --code-mirror-bg-color: hsl(var(--usp-remoods-hue),  8%, 27%);');
       chromeCSS = chromeCSS.replace(/^  --code-block-bg-color:.+?;/gms, '  --code-block-bg-color: hsl(var(--usp-remoods-hue),  8%, 17%);');
@@ -1593,6 +1603,11 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --turntochart-bg-color:.+?;/gms, '  --turntochart-bg-color: none;');
     noteCSS = noteCSS.replace(/^  --turntochart-text-color:.+?;/gms, '  --turntochart-text-color: hsl(var(--usp-remoods-hue), 0%, 77%);');
     noteCSS = noteCSS.replace(/^  --turntochart-info-bg-color:.+?;/gms, '  --turntochart-info-bg-color: hsl(var(--usp-remoods-hue), 15%, 10%);');
+
+    chromeCSS = chromeCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "mulish", "montserrat", "chiron hei hk extralight";');
+    chromeCSS = chromeCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "cascadia mono light", "chiron hei hk extralight";');
+    noteCSS = noteCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "mulish", "montserrat", "chiron hei hk extralight";');
+    noteCSS = noteCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "cascadia mono light", "chiron hei hk extralight";');
 
     if(!emphasizeAddRemove && !emphasizeAddRemoveBg) {
       chromeCSS = chromeCSS.replace(/^  --insert-text-color:.+?;/gms, '  --insert-text-color: hsl(var(--usp-remoods-hue), 100%,  70%);');
