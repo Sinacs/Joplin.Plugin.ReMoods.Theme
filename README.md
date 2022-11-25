@@ -1,31 +1,35 @@
+# ReMoods Theme
+
 ![ReMoods GitHub Social Preview 2](https://user-images.githubusercontent.com/110529913/195153547-0029b001-c7a2-47c6-93fa-c5cb3b6fe74e.png)
 
-# ReMoods Theme (BETA)
+ReMoods is a multi-purpose theming plugin inherited from the past Ohmine Dark Theme project and drives it to an entirely new stage. ReMoods beautifies your screen and documents and takes care of your writing moods and eye health. 
 
-ReMoods is a multi-purpose theming plugin that was inherited from the past Ohmine Dark Theme project and drives it to an entirely new stage. 
+## Why ReMoods?
 
-- Use single-color tones to boost your writing moods.
-- Available to change the theme colors at any time.
-- Auto hiding unnecessary UI elements from your screen and bring you to focus on writing. 
-- Provide over 80% consistent syntax highlighting styles for the code block of Markdown Editor and Render Viewer. 
-- Extra formatting adjustments for the Exported HTML File and PDF Document to increase the reading experience. 
-- Provide certain helpful HTML custom elements to increase your note-taking experience. 
-- Provide third-party plugins’ CSS styles to add extra uses in ReMoods.
+![collage 6](https://user-images.githubusercontent.com/110529913/204046340-6045e673-049c-49f2-ae6f-66146a335a8c.png)
 
-![Screenshot 2022-09-25 032654-tile](https://user-images.githubusercontent.com/110529913/192116296-82e79460-48b3-4d84-8575-a0daa459bd28.png)
+- Provide 3 theme modes to let you work comfortably under different lighting environments. 
+- Use single-color tones to boost your writing mood. 
+- Available to change the theme colors at any time. 
+- Auto-hiding unnecessary UI elements from your screen bring you to focus on writing.  
+- Provide over 80% consistent syntax highlighting styles for the code block of Markdown Editor and Render Viewer.  
+- Extra formatting adjustments for the Exported HTML File and PDF Document to increase the reading experience.  
+- Provide certain helpful HTML custom elements to improve your notetaking experience.  
+- Provide third-party plugins’ CSS styles to add extra usage in ReMoods. 
 
 # Table Of Contents
-Note: some of the contents are incomplete at the moment.
 
 - [REMOODS THEME GETTING STARTED](#remoods-theme-getting-started)
-  - [Set Joplin's Built-in Theme to Dark](#set-joplins-built-in-theme-to-dark)
-  - [Update Joplin's Built-in Markdown Settings](#update-joplins-built-in-markdown-settings)
-  - [Install And Configure The Required Plugin: Rich Markdown](#install-and-configure-the-required-plugin-rich-markdown)
-  - [Install And Set The Helpful Plugin: Quick HTML Tags](#install-and-set-the-helpful-plugin-quick-html-tags-optional) [Optional]
   - [Download And Install Recommended Fonts](#download-and-install-recommended-fonts-optional) [Optional]
   - [Install ReMoods Theme Plugin](#install-remoods-theme-plugin)
-  - [A Temporary Solution To Customize The Theme Color & Font Settings](#a-temporary-solution-to-customize-the-theme-color--font-settings) (Latest: 17.OCT.2022)
+  - [Install And Configure The Required Plugin: Rich Markdown](#install-and-configure-the-required-plugin-rich-markdown)
+  - [Install And Set The Helpful Plugin: Quick HTML Tags](#install-and-set-the-helpful-plugin-quick-html-tags-optional) [Optional]
+  - [Set Joplin's Built-in Theme](#set-joplins-built-in-theme)
+  - [Update Joplin's Built-in Markdown Settings](#update-joplins-built-in-markdown-settings)
+  - [Understanding The ReMoods Theme Font Settings](#understanding-the-remoods-theme-font-settings)
+  - [Set Joplin Starting Screen Background Color](#set-joplin-starting-screen-background-color)
 - [GENERAL ELEMENTS & USE TIPS](#general-elements--use-tips)
+  - [Theme Mode](#theme-mode) [NEW]
   - [Customizable Heading](#customizable-heading)
   - [Text Styles](#text-styles)
   - [Code Block Syntax Highlight](#code-block-syntax-highlight)
@@ -36,14 +40,14 @@ Note: some of the contents are incomplete at the moment.
   - [Sticky Notes](#sticky-notes)
   - [Custom Title Block](#custom-title-block)
   - [Key Point](#key-point)
-  - [Key Mention](#key-mention) [NEW]
+  - [Key Mention](#key-mention)
 - [THIRD-PARTY PLUGINS STYLING](#third-party-plugins-styling)
   - [Spoiler](#spoiler)
   - [Markdown Table Colorize](#markdown-table-colorize)
 - [PRINT & EXPORT](#print--export) (soon...)
   - [Export HTML File](#export-html-file) (soon...)
   - [Export PDF Document](#export-pdf-document) 
-- [TESTED THIRD-PARTY PLUGINS](#tested-third-party-plugins) (Latest: 23.OCT.2022)
+- [TESTED THIRD-PARTY PLUGINS](#tested-third-party-plugins) (Latest: 26.NOV.2022)
 
 # REMOODS THEME GETTING STARTED
 
@@ -51,34 +55,44 @@ ReMoods has been styling lots of Joplin elements, and all of them are helpful to
 
 Let's go for it one by one!
 
-## Set Joplin's Built-in Theme to Dark
+## Download And Install Recommended Fonts [OPTIONAL]
 
-**ReMoods relies on Joplin's built-in Dark Theme to function properly. Enable the Dark Theme:**
+**ReMoods has tested the best fonts for you with both great performance of reading and writing, and I developed everything based on using those fonts, so I recommended you use them:** 
+ 
+Base Font: Mulish (For main note contents) 
+Monospace Font: Cascadia Mono Light (For markdown syntax, code block, list token, etc.) 
+Heading Font: Montserrat (For headings only) 
+Chiron Hei HK ExtraLight & Chiron Hei HK Light (For Traditional & Simplified Chinese) 
 
-1. Open Joplin.
-2. Navigate to `tools` > `Options` > `Appearance` > `Theme`.
-3. Select `Dark` from the drop down.
-4. Click `Apply`.
+Note: The Chiron Hei HK font will auto-switch to ExtraLight when using Dusk Mode and Night Mode, and switch to Light when using Day Mode.
+ 
+Here is the abridged version of the font packages you can download from my Google Drive:  
+ 
+[https://drive.google.com/drive/folders/1SEBEVGpBrXFlmOtVzyqnhEVuO7Vrp61Y?usp=sharing  ](https://drive.google.com/drive/folders/1oQVRSix1hw5zgmJiphZIEAqMrEH5EuLQ?usp=sharing)
+ 
+Alternatively, if you are interested to download the original complete packages, you can download them by visiting the official pages below:  
+ 
+Mulish: https://fonts.google.com/specimen/Mulish?query=mulish 
+Montserrat: https://fonts.google.com/specimen/Montserrat?query=montserrat 
+Cascadia Code: https://github.com/microsoft/cascadia-code/releases  
+Chiron Hei HK: https://github.com/chiron-fonts/chiron-hei-hk/releases 
 
 [:arrow_up:Back](#table-of-contents)
 
-## Update Joplin's Built-in Markdown Settings
+## Install ReMoods Theme Plugin
 
-**ReMoods has styled the special text. However, some of the required settings aren't enabled by default in Joplin. Enable these settings in Joplin:**
+Note: Don't use more than one theming plugin at the same time. The theming plugins may conflict with each other. If you want to install more than one theme at a time, only enable the theme you would like to use.
 
-1. Open Joplin.
-2. Navigate to `tools` > `Options` > `Markdown`.
-3. Enable the following options: 
-	- `Enable math expressions (wysiwyg: yes)`
-	- `Enable Mermaid diagrams support (wysiwyg: yes)`
-	- `Enable ==mark== syntax (wysiwyg: yes)`
-	- `Enable footnotes (wysiwyg: no)`
-	- `Enable table of contents extension (wysiwyg: no)`
-	- `Enable ~sub~ syntax (wysiwyg: yes)`
-	- `Enable ^sup^ syntax (wysiwyg: yes)`
-	- `Enable abbreviation syntax (wysiwyg: no)`
-	- `Enable ++insert++ syntax (wysiwyg: yes)`
-4. Click `Apply`.
+To install ReMoods:
+
+1. Navigate to `Tools` > `Options` > `Plugins`.
+2. Search the word `remoods`.
+3. Click `Install` ReMoods Theme.
+4. Quit and restart Joplin. (You can download all the plugins first before restart.)
+
+> A reminder to the old OhmineDT users:
+>
+> You should first remove all the old OhmineDT codes from your `userstyle.css` and `userchrome.css`, this is important. While ReMoods seems very similar to OhmineDT, they are two completely different things. The code base has changed, and they are running under different logic. So, remove all the OhmineDT codes now, forget the old theme and then give ReMoods a hug!
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -122,108 +136,112 @@ Please mention that the `<ag>` is not a complete custom element name. You should
 
 [:arrow_up:Back](#table-of-contents)
 
-## Download And Install Recommended Fonts [OPTIONAL]
+## Set Joplin's Built-in Theme
 
-**ReMoods Theme has been tested over 50 free fonts from 10px to 16px, and I was developing everything for this theme based on using the below fonts, so I recommend you use them:**
+**ReMoods relies on Joplin's built-in Dark Theme to function properly. Enable the Dark Theme:**
 
-- Base Font: Montserrat
-- Monospace Font: Cascadia Mono Light 
-- Traditional & Simplified Chinese Font: Chiron Hei Hk Text Extralight
-
-Here is the abridged version of the font packages, and I have uploaded them to my Google Drive; you can download the exact files you need at the below link: 
-
-https://drive.google.com/drive/folders/1SEBEVGpBrXFlmOtVzyqnhEVuO7Vrp61Y?usp=sharing 
-
-Each abridged version contains: 
-
-- Montserrat (TTF) 
-- Cascadia Mono (OTF) 
-- Chiron Hei HK Text (OTF) 
-
-Alternatively, if you are interested to download the original complete packages, you can download them by visiting the official pages below: 
-
-- Montserrat: https://fonts.google.com/specimen/Montserrat?query=montserrat 
-- Cascadia Code: https://github.com/microsoft/cascadia-code/releases 
-- Chiron Hei HK: https://github.com/chiron-fonts/chiron-hei-hk/releases 
+1. Open Joplin.
+2. Navigate to `tools` > `Options` > `Appearance` > `Theme`.
+3. Select `Dark` from the drop down.
+4. Click `Apply`.
 
 [:arrow_up:Back](#table-of-contents)
 
-## Install ReMoods Theme Plugin
+## Update Joplin's Built-in Markdown Settings
 
-Note: Don't use more than one theming plugin at the same time. The theming plugins may conflict with each other. If you want to install more than one theme at a time, only enable the theme you would like to use.
+**ReMoods has styled the special text. However, some of the required settings aren't enabled by default in Joplin. Enable these settings in Joplin:**
 
-To install ReMoods:
+1. Open Joplin.
+2. Navigate to `tools` > `Options` > `Markdown`.
+3. Enable the following options: 
+	- `Enable math expressions (wysiwyg: yes)`
+	- `Enable Mermaid diagrams support (wysiwyg: yes)`
+	- `Enable ==mark== syntax (wysiwyg: yes)`
+	- `Enable footnotes (wysiwyg: no)`
+	- `Enable table of contents extension (wysiwyg: no)`
+	- `Enable ~sub~ syntax (wysiwyg: yes)`
+	- `Enable ^sup^ syntax (wysiwyg: yes)`
+	- `Enable abbreviation syntax (wysiwyg: no)`
+	- `Enable ++insert++ syntax (wysiwyg: yes)`
+4. Click `Apply`.
 
-1. Navigate to `Tools` > `Options` > `Plugins`.
-2. Search the word `remoods`.
-3. Click `Install` ReMoods Theme.
-4. Quit and restart Joplin.
+[:arrow_up:Back](#table-of-contents)
 
-> A reminder to the old OhmineDT users:
->
-> You should first remove all the old OhmineDT codes from your `userstyle.css` and `userchrome.css`, this is important. While ReMoods seems very similar to OhmineDT, they are two completely different things. The code base has changed, and they are running under different logic. So, remove all the OhmineDT codes now, forget the old theme and then give ReMoods a hug!
+## Understanding The ReMoods Theme Font Settings
 
+Note: Since the v3.2.0, ReMoods put all the settings properties into the settings page, so now you can configure everything right there! Additionally, If you still having the older versions font settings template codes on your `userstyle.css` and `userchrome. css`, you should delete all of them first.
 
-## A Temporary Solution To Customize The Theme Color & Font Settings
+If you are new to ReMoods you might confuse about why ReMoods making the Joplin's original font settings invalid. For that reason, I would like to let you understand that.
 
+ReMoods has separated the font settings into 2 standalone parts `Screen` and `Print & Export PDF` it was because I want to provide you with a more flexible experience of customization:
 
-Currently, some of the core settings are not available on the ReMoods plugin settings page because I don't know how to implement them. As a temporary workaround, you can edit the theme color and font settings through your `userstyle.css` and `userchrome.css` manually:
+- Screen: It mean everything that you can see within the Joplin app. But you won't actually see the word `screen` appearing on the settings page because it has spliting to multiple small parts `Markdown Editor`, `Render Viewer`, etc.
+- Print & Export PDF: It mean when you converting your note to PDF file.
 
-Note: The codes provided below might have chances to change due to the plugin updates. It will be noted in the [release information](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/releases) if the plugin updates require you to manually update the below codes to your custom CSS.
+Below is the structure overview for introducing the relationship between font and font-size in ReMoods Theme:
+
+```
+- Screen
+  - Base Font
+    - Base Font Size 
+  - Monospace Font
+    - Monospace Font Size
+      - Smaller Monospace Font Size (Markdown Editor Only)
+      - Smaller Code Block Font Size
+      - Smaller Markdown Table Syntax Font Size (Markdown Editor Only)
+  - Heading Font
+    
+- Print & Export PDF
+  - Print Base Font
+    - Print Base Font Size 
+  - Print Monospace Font
+    - Print Monospace Font Size
+      - Print Smaller Code Block Font Size
+  - Print Heading Font
+  ```
+
+That means you can have standalone font settings based on different parts or different usage, and I hope you will find that useful for you!
+
+[:arrow_up:Back](#table-of-contents)
+
+## Set Joplin Starting Screen Background Color
+
+**You might hate to see the starting screen in white background color when using `Dusk Mode` and `Night Mode`, but this problem can't be solved by a plugin. So, to set the Joplin starting screen background color to stay consistent with the theme mode color, you should do it through your `userchrome.css` manually:**
 
 1. Open Joplin.
 2. Navigate to `Tools` > `Options` > `Appearance`.
 3. Click `Show Advanced Settings`.
-4. Click `Custom Stylesheet for rendered Markdown` and it will open the `userstyle.css` file.
-5. Copy / paste the below codes into `userstyle.css` and save the file:
+4. Click `Custom Stylesheet for Joplin-wide app styles` and it will open the `userchrome.css` file.
+5. Copy / paste the below codes into `userchrome.css` and save the file:
 ```
-:root {
-  /* For render viewer and rich text editor */
-  --usp-remoods-hue: 213deg !important; /* The theme color hue setting, must include "deg" after the numbers which between 0 to 360. */
-  --usp-base-font: "montserrat","chiron hei hk text extralight" !important;
-  --usp-monospace-font: "cascadia mono light", "chiron hei hk text extralight" !important;
-  --usp-base-font-size: 14px !important;
-  
-  /* For print & export pdf */
-  --usp-print-base-font: "montserrat","chiron hei hk text extralight" !important;
-  --usp-print-monospace-font: "cascadia mono light", "chiron hei hk text extralight" !important;
-  --usp-print-base-font-size: 12px !important;
-}
-```
-6. Click `Custom Stylesheet for Joplin-wide app styles` and it will open the `userchrome.css` file.
-7. Copy / paste the below codes into `userchrome.css` and save the file:
-```
-:root {
-  /* For markdown editor */
-  --usp-remoods-hue: 213deg !important; /* The theme color hue setting, must include "deg" after the numbers which between 0 to 360. */
-  --usp-base-font: "montserrat","chiron hei hk text extralight" !important;
-  --usp-monospace-font: "cascadia mono light", "chiron hei hk text extralight" !important;
-  --usp-base-font-size: 14px !important;
-}
-
-/* Avoid white background when starting Joplin */
+/* Set starting screen background color */
 body {
   background-color: var(--code-mirror-bg-color) !important;
 }
 ```
-8. Now you can edit the values of these two stylesheets to adjust the settings.
-9. Quit and restart Joplin to apply the updates.
-
-
-> TIPS FOR BEGINNERS:
->
-> If you don't understand CSS, don't worry! After you finish the above steps, you would be ready to edit the values. And the word "value" is mean the text between the `:` and `;`. For example, `--usp-remoods-hue: 213deg !important;` and `--usp-base-font-size: 14px !important;`. As you will see the `213deg !important` and `14px !important`. Ya right! They are the values! Please don't edit the `!important` keyword, and only edit the value in front of it. After that, you can close those files, then, quit and restart Joplin, and you will see it works!
->
-> One more reminder, it's welcome to leave me a message when you are running into any problems with this getting started guide: https://discourse.joplinapp.org/t/plugin-remoods-theme/27547
+6. Quit and restart Joplin to apply the updates.
 
 [:arrow_up:Back](#table-of-contents)
 
+# Theme Mode
+
+**Day Mode:** Perfect for working under sunlight and white light environments.
+
+![dayMode](https://user-images.githubusercontent.com/110529913/203996190-8fac31d5-b55f-41c8-aeb6-936010c4d86d.png)
+
+**Dusk Mode:** Perfect for working under medium light and warm light environments, but it’s still fine for all lighting environments if you feel lazy switching to other theme modes.
+
+![duskMode](https://user-images.githubusercontent.com/110529913/203996215-cde1bc84-eb08-4e35-9a34-b35807848f73.png)
+
+**Night Mode:** Perfect for working under low light environments.
+
+![nightMode](https://user-images.githubusercontent.com/110529913/203996199-6a29f26d-8a63-4c99-bd97-0969ebf854a7.png)
 
 # GENERAL ELEMENTS & USE TIPS
 
-ReMoods is expecting to try its best to create a comfortable and helpful theme for you. Maybe you wouldn't feel it at once by reading this document, but I believe that you would feel it slowly throughout the time you use it.
+ReMoods is expecting to try its best to create a comfortable and helpful theme for you. I believe that you would feel it slowly throughout the time you use it.
 
-While I did many little pieces of stuff for this theme, I can't show you everything through this document, but I'm happy to show you some of them! Below have some screenshots and useful tips:
+While I did many little pieces of stuff for this theme, I can't show you everything through this document, but I'm happy to show you some screenshots and useful tips to help you dive deep in it:
 
 ## Customizable Heading 
 
@@ -231,10 +249,11 @@ While I did many little pieces of stuff for this theme, I can't show you everyth
 
 ### Hints
 
-1. You can enable the heading's border through the settings page for the headings you always use with a border.
-2. You can add `---` behind the heading manually for which you want to add a border flexibly.
-3. The heading's reference will appear right before each heading when you enable it.
-4. If the H1 twill pattern style is enabled, it's required to use HTML `span` for the emoji to avoid the styles affecting it. (H1 only)
+1. You can set standalone font family for the headings by editing the `Custom Heading Font` in the settings page to improve the personality style of your notes.
+1. You can enable the heading's border through the settings page for the headings you often use with a border.
+2. You can add `---` or `***` at the next line to the heading manually for the heading which you didn't enable the border in settings.
+3. The heading's reference will appear right before each heading when you enable it.(Render Viewer Only)
+4. If the H1 twill pattern style is enabled, it's required to use HTML `span` for wrapping the emoji to avoid the styles affecting it. (H1 only)
 
 ![Screenshot 2022-09-25 203245](https://user-images.githubusercontent.com/110529913/192143564-00ae82a5-55ac-4c87-abec-5baa9bbc1f0b.png)
 ![Screenshot 2022-09-25 203723](https://user-images.githubusercontent.com/110529913/192143773-76b71e07-7310-44b2-a34e-1022f4d02ff6.png)
@@ -243,7 +262,7 @@ While I did many little pieces of stuff for this theme, I can't show you everyth
 
 ## Text Styles
 
-Some of the text colors would change with the theme color. Let's compare the difference after the theme color changed:
+Most of the text colors would change with the theme color. Let's compare the difference after the theme color changed:
 
 ![Screenshot 2022-09-25 025053](https://user-images.githubusercontent.com/110529913/192114108-06e98831-c1f6-4dc4-b754-3a98bb6315dc.png)
 
@@ -253,8 +272,9 @@ Some of the text colors would change with the theme color. Let's compare the dif
 
 1. About links, we usually use anchor text links like `[Joplin](https://www.joplin.org)` but that wouldn't be showing up the URL when print or export PDF. So, if you want to display the URL on the PDF, you should use the anchor text link with a title like `[Joplin](https://www.joplin.org "Joplin")`.
 2. While I personally prefer using *Mark Text* as an alternative to underline text, some users might prefer using *Insert Text* as underline text. For that reason, *Insert Text* might have different meanings to users. So, I create a few different styles of *Insert Text* for options. If you mostly use *Insert Text and Strikethrough Text* as the meanings of add & remove, you would feel comfortable with the red & green colors style. If using *Insert Text* as underline text, it's better to use the theme color style.
-3. You can use the HTML `span` tag within a list element to describe a list item, and it would present in a different color.
-4. For other text settings, you can find them on the settings page.
+3. 
+4. You can use the HTML `span` tag below a list item to describe a list item, and the `span` text would present in a different color.
+5. For other text settings, you can find them on the settings page.
 
 
 [:arrow_up:Back](#table-of-contents)
@@ -279,7 +299,7 @@ Joplin provides a great built-in Markdown TOC feature which helps you create the
 
 ### Hints
 
-The Markdown TOC feature is disabled by Joplin default. To use the Markdown TOC, you should enable the extension manually:
+The Markdown TOC feature is disabled by Joplin default. To use the Markdown TOC, you should make sure you've enabled the extension:
 
 1. Go to `Tools` > `Options` > `Markdown`
 2. Checked `Enable table of contents extension (wysiwyg:no)`
@@ -291,7 +311,13 @@ The Markdown TOC feature is disabled by Joplin default. To use the Markdown TOC,
 
 ![IMG_20211114_145258_HDR1](https://user-images.githubusercontent.com/110529913/192705530-e3a3329c-2419-4f00-a9fa-fa246a5e6699.jpg)
 
-All attached images and mermaid charts will default to 20% darker than the original to avoid bright light flashing your eyes while reading the notes. Hovering over them will restore the original brightness slowly.
+Eye-Protector is only available for `Dusk Mode` and `Night Mode`, it will automatically reduce the brightness for all attached images and mermaid charts within your notes to avoid bright light flashing your eyes while reading. Hovering over them will restore the original brightness slowly.
+
+|Theme Mode|Reduce Brightness|
+|-|-|
+|Day Mode|Not available|
+|Dusk Mode|20% Darker|
+|Night Mode|25% Darker|
 
 ### Hints
 
@@ -301,20 +327,20 @@ All attached images and mermaid charts will default to 20% darker than the origi
 
 # CUSTOM ELEMENTS & USE TIPS
 
-ReMoods provides a lot of custom elements to help you create a better reading experience, and here are the 6 major kinds below:
+ReMoods provides a lot of simple custom elements to help you create a better reading experience, and here are the 6 major kinds below:
 
 - Art Gallery - Splitting attached images into multiple columns
 - Sticky Notes - To help you build the notes structure
-- Custom Title Block - Emphasizing the key concepts of the content
-- Key Point - Create multiple key points or key steps
-- Key Mention - Adding additional short information for reference
+- Custom Title Block - Emphasizing the key concepts of a specific part of the content
+- Key Point - Create multiple key points or key steps that related to the heading
+- Key Mention - Adding additional shorten information for reference
 
 ### Hints
 
 If Joplin is your only place to take notes, you can just use the Custom Elements without thinking. Otherwise, you should notice the belows:
 
-1. Custom Elements are unique HTML Elements and CSS Styles for ReMoods Theme, so it might become plain text format when you transfer your notes to other software.
-2. Even if other software is supported custom CSS, you should still need to copy the related codes from ReMoods to another software manually.
+1. Custom Elements are unique HTML Elements and CSS Styles for ReMoods Theme, so it would become plain text format when you transfer your notes to other software. However, it won't cause any content to be missing.
+2. If other software is supported custom CSS, you should still need to copy the related codes from ReMoods to another software manually.
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -345,7 +371,7 @@ Below is the sample of the art gallery(ag6) with 30 images:
 ### Hints
 
 1. The custom element name `ag` stands for *Art Gallery*.
-2. The `ag` tag must use *right behind the plain text* .
+2. The `ag` tag must use *at the next line of the plain text* .
 3. Do not include any blank line within the body, *blank line will break the format* .
 
 [:arrow_up:Back](#table-of-contents)
@@ -360,11 +386,11 @@ Let’s see what are the Sticky Notes for:
 
 ### Hints
 
-1. Make sure there is a blank line *before the open tag*, otherwise it may cause a format problem.
+1. Make sure there is a blank line *on top the open tag* from other content, otherwise it may cause a format problem.
 2. Start typing your content in a *new line*.
 3. Use plain text within a custom element.
 4. Use  `<br>` for line break.
-5. Do not include any blank line within the Sticky Notes, if you want to add a *blank line* please use  `<br>`.
+5. Do not include any blank line within the Sticky Notes, if you want to add a *blank line* please use  `<br><br>`.
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -379,7 +405,7 @@ Let's see what it looks like:
 ### Hints
 
 1. The custom element name `ctb` stands for *Custom Title Block*.
-2. Type your title *next to the open tag* .
+2. Type your title *near the open tag* .
 3. Keep your title *within one line*.
 4. Start typing your content *in the second line*.
 5. Use plain text within a custom element.
@@ -395,10 +421,10 @@ The custom element Key Point is super useful when you want to separate the conte
 3 best timing to use the Key Point:
 
 1. To keep *multiple subtitles* stay within *one heading*.
-2. To *explain a part of content* with *multiple key points* and each has *a paragraph of description*.
-3. To avoid using Strong Text to *create a heading*. (keep your strong text only appearing within a paragraph's content.)
+2. To *explain a part of content* with *multiple key points* and each has *a paragraph of description*, just like using a description list.
+3. To avoid using Strong Text to *create a heading*. (keep your strong text only appearing within a paragraph.)
 
-See it below:
+See the below:
 
 ![Screenshot 2022-09-25 181155](https://user-images.githubusercontent.com/110529913/192138395-287ca10b-4abf-4b57-99e7-eb7f89634120.png)
 
@@ -407,25 +433,25 @@ See it below:
 1. The custom element name `kp` stands for *Key Point*.
 2. I recommend **only** use it at **the beginning of the line**.
 3. It **cannot** be used within **any other block elements** such as Custom Title Block, Spoiler Block, Sticky Notes, etc...
-4. If a Key Point **only have one paragraph of content**, it's better to type your description **right next to it**.
+4. If a Key Point **only have one paragraph of content**, it's better to type your description **near it**.
 5. If there are multiple Key Points and **each of them with one paragraph of description**, it's better to type your description **right below to it**.
-6. If your Key Points is a **long title**, such as a whole sentence, a question, etc. and **with multiple paragraphs of descriptions**, it's better to **add a blank line between all of them**.
+6. If your Key Point is a **long title**, such as a whole sentence, a question, etc. and **with multiple paragraphs of descriptions**, it's better to **add a blank line between all of them**.
 
 [:arrow_up:Back](#table-of-contents)
 
 ## Key Mention
 
-The custom element Key Mention is good for adding additional short information for reference. Use it right behind a target element, and you will see it presented to the right. You can use it to markup the last update time of the table or paragraph. Or you can use it like the HTML `<cite>` tag.
+The custom element Key Mention is good for adding additional shorten information for reference. Use it right below a target element, and you will see it aligned to the right. You can use it to markup the last update time of the table or paragraph. Or you can use it like the HTML `<cite>` tag.
 
 ![Screenshot 2022-09-25 185512](https://user-images.githubusercontent.com/110529913/192140048-a6384ac9-069b-4d88-924c-9eb4a64c778a.png)
 
 ### Hints
 
 1. The custom element name `km` stands for *Key Mention*.
-2. Always use `km` **right behind the target element** you want to describe.
+2. Always use `km` **right below the target element** that you want to describe.
 3. Use the Joplin built-in function `Insert Date Time` to make it easy.
-4. You can also use `km` within any Sticky Notes, and if you do that, please make sure `km` is always the **first child** inside the Sticky Notes.
-5. The text strong, emphasize, insert, and strikethrough will present as red color when inside the `km`.
+4. You can also use `km` within any Sticky Notes, and if you do that, please make sure `km` is always in the **first line** within the Sticky Notes.
+5. The text strong, emphasize, insert, and strikethrough will all present as red color when using within the `km`.
 6. Mouse hovers on it to zoom bigger.
 
 More use cases:
@@ -441,6 +467,10 @@ More use cases:
 <km>Toothbrush ~~USD 8.00~~ USD 3.00</km>
 
 <km>Reference: [Joplin Home Page](https://www.joplin.org)</km>
+
+<comment>
+<km>Jasper >> Layla | 20/11/2022 00:30</km> Jasper leave a commet to Layla within a note.
+</comment>
 
 ```
 [:arrow_up:Back](#table-of-contents)
@@ -522,14 +552,8 @@ Last, add content to it:
 ```
 
 1. You might find that the typing-cursor will position to the left of column's mark sometimes, but it's fine to start typing without problem. It would be back to the right place after you enter something.
-
-Quick setting up:
-
-1. Open Joplin
-2. Go to `Tools` > `Options` > `Plugins`
-3. Search the word `color`
-4. Click `Install` Markdown Table: Colorize
-5. Quit & restart Joplin app
+2. I'm not recommended to use it with any other markdown table formatting feature.
+3. Keep all table contents close to each others, the column marks will give you  better column identifying experience.
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -568,5 +592,6 @@ This table will keep up to date
 |Markdown Table Colorize|Done|25AUG2022|1. Added column marks, max support up to 52 columns.<br>2. Added row separation.<br>3. Added hover zoom effect for column marks.|- |
 |Draw.io|Tested|25AUG2022|-|-|
 |Enhancement|Done|22OCT2022|1.Removed the left color bar of admonition.<br>2.Changed footnote marker text to monospace font.<br>3.Changed cursor type when mouse hovering link marker.<br>4.Changed link and footnote colors.<br>5.Changed admonition color. |I'm not using this plugin, so I'll only fix bugs based on user requests. |
+|Note Link System|Done|20NOV2022|1.Fix the link hash keep showing on the spoiler block title and content top.| - |
 
 [:arrow_up:Back](#table-of-contents)
