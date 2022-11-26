@@ -60,11 +60,13 @@ Let's go for it one by one!
 **ReMoods has tested the best fonts for you with both great performance of reading and writing, and I developed everything based on using those fonts, so I recommended you use them:** 
  
 - **Base Font:** Mulish (For main note contents)
+- **Base Font:** Chiron Hei HK ExtraLight & Chiron Hei HK Light (For Traditional & Simplified Chinese)
 - **Monospace Font:** Cascadia Mono Light (For markdown syntax, code block, list token, etc.) 
 - **Heading Font:** Montserrat (For headings only) 
-- **Traditional & Simplified Chinese Font:** Chiron Hei HK ExtraLight & Chiron Hei HK Light
 
-Note: The Chiron Hei HK font will auto-switch to ExtraLight when using Dusk Mode and Night Mode, and switch to Light when using Day Mode.
+> To Chinese Language Users:
+> I definitely recommend you use "Mulish" as your English font If you often use both English and Chinese to take notes. Because it has better visual identification and word separation experience. Moreover, "Mulish" supplies monospace number characters. So, when you combine using both languages within your notes, it would make your notes seem more elegant.
+> Additionally, ReMoods make the "Chiron Hei HK" font will switching the font weight automatically based on the theme mode you use to improve the reading experience under different background colors. So, I hope you will enjoy it!
  
 Here is the abridged version of the font packages you can download from my Google Drive:  
  
