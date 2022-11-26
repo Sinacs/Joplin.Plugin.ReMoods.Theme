@@ -69,9 +69,9 @@ Let's go for it one by one!
 > I definitely recommend you use "Mulish" as your English font If you often use both English and Chinese to take notes. Because it has better visual identification and word separation experience. Moreover, "Mulish" supplies monospace number characters. So, when you combine using both languages within your notes, it would make your notes seem more elegant.
 > Additionally, ReMoods make the "Chiron Hei HK" font will switching the font weight automatically based on the theme mode you use to improve the reading experience under different background colors. So, I hope you will enjoy it!
  
-Here is the abridged version of the font packages you can download from my Google Drive:  
+Here is the abridged version of the font packages and holds all you need; you can download it from my Google Drive:  
  
-[https://drive.google.com/drive/folders/1SEBEVGpBrXFlmOtVzyqnhEVuO7Vrp61Y?usp=sharing  ](https://drive.google.com/drive/folders/1oQVRSix1hw5zgmJiphZIEAqMrEH5EuLQ?usp=sharing)
+[https://drive.google.com/drive/folders/1SEBEVGpBrXFlmOtVzyqnhEVuO7Vrp61Y?usp=sharing](https://drive.google.com/drive/folders/1oQVRSix1hw5zgmJiphZIEAqMrEH5EuLQ?usp=sharing)
  
 Alternatively, if you are interested to download the original complete packages, you can download them by visiting the official pages below:  
  
