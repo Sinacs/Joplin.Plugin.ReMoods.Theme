@@ -65,6 +65,7 @@ Let's go for it one by one!
 - **Heading Font:** Montserrat (For headings only) 
 
 > To Chinese Language Users:
+> 
 > I definitely recommend you use "Mulish" as your English font If you often use both English and Chinese to take notes. Because it has better visual identification and word separation experience. Moreover, "Mulish" supplies monospace number characters. So, when you combine using both languages within your notes, it would make your notes seem more elegant.
 > Additionally, ReMoods make the "Chiron Hei HK" font will switching the font weight automatically based on the theme mode you use to improve the reading experience under different background colors. So, I hope you will enjoy it!
  
