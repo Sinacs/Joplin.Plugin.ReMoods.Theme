@@ -59,10 +59,10 @@ Let's go for it one by one!
 
 **ReMoods has tested the best fonts for you with both great performance of reading and writing, and I developed everything based on using those fonts, so I recommended you use them:** 
  
-Base Font: Mulish (For main note contents) 
-Monospace Font: Cascadia Mono Light (For markdown syntax, code block, list token, etc.) 
-Heading Font: Montserrat (For headings only) 
-Chiron Hei HK ExtraLight & Chiron Hei HK Light (For Traditional & Simplified Chinese) 
+- **Base Font:** Mulish (For main note contents)
+- **Monospace Font:** Cascadia Mono Light (For markdown syntax, code block, list token, etc.) 
+- **Heading Font:** Montserrat (For headings only) 
+- **Traditional & Simplified Chinese Font:** Chiron Hei HK ExtraLight & Chiron Hei HK Light
 
 Note: The Chiron Hei HK font will auto-switch to ExtraLight when using Dusk Mode and Night Mode, and switch to Light when using Day Mode.
  
@@ -72,10 +72,10 @@ Here is the abridged version of the font packages you can download from my Googl
  
 Alternatively, if you are interested to download the original complete packages, you can download them by visiting the official pages below:  
  
-Mulish: https://fonts.google.com/specimen/Mulish?query=mulish 
-Montserrat: https://fonts.google.com/specimen/Montserrat?query=montserrat 
-Cascadia Code: https://github.com/microsoft/cascadia-code/releases  
-Chiron Hei HK: https://github.com/chiron-fonts/chiron-hei-hk/releases 
+- Mulish: https://fonts.google.com/specimen/Mulish?query=mulish 
+- Montserrat: https://fonts.google.com/specimen/Montserrat?query=montserrat 
+- Cascadia Code: https://github.com/microsoft/cascadia-code/releases  
+- Chiron Hei HK: https://github.com/chiron-fonts/chiron-hei-hk/releases 
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -138,12 +138,18 @@ Please mention that the `<ag>` is not a complete custom element name. You should
 
 ## Set Joplin's Built-in Theme
 
-**ReMoods relies on Joplin's built-in Dark Theme to function properly. Enable the Dark Theme:**
+**ReMoods relies on Joplin's built-in theme to function properly.**
 
 1. Open Joplin.
 2. Navigate to `tools` > `Options` > `Appearance` > `Theme`.
-3. Select `Dark` from the drop down.
+3. Select the theme based on the ReMoods Theme Mode you use.
 4. Click `Apply`.
+
+|Theme Mode|Joplin Built-in Theme|
+|-|-|
+|Day Mode|Light Theme|
+|Dusk Mode|Dark Theme|
+|Night Mode|Dark Theme|
 
 [:arrow_up:Back](#table-of-contents)
 
