@@ -232,17 +232,17 @@ body {
 
 [:arrow_up:Back](#table-of-contents)
 
-# Theme Mode
+# Theme Mode  
 
-**Day Mode:** Perfect for working under sunlight and white light environments.
+**Day Mode:** Perfect for working under sunlight and white light environments. Using high contrast colors and white background.
 
 ![dayMode](https://user-images.githubusercontent.com/110529913/203996190-8fac31d5-b55f-41c8-aeb6-936010c4d86d.png)
 
-**Dusk Mode:** Perfect for working under medium light and warm light environments, but it’s still fine for all lighting environments if you feel lazy switching to other theme modes.
+**Dusk Mode:** Perfect for working under medium light and warm light environments, but it’s still fine for all lighting environments if you feel lazy switching to other theme modes. Using medium contrast colors and grey background.
 
 ![duskMode](https://user-images.githubusercontent.com/110529913/203996215-cde1bc84-eb08-4e35-9a34-b35807848f73.png)
 
-**Night Mode:** Perfect for working under low light environments.
+**Night Mode:** Perfect for working under low light environments. Using low contrast colors and reduced bright light.
 
 ![nightMode](https://user-images.githubusercontent.com/110529913/203996199-6a29f26d-8a63-4c99-bd97-0969ebf854a7.png)
 
