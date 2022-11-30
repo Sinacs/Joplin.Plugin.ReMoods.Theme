@@ -907,7 +907,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     chromeCSS = chromeCSS.replace(/^  --g-main-bg-color-1:.+?;/gms, '  --g-main-bg-color-1: hsl(var(--usp-remoods-hue), 11%, 13%);');
     chromeCSS = chromeCSS.replace(/^  --g-panel-header-bg-color:.+?;/gms, '  --g-panel-header-bg-color: hsl(var(--usp-remoods-hue), 80%, 50%);');
     chromeCSS = chromeCSS.replace(/^  --g-panel-header-text-color:.+?;/gms, '  --g-panel-header-text-color: hsl(var(--usp-remoods-hue), 0%, 100%);');
-    chromeCSS = chromeCSS.replace(/^  --g-panel-header-text-shadow:.+?;/gms, '  --g-panel-header-text-shadow: hsl(var(--usp-remoods-hue), 100%, 10%);');
+    chromeCSS = chromeCSS.replace(/^  --g-panel-header-text-shadow:.+?;/gms, '  --g-panel-header-text-shadow: 0 0 3px hsl(var(--usp-remoods-hue), 100%, 10%);');
     chromeCSS = chromeCSS.replace(/^  --g-item-bg-color-hover:.+?;/gms, '  --g-item-bg-color-hover: hsl(var(--usp-remoods-hue), 30%, 20%);');
     chromeCSS = chromeCSS.replace(/^  --g-item-bg-color-selected:.+?;/gms, '  --g-item-bg-color-selected: hsl(var(--usp-remoods-hue), 40%, 35%);');
     chromeCSS = chromeCSS.replace(/^  --g-item-shadow-hover:.+?;/gms, '  --g-item-shadow-hover: hsl(var(--usp-remoods-hue), 100%, 35%);');
