@@ -98,7 +98,7 @@ async function prepareThemeSettings(): Promise<void> {
 		iconName: 'fas fa-palette',
 		description: `
       ----- 1: It is required to quit and restart Joplin to take effect after any changes below.
-			----- 2: The original font settings which in the "Tools > Options > Appearance" will no longer work when using ReMoods Theme.
+			----- 2: The original font settings which in the "Tools > Options > Appearance" will no longer work when running ReMoods Theme.
 			----- 3: The default font family will only work if you have already installed them on your computer.
 			----- 4: The below settings are affecting different parts of your Joplin, please note the beginning of them. (Render Viewer is also including the Rich Text Editor)
 			----- 5: The advanced settings section at the bottom contains all the settings of Print & Export PDF.
@@ -115,43 +115,43 @@ async function prepareThemeSettings(): Promise<void> {
 			isEnum: true,
 			options: {
 				'350deg': 'Red -',
-				'0deg':   'Red 0deg',
+				'0deg':   'Red 0',
 				'10deg':  'Red +',
 				'20deg':  'Orange -',
-				'30deg':  'Orange 30deg',
+				'30deg':  'Orange 30',
 				'40deg':  'Orange +',
 				'50deg':  'Yellow -',
-				'60deg':  'Yellow 60deg',
+				'60deg':  'Yellow 60',
 				'70deg':  'Yellow +',
 				'80deg':  'Yellow-Green -',
-				'90deg':  'Yellow-Green 90deg',
+				'90deg':  'Yellow-Green 90',
 				'100deg': 'Yellow-Green +',
 				'110deg': 'Green -',
-				'120deg': 'Green 120deg',
-				'130deg': 'Green +1',
+				'120deg': 'Green 120',
+				'130deg': 'Green +',
 				'140deg': 'Green-Cyan -',
-				'150deg': 'Green-Cyan 150deg',
+				'150deg': 'Green-Cyan 150',
 				'160deg': 'Green-Cyan +',
 				'170deg': 'Cyan -',
-				'180deg': 'Cyan 180deg',
+				'180deg': 'Cyan 180',
 				'190deg': 'Cyan +',
 				'200deg': 'Cyan-Blue -',
-				'210deg': 'Cyan-Blue 210deg',
+				'210deg': 'Cyan-Blue 210',
 				'220deg': 'Cyan-Blue +',
 				'230deg': 'Blue -',
-				'240deg': 'Blue 240deg',
+				'240deg': 'Blue 240',
 				'250deg': 'Blue +',
 				'260deg': 'Blue-Magenta -',
-				'270deg': 'Blue-Magenta 270deg',
+				'270deg': 'Blue-Magenta 270',
 				'280deg': 'Blue-Magenta +',
 				'290deg': 'Magenta -',
-				'300deg': 'Magenta 300deg',
+				'300deg': 'Magenta 300',
 				'310deg': 'Magenta +',
 				'320deg': 'Magenta-Red -',
-				'330deg': 'Magenta-Red 330deg',
+				'330deg': 'Magenta-Red 330',
 				'340deg': 'Magenta-Red +',
 			},
-			description: 'Set color hue for the theme.',
+			description: 'Set color hue for the theme. (10-degrees difference for each)',
 			public: true,
 		},
 		
@@ -166,7 +166,7 @@ async function prepareThemeSettings(): Promise<void> {
 				'duskMode': 'Dusk Mode',
 				'nightMode': 'Night Mode (EXPERIMENTAL)'
 			},
-			description: 'It would need to go to `Options > Appearance > Theme` and change the Joplin built-in theme to get a better experience with the theme modes of ReMoods. | Day Mode is better using with the built-in light theme. | Dusk Mode and Night Mode are better using with the built-in Dark theme.',
+			description: 'It required to go to `Options > Appearance > Theme` and change the Joplin built-in theme matching with the theme modes. | Day Mode > light theme. | Dusk Mode & Night Mode > Dark theme.',
 			public: true,
 		},
 
@@ -175,7 +175,7 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Custom Base Font',
 			type: SettingItemType.String,
 			value: 'none',
-			description: 'none: "mulish", "montserrat", "chiron hei hk extralight"',
+			description: 'none: "mulish", "montserrat", "chiron hei hk extralight" | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
 			public: true,
 		},
 
@@ -184,7 +184,7 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Custom Monospace Font',
 			type: SettingItemType.String,
 			value: 'none',
-			description: 'none: "cascadia mono light", "chiron hei hk extralight"',
+			description: 'none: "cascadia mono light", "chiron hei hk extralight" | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
 			public: true,
 		},
     
@@ -193,13 +193,13 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Custom Heading Font',
 			type: SettingItemType.String,
 			value: 'none',
-			description: 'none: "montserrat", "mulish", "chiron hei hk"',
+			description: 'none: "montserrat", "mulish", "chiron hei hk" | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
 			public: true,
 		},
 
 		'baseFontSize': {
 			section: 'remoodsThemeSection',
-			label: 'Markdown Editor & Render Viewer - Base Font Size',
+			label: 'Base Font Size',
 			type: SettingItemType.String,
 			value: '15px',
 			public: true,
@@ -207,7 +207,7 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'monospaceFontSize': {
 			section: 'remoodsThemeSection',
-			label: 'Markdown Editor & Render Viewer - Monospace Font Size',
+			label: 'Monospace Font Size',
 			type: SettingItemType.String,
 			value: '14px',
 			public: true,
@@ -239,16 +239,16 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'emphasizeAddRemove': {
 			section: 'remoodsThemeSection',
-			label: 'Markdown Editor & Render Viewer - Enable emphasize colors for insert text and strikethrough text',
+			label: 'Markdown Editor & Render Viewer - Enable emphasize colors for insert text & strikethrough text',
 			type: SettingItemType.Bool,
 			value: false,
-			description: 'Enable: Insert text is green, strikethrough text is red, and it would not change with the theme color. | Disable: Follow the theme color.',
+			description: 'Enable: Insert text -> green, strikethrough text -> red, and it would not change with the theme color. | Disable: Follow the theme color.',
 			public: true,
 		},
 		
 		'emphasizeAddRemoveBg': {
 			section: 'remoodsThemeSection',
-			label: 'Markdown Editor & Render Viewer - Enable background color for insert text and strikethrough text',
+			label: 'Markdown Editor & Render Viewer - Enable background color for insert text & strikethrough text',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'The background color depends on its text color.',
@@ -260,7 +260,7 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Markdown Editor & Render Viewer - Enable theme color for list text',
 			type: SettingItemType.Bool,
 			value: true,
-			description: 'Enable: Set list text to theme color, and the footnote marker will change to complementary color. | Disable: Set list text equal to the paragraph text color, and the footnote marker will change to theme color.',
+			description: 'Enable: List text -> theme color, footnote marker -> complementary color. | Disable: List text -> paragraph text color, footnote marker -> theme color.',
 			public: true,
 		},
 
@@ -269,7 +269,7 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Markdown Editor & Render Viewer - Enable smaller font size for code block',
 			type: SettingItemType.Bool,
 			value: false,
-			description: '(2px smaller than the monospace font size)',
+			description: '(2px smaller than the "Monospace Font Size")',
 			public: true,
 		},
 
@@ -278,7 +278,7 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Markdown Editor - Enable smaller font size for markdown table syntax',
 			type: SettingItemType.Bool,
 			value: false,
-			description: '(2px smaller than the monospace font size)',
+			description: '(2px smaller than the "Monospace Font Size")',
 			public: true,
 		},
 
@@ -287,7 +287,7 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Markdown Editor - Enable smaller font size for non-essential contents',
 			type: SettingItemType.Bool,
 			value: true,
-			description: 'Set smaller font size for anchor link path, image link, and footnote marker. (2px smaller than the monospace font size)',
+			description: 'Set smaller font size for anchor link path, image link, and footnote marker. (2px smaller than the "Monospace Font Size")',
 			public: true,
 		},
 
@@ -502,34 +502,35 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'printBaseFont': {
 			section: 'remoodsThemeSection',
-			label: 'Print & Export PDF - Custom Base Font',
+			label: 'Custom Print Base Font',
 			type: SettingItemType.String,
 			value: 'var(--usp-print-base-font)',
+			description: 'The default "var(--usp-print-base-font)" is equal to "Custom Base Font". | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
 			public: true,
 			advanced: true,
 		},
 
 		'printMonospaceFont': {
 			section: 'remoodsThemeSection',
-			label: 'Print & Export PDF - Monospace Font',
+			label: 'Custom Print Monospace Font',
 			type: SettingItemType.String,
-			value: 'var(--usp-custom-monospace-font)',
+			description: 'The default "var(--usp-print-monospace-font)" is equal to "Custom Monospace Font". | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
 			public: true,
 			advanced: true,
 		},
     
 		'printHeadingFont': {
 			section: 'remoodsThemeSection',
-			label: 'Print & Export PDF - Heading Font',
+			label: 'Custom Print Heading Font',
 			type: SettingItemType.String,
-			value: 'var(--usp-custom-heading-font)',
+			description: 'The default "var(--usp-print-heading-font)" is equal to "Custom Heading Font". | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
 			public: true,
 			advanced: true,
 		},
 
 		'printBaseFontSize': {
 			section: 'remoodsThemeSection',
-			label: 'Print & Export PDF - Base Font Size',
+			label: 'Print Base Font Size',
 			type: SettingItemType.String,
 			value: '13px',
 			public: true,
@@ -538,7 +539,7 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'printMonospaceFontSize': {
 			section: 'remoodsThemeSection',
-			label: 'Print & Export PDF - Monospace Font Size',
+			label: 'Print Monospace Font Size',
 			type: SettingItemType.String,
 			value: '12px',
 			public: true,
@@ -550,7 +551,7 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Print & Export PDF - Enable smaller font size for code block',
 			type: SettingItemType.Bool,
 			value: true,
-			description: '2px smaller than the the monospace font Print & Export PDF font size.',
+			description: '(2px smaller than the the "Print Monospace Font Size")',
 			public: true,
 			advanced: true,
 		},
@@ -584,7 +585,7 @@ async function prepareThemeSettings(): Promise<void> {
 
 		'printTOC': {
 			section: 'remoodsThemeSection',
-			label: 'Print & Export PDF - Display table of contents (If the syntax `[[toc]]` is used in the notes)',
+			label: 'Print & Export PDF - Display table of contents (If the syntax `[[toc]]` has used in the notes)',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
