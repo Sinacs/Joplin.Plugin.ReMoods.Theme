@@ -229,7 +229,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     chromeCSS = chromeCSS.replace(/^  --code-mirror-scrollbar-thumb-bg-color:.+?;/gms, '  --code-mirror-scrollbar-thumb-bg-color: linear-gradient(to bottom, hsl(var(--usp-remoods-hue), 0%, 70%)  3px, hsl(var(--usp-remoods-hue), 0%, 100%)  4px, hsl(var(--usp-remoods-hue), 0%, 100%) calc(100% - 4px), hsl(var(--usp-remoods-hue), 0%, 70%) calc(100% - 3px));');
     chromeCSS = chromeCSS.replace(/^  --code-mirror-scrollbar-thumb-bd-color:.+?;/gms, '  --code-mirror-scrollbar-thumb-bd-color: hsl(var(--usp-remoods-hue), 0%, 70%);');
     chromeCSS = chromeCSS.replace(/^  --horizontal-line-syntax-color:.+?;/gms, '  --horizontal-line-syntax-color: hsl(var(--usp-remoods-hue), 0%, 0%);');
-    chromeCSS = chromeCSS.replace(/^  --horizontal-ling-bg-color:.+?;/gms, '  --horizontal-line-bg-color: hsl(var(--usp-remoods-hue), 100%, 40%);');
+    chromeCSS = chromeCSS.replace(/^  --horizontal-line-bg-color:.+?;/gms, '  --horizontal-line-bg-color: hsl(var(--usp-remoods-hue), 100%, 40%);');
     chromeCSS = chromeCSS.replace(/^  --cursor-bd-color:.+?;/gms, '  --cursor-bd-color: 2px solid hsl(var(--usp-remoods-hue), 0%, 0%);');
     chromeCSS = chromeCSS.replace(/^  --selected-text-color:.+?;/gms, '  --selected-text-color: var(--render-viewer-text-color);');
     chromeCSS = chromeCSS.replace(/^  --selected-text-bg-color:.+?;/gms, '  --selected-text-bg-color: hsl(calc(var(--usp-remoods-hue) + 180deg), 20%, 30%);');

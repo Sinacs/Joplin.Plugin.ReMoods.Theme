@@ -18,21 +18,21 @@
   #CODE STRUCTURE OVERVIEW:
 
   - ROOT
-  - USER SETTING PROPERTIES
-    - SCREEN
-    - PRINT
-  - RENDER VIEWER & RICH TEXT EDITOR & EXPORT HTML PROPERTIES
-  - PRINT PDF & EXPORT PDF PROPERTIES
+    - USER SETTING PROPERTIES
+      - SCREEN
+      - PRINT
+    - RENDER VIEWER & RICH TEXT EDITOR & EXPORT HTML PROPERTIES
+    - PRINT PDF & EXPORT PDF PROPERTIES
   - RENDER VIEWER & RICH TEXT EDITOR
     - FONT
-  - BASIC
-  - ELEMENTS
-  - CUSTOM ELEMENTS
-  - PLUGINS
+    - BASIC
+    - ELEMENTS
+    - CUSTOM ELEMENTS
+    - PLUGINS
   - EXPORT HTML FILE
   - PRINT & EXPORT PDF
     - PRINT FONT
-  - PRINT READY
+    - PRINT READY
     - PRINT ELEMENTS
     - PRINT CUSTOM ELEMENTS
     - PRINT PLUGINS
@@ -149,7 +149,7 @@
   --render-viewer-bg-color-2:                           hsl(var(--usp-remoods-hue),   8%,  17%);
   --render-viewer-text-color:                           hsl(var(--usp-remoods-hue),   0%,  90%);
   
-  --horizontal-ling-bg:                                 none;
+  --horizontal-line-bg:                                 none;
   --horizontal-line-bgi:                                repeating-linear-gradient(114deg,
                                                         hsl(var(--usp-remoods-hue), 100%,  80%),
                                                         hsl(var(--usp-remoods-hue), 100%,  35%,  50%),
