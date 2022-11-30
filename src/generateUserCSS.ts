@@ -442,7 +442,8 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --render-viewer-bg-color:.+?;/gms, '  --render-viewer-bg-color: hsl(var(--usp-remoods-hue), 0%, 100%);');
     noteCSS = noteCSS.replace(/^  --render-viewer-bg-color-2:.+?;/gms, '  --render-viewer-bg-color-2: hsl(var(--usp-remoods-hue), 100%, 99%);');
     noteCSS = noteCSS.replace(/^  --render-viewer-text-color:.+?;/gms, '  --render-viewer-text-color: hsl(var(--usp-remoods-hue), 0%, 0%);');
-    noteCSS = noteCSS.replace(/^  --horizontal-line-color:.+?;/gms, '  --horizontal-line-color: repeating-linear-gradient(114deg, hsl(var(--usp-remoods-hue), 100%, 30%), hsl(var(--usp-remoods-hue), 100%, 75%, 50%), hsl(var(--usp-remoods-hue), 100%, 30%) 3px);');
+    noteCSS = noteCSS.replace(/^  --horizontal-line-bg:.+?;/gms, '  --horizontal-line-bg: none;');
+    noteCSS = noteCSS.replace(/^  --horizontal-line-bgi:.+?;/gms, '  --horizontal-line-bgi: repeating-linear-gradient(114deg, hsl(var(--usp-remoods-hue), 100%, 30%), hsl(var(--usp-remoods-hue), 100%, 75%, 50%), hsl(var(--usp-remoods-hue), 100%, 30%) 3px);');
     noteCSS = noteCSS.replace(/^  --render-viewer-scrollbar-thumb-bg-color:.+?;/gms, '  --render-viewer-scrollbar-thumb-bg-color: hsl(var(--usp-remoods-hue), 0%, 70%);');
     noteCSS = noteCSS.replace(/^  --bc-scrollbar-thumb-bd-color:.+?;/gms, '  --bc-scrollbar-thumb-bd-color: transparent;');
     noteCSS = noteCSS.replace(/^  --bc-scrollbar-thumb-bg-color:.+?;/gms, '  --bc-scrollbar-thumb-bg-color: radial-gradient(hsl(var(--usp-remoods-hue), 30%, 60%) 30%, hsl(var(--usp-remoods-hue), 40%, 70%) 70%);');
@@ -753,9 +754,11 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     }
 
     if(!hrTwillPattern) {
-      noteCSS = noteCSS.replace(/^  --horizontal-line-color:.+?;/gms, '  --horizontal-line-color: hsl(var(--usp-remoods-hue), 100%, 45%);');
+      noteCSS = noteCSS.replace(/^  --horizontal-line-bg:.+?;/gms, '  --horizontal-line-bg: hsl(var(--usp-remoods-hue), 100%, 45%);');
+      noteCSS = noteCSS.replace(/^  --horizontal-line-bgi:.+?;/gms, '  --horizontal-line-bgi: none;');
     } else {
-      noteCSS = noteCSS.replace(/^  --horizontal-line-color:.+?;/gms, '  --horizontal-line-color: repeating-linear-gradient(114deg, hsl(var(--usp-remoods-hue), 100%, 30%), hsl(var(--usp-remoods-hue), 100%, 75%, 50%), hsl(var(--usp-remoods-hue), 100%, 30%) 3px);');
+      noteCSS = noteCSS.replace(/^  --horizontal-line-bg:.+?;/gms, '  --horizontal-line-bg: none;');
+      noteCSS = noteCSS.replace(/^  --horizontal-line-bgi:.+?;/gms, '  --horizontal-line-bgi: repeating-linear-gradient(114deg, hsl(var(--usp-remoods-hue), 100%, 30%), hsl(var(--usp-remoods-hue), 100%, 75%, 50%), hsl(var(--usp-remoods-hue), 100%, 30%) 3px);');
     }
 
     if(!dottedBlockquote) {
@@ -1005,7 +1008,8 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --render-viewer-bg-color:.+?;/gms, '  --render-viewer-bg-color: hsl(var(--usp-remoods-hue), 8%, 27%);');
     noteCSS = noteCSS.replace(/^  --render-viewer-bg-color-2:.+?;/gms, '  --render-viewer-bg-color-2: hsl(var(--usp-remoods-hue), 8%, 17%);');
     noteCSS = noteCSS.replace(/^  --render-viewer-text-color:.+?;/gms, '  --render-viewer-text-color: hsl(var(--usp-remoods-hue), 0%, 90%);');
-    noteCSS = noteCSS.replace(/^  --horizontal-line-color:.+?;/gms, '  --horizontal-line-color: repeating-linear-gradient(114deg, hsl(var(--usp-remoods-hue), 100%, 80%), hsl(var(--usp-remoods-hue), 100%, 35%, 50%), hsl(var(--usp-remoods-hue), 100%, 80%) 3px);');
+    noteCSS = noteCSS.replace(/^  --horizontal-line-bg:.+?;/gms, '  --horizontal-line-bg: none;');
+    noteCSS = noteCSS.replace(/^  --horizontal-line-bgi:.+?;/gms, '  --horizontal-line-bgi: repeating-linear-gradient(114deg, hsl(var(--usp-remoods-hue), 100%, 80%), hsl(var(--usp-remoods-hue), 100%, 35%, 50%), hsl(var(--usp-remoods-hue), 100%, 80%) 3px);');
     noteCSS = noteCSS.replace(/^  --render-viewer-scrollbar-thumb-bg-color:.+?;/gms, '  --render-viewer-scrollbar-thumb-bg-color: hsl(var(--usp-remoods-hue), 100%, 75%);');
     noteCSS = noteCSS.replace(/^  --bc-scrollbar-thumb-bd-color:.+?;/gms, '  --bc-scrollbar-thumb-bd-color: transparent;');
     noteCSS = noteCSS.replace(/^  --bc-scrollbar-thumb-bg-color:.+?;/gms, '  --bc-scrollbar-thumb-bg-color: radial-gradient(hsl(var(--usp-remoods-hue), 30%, 60%) 30%, hsl(var(--usp-remoods-hue), 40%, 70%) 70%);');
@@ -1316,9 +1320,11 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     }
 
     if(!hrTwillPattern) {
-      noteCSS = noteCSS.replace(/^  --horizontal-line-color:.+?;/gms, '  --horizontal-line-color: hsl(var(--usp-remoods-hue), 60%, 60%);');
+      noteCSS = noteCSS.replace(/^  --horizontal-line-bg:.+?;/gms, '  --horizontal-line-bg: hsl(var(--usp-remoods-hue), 60%, 60%);');
+      noteCSS = noteCSS.replace(/^  --horizontal-line-bgi:.+?;/gms, '  --horizontal-line-bgi: none;');
     } else {
-      noteCSS = noteCSS.replace(/^  --horizontal-line-color:.+?;/gms, '  --horizontal-line-color: repeating-linear-gradient(114deg, hsl(var(--usp-remoods-hue), 100%, 80%), hsl(var(--usp-remoods-hue), 100%, 35%, 50%), hsl(var(--usp-remoods-hue), 100%, 80%) 3px);');
+      noteCSS = noteCSS.replace(/^  --horizontal-line-bg:.+?;/gms, '  --horizontal-line-bg: none;');
+      noteCSS = noteCSS.replace(/^  --horizontal-line-bgi:.+?;/gms, '  --horizontal-line-bgi: repeating-linear-gradient(114deg, hsl(var(--usp-remoods-hue), 100%, 80%), hsl(var(--usp-remoods-hue), 100%, 35%, 50%), hsl(var(--usp-remoods-hue), 100%, 80%) 3px);');
     }
 
     if(!dottedBlockquote) {
@@ -1568,7 +1574,8 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --render-viewer-bg-color:.+?;/gms, '  --render-viewer-bg-color: hsl(var(--usp-remoods-hue), 11%, 13%);');
     noteCSS = noteCSS.replace(/^  --render-viewer-bg-color-2:.+?;/gms, '  --render-viewer-bg-color-2: hsl(var(--usp-remoods-hue), 8%, 11%);');
     noteCSS = noteCSS.replace(/^  --render-viewer-text-color:.+?;/gms, '  --render-viewer-text-color: hsl(var(--usp-remoods-hue), 0%, 77%);');
-    noteCSS = noteCSS.replace(/^  --horizontal-line-color:.+?;/gms, '  --horizontal-line-color: repeating-linear-gradient(114deg, hsl(var(--usp-remoods-hue), 100%, 80%), hsl(var(--usp-remoods-hue), 100%, 35%, 50%), hsl(var(--usp-remoods-hue), 100%, 80%)  3px);');
+    noteCSS = noteCSS.replace(/^  --horizontal-line-bg:.+?;/gms, '  --horizontal-line-bg: none;');
+    noteCSS = noteCSS.replace(/^  --horizontal-line-bgi:.+?;/gms, '  --horizontal-line-bgi: repeating-linear-gradient(114deg, hsl(var(--usp-remoods-hue), 100%, 80%), hsl(var(--usp-remoods-hue), 100%, 35%, 50%), hsl(var(--usp-remoods-hue), 100%, 80%)  3px);');
     noteCSS = noteCSS.replace(/^  --render-viewer-scrollbar-thumb-bg-color:.+?;/gms, '  --render-viewer-scrollbar-thumb-bg-color: hsl(var(--usp-remoods-hue), 55%, 45%);');
     noteCSS = noteCSS.replace(/^  --bc-scrollbar-thumb-bd-color:.+?;/gms, '  --bc-scrollbar-thumb-bd-color: transparent;');
     noteCSS = noteCSS.replace(/^  --bc-scrollbar-thumb-bg-color:.+?;/gms, '  --bc-scrollbar-thumb-bg-color: radial-gradient(hsl(var(--usp-remoods-hue), 30%, 50%) 30%, hsl(var(--usp-remoods-hue), 40%, 60%) 70%);');
@@ -1867,9 +1874,11 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     }
 
     if(!hrTwillPattern) {
-      noteCSS = noteCSS.replace(/^  --horizontal-line-color:.+?;/gms, '  --horizontal-line-color: hsl(var(--usp-remoods-hue), 40%, 50%);');
+      noteCSS = noteCSS.replace(/^  --horizontal-line-bg:.+?;/gms, '  --horizontal-line-bg: hsl(var(--usp-remoods-hue), 40%, 50%);');
+      noteCSS = noteCSS.replace(/^  --horizontal-line-bgi:.+?;/gms, '  --horizontal-line-bgi: none;');
     } else {
-      noteCSS = noteCSS.replace(/^  --horizontal-line-color:.+?;/gms, '  --horizontal-line-color: repeating-linear-gradient(114deg, hsl(var(--usp-remoods-hue), 100%, 80%), hsl(var(--usp-remoods-hue), 100%, 35%, 50%), hsl(var(--usp-remoods-hue), 100%, 80%)  3px);');
+      noteCSS = noteCSS.replace(/^  --horizontal-line-bg:.+?;/gms, '  --horizontal-line-bg: none;');
+      noteCSS = noteCSS.replace(/^  --horizontal-line-bgi:.+?;/gms, '  --horizontal-line-bgi: repeating-linear-gradient(114deg, hsl(var(--usp-remoods-hue), 100%, 80%), hsl(var(--usp-remoods-hue), 100%, 35%, 50%), hsl(var(--usp-remoods-hue), 100%, 80%)  3px);');
     }
 
     if(!dottedBlockquote) {

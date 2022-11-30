@@ -146,7 +146,8 @@
   --render-viewer-bg-color-2:                           hsl(var(--usp-remoods-hue),   8%,  17%);
   --render-viewer-text-color:                           hsl(var(--usp-remoods-hue),   0%,  90%);
   
-  --horizontal-line-color:                              repeating-linear-gradient(114deg,
+  --horizontal-ling-bg:                                 none;
+  --horizontal-line-bgi:                                repeating-linear-gradient(114deg,
                                                         hsl(var(--usp-remoods-hue), 100%,  80%),
                                                         hsl(var(--usp-remoods-hue), 100%,  35%,  50%),
                                                         hsl(var(--usp-remoods-hue), 100%,  80%)  3px);
@@ -929,7 +930,8 @@ body *,
   margin: 1em auto;
   height: 3px;
   width: 90%;
-  background-image: var(--horizontal-line-color);
+  background-color: var(--horizontal-line-bg);
+  background-image: var(--horizontal-line-bgi);
   border-radius: 1em;
   opacity: 0.4;
 }
