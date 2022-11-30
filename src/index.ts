@@ -37,7 +37,10 @@ export type ThemeSettings = {
 	h6Border: boolean;
 	h1TwillPattern: boolean;
 	hrTwillPattern: boolean;
-	paragraphJustify: boolean;
+	paragraphTextJustify: boolean;
+	listTextJustify: boolean;
+	checklistTextJustify: boolean;
+	snTextJustify: boolean;
 	dottedBlockquote: boolean;
 	dottedCodeBlock: boolean;
 	katexTextAlignLeft: boolean;
@@ -374,12 +377,39 @@ async function prepareThemeSettings(): Promise<void> {
 			public: true,
 		},
 
-		'paragraphJustify': {
+		'paragraphTextJustify': {
 			section: 'remoodsThemeSection',
-			label: 'Render Viewer - Enable "Justify" effect for paragraph text',
+			label: '*Render Viewer - Enable "Justify" effect for paragraph text',
 			type: SettingItemType.Bool,
-			value: true,
-			description: 'It will only affect common paragraphs and blockquotes.',
+			value: false,
+			description: 'Applied to all paragraph text, but not including list, checklist, footnote list and sticky notes.',
+			public: true,
+		},
+
+		'listTextJustify': {
+			section: 'remoodsThemeSection',
+			label: '*Render Viewer - Enable "Justify" effect for list text',
+			type: SettingItemType.Bool,
+			value: false,
+			description: 'Applied to unordered list, ordered list, and footnote list.',
+			public: true,
+		},
+
+		'checklistTextJustify': {
+			section: 'remoodsThemeSection',
+			label: '*Render Viewer - Enable "Justify" effect for checklist',
+			type: SettingItemType.Bool,
+			value: false,
+			description: 'Applied to checklist.',
+			public: true,
+		},
+
+		'snTextJustify': {
+			section: 'remoodsThemeSection',
+			label: '*Render Viewer - Enable "Justify" effect for Stick Notes text',
+			type: SettingItemType.Bool,
+			value: false,
+			description: 'Applied to sticky notes.',
 			public: true,
 		},
 
@@ -667,7 +697,10 @@ async function writeUserCSS(): Promise<void> {
 	const h6Border = await joplin.settings.value('h6Border');
 	const h1TwillPattern = await joplin.settings.value('h1TwillPattern');
 	const hrTwillPattern = await joplin.settings.value('hrTwillPattern');
-	const paragraphJustify = await joplin.settings.value('paragraphJustify');
+	const paragraphTextJustify = await joplin.settings.value('paragraphTextJustify');
+	const listTextJustify = await joplin.settings.value('listTextJustify');
+	const checklistTextJustify = await joplin.settings.value('checklistTextJustify');
+	const snTextJustify = await joplin.settings.value('snTextJustify');
 	const dottedBlockquote = await joplin.settings.value('dottedBlockquote');
 	const dottedCodeBlock = await joplin.settings.value('dottedCodeBlock');
 	const katexTextAlignLeft = await joplin.settings.value('katexTextAlignLeft');
@@ -728,7 +761,10 @@ async function writeUserCSS(): Promise<void> {
 		h6Border,
 		h1TwillPattern,
 		hrTwillPattern,
-		paragraphJustify,
+		paragraphTextJustify,
+		listTextJustify,
+		checklistTextJustify,
+		snTextJustify,
 		dottedBlockquote,
 		dottedCodeBlock,
 		katexTextAlignLeft,

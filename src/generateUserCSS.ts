@@ -33,7 +33,10 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     h6Border,
     h1TwillPattern,
     hrTwillPattern,
-    paragraphJustify,
+    paragraphTextJustify,
+    listTextJustify,
+    checklistTextJustify,
+    snTextJustify,
     dottedBlockquote,
     dottedCodeBlock,
     katexTextAlignLeft,
@@ -2040,12 +2043,30 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --usp-h6-border-switcher:.+?;/gms, '  --usp-h6-border-switcher: block;');
   }
   
-  if(!paragraphJustify) {
-    noteCSS = noteCSS.replace(/^  --usp-paragraph-justify:.+?;/gms, '  --usp-paragraph-justify: unset;');
+  if(!paragraphTextJustify) {
+    noteCSS = noteCSS.replace(/^  --usp-paragraph-text-align:.+?;/gms, '  --usp-paragraph-text-align: initial;');
   } else {
-    noteCSS = noteCSS.replace(/^  --usp-paragraph-justify:.+?;/gms, '  --usp-paragraph-justify: justify;');
+    noteCSS = noteCSS.replace(/^  --usp-paragraph-text-align:.+?;/gms, '  --usp-paragraph-text-align: justify;');
   }
   
+  if(!listTextJustify) {
+    noteCSS = noteCSS.replace(/^  --usp-list-text-align:.+?;/gms, '  --usp-list-text-align: initial;');
+  } else {
+    noteCSS = noteCSS.replace(/^  --usp-list-text-align:.+?;/gms, '  --usp-list-text-align: justify;');
+  }
+
+  if(!checklistTextJustify) {
+    noteCSS = noteCSS.replace(/^  --usp-checklist-text-align:.+?;/gms, '  --usp-checklist-text-align: initial;');
+  } else {
+    noteCSS = noteCSS.replace(/^  --usp-checklist-text-align:.+?;/gms, '  --usp-checklist-text-align: justify;');
+  }
+
+  if(!snTextJustify) {
+    noteCSS = noteCSS.replace(/^  --usp-sn-text-align:.+?;/gms, '  --usp-sn-text-align: initial;');
+  } else {
+    noteCSS = noteCSS.replace(/^  --usp-sn-text-align:.+?;/gms, '  --usp-sn-text-align: justify;');
+  }
+
   if(!dottedCodeBlock) {
     noteCSS = noteCSS.replace(/^  --usp-code-block-bd-style:.+?;/gms, '  --usp-code-block-bd-style: solid;');
   } else {
