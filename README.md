@@ -24,7 +24,7 @@ ReMoods is a multi-purpose theming plugin inherited from the past Ohmine Dark Th
   - [To New Users](#to-new-users)
   - [Asking For Bits Of Help](#asking-for-bits-of-help)
 - REMOODS THEME GETTING STARTED GUIDE
-  - [Download And Install Recommended Fonts](#download-and-install-recommended-fonts-optional)
+  - [Download And Install Recommended Fonts](#download-and-install-recommended-fonts)
   - [Install And Configure 3 Important Plugins](#install-and-configure-3-important-plugins)
   - [Modify The Joplin's Built-in Settings](#modify-the-joplins-built-in-settings)
   - [Set Joplin Starting Screen Background Color](#set-joplin-starting-screen-background-color)
