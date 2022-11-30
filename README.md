@@ -16,6 +16,7 @@ ReMoods is a multi-purpose theming plugin inherited from the past Ohmine Dark Th
 - Extra formatting adjustments for the Exported HTML File and PDF Document to increase the reading experience.  
 - Provide certain helpful HTML custom elements to improve your note-taking experience.  
 - Provide third-party plugins’ CSS styles to add extra usage in ReMoods. 
+
 # Table Of Contents
 
 - BULLETIN
@@ -52,11 +53,15 @@ ReMoods is a multi-purpose theming plugin inherited from the past Ohmine Dark Th
 
 I'm glad you are for me again! While the Ohmine Dark Theme was deprecated in August 2022, ReMoods is the new project that inherited from it. So, before you start using ReMoods, you should remove all the old OhmineDT codes from your `userstyle.css` and `userchrome.css` first. Forget the old one and then give ReMoods a hug!
 
+[:arrow_up:Back](#table-of-contents)
+
 ## To New Users
 
 - Welcome to ReMoods! ReMoods has been styling over 90% of Joplin's elements, however, some of the effects are highly reliant on the Joplin built-in settings and third-party plugins to get work, so you should follow the `REMOODS THEME GETTING STARTED GUIDE` below to get 100% of what ReMoods Theme brings to you!
 - The `GENERAL ELEMENTS & USE TIPS` and `CUSTOM ELEMENTS & USE TIPS` are showing you screenshots and useful tips of ReMoods.
 - Please mention that don't enable more than one theming plugin at the same time, it will cause ReMoods can't display properly.
+
+[:arrow_up:Back](#table-of-contents)
 
 ## Asking For Bits Of Help
 
@@ -64,6 +69,9 @@ I'm glad you are for me again! While the Ohmine Dark Theme was deprecated in Aug
 - Collecting Feedbacks: Tell me whatever you feel through the time you using this theme.
 
 That means a lots to me! Thank you guys!
+
+[:arrow_up:Back](#table-of-contents)
+
 ## Download And Install Recommended Fonts
 
 **ReMoods has tested the best fonts for you, they've great read and write experience, and I developed everything based on using these fonts, so I recommended you use them:** 
@@ -92,13 +100,13 @@ Alternatively, if you are interested to download the original full packages, ple
 
 ## Install And Configure 3 Important Plugins
 
-Reason to install:
+**Reason to install:**
 
 - ReMoods Theme: This is a must!
 - Rich Markdown: ReMoods need to run with this plugin, otherwise, it would cause styles missing from ReMoods.
 - Quick HTML Tags: It provides you with a quick and easy way to create the custom elements of ReMoods. (optional)
 
-Let's go:
+**Let's go:**
 
 1. Navigate to `Tools` > `Options` > `Plugins`.
 2. Search the word `remoods`.
@@ -127,14 +135,15 @@ After this, you can use the Quick HTML Tags plugin like the below:
 Please mention that the `<ag>` is not a complete custom element name. You should add a number to it manually, such as `<ag4>`, `<ag8>`, etc. The ReMoods' custom element "Art Gallery" lets you create 2 to 12 columns for wrapping the attached images, so each time you create an `ag` tag, just don't forget to add a number to it.
 
 [:arrow_up:Back](#table-of-contents)
+
 ## Modify The Joplin's Built-in Settings
 
-Reason to modify:
+**Reason to modify:**
 
 - Joplin built-in theme: The `Theme Mode` of ReMoods are relies on Joplin's built-in theme to function properly.
 - Joplin built-in Markdown: Joplin is default to disable some of the built-in markdown features that ReMoods has styles for.
 
-Reference for settings:
+**Reference for settings:**
 
 |ReMoods Theme Mode| Require to run with the Joplin Built-in... |
 |-|-|
@@ -142,7 +151,7 @@ Reference for settings:
 |Dusk Mode|Dark Theme|
 |Night Mode|Dark Theme|
 
-Let's go:
+**Let's go:**
 
 1. Open Joplin and navigate to `tools` > `Options` > `Appearance` > `Theme`.
 2. Select the Joplin built-in theme based on the ReMoods Theme Mode you use.
@@ -159,6 +168,8 @@ Let's go:
 	- `Enable abbreviation syntax (wysiwyg: no)`
 	- `Enable ++insert++ syntax (wysiwyg: yes)`
 6. Click `Apply`.(Don't quit, keep going to the last step.)
+
+[:arrow_up:Back](#table-of-contents)
 
 ## Set Joplin Starting Screen Background Color
 
@@ -177,6 +188,7 @@ body {
 5. Quit and restart Joplin to apply the updates.
 
 [:arrow_up:Back](#table-of-contents)
+
 # Theme Mode
 
 **Day Mode:** Perfect for working under sunlight and white light environments. Using high contrast colors and white background.
@@ -220,9 +232,8 @@ Most of the text colors would change with the theme color. Let's compare the dif
 
 1. About links, we usually use anchor text links like `[Joplin](https://www.joplin.org)` but that wouldn't be showing up the URL when print or export PDF. So, if you want to display the URL on the PDF, you should use the anchor text link with a title like `[Joplin](https://www.joplin.org "Joplin")`.
 2. While I personally prefer using *Mark Text* as an alternative to underline text, some users might prefer using *Insert Text* as underline text. For that reason, *Insert Text* might have different meanings to users. So, I create a few different styles of *Insert Text* for options. If you mostly use *Insert Text and Strikethrough Text* as the meanings of add & remove, you would feel comfortable with the red & green colors style. If using *Insert Text* as underline text, it's better to use the theme color style.
-3. 
-4. You can use the HTML `span` tag below a list item and add describe to it, and the `span` text would present in a different color.
-5. More other text settings you can discover on the settings page.
+3. You can use the HTML `span` tag below a list item and add describe to it, and the `span` text would present in a different color.
+4. More other text settings you can discover on the settings page.
 
 [:arrow_up:Back](#table-of-contents)
 
