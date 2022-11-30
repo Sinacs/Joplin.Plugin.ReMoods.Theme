@@ -113,9 +113,9 @@
   --usp-print-custom-base-font: none;
   --usp-print-custom-monospace-font: none;
   --usp-print-custom-heading-font: none;
-  --usp-print-base-font: var(--usp-custom-base-font), "mulish", "montserrat", "chiron hei hk extralight";
-  --usp-print-monospace-font: var(--usp-custom-monospace-font), "cascadia mono light", "chiron hei hk extralight";
-  --usp-print-heading-font: var(--usp-custom-heading-font), "montserrat", "mulish", "chiron hei hk";
+  --usp-print-base-font: var(--usp-print-custom-base-font), "mulish", "montserrat", "chiron hei hk extralight";
+  --usp-print-monospace-font: var(--usp-print-custom-monospace-font), "cascadia mono light", "chiron hei hk extralight";
+  --usp-print-heading-font: var(--usp-print-custom-heading-font), "montserrat", "mulish", "chiron hei hk";
   
   /* PRINT: DISPLAY **************************************** */
   --usp-print-base-font-size: 13px;
@@ -719,6 +719,58 @@
 /* !!!!        RENDER VIEWER & RICH TEXT EDITOR         !!!! */
 /* ********************************************************* */
 /* --------------------------------------------------------- */
+/*                           FONT                            */
+/* --------------------------------------------------------- */
+
+
+
+
+/* || FONT 1/3 | BASE FONT ********************************* */
+body *,
+.spoiler-block .summary-title {
+  font-family: var(--usp-base-font, sans-serif);
+  font-size: var(--usp-base-font-size);
+  line-height: 1.5em;
+  color: var(--render-viewer-text-color);
+}
+
+
+
+/* || FONT 2/3 | MONOSPACE FONT **************************** */
+/* monospace font group: | code block | inline code | insert & strikethrough symbol | inline spoiler symbol | footnote ref num | headings ref | list token */
+#rendered-md .hljs *,
+#rendered-md .inline-code,
+#rendered-md ins::before,
+#rendered-md s::before,
+#rendered-md label.spoiler-inline::before,
+#rendered-md a[id*="fnref"],
+#rendered-md h1:before,
+#rendered-md h2:before,
+#rendered-md h3:before,
+#rendered-md h4:before,
+#rendered-md h5:before,
+#rendered-md h6:before,
+#rendered-md ol:not(.footnotes-list) > li::marker {
+  font-family: var(--usp-monospace-font, monospace);
+  font-size: var(--usp-monospace-font-size);
+}
+
+
+
+/* || FONT 3/3 | HEADING FONT ****************************** */
+#rendered-md h1,
+#rendered-md h2,
+#rendered-md h3,
+#rendered-md h4,
+#rendered-md h5,
+#rendered-md h6 {
+  font-family: var(--usp-heading-font, sans-serif);
+}
+
+
+
+
+/* --------------------------------------------------------- */
 /*                           BASIC                           */
 /* --------------------------------------------------------- */
 
@@ -867,51 +919,6 @@ ag12::-webkit-scrollbar-track {
 
 
 /* --------------------------------------------------------- */
-/*                           FONT                            */
-/* --------------------------------------------------------- */
-
-
-
-
-/* || FONT 1/3 | BASE FONT ********************************* */
-body *,
-.spoiler-block .summary-title {
-  font-family: var(--usp-base-font, sans-serif);
-  font-size: var(--usp-base-font-size);
-  line-height: 1.5em;
-  color: var(--render-viewer-text-color);
-}
-
-
-
-/* || FONT 2/3 | MONOSPACE FONT **************************** */
-/* monospace font group: | code block | inline code | insert & strikethrough symbol | inline spoiler symbol | footnote ref num | headings ref | list token */
-#rendered-md .hljs *,
-#rendered-md .inline-code,
-#rendered-md ins::before,
-#rendered-md s::before,
-#rendered-md label.spoiler-inline::before,
-#rendered-md a[id*="fnref"],
-#rendered-md h1:before,
-#rendered-md h2:before,
-#rendered-md h3:before,
-#rendered-md h4:before,
-#rendered-md h5:before,
-#rendered-md h6:before,
-#rendered-md ol:not(.footnotes-list) > li::marker {
-  font-family: var(--usp-monospace-font, monospace);
-  font-size: var(--usp-monospace-font-size);
-}
-
-
-
-/* || FONT 3/3 | SMALLER CODE BLOCK FONT SIZE ************** */
-#rendered-md .joplin-editable > .hljs * {
-  font-size: var(--usp-smaller-code-block-font-size);
-}
-
-
-/* --------------------------------------------------------- */
 /*                         ELEMENTS                          */
 /* --------------------------------------------------------- */
 
@@ -977,7 +984,6 @@ body *,
 #rendered-md h4,
 #rendered-md h5,
 #rendered-md h6 {
-  font-family: var(--usp-heading-font, sans-serif);
   margin-bottom: 0;
   padding: 0;
   line-height: 1em;
@@ -1542,6 +1548,9 @@ img:hover {
 
 /* || ELEMENTS | CODE BLOCK ******************************** */
 /* CODE BLOCK BODY ========================================= */
+#rendered-md .joplin-editable > .hljs * {
+  font-size: var(--usp-smaller-code-block-font-size);
+}
 #rendered-md .joplin-editable > .hljs {
   padding: 1em 0 1em 8px;
   max-height: var(--usp-code-block-max-height);
@@ -2270,6 +2279,56 @@ tspan {
 
 
   /* ------------------------------------------------------- */
+  /*                       PRINT FONT                        */
+  /* ------------------------------------------------------- */
+
+  
+
+
+  /* || PRINT FONT 1/3 | BASE FONT ************************* */
+  #rendered-md p,
+  #rendered-md li,
+  #rendered-md table thead th,
+  #rendered-md table tbody td,
+  #rendered-md note,
+  #rendered-md tip,
+  #rendered-md explain,
+  #rendered-md question,
+  #rendered-md warning,
+  #rendered-md keyword,
+  #rendered-md comment,
+  #rendered-md important,
+  #rendered-md .table-of-contents::before {
+    font-family: var(--usp-print-base-font, sans-serif);
+    font-size: var(--usp-print-base-font-size);
+    line-height: 1.5em;
+  }
+
+
+
+  /* || PRINT FONT 2/3 | MONOSPACE FONT ******************** */
+  #rendered-md .hljs *,
+  #rendered-md .inline-code,
+  #rendered-md .inline-code::before {
+    font-family: var(--usp-print-monospace-font, monospace);
+  }
+
+
+  
+  /* || PRINT FONT 3/3 | HEADING FONT ********************** */
+  #rendered-md h1,
+  #rendered-md h2,
+  #rendered-md h3,
+  #rendered-md h4,
+  #rendered-md h5,
+  #rendered-md h6 {
+  font-family: var(--usp-print-heading-font, sans-serif);
+  }
+
+
+
+
+  /* ------------------------------------------------------- */
   /*                       PRINT READY                       */
   /* ------------------------------------------------------- */
 
@@ -2344,34 +2403,6 @@ tspan {
   #rendered-md h5,
   #rendered-md h6 {
     page-break-after: avoid !important;
-  }
-
-
-
-  /* || PRINT READY | BASE FONT **************************** */
-  #rendered-md p,
-  #rendered-md li,
-  #rendered-md table thead th,
-  #rendered-md table tbody td,
-  #rendered-md note,
-  #rendered-md tip,
-  #rendered-md explain,
-  #rendered-md question,
-  #rendered-md warning,
-  #rendered-md keyword,
-  #rendered-md comment,
-  #rendered-md important {
-    font-family: var(--usp-print-base-font, sans-serif);
-    font-size: var(--usp-print-base-font-size);
-    line-height: 1.5em;
-  }
-
-
-
-  /* || PRINT READY | MONOSPACE FONT *********************** */
-  #rendered-md .hljs * {
-    font-family: var(--usp-print-monospace-font, monospace);
-    font-size: var(--usp-print-smaller-code-block-font-size);
   }
 
 
@@ -2647,7 +2678,6 @@ tspan {
   }
   /* inline code symbol -------------------------------------- */
   #rendered-md .inline-code::before {
-    font-family: var(--usp-print-monospace-font, monospace);
     content: ">|";
     color: var(--print-inline-code-symbol-color);
   }
@@ -2760,7 +2790,6 @@ tspan {
     width: auto;
     text-align: left;
     font-weight: 700;
-    font-family: var(--usp-print-base-font, sans-serif);
     font-size: calc(var(--usp-print-base-font-size) * 1.5);
     color: var(--print-toc-btn-text-color);
     background: unset;
@@ -2807,6 +2836,9 @@ tspan {
 
   /* || PRINT ELEMENTS | CODE BLOCK ************************ */
   /* code block body --------------------------------------- */
+  #rendered-md .hljs * {
+    font-size: var(--usp-print-smaller-code-block-font-size);
+  }
   #rendered-md .hljs {
     line-height: 1.2em;
     border-width: 0 3px;
