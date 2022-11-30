@@ -57,18 +57,21 @@ Let's go for it one by one!
 
 ## Download And Install Recommended Fonts [OPTIONAL]
 
-**ReMoods has tested the best fonts for you with both great performance of reading and writing, and I developed everything based on using those fonts, so I recommended you use them:** 
+**ReMoods has tested the best fonts for you with both great performance of reading and writing, and I developed everything based on using these fonts, so I recommended you use them:** 
  
 - **Base Font:** Mulish (For main note contents)
+- **Base Font:** Chiron Hei HK ExtraLight & Chiron Hei HK Light (For Traditional & Simplified Chinese)
 - **Monospace Font:** Cascadia Mono Light (For markdown syntax, code block, list token, etc.) 
 - **Heading Font:** Montserrat (For headings only) 
-- **Traditional & Simplified Chinese Font:** Chiron Hei HK ExtraLight & Chiron Hei HK Light
 
-Note: The Chiron Hei HK font will auto-switch to ExtraLight when using Dusk Mode and Night Mode, and switch to Light when using Day Mode.
+> To Chinese Language Users:
+> 
+> I definitely recommend you use "Mulish" as your English font If you often use both English and Chinese to take notes, because it has better visual identification experience. Moreover, "Mulish" supplies monospace number characters, so, when you combine using both languages within your notes, it would make your notes seem more elegant.
+> Additionally, ReMoods make the "Chiron Hei HK" font will switching the font weight automatically based on the theme mode you use to improve the reading experience under different background colors. So, I hope you will enjoy it!
  
-Here is the abridged version of the font packages you can download from my Google Drive:  
+Here is the abridged version of the font packages and holds all you need; you can download it from my Google Drive:  
  
-[https://drive.google.com/drive/folders/1SEBEVGpBrXFlmOtVzyqnhEVuO7Vrp61Y?usp=sharing  ](https://drive.google.com/drive/folders/1oQVRSix1hw5zgmJiphZIEAqMrEH5EuLQ?usp=sharing)
+[https://drive.google.com/drive/folders/1SEBEVGpBrXFlmOtVzyqnhEVuO7Vrp61Y?usp=sharing](https://drive.google.com/drive/folders/1oQVRSix1hw5zgmJiphZIEAqMrEH5EuLQ?usp=sharing)
  
 Alternatively, if you are interested to download the original complete packages, you can download them by visiting the official pages below:  
  
@@ -175,7 +178,7 @@ Please mention that the `<ag>` is not a complete custom element name. You should
 
 ## Understanding The ReMoods Theme Font Settings
 
-Note: Since the v3.2.0, ReMoods put all the settings properties into the settings page, so now you can configure everything right there! Additionally, If you still having the older versions font settings template codes on your `userstyle.css` and `userchrome. css`, you should delete all of them first.
+Note: Since the v3.2.0, ReMoods put all the settings properties into the settings page, so now you can configure everything right there! Additionally, If you still using the older versions font settings codes on your `userstyle.css` and `userchrome. css`, you should delete all of them first.
 
 If you are new to ReMoods you might confuse about why ReMoods making the Joplin's original font settings invalid. For that reason, I would like to let you understand that.
 
@@ -231,25 +234,25 @@ body {
 
 # Theme Mode
 
-**Day Mode:** Perfect for working under sunlight and white light environments.
+**Day Mode:** Perfect for working under sunlight and white light environments. Using high contrast colors and white background.
 
 ![dayMode](https://user-images.githubusercontent.com/110529913/203996190-8fac31d5-b55f-41c8-aeb6-936010c4d86d.png)
 
-**Dusk Mode:** Perfect for working under medium light and warm light environments, but it’s still fine for all lighting environments if you feel lazy switching to other theme modes.
+**Dusk Mode:** Perfect for working under medium light and warm light environments, but it’s still fine for all lighting environments if you feel lazy switching to other theme modes. Using medium contrast colors and grey background.
 
 ![duskMode](https://user-images.githubusercontent.com/110529913/203996215-cde1bc84-eb08-4e35-9a34-b35807848f73.png)
 
-**Night Mode:** Perfect for working under low light environments.
+**Night Mode:** Perfect for working under low light environments. Using low contrast colors and reduced bright light.
 
 ![nightMode](https://user-images.githubusercontent.com/110529913/203996199-6a29f26d-8a63-4c99-bd97-0969ebf854a7.png)
 
 # GENERAL ELEMENTS & USE TIPS
 
-ReMoods is expecting to try its best to create a comfortable and helpful theme for you. I believe that you would feel it slowly throughout the time you use it.
+ReMoods is expecting to try its best to create a comfortable and helpful theme for you. I believe that you will feel it throughout the time you use it.
 
-While I did many little pieces of stuff for this theme, I can't show you everything through this document, but I'm happy to show you some screenshots and useful tips to help you dive deep in it:
+While I did many little stuffs for this theme, I can't list out all of them here, but I'm happy to show you some screenshots and useful tips to help you dive deep in it:
 
-## Customizable Heading 
+## Customizable Heading
 
 ![Screenshot 2022-09-25 164824](https://user-images.githubusercontent.com/110529913/192136884-4a05f5e1-8e36-45c0-b880-fb8252b1ebce.png)
 
@@ -279,9 +282,8 @@ Most of the text colors would change with the theme color. Let's compare the dif
 1. About links, we usually use anchor text links like `[Joplin](https://www.joplin.org)` but that wouldn't be showing up the URL when print or export PDF. So, if you want to display the URL on the PDF, you should use the anchor text link with a title like `[Joplin](https://www.joplin.org "Joplin")`.
 2. While I personally prefer using *Mark Text* as an alternative to underline text, some users might prefer using *Insert Text* as underline text. For that reason, *Insert Text* might have different meanings to users. So, I create a few different styles of *Insert Text* for options. If you mostly use *Insert Text and Strikethrough Text* as the meanings of add & remove, you would feel comfortable with the red & green colors style. If using *Insert Text* as underline text, it's better to use the theme color style.
 3. 
-4. You can use the HTML `span` tag below a list item to describe a list item, and the `span` text would present in a different color.
-5. For other text settings, you can find them on the settings page.
-
+4. You can use the HTML `span` tag below a list item and add describe to it, and the `span` text would present in a different color.
+5. More other text settings you can discover on the settings page.
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -299,7 +301,7 @@ Syntax Highlight would change with the theme color too:
 
 ## Floating TOC 
 
-Joplin provides a great built-in Markdown TOC feature which helps you create the TOC by typing a simple command `[[toc]]` within your notes. ReMoods has restyled the TOC and made it float at the bottom right of the Render Viewer. It would open up when the mouse hovers on the TOC button.
+Joplin provides a great built-in Markdown TOC feature which helps you create the TOC by typing a simple command `[[toc]]` within your notes. ReMoods has restyled the TOC and made it float at the bottom right of the Render Viewer. Mouse hovers on the TOC button to open it.
 
 ![Screenshot 2022-09-25 032314](https://user-images.githubusercontent.com/110529913/192115112-9432ac02-94de-4894-b0a6-3fcc8333d32f.png)
 
@@ -337,8 +339,8 @@ ReMoods provides a lot of simple custom elements to help you create a better rea
 
 - Art Gallery - Splitting attached images into multiple columns
 - Sticky Notes - To help you build the notes structure
-- Custom Title Block - Emphasizing the key concepts of a specific part of the content
-- Key Point - Create multiple key points or key steps that related to the heading
+- Custom Title Block - Emphasizing the key concepts
+- Key Point - Create multiple key points or key steps
 - Key Mention - Adding additional shorten information for reference
 
 ### Hints
@@ -402,7 +404,7 @@ Let’s see what are the Sticky Notes for:
 
 ## Custom Title Block
 
-Custom Title Block would be suitable for emphasizing a key concept for the heading, making it more outstanding from other content.
+Custom Title Block would be suitable for emphasizing a key concept, making it more outstanding from other content.
 
 Let's see what it looks like:
 
