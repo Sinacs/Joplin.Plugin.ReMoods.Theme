@@ -74,27 +74,29 @@ That means a lots to me! Thank you guys!
 
 ## Download And Install Recommended Fonts
 
-**ReMoods has tested the best fonts for you, they've great read and write experience, and I developed everything based on using these fonts, so I recommended you use them:** 
- 
-- **Base Font:** Mulish (For main note contents)
-- **Base Font:** Chiron Hei HK ExtraLight & Chiron Hei HK Light (For Traditional & Simplified Chinese)
-- **Monospace Font:** Cascadia Mono Light (For markdown syntax, code block, list token, etc.)
-- **Heading Font:** Montserrat (For heading only)
+👨‍🔬: **First thing first, ReMoods paid lots of time to tested the best fonts for you, they've great perfomance on both read and write, and I developed everything based on using these fonts, so I recommended you use them:** 🤩
+
+- Base Font: `Mulish`
+- Base Font: `Chiron Hei HK ExtraLight` & `Chiron Hei HK Light` (Traditional & Simplified Chinese)
+- Monospace Font: `Cascadia Mono Light` (markdown syntax, code block, list token, etc.)
+- Heading Font: `Montserrat` (heading only)
+
+They are the default fonts in ReMoods.
 
 > To Chinese Language Users:
 > 
-> "Mulish" have great visual identification experience when combine using with Chinese font, and it supplies monospace number characters, it would make your notes seem neater. Moreover, the font-weight of "Chiron Hei HK" will switching between "light" and "extralight" based on the theme mode you use, it's for improving the reading experience under different background colors. So, I hope you will like it!
+> 👨‍🔬: "Mulish" have great visual identification experience when combine using with Chinese font, and it supplies monospace number characters, it would make your notes seem neater. Moreover, the font-weight of "Chiron Hei HK" will automatically switching between "light" and "extralight" based on the theme mode you use, it's for improving the reading experience under different background colors. So, I hope you will like it!
  
-Here is the abridged version of the font packages and holds all you need: 
+Here is the abridged version of the font packages and holds all you need 🎁🎁🎁🎁: 
  
-[Download from my Google Drive](https://drive.google.com/drive/folders/1oQVRSix1hw5zgmJiphZIEAqMrEH5EuLQ?usp=sharing)
+[Download recommended fonts from Google Drive💝](https://drive.google.com/drive/folders/1oQVRSix1hw5zgmJiphZIEAqMrEH5EuLQ?usp=sharing)
  
 Alternatively, if you are interested to download the original full packages, please visit the official pages below:  
  
-- Mulish: https://fonts.google.com/specimen/Mulish?query=mulish 
-- Montserrat: https://fonts.google.com/specimen/Montserrat?query=montserrat 
-- Cascadia Code: https://github.com/microsoft/cascadia-code/releases  
-- Chiron Hei HK: https://github.com/chiron-fonts/chiron-hei-hk/releases 
+- Mulish: 🛻 https://fonts.google.com/specimen/Mulish?query=mulish
+- Montserrat: 🛻 https://fonts.google.com/specimen/Montserrat?query=montserrat
+- Cascadia Code: 🛻 https://github.com/microsoft/cascadia-code/releases
+- Chiron Hei HK: 🛻 https://github.com/chiron-fonts/chiron-hei-hk/releases
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -102,37 +104,38 @@ Alternatively, if you are interested to download the original full packages, ple
 
 **Reason to install:**
 
-- ReMoods Theme: This is a must!
+- ReMoods Theme: This is a must!🤔
 - Rich Markdown: ReMoods need to run with this plugin, otherwise, it would cause styles missing from ReMoods.
-- Quick HTML Tags: It provides you with a quick and easy way to create the custom elements of ReMoods. (optional)
+- Quick HTML Tags: It provides you with a quick and easy way to create the useful custom elements which ReMoods provides you. (optional)
 
 **Let's go:**
 
-1. Navigate to `Tools` > `Options` > `Plugins`.
-2. Search the word `remoods`.
-3. Click `Install` ReMoods Theme plugin.
-4. Search the word `rich`.
-5. Click `Install` Rich Markdown plugin.
-6. Search the word `html`.
-7. Click `Install` Quick HTML Tags plugin.
-8. Quit and restart Joplin.
-9. Open Joplin again.
-10. Navigate to `Tools` > `Options` > `Rich Markdown`.
-11. Enable the `Add additional CSS classes for enhanced customization`.
-12. Click `Apply`.
-13. Navigate to `Tools` > `Options` > `Quick HTML Tags`
-14. Go to `HTML predefined tags` 
-15. Copy this line of text:  `span;kp;ctb;km;ag;note;tip;explain;question;comment;keyword;important;`
-16. Paste it to the input bar.
-17. Click `Apply`.(Don't quit, keep going to next step.)
+1. Open Joplin.
+2. Navigate to `Tools` > `Options` > `Plugins`.
+3. Search the word `remoods`.
+4. Click `Install` ReMoods Theme plugin.
+5. Search the word `rich`.
+6. Click `Install` Rich Markdown plugin.
+7. Search the word `html`.
+8. Click `Install` Quick HTML Tags plugin.
+9. Quit and restart Joplin.
+10. Open Joplin again.
+11. Navigate to `Tools` > `Options` > `Rich Markdown`.
+12. Enable the `Add additional CSS classes for enhanced customization`.
+13. Click `Apply`.
+14. Navigate to `Options` > `Quick HTML Tags`
+15. Go to `HTML predefined tags` 
+16. Copy this line of text:  `span;kp;ctb;km;ag;note;tip;explain;question;comment;keyword;important;`
+17. Paste it to the input bar.
+18. Click `Apply`.(Don't quit, keep going to next step.☕)
 
-After this, you can use the Quick HTML Tags plugin like the below:
+👨🏼‍💻:Here show you how the Quick HTML Tags plugin works but you don't have to do it for now:
 
 1. Whenever you want to use an HTML tag just press  `ctrl + h`.
 2. Then, press the `Down` key on your keyboard to find the right tag.
-3. Press the `Enter` key. It's done!
+3. Press the `Enter` key. It's done!😉
 
-Please mention that the `<ag>` is not a complete custom element name. You should add a number to it manually, such as `<ag4>`, `<ag8>`, etc. The ReMoods' custom element "Art Gallery" lets you create 2 to 12 columns for wrapping the attached images, so each time you create an `ag` tag, just don't forget to add a number to it.
+Ok, keep going next! 🏃🏼🏃🏼‍♀️🏃🏼‍♂️
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -153,11 +156,8 @@ Please mention that the `<ag>` is not a complete custom element name. You should
 
 **Let's go:**
 
-1. Open Joplin and navigate to `tools` > `Options` > `Appearance` > `Theme`.
-2. Select the Joplin built-in theme based on the ReMoods Theme Mode you use.
-3. Click `Apply`.
-4. Navigate to `tools` > `Options` > `Markdown`.
-5. Enable the following options: 
+1. Navigate to `tools` > `Options` > `Markdown`.
+2. Enable the following options: 
 	- `Enable math expressions (wysiwyg: yes)`
 	- `Enable Mermaid diagrams support (wysiwyg: yes)`
 	- `Enable ==mark== syntax (wysiwyg: yes)`
@@ -167,16 +167,22 @@ Please mention that the `<ag>` is not a complete custom element name. You should
 	- `Enable ^sup^ syntax (wysiwyg: yes)`
 	- `Enable abbreviation syntax (wysiwyg: no)`
 	- `Enable ++insert++ syntax (wysiwyg: yes)`
-6. Click `Apply`.(Don't quit, keep going to the last step.)
+3. Click `Apply`.
+4. Navigate to `Option` > `ReMoods Theme` > `Theme Mode`
+5. Select your theme mode.
+6. Click `Apply`.
+7. Navigate to `Options` > `Appearance` > `Theme`.
+8. Select the Joplin built-in theme based on the ReMoods Theme Mode you use.
+9. Click `Apply`.(👸🏼Well, Well, you are almost done! The final Next!🚀🚀🚀)
 
 [:arrow_up:Back](#table-of-contents)
 
 ## Set Joplin Starting Screen Background Color
 
-**You might hate to see the starting screen in white background color when using `Dusk Mode` and `Night Mode`, but this problem can't be solved by a plugin. So, to set the Joplin starting screen background color to stay consistent with the theme mode color, you should do it through your `userchrome.css` manually:**
+🤔:**You might hate to see the starting screen background in white when using `Dusk Mode` and `Night Mode`, but this problem can't be solved by a plugin. So, if you want the starting screen background stay consistent to the theme mode you should do it through your `userchrome.css` manually:**
 
-1. Navigate to `Tools` > `Options` > `Appearance`.
-2. Click `Show Advanced Settings`.
+1. Navigate to `Options` > `Appearance`.
+2. Scroll to the bottom and click `Show Advanced Settings`.
 3. Click `Custom Stylesheet for Joplin-wide app styles` and it will open the `userchrome.css` file.
 4. Copy / paste the below codes into `userchrome.css` and save the file:
 ```
@@ -185,7 +191,9 @@ body {
   background-color: var(--code-mirror-bg-color) !important;
 }
 ```
-5. Quit and restart Joplin to apply the updates.
+5. Quit and restart Joplin to apply all the the above updates!
+
+🎉🎉🎉 WOW! Congratulations! You made it! 🚀🛸🪐
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -312,6 +320,8 @@ Below is the sample of the art gallery(ag6) with 30 images:
 1. The custom element name `ag` stands for *Art Gallery*.
 2. The `ag` tag must use *at the next line of the plain text* .
 3. Do not include any blank line within the body, *blank line will break the format* .
+
+> Note: If you've followed the getting started guide and using the Quick HTML Tags plugin to create tags for custom elements, you should remind that the `<ag>` is not a complete custom element name. You should always add a number behind it manually, such as `<ag4>`, `<ag8>`, etc.
 
 [:arrow_up:Back](#table-of-contents)
 
