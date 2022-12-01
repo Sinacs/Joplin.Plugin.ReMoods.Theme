@@ -351,7 +351,9 @@
 
 
 
-  
+
+  --s-main-panel-divider-bg:                            hsl(var(--usp-remoods-hue),  14%,  11%);
+
   /* NOTEBOOK PANEL ========================================================================= */
   --s-directory-icon-open-color:                        hsl(var(--usp-remoods-hue),  20%,  70%);
   --s-directory-icon-open-shadow:                       hsl(var(--usp-remoods-hue), 100%,  40%);
@@ -1295,14 +1297,21 @@
 
 
 
-/* || LAYOUT 1/3 | CONTAINER ******************************* */
-/* CONTAINER > AAP ========================================= */
+/* || LAYOUT 1/2 | CONTAINER ******************************* */
+/* CONTAINER > BACKGROUND ================================== */
 #react-root > div:not(.master-password-dialog) > div,
 body {
   background-color: var(--g-main-bg-color-1) !important;
 }
+/* CONTAINER > DIVIDER ------------------------------------- */
+#react-root > [class*="profile-"] .rli-root div[style="position: absolute; user-select: none; width: 10px; height: 100%; top: 0px; right: -5px; cursor: col-resize;"] {
+  background: var(--s-main-panel-divider-bg);
+}
 
-/* editor panel > group column > not last ------------------ */
+
+
+/* || LAYOUT 2/2 | COLUMN & ROW **************************** */
+/* group column > editor panel > not last ------------------ */
 #react-root > [class*="profile-"] .rli-root:nth-child(3) > [class*="rli-tempContainer-"] .rli-editor:first-child > div > div > div {
   height: calc(100% + 5px) !important;
 }

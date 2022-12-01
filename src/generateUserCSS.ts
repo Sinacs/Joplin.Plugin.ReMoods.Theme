@@ -372,6 +372,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     chromeCSS = chromeCSS.replace(/^  --g-toolbar-bd-color:.+?;/gms, '  --g-toolbar-bd-color: hsl(var(--usp-remoods-hue), 0%, 60%);');
     chromeCSS = chromeCSS.replace(/^  --g-editor-panel-divider-color:.+?;/gms, '  --g-editor-panel-divider-color: hsl(var(--usp-remoods-hue), 0%, 90%);');
     chromeCSS = chromeCSS.replace(/^  --g-option-main-bg-color:.+?;/gms, '  --g-option-main-bg-color: hsl(var(--usp-remoods-hue), 95%, 95%);');
+    chromeCSS = chromeCSS.replace(/^  --s-main-panel-divider-bg:.+?;/gms, '  --s-main-panel-divider-bg: hsl(var(--usp-remoods-hue), 50%, 98%);');
     chromeCSS = chromeCSS.replace(/^  --s-directory-icon-open-color:.+?;/gms, '  --s-directory-icon-open-color: hsl(var(--usp-remoods-hue), 20%, 70%);');
     chromeCSS = chromeCSS.replace(/^  --s-directory-icon-open-shadow:.+?;/gms, '  --s-directory-icon-open-shadow: none;');
     chromeCSS = chromeCSS.replace(/^  --s-directory-icon-close-color:.+?;/gms, '  --s-directory-icon-close-color: hsl(var(--usp-remoods-hue), 0%, 0%);');
@@ -938,6 +939,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     chromeCSS = chromeCSS.replace(/^  --g-toolbar-bd-color:.+?;/gms, '  --g-toolbar-bd-color: hsl(var(--usp-remoods-hue), 70%, 70%);');
     chromeCSS = chromeCSS.replace(/^  --g-editor-panel-divider-color:.+?;/gms, '  --g-editor-panel-divider-color:  hsl(var(--usp-remoods-hue), 30%, 50%);');
     chromeCSS = chromeCSS.replace(/^  --g-option-main-bg-color:.+?;/gms, '  --g-option-main-bg-color: hsl(var(--usp-remoods-hue), 8%, 27%);');
+    chromeCSS = chromeCSS.replace(/^  --s-main-panel-divider-bg:.+?;/gms, '  --s-main-panel-divider-bg: hsl(var(--usp-remoods-hue), 14%, 11%);');
     chromeCSS = chromeCSS.replace(/^  --s-directory-icon-open-color:.+?;/gms, '  --s-directory-icon-open-color: hsl(var(--usp-remoods-hue), 20%, 70%);');
     chromeCSS = chromeCSS.replace(/^  --s-directory-icon-open-shadow:.+?;/gms, '  --s-directory-icon-open-shadow: hsl(var(--usp-remoods-hue), 100%, 40%);');
     chromeCSS = chromeCSS.replace(/^  --s-directory-icon-close-color:.+?;/gms, '  --s-directory-icon-close-color: hsl(var(--usp-remoods-hue), 100%, 60%);');
@@ -1504,6 +1506,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     chromeCSS = chromeCSS.replace(/^  --g-toolbar-bd-color:.+?;/gms, '  --g-toolbar-bd-color: hsl(var(--usp-remoods-hue), 70%, 70%);');
     chromeCSS = chromeCSS.replace(/^  --g-editor-panel-divider-color:.+?;/gms, '  --g-editor-panel-divider-color: hsl(var(--usp-remoods-hue), 20%, 30%);');
     chromeCSS = chromeCSS.replace(/^  --g-option-main-bg-color:.+?;/gms, '  --g-option-main-bg-color: hsl(var(--usp-remoods-hue), 8%, 11%);');
+    chromeCSS = chromeCSS.replace(/^  --s-main-panel-divider-bg:.+?;/gms, '  --s-main-panel-divider-bg: hsl(var(--usp-remoods-hue), 14%, 11%);');
     chromeCSS = chromeCSS.replace(/^  --s-directory-icon-open-color:.+?;/gms, '  --s-directory-icon-open-color: hsl(var(--usp-remoods-hue), 20%, 70%);');
     chromeCSS = chromeCSS.replace(/^  --s-directory-icon-shadow:.+?;/gms, '  --s-directory-icon-open-shadow: hsl(var(--usp-remoods-hue), 100%, 40%);');
     chromeCSS = chromeCSS.replace(/^  --s-directory-icon-close-color:.+?;/gms, '  --s-directory-icon-close-color: hsl(calc(var(--usp-remoods-hue) + 180deg), 100%, 65%);');
