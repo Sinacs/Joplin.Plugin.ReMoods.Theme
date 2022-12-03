@@ -422,6 +422,10 @@
   --s-tagbar-tag-divider-color:                         hsl(var(--usp-remoods-hue), 100%,  90%);
   --s-tagbar-hint-text-color:                           hsl(var(--usp-remoods-hue),  40%,  40%);
 
+  --s-footer-popup-msg:                                 hsl( 30, 100%,  80%);
+  --s-footer-popup-msg-bg:                              hsl(  0,  50%,  40%);
+  --s-footer-popup-msg-link:                            hsl(200,  90%,  75%);
+
   /* MODAL DIALOG =========================================================================== */
   --s-modal-dialog-bg-color:                            hsl(var(--usp-remoods-hue),  11%,  13%);
   --s-modal-dialog-label-color:                         hsl(var(--usp-remoods-hue),  60%,  90%);
@@ -2422,7 +2426,11 @@ body {
 /* FOOTER > POPUP MESSAGE ================================== */
 .tag-bar ~ div:last-child {
   text-indent: 10px;
-  background: hsl(0, 60%, 55%) !important;
+  color: var(--s-footer-popup-msg);
+  background: var(--s-footer-popup-msg-bg) !important;
+}
+.tag-bar ~ div:last-child a {
+  color: var(--s-footer-popup-msg-link) !important;
 }
 
 

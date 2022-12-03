@@ -424,6 +424,9 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     chromeCSS = chromeCSS.replace(/^  --s-tagbar-tag-text-shadow-hover:.+?;/gms, '  --s-tagbar-tag-text-shadow-hover: none;');
     chromeCSS = chromeCSS.replace(/^  --s-tagbar-tag-divider-color:.+?;/gms, '  --s-tagbar-tag-divider-color: hsl(var(--usp-remoods-hue), 0%, 70%);');
     chromeCSS = chromeCSS.replace(/^  --s-tagbar-hint-text-color:.+?;/gms, '  --s-tagbar-hint-text-color: hsl(var(--usp-remoods-hue), 0%, 20%);');
+    chromeCSS = chromeCSS.replace(/^  --s-footer-popup-msg:.+?;/gms, '  --s-footer-popup-msg: hsl(0, 60%, 50%);');
+    chromeCSS = chromeCSS.replace(/^  --s-footer-popup-msg-bg:.+?;/gms, '  --s-footer-popup-msg-bg: hsl(0, 100%, 90%);');
+    chromeCSS = chromeCSS.replace(/^  --s-footer-popup-msg-link:.+?;/gms, '  --s-footer-popup-msg-link: hsl(200, 70%, 55%);');
     chromeCSS = chromeCSS.replace(/^  --s-modal-dialog-bg-color:.+?;/gms, '  --s-modal-dialog-bg-color: hsl(var(--usp-remoods-hue), 0%, 100%);');
     chromeCSS = chromeCSS.replace(/^  --s-modal-dialog-label-color:.+?;/gms, '  --s-modal-dialog-label-color: hsl(var(--usp-remoods-hue), 0%, 20%);');
     chromeCSS = chromeCSS.replace(/^  --s-modal-dialog-title-text-color:.+?;/gms, '  --s-modal-dialog-title-text-color: hsl(var(--usp-remoods-hue), 0%, 50%);');
@@ -1007,6 +1010,9 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     chromeCSS = chromeCSS.replace(/^  --s-tagbar-tag-text-shadow-hover:.+?;/gms, '  --s-tagbar-tag-text-shadow-hover: hsl(var(--usp-remoods-hue), 100%, 25%);');
     chromeCSS = chromeCSS.replace(/^  --s-tagbar-tag-divider-color:.+?;/gms, '  --s-tagbar-tag-divider-color: hsl(var(--usp-remoods-hue), 100%, 90%);');
     chromeCSS = chromeCSS.replace(/^  --s-tagbar-hint-text-color:.+?;/gms, '  --s-tagbar-hint-text-color: hsl(var(--usp-remoods-hue), 40%, 40%);');
+    chromeCSS = chromeCSS.replace(/^  --s-footer-popup-msg:.+?;/gms, '  --s-footer-popup-msg: hsl(30, 100%, 80%);');
+    chromeCSS = chromeCSS.replace(/^  --s-footer-popup-msg-bg:.+?;/gms, '  --s-footer-popup-msg-bg: hsl(0, 50%, 40%);');
+    chromeCSS = chromeCSS.replace(/^  --s-footer-popup-msg-link:.+?;/gms, '  --s-footer-popup-msg-link: hsl(200, 90%, 75%);');
     chromeCSS = chromeCSS.replace(/^  --s-modal-dialog-bg-color:.+?;/gms, '  --s-modal-dialog-bg-color: hsl(var(--usp-remoods-hue), 11%, 13%);');
     chromeCSS = chromeCSS.replace(/^  --s-modal-dialog-label-color:.+?;/gms, '  --s-modal-dialog-label-color: hsl(var(--usp-remoods-hue), 60%, 90%);');
     chromeCSS = chromeCSS.replace(/^  --s-modal-dialog-title-text-color:.+?;/gms, '  --s-modal-dialog-title-text-color: hsl(var(--usp-remoods-hue), 60%, 90%);');
@@ -1590,6 +1596,9 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     chromeCSS = chromeCSS.replace(/^  --s-tagbar-tag-text-shadow-hover:.+?;/gms, '  --s-tagbar-tag-text-shadow-hover: hsl(var(--usp-remoods-hue), 100%, 25%);');
     chromeCSS = chromeCSS.replace(/^  --s-tagbar-tag-divider-color:.+?;/gms, '  --s-tagbar-tag-divider-color: hsl(var(--usp-remoods-hue), 100%, 90%);');
     chromeCSS = chromeCSS.replace(/^  --s-tagbar-hint-text-color:.+?;/gms, '  --s-tagbar-hint-text-color: hsl(var(--usp-remoods-hue), 40%, 40%);');
+    chromeCSS = chromeCSS.replace(/^  --s-footer-popup-msg:.+?;/gms, '  --s-footer-popup-msg: hsl(30, 100%, 80%);');
+    chromeCSS = chromeCSS.replace(/^  --s-footer-popup-msg-bg:.+?;/gms, '  --s-footer-popup-msg-bg: hsl(0, 50%, 40%);');
+    chromeCSS = chromeCSS.replace(/^  --s-footer-popup-msg-link:.+?;/gms, '  --s-footer-popup-msg-link: hsl(200, 90%, 75%);');
     chromeCSS = chromeCSS.replace(/^  --s-modal-dialog-bg-color:.+?;/gms, '  --s-modal-dialog-bg-color: hsl(var(--usp-remoods-hue), 11%, 13%);');
     chromeCSS = chromeCSS.replace(/^  --s-modal-dialog-label-color:.+?;/gms, '  --s-modal-dialog-label-color: hsl(var(--usp-remoods-hue), 60%, 90%);');
     chromeCSS = chromeCSS.replace(/^  --s-modal-dialog-title-text-color:.+?;/gms, '  --s-modal-dialog-title-text-color: hsl(var(--usp-remoods-hue), 60%, 90%);');
