@@ -63,7 +63,6 @@ ReMoods beautifies your screen and documents and takes care of your writing mood
   - [Spoiler](#spoiler)
   - [Markdown Table Colorize](#markdown-table-colorize)
   - [Tested Third-Party Plugins](#tested-third-party-plugins) (Latest: 26.NOV.2022)
-  - [Known Conflicts With Other Plugin Features](#known-conflicts-with-other-plugins)
   
 **PRINT & EXPORT:**
 
