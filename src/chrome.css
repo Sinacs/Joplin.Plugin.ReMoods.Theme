@@ -2096,7 +2096,7 @@ body {
   transition-delay: 1.2s;
   z-index: 99;
 }
-.rli-editor > div > div > div > div:nth-child(1):hover ~ div:nth-child(2) > div > div:first-child > .editor-toolbar,
+.rli-editor > div > div > div > div:nth-child(1):hover ~ div[style="display: flex; flex: 1 1 0%; padding-left: 8px; max-height: 100%;"] > div > div:first-child > .editor-toolbar,
 .rli-editor > div > div > div > div > div > div > .editor-toolbar:hover {
   height: 34px;
   opacity: 1;
