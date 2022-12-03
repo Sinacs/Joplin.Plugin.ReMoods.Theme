@@ -1326,7 +1326,7 @@ body {
 }
 /* CONTAINER > DIVIDER ------------------------------------- */
 #react-root > [class*="profile-"] .rli-root div[style="position: absolute; user-select: none; width: 10px; height: 100%; top: 0px; right: -5px; cursor: col-resize;"] {
-  background: var(--s-main-panel-divider-bg);
+  background: linear-gradient(to right, var(--s-main-panel-divider-bg) 50%, transparent 51%);
 }
 
 
