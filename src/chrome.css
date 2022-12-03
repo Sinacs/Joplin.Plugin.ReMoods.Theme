@@ -277,7 +277,7 @@
 
 
   /* PLUGIN: ENHANCEMENT ******************************************************************** */
-  --eh-footnote-ref-color:                           hsl(calc(var(--usp-remoods-hue) + 180deg), 100%, 10%);
+  --eh-footnote-ref-color:                            hsl(calc(var(--usp-remoods-hue) + 180deg), 100%,  10%);
 
   
   
@@ -404,11 +404,13 @@
   --s-notelist-search-btn-color-hover:                  hsl(var(--usp-remoods-hue), 100%,  70%);
 
   /* EDITOR PANEL =========================================================================== */
+  --s-toolbar-shadow:                           0 0 1px hsl(var(--usp-remoods-hue), 100%,  30%);
+
   --s-notebook-nav-btn-bg-color:                        hsl(var(--usp-remoods-hue),  30%,  20%);
   --s-notebook-nav-btn-bd-color:                        hsl(var(--usp-remoods-hue), 100%,  30%);
   --s-notebook-nav-btn-shadow:                          hsl(var(--usp-remoods-hue), 100%,  80%);
   --s-notebook-nav-btn-text-color:                      hsl(var(--usp-remoods-hue), 100%,  70%);
-  
+
   --s-batch-menu-btn-text-color:                        hsl(var(--usp-remoods-hue),  60%,  90%);
   --s-batch-menu-btn-bg-color:                          hsl(var(--usp-remoods-hue),  50%,  10%);
   --s-batch-menu-btn-bd-color:                          hsl(var(--usp-remoods-hue), 100%,  30%);
@@ -2088,7 +2090,7 @@ body {
   background: var(--g-toolbar-bg-color) !important;
   border-radius: 7px;
   border: 1px solid var(--g-toolbar-bd-color);
-  filter: drop-shadow(0 0 2px var(--g-toolbar-bg-shadow));
+  filter: drop-shadow(var(--s-toolbar-shadow));
   overflow: hidden;
   opacity: 0;
   visibility: collapse;
