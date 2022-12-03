@@ -572,7 +572,7 @@ For advanced, you can also control which elements should show on the PDF through
 
 It would be helpful for improving the theme if you report me anything that make you feel uncomfortable when using ReMoods, such as colors, unclear text, bugs, etc.
 
-- [Create an issue post on GitHub]()
+- [Create an issue post on GitHub](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/issues/new/choose)
 - [Leave me a message on Joplin forum](https://discourse.joplinapp.org/t/plugin-remoods-theme-v3/27547?u=sinacs)
 
 **Send User Feedback:** 
