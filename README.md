@@ -203,7 +203,7 @@ Day Mode ☀️ is perfect for working under sunlight and white light environmen
 
 It uses the brightest colors and white background to welcome every sunny day🌞.
 
-#TODO day mode pic
+![batch_dm](https://user-images.githubusercontent.com/110529913/205424011-ab3f2ccc-4f10-48e9-9f98-ec24f46c72f5.png)
 
 ### Dusk Mode
 
@@ -213,7 +213,8 @@ Dusk Mode 🌆 is perfect for working under medium light and warm light environm
 
 It uses medium contrast colors and grey background to cope with uneven lighting environments, one difference to the other two is dusk mode has its own settings property to apply a darker background.
 
-#TODO dusk mode pic
+![batch_dkm](https://user-images.githubusercontent.com/110529913/205424027-bc19db19-eb23-4110-9f4d-e9e135b19fd1.png)
+
 
 ### Night Mode
 
@@ -223,7 +224,7 @@ Night Mode 🌙 is perfect for working under low light environments:
 
 It uses low-contrast colors and minimizes unwanted glare within the notes and Joplin to protect the eyes of a hardworking night owl🦉.
 
-#TODO Night mode pic
+![batch_nm](https://user-images.githubusercontent.com/110529913/205424032-22767db4-3c50-438c-9a7b-58f44f503274.png)
 
 ## Customizable Heading
 
