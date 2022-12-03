@@ -2043,12 +2043,11 @@ body {
 .rli-editor > div > div > div > div:nth-child(2)[style="padding-top: 10px; padding-bottom: 10px; padding-left: 8px;"] {
   position: relative;
   top: 5px;
-  left: 5px;
-  margin: 0px !important;
   padding: 0 0 0 6px !important;
 }
 /* notebook navigation button ------------------------------ */
 .rli-editor > div > div > div > div:nth-child(2)[style="padding-top: 10px; padding-bottom: 10px; padding-left: 8px;"] > button {
+  margin-left: 5px;
   padding: 0 10px;
   min-height: 28px;
   max-height: 28px;
@@ -2082,7 +2081,7 @@ body {
 /* toolbar ------------------------------------------------- */
 .rli-editor > div > div > div > div > div > div > .editor-toolbar {
   position: absolute;
-  margin: 5px 0 0 15px !important;
+  margin: 10px 0 0 15px !important;
   padding: 3px 3px 2px 3px !important;
   width: calc(100% - 30px);
   height: 0;
@@ -2157,12 +2156,13 @@ body {
 /* BODY > TOOLBAR (RICH TEXT EDITOR) ======================= */
 /* rich text editor > toolbar container -------------------- */
 .joplin-tinymce:not(#fake) .tox-editor-header {
+  margin-top: 8px !important;
   border-bottom: 1px solid var(--g-editor-panel-divider-color);
 }
 /* rich text editor > toolbar item container --------------- */
 .joplin-tinymce:not(#fake) > div:first-child,
 .joplin-tinymce:not(#fake) > div:nth-child(2) {
-  margin: 0 !important;
+  margin: 8px !important;
   padding: 0 !important;
   height: 34px !important;
 }
