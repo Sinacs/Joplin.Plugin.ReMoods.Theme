@@ -63,7 +63,6 @@ ReMoods beautifies your screen and documents and takes care of your writing mood
   - [Spoiler](#spoiler)
   - [Markdown Table Colorize](#markdown-table-colorize)
   - [Tested Third-Party Plugins](#tested-third-party-plugins) (Latest: 26.NOV.2022)
-  - [Known Conflicts With Other Plugin Features](#known-conflicts-with-other-plugins)
   
 **PRINT & EXPORT:**
 
@@ -141,7 +140,7 @@ Ok, keep going next! 🏃🏼🏃🏼‍♀️🏃🏼‍♂️
 
 |Modifying | Because of... |
 |:-|:-|
-|Joplin built-in theme | ReMoods can't styling the private area colors of other plugins but built-in theme will can.|
+|Joplin built-in theme | ReMoods can't styling the private area colors of other plugins but built-in theme can.|
 |Joplin built-in Markdown | Joplin is default to disable some of the built-in markdown features that ReMoods has styles for.|
 
 **Reference for modifying:**
