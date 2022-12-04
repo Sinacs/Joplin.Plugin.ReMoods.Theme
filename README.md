@@ -225,6 +225,16 @@ It uses low-contrast colors and minimizes unwanted glare within the notes and Jo
 
 ![batch_nm](https://user-images.githubusercontent.com/110529913/205424032-22767db4-3c50-438c-9a7b-58f44f503274.png)
 
+### 💡Tips
+
+**Q: Why didn't other plugins' background change with Joplin's built-in theme?**
+
+**A:** *It only works if those color values are the default settings. Set it back to the default value, and you will see it works.*
+
+**Q: Can I only change the theme mode but not change the built-in theme?**
+
+**A:** *Yes, you can, but you will find that other plugins' background colors might not match your ReMoods theme, and the selected text background color in Markdown Editor will become hard to read. (I can't edit that.)*
+
 ## Customizable Heading
 
 ![Screenshot 2022-09-25 164824](https://user-images.githubusercontent.com/110529913/192136884-4a05f5e1-8e36-45c0-b880-fb8252b1ebce.png)
@@ -232,10 +242,10 @@ It uses low-contrast colors and minimizes unwanted glare within the notes and Jo
 ### 💡Tips
 
 1. You can set you favorite font for headings by editing the `Custom Heading Font` in options to improve the personality style of your notes.
-1. You can enable the heading's border for which you often use with a border in options.
-2. You can add `---` or `***` to the next line of the target heading manually for the heading which you didn't enable the border in options.
-3. The heading's reference will appear right before each heading if you enable it.(Render Viewer Only)
-4. If the H1 twill pattern style is enabled, it's required to use HTML `span` for wrapping the emoji to avoid the styles affecting it. (H1 only)
+2. You can enable the heading's border for which you often use with a border in options.
+3. You can add `---` or `***` to the next line of the target heading manually for the heading which you didn't enable the border in options.
+4. The heading's reference will appear right before each heading if you enable it.(Render Viewer Only)
+5. If the H1 twill pattern style is enabled, it's required to use HTML `span` for wrapping the emoji to avoid the styles affecting it. (H1 only)
 
 ![Screenshot 2022-09-25 203245](https://user-images.githubusercontent.com/110529913/192143564-00ae82a5-55ac-4c87-abec-5baa9bbc1f0b.png)
 ![Screenshot 2022-09-25 203723](https://user-images.githubusercontent.com/110529913/192143773-76b71e07-7310-44b2-a34e-1022f4d02ff6.png)
