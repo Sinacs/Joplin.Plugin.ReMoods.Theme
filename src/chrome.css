@@ -1334,10 +1334,20 @@ body {
 
 
 /* || LAYOUT 2/2 | COLUMN & ROW **************************** */
-/* group column > editor panel > not last ------------------ */
-#react-root > [class*="profile-"] .rli-root:nth-child(3) > [class*="rli-tempContainer-"] .rli-editor:first-child > div > div > div {
-  height: calc(100% + 5px) !important;
+/* EDITOR PANEL (without group) > FOOTER TAG BAR =========== */
+#react-root > [class*="profile-"] .rli-root > .rli-editor > div > div > div .tag-bar {
+  margin-bottom: 5px;
+  height: 35px;
+  min-height: 35px;
+  max-height: 35px;
 }
+#react-root > [class*="profile-"] .rli-root > .rli-editor > div > div > div .tag-bar:hover {
+  height: 50px;
+  min-height: 50px;
+  max-height: 50px;
+  transition: height 0.3s, max-height 0.3s, min-height 0.3s;
+}
+
 
 
 
@@ -2345,7 +2355,7 @@ body {
   min-height: 27px;
   max-height: 27px;
   background: var(--g-main-bg-color-1);
-  border-width: 1px 0;
+  border-width: 1px 0 0 0;
   border-style: solid;
   border-color: var(--g-editor-panel-divider-color);
   transition: height 0.8s, max-height 0.8s, min-height 0.8s;
@@ -2364,6 +2374,13 @@ body {
 }
 .tag-bar .tag-list {
   padding: 0 !important; 
+}
+.tag-bar > div,
+.tag-bar > a > span {
+  margin-top: 5px;
+}
+.tag-list ~ span {
+  margin-top: 1px;
 }
 /* tag button ---------------------------------------------- */
 .tag-bar > a {
