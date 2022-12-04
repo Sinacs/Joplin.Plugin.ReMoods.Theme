@@ -27,7 +27,7 @@ ReMoods beautifies your screen and documents and takes care of your writing mood
   
 **REMOODS THEME GETTING STARTED GUIDE:**
 
-> Guiding you to get complete experience of ReMoods Theme with the quick steps!
+> Guiding you to get the complete experience of ReMoods Theme with the quick steps!
 
   - 1 -> [Download And Install Recommended Fonts](#download-and-install-recommended-fonts) (optional)
   - 2 -> [Install And Configure 3 Important Plugins](#install-and-configure-3-important-plugins)
@@ -36,7 +36,7 @@ ReMoods beautifies your screen and documents and takes care of your writing mood
   
 **APPEARANCE & USE TIPS:**
 
-> Information about general appearance of ReMoods and provides you with some use tips!
+> Information about the general appearance of ReMoods and provides you with some use tips!
 
   - [Theme Mode](#theme-mode) [NEW]
   - [Customizable Heading](#customizable-heading)
@@ -47,7 +47,7 @@ ReMoods beautifies your screen and documents and takes care of your writing mood
 
 **CUSTOM ELEMENTS & USE TIPS:**
 
-> Details about the 5 major custom elements of ReMoods Theme. If you feel comfortable to take notes with html, these custom elements are the best helper for formatting your notes!
+> Details about the 5 major custom elements of ReMoods Theme. If you feel comfortable taking notes with HTML, these custom elements are the best helper for formatting your notes!
 
   - [Art Gallery](#art-gallery)
   - [Sticky Notes](#sticky-notes)
@@ -74,12 +74,12 @@ ReMoods beautifies your screen and documents and takes care of your writing mood
 
 ## Download And Install Recommended Fonts
 
-👨‍🔬: **First thing first, ReMoods paid lots of time to tested the best fonts for you, they've great performance on both read and write, and I developed everything based on using these fonts, so I recommended you use them:** 🤩
+👨‍🔬: **First thing first, ReMoods paid lots of time to test the best fonts for you, they've great performance on both read and write, and I developed everything based on using these fonts, so I recommended you use them:** 🤩
 
 You can download... 
 
 1. The abridged package from my [Google Drive🎁](https://drive.google.com/drive/folders/1oQVRSix1hw5zgmJiphZIEAqMrEH5EuLQ?usp=sharing)
-2. The full packages by clicking the below fonts name to visit the official sources.
+2. The full packages by clicking below fonts name to visit the official sources.
 
 - Base Font: 🛻[Mulish](https://fonts.google.com/specimen/Mulish?query=mulish)
 - Base Font: 🛻[Chiron Hei HK](https://github.com/chiron-fonts/chiron-hei-hk/releases) (Traditional & Simplified Chinese)
@@ -88,7 +88,7 @@ You can download...
 
 > To Chinese Language Users:
 > 
-> 👨‍🔬: "Mulish" have great visual identification experience when combine using with Chinese font, and it supplies monospace number characters, it would make your notes neater. Moreover, the "Chiron Hei HK" font-weight will automatically switching between "light" and "extralight" based on the theme mode you use, it's for improving the reading experience under different theme modes.
+> 👨‍🔬: "Mulish" have a great visual identification experience when combine using with the Chinese font, and it supplies monospace number characters, it would make your notes neater. Moreover, the "Chiron Hei HK" font-weight will automatically switch between "light" and "extralight" based on the theme mode you use, it's for improving the reading experience under different theme modes.
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -186,7 +186,7 @@ body {
   background-color: var(--code-mirror-bg-color) !important;
 }
 ```
-5. Quit and restart Joplin to apply all the the above updates!
+5. Quit and restart Joplin to apply all the above updates!
 
 🎉🎉🎉 WOW! Congratulations! You made it! 🚀🛸🪐🍺🍺🍺
 
@@ -241,9 +241,9 @@ It uses low-contrast colors and minimizes unwanted glare within the notes and Jo
 
 ### 💡Tips
 
-1. You can set you favorite font for headings by editing the `Custom Heading Font` in options to improve the personality style of your notes.
-2. You can enable the heading's border for which you often use with a border in options.
-3. You can add `---` or `***` to the next line of the target heading manually for the heading which you didn't enable the border in options.
+1. You can set your favorite font for headings by editing the `Custom Heading Font` in options to improve the personality style of your notes.
+2. You can enable the heading's border, which you often use with a border, in options.
+3. You can add `---` or `***` to the next line of the target heading manually for the heading, for which you didn't enable the border in options.
 4. The heading's reference will appear right before each heading if you enable it.(Render Viewer Only)
 5. If the H1 twill pattern style is enabled, it's required to use HTML `span` for wrapping the emoji to avoid the styles affecting it. (H1 only)
 
@@ -263,8 +263,8 @@ Most of the text colors would change with the theme color. Let's compare the dif
 ### 💡Tips
 
 1. While I personally prefer using *Mark Text* as an alternative to underline text, some users might prefer using *Insert Text* as underline text. For that reason, *Insert Text* might have different meanings to users. So, I create a few different styles of *Insert Text* for options. If you mostly use *Insert Text and Strikethrough Text* as the meanings of add & remove, you would feel comfortable with the red & green colors style. If using *Insert Text* as underline text, it's better to use the theme color style.
-2. You can use the HTML `span` tag below a list item and add describe to it, and the `span` text would present in a different color.
-3. More other text settings you can discover in options.
+2. You can use the HTML `span` tag below a list item and add description to it, and the `span` text would be present in a different color.
+3. More other text settings can discover in options.
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -357,7 +357,7 @@ Let’s see what are the Sticky Notes for:
 
 ### 💡Tips
 
-1. Add a blank line *at the top of open tag*, otherwise it may cause a format problem.
+1. Add a blank line *at the top of the open tag*, otherwise it may cause a format problem.
 2. Use  `<br>` for line break.
 3. *Do not include any blank line within the Sticky Notes*, if you want to add a *blank line* please use  `<br><br>`.
 
@@ -419,7 +419,7 @@ The custom element Key Mention is good for creating additional short information
 2. Always use `km` **right below the target element**.
 3. Use the Joplin built-in function `Insert Date Time` to add time and date.
 4. You can also use `km` within any Sticky Notes, and if you do that, please make sure `km` is always in the **first line** within the Sticky Notes.
-5. The special text `strong`, `emphasize`, `insert`, and `strikethrough` will all present as red color when using within the `km`.
+5. The special text `strong`, `emphasize`, `insert`, and `strikethrough` will all present as red color when used within the `km`.
 6. Mouse hovers on it to zoom bigger.
 
 **More use cases for reference:**
@@ -467,7 +467,7 @@ ReMoods has created 4 more custom styles that you can use within the Spoiler blo
 
 This plugin adds colors to the markdown table syntax, so you can quickly identify what column the content belongs to.
 
-While an informative markdown table can be hard to read, using markdown table formatter is also not a good idea to containing that much information. Thanks to the Markdown Table Colorize plugin, ReMoods can now brings you a better style for your markdown table!
+While an informative markdown table can be hard to read, using markdown table formatter is also not a good idea to contain that much information. Thanks to the Markdown Table Colorize plugin, ReMoods can now bring you a better style for your markdown table!
 
 After installing the Markdown Table Colorize plugin and ReMoods, you will see the markdown table syntax looks like below:
 
@@ -520,12 +520,12 @@ I would like to share the steps of how I create a markdown table. And these step
 |TH|TH|TH|TH|TH|
 |-|-|-|-|-|
 |TD|TD|TD|TD|TD|
-||||||
+|TD|TD|TD|TD|TD|
 ```
 
-1. You might find that the typing-cursor will position to the left of column's mark sometimes, but it's fine to start typing without problem.
-2. I'm not recommended to use any other markdown table formatting feature with this styles.
-3. Keep all table contents close to each others, the column marks will provides you with better column identifying experience.
+1. You might find that the typing-cursor will position to the left of the column's mark sometimes, but it's fine to start typing without a problem.
+2. I'm not recommended to use any other markdown table formatting feature with this style.
+3. Keep all table contents close to each other, the column marks will provide you with a better column identifying experience.
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -542,7 +542,7 @@ The below table shows you the details of what plugins I've already tested, and w
 |Draw.io|Tested|25AUG2022|-|-|
 |Enhancement|Done|22OCT2022|1.Removed the left color bar of admonition.<br>2.Changed footnote marker text to monospace font.<br>3.Changed cursor type when mouse hovering link marker.<br>4.Changed link and footnote colors.<br>5.Changed admonition color. |I'm not using this plugin, so I'll only fix bugs based on user requests. |
 |Note Link System|Done|20NOV2022|1.Fix the link hash keep showing on the spoiler block title and content top.| - |
-|Admonition Markdown Extension|Done|30NOV2022|1.Admonition block styles.||
+<!-- |Admonition Markdown Extension|Done|30NOV2022|1.Admonition block styles.|| -->
 
 [:arrow_up:Back](#table-of-contents)
 
