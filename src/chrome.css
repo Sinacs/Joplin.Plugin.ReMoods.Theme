@@ -1364,7 +1364,7 @@ body {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   min-height: 35px;
   max-height: 35px;
   background: var(--g-panel-header-bg-color);
@@ -1372,27 +1372,30 @@ body {
   z-index: 2;
 }
 /* header content ------------------------------------------ */
-.sidebar > div:first-child > div:first-child > div > .icon-notebooks,
-.sidebar > div:first-child > div:first-child > div > .icon-notebooks ~ span,
+.sidebar > div:first-child > div:first-child > div {
+  padding: 0;
+  margin: 0;
+  max-height: 35px;
+}
+.sidebar > div:first-child > div:first-child > div > span {
+  margin-left: 15px;
+  line-height: 35px;
+}
+.sidebar > div:first-child > div:first-child > div > span,
 .sidebar > div:first-child > div:first-child > button > span {
-  position: absolute;
   color: var(--g-panel-header-text-color);
   text-shadow: var(--g-panel-header-text-shadow);
   cursor: pointer;
 }
-.sidebar > div:first-child > div:first-child > div > .icon-notebooks {
-  top: 9px;
-  left: 6px;
+.sidebar > div:first-child > div:first-child > div > i {
+  display: none;
 }
-.sidebar > div:first-child > div:first-child > div > .icon-notebooks ~ span {
-  top: 11px;
-  left: 29px;
+.sidebar > div:first-child > div:first-child > button {
+  position: absolute;
+  left: 100px;
+  padding: 0;
 }
-/* new notebook button ------------------------------------- */
 .sidebar > div:first-child > div:first-child > button > span {
-  top: 4px;
-  left: 115px;
-  padding: 9px;
   font-size: 12px;
 }
 /* new notebook button hover > icon ------------------------ */
@@ -1411,9 +1414,7 @@ body {
 }
 /* button icon --------------------------------------------- */
 .sidebar .all-notes > .icon-notes {
-  margin: 0 4px 0 -4px;
-  font-size: 13px;
-  color: var(--g-item-text-color-2);
+  display: none;
 }
 /* button text --------------------------------------------- */
 .sidebar .all-notes > a {
@@ -1614,7 +1615,13 @@ body {
 /* NOTEBOOK PANEL: BODY > TAG LIST ========================= */
 /* divide title container ---------------------------------- */
 .sidebar > div > div:nth-child(3) > div {
-  padding: 10px 0 15px 0;
+  margin: 10px 0;
+  padding: 10px 0 10px 15px;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: var(--g-panel-header-bg-color);
+  border-radius: 4px;
+  cursor: pointer;
 }
 /* divide title -------------------------------------------- */
 .sidebar .icon-tags,
@@ -1622,8 +1629,7 @@ body {
   color: var(--g-item-text-color-2);
 }
 .sidebar .icon-tags {
-  padding-left: 7px;
-  font-size: 16px;
+  display: none;
 }
 .sidebar .icon-tags ~ span {
   margin: 0 0 0 -1px !important;
