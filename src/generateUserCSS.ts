@@ -259,7 +259,6 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     chromeCSS = chromeCSS.replace(/^  --insert-text-bd-color:.+?;/gms, '  --insert-text-bd-color: hsl(var(--usp-remoods-hue), 25%, 75%);');
     chromeCSS = chromeCSS.replace(/^  --sub-sup-text-color:.+?;/gms, '  --sub-sup-text-color: hsl(var(--usp-remoods-hue), 50%, 80%);');
     chromeCSS = chromeCSS.replace(/^  --inline-code-color:.+?;/gms, '  --inline-code-color: hsl(var(--usp-remoods-hue), 0%, 30%);');
-    chromeCSS = chromeCSS.replace(/^  --inline-code-bd-color:.+?;/gms, '  --inline-code-bd-color: 2px solid hsl(var(--usp-remoods-hue), 20%, 80%);');
     chromeCSS = chromeCSS.replace(/^  --inline-code-bg-color:.+?;/gms, '  --inline-code-bg-color: hsl(var(--usp-remoods-hue), 100%, 95%);');
     chromeCSS = chromeCSS.replace(/^  --html-tag-text-color:.+?;/gms, '  --html-tag-text-color: hsl(0, 100%, 70%);');
     chromeCSS = chromeCSS.replace(/^  --html-tag-text-shadow:.+?;/gms, '  --html-tag-text-shadow: hsl(0, 100%, 40%);');
@@ -506,7 +505,6 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --search-text-bd-color:.+?;/gms, '  --search-text-bd-color: hsl(0, 100%, 50%);');
     noteCSS = noteCSS.replace(/^  --inline-code-color:.+?;/gms, '  --inline-code-color: hsl(var(--usp-remoods-hue), 0%, 30%);');
     noteCSS = noteCSS.replace(/^  --inline-code-bg-color:.+?;/gms, '  --inline-code-bg-color: hsl(var(--usp-remoods-hue), 100%, 95%);');
-    noteCSS = noteCSS.replace(/^  --inline-code-bd-color:.+?;/gms, '  --inline-code-bd-color: 2px solid hsl(var(--usp-remoods-hue), 20%, 80%);');
     noteCSS = noteCSS.replace(/^  --inline-code-symbol-color:.+?;/gms, '  --inline-code-symbol-color: hsl(var(--usp-remoods-hue), 20%, 60%);');
     noteCSS = noteCSS.replace(/^  --katex-text-color:.+?;/gms, '  --katex-text-color: hsl(var(--usp-remoods-hue), 0%, 30%);');
     noteCSS = noteCSS.replace(/^  --list-token-color:.+?;/gms, '  --list-token-color: hsl(calc(var(--usp-remoods-hue) + 180deg), 100%, 40%);');
@@ -845,7 +843,6 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     chromeCSS = chromeCSS.replace(/^  --insert-text-bd-color:.+?;/gms, '  --insert-text-bd-color: hsl(var(--usp-remoods-hue), 25%, 60%);');
     chromeCSS = chromeCSS.replace(/^  --sub-sup-text-color:.+?;/gms, '  --sub-sup-text-color: hsl(var(--usp-remoods-hue), 50%, 80%);');
     chromeCSS = chromeCSS.replace(/^  --inline-code-color:.+?;/gms, '  --inline-code-color: hsl(var(--usp-remoods-hue), 100%, 85%);');
-    chromeCSS = chromeCSS.replace(/^  --inline-code-bd-color:.+?;/gms, '  --inline-code-bd-color: 2px solid hsl(var(--usp-remoods-hue), 20%, 40%);');
     chromeCSS = chromeCSS.replace(/^  --inline-code-bg-color:.+?;/gms, '  --inline-code-bg-color: hsl(var(--usp-remoods-hue), 30%, 25%);');
     chromeCSS = chromeCSS.replace(/^  --html-tag-text-color:.+?;/gms, '  --html-tag-text-color: hsl(0, 100%, 70%);');
     chromeCSS = chromeCSS.replace(/^  --html-tag-text-shadow:.+?;/gms, '  --html-tag-text-shadow: 0 0 none;');
@@ -1092,7 +1089,6 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --search-text-bd-color:.+?;/gms, '  --search-text-bd-color: hsl(0, 100%, 50%);');
     noteCSS = noteCSS.replace(/^  --inline-code-color:.+?;/gms, '  --inline-code-color: hsl(var(--usp-remoods-hue), 100%, 85%);');
     noteCSS = noteCSS.replace(/^  --inline-code-bg-color:.+?;/gms, '  --inline-code-bg-color: hsl(var(--usp-remoods-hue), 30%, 25%);');
-    noteCSS = noteCSS.replace(/^  --inline-code-bd-color:.+?;/gms, '  --inline-code-bd-color: 2px solid hsl(var(--usp-remoods-hue), 20%, 40%);');
     noteCSS = noteCSS.replace(/^  --inline-code-symbol-color:.+?;/gms, '  --inline-code-symbol-color: hsl(var(--usp-remoods-hue), 40%, 60%);');
     noteCSS = noteCSS.replace(/^  --katex-text-color:.+?;/gms, '  --katex-text-color: hsl(var(--usp-remoods-hue), 100%, 85%);');
     noteCSS = noteCSS.replace(/^  --list-token-color:.+?;/gms, '  --list-token-color: hsl(calc(var(--usp-remoods-hue) + 180deg), 80%, 80%);');
@@ -1431,7 +1427,6 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     chromeCSS = chromeCSS.replace(/^  --insert-text-bd-color:.+?;/gms, '  --insert-text-bd-color: hsl(var(--usp-remoods-hue), 25%, 60%);');
     chromeCSS = chromeCSS.replace(/^  --sub-sup-text-color:.+?;/gms, '  --sub-sup-text-color: hsl(var(--usp-remoods-hue), 100%, 70%);');
     chromeCSS = chromeCSS.replace(/^  --inline-code-color:.+?;/gms, '  --inline-code-color: hsl(var(--usp-remoods-hue), 75%, 75%);');
-    chromeCSS = chromeCSS.replace(/^  --inline-code-bd-color:.+?;/gms, '  --inline-code-bd-color: 2px solid hsl(var(--usp-remoods-hue), 30%, 40%);');
     chromeCSS = chromeCSS.replace(/^  --inline-code-bg-color:.+?;/gms, '  --inline-code-bg-color: hsl(var(--usp-remoods-hue), 40%, 20%);');
     chromeCSS = chromeCSS.replace(/^  --html-tag-text-color:.+?;/gms, '  --html-tag-text-color: hsl(0, 60%, 60%);');
     chromeCSS = chromeCSS.replace(/^  --html-tag-text-shadow:.+?;/gms, '  --html-tag-text-shadow: none;');
@@ -1678,7 +1673,6 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --search-text-bd-color:.+?;/gms, '  --search-text-bd-color: hsl(0, 100%, 50%);');
     noteCSS = noteCSS.replace(/^  --inline-code-color:.+?;/gms, '  --inline-code-color: hsl(var(--usp-remoods-hue), 75%, 75%);');
     noteCSS = noteCSS.replace(/^  --inline-code-bg-color:.+?;/gms, '  --inline-code-bg-color: hsl(var(--usp-remoods-hue), 40%, 20%);');
-    noteCSS = noteCSS.replace(/^  --inline-code-bd-color:.+?;/gms, '  --inline-code-bd-color: 2px solid hsl(var(--usp-remoods-hue), 30%, 40%);');
     noteCSS = noteCSS.replace(/^  --inline-code-symbol-color:.+?;/gms, '  --inline-code-symbol-color: hsl(var(--usp-remoods-hue), 30%, 50%);');
     noteCSS = noteCSS.replace(/^  --katex-text-color:.+?;/gms, '  --katex-text-color: hsl(var(--usp-remoods-hue), 40%, 80%);');
     noteCSS = noteCSS.replace(/^  --list-token-color:.+?;/gms, '  --list-token-color: hsl(calc(var(--usp-remoods-hue) + 180deg), 35%, 80%);');

@@ -231,7 +231,6 @@
 
   --inline-code-color:                                  hsl(var(--usp-remoods-hue), 100%,  85%);
   --inline-code-bg-color:                               hsl(var(--usp-remoods-hue),  30%,  25%);
-  --inline-code-bd-color:                     2px solid hsl(var(--usp-remoods-hue),  20%,  40%);
   --inline-code-symbol-color:                           hsl(var(--usp-remoods-hue),  40%,  60%);
 
   --katex-text-color:                                   hsl(var(--usp-remoods-hue), 100%,  85%);
@@ -1158,6 +1157,27 @@ ag12::-webkit-scrollbar-track {
   white-space: nowrap;
   border-radius: 3px;
 }
+/* special text in headings group: | emphasize | strong | mark | */
+#rendered-md h1 em,
+#rendered-md h1 strong,
+#rendered-md h1 mark,
+#rendered-md h2 em,
+#rendered-md h2 strong,
+#rendered-md h2 mark,
+#rendered-md h3 em,
+#rendered-md h3 strong,
+#rendered-md h3 mark,
+#rendered-md h4 em,
+#rendered-md h4 strong,
+#rendered-md h4 mark,
+#rendered-md h5 em,
+#rendered-md h5 strong,
+#rendered-md h5 mark,
+#rendered-md h6 em,
+#rendered-md h6 strong,
+#rendered-md h6 mark {
+  font-size: inherit;
+}
 
 /* STRONG ================================================== */
 #rendered-md strong {
@@ -1209,6 +1229,21 @@ ag12::-webkit-scrollbar-track {
   font-size: smaller;
   line-height: 0;
 }
+/* sup & sub in headings------------------------------------ */
+#rendered-md h1 sup,
+#rendered-md h1 sub,
+#rendered-md h2 sup,
+#rendered-md h2 sub,
+#rendered-md h3 sup,
+#rendered-md h3 sub,
+#rendered-md h4 sup,
+#rendered-md h4 sub,
+#rendered-md h5 sup,
+#rendered-md h5 sub,
+#rendered-md h6 sup,
+#rendered-md h6 sub {
+  color: inherit;
+}
 
 /* ABBREVIATION ============================================ */
 #rendered-md abbr {
@@ -1244,20 +1279,54 @@ ag12::-webkit-scrollbar-track {
 }
 
 /* INLINE CODE ============================================= */
+#rendered-md code:not(pre code),
 #rendered-md .inline-code {
   padding: 0 3px;
+  margin: 0 1px;
   color: var(--inline-code-color);
   background: var(--inline-code-bg-color);
-  border: var(--inline-code-bd-color);
+  border: 2px solid var(--inline-code-bg-color);
   border-radius: 4px;
 }
 /* symbol -------------------------------------------------- */
+#rendered-md code:not(pre code)::before,
 #rendered-md .inline-code::before {
   font-family: var(--usp-monospace-font, monospace);
   content: ">|";
   display: var(--usp-inline-code-symbol-switcher);
   margin-right: 2px;
   color: var(--inline-code-symbol-color);
+}
+/* inline code in headings --------------------------------- */
+#rendered-md h1 code:not(pre code),
+#rendered-md h1 .inline-code,
+#rendered-md h1 mark {
+  -webkit-background-clip: initial; 
+  background-clip: initial;
+  -webkit-text-fill-color: initial;
+}
+#rendered-md h1 code:not(pre code),
+#rendered-md h1 .inline-code {
+  text-transform: none;
+  font-variant: none;
+  font-size: calc(100% - 11px);
+}
+#rendered-md h2 code:not(pre code),
+#rendered-md h2 .inline-code {
+  font-size: calc(100% - 7px);
+}
+#rendered-md h3 code:not(pre code),
+#rendered-md h3 .inline-code {
+  font-size: calc(100% - 5px);
+}
+#rendered-md h4 code:not(pre code),
+#rendered-md h4 .inline-code {
+  font-size: calc(100% - 4px);
+}
+#rendered-md h5 code:not(pre code),
+#rendered-md h5 .inline-code,
+#rendered-md h6 .inline-code {
+  font-size: calc(100% - 3px);
 }
 
 /* MATH NOTATION =========================================== */

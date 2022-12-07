@@ -153,7 +153,6 @@
   --sub-sup-text-color:                                 hsl(var(--usp-remoods-hue),  50%,  80%);
   
   --inline-code-color:                                  hsl(var(--usp-remoods-hue), 100%,  85%);
-  --inline-code-bd-color:                     2px solid hsl(var(--usp-remoods-hue),  20%,  40%);
   --inline-code-bg-color:                               hsl(var(--usp-remoods-hue),  30%,  25%);
 
   /* HTML =================================================================================== */
@@ -659,12 +658,6 @@
   line-height: 1em !important;
 }
 
-/* HEADINGS > INLINE CODE ================================== */
-#react-root .cm-header.cm-jn-inline-code {
-  color: white;
-  background: none !important;
-  border: none !important;
-}
 /* HEADINGS > H1 =========================================== */
 .CodeMirror-line .cm-header.cm-header-1 {
   font-size: var(--usp-h1-font-size) !important;
@@ -679,19 +672,11 @@
   font-size: var(--usp-h2-font-size) !important;
   color: var(--h2-text-color);
 }
-/* h2 > inline code ---------------------------------------- */
-#react-root .cm-header-2.cm-jn-inline-code {
-  font-size: var(--usp-h2-font-size) !important;
-}
 
 /* HEADINGS > H3 =========================================== */
 .CodeMirror-line .cm-header.cm-header-3 {
   font-size: var(--usp-h3-font-size) !important;
   color: var(--h3-text-color);
-}
-/* h3 > inline code ---------------------------------------- */
-#react-root .cm-header-3.cm-jn-inline-code {
-  font-size: var(--usp-h3-font-size) !important;
 }
 
 /* HEADINGS > H4 =========================================== */
@@ -699,29 +684,17 @@
   font-size: var(--usp-h4-font-size) !important;
   color: var(--h4-text-color);
 }
-/* h4 > inline code ---------------------------------------- */
-#react-root .cm-header-4.cm-jn-inline-code {
-  font-size: var(--usp-h4-font-size) !important;
-}
 
 /* HEADINGS > H5 =========================================== */
 .CodeMirror-line .cm-header.cm-header-5 {
   font-size: var(--usp-h5-font-size) !important;
   color: var(--h5-text-color);
 }
-/* h5 > inline code ---------------------------------------- */
-#react-root .cm-header-5.cm-jn-inline-code {
-  font-size: var(--usp-h5-font-size) !important;
-}
 
 /* HEADINGS > H6 =========================================== */
 .CodeMirror-line .cm-header.cm-header-6 {
   font-size: var(--usp-h6-font-size) !important;
   color: var(--h6-text-color);
-}
-/* h6 > inline code ---------------------------------------- */
-#react-root .cm-header-6.cm-jn-inline-code {
-  font-size: var(--usp-h6-font-size) !important;
 }
 
 
@@ -763,11 +736,19 @@
 
 /* || MARKDOWN 4/11 | SPECIAL TEXT ************************* */
 /* special text group: | emphasize | strong | highlight | */
-.CodeMirror-lines .CodeMirror-line .cm-em,
-.CodeMirror-lines .CodeMirror-line .cm-strong,
-.CodeMirror-lines .CodeMirror-line .cm-rm-highlight {
+.CodeMirror-lines .CodeMirror-line .cm-em:not(.cm-header),
+.CodeMirror-lines .CodeMirror-line .cm-strong:not(.cm-header),
+.CodeMirror-lines .CodeMirror-line .cm-rm-highlight:not(.cm-header) {
   color: var(--special-text-color) !important;
   background: var(--special-bg-color);
+}
+/* special text in heading group: | emphasize | strong | highlight | inline code | */
+#react-root .cm-header.cm-em,
+#react-root .cm-header.cm-strong,
+#react-root .cm-header.cm-jn-inline-code,
+#react-root .cm-header.cm-rm-highlight {
+  background: none !important;
+  border: none !important;
 }
 
 /* STRONG ================================================== */
@@ -823,8 +804,29 @@
 .CodeMirror-lines .CodeMirror-line .cm-jn-inline-code.cm-jn-monospace:not(.CodeMirror-selectedtext) {
   color: var(--inline-code-color);
   background: var(--inline-code-bg-color) !important;
-  border: var(--inline-code-bd-color) !important;
-  border-radius: 4px !important;
+  border: 2px solid var(--inline-code-bg-color) !important;
+  border-radius: 3px !important;
+}
+/* inline code in heading ---------------------------------- */
+#react-root .cm-header-1.cm-jn-inline-code {
+  font-variant: none;
+  text-transform: none;
+  font-size: calc(var(--usp-h1-font-size) - 6px) !important;
+}
+#react-root .cm-header-2.cm-jn-inline-code {
+  font-size: calc(var(--usp-h2-font-size) - 4px) !important;
+}
+#react-root .cm-header-3.cm-jn-inline-code {
+  font-size: calc(var(--usp-h3-font-size) - 4px) !important;
+}
+#react-root .cm-header-4.cm-jn-inline-code {
+  font-size: calc(var(--usp-h4-font-size) - 3px) !important;
+}
+#react-root .cm-header-5.cm-jn-inline-code {
+  font-size: calc(var(--usp-h5-font-size) - 3px) !important;
+}
+#react-root .cm-header-6.cm-jn-inline-code {
+  font-size: calc(var(--usp-h6-font-size) - 2px) !important;
 }
 
 /* SEARCH ================================================== */
