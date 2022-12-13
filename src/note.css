@@ -1146,7 +1146,7 @@ ag12::-webkit-scrollbar-track {
 #rendered-md ins {
   text-shadow: var(--special-text-shadow);
 }
-/* symbol group: | strikethrough | insert text --------------- */
+/* symbol group: | strikethrough | insert text ------------- */
 #rendered-md s::before,
 #rendered-md ins::before {
   display: var(--usp-special-text-add-remove-symbol-switcher);
@@ -1177,6 +1177,21 @@ ag12::-webkit-scrollbar-track {
 #rendered-md h6 strong,
 #rendered-md h6 mark {
   font-size: inherit;
+}
+/* special text in headings group: | emphasize | strong | -- */
+#rendered-md h1 em,
+#rendered-md h1 strong,
+#rendered-md h2 em,
+#rendered-md h2 strong,
+#rendered-md h3 em,
+#rendered-md h3 strong,
+#rendered-md h4 em,
+#rendered-md h4 strong,
+#rendered-md h5 em,
+#rendered-md h5 strong,
+#rendered-md h6 em,
+#rendered-md h6 strong {
+  color: inherit;
 }
 
 /* STRONG ================================================== */
