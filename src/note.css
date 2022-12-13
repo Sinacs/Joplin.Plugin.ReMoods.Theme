@@ -1410,10 +1410,14 @@ ag12::-webkit-scrollbar-track {
   cursor: pointer;
 }
 /* checked ------------------------------------------------- */
-#rendered-md .checkbox-label-checked {
+#rendered-md .checkbox-label-checked,
+#rendered-md li.checked,
+#rendered-md li.checked::before {
   text-decoration: line-through;
 }
-#rendered-md .checkbox-label-checked:hover {
+#rendered-md .checkbox-label-checked:hover,
+#rendered-md li.checked:hover,
+#rendered-md li.checked:hover::before {
   text-decoration: none;
 }
 /* checkbox (rich text editor) ----------------------------- */
