@@ -788,7 +788,7 @@ body,
 #rendered-md,
 #tinymce {
   background: var(--render-viewer-bg-color);
-  padding-right: 1px;
+  padding-right: 5px;
 }
 /* rich text editor container ------------------------------ */
 #tinymce {
