@@ -262,9 +262,10 @@ Most of the text colors would change with the theme color. Let's compare the dif
 
 ### 💡Tips
 
-1. While I personally prefer using *Mark Text* as an alternative to underline text, some users might prefer using *Insert Text* as underline text. For that reason, *Insert Text* might have different meanings to users. So, I create a few different styles of *Insert Text* for options. If you mostly use *Insert Text and Strikethrough Text* as the meanings of add & remove, you would feel comfortable with the red & green colors style. If using *Insert Text* as underline text, it's better to use the theme color style.
-2. You can use the HTML `span` tag below a list item and add description to it, and the `span` text would be present in a different color.
-3. More other text settings can discover in options.
+1. If you mostly use *Insert Text and Strikethrough Text* as the meanings of add & remove, you would feel comfortable with the red & green colors style.
+2. If you mostly use *Insert Text* as underline text, it would be better to use the theme color style.
+3. You can use the HTML `span` tag below a list item and add description to it, and the `span` text would be present in a different color.
+4. More other text settings can discover in options.
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -409,7 +410,7 @@ See the below:
 
 ## Key Mention
 
-The custom element Key Mention is good for creating additional short information for reference. You can use it to markup the last update time of the table or paragraph. Or, you can use it like the HTML `<cite>` tag and more.
+The custom element Key Mention is good for creating additional short information for reference. You can use it to markup the last update time of the table or paragraph or more other usage.
 
 ![Screenshot 2022-09-25 185512](https://user-images.githubusercontent.com/110529913/192140048-a6384ac9-069b-4d88-924c-9eb4a64c778a.png)
 
