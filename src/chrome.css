@@ -1490,12 +1490,13 @@ body {
   color: var(--s-directory-icon-open-color);
   filter: drop-shadow(0 0 0px var(--s-directory-icon-open-shadow));
 }
-/* notebook icon ------------------------------------------- */
+/* notebook folder icon ------------------------------------ */
 .sidebar .fa-folder {
   display: var(--usp-notebook-icon-switcher);
 }
-.sidebar .fa-folder::before { 
-  font-size: 90%;
+.sidebar .emoji-box {
+  font-size: 17px !important;
+  margin-left: -1px;
 }
 .sidebar .list-item-depth-0 .fa-folder::before {
   color: var(--s-notebook-folder-icon-0);
