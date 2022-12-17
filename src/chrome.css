@@ -2192,7 +2192,7 @@ body {
   padding: 0 !important;
 }
 .tox-editor-header:not(#fake)  > .tox-toolbar-overlord > .tox-toolbar__primary {
-  padding-left:  82px !important;
+  padding-left:  90px !important;
 }
 .tox-editor-header:not(#fake)  > .tox-toolbar-overlord > .tox-toolbar__primary > div {
   margin: 0 !important;
