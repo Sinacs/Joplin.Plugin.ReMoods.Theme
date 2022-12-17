@@ -52,6 +52,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     notebookTitleWrap,
     notebookTitleScrollbar,
     notebookFolderIcon,
+    noteListItemAutoScroll,
 
     printBaseFont,
 		printMonospaceFont,
@@ -2185,6 +2186,12 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     chromeCSS = chromeCSS.replace(/^ --usp-notebook-icon-switcher:.+?;/gms, '  --usp-notebook-icon-switcher: none;');
   } else {
     chromeCSS = chromeCSS.replace(/^ --usp-notebook-icon-switcher:.+?;/gms, '  --usp-notebook-icon-switcher: block;');
+  }
+
+  if(!noteListItemAutoScroll) {
+    chromeCSS = chromeCSS.replace(/^  --usp-note-list-item-auto-scroll:.+?;/gms, '  --usp-note-list-item-auto-scroll: none;');
+  } else {
+    chromeCSS = chromeCSS.replace(/^  --usp-note-list-item-auto-scroll:.+?;/gms, '  --usp-note-list-item-auto-scroll: rtl-auto 4s linear 0.6s infinite;');
   }
 
   if(printBaseFont !== 'var(--usp-print-base-font)') {

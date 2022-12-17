@@ -79,6 +79,7 @@
   --usp-h1-text-transform: capitalize;
   --usp-h1-font-variant: small-caps;
   --usp-notebook-title-wrap: normal;
+  --usp-note-list-item-auto-scroll: rtl-auto 4s linear 0.6s infinite;
   
   /* DISPLAY *********************************************** */
   --usp-evident-horizontal-line-switcher: inline-block;
@@ -1937,7 +1938,7 @@ body {
 }
 /* note list item hover > text ----------------------------- */
 .rli-noteList .note-list-item > a:hover > span {
-  animation: rtl-auto 4s linear 0.6s infinite;
+  animation: var(--usp-note-list-item-auto-scroll);
 }
 
 

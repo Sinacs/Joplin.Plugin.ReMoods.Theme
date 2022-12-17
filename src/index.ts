@@ -57,6 +57,7 @@ export type ThemeSettings = {
 	notebookTitleWrap: boolean;
 	notebookTitleScrollbar: boolean;
 	notebookFolderIcon: boolean;
+	noteListItemAutoScroll: boolean;
 
 	// PRINT ****************************************
 	printBaseFont: string;
@@ -531,6 +532,15 @@ async function prepareThemeSettings(): Promise<void> {
 			public: true,
 		},
 
+		'noteListItemAutoScroll': {
+			section: 'remoodsThemeSection',
+			label: 'Note List Panel - Enable auto-scroll effect for note list item.',
+			type: SettingItemType.Bool,
+			value: true,
+			description: 'Enable: mouse hover auto-scroll | Disable: no action',
+			public: true,
+		},
+
 		'printBaseFont': {
 			section: 'remoodsThemeSection',
 			label: 'Custom Print Base Font',
@@ -717,6 +727,7 @@ async function writeUserCSS(): Promise<void> {
 	const notebookTitleWrap = await joplin.settings.value('notebookTitleWrap');
 	const notebookTitleScrollbar = await joplin.settings.value('notebookTitleScrollbar');
 	const notebookFolderIcon = await joplin.settings.value('notebookFolderIcon');
+	const noteListItemAutoScroll = await joplin.settings.value('noteListItemAutoScroll');
 	
 	const printBaseFont = await joplin.settings.value('printBaseFont');
 	const printMonospaceFont = await joplin.settings.value('printMonospaceFont');
@@ -781,6 +792,7 @@ async function writeUserCSS(): Promise<void> {
 		notebookTitleWrap,
 		notebookTitleScrollbar,
 		notebookFolderIcon,
+		noteListItemAutoScroll,
 
 		printBaseFont,
 		printMonospaceFont,
