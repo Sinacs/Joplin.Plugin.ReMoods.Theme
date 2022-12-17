@@ -751,6 +751,49 @@
   background: none !important;
   border: none !important;
 }
+/* special text in heading group: | emphasize | strong | highlight | inline code | sup | sub | */
+#react-root .cm-header-1.cm-em,
+#react-root .cm-header-1.cm-strong,
+#react-root .cm-header-1.cm-jn-inline-code,
+#react-root .cm-header-1.cm-rm-highlight,
+#react-root .cm-header-1.cm-rm-sub,
+#react-root .cm-header-1.cm-rm-sup {
+  color: var(--h1-text-color);
+}
+#react-root .cm-header-2.cm-em,
+#react-root .cm-header-2.cm-strong,
+#react-root .cm-header-2.cm-jn-inline-code,
+#react-root .cm-header-2.cm-rm-highlight,
+#react-root .cm-header-2.cm-rm-sub,
+#react-root .cm-header-2.cm-rm-sup,
+#react-root .cm-header-3.cm-em,
+#react-root .cm-header-3.cm-strong,
+#react-root .cm-header-3.cm-jn-inline-code,
+#react-root .cm-header-3.cm-rm-highlight,
+#react-root .cm-header-3.cm-rm-sub,
+#react-root .cm-header-3.cm-rm-sup,
+#react-root .cm-header-4.cm-em,
+#react-root .cm-header-4.cm-strong,
+#react-root .cm-header-4.cm-jn-inline-code,
+#react-root .cm-header-4.cm-rm-highlight,
+#react-root .cm-header-4.cm-rm-sub,
+#react-root .cm-header-4.cm-rm-sup {
+  color: var(--h2-text-color);
+}
+#react-root .cm-header-5.cm-em,
+#react-root .cm-header-5.cm-strong,
+#react-root .cm-header-5.cm-jn-inline-code,
+#react-root .cm-header-5.cm-rm-highlight,
+#react-root .cm-header-5.cm-rm-sub,
+#react-root .cm-header-5.cm-rm-sup,
+#react-root .cm-header-6.cm-em,
+#react-root .cm-header-6.cm-strong,
+#react-root .cm-header-6.cm-jn-inline-code,
+#react-root .cm-header-6.cm-rm-highlight,
+#react-root .cm-header-6.cm-rm-sub,
+#react-root .cm-header-6.cm-rm-sup {
+  color: var(--h5-text-color);
+}
 
 /* STRONG ================================================== */
 .CodeMirror-lines .CodeMirror-line .cm-strong {
