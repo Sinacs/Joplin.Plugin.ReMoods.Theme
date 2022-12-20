@@ -23,7 +23,7 @@ ReMoods beautifies your screen and documents and takes care of your writing mood
 
 > This section contains important information if there is any.
 
-  - [ReMoods Currently Not Compatible With Joplin V2.10.2](#remoods-currently-not-compatible-with-joplin-v2-10-2)
+  - [ReMoods Currently Not Compatible With Joplin V2.10.2](#remoods-currently-not-compatible-with-joplin-v2102)
   - [Asking For Bits Of Help](#asking-for-bits-of-help)
   
 **REMOODS THEME GETTING STARTED GUIDE:**
@@ -581,6 +581,8 @@ For advanced, you can also control which elements should show on the PDF through
 ## ReMoods Currently Not Compatible With Joplin V2.10.2
 
 The Joplin pre-release v2.10.2 has made some changes that will break the ReMoods theme styles. This problem will also cause the ReMoods theme plugin not to be compatible with older Joplin versions (before v2.10.2), so it won't be fixed until Joplin releases the next stable version update.
+
+[:arrow_up:Back](#table-of-contents)
 
 ## Asking For Bits Of Help
 
