@@ -1,21 +1,15 @@
 /*
   #REMARKS:
+
+  - chrome.css
   
-  - All styles have separated into two parts - "code mirror" and 
+  - All styles have separated into two parts - "markdown editor" and 
   "joplin ui".
 
-  - Due to the DOM's lack of CSS classes to customize the theme, this 
-  CSS document might include complex CSS Selectors, which is necessary 
-  to avoid the CSS styles affecting the non-related elements. So, It 
-  is not recommended to edit the selectors without understanding them.
+  - This CSS document might include complex CSS Selectors, which is 
+  necessary to avoid the CSS styles affecting the non-related elements.
 
   - :not(#fake) / :not(.fake) are use for increasing the CSS specificity.
-
-  - Long selectors which start from the #react-root are use for avoiding
-  the styles affecting to the `View > Change Application Layout` panel.
-
-  - Long selectors which including multiple compare operators are use for
-  specifying an exact element, and to avoid affecting other elements.
 
 
 
@@ -23,12 +17,12 @@
 
   - ROOT
     - USER SETTING PROPERTIES
-    - CODE MIRROR PROPERTIES
+    - MARKDOWN EDITOR PROPERTIES
     - JOPLIN UI: GROUP PROPERTIES
     - JOPLIN UI: STANDALONE PROPERTIES
-  - CODE MIRROR
-    - BASIC
+  - MARKDOWN EDITOR
     - FONT
+    - BASIC
     - MARKDOWN
     - PLUGINS
   - JOPLIN UI
@@ -40,16 +34,30 @@
     - OPTIONS PANEL
 */
 
+
+
+
+/* ********************************************************* */
+/* !!!!                      ROOT                       !!!! */
+/* ********************************************************* */
+
+
+
+
 :root {
 
-  /* ******************************************************* */
-  /* !!!!            USER SETTING PROPERTIES            !!!! */
-  /* ******************************************************* */
-  
 
 
+
+  /* ------------------------------------------------------- */
+  /*                 USER SETTING PROPERTIES                 */
+  /* ------------------------------------------------------- */
+
+
+
+  /* || USER SETTING PROPERTIES 1/1 | SCREEN *************** */
   /* THEME COLOR ******************************************* */
-  --usp-remoods-hue: 260deg;
+  --usp-hue: 260deg;
 
   /* FONT ************************************************** */
   --usp-custom-base-font: none;
@@ -62,18 +70,19 @@
   /* SIZES ************************************************* */
   --usp-base-font-size: 15px;
   --usp-monospace-font-size: 14px;
-  --usp-smaller-monospace-font-size: var(--usp-monospace-font-size);
-  --usp-smaller-code-block-font-size: var(--usp-monospace-font-size);
-  --usp-smaller-markdown-table-font-size: var(--usp-monospace-font-size);
-  --usp-h1-font-size: 200%;
-  --usp-h2-font-size: 170%;
-  --usp-h3-font-size: 150%;
-  --usp-h4-font-size: 130%;
-  --usp-h5-font-size: 120%;
-  --usp-h6-font-size: 110%;
-  --usp-h1-font-weight: 600;
+  --usp-smaller-markdown-syntax-font-size: var(--usp-monospace-font-size);
+  --usp-smaller-code-block-syntax-font-size: var(--usp-monospace-font-size);
+  --usp-smaller-table-syntax-font-size: var(--usp-monospace-font-size);
+  --usp-h1-font-size: 170%;
+  --usp-h2-font-size: 140%;
+  --usp-h3-font-size: 130%;
+  --usp-h4-font-size: 120%;
+  --usp-h5-font-size: 110%;
+  --usp-h6-font-size: 100%;
   --usp-heading-font-weight: 600;
-  --usp-np-nlp-scrollbar-width: 3px;
+  --usp-h1-font-weight: 600;
+  --usp-notebook-panel-scrollbar-width: 3px;
+  --usp-note-list-panel-scrollbar-width: 3px;
 
   /* EFFECTS *********************************************** */
   --usp-h1-text-transform: capitalize;
@@ -82,487 +91,412 @@
   --usp-note-list-item-auto-scroll: rtl-auto 4s linear 0.6s infinite;
   
   /* DISPLAY *********************************************** */
-  --usp-evident-horizontal-line-switcher: inline-block;
-  --usp-notebook-title-scrollbar-switcher: block;
-  --usp-notebook-icon-switcher: block;
+  --usp-evident-hr-display: inline-block;
+  --usp-notebook-title-scrollbar-display: block;
+  --usp-notebook-folder-icon-display: block;
+  --usp-sync-feature-display: block;
+  --usp-tag-feature-display-1: block;
+  --usp-tag-feature-display-2: flex;
+  --usp-all-notes-button-display: flex;
 
-  
-  
 
 
-  /* **************************************************************************************** */
-  /* !!!!                              CODE MIRROR PROPERTIES                            !!!! */
-  /* **************************************************************************************** */
-  
+
+  /* ---------------------------------------------------------------------------------------- */
+  /*                                MARKDOWN EDITOR PROPERTIES                                */
+  /* ---------------------------------------------------------------------------------------- */
+
 
 
 
   /* BASIC ================================================================================== */
-  --code-mirror-bg-color:                               hsl(var(--usp-remoods-hue),   8%,  27%);
-  --code-mirror-text-color:                             hsl(var(--usp-remoods-hue),   0%,  90%);
-  --code-mirror-scrollbar-track-bg-color:               hsl(var(--usp-remoods-hue),  70%,  70%, 20%);
-  --code-mirror-scrollbar-thumb-bg-color:               linear-gradient(to bottom,
-                                                        hsl(var(--usp-remoods-hue), 100%,  70%)  3px,
-                                                        hsl(var(--usp-remoods-hue),  10%,  28%)  4px,
-                                                        hsl(var(--usp-remoods-hue),  10%,  28%) calc(100% - 4px),
-                                                        hsl(var(--usp-remoods-hue), 100%,  70%) calc(100% - 3px));
-  --code-mirror-scrollbar-thumb-bd-color:               hsl(var(--usp-remoods-hue), 100%,  70%);
+  --me-bg:                                                hsl(var(--usp-hue),   8%,  27%);
+  --me-text:                                              hsl(var(--usp-hue),   0%,  90%);
+  --me-scrollbar-track-bg:                                hsl(var(--usp-hue),  70%,  70%, 20%);
+  --me-scrollbar-thumb-bg:                                linear-gradient(to bottom,
+                                                          hsl(var(--usp-hue), 100%,  70%)  3px,
+                                                          hsl(var(--usp-hue),  10%,  28%)  4px,
+                                                          hsl(var(--usp-hue),  10%,  28%) calc(100% - 4px),
+                                                          hsl(var(--usp-hue), 100%,  70%) calc(100% - 3px));
+  --me-scrollbar-thumb-bd:                                hsl(var(--usp-hue), 100%,  70%);
 
-  --horizontal-line-syntax-color:                       hsl(var(--usp-remoods-hue),   0%,  90%);
-  --horizontal-line-bg-color:                           hsl(var(--usp-remoods-hue), 100%,  70%);
+  --me-hr-syntax-text:                                    hsl(var(--usp-hue),   0%,  90%);
+  --me-hr-syntax-bg:                                      hsl(var(--usp-hue), 100%,  70%);
   
-  --cursor-bd-color:                          2px solid hsl(var(--usp-remoods-hue), 100%,  70%);
-  --selected-text-color:                                var(--render-viewer-text-color);
-  --selected-text-bg-color:                             hsl(calc(var(--usp-remoods-hue) + 180deg),  20%,  30%);
-  --code-block-selected-text-bg-color:                  hsl(calc(var(--usp-remoods-hue) + 180deg),  20%,  30%,  60%);
+  --me-cursor-bdl:                              2px solid hsl(var(--usp-hue), 100%,  70%);
 
-  /* HEADING ================================================================================ */
-  --h1-text-color:                                      hsl(var(--usp-remoods-hue), 100%,  80%);
-  --h2-text-color:                                      hsl(var(--usp-remoods-hue), 100%,  90%);
-  --h3-text-color:                                      hsl(var(--usp-remoods-hue), 100%,  90%);
-  --h4-text-color:                                      hsl(var(--usp-remoods-hue), 100%,  90%);
-  --h5-text-color:                                      hsl(var(--usp-remoods-hue),  30%,  80%);
-  --h6-text-color:                                      hsl(var(--usp-remoods-hue),  30%,  80%);
-
-  /* BLOCKQUOTE ============================================================================= */
-  --blockquote-text-color:                              hsl(var(--usp-remoods-hue),  30%,  80%);
-
-  /* LIST =================================================================================== */
-  --list-token-color:                                   hsl(calc(var(--usp-remoods-hue) + 180deg),  80%,  80%);
-  --list-text-color:                                    hsl(var(--usp-remoods-hue),  30%,  80%);
-  --checkbox-color:                                     hsl(var(--usp-remoods-hue), 100%,  70%);
-  
-  /* LINK =================================================================================== */
-  --link-text-color:                                    hsl(var(--usp-remoods-hue),  80%,  80%);
-
-  /* FOOTNOTE =============================================================================== */
-  --fn-ref-color:                                       hsl(calc(var(--usp-remoods-hue) + 180deg), 100%, 85%);
+  --me-selected-text:                                     var(--me-text);
+  --me-selected-bg:                                       hsl(calc(var(--usp-hue) + 180deg),  10%,  50%,  50%);
   
   /* SPECIAL TEXT =========================================================================== */
-  --special-text-color:                                 hsl(var(--usp-remoods-hue), 100%,  20%);
-  --special-bg-color:                                   hsl(var(--usp-remoods-hue),  30%,  70%);
+  --me-special-text:                                      hsl(var(--usp-hue), 100%,  20%);
+  --me-special-bg:                                        hsl(var(--usp-hue),  30%,  70%);
 
-  --mark-text-bd-color:                                 hsl(var(--usp-remoods-hue), 100%,  50%);
+  --me-mark-bd:                                           hsl(var(--usp-hue), 100%,  50%);
 
-  --strikethrough-text-color:                           hsl(var(--usp-remoods-hue),  25%,  60%);
-  --strikethrough-text-bg-color:                        none;
-
-  --insert-text-color:                                  hsl(var(--usp-remoods-hue), 100%,  70%);
-  --insert-text-bg-color:                               none;
-  --insert-text-bd-color:                               hsl(var(--usp-remoods-hue),  25%,  60%);
-
-  --sub-sup-text-color:                                 hsl(var(--usp-remoods-hue),  50%,  80%);
+  --me-insert-text:                                       hsl(var(--usp-hue), 100%,  70%);
+  --me-insert-bg:                                         none;
+  --me-insert-bdb:                                        hsl(var(--usp-hue),  25%,  60%);
   
-  --inline-code-color:                                  hsl(var(--usp-remoods-hue), 100%,  85%);
-  --inline-code-bg-color:                               hsl(var(--usp-remoods-hue),  30%,  25%);
+  --me-strikethrough-text:                                hsl(var(--usp-hue),  25%,  60%);
+  --me-strikethrough-bg:                                  none;
+
+  --me-sub-sup-text:                                      hsl(var(--usp-hue),  50%,  80%);
+
+  --me-inline-code-text:                                  hsl(var(--usp-hue), 100%,  85%);
+  --me-inline-code-bg:                                    hsl(var(--usp-hue),  30%,  25%);
+
+  /* LINK =================================================================================== */
+  --me-link-text:                                         hsl(var(--usp-hue),  80%,  80%);
 
   /* HTML =================================================================================== */
-  --html-tag-text-color:                              hsl(  0, 100%,  70%);
-  --html-tag-text-shadow:                               none;
+  --me-html-tag-text:                                   hsl(  0, 100%,  70%);
+  --me-html-tag-ts:                                       none;
 
-  --html-attribute-text-color:                        hsl(145, 100%,  70%);
-  --html-attribute-text-shadow:                         none;
+  --me-html-attribute-text:                             hsl(145, 100%,  70%);
+  --me-html-attribute-ts:                                 none;
 
-  --html-string-text-color:                           hsl(300, 100%,  70%);
-  --html-string-text-shadow:                            none;
+  --me-html-string-text:                                hsl(300, 100%,  70%);
+  --me-html-string-ts:                                    none;
+
+  /* LIST =================================================================================== */
+  --me-list-token:                                        hsl(calc(var(--usp-hue) + 180deg),  80%,  80%);
+  --me-list-text:                                         hsl(var(--usp-hue),  30%,  80%);
+
+  --me-checkbox-text:                                     hsl(var(--usp-hue), 100%,  70%);
+
+  /* FOOTNOTE =============================================================================== */
+  --me-footnote-ref:                                      hsl(calc(var(--usp-hue) + 180deg), 100%, 85%);
   
+  /* HEADINGS =============================================================================== */
+  --me-h1-text:                                           hsl(var(--usp-hue), 100%,  80%);
+  --me-h2-text:                                           hsl(var(--usp-hue), 100%,  90%);
+  --me-h3-text:                                           hsl(var(--usp-hue), 100%,  90%);
+  --me-h4-text:                                           hsl(var(--usp-hue), 100%,  90%);
+  --me-h5-text:                                           hsl(var(--usp-hue),  30%,  80%);
+  --me-h6-text:                                           hsl(var(--usp-hue),  30%,  80%);
+
+  /* BLOCKQUOTE ============================================================================= */
+  --me-blockquote-text:                                   hsl(var(--usp-hue),  30%,  80%);
+
   /* CODE BLOCK ============================================================================= */
-  --code-block-bg-color:                                hsl(var(--usp-remoods-hue), 8%,  17%);
-  --code-block-bd-width:                                0 3px;
-  --code-block-bd-color:                                hsl(var(--usp-remoods-hue),  40%,  60%);
+  --me-code-block-bg:                                     hsl(var(--usp-hue),   8%,  17%);
+  --me-code-block-bdw:                                    0 3px;
+  --me-code-block-bdc:                                    hsl(var(--usp-hue),  40%,  60%);
   
   /* syntax highlight ----------------------------------------------------------------------- */
-  --code-block-comment-color:                           hsl(var(--usp-remoods-hue),   0%,  60%);
-  --code-block-comment-shadow:                          none;
+  --me-code-block-comment-text:                           hsl(var(--usp-hue),   0%,  60%);
+  --me-code-block-comment-ts:                             none;
   
-  --code-block-number-color:                            hsl(calc(var(--usp-remoods-hue) + 110deg), 100%,  66%);
-  --code-block-number-shadow:                           none;
+  --me-code-block-number-text:                            hsl(calc(var(--usp-hue) + 110deg), 100%,  66%);
+  --me-code-block-number-ts:                              none;
   
-  --code-block-string-color:                            hsl(calc(var(--usp-remoods-hue) + 180deg), 100%,  75%);
-  --code-block-string-shadow:                           none;
+  --me-code-block-string-text:                            hsl(calc(var(--usp-hue) + 180deg), 100%,  75%);
+  --me-code-block-string-ts:                              none;
   
-  --code-block-variable-3-color:                        hsl(calc(var(--usp-remoods-hue) + 323deg), 100%,  85%);
-  --code-block-variable-3-shadow:                       none;
+  --me-code-block-variable-3-text:                        hsl(calc(var(--usp-hue) + 323deg), 100%,  85%);
+  --me-code-block-variable-3-ts:                          none;
   
-  --code-block-attribute-color:                         hsl(calc(var(--usp-remoods-hue) + 240deg), 100%,  75%);
-  --code-block-attribute-shadow:                        none;
+  --me-code-block-attribute-text:                         hsl(calc(var(--usp-hue) + 240deg), 100%,  75%);
+  --me-code-block-attribute-ts:                           none;
   
-  --code-block-error-color:                           hsl(   0, 100%, 65%);
-  --code-block-error-bd-color:             2px dotted hsl(  0, 100%,  50%);
+  --me-code-block-error-text:                           hsl(  0, 100%,  65%);
+  --me-code-block-error-bdb:                 2px dotted hsl(  0, 100%,  50%);
 
-  --code-block-invalidchar-color:                     hsl(  0, 100%,  50%);
-  --code-block-invalidchar-shadow:                      none;
+  --me-code-block-invalidchar-text:                     hsl(  0, 100%,  50%);
+  --me-code-block-invalidchar-ts:                         none;
 
-  --code-block-variable-color:                          hsl(var(--usp-remoods-hue),   0%,  90%);
-  --code-block-variable-shadow:                         none;
-  --code-block-variable-2-color:                        var(--code-block-variable-color);
-  --code-block-variable-2-shadow:                       var(--code-block-variable-shadow);
-  --code-block-def-color:                               var(--code-block-variable-color);
-  --code-block-def-shadow:                              var(--code-block-variable-shadow);
-  --code-block-undefined-color:                         var(--code-block-variable-color);
-  --code-block-undefined-shadow:                        var(--code-block-variable-shadow);
-  --code-block-operator-color:                          var(--code-block-variable-color);
-  --code-block-operator-shadow:                         var(--code-block-variable-shadow);
-  --code-block-null-color:                              var(--code-block-variable-color);
-  --code-block-null-shadow:                             var(--code-block-variable-shadow);
-  --code-block-matching-bracket-color:                  var(--code-block-variable-color);
-  --code-block-matching-bracket-shadow:                 var(--code-block-variable-shadow);
+  --me-code-block-variable-text:                          hsl(var(--usp-hue),   0%,  90%);
+  --me-code-block-variable-ts:                            none;
+  --me-code-block-variable-2-text:                        var(--me-code-block-variable-text);
+  --me-code-block-variable-2-ts:                          var(--me-code-block-variable-ts);
+  --me-code-block-def-text:                               var(--me-code-block-variable-text);
+  --me-code-block-def-ts:                                 var(--me-code-block-variable-ts);
+  --me-code-block-undefined-text:                         var(--me-code-block-variable-text);
+  --me-code-block-undefined-ts:                           var(--me-code-block-variable-ts);
+  --me-code-block-operator-text:                          var(--me-code-block-variable-text);
+  --me-code-block-operator-ts:                            var(--me-code-block-variable-ts);
+  --me-code-block-null-text:                              var(--me-code-block-variable-text);
+  --me-code-block-null-ts:                                var(--me-code-block-variable-ts);
+  --me-code-block-matching-bracket-text:                  var(--me-code-block-variable-text);
+  --me-code-block-matching-bracket-ts:                    var(--me-code-block-variable-ts);
   
-  --code-block-keyword-color:                           hsl(var(--usp-remoods-hue), 100%,  70%);
-  --code-block-keyword-shadow:                          none;
+  --me-code-block-keyword-text:                           hsl(var(--usp-hue), 100%,  70%);
+  --me-code-block-keyword-ts:                             none;
   
-  --code-block-property-color:                          hsl(var(--usp-remoods-hue), 100%,  85%);
-  --code-block-property-shadow:                         none;
+  --me-code-block-property-text:                          hsl(var(--usp-hue), 100%,  85%);
+  --me-code-block-property-ts:                            none;
   
-  --code-block-qualifier-color:                         hsl(calc(var(--usp-remoods-hue) + 260deg), 100%,  75%);
-  --code-block-qualifier-shadow:                        none;
-  --code-block-type-color:                              var(--code-block-qualifier-color);
-  --code-block-type-shadow:                             var(--code-block-qualifier-shadow);
-  --code-block-builtin-color:                           var(--code-block-qualifier-color);
-  --code-block-builtin-shadow:                          var(--code-block-qualifier-shadow);
+  --me-code-block-qualifier-text:                         hsl(calc(var(--usp-hue) + 260deg), 100%,  75%);
+  --me-code-block-qualifier-ts:                           none;
+  --me-code-block-type-text:                              var(--me-code-block-qualifier-text);
+  --me-code-block-type-ts:                                var(--me-code-block-qualifier-ts);
+  --me-code-block-builtin-text:                           var(--me-code-block-qualifier-text);
+  --me-code-block-builtin-ts:                             var(--me-code-block-qualifier-ts);
   
-  --code-block-atom-color:                              hsl(calc(var(--usp-remoods-hue) + 148deg), 100%,  65%);
-  --code-block-atom-shadow:                             none;
-  --code-block-meta-color:                              var(--code-block-atom-color);
-  --code-block-meta-shadow:                             var(--code-block-atom-shadow);
+  --me-code-block-atom-text:                              hsl(calc(var(--usp-hue) + 148deg), 100%,  65%);
+  --me-code-block-atom-ts:                                none;
+  --me-code-block-meta-text:                              var(--me-code-block-atom-text);
+  --me-code-block-meta-ts:                                var(--me-code-block-atom-ts);
   
-  --code-block-string-2-color:                          hsl(calc(var(--usp-remoods-hue) +  90deg), 100%,  75%);
-  --code-block-string-2-shadow:                         none;
+  --me-code-block-string-2-text:                          hsl(calc(var(--usp-hue) +  90deg), 100%,  75%);
+  --me-code-block-string-2-ts:                            none;
   
-  --code-block-tag-color:                               hsl(calc(var(--usp-remoods-hue) + 120deg), 100%,  70%);
-  --code-block-tag-shadow:                              none;
+  --me-code-block-tag-text:                               hsl(calc(var(--usp-hue) + 120deg), 100%,  70%);
+  --me-code-block-tag-ts:                                 none;
 
 
 
   /* PLUGIN: MARKDOWN TABLE COLORIZE ******************************************************** */
   /* markdown > table text ------------------------------------------------------------------ */
-  --mtc-table-text-color:                               hsl(var(--usp-remoods-hue),   0%,  100%);
-  --mtc-table-vertical-bar-color:                       hsl(var(--usp-remoods-hue),   0%,  70%);
+  --me-plugin-mtc-table-text:                             hsl(var(--usp-hue),   0%,  100%);
+  --me-plugin-mtc-table-vertical-bar:                     hsl(var(--usp-hue),   0%,  70%);
   
   /* table row separate --------------------------------------------------------------------- */
-  --mtc-separate-bg-color:                              hsl(var(--usp-remoods-hue),   0%, 100%,  10%);
-  --mtc-separate-head-text-color:                       hsl(var(--usp-remoods-hue),  40%,  70%);
+  --me-plugin-mtc-separator-bg:                           hsl(var(--usp-hue),   0%, 100%,  10%);
+  --me-plugin-mtc-separator-text:                         hsl(var(--usp-hue),  40%,  70%);
 
   /* table column mark ---------------------------------------------------------------------- */
-  --mtc-column-mark-color-1:                          hsl(  0, 100%,  80%);
-  --mtc-column-mark-shadow-1:                           none;
+  --me-plugin-mtc-column-mark-1:                        hsl(  0, 100%,  80%);
+  --me-plugin-mtc-column-mark-1-ts:                       none;
 
-  --mtc-column-mark-color-2:                          hsl(240,  70%,  80%);
-  --mtc-column-mark-shadow-2:                           none;
+  --me-plugin-mtc-column-mark-2:                        hsl(240,  70%,  80%);
+  --me-plugin-mtc-column-mark-2-ts:                       none;
   
-  --mtc-column-mark-color-3:                          hsl(160,  80%,  60%);
-  --mtc-column-mark-shadow-3:                           none;
+  --me-plugin-mtc-column-mark-3:                        hsl(160,  80%,  60%);
+  --me-plugin-mtc-column-mark-3-ts:                       none;
   
-  --mtc-column-mark-color-4:                          hsl( 40,  90%,  60%);
-  --mtc-column-mark-shadow-4:                           none;
+  --me-plugin-mtc-column-mark-4:                        hsl( 40,  90%,  60%);
+  --me-plugin-mtc-column-mark-4-ts:                       none;
   
-  --mtc-column-mark-color-5:                          hsl( 60,  60%,  60%);
-  --mtc-column-mark-shadow-5:                           none;
+  --me-plugin-mtc-column-mark-5:                        hsl( 60,  60%,  60%);
+  --me-plugin-mtc-column-mark-5-ts:                       none;
   
-  --mtc-column-mark-color-6:                          hsl(190,  80%,  60%);
-  --mtc-column-mark-shadow-6:                           none;
+  --me-plugin-mtc-column-mark-6:                        hsl(190,  80%,  60%);
+  --me-plugin-mtc-column-mark-6-ts:                       none;
   
-  --mtc-column-mark-color-7:                          hsl(100,  70%,  60%);
-  --mtc-column-mark-shadow-7:                           none;
+  --me-plugin-mtc-column-mark-7:                        hsl(100,  70%,  60%);
+  --me-plugin-mtc-column-mark-7-ts:                       none;
   
-  --mtc-column-mark-color-8:                          hsl(210, 100%,  55%);
-  --mtc-column-mark-shadow-8:                           none;
+  --me-plugin-mtc-column-mark-8:                        hsl(210, 100%,  55%);
+  --me-plugin-mtc-column-mark-8-ts:                       none;
   
-  --mtc-column-mark-color-9:                          hsl(270, 100%,  75%);
-  --mtc-column-mark-shadow-9:                           none; 
+  --me-plugin-mtc-column-mark-9:                        hsl(270, 100%,  75%);
+  --me-plugin-mtc-column-mark-9-ts:                       none; 
   
-  --mtc-column-mark-color-10:                         hsl(310,  70%,  70%);
-  --mtc-column-mark-shadow-10:                          none;
+  --me-plugin-mtc-column-mark-10:                       hsl(310,  70%,  70%);
+  --me-plugin-mtc-column-mark-10-ts:                      none;
 
 
 
   /* PLUGIN: ENHANCEMENT ******************************************************************** */
-  --eh-footnote-ref-color:                            hsl(calc(var(--usp-remoods-hue) + 180deg), 100%,  10%);
+  --me-plugin-eh-footnote-ref:                            hsl(calc(var(--usp-hue) + 180deg), 100%,  10%);
 
-  
-  
-  
-  /* **************************************************************************************** */
-  /* !!!!                           JOPLIN UI: GROUP PROPERTIES                          !!!! */
-  /* **************************************************************************************** */
+
+
+
+  /* ---------------------------------------------------------------------------------------- */
+  /*                               JOPLIN UI: GROUP PROPERTIES                                */
+  /* ---------------------------------------------------------------------------------------- */
 
 
 
   
   /* app body | notebook panel | note list panel | tagbar | option panel menu & table & plugin card & switcher btn & confirm btn */
-  --g-main-bg-color-1:                                  hsl(var(--usp-remoods-hue),  11%,  13%);
-  
-  /* notebook panel | note list | editor panel ----------------------------------------------- */
-  --g-panel-header-bg-color:                            hsl(var(--usp-remoods-hue),  80%,  50%);
-  --g-panel-header-text-color:                          hsl(var(--usp-remoods-hue),   0%, 100%);
-  --g-panel-header-text-shadow:                 0 0 3px hsl(var(--usp-remoods-hue), 100%,  10%);
-  
-  /* notebook list | note list | option panel menu ------------------------------------------- */
-  --g-item-bg-color-hover:                              hsl(var(--usp-remoods-hue),  30%,  20%);
-  --g-item-bg-color-selected:                           hsl(var(--usp-remoods-hue),  40%,  35%);
-  --g-item-shadow-hover:                                hsl(var(--usp-remoods-hue), 100%,  35%);
-  --g-item-divider-color:                               hsl(var(--usp-remoods-hue),  20%,  20%);
-  --g-item-text-color:                                  hsl(var(--usp-remoods-hue), 100%,  98%);
-
-  /* notebook panel all notes button & tag list ---------------------------------------------- */
-  --g-item-text-color-2:                                hsl(var(--usp-remoods-hue), 100%,  80%);
-  
-  /* note list panel toolbar | editor header side toolbar ------------------------------------ */
-  --g-lighter-square-btn-bg-color:                      none;
-  --g-lighter-square-btn-bg-color-hover:                hsl(var(--usp-remoods-hue),  20%,  20%);
-  --g-lighter-square-btn-bd-color:                      transparent;
-  --g-lighter-square-btn-bd-color-hover:                hsl(var(--usp-remoods-hue), 100%,  25%);
-  --g-lighter-square-btn-icon-color:                    hsl(var(--usp-remoods-hue), 100%,  20%);
-  --g-lighter-square-btn-icon-color-hover:              hsl(var(--usp-remoods-hue), 100%,  80%);
-  
-  /* editor main toolbar & tar bar ----------------------------------------------------------- */
-  --g-darker-square-btn-bg-color:                       none;
-  --g-darker-square-btn-bg-color-hover:                 hsl(var(--usp-remoods-hue),  20%,  20%);
-  --g-darker-square-btn-bd-color:                       transparent;
-  --g-darker-square-btn-bd-color-hover:                 hsl(var(--usp-remoods-hue), 100%,  50%);
-  --g-darker-square-btn-icon-color:                     hsl(var(--usp-remoods-hue),  60%,  90%);
-  --g-darker-square-btn-icon-color-hover:               hsl(var(--usp-remoods-hue), 100%,  80%);
-  
-  /* notebook panel | note list panel -------------------------------------------------------- */
-  --g-scrollbar-thumb-bg-color-1:                       hsl(var(--usp-remoods-hue), 100%,  70%);
-  --g-scrollbar-track-bg-color-1:                       hsl(var(--usp-remoods-hue),  20%,  20%);
-
-  /* note list panel search bar | editor panel search bar | command palette search bar | option panel select & input */
-  --g-input-text-color-1:                               hsl(var(--usp-remoods-hue), 100%,  70%);
-  --g-input-bg-color-1:                                 hsl(var(--usp-remoods-hue),  11%,  13%);
-  --g-input-bd-color-1:                                 hsl(var(--usp-remoods-hue),  50%,  40%);
-
-  /* editor toolbar & editor search bar ------------------------------------------------------ */
-  --g-toolbar-bg-color:                                 hsl(var(--usp-remoods-hue),  11%,  13%);
-  --g-toolbar-bd-color:                                 hsl(var(--usp-remoods-hue),  70%,  70%);
-
-  /* editor & tagbar ------------------------------------------------------------------------- */
-  --g-editor-panel-divider-color:                       hsl(var(--usp-remoods-hue),  30%,  50%);
+  --g-main-bg-1:                                          hsl(var(--usp-hue),  11%,  13%);
 
   /* option panel menu & table & table kbd --------------------------------------------------- */
-  --g-option-main-bg-color:                             hsl(var(--usp-remoods-hue),  8%,  27%);
+  --g-main-bg-2:                                          hsl(var(--usp-hue),   8%,  27%);
+  
+  /* notebook panel | note list | editor panel ----------------------------------------------- */
+  --g-panel-header-bgc:                                   hsl(var(--usp-hue),  80%,  50%);
+  --g-panel-header-text:                                  hsl(var(--usp-hue),   0%, 100%);
+  --g-panel-header-ts:                                3px hsl(var(--usp-hue), 100%,  10%);
+  
+  /* notebook list | note list | option panel menu ------------------------------------------- */
+  --g-item-bgc-hover:                                     hsl(var(--usp-hue),  30%,  20%);
+  --g-item-bgc-selected:                                  hsl(var(--usp-hue),  40%,  35%);
+  --g-item-ds-hover:                                  2px hsl(var(--usp-hue), 100%,  35%);
+  --g-item-divider:                                       hsl(var(--usp-hue),  20%,  20%);
+  --g-item-text:                                          hsl(var(--usp-hue), 100%,  98%);
+
+  /* notebook panel all notes button & tag list ---------------------------------------------- */
+  --g-item-text-2:                                        hsl(var(--usp-hue), 100%,  80%);
+  
+  /* note list panel toolbar | editor header side toolbar ------------------------------------ */
+  --g-square-btn-bg-1:                                    none;
+  --g-square-btn-bg-1-hover:                              hsl(var(--usp-hue),  20%,  20%);
+  --g-square-btn-bd-1:                                    transparent;
+  --g-square-btn-bd-1-hover:                              hsl(var(--usp-hue), 100%,  25%);
+  --g-square-btn-icon-1:                                  hsl(var(--usp-hue), 100%,  20%);
+  --g-square-btn-icon-1-hover:                            hsl(var(--usp-hue), 100%,  80%);
+  
+  /* editor main toolbar & tar bar ----------------------------------------------------------- */
+  --g-square-btn-bg-2:                                    none;
+  --g-square-btn-bg-2-hover:                              hsl(var(--usp-hue),  20%,  20%);
+  --g-square-btn-bd-2:                                    transparent;
+  --g-square-btn-bd-2-hover:                              hsl(var(--usp-hue), 100%,  50%);
+  --g-square-btn-icon-2:                                  hsl(var(--usp-hue),  60%,  90%);
+  --g-square-btn-icon-2-hover:                            hsl(var(--usp-hue), 100%,  80%);
+  
+  /* notebook panel | note list panel -------------------------------------------------------- */
+  --g-scrollbar-thumb-bg:                                 hsl(var(--usp-hue), 100%,  70%);
+  --g-scrollbar-track-bg:                                 hsl(var(--usp-hue),  20%,  20%);
+
+  /* note list panel search bar | editor panel search bar | command palette search bar | option panel select & input */
+  --g-input-text:                                         hsl(var(--usp-hue), 100%,  70%);
+  --g-input-bg:                                           hsl(var(--usp-hue),  11%,  13%);
+  --g-input-bd:                                           hsl(var(--usp-hue),  50%,  40%);
+
+  /* editor toolbar & editor search bar ------------------------------------------------------ */
+  --g-toolbar-bg:                                         hsl(var(--usp-hue),  11%,  13%);
+  --g-toolbar-bd:                                         hsl(var(--usp-hue),  70%,  70%);
+
+  /* editor & tagbar ------------------------------------------------------------------------- */
+  --g-ep-divider:                                         hsl(var(--usp-hue),  30%,  50%);
 
 
 
 
-  /* **************************************************************************************** */
-  /* !!!!                       JOPLIN UI: STANDALONE PROPERTIES                         !!!! */
-  /* **************************************************************************************** */
+  /* ---------------------------------------------------------------------------------------- */
+  /*                             JOPLIN UI: STANDALONE PROPERTIES                             */
+  /* ---------------------------------------------------------------------------------------- */
 
 
 
 
-  --s-main-panel-divider-bg:                            hsl(var(--usp-remoods-hue),  14%,  11%);
+  --s-panel-divider:                                      hsl(var(--usp-hue),  14%,  11%);
 
   /* NOTEBOOK PANEL ========================================================================= */
-  --s-directory-icon-open-color:                        hsl(var(--usp-remoods-hue),  20%,  70%);
-  --s-directory-icon-open-shadow:                       hsl(var(--usp-remoods-hue), 100%,  40%);
-  --s-directory-icon-close-color:                       hsl(var(--usp-remoods-hue), 100%,  60%);
-  --s-directory-icon-close-shadow:                      hsl(var(--usp-remoods-hue), 100%,  60%);
+  --s-np-directory-icon-open:                             hsl(var(--usp-hue),  20%,  70%);
+  --s-np-directory-icon-open-ds:                      0px hsl(var(--usp-hue), 100%,  40%);
+  --s-np-directory-icon-close:                            hsl(var(--usp-hue), 100%,  60%);
+  --s-np-directory-icon-close-ds:                     2px hsl(var(--usp-hue), 100%,  60%);
 
-  --s-notebook-folder-icon-0:                           hsl(var(--usp-remoods-hue), 100%, 70%);
-  --s-notebook-folder-icon-1:                           hsl(calc(var(--usp-remoods-hue) +  50deg), 100%, 70%);
-  --s-notebook-folder-icon-2:                           hsl(calc(var(--usp-remoods-hue) + 100deg), 100%, 70%);
-  --s-notebook-folder-icon-3:                           hsl(calc(var(--usp-remoods-hue) + 150deg), 100%, 70%);
-  --s-notebook-folder-icon-4:                           hsl(calc(var(--usp-remoods-hue) + 200deg), 100%, 70%);
-  --s-notebook-folder-icon-5:                           hsl(calc(var(--usp-remoods-hue) + 250deg), 100%, 70%);
-  --s-notebook-folder-icon-6:                           hsl(calc(var(--usp-remoods-hue) + 300deg), 100%, 70%);
-  --s-notebook-folder-icon-7:                           hsl(calc(var(--usp-remoods-hue) + 350deg), 100%, 70%);
-  --s-notebook-folder-icon-8:                           hsl(calc(var(--usp-remoods-hue) +  40deg), 100%, 70%);
-  --s-notebook-folder-icon-9:                           hsl(calc(var(--usp-remoods-hue) +  90deg), 100%, 70%);
-  --s-notebook-folder-icon-10:                          hsl(calc(var(--usp-remoods-hue) + 140deg), 100%, 70%);
-  --s-notebook-folder-icon-11:                          hsl(calc(var(--usp-remoods-hue) + 190deg), 100%, 70%);
-  --s-notebook-folder-icon-12:                          hsl(calc(var(--usp-remoods-hue) + 240deg), 100%, 70%);
-  --s-notebook-folder-icon-13:                          hsl(calc(var(--usp-remoods-hue) + 290deg), 100%, 70%);
-  --s-notebook-folder-icon-14:                          hsl(calc(var(--usp-remoods-hue) + 340deg), 100%, 70%);
-  --s-notebook-folder-icon-15:                          hsl(calc(var(--usp-remoods-hue) +  30deg), 100%, 70%);
+  --s-np-notebook-folder-icon-0:                          hsl(var(--usp-hue), 100%, 70%);
+  --s-np-notebook-folder-icon-1:                          hsl(calc(var(--usp-hue) +  50deg), 100%, 70%);
+  --s-np-notebook-folder-icon-2:                          hsl(calc(var(--usp-hue) + 100deg), 100%, 70%);
+  --s-np-notebook-folder-icon-3:                          hsl(calc(var(--usp-hue) + 150deg), 100%, 70%);
+  --s-np-notebook-folder-icon-4:                          hsl(calc(var(--usp-hue) + 200deg), 100%, 70%);
+  --s-np-notebook-folder-icon-5:                          hsl(calc(var(--usp-hue) + 250deg), 100%, 70%);
+  --s-np-notebook-folder-icon-6:                          hsl(calc(var(--usp-hue) + 300deg), 100%, 70%);
+  --s-np-notebook-folder-icon-7:                          hsl(calc(var(--usp-hue) + 350deg), 100%, 70%);
+  --s-np-notebook-folder-icon-8:                          hsl(calc(var(--usp-hue) +  40deg), 100%, 70%);
+  --s-np-notebook-folder-icon-9:                          hsl(calc(var(--usp-hue) +  90deg), 100%, 70%);
+  --s-np-notebook-folder-icon-10:                         hsl(calc(var(--usp-hue) + 140deg), 100%, 70%);
+  --s-np-notebook-folder-icon-11:                         hsl(calc(var(--usp-hue) + 190deg), 100%, 70%);
+  --s-np-notebook-folder-icon-12:                         hsl(calc(var(--usp-hue) + 240deg), 100%, 70%);
+  --s-np-notebook-folder-icon-13:                         hsl(calc(var(--usp-hue) + 290deg), 100%, 70%);
+  --s-np-notebook-folder-icon-14:                         hsl(calc(var(--usp-hue) + 340deg), 100%, 70%);
+  --s-np-notebook-folder-icon-15:                         hsl(calc(var(--usp-hue) +  30deg), 100%, 70%);
 
-  --s-note-count-label-text-color:                      hsl(var(--usp-remoods-hue),   0%, 100%);
-  --s-note-count-label-bg-color:                        hsl(var(--usp-remoods-hue),  40%,  20%);
-  --s-note-count-label-bd-color:                        hsl(var(--usp-remoods-hue),  50%,  80%);
-  --s-note-count-label-shadow:                  0 0 1px hsl(var(--usp-remoods-hue), 100%,  80%);
+  --s-np-note-count-label-text:                           hsl(var(--usp-hue),   0%, 100%);
+  --s-np-note-count-label-bgc:                            hsl(var(--usp-hue),  40%,  20%);
+  --s-np-note-count-label-bd:                             hsl(var(--usp-hue),  50%,  80%);
+  --s-np-note-count-label-ds:                         1px hsl(var(--usp-hue), 100%,  80%);
 
-  --s-sync-info-text-color:                             hsl(var(--usp-remoods-hue), 100%,  95%);
-  --s-sync-info-symbol-color:                           radial-gradient(
-                                                        hsl(var(--usp-remoods-hue), 100%,  80%)  25%,
-                                                        hsl(var(--usp-remoods-hue), 100%,  50%)  55%,
-                                                        hsl(var(--usp-remoods-hue), 100%,  80%)  80%);
+  --s-np-sync-info-text:                                  hsl(var(--usp-hue), 100%,  95%);
+  --s-np-sync-info-symbol:                                radial-gradient(
+                                                          hsl(var(--usp-hue), 100%,  80%)  25%,
+                                                          hsl(var(--usp-hue), 100%,  50%)  55%,
+                                                          hsl(var(--usp-hue), 100%,  80%)  80%);
   
-  --s-sync-btn-bg-color:                                transparent;
-  --s-sync-btn-bd-color:                                hsl(var(--usp-remoods-hue),  20%,  20%);
-  --s-sync-btn-bg-color-hover:                          hsl(var(--usp-remoods-hue),  30%,  10%);
-  --s-sync-btn-bd-color-hover:                          hsl(var(--usp-remoods-hue), 100%,  30%);
-  --s-sync-btn-text-color:                              hsl(var(--usp-remoods-hue),   0%,  50%);
-  --s-sync-btn-text-color-hover:                        hsl(var(--usp-remoods-hue),  20%,  70%);
-  --s-sync-btn-icon-text-shadow:                        none;
-  --s-sync-btn-icon-text-shadow-hover:                  hsl(var(--usp-remoods-hue),  20%,  70%);
+  --s-np-sync-btn-bg:                                     transparent;
+  --s-np-sync-btn-bd:                                     hsl(var(--usp-hue),  20%,  20%);
+  --s-np-sync-btn-bg-hover:                               hsl(var(--usp-hue),  30%,  10%);
+  --s-np-sync-btn-bdc-hover:                              hsl(var(--usp-hue), 100%,  30%);
+  --s-np-sync-btn-text:                                   hsl(var(--usp-hue),   0%,  50%);
+  --s-np-sync-btn-text-hover:                             hsl(var(--usp-hue),  20%,  70%);
+  --s-np-sync-btn-icon-ts:                                none;
+  --s-np-sync-btn-icon-ts-hover:                      3px hsl(var(--usp-hue),  20%,  70%);
   
   /* NOTE LIST PANEL ======================================================================== */
-  --s-todo-text-color:                                  hsl(var(--usp-remoods-hue), 100%,  70%);
-
-  --s-notelist-search-btn-color:                        hsl(var(--usp-remoods-hue),   0%,  70%);
-  --s-notelist-search-btn-color-hover:                  hsl(var(--usp-remoods-hue), 100%,  70%);
+  --s-nlp-todo-text:                                      hsl(var(--usp-hue), 100%,  70%);
+  --s-nlp-search-btn:                                     hsl(var(--usp-hue),   0%,  70%);
 
   /* EDITOR PANEL =========================================================================== */
-  --s-toolbar-shadow:                           0 0 1px hsl(var(--usp-remoods-hue), 100%,  30%);
+  --s-ep-toolbar-ds:                                  1px hsl(var(--usp-hue), 100%,  30%);
 
-  --s-notebook-nav-btn-bg-color:                        hsl(var(--usp-remoods-hue),  30%,  20%);
-  --s-notebook-nav-btn-bd-color:                        hsl(var(--usp-remoods-hue), 100%,  30%);
-  --s-notebook-nav-btn-shadow:                          hsl(var(--usp-remoods-hue), 100%,  80%);
-  --s-notebook-nav-btn-text-color:                      hsl(var(--usp-remoods-hue), 100%,  70%);
+  --s-ep-notebook-nav-btn-bg:                             hsl(var(--usp-hue),  30%,  20%);
+  --s-ep-notebook-nav-btn-bd:                             hsl(var(--usp-hue), 100%,  30%);
+  --s-ep-notebook-nav-btn-bs:                         3px hsl(var(--usp-hue), 100%,  80%);
+  --s-ep-notebook-nav-btn-text:                           hsl(var(--usp-hue), 100%,  70%);
 
-  --s-batch-menu-btn-text-color:                        hsl(var(--usp-remoods-hue),  60%,  90%);
-  --s-batch-menu-btn-bg-color:                          hsl(var(--usp-remoods-hue),  50%,  10%);
-  --s-batch-menu-btn-bd-color:                          hsl(var(--usp-remoods-hue), 100%,  30%);
+  --s-ep-batch-menu-btn-text:                             hsl(var(--usp-hue),  60%,  90%);
+  --s-ep-batch-menu-btn-bg:                               hsl(var(--usp-hue),  50%,  10%);
+  --s-ep-batch-menu-btn-bd:                               hsl(var(--usp-hue), 100%,  30%);
 
-  --s-update-time-label-bg-color:                       hsl(var(--usp-remoods-hue), 100%,  20%);
-  --s-update-time-label-text-color:                     hsl(var(--usp-remoods-hue), 100%,  70%);
+  --s-ep-update-time-label-bg:                            hsl(var(--usp-hue), 100%,  20%);
+  --s-ep-update-time-label-text:                          hsl(var(--usp-hue), 100%,  70%);
 
-  --s-tagbar-tag-text-color:                            hsl(var(--usp-remoods-hue),  20%,  80%);
-  --s-tagbar-tag-text-color-hover:                      hsl(var(--usp-remoods-hue),  20%,  95%);
-  --s-tagbar-tag-text-shadow-hover:                     hsl(var(--usp-remoods-hue), 100%,  25%);
-  --s-tagbar-tag-divider-color:                         hsl(var(--usp-remoods-hue), 100%,  90%);
-  --s-tagbar-hint-text-color:                           hsl(var(--usp-remoods-hue),  40%,  40%);
+  --s-ep-tagbar-tag-text:                                 hsl(var(--usp-hue),  20%,  80%);
+  --s-ep-tagbar-tag-text-hover:                           hsl(var(--usp-hue),  20%,  95%);
+  --s-ep-tagbar-tag-ts-hover:                             hsl(var(--usp-hue), 100%,  25%);
+  --s-ep-tagbar-tag-divider:                              hsl(var(--usp-hue), 100%,  90%);
+  --s-ep-tagbar-hint-text:                                hsl(var(--usp-hue),  40%,  40%);
 
-  --s-footer-popup-msg:                                 hsl( 30, 100%,  80%);
-  --s-footer-popup-msg-bg:                              hsl(  0,  50%,  40%);
-  --s-footer-popup-msg-link:                            hsl(200,  90%,  75%);
+  --s-ep-footer-popup-msg-text:                         hsl( 30, 100%,  80%);
+  --s-ep-footer-popup-msg-bg:                           hsl(  0,  50%,  40%);
+  --s-ep-footer-popup-msg-link:                         hsl(200,  90%,  75%);
 
   /* MODAL DIALOG =========================================================================== */
-  --s-modal-dialog-bg-color:                            hsl(var(--usp-remoods-hue),  11%,  13%);
-  --s-modal-dialog-label-color:                         hsl(var(--usp-remoods-hue),  60%,  90%);
-  --s-modal-dialog-title-text-color:                    hsl(var(--usp-remoods-hue),  60%,  90%);
-  --s-modal-dialog-confirm-btn-text-color:              hsl(var(--usp-remoods-hue),  60%,  90%);
-  --s-modal-dialog-confirm-btn-bg-color:                hsl(var(--usp-remoods-hue),  40%,  15%);
-  --s-modal-dialog-confirm-btn-bd-color:                hsl(var(--usp-remoods-hue), 100%,  30%);
+  --s-md-bg:                                              hsl(var(--usp-hue),  11%,  13%);
+  --s-md-label-text:                                      hsl(var(--usp-hue),  60%,  90%);
+  --s-md-title-text:                                      hsl(var(--usp-hue),  60%,  90%);
+  --s-md-confirm-btn-text:                                hsl(var(--usp-hue),  60%,  90%);
+  --s-md-confirm-btn-bg:                                  hsl(var(--usp-hue),  40%,  15%);
+  --s-md-confirm-btn-bd:                                  hsl(var(--usp-hue), 100%,  30%);
   
-  --s-notebook-creator-icon-select-btn-bg-color:        hsl(var(--usp-remoods-hue),  50%,  20%);
-  --s-notebook-creator-icon-select-btn-bd-color:        hsl(var(--usp-remoods-hue), 100%,  30%);
-  --s-notebook-creator-icon-select-btn-text-color:      hsl(var(--usp-remoods-hue),  60%,  90%);
+  --s-md-notebook-creator-icon-select-btn-bg:             hsl(var(--usp-hue),  50%,  20%);
+  --s-md-notebook-creator-icon-select-btn-bd:             hsl(var(--usp-hue), 100%,  30%);
+  --s-md-notebook-creator-icon-select-btn-text:           hsl(var(--usp-hue),  60%,  90%);
   
-  --s-tag-selector-bg-color:                            hsl(var(--usp-remoods-hue),  50%,  10%);
-  --s-tag-selector-bd-color:                            hsl(var(--usp-remoods-hue), 100%,  30%);
-  --s-tag-selector-input-text-color:                    hsl(var(--usp-remoods-hue), 100%,  40%);
-  --s-tag-selector-divider-color:                       hsl(var(--usp-remoods-hue), 100%,  30%);
-  --s-tag-selector-text-color:                          hsl(var(--usp-remoods-hue),  20%,  80%);
+  --s-md-tag-selector-bg:                                 hsl(var(--usp-hue),  50%,  10%);
+  --s-md-tag-selector-bd:                                 hsl(var(--usp-hue), 100%,  30%);
+  --s-md-tag-selector-input-text:                         hsl(var(--usp-hue), 100%,  40%);
+  --s-md-tag-selector-divider:                            hsl(var(--usp-hue), 100%,  30%);
+  --s-md-tag-selector-text:                               hsl(var(--usp-hue),  20%,  80%);
 
-  --s-command-palette-item-bg-color:                    hsl(var(--usp-remoods-hue),  11%,  13%);
-  --s-command-palette-item-bg-color-selected:           hsl(var(--usp-remoods-hue),  30%,  30%);
-  --s-command-palette-item-bd-color:                    hsl(var(--usp-remoods-hue),  30%,  30%);
-  --s-command-palette-item-text-color:                  hsl(var(--usp-remoods-hue),  60%,  90%);
+  --s-md-command-palette-item-bg:                         hsl(var(--usp-hue),  11%,  13%);
+  --s-md-command-palette-item-bg-selected:                hsl(var(--usp-hue),  30%,  30%);
+  --s-md-command-palette-item-bdb:                        hsl(var(--usp-hue),  30%,  30%);
+  --s-md-command-palette-item-text:                       hsl(var(--usp-hue),  60%,  90%);
 
   /* OPTION PANEL =========================================================================== */
-  --s-option-guide-text-color:                          hsl(var(--usp-remoods-hue),  30%,  80%);
-  --s-option-guide-bg-color:                            hsl(var(--usp-remoods-hue),  17%,  20%);
+  --s-op-menu-subtitle-bg:                                hsl(var(--usp-hue),   0%,   0%);
+
+  --s-op-guide-text:                                      hsl(var(--usp-hue),  30%,  80%);
+  --s-op-guide-bg:                                        hsl(var(--usp-hue),  17%,  20%);
   
-  --s-option-label-text-color:                          hsl(var(--usp-remoods-hue),  20%,  90%);
-  --s-op-input-color:                                   hsl(var(--usp-remoods-hue),  20%,  80%);
+  --s-op-label-text:                                      hsl(var(--usp-hue),  20%,  90%);
+  --s-op-input-text:                                      hsl(var(--usp-hue),  20%,  80%);
     
-  --s-option-btn-bg-color:                              hsl(var(--usp-remoods-hue),  30%,  25%);
-  --s-option-btn-bd-color:                              hsl(var(--usp-remoods-hue),  40%,  60%);
-  --s-option-btn-text-color:                            hsl(var(--usp-remoods-hue),  60%,  90%);
+  --s-op-btn-bg:                                          hsl(var(--usp-hue),  30%,  25%);
+  --s-op-btn-bd:                                          hsl(var(--usp-hue),  40%,  60%);
+  --s-op-btn-text:                                        hsl(var(--usp-hue),  60%,  90%);
   
-  --s-option-description-text-color:                    hsl(var(--usp-remoods-hue),  20%,  60%);
+  --s-op-description-text:                                hsl(var(--usp-hue),  20%,  60%);
   
-  --s-option-table-text-color:                          hsl(var(--usp-remoods-hue),  40%,  70%);
+  --s-op-table-text:                                      hsl(var(--usp-hue),  40%,  70%);
   
-  --s-plugin-card-bd-color:                             hsl(var(--usp-remoods-hue),  30%,  30%);
-  --s-plugin-card-shadow:                               hsl(var(--usp-remoods-hue), 100%,  20%);
-  --s-plugin-card-text-color:                           hsl(var(--usp-remoods-hue),  20%,  80%);
-  --s-plugin-card-switcher-bg-color:                    hsl(var(--usp-remoods-hue), 100%,  80%);
+  --s-op-plugin-card-bd:                                  hsl(var(--usp-hue),  30%,  30%);
+  --s-op-plugin-card-bs:                              3px hsl(var(--usp-hue), 100%,  20%);
+  --s-op-plugin-card-text:                                hsl(var(--usp-hue),  20%,  80%);
+  --s-op-plugin-card-switcher-bg:                         hsl(var(--usp-hue), 100%,  80%);
   
-  --s-option-confirm-btn-bg-color:                      hsl(var(--usp-remoods-hue),  50%,  10%);
-  --s-option-confirm-btn-bd-color:                      hsl(var(--usp-remoods-hue), 100%,  80%);
-  --s-option-confirm-btn-shadow:                        hsl(var(--usp-remoods-hue), 100%,  80%);
-  --s-option-confirm-btn-text-color:                    hsl(var(--usp-remoods-hue),  60%,  90%);
+  --s-op-confirm-btn-bg:                                  hsl(var(--usp-hue),  50%,  10%);
+  --s-op-confirm-btn-bd:                                  hsl(var(--usp-hue), 100%,  80%);
+  --s-op-confirm-btn-bs:                              3px hsl(var(--usp-hue), 100%,  80%);
+  --s-op-confirm-btn-text:                                hsl(var(--usp-hue),  60%,  90%);
+
 }
 
 
 
 
 /* ********************************************************* */
-/* !!!!                   CODE MIRROR                   !!!! */
+/* !!!!                 MARKDOWN EDITOR                 !!!! */
 /* ********************************************************* */
-
-
-
-
-/* --------------------------------------------------------- */
-/*                           BASIC                           */
-/* --------------------------------------------------------- */
-
-
-
-
-/* || BASIC 1/2 | CONTAINER ******************************** */
-.codeMirrorEditor {
-  background: var(--code-mirror-bg-color) !important;
-}
-.codeMirrorEditor > .CodeMirror {
-  padding-left: 8px;
-  padding-bottom: 43px;
-}
-.CodeMirror-lines .CodeMirror-code > .CodeMirror-line:first-child {
-  margin-top: 15px !important;
-}
-.CodeMirror-wrap > .CodeMirror-scroll > .CodeMirror-sizer {
-  padding-left: 0 !important;
-}
-
-
-
-/* || BASIC 2/2 | OTHERS *********************************** */
-/* OTHERS > SCROLLBAR ====================================== */
-/* thumb --------------------------------------------------- */
-.codeMirrorEditor ::-webkit-scrollbar-thumb {
-  background: var(--code-mirror-scrollbar-thumb-bg-color);
-  border: 1px solid var(--code-mirror-scrollbar-thumb-bd-color);
-  visibility: hidden;
-}
-/* hover thumb --------------------------------------------- */
-.rli-editor > div > div > div > div:nth-child(2) > div:hover ::-webkit-scrollbar-thumb {
-  visibility: visible;
-}
-/* hover track --------------------------------------------- */ 
-.codeMirrorEditor ::-webkit-scrollbar-track:hover {
-  background: var(--code-mirror-scrollbar-track-bg-color);
-}
-
-/* OTHERS > CURSOR ========================================= */
-.CodeMirror-cursor {
-  border-left: var(--cursor-bd-color) !important;
-}
-
-/* OTHERS > SELECTED TEXT ================================== */
-.CodeMirror-selectedtext:not(#fake) {
-  color: var(--selected-text-color) !important;
-  background: none !important;
-}
-.CodeMirror-line:not(#fake)::selection,
-.CodeMirror-line:not(#fake) > span::selection,
-.CodeMirror-line:not(#fake) > span > span::selection {
-  color: var(--selected-text-color) !important;
-  background: none !important;
-}
-.CodeMirror-line:not(#fake)::-moz-selection,
-.CodeMirror-line:not(#fake) > span::-moz-selection,
-.CodeMirror-line:not(#fake) > span > span::-moz-selection {
-  color: var(--selected-text-color) !important;
-  background: none !important;
-}
-/* code block selected text -------------------------------- */
-.cm-jn-code-block .CodeMirror-selectedtext:not(#fake) {
-  background: var(--code-block-selected-text-bg-color) !important;
-}
-/* selected special text ----------------------------------- */
-.CodeMirror-line .cm-em.CodeMirror-selectedtext,
-.CodeMirror-line .cm-strong.CodeMirror-selectedtext,
-.CodeMirror-line .cm-strikethrough.CodeMirror-selectedtext,
-.CodeMirror-line .cm-rm-ins.CodeMirror-selectedtext,
-.CodeMirror-line .cm-rm-highlight.CodeMirror-selectedtext,
-.CodeMirror-line .cm-jn-inline-code.CodeMirror-selectedtext {
-  opacity: 0.5;
-}
 
 
 
@@ -574,7 +508,7 @@
 
 
 
-/* || FONT 1/5 | BASE FONT ********************************* */
+/* || FONT 1/3 | BASE FONT ********************************* */
 .CodeMirror * {
   font-family: var(--usp-base-font, sans-serif) !important;
   font-size: var(--usp-base-font-size) !important;
@@ -583,62 +517,186 @@
 
 
 
-/* || FONT 2/5 | MONOSPACE FONT **************************** */
-.CodeMirror-lines .CodeMirror-line .cm-comment.cm-jn-inline-code.cm-jn-monospace,
-.CodeMirror-lines .CodeMirror-line [class*="cm-variable"].cm-rm-list-token,
-.CodeMirror-lines .CodeMirror-line .cm-keyword.cm-rm-list-token,
-.CodeMirror-lines .CodeMirror-line .cm-rm-list-token.cm-rm-checkbox,
-.CodeMirror-lines .CodeMirror-line .cm-link-text, /* anchor text */
-.CodeMirror-lines .CodeMirror-line .cm-em.cm-link-text, /* abbr des */
-.CodeMirror-lines .CodeMirror-line .cm-em.cm-link-text ~ .cm-em, /* abbr des */
-.CodeMirror-lines .CodeMirror-line .cm-overlay.cm-rm-link,
-.CodeMirror-lines .CodeMirror-line .cm-bracket,
-.CodeMirror-lines .CodeMirror-line .cm-tag,
-.CodeMirror-lines .CodeMirror-line .cm-attribute,
-.CodeMirror-lines .CodeMirror-line .cm-string:not(.cm-url), /* avoid the first word of footnote */
-.CodeMirror-lines .CodeMirror-line .cm-number,
-.CodeMirror-lines .CodeMirror-line [class|="cm-katex"],
-.CodeMirror-lines .CodeMirror-line [class|="cm-katex"] ~ *,
-.CodeMirror-lines .CodeMirror-line .cm-hr,
-.CodeMirror-lines .CodeMirror-line .cm-url.cm-rm-link, /* anchor link */
-.CodeMirror-lines .CodeMirror-line .cm-image,
-.CodeMirror-lines .CodeMirror-line .cm-rm-link.cm-rm-image,
-.CodeMirror-lines .CodeMirror-line .cm-rm-sup,
-.CodeMirror-lines .CodeMirror-line .cm-rm-sub,
-.CodeMirror-lines .CodeMirror-line .cm-rm-sup-token,
-.CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em), /* footnote ref. */
-.CodeMirror-lines .CodeMirror-line .cm-null.cm-jn-monospace /* table */,
-.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-string.cm-jn-monospace,
-.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-jn-monospace,
-.CodeMirror-lines .CodeMirror-line .enhancement-footnote-marker-text {
+/* || FONT 2/3 | MONOSPACE FONT **************************** */
+/* GROUP: | inline code | list token | anchor text | abbr | link path | html | katex | sup | sub | footnote ref. | table syntax | code block | enhancement: footnotes marker text | */
+.CodeMirror-code > .CodeMirror-line .cm-comment.cm-jn-inline-code.cm-jn-monospace,
+.CodeMirror-code > .CodeMirror-line [class*="cm-variable"].cm-rm-list-token,
+.CodeMirror-code > .CodeMirror-line .cm-keyword.cm-rm-list-token,
+.CodeMirror-code > .CodeMirror-line .cm-rm-list-token.cm-rm-checkbox,
+.CodeMirror-code > .CodeMirror-line .cm-link-text, /* anchor text */
+.CodeMirror-code > .CodeMirror-line .cm-em.cm-link-text, /* abbr des */
+.CodeMirror-code > .CodeMirror-line .cm-em.cm-link-text ~ .cm-em, /* abbr des */
+.CodeMirror-code > .CodeMirror-line .cm-overlay.cm-rm-link,
+.CodeMirror-code > .CodeMirror-line .cm-bracket,
+.CodeMirror-code > .CodeMirror-line .cm-tag,
+.CodeMirror-code > .CodeMirror-line .cm-attribute,
+.CodeMirror-code > .CodeMirror-line .cm-string:not(.cm-url), /* avoid the first word of footnote */
+.CodeMirror-code > .CodeMirror-line .cm-number,
+.CodeMirror-code > .CodeMirror-line [class|="cm-katex"],
+.CodeMirror-code > .CodeMirror-line [class|="cm-katex"] ~ *,
+.CodeMirror-code > .CodeMirror-line .cm-hr,
+.CodeMirror-code > .CodeMirror-line .cm-url.cm-rm-link, /* anchor link */
+.CodeMirror-code > .CodeMirror-line .cm-image,
+.CodeMirror-code > .CodeMirror-line .cm-rm-link.cm-rm-image,
+.CodeMirror-code > .CodeMirror-line .cm-rm-sup,
+.CodeMirror-code > .CodeMirror-line .cm-rm-sub,
+.CodeMirror-code > .CodeMirror-line .cm-rm-sup-token,
+.CodeMirror-code > .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em), /* footnote ref. */
+.CodeMirror-code > .CodeMirror-line .cm-null.cm-jn-monospace /* table */,
+.CodeMirror-code .cm-jn-code-block .cm-string.cm-jn-monospace,
+.CodeMirror-code .cm-jn-code-block .cm-jn-monospace,
+.CodeMirror-code > .CodeMirror-line .enhancement-footnote-marker-text {
   font-family: var(--usp-monospace-font, monospace) !important;
   font-size: var(--usp-monospace-font-size) !important;
 }
 
+/* MONOSPACE FONT: SMALLER MARKDOWN SYNTAX ================= */
+/* GROUP: | link path | image link | footnote ref. | ------- */
+.CodeMirror-code > .CodeMirror-line .cm-url.cm-rm-link, /* anchor link */
+.CodeMirror-code > .CodeMirror-line .cm-image,
+.CodeMirror-code > .CodeMirror-line .cm-rm-link.cm-rm-image,
+.CodeMirror-code > .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em) /* footnote ref. */ {
+  font-size: var(--usp-smaller-markdown-syntax-font-size) !important;
+}
 
+/* MONOSPACE FONT: SMALLER CODE BLOCK SYNTAX =============== */
+.CodeMirror-code .cm-jn-code-block .cm-string.cm-jn-monospace,
+.CodeMirror-code .cm-jn-code-block .cm-jn-monospace {
+  font-size: var(--usp-smaller-code-block-syntax-font-size) !important;
+}
 
-/* || FONT 3/5 | SMALLER MONOSPACE FONT ******************** */
-/* | link path | image link | footnote ref. | */
-.CodeMirror-lines .CodeMirror-line .cm-url.cm-rm-link, /* anchor link */
-.CodeMirror-lines .CodeMirror-line .cm-image,
-.CodeMirror-lines .CodeMirror-line .cm-rm-link.cm-rm-image,
-.CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em) /* footnote ref. */ {
-  font-size: var(--usp-smaller-monospace-font-size) !important;
+/* MONOSPACE FONT: SMALLER TABLE SYNTAX ==================== */
+.CodeMirror-code > .CodeMirror-line .cm-null.cm-jn-monospace {
+  font-size: var(--usp-smaller-table-syntax-font-size) !important;
 }
 
 
 
-/* || FONT 4/5 | SMALLER CODE BLOCK FONT SIZE ************** */
-.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-string.cm-jn-monospace,
-.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-jn-monospace {
-  font-size: var(--usp-smaller-code-block-font-size) !important;
+/* || FONT 3/3 | HEADING FONT ****************************** */
+#react-root .CodeMirror-line .cm-header {
+  font-family: var(--usp-heading-font, sans-serif) !important;
+}
+/* h1 ------------------------------------------------------ */
+.CodeMirror-line .cm-header.cm-header-1 {
+  font-size: var(--usp-h1-font-size) !important;
+}
+/* h2 ------------------------------------------------------ */
+.CodeMirror-line .cm-header.cm-header-2 {
+  font-size: var(--usp-h2-font-size) !important;
+}
+/* h3 ------------------------------------------------------ */
+.CodeMirror-line .cm-header.cm-header-3 {
+  font-size: var(--usp-h3-font-size) !important;
+}
+/* h4 ------------------------------------------------------ */
+.CodeMirror-line .cm-header.cm-header-4 {
+  font-size: var(--usp-h4-font-size) !important;
+}
+/* h5 ------------------------------------------------------ */
+.CodeMirror-line .cm-header.cm-header-5 {
+  font-size: var(--usp-h5-font-size) !important;
+}
+/* h6 ------------------------------------------------------ */
+.CodeMirror-line .cm-header.cm-header-6 {
+  font-size: var(--usp-h6-font-size) !important;
 }
 
 
 
-/* || FONT 5/5 | SMALLER MARKDOWN TABLE SYNTAX FONT SIZE *** */
-.CodeMirror-lines .CodeMirror-line .cm-null.cm-jn-monospace { /* table */
-  font-size: var(--usp-smaller-markdown-table-font-size) !important;
+
+/* --------------------------------------------------------- */
+/*                           BASIC                           */
+/* --------------------------------------------------------- */
+
+
+
+
+/* || BASIC 1/4 | CONTAINER ******************************** */
+.codeMirrorEditor {
+  background: var(--me-bg) !important;
+}
+.CodeMirror-scroll {
+  margin-top: 9px !important;
+  padding-left: 8px !important;
+}
+
+
+
+/* || BASIC 2/4 | PARAGRAPH ******************************** */
+/* PARAGRAPH: TEXT ========================================= */
+.codeMirrorEditor {
+  color: var(--me-text) !important;
+}
+
+/* PARAGRAPH: HORIZONTAL RULE ============================== */
+.CodeMirror-code > .CodeMirror-line .cm-hr {
+  color: var(--me-hr-syntax-text);
+}
+.CodeMirror-code > .CodeMirror-line .cm-hr::before {
+  display: var(--usp-evident-hr-display);
+  content: "";
+  width: 95%;
+  max-width: auto;
+  height: 1px;
+  background: var(--me-hr-syntax-bg);
+}
+
+
+
+/* || BASIC 3/4 | SCROLLBAR ******************************** */
+/* SCROLLBAR: MARKDOWN EDITOR SCROLLBAR ==================== */
+/* thumb --------------------------------------------------- */
+.codeMirrorEditor ::-webkit-scrollbar-thumb {
+  background: var(--me-scrollbar-thumb-bg);
+  border: 1px solid var(--me-scrollbar-thumb-bd);
+  visibility: hidden;
+}
+/* hover thumb --------------------------------------------- */
+.rli-editor > div > div > div > div:nth-child(2) > div:hover ::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+/* hover track --------------------------------------------- */
+.codeMirrorEditor ::-webkit-scrollbar-track:hover {
+  background: var(--me-scrollbar-track-bg);
+}
+
+
+
+/* || BASIC 4/4 | OTHERS *********************************** */
+/* OTHERS: CURSOR ========================================== */
+.CodeMirror-cursor {
+  border-left: var(--me-cursor-bdl) !important;
+}
+
+/* OTHERS: SELECTED TEXT =================================== */
+.CodeMirror-selectedtext {
+  color: var(--me-selected-text) !important;
+}
+.CodeMirror-selected {
+  background: var(--me-selected-bg) !important;
+}
+.CodeMirror-focused .CodeMirror-selected {
+  background: var(--me-selected-bg) !important;
+}
+.CodeMirror-line::selection,
+.CodeMirror-line > span::selection,
+.CodeMirror-line > span > span::selection {
+  background: var(--me-selected-bg) !important;
+}
+.CodeMirror-line::-moz-selection,
+.CodeMirror-line > span::-moz-selection,
+.CodeMirror-line > span > span::-moz-selection {
+  background: var(--me-selected-bg) !important;
+}
+/* selected special text ----------------------------------- */
+/* GROUP: | emphasize | strong | insert | strikethrough | mark | inline code | */
+.CodeMirror-code > .CodeMirror-line .CodeMirror-selectedtext.cm-em,
+.CodeMirror-code > .CodeMirror-line .CodeMirror-selectedtext.cm-strong,
+.CodeMirror-code > .CodeMirror-line .CodeMirror-selectedtext.cm-strikethrough,
+.CodeMirror-code > .CodeMirror-line .CodeMirror-selectedtext.cm-rm-ins,
+.CodeMirror-code > .CodeMirror-line .CodeMirror-selectedtext.cm-rm-highlight,
+.CodeMirror-code > .CodeMirror-line .CodeMirror-selectedtext.cm-jn-inline-code {
+  opacity: 0.5;
 }
 
 
@@ -651,99 +709,234 @@
 
 
 
-/* || MARKDOWN 1/11 | HEADINGS ***************************** */
-/* HEADINGS > GROUP: H1 to H6 ============================== */
-.CodeMirror-line .cm-header {
-  font-family: var(--usp-heading-font) !important;
-  font-weight: var(--usp-heading-font-weight) !important;
-  line-height: 1em !important;
+/* || MARKDOWN 1/9 | SPECIAL TEXT ************************** */
+/* SPECIAL TEXT: GENERAL =================================== */
+/* GROUP: | emphasize | abbreviation | strong | mark | ----- */
+.CodeMirror-code > .CodeMirror-line .cm-em:not(.cm-header),
+.CodeMirror-code > .CodeMirror-line .cm-strong:not(.cm-header),
+.CodeMirror-code > .CodeMirror-line .cm-rm-highlight:not(.cm-header) {
+  color: var(--me-special-text) !important;
+  background: var(--me-special-bg);
 }
 
-/* HEADINGS > H1 =========================================== */
-.CodeMirror-line .cm-header.cm-header-1 {
-  font-size: var(--usp-h1-font-size) !important;
-  font-weight: var(--usp-h1-font-weight) !important;
-  font-variant: var(--usp-h1-font-variant);
-  text-transform: var(--usp-h1-text-transform);
-  color: var(--h1-text-color);
+/* SPECIAL TEXT: STRONG ==================================== */
+.CodeMirror-code > .CodeMirror-line .cm-strong {
+  font-weight: 700;
 }
 
-/* HEADINGS > H2 =========================================== */
-.CodeMirror-line .cm-header.cm-header-2 {
-  font-size: var(--usp-h2-font-size) !important;
-  color: var(--h2-text-color);
+/* SPECIAL TEXT: MARK ====================================== */
+.CodeMirror-code > .CodeMirror-line .cm-rm-highlight {
+  border-width: 2px 0;
+  border-style: solid;
+  border: var(--me-mark-bd);
 }
 
-/* HEADINGS > H3 =========================================== */
-.CodeMirror-line .cm-header.cm-header-3 {
-  font-size: var(--usp-h3-font-size) !important;
-  color: var(--h3-text-color);
+/* SPECIAL TEXT: INSERT ==================================== */
+.CodeMirror-code > .CodeMirror-line .cm-rm-ins {
+  text-decoration: none;
+  color: var(--me-insert-text);
+  background: var(--me-insert-bg);
+  border-bottom: 1px solid var(--me-insert-bdb);
+}
+/* insert text hover --------------------------------------- */
+.CodeMirror-code > .CodeMirror-line .cm-rm-ins:hover {
+  border: none;
 }
 
-/* HEADINGS > H4 =========================================== */
-.CodeMirror-line .cm-header.cm-header-4 {
-  font-size: var(--usp-h4-font-size) !important;
-  color: var(--h4-text-color);
+/* SPECIAL TEXT: STRIKETHROUGH ============================= */
+.CodeMirror-code > .CodeMirror-line .cm-strikethrough {
+  text-decoration: line-through;
+  color: var(--me-strikethrough-text);
+  background: var(--me-strikethrough-bg);
+}
+/* strikethrough text hover -------------------------------- */
+.CodeMirror-code > .CodeMirror-line .cm-strikethrough:hover {
+  text-decoration: none;
 }
 
-/* HEADINGS > H5 =========================================== */
-.CodeMirror-line .cm-header.cm-header-5 {
-  font-size: var(--usp-h5-font-size) !important;
-  color: var(--h5-text-color);
+/* SPECIAL TEXT: SUP & SUB ================================= */
+.CodeMirror-code > .CodeMirror-line .cm-rm-sup,
+.CodeMirror-code > .CodeMirror-line .cm-rm-sub {
+  display: inline-block;
+  position: relative;
+  font-size: smaller !important;
+  line-height: 0 !important;
+  color: var(--me-sub-sup-text);
+}
+/* sup & sub position -------------------------------------- */
+.CodeMirror-code > .CodeMirror-line .cm-rm-sup {
+  top: 2px;
+}
+.CodeMirror-code > .CodeMirror-line .cm-rm-sub {
+  bottom: 2px;
 }
 
-/* HEADINGS > H6 =========================================== */
-.CodeMirror-line .cm-header.cm-header-6 {
-  font-size: var(--usp-h6-font-size) !important;
-  color: var(--h6-text-color);
+/* SPECIAL TEXT: INLINE CODE =============================== */
+.CodeMirror-code > .CodeMirror-line .cm-jn-inline-code.cm-jn-monospace:not(.CodeMirror-selectedtext) {
+  color: var(--me-inline-code-text);
+  background: var(--me-inline-code-bg) !important;
+  border: 2px solid var(--me-inline-code-bg) !important;
+  border-radius: 3px !important;
+}
+
+/* SPECIAL TEXT: SEARCH ==================================== */
+.CodeMirror-code > .CodeMirror-line .cm-search-marker:not(#fake),
+.CodeMirror-code > .CodeMirror-line .cm-overlay.cm-search-marker.CodeMirror-selectedtext.cm-search-marker-selected:not(#fake) {
+  display: inline-block;
+  padding: 3px 6px;
+  color: white !important;
+  background: black !important;
+  border-radius: 5px;
+}
+.CodeMirror-code > .CodeMirror-line .cm-search-marker:not(#fake) {
+  border: 2px solid red;
+}
+/* search text selected ------------------------------------ */
+.CodeMirror-code > .CodeMirror-line .cm-overlay.cm-search-marker.CodeMirror-selectedtext.cm-search-marker-selected:not(#fake) {
+  border: 5px solid red;
+  opacity: 1;
 }
 
 
 
-/* || MARKDOWN 2/11 | PARAGRAPH **************************** */
-/* PARAGRAPH > PARAGRAPH TEXT ============================== */
-.CodeMirror-line:not(.cm-jn-code-block) > span[role="presentation"]:only-child {
-  color: var(--code-mirror-text-color);
+/* || MARKDOWN 2/9 | LINK ********************************** */
+.CodeMirror-code > .CodeMirror-line:not(.cm-jn-code-block) .cm-rm-link:not(.cm-link-text):not(.cm-string),
+.CodeMirror-code > .CodeMirror-line .cm-link-text:not(.cm-em),
+.CodeMirror-code > .CodeMirror-line .cm-string.cm-url,
+.CodeMirror-code > .CodeMirror-line .cm-rm-image {
+  color: var(--me-link-text);
 }
-
-/* PARAGRAPH > HORIZONTAL LINE ============================= */
-.CodeMirror-lines .CodeMirror-line .cm-hr {
-  color: var(--horizontal-line-syntax-color);
-}
-.CodeMirror-lines .CodeMirror-line .cm-hr::before {
-  content: "";
-  display: var(--usp-evident-horizontal-line-switcher);
-  width: 95%;
-  max-width: auto;
-  height: 1px;
-  background: var(--horizontal-line-bg-color);
-}
-
-
-
-/* || MARKDOWN 3/11 | LINK ********************************* */
-.CodeMirror-lines .CodeMirror-line:not(.cm-jn-code-block) .cm-rm-link:not(.cm-link-text):not(.cm-string),
-.CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-em),
-.CodeMirror-lines .CodeMirror-line .cm-string.cm-url,
-.CodeMirror-lines .CodeMirror-line .cm-rm-image {
-  color: var(--link-text-color);
-}
-.CodeMirror-lines .CodeMirror-line .cm-string.cm-url,
-.CodeMirror-lines .CodeMirror-line .cm-rm-image {
+.CodeMirror-code > .CodeMirror-line .cm-string.cm-url,
+.CodeMirror-code > .CodeMirror-line .cm-rm-image {
   opacity: 0.6;
 }
 
 
 
-/* || MARKDOWN 4/11 | SPECIAL TEXT ************************* */
-/* special text group: | emphasize | strong | highlight | */
-.CodeMirror-lines .CodeMirror-line .cm-em:not(.cm-header),
-.CodeMirror-lines .CodeMirror-line .cm-strong:not(.cm-header),
-.CodeMirror-lines .CodeMirror-line .cm-rm-highlight:not(.cm-header) {
-  color: var(--special-text-color) !important;
-  background: var(--special-bg-color);
+/* || MARKDOWN 3/9 | HTML ********************************** */
+/* HTML: SYNTAX ============================================ */
+/* tag ----------------------------------------------------- */
+.CodeMirror-line:not(.cm-jn-code-block) .cm-tag,
+.CodeMirror-line .cm-jn-monospace.cm-tabcolor-row[class*="cm-tabcolor-col"].cm-tag {
+  color: var(--me-html-tag-text) !important;
+  text-shadow: 0 0 var(--me-html-tag-ts);
 }
-/* special text in heading group: | emphasize | strong | highlight | inline code | */
+/* attribute ----------------------------------------------- */
+.CodeMirror-line:not(.cm-jn-code-block) .cm-attribute,
+.CodeMirror-line .cm-jn-monospace.cm-tabcolor-row[class*="cm-tabcolor-col"].cm-attribute {
+  color: var(--me-html-attribute-text) !important;
+  text-shadow: 0 0 var(--me-html-attribute-ts);
+}
+/* string -------------------------------------------------- */
+.CodeMirror-line:not(.cm-jn-code-block) .cm-string:not(.cm-url),
+.CodeMirror-line .cm-jn-monospace.cm-tabcolor-row[class*="cm-tabcolor-col"].cm-string:not(.cm-url) {
+  color: var(--me-html-string-text) !important;
+  text-shadow: 0 0 var(--me-html-string-ts);
+}
+
+
+
+/* || MARKDOWN 4/9 | KATEX ********************************* */
+/* KATEX: SYNTAX =========================================== */
+.CodeMirror-code > .CodeMirror-line:not(.cm-jn-code-block) .cm-variable-2 {
+  color: var(--me-list-text);
+}
+
+
+
+/* || MARKDOWN 5/9 | LIST ********************************** */
+/* GROUP: | unordered list | ordered list | checklist | ---- */
+.CodeMirror-code > .CodeMirror-line .cm-rm-list-token ~ .cm-keyword,
+.CodeMirror-code > .CodeMirror-line .cm-rm-list-token ~ [class*="cm-variable"],
+.CodeMirror-code > .CodeMirror-line .cm-variable-2.cm-rm-list-token.cm-rm-checkbox {
+  color: var(--me-list-text);
+}
+/* list token ---------------------------------------------- */
+.CodeMirror-code > .CodeMirror-line [class*="cm-variable"].cm-rm-list-token:not(.cm-meta),
+.CodeMirror-code > .CodeMirror-line .cm-keyword.cm-rm-list-token,
+.CodeMirror-code > .CodeMirror-line .cm-rm-checkbox.cm-rm-list-token:not(.cm-meta) {
+  color: var(--me-list-token);
+}
+
+/* CHECKLIST =============================================== */
+/* checkbox ------------------------------------------------ */
+.CodeMirror-code > .CodeMirror-line .cm-meta.cm-rm-checkbox {
+  color: var(--me-checkbox-text);
+}
+/* GROUP: | checkbox | checklist | ------------------------- */
+/* checked ------------------------------------------------- */
+.CodeMirror-code > .CodeMirror-line .cm-property.cm-rm-checkbox,
+.CodeMirror-code > .CodeMirror-line .cm-property.cm-rm-checkbox ~ .cm-rm-checkbox {
+  text-decoration: line-through;
+  filter: grayscale(0.6);
+  opacity: 0.6;
+}
+/* hover --------------------------------------------------- */
+.CodeMirror-code > .CodeMirror-line .cm-rm-checkbox:hover {
+  text-decoration: none;
+}
+
+
+
+/* || MARKDOWN 6/9 | FOOTNOTE ****************************** */
+.CodeMirror-code > .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em),
+.CodeMirror-code > .CodeMirror-line .cm-rm-sup-token:not(.cm-rm-sup) {
+  color: var(--me-footnote-ref);
+}
+.CodeMirror-code > .CodeMirror-line .cm-comment.cm-jn-monospace {
+  color: var(--me-text);
+}
+.CodeMirror-code > .CodeMirror-line .cm-rm-sup-token:not(.cm-rm-sup) ~ .cm-string.cm-url {
+  color: var(--me-text);
+  opacity: 1;
+}
+
+
+
+/* || MARKDOWN 7/9 | HEADINGS ****************************** */
+/* HEADINGS: GENERAL ======================================= */
+/* GROUP: | h1 to h6 | ------------------------------------- */
+.CodeMirror-code > .CodeMirror-line .cm-header {
+  font-weight: var(--usp-heading-font-weight) !important;
+  line-height: 1.5em !important;
+}
+
+/* HEADINGS: H1 ============================================ */
+.CodeMirror-code > .CodeMirror-line .cm-header-1 {
+  font-weight: var(--usp-h1-font-weight) !important;
+  font-variant: var(--usp-h1-font-variant);
+  text-transform: var(--usp-h1-text-transform);
+  color: var(--me-h1-text);
+}
+
+/* HEADINGS: H2 ============================================ */
+.CodeMirror-code > .CodeMirror-line .cm-header-2 {
+  color: var(--me-h2-text);
+}
+
+/* HEADINGS: H3 ============================================ */
+.CodeMirror-code > .CodeMirror-line .cm-header-3 {
+  color: var(--me-h3-text);
+}
+
+/* HEADINGS: H4 ============================================ */
+.CodeMirror-code > .CodeMirror-line .cm-header-4 {
+  color: var(--me-h4-text);
+}
+
+/* HEADINGS: H5 ============================================ */
+.CodeMirror-code > .CodeMirror-line .cm-header-5 {
+  color: var(--me-h5-text);
+}
+
+/* HEADINGS: H6 ============================================ */
+.CodeMirror-code > .CodeMirror-line .cm-header-6 {
+  color: var(--me-h6-text);
+}
+
+/* HEADINGS: SPECIAL TEXT ================================== */
+/* GROUP: | h1 to h6 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* NESTED: | emphasize | strong | mark | inline code | ----- */
 #react-root .cm-header.cm-em,
 #react-root .cm-header.cm-strong,
 #react-root .cm-header.cm-jn-inline-code,
@@ -751,15 +944,18 @@
   background: none !important;
   border: none !important;
 }
-/* special text in heading group: | emphasize | strong | highlight | inline code | sup | sub | */
+/* GROUP: | H1 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* NESTED: | emphasize | strong | mark | inline code | sup | sub | */
 #react-root .cm-header-1.cm-em,
 #react-root .cm-header-1.cm-strong,
 #react-root .cm-header-1.cm-jn-inline-code,
 #react-root .cm-header-1.cm-rm-highlight,
 #react-root .cm-header-1.cm-rm-sub,
 #react-root .cm-header-1.cm-rm-sup {
-  color: var(--h1-text-color);
+  color: var(--me-h1-text);
 }
+/* GROUP: | h2 to h4 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* NESTED: | emphasize | strong | mark | inline code | sup | sub | */
 #react-root .cm-header-2.cm-em,
 #react-root .cm-header-2.cm-strong,
 #react-root .cm-header-2.cm-jn-inline-code,
@@ -778,8 +974,10 @@
 #react-root .cm-header-4.cm-rm-highlight,
 #react-root .cm-header-4.cm-rm-sub,
 #react-root .cm-header-4.cm-rm-sup {
-  color: var(--h2-text-color);
+  color: var(--me-h2-text);
 }
+/* GROUP: | h5 to h6 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* NESTED: | emphasize | strong | mark | inline code | sup | sub | */
 #react-root .cm-header-5.cm-em,
 #react-root .cm-header-5.cm-strong,
 #react-root .cm-header-5.cm-jn-inline-code,
@@ -792,358 +990,236 @@
 #react-root .cm-header-6.cm-rm-highlight,
 #react-root .cm-header-6.cm-rm-sub,
 #react-root .cm-header-6.cm-rm-sup {
-  color: var(--h5-text-color);
+  color: var(--me-h5-text);
 }
-
-/* STRONG ================================================== */
-.CodeMirror-lines .CodeMirror-line .cm-strong {
-  font-weight: 700;
+/* GROUP: | h1 to h6 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* NESTED: | sup | sub ------------------------------------- */
+/* h1 > sup & sub ------------------------------------------ */
+#react-root .cm-header-1.cm-rm-sub,
+#react-root .cm-header-1.cm-rm-sup {
+  font-variant: none;
+  text-transform: none;
+  font-size: calc(var(--usp-h1-font-size) * 0.9) !important;
 }
-
-/* STRIKETHROUGH =========================================== */
-.CodeMirror-lines .CodeMirror-line .cm-strikethrough {
-  text-decoration: line-through;
-  background: var(--strikethrough-text-bg-color);
-  color: var(--strikethrough-text-color);
+/* h2 > sup & sub ------------------------------------------ */
+#react-root .cm-header-2.cm-rm-sub,
+#react-root .cm-header-2.cm-rm-sup {
+  font-size: calc(var(--usp-h2-font-size) * 0.9) !important;
 }
-.CodeMirror-lines .CodeMirror-line .cm-strikethrough:hover {
-  text-decoration: none;
+/* h3 > sup & sub ------------------------------------------ */
+#react-root .cm-header-3.cm-rm-sub,
+#react-root .cm-header-3.cm-rm-sup {
+  font-size: calc(var(--usp-h3-font-size) * 0.9) !important;
 }
-
-/* INSERT ================================================== */
-.CodeMirror-lines .CodeMirror-line .cm-rm-ins {
-  text-decoration: none;
-  border-bottom: 1px solid var(--insert-text-bd-color);
-  background: var(--insert-text-bg-color);
-  color: var(--insert-text-color);
+/* h4 > sup & sub ------------------------------------------ */
+#react-root .cm-header-4.cm-rm-sub,
+#react-root .cm-header-4.cm-rm-sup {
+  font-size: calc(var(--usp-h4-font-size) * 0.9) !important;
 }
-.CodeMirror-lines .CodeMirror-line .cm-rm-ins:hover {
-  border: none;
+/* h5 > sup & sub ------------------------------------------ */
+#react-root .cm-header-5.cm-rm-sub,
+#react-root .cm-header-5.cm-rm-sup {
+  font-size: calc(var(--usp-h5-font-size) * 0.9) !important;
 }
-
-/* MARK ==================================================== */
-.CodeMirror-lines .CodeMirror-line .cm-rm-highlight {
-  border-width: 2px 0;
-  border-style: solid;
-  border-color: var(--mark-text-bd-color);
+/* h6 > sup & sub ------------------------------------------ */
+#react-root .cm-header-6.cm-rm-sub,
+#react-root .cm-header-6.cm-rm-sup {
+  font-size: calc(var(--usp-h6-font-size) * 0.9) !important;
 }
-
-/* SUP & SUB =============================================== */
-.CodeMirror-lines .CodeMirror-line .cm-rm-sup,
-.CodeMirror-lines .CodeMirror-line .cm-rm-sub {
-  display: inline-block;
-  position: relative;
-  font-size: smaller !important;
-  color: var(--sub-sup-text-color);
-  line-height: 0 !important;
-}
-.CodeMirror-lines .CodeMirror-line .cm-rm-sup {
-  top: 2px;
-}
-.CodeMirror-lines .CodeMirror-line .cm-rm-sub {
-  bottom: 2px;
-}
-
-/* INLINE CODE ============================================= */
-.CodeMirror-lines .CodeMirror-line .cm-jn-inline-code.cm-jn-monospace:not(.CodeMirror-selectedtext) {
-  color: var(--inline-code-color);
-  background: var(--inline-code-bg-color) !important;
-  border: 2px solid var(--inline-code-bg-color) !important;
-  border-radius: 3px !important;
-}
-/* inline code in heading ---------------------------------- */
+/* GROUP: | h1 to h6 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* NESTED: | inline code | --------------------------------- */
+/* h1 > inline code ---------------------------------------- */
 #react-root .cm-header-1.cm-jn-inline-code {
   font-variant: none;
   text-transform: none;
-  font-size: calc(var(--usp-h1-font-size) - 6px) !important;
+  font-size: var(--usp-h1-font-size) !important;
 }
-#react-root .cm-header-2.cm-jn-inline-code {
-  font-size: calc(var(--usp-h2-font-size) - 4px) !important;
+/* h2 > inline code ---------------------------------------- */
+#react-root .cm-header.cm-rm-sub,#react-root .cm-header-2.cm-jn-inline-code {
+  font-size: var(--usp-h2-font-size) !important;
 }
+/* h3 > inline code ---------------------------------------- */
 #react-root .cm-header-3.cm-jn-inline-code {
-  font-size: calc(var(--usp-h3-font-size) - 4px) !important;
+  font-size: var(--usp-h3-font-size) !important;
 }
+/* h4 > inline code ---------------------------------------- */
 #react-root .cm-header-4.cm-jn-inline-code {
-  font-size: calc(var(--usp-h4-font-size) - 3px) !important;
+  font-size: var(--usp-h4-font-size) !important;
 }
+/* h5 > inline code ---------------------------------------- */
 #react-root .cm-header-5.cm-jn-inline-code {
-  font-size: calc(var(--usp-h5-font-size) - 3px) !important;
+  font-size: var(--usp-h5-font-size) !important;
 }
+/* h6 > inline code ---------------------------------------- */
 #react-root .cm-header-6.cm-jn-inline-code {
-  font-size: calc(var(--usp-h6-font-size) - 2px) !important;
+  font-size: var(--usp-h6-font-size) !important;
 }
 
-/* SEARCH ================================================== */
-.CodeMirror-lines .CodeMirror-line .cm-search-marker:not(#fake),
-.CodeMirror-lines .CodeMirror-line .cm-overlay.cm-search-marker.CodeMirror-selectedtext.cm-search-marker-selected:not(#fake) {
-  display: inline-block;
-  padding: 3px 6px;
-  color: white !important;
-  background: black !important;
-  border-radius: 5px;
-}
-.CodeMirror-lines .CodeMirror-line .cm-search-marker:not(#fake) {
-  border: 2px solid red;
-}
-.CodeMirror-lines .CodeMirror-line .cm-overlay.cm-search-marker.CodeMirror-selectedtext.cm-search-marker-selected:not(#fake) {
-  border: 5px solid red;
+
+
+
+/* || MARKDOWN 8/9 | BLOCKQUOTE **************************** */
+.CodeMirror-code > .CodeMirror-line .cm-quote {
+  color: var(--me-blockquote-text);
   opacity: 1;
 }
 
 
 
-/* || MARKDOWN 5/11 | KATEX ******************************** */
-.CodeMirror-lines .CodeMirror-line:not(.cm-jn-code-block) .cm-variable-2 {
-  color: var(--list-text-color);
-}
-/* katex > sup & sub --------------------------------------- */
-.CodeMirror-lines .CodeMirror-line [class|="cm-katex"] ~ .cm-rm-sup,
-.CodeMirror-lines .CodeMirror-line [class|="cm-katex"] ~ .cm-rm-sub {
-  vertical-align: initial !important;
-  font-size: var(--usp-base-font-size) !important;
-}
-
-
-
-/* || MARKDOWN 6/11 | HTML ********************************* */
-/* tag ----------------------------------------------------- */
-.CodeMirror-line:not(.cm-jn-code-block) .cm-tag,
-.CodeMirror-line .cm-jn-monospace.cm-tabcolor-row[class*="cm-tabcolor-col"].cm-tag {
-  color: var(--html-tag-text-color) !important;
-  text-shadow: 0 0 var(--html-tag-text-shadow);
-}
-/* attribute ----------------------------------------------- */
-.CodeMirror-line:not(.cm-jn-code-block) .cm-attribute,
-.CodeMirror-line .cm-jn-monospace.cm-tabcolor-row[class*="cm-tabcolor-col"].cm-attribute {
-  color: var(--html-attribute-text-color) !important;
-  text-shadow: 0 0 var(--html-attribute-text-shadow);
-}
-/* string -------------------------------------------------- */
-.CodeMirror-line:not(.cm-jn-code-block) .cm-string:not(.cm-url),
-.CodeMirror-line .cm-jn-monospace.cm-tabcolor-row[class*="cm-tabcolor-col"].cm-string:not(.cm-url) {
-  color: var(--html-string-text-color) !important;
-  text-shadow: 0 0 var(--html-string-text-shadow);
-}
-
-
-
-/* || MARKDOWN 7/11 | LIST ********************************* */
-/* list group: | unordered list | ordered list | checklist | */
-.CodeMirror-line .cm-rm-list-token ~ .cm-keyword,
-.CodeMirror-line .cm-rm-list-token ~ [class*="cm-variable"],
-.cm-variable-2.cm-rm-list-token.cm-rm-checkbox {
-  color: var(--list-text-color);
-}
-.CodeMirror-line [class*="cm-variable"].cm-rm-list-token:not(.cm-meta),
-.CodeMirror-line .cm-keyword.cm-rm-list-token,
-.CodeMirror-line .cm-rm-checkbox.cm-rm-list-token:not(.cm-meta) {
-  color: var(--list-token-color);
-}
-.CodeMirror-lines .CodeMirror-line .cm-rm-checkbox:hover {
-  text-decoration: none;
-}
-/* checklist > checkbox ------------------------------------ */
-.cm-meta.cm-rm-checkbox,
-.cm-property.cm-rm-checkbox {
-  font-weight: 600;
-  color: var(--checkbox-color) !important;
-}
-/* checklist > checked ------------------------------------- */
-/* checked group: | checkbox | checklist | ----------------- */
-.cm-property.cm-rm-checkbox,
-.cm-property.cm-rm-checkbox ~ .cm-rm-checkbox {
-  text-decoration: line-through;
-  filter: grayscale(0.6);
-  opacity: 0.6;
-}
-
-
-
-/* || MARKDOWN 8/11 | BLOCKQUOTE *************************** */
-.CodeMirror-lines .CodeMirror-line .cm-quote {
-  color: var(--blockquote-text-color);
-  opacity: 1;
-}
-
-
-
-/* || MARKDOWN 9/11 | FOOTNOTE ***************************** */
-.CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em),
-.CodeMirror-lines .CodeMirror-line .cm-rm-sup-token:not(.cm-rm-sup) {
-  color: var(--fn-ref-color);
-}
-.CodeMirror-lines .CodeMirror-line .cm-comment.cm-jn-monospace {
-  color: var(--code-mirror-text-color);
-}
-.CodeMirror-lines .CodeMirror-line .cm-rm-sup-token:not(.cm-rm-sup) ~ .cm-string.cm-url {
-  color: var(--code-mirror-text-color);
-  opacity: 1;
-}
-
-
-/* || MARKDOWN 10/11 | CODE BLOCK ************************** */
-/* avoid special text in code block ------------------------ */
-.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-em,
-.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-strong,
-.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-rm-ins,
-.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-strikethrough,
-.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-rm-highlight,
-.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-rm-sup,
-.CodeMirror-lines .CodeMirror-line.cm-jn-code-block .cm-rm-sub {
-  all: unset;
-}
-/* code block body ----------------------------------------- */
-.cm-jn-code-block {
-  background: var(--code-block-bg-color) !important;
-  border-width: var(--code-block-bd-width) !important;
-  border-style: solid;
-  border-color: var(--code-block-bd-color);
-}
-.CodeMirror-lines .cm-jn-code-block.CodeMirror-line {
+/* || MARKDOWN 9/9 | CODE BLOCK **************************** */
+.CodeMirror-code .cm-jn-code-block {
   padding-left: 8px;
+  background: var(--me-code-block-bg) !important;
+  border-width: var(--me-code-block-bdw) !important;
+  border-style: solid;
+  border-color: var(--me-code-block-bdc);
 }
 /* code block syntax highlight ----------------------------- */
-.CodeMirror-line.cm-jn-code-block .cm-keyword {
-  color: var(--code-block-keyword-color) !important;
-  text-shadow: 0 0 var(--code-block-keyword-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-keyword {
+  color: var(--me-code-block-keyword-text) !important;
+  text-shadow: 0 0 var(--me-code-block-keyword-ts);
 }
-.CodeMirror-line.cm-jn-code-block .cm-def {
-  color: var(--code-block-def-color) !important;
-  text-shadow: 0 0 var(--code-block-def-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-def {
+  color: var(--me-code-block-def-text) !important;
+  text-shadow: 0 0 var(--me-code-block-def-ts);
 }
-.CodeMirror-line.cm-jn-code-block .cm-property {
-  color: var(--code-block-property-color) !important;
-  text-shadow: 0 0 var(--code-block-property-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-property {
+  color: var(--me-code-block-property-text) !important;
+  text-shadow: 0 0 var(--me-code-block-property-ts);
 }
-.CodeMirror-line.cm-jn-code-block .cm-variable {
-  color: var(--code-block-variable-color) !important;
-  text-shadow: 0 0 var(--code-block-variable-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-variable {
+  color: var(--me-code-block-variable-text) !important;
+  text-shadow: 0 0 var(--me-code-block-variable-ts);
 }
-.CodeMirror-line.cm-jn-code-block .cm-variable-2 {
-  color: var(--code-block-variable-2-color) !important;
-  text-shadow: 0 0 var(--code-block-variable-2-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-variable-2 {
+  color: var(--me-code-block-variable-2-text) !important;
+  text-shadow: 0 0 var(--me-code-block-variable-2-ts);
 }
-.CodeMirror-line.cm-jn-code-block .cm-variable-3 {
-  color: var(--code-block-variable-3-color) !important;
-  text-shadow: 0 0 var(--code-block--variable-3-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-variable-3 {
+  color: var(--me-code-block-variable-3-text) !important;
+  text-shadow: 0 0 var(--me-code-block-variable-3-ts);
 }
-.CodeMirror-line.cm-jn-code-block .cm-number {
-  color: var(--code-block-number-color) !important;
-  text-shadow: 0 0 var(--code-block-number-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-number {
+  color: var(--me-code-block-number-text) !important;
+  text-shadow: 0 0 var(--me-code-block-number-ts);
 }
-.CodeMirror-line.cm-jn-code-block .cm-comment.cm-jn-monospace:not([class*="cm-tabcolor-"]) {
-  color: var(--code-block-comment-color) !important;
-  text-shadow: 0 0 var(--code-block-comment-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-comment.cm-jn-monospace:not([class*="cm-tabcolor-"]) {
+  color: var(--me-code-block-comment-text) !important;
+  text-shadow: 0 0 var(--me-code-block-comment-ts);
 }
-.CodeMirror-line.cm-jn-code-block .cm-string {
-  color: var(--code-block-string-color) !important;
-  text-shadow: 0 0 var(--code-block-string-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-string {
+  color: var(--me-code-block-string-text) !important;
+  text-shadow: 0 0 var(--me-code-block-string-ts);
 }
-.CodeMirror-line.cm-jn-code-block .cm-string-2 {
-  color: var(--code-block-string-2-color) !important;
-  text-shadow: 0 0 var(--code-block-string-2-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-string-2 {
+  color: var(--me-code-block-string-2-text) !important;
+  text-shadow: 0 0 var(--me-code-block-string-2-ts);
 }
-.CodeMirror-line.cm-jn-code-block .cm-atom {
-  color: var(--code-block-atom-color) !important;
-  text-shadow: 0 0 var(--code-block-atom-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-atom {
+  color: var(--me-code-block-atom-text) !important;
+  text-shadow: 0 0 var(--me-code-block-atom-ts);
 }
-.CodeMirror-line.cm-jn-code-block .cm-qualifier {
-  color: var(--code-block-qualifier-color) !important;
-  text-shadow: 0 0 var(--code-block-qualifier-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-qualifier {
+  color: var(--me-code-block-qualifier-text) !important;
+  text-shadow: 0 0 var(--me-code-block-qualifier-ts);
 }
-.CodeMirror-line.cm-jn-code-block .cm-tag {
-  color: var(--code-block-tag-color) !important;
-  text-shadow: 0 0 var(--code-block-tag-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-tag {
+  color: var(--me-code-block-tag-text) !important;
+  text-shadow: 0 0 var(--me-code-block-tag-ts);
 }
-.CodeMirror-line.cm-jn-code-block .cm-attribute {
-  color: var(--code-block-attribute-color) !important;
-  text-shadow: 0 0 var(--code-block-attribute-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-attribute {
+  color: var(--me-code-block-attribute-text) !important;
+  text-shadow: 0 0 var(--me-code-block-attribute-ts);
 }
-.CodeMirror-line.cm-jn-code-block .cm-type {
-  color: var(--code-block-type-color) !important;
-  text-shadow: 0 0 var(--code-block-type-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-type {
+  color: var(--me-code-block-type-text) !important;
+  text-shadow: 0 0 var(--me-code-block-type-ts);
 }
-.CodeMirror-line.cm-jn-code-block .cm-meta {
-  color: var(--code-block-meta-color) !important;
-  text-shadow: 0 0 var(--code-block-meta-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-meta {
+  color: var(--me-code-block-meta-text) !important;
+  text-shadow: 0 0 var(--me-code-block-meta-ts);
 }
-.CodeMirror-line.cm-jn-code-block .cm-undefined {
-  color: var(--code-block-undefined-color) !important;
-  text-shadow: 0 0 var(--code-block-undefined-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-undefined {
+  color: var(--me-code-block-undefined-text) !important;
+  text-shadow: 0 0 var(--me-code-block-undefined-ts);
 }
-.CodeMirror-line.cm-jn-code-block .cm-operator {
-  color: var(--code-block-operator-color) !important;
-  text-shadow: 0 0 var(--code-block-operator-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-operator {
+  color: var(--me-code-block-operator-text) !important;
+  text-shadow: 0 0 var(--me-code-block-operator-ts);
 }
-.CodeMirror-line.cm-jn-code-block .cm-null {
-  color: var(--code-block-null-color) !important;
-  text-shadow: 0 0 var(--code-block-null-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-null {
+  color: var(--me-code-block-null-text) !important;
+  text-shadow: 0 0 var(--me-code-block-null-ts);
 }
-.CodeMirror-line.cm-jn-code-block .cm-error {
-  color: var(--code-block-error-color) !important;
-  border-bottom: var(--code-block-error-bd-color);
+.CodeMirror-code .cm-jn-code-block .cm-error {
+  color: var(--me-code-block-error-text) !important;
+  border-bottom: var(--me-code-block-error-bdb);
 }
-.CodeMirror-line.cm-jn-code-block .cm-invalidchar {
-  color: var(--code-block-invalidchar-color) !important;
-  text-shadow: 0 0 var(--code-block-invalidchar-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-invalidchar {
+  color: var(--me-code-block-invalidchar-text) !important;
+  text-shadow: 0 0 var(--me-code-block-invalidchar-ts);
 }
-.CodeMirror-line.cm-jn-code-block .cm-builtin {
-  color: var(--code-block-builtin-color) !important;
-  text-shadow: 0 0 var(--code-block-builtin-shadow);
+.CodeMirror-code .cm-jn-code-block .cm-builtin {
+  color: var(--me-code-block-builtin-text) !important;
+  text-shadow: 0 0 var(--me-code-block-builtin-ts);
 }
-.CodeMirror-line.cm-jn-code-block .CodeMirror-matching-bracket {
-  color: var(--code-block-matching-bracket-color) !important;
+.CodeMirror-code .cm-jn-code-block .CodeMirror-matching-bracket {
+  color: var(--me-code-block-matching-bracket-text) !important;
+  text-shadow: 0 0 var(--me-code-block-matching-bracket-ts);
+}
+/* GROUP: CODE BLOCK >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* NESTED: | emphasize | strong | insert | strikethrough | mark | sub | sup | */
+/* avoid special text styles ------------------------------- */
+.CodeMirror-code .cm-jn-code-block .cm-em,
+.CodeMirror-code .cm-jn-code-block .cm-strong,
+.CodeMirror-code .cm-jn-code-block .cm-rm-ins,
+.CodeMirror-code .cm-jn-code-block .cm-strikethrough,
+.CodeMirror-code .cm-jn-code-block .cm-rm-highlight,
+.CodeMirror-code .cm-jn-code-block .cm-rm-sup,
+.CodeMirror-code .cm-jn-code-block .cm-rm-sub {
+  all: unset;
 }
 
 
 
 
 /* --------------------------------------------------------- */
-/*                         PLUGINS                           */
+/*                          PLUGINS                          */
 /* --------------------------------------------------------- */
 
 
 
 
-/* || PLUGINS | MARKDOWN TABLE COLORIZE ******************** */
-/* markdown table > column --------------------------------- */
-.CodeMirror-lines .CodeMirror-line [class*="cm-tabcolor-col"] {
-  background: none;
-}
-/* markdown table > vertical bar --------------------------- */
-.CodeMirror-lines .CodeMirror-line .cm-tabcolor-pipe {
-  color: var(--mtc-table-vertical-bar-color) !important;
-}
-/* markdown table > text ----------------------------------- */
-.CodeMirror-lines .CodeMirror-line [class*="cm-tabcolor-col"]:not(.cm-tabcolor-pipe) {
-  color: var(--mtc-table-text-color) !important;
-}
-/* markdown table > anchor link path ----------------------- */
-.CodeMirror-lines .CodeMirror-line .cm-string.cm-url[class*="cm-tabcolor-"]:not(#fake) {
-  color: var(--link-text-color) !important;
-}
-/* markdown table > separate header & row ------------------ */
-.CodeMirror-line .cm-tabcolor-firstch:first-child::before {
+/* || PLUGINS | MARKDOWN TABLE COLORIZE (MTC) ************** */
+/* MTC: ROW ================================================ */
+/* row separator ------------------------------------------- */
+.CodeMirror-code > .CodeMirror-line .cm-tabcolor-firstch:first-child::before {
   display: block;
   content: " ";
   width: 100%;
   height: 5px;
-  background: var(--mtc-separate-bg-color);
+  background: var(--me-plugin-mtc-separator-bg);
   border-radius: 4px;
 }
-.CodeMirror-line .cm-tabcolor-header.cm-tabcolor-firstch:first-child::before {
+.CodeMirror-code > .CodeMirror-line .cm-tabcolor-header.cm-tabcolor-firstch:first-child::before {
   content: "  H E A D >";
   height: 20px;
-  color: var(--mtc-separate-head-text-color);
+  color: var(--me-plugin-mtc-separator-text);
 }
-.CodeMirror-line .cm-tabcolor-header {
+.CodeMirror-code > .CodeMirror-line .cm-tabcolor-header {
   font-weight: normal;
 }
-/* markdown table > column mark ---------------------------- */
+
+/* MTC: COLUMN ============================================= */
+/* removed original column background ---------------------- */
+.CodeMirror-code > .CodeMirror-line [class*="cm-tabcolor-col"] {
+  background: none;
+}
+/* column mark --------------------------------------------- */
 [class*="cm-tabcolor-col"].cm-tabcolor-pipe::after {
+  display: inline-block;
   content: "";
   position: relative;
-  display: inline-block;
   margin: 0 8px 0 5px;
   font-size: 100%;
   font-weight: normal;
@@ -1155,10 +1231,6 @@
   transition: font-size 0.3s;
   transition-delay: 0.6s;
 }
-/* hide last colum mark ------------------------------------ */
-[class*="cm-tabcolor-col"].cm-tabcolor-pipe:last-child::after {
-  display: none;
-}
 /* column mark color --------------------------------------- */
 [class*="cm-tabcolor-col"].cm-tabcolor-firstch::after,
 .cm-tabcolor-col10.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
@@ -1166,8 +1238,8 @@
 .cm-tabcolor-col30.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col40.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col50.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {
-  color: var(--mtc-column-mark-color-1);
-  text-shadow: 0 0 var(--mtc-column-mark-shadow-1);
+  color: var(--me-plugin-mtc-column-mark-1);
+  text-shadow: 0 0 var(--me-plugin-mtc-column-mark-1-ts);
 }
 .cm-tabcolor-col1.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col11.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
@@ -1175,8 +1247,8 @@
 .cm-tabcolor-col31.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col41.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col51.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {
-  color: var(--mtc-column-mark-color-2);
-  text-shadow: 0 0 var(--mtc-column-mark-shadow-2);
+  color: var(--me-plugin-mtc-column-mark-2);
+  text-shadow: 0 0 var(--me-plugin-mtc-column-mark-2-ts);
 }
 .cm-tabcolor-col2.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col12.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
@@ -1184,64 +1256,64 @@
 .cm-tabcolor-col32.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col42.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col52.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {
-  color: var(--mtc-column-mark-color-3);
-  text-shadow: 0 0 var(--mtc-column-mark-shadow-3);
+  color: var(--me-plugin-mtc-column-mark-3);
+  text-shadow: 0 0 var(--me-plugin-mtc-column-mark-3-ts);
 }
 .cm-tabcolor-col3.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col13.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col23.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col33.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col43.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {
-  color: var(--mtc-column-mark-color-4);
-  text-shadow: 0 0 var(--mtc-column-mark-shadow-4);
+  color: var(--me-plugin-mtc-column-mark-4);
+  text-shadow: 0 0 var(--me-plugin-mtc-column-mark-4-ts);
 }
 .cm-tabcolor-col4.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col14.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col24.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col34.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col44.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {
-  color: var(--mtc-column-mark-color-5);
-  text-shadow: 0 0 var(--mtc-column-mark-shadow-5);
+  color: var(--me-plugin-mtc-column-mark-5);
+  text-shadow: 0 0 var(--me-plugin-mtc-column-mark-5-ts);
 }
 .cm-tabcolor-col5.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col15.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col25.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col35.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col45.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {
-  color: var(--mtc-column-mark-color-6);
-  text-shadow: 0 0 var(--mtc-column-mark-shadow-6);
+  color: var(--me-plugin-mtc-column-mark-6);
+  text-shadow: 0 0 var(--me-plugin-mtc-column-mark-6-ts);
 }
 .cm-tabcolor-col6.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col16.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col26.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col36.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col46.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {
-  color: var(--mtc-column-mark-color-7);
-  text-shadow: 0 0 var(--mtc-column-mark-shadow-7);
+  color: var(--me-plugin-mtc-column-mark-7);
+  text-shadow: 0 0 var(--me-plugin-mtc-column-mark-7-ts);
 }
 .cm-tabcolor-col7.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col17.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col27.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col37.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col47.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {
-  color: var(--mtc-column-mark-color-8);
-  text-shadow: 0 0 var(--mtc-column-mark-shadow-8);
+  color: var(--me-plugin-mtc-column-mark-8);
+  text-shadow: 0 0 var(--me-plugin-mtc-column-mark-8-ts);
 }
 .cm-tabcolor-col8.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col18.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col28.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col38.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col48.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {
-  color: var(--mtc-column-mark-color-9);
-  text-shadow: 0 0 var(--mtc-column-mark-shadow-9);
+  color: var(--me-plugin-mtc-column-mark-9);
+  text-shadow: 0 0 var(--me-plugin-mtc-column-mark-9-ts);
 }
 .cm-tabcolor-col9.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col19.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col29.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col39.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after,
 .cm-tabcolor-col49.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {
-  color: var(--mtc-column-mark-color-10);
-  text-shadow: 0 0 var(--mtc-column-mark-shadow-10);
+  color: var(--me-plugin-mtc-column-mark-10);
+  text-shadow: 0 0 var(--me-plugin-mtc-column-mark-10-ts);
 }
 /* column mark symbol -------------------------------------- */
 [class*="cm-tabcolor-col"].cm-tabcolor-firstch::after {content: "\24b6";}
@@ -1296,23 +1368,41 @@
 .cm-tabcolor-col49.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24e7";}
 .cm-tabcolor-col50.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24e8";}
 .cm-tabcolor-col51.cm-tabcolor-pipe:not(.cm-tabcolor-firstch)::after {content: "\24e9";}
+/* hide last colum mark ------------------------------------ */
+[class*="cm-tabcolor-col"].cm-tabcolor-pipe:last-child::after {
+  display: none;
+}
+
+/* MTC: CONTENT ============================================ */
+/* vertical bar -------------------------------------------- */
+.CodeMirror-code > .CodeMirror-line .cm-tabcolor-pipe {
+  color: var(--me-plugin-mtc-table-vertical-bar) !important;
+}
+/* table text ---------------------------------------------- */
+.CodeMirror-code > .CodeMirror-line [class*="cm-tabcolor-col"]:not(.cm-tabcolor-pipe) {
+  color: var(--me-plugin-mtc-table-text) !important;
+}
+/* anchor link path ---------------------------------------- */
+.CodeMirror-code > .CodeMirror-line .cm-string.cm-url[class*="cm-tabcolor-"]:not(#fake) {
+  color: var(--me-link-text) !important;
+}
 
 
 
-/* || PLUGINS | ENHANCEMENT ******************************** */
-/* ENHANCEMENT LINK ======================================== */
+/* || PLUGINS | ENHANCEMENT(EH) **************************** */
+/* EH: LINK ================================================ */
 /* link marker --------------------------------------------- */
 .enhancement-link-marker:not(#fake) {
   cursor: pointer;
 }
 /* link text ----------------------------------------------- */
 .enhancement-link-marker-text:not(#fake) {
-  color: var(--link-text-color);
+  color: var(--me-link-text);
 }
 /* link icon ----------------------------------------------- */
 .enhancement-link-marker-icon:not(#fake) {
   margin-right: 3px;
-  color: var(--link-text-color);
+  color: var(--me-link-text);
 }
 .enhancement-joplin-icon:not(#fake) {
   position: relative;
@@ -1320,35 +1410,36 @@
   margin-right: 2px;
   width: 1.2em;
   height: 1.2em;
-  background: var(--link-text-color);
+  background: var(--me-link-text);
 }
 
-/* ENHANCEMENT FOOTNOTE ==================================== */
+/* EH: FOOTNOTE ============================================ */
 /* footnote marker ----------------------------------------- */
 .enhancement-footnote-marker:not(#fake) {
   position: relative;
   top: 1px;
   margin-left: 2px;
   padding: 0 3px;
-  background: var(--fn-ref-color);
+  background: var(--me-footnote-ref);
 }
 /* footnote marker text ------------------------------------ */
 .enhancement-footnote-marker:not(#fake),
 .enhancement-footnote-marker-text:not(#fake) {
   font-size: x-small !important;
-  color: var(--eh-footnote-ref-color); 
+  color: var(--me-plugin-eh-footnote-ref); 
 }
 /* bottom footnote ----------------------------------------- */
 .CodeMirror-lines .footnote.CodeMirror-line {
   padding: 0 !important;
 }
 
-/* ENHANCEMENT ADMONITIONS ================================= */
+/* EH: ADMONITIONS ========================================= */
 /* title text */
 .cm-admonition-type:not(#fake),
 .cm-admonition-end:not(#fake) {
   opacity: 1;
 }
+
 
 
 
@@ -1366,33 +1457,41 @@
 
 
 
-/* || LAYOUT 1/2 | CONTAINER ******************************* */
-/* CONTAINER > BACKGROUND ================================== */
-#react-root > div:not(.master-password-dialog) > div,
+/* || LAYOUT 1/3 | SECTION ********************************* */
+/* CONTAINER: BACKGROUND =================================== */
+#react-root > div[class^="profile-"] > div,
 body {
-  background-color: var(--g-main-bg-color-1) !important;
-}
-/* CONTAINER > DIVIDER ------------------------------------- */
-#react-root > [class*="profile-"] .rli-root div[style="position: absolute; user-select: none; width: 10px; height: 100%; top: 0px; right: -5px; cursor: col-resize;"] {
-  background: linear-gradient(to right, var(--s-main-panel-divider-bg) 50%, transparent 51%);
+  background-color: var(--g-main-bg-1) !important;
 }
 
+/* CONTAINER: DIVIDER ====================================== */
+#react-root .rli-root div[style="position: absolute; user-select: none; width: 10px; height: 100%; top: 0px; right: -5px; cursor: col-resize;"] {
+  background: linear-gradient(to right, var(--s-panel-divider) 50%, transparent 51%);
+}
 
 
-/* || LAYOUT 2/2 | COLUMN & ROW **************************** */
-/* EDITOR PANEL (without group) > FOOTER TAG BAR =========== */
-#react-root > [class*="profile-"] .rli-root > .rli-editor > div > div > div .tag-bar {
+
+/* || LAYOUT 2/3 | COLUMN ********************************** */
+/* COLUMN: EDITOR PANEL ==================================== */
+/* :: when editor panel occupies a column >>>>>>>>>>>>>>>>>> */
+/* >> tag bar ---------------------------------------------- */
+#react-root .rli-root > .rli-editor > div > div > div .tag-bar {
   margin-bottom: 5px;
   height: 35px;
   min-height: 35px;
   max-height: 35px;
 }
-#react-root > [class*="profile-"] .rli-root > .rli-editor > div > div > div .tag-bar:hover {
+/* >> tag bar hover ---------------------------------------- */
+#react-root .rli-root > .rli-editor > div > div > div .tag-bar:hover {
   height: 50px;
   min-height: 50px;
   max-height: 50px;
   transition: height 0.3s, max-height 0.3s, min-height 0.3s;
 }
+
+
+
+/* || LAYOUT 3/3 | ROW ************************************* */
 
 
 
@@ -1404,8 +1503,40 @@ body {
 
 
 
-/* || NOTEBOOK PANEL 1/4 | HEADER ************************** */
-/* header container ---------------------------------------- */
+/* || NOTEBOOK PANEL 1/4 | SCROLLBAR *********************** */
+/* SCROLLBAR: NOTEBOOK PANEL =============================== */
+.rli-sideBar ::-webkit-scrollbar {
+  height: 1px !important;
+  width: 1px !important;
+}
+/* notebook panel hover > scrollbar ------------------------ */
+.rli-sideBar :hover::-webkit-scrollbar {
+  height: 6px !important;
+  width: var(--usp-notebook-panel-scrollbar-width) !important;
+}
+/* thumb --------------------------------------------------- */
+.rli-sideBar ::-webkit-scrollbar-thumb {
+  background: var(--g-scrollbar-thumb-bg);
+}
+/* track --------------------------------------------------- */
+.rli-sideBar ::-webkit-scrollbar-track {
+  background: var(--g-scrollbar-track-bg);
+}
+/* avoid notebook item scrollbar --------------------------- */
+.rli-sideBar .list-item::-webkit-scrollbar {
+  display: none;
+}
+
+/* SCROLLBAR: NOTEBOOK TITLE =============================== */
+/* notebook title scrollbar -------------------------------- */
+.sidebar .title::-webkit-scrollbar {
+  display: var(--usp-notebook-title-scrollbar-display);
+}
+
+
+
+/* || NOTEBOOK PANEL 2/4 | HEADER ************************** */
+/* HEADER: CONTAINER ======================================= */
 .sidebar > div:first-child > div:first-child {
   position: -webkit-sticky;
   position: sticky;
@@ -1413,38 +1544,45 @@ body {
   margin-bottom: 4px;
   min-height: 35px;
   max-height: 35px;
-  background: var(--g-panel-header-bg-color);
+  background: var(--g-panel-header-bgc);
   border-radius: 3px;
   z-index: 2;
 }
-/* header content ------------------------------------------ */
+
+/* HEADER: CONTENT ========================================= */
+/* content container --------------------------------------- */
 .sidebar > div:first-child > div:first-child > div {
   padding: 0;
   margin: 0;
   max-height: 35px;
 }
+/* GROUP: | text | plus button | --------------------------- */
+.sidebar > div:first-child > div:first-child > div > span,
+.sidebar > div:first-child > div:first-child > button > span {
+  color: var(--g-panel-header-text);
+  text-shadow: 0 0 var(--g-panel-header-ts);
+  cursor: pointer;
+}
+/* text ---------------------------------------------------- */
 .sidebar > div:first-child > div:first-child > div > span {
   margin-left: 15px;
   line-height: 35px;
 }
-.sidebar > div:first-child > div:first-child > div > span,
-.sidebar > div:first-child > div:first-child > button > span {
-  color: var(--g-panel-header-text-color);
-  text-shadow: var(--g-panel-header-text-shadow);
-  cursor: pointer;
-}
+/* icon ---------------------------------------------------- */
 .sidebar > div:first-child > div:first-child > div > i {
   display: none;
 }
+/* plus button --------------------------------------------- */
 .sidebar > div:first-child > div:first-child > button {
   position: absolute;
   left: 100px;
   padding: 0;
 }
+/* plus button icon ---------------------------------------- */
 .sidebar > div:first-child > div:first-child > button > span {
   font-size: 12px;
 }
-/* new notebook button hover > icon ------------------------ */
+/* plus button hover > icon -------------------------------- */
 .sidebar > div:first-child > div:first-child > button:hover > span {
   transform: rotate(1turn);
   transition: transform 0.3s;
@@ -1452,33 +1590,15 @@ body {
 
 
 
-/* || NOTEBOOK PANEL 2/4 | BODY **************************** */
-/* BODY > ALL NOTES BUTTON ================================= */
-/* button container ---------------------------------------- */
-.sidebar .all-notes {
-  padding-left: 0px;
-}
-/* button icon --------------------------------------------- */
-.sidebar .all-notes > .icon-notes {
-  display: none;
-}
-/* button text --------------------------------------------- */
-.sidebar .all-notes > a {
-  width: 8px;
-  min-width: 8px;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--g-item-text-color-2);
-}
-
-/* BODY > NOTEBOOK LIST ==================================== */
+/* || NOTEBOOK PANEL 3/4 | BODY **************************** */
+/* BODY: NOTEBOOK LIST ===================================== */
 /* notebook list container --------------------------------- */
 .sidebar > div:first-child {
   padding-bottom: 10px;
-  background-color: var(--g-main-bg-color-1);
+  background-color: var(--g-main-bg-1);
 }
 
-/* BODY > NOTEBOOK ITEM ==================================== */
+/* BODY: NOTEBOOK ITEM ===================================== */
 /* notebook item container --------------------------------- */
 .sidebar .list-item-container {
   border-radius: 4px 9px;
@@ -1490,126 +1610,30 @@ body {
   min-height: 33px;
   transition: background 0.3s;
 }
+/* container hover ----------------------------------------- */
+.sidebar .list-item-container:hover {
+  background-color: var(--g-item-bgc-hover);
+  filter: drop-shadow(0 0 var(--g-item-ds-hover));
+  transition: background 0s;
+}
+/* container hover > notebook item ------------------------- */
+.sidebar .list-item-container:hover > .list-item {
+  border-color: var(--g-item-bgc-hover);
+}
+/* container selected -------------------------------------- */
+.sidebar .list-item-container.selected {
+  background-color: var(--g-item-bgc-selected);
+}
+.sidebar .list-item-container.selected > .list-item {
+  border-color: var(--g-item-bgc-selected);
+}
 /* notebook item ------------------------------------------- */
 .sidebar .list-item-container > .list-item {
   display: flex;
-  border-bottom: 1px solid var(--g-item-divider-color);
+  border-bottom: 1px solid var(--g-item-divider);
   overflow-x: scroll;
 }
-.sidebar .list-item-container:hover {
-  background-color: var(--g-item-bg-color-hover);
-  filter: drop-shadow(0 0 2px var(--g-item-shadow-hover));
-  transition: background 0s;
-}
-.sidebar .list-item-container:hover > .list-item {
-  border-color: var(--g-item-bg-color-hover);
-}
-.sidebar .list-item-container.selected {
-  background-color: var(--g-item-bg-color-selected);
-}
-.sidebar .list-item-container.selected > .list-item {
-  border-color: var(--g-item-bg-color-selected);
-}
-/* notebook title ------------------------------------------ */
-.sidebar .list-item-container > .list-item > .title {
-  display: block;
-  margin: 4px 0;
-  width: 100%;
-  line-height: normal !important;
-  color: var(--g-item-text-color);
-  overflow-y: hidden;
-  white-space: var(--usp-notebook-title-wrap);
-}
-/* directory icon ------------------------------------------ */
-.sidebar i.fas.fa-caret-down,
-.sidebar i.fas.fa-caret-right {
-  opacity: 1 !important;
-}
-.sidebar i.fas.fa-caret-right {
-  color: var(--s-directory-icon-close-color);
-  filter: drop-shadow(0 0 2px var(--s-directory-icon-close-shadow));
-}
-.sidebar i.fas.fa-caret-down {
-  color: var(--s-directory-icon-open-color);
-  filter: drop-shadow(0 0 0px var(--s-directory-icon-open-shadow));
-}
-/* notebook folder icon ------------------------------------ */
-.sidebar .fa-folder {
-  display: var(--usp-notebook-icon-switcher);
-}
-.sidebar .emoji-box {
-  font-size: 17px !important;
-  margin-left: -1px;
-}
-.sidebar .list-item-depth-0 .fa-folder::before {
-  color: var(--s-notebook-folder-icon-0);
-}
-.sidebar .list-item-depth-1 .fa-folder::before {
-  color: var(--s-notebook-folder-icon-1);
-}
-.sidebar .list-item-depth-2 .fa-folder::before {
-  color: var(--s-notebook-folder-icon-2);
-}
-.sidebar .list-item-depth-3 .fa-folder::before {
-  color: var(--s-notebook-folder-icon-3);
-}
-.sidebar .list-item-depth-4 .fa-folder::before {
-  color: var(--s-notebook-folder-icon-4);
-}
-.sidebar .list-item-depth-5 .fa-folder::before {
-  color: var(--s-notebook-folder-icon-5);
-}
-.sidebar .list-item-depth-6 .fa-folder::before {
-  color: var(--s-notebook-folder-icon-6);
-}
-.sidebar .list-item-depth-7 .fa-folder::before {
-  color: var(--s-notebook-folder-icon-7);
-}
-.sidebar .list-item-depth-8 .fa-folder::before {
-  color: var(--s-notebook-folder-icon-8);
-}
-.sidebar .list-item-depth-9 .fa-folder::before {
-  color: var(--s-notebook-folder-icon-9);
-}
-.sidebar .list-item-depth-10 .fa-folder::before {
-  color: var(--s-notebook-folder-icon-10);
-}
-.sidebar .list-item-depth-11 .fa-folder::before {
-  color: var(--s-notebook-folder-icon-11);
-}
-.sidebar .list-item-depth-12 .fa-folder::before {
-  color: var(--s-notebook-folder-icon-12);
-}
-.sidebar .list-item-depth-13 .fa-folder::before {
-  color: var(--s-notebook-folder-icon-13);
-}
-.sidebar .list-item-depth-14 .fa-folder::before {
-  color: var(--s-notebook-folder-icon-14);
-}
-.sidebar .list-item-depth-15 .fa-folder::before {
-  color: var(--s-notebook-folder-icon-15);
-}
-/* note count label ---------------------------------------- */
-.sidebar .note-count-label {
-  position: -webkit-sticky;
-  position: sticky;
-  right: 0;
-  margin: 0 3px 0 10px;
-  padding: 0 6px !important;
-  line-height: 13px;
-  min-height: 15px;
-  max-height: 15px;
-  font-size: 10px;
-  color: var(--s-note-count-label-text-color);
-  background-color: var(--s-note-count-label-bg-color);
-  border: 1px solid var(--s-note-count-label-bd-color);
-  border-radius: 2em;
-  filter: drop-shadow(var(--s-note-count-label-shadow));
-  opacity: 1 !important;
-  z-index: 1;
-}
-
-/* BODY > NOTEBOOK ITEM INDENT ============================= */
+/* notebook item indent ------------------------------------ */
 .sidebar .list-item-depth-0:not(.all-notes) {
   padding-left: 8px;
 }
@@ -1658,52 +1682,183 @@ body {
 .sidebar .list-item-depth-15 {
   padding-left: 158px;
 }
+/* notebook title ------------------------------------------ */
+.sidebar .list-item-container > .list-item > .title {
+  display: block;
+  margin: 4px 0;
+  width: 100%;
+  line-height: normal !important;
+  color: var(--g-item-text);
+  overflow-y: hidden;
+  white-space: var(--usp-notebook-title-wrap);
+}
+/* directory icon ------------------------------------------ */
+.sidebar i.fas.fa-caret-down,
+.sidebar i.fas.fa-caret-right {
+  opacity: 1 !important;
+}
+.sidebar i.fas.fa-caret-right {
+  color: var(--s-np-directory-icon-close);
+  filter: drop-shadow(0 0 var(--s-np-directory-icon-close-ds));
+}
+.sidebar i.fas.fa-caret-down {
+  color: var(--s-np-directory-icon-open);
+  filter: drop-shadow(0 0 var(--s-np-directory-icon-open-ds));
+}
+/* notebook title emoji ------------------------------------ */
+.sidebar .emoji-box {
+  font-size: 17px !important;
+  margin-left: -1px;
+}
+/* notebook title folder icon ------------------------------ */
+.sidebar .fa-folder {
+  display: var(--usp-notebook-folder-icon-display);
+}
+.sidebar .list-item-depth-0 .fa-folder::before {
+  color: var(--s-np-notebook-folder-icon-0);
+}
+.sidebar .list-item-depth-1 .fa-folder::before {
+  color: var(--s-np-notebook-folder-icon-1);
+}
+.sidebar .list-item-depth-2 .fa-folder::before {
+  color: var(--s-np-notebook-folder-icon-2);
+}
+.sidebar .list-item-depth-3 .fa-folder::before {
+  color: var(--s-np-notebook-folder-icon-3);
+}
+.sidebar .list-item-depth-4 .fa-folder::before {
+  color: var(--s-np-notebook-folder-icon-4);
+}
+.sidebar .list-item-depth-5 .fa-folder::before {
+  color: var(--s-np-notebook-folder-icon-5);
+}
+.sidebar .list-item-depth-6 .fa-folder::before {
+  color: var(--s-np-notebook-folder-icon-6);
+}
+.sidebar .list-item-depth-7 .fa-folder::before {
+  color: var(--s-np-notebook-folder-icon-7);
+}
+.sidebar .list-item-depth-8 .fa-folder::before {
+  color: var(--s-np-notebook-folder-icon-8);
+}
+.sidebar .list-item-depth-9 .fa-folder::before {
+  color: var(--s-np-notebook-folder-icon-9);
+}
+.sidebar .list-item-depth-10 .fa-folder::before {
+  color: var(--s-np-notebook-folder-icon-10);
+}
+.sidebar .list-item-depth-11 .fa-folder::before {
+  color: var(--s-np-notebook-folder-icon-11);
+}
+.sidebar .list-item-depth-12 .fa-folder::before {
+  color: var(--s-np-notebook-folder-icon-12);
+}
+.sidebar .list-item-depth-13 .fa-folder::before {
+  color: var(--s-np-notebook-folder-icon-13);
+}
+.sidebar .list-item-depth-14 .fa-folder::before {
+  color: var(--s-np-notebook-folder-icon-14);
+}
+.sidebar .list-item-depth-15 .fa-folder::before {
+  color: var(--s-np-notebook-folder-icon-15);
+}
 
-/* NOTEBOOK PANEL: BODY > TAG LIST ========================= */
-/* divide title container ---------------------------------- */
+/* BODY: ALL NOTES BUTTON ================================== */
+/* all notes button container ------------------------------ */
+.sidebar .all-notes {
+  display: var(--usp-all-notes-button-display);
+  padding-left: 0px;
+}
+/* container selected -------------------------------------- */
+.sidebar .all-notes.bdNHyQ,/* light theme Joplin v2.10 */
+.sidebar .all-notes.ixgtav/* dark theme Joplin v2.10 */ {
+  background: var(--g-item-bgc-selected) !important;
+}
+/* all notes button icon ----------------------------------- */
+.sidebar .all-notes > .icon-notes {
+  display: none;
+}
+/* all notes button text ----------------------------------- */
+.sidebar .all-notes > a {
+  width: 8px;
+  min-width: 8px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--g-item-text-2);
+}
+
+/* BODY: NOTE COUNT LABEL ================================== */
+.sidebar .note-count-label {
+  position: -webkit-sticky;
+  position: sticky;
+  right: 0;
+  margin: 0 3px 0 10px;
+  padding: 0 6px !important;
+  line-height: 13px;
+  min-height: 13px;
+  max-height: 13px;
+  font-size: 10px;
+  color: var(--s-np-note-count-label-text);
+  background-color: var(--s-np-note-count-label-bgc);
+  border: 1px solid var(--s-np-note-count-label-bd);
+  border-radius: 2em;
+  filter: drop-shadow(0 0 var(--s-np-note-count-label-ds));
+  opacity: 1 !important;
+  z-index: 1;
+}
+
+/* BODY: TAG LIST ========================================== */
+/* tag list title container -------------------------------- */
 .sidebar > div > div:nth-child(3) > div {
+  display: var(--usp-tag-feature-display-1) !important;
   margin: 10px 0;
   padding: 10px 0 10px 15px;
-  border-width: 1px 0;
-  border-style: solid;
-  border-color: var(--g-panel-header-bg-color);
+  background: var(--g-panel-header-bgc);
   border-radius: 4px;
   cursor: pointer;
 }
-/* divide title -------------------------------------------- */
+/* GROUP: | tag list title | icon | ------------------------ */
 .sidebar .icon-tags,
 .sidebar .icon-tags ~ span {
-  color: var(--g-item-text-color-2);
+  color: var(--g-panel-header-text);
+  text-shadow: 0 0 var(--g-panel-header-ts);
 }
+/* tag list content ---------------------------------------- */
+.sidebar .tags > div {
+  display: var(--usp-tag-feature-display-2) !important;
+}
+/* title --------------------------------------------------- */
 .sidebar .icon-tags {
   display: none;
 }
+/* icon ---------------------------------------------------- */
 .sidebar .icon-tags ~ span {
   margin: 0 0 0 -1px !important;
 }
-/* tag list ------------------------------------------------ */
+/* tag list item container --------------------------------- */
 .sidebar .tags .list-item-container {
   padding-left: 7px !important;
 }
-/* tag item ------------------------------------------------ */
+/* tag list item text -------------------------------------- */
 .sidebar .tag-label {
   width: 100%;
-  color: var(--g-item-text-color-2);
+  color: var(--g-item-text-2);
 }
 
 
 
-/* || NOTEBOOK PANEL 3/4 | FOOTER ************************** */
-/* footer container ---------------------------------------- */
+/* || NOTEBOOK PANEL 4/4 | FOOTER ************************** */
+/* FOOTER: CONTAINER ======================================= */
 .sidebar > div:last-child {
+  display: var(--usp-sync-feature-display) !important;
   padding: 5px !important;
-  background: var(--g-main-bg-color-1);
+  background: var(--g-main-bg-1);
 }
 
-/* FOOTER > SYNC INFO ====================================== */
+/* FOOTER: SYNC INFO ======================================= */
 /* sync info text ------------------------------------------ */
 .sidebar > div:last-child > div > div {
-  color: var(--s-sync-info-text-color);
+  color: var(--s-np-sync-info-text);
 }
 /* sync info symbol ---------------------------------------- */
 .sidebar > div:last-child > div > div::before {
@@ -1713,9 +1868,8 @@ body {
   width: 8px;
   height: 8px;
   vertical-align: baseline;
-  background: var(--s-sync-info-symbol-color);
+  background: var(--s-np-sync-info-symbol);
   border-radius: 1em;
-
 }
 
 /* FOOTER > SYNC BUTTON ==================================== */
@@ -1725,60 +1879,35 @@ body {
   padding-bottom: 1px;
   min-height: 22px;
   max-height: 22px;
-  background: var(--s-sync-btn-bg-color);
-  border: 1px solid var(--s-sync-btn-bd-color);
+  background: var(--s-np-sync-btn-bg);
+  border: 1px solid var(--s-np-sync-btn-bd);
   border-radius: 1em;
   transition: background 0.5s, border-color 0.5s;
 }
 .sidebar > div:last-child > button:hover {
-  background: var(--s-sync-btn-bg-color-hover);
-  border-color: var(--s-sync-btn-bd-color-hover);
+  background: var(--s-np-sync-btn-bg-hover);
+  border-color: var(--s-np-sync-btn-bdc-hover);
   transition: background 0.5s, border-color 0.5s;
 
 }
 /* sync button text ---------------------------------------- */
 .sidebar > div:last-child > button > span {
-  color: var(--s-sync-btn-text-color);
+  color: var(--s-np-sync-btn-text);
 }
 .sidebar > div:last-child > button:hover > span {
-  color: var(--s-sync-btn-text-color-hover);
+  color: var(--s-np-sync-btn-text-hover);
 }
 /* sync button icon ---------------------------------------- */
 .sidebar .icon-sync {
   font-size: 15px;
-  text-shadow: var(--s-sync-btn-icon-text-shadow);
+  text-shadow: 0 0 var(--s-np-sync-btn-icon-ts);
   transition: font-size 0.8s, text-shadow 0.8s;
 }
 .sidebar > div > button:hover .icon-sync {
   font-size: 18px;
-  text-shadow: 0 0 3px var(--s-sync-btn-icon-text-shadow-hover) !important;
+  text-shadow: 0 0 var(--s-np-sync-btn-icon-ts-hover) !important;
   transform: rotateZ(22000deg);
   transition: transform 20s, font-size 1s, text-shadow 3s;
-}
-
-
-
-/* || NOTEBOOK PANEL 4/4 | SCROLLBAR *********************** */
-.rli-sideBar ::-webkit-scrollbar {
-  height: 1px !important;
-  width: 1px !important;
-}
-.rli-sideBar .list-item::-webkit-scrollbar {
-  display: none;
-}
-.rli-sideBar :hover::-webkit-scrollbar {
-  height: 6px !important;
-  width: var(--usp-np-nlp-scrollbar-width) !important;
-}
-.rli-sideBar ::-webkit-scrollbar-thumb {
-  background: var(--g-scrollbar-thumb-bg-color-1);
-}
-.rli-sideBar ::-webkit-scrollbar-track {
-  background: var(--g-scrollbar-track-bg-color-1);
-}
-/* notebook title scrollbar -------------------------------- */
-.sidebar .list-item-container > .list-item > .title::-webkit-scrollbar {
-  display: var(--usp-notebook-title-scrollbar-switcher);
 }
 
 
@@ -1791,121 +1920,130 @@ body {
 
 
 
-/* || NOTE LIST PANEL 1/4 | ANIMATIONS ********************* */
-@keyframes rtl-auto {
-  0% {transform: translateX(0%);}
-  100% {transform: translateX(-70%);}
+/* || NOTE LIST PANEL 1/3 | SCROLLBAR ********************** */
+/* SCROLLBAR: NOTE LIST PANEL ============================== */
+.rli-noteList ::-webkit-scrollbar {
+  height: 1px !important;
+  width: 1px !important;
+}
+/* note list panel hover > scrollbar ----------------------- */
+.rli-noteList :hover::-webkit-scrollbar {
+  height: 6px !important;
+  width: var(--usp-note-list-panel-scrollbar-width) !important;
+}
+/* thumb --------------------------------------------------- */
+.rli-noteList ::-webkit-scrollbar-thumb {
+  background: var(--g-scrollbar-thumb-bg);
+}
+/* track --------------------------------------------------- */
+.rli-noteList ::-webkit-scrollbar-track {
+  background: var(--g-scrollbar-track-bg);
 }
 
 
 
-/* || NOTE LIST PANEL 2/4 | HEADER ************************* */
-/* header container ---------------------------------------- */
+/* || NOTE LIST PANEL 2/3 | HEADER ************************* */
+/* HEADER: CONTAINER ======================================= */
 .rli-noteList > div > div > div[height="50"] {
   min-height: 35px;
   max-height: 35px;
   padding: 5px;
-  background: var(--g-panel-header-bg-color);
+  background: var(--g-panel-header-bgc);
   border-radius: 3px;
 }
 
-/* HEADER > SEARCH BAR ===================================== */
+/* HEADER: SEARCH BAR ====================================== */
 /* input --------------------------------------------------- */
 .rli-noteList .search-bar > div > input,
 .rli-noteList .search-bar > div > input:focus {
   margin: 1px 6px 0 0;
   height: 24px;
-  color: var(--g-input-text-color-1);
-  background: var(--g-input-bg-color-1);
-  caret-color: var(--g-input-text-color-1);
-  border: 1px solid var(--g-input-bd-color-1);
+  color: var(--g-input-text);
+  background: var(--g-input-bg);
+  caret-color: var(--g-input-text);
+  border: 1px solid var(--g-input-bd);
   border-radius: 7px;
 }
 /* search button ------------------------------------------- */
 .rli-noteList .search-bar > div > input ~ button {
   top: 1px;
 }
+/* search button icon -------------------------------------- */
 .rli-noteList .search-bar > div > input ~ button > .icon-search {
   margin: 0 6px 0 0;
   font-size: 16px;
-  color: var(--s-notelist-search-btn-color);
+  color: var(--s-nlp-search-btn);
 }
-/* close button -------------------------------------------- */
+/* close button icon --------------------------------------- */
 .rli-noteList .search-bar > div > input ~ button > .fa-times {
   margin: -1px 5px 0 0;
   padding: 3px;
   font-size: 16px;
-  color: var(--s-notelist-search-btn-color);
+  color: var(--s-nlp-search-btn);
 }
+/* close button icon hover --------------------------------- */
 .rli-noteList .search-bar > div > input ~ button > .fa-times:hover {
   transform: rotate(1turn);
   transition: transform 0.3s;
 }
 
-/* HEADER > BUTTON ========================================= */
+/* HEADER: BUTTON ========================================== */
 /* button container ---------------------------------------- */
 .rli-noteList .search-bar ~ div {
   max-width: 0;
   transition: max-width 1s;
   transition-delay: 1.2s;
 }
+/* header hover > button container ------------------------- */
 .rli-noteList > div > div > div:hover .search-bar ~ div {
   max-width: 100%;
   transition: max-width 0.5s;
 }
 /* button -------------------------------------------------- */
-.rli-noteList .sort-order-field-button,
-.rli-noteList .sort-order-reverse-button,
-.rli-noteList .new-todo-button,
-.rli-noteList .new-note-button {
+.rli-noteList .search-bar ~ div button {
   margin: 0 3px;
   max-width: 26px;
   min-width: 26px;
   max-height: 26px;
   min-height: 26px;
-  background: var(--g-lighter-square-btn-bg-color);
-  border: 0px solid var(--g-lighter-square-btn-bd-color);
+  background: var(--g-square-btn-bg-1);
+  border: 0px solid var(--g-square-btn-bd-1);
   border-radius: 0px;
   transition: background 0.8s, border 0.8s, border-radius 0.8s;
 }
-.rli-noteList .sort-order-field-button:hover,
-.rli-noteList .sort-order-reverse-button:hover,
-.rli-noteList .new-todo-button:hover,
-.rli-noteList .new-note-button:hover {
-  background: var(--g-lighter-square-btn-bg-color-hover);
-  border: 2px solid var(--g-lighter-square-btn-bd-color-hover);
+/* button hover -------------------------------------------- */
+.rli-noteList .search-bar ~ div button:hover {
+  background: var(--g-square-btn-bg-1-hover);
+  border: 2px solid var(--g-square-btn-bd-1-hover);
   border-radius: 7px;
   transition: background, 0.3s, border 0.1s, border-radius 0.3s;
 }
 /* button icon --------------------------------------------- */
-.rli-noteList .sort-order-field-button > span,
-.rli-noteList .sort-order-reverse-button > span,
-.rli-noteList .new-todo-button > span,
-.rli-noteList .new-note-button > span {
-  color: var(--g-lighter-square-btn-icon-color) !important;
+.rli-noteList .search-bar ~ div span {
+  color: var(--g-square-btn-icon-1) !important;
   font-size: 16px;
   transition: color 0.3s;
 }
+/* new todo button icon ------------------------------------ */
 .rli-noteList .new-todo-button > span {
   font-size: 17px !important;
 }
+/* new note button icon ------------------------------------ */
 .rli-noteList .new-note-button > span {
   font-size: 20px !important;
 }
-.rli-noteList .sort-order-field-button:hover > span,
-.rli-noteList .sort-order-reverse-button:hover > span,
-.rli-noteList .new-todo-button:hover > span,
-.rli-noteList .new-note-button:hover > span {
-  color: var(--g-lighter-square-btn-icon-color-hover) !important;
+/* button hover > icon ------------------------------------- */
+.rli-noteList .search-bar ~ div button:hover > span {
+  color: var(--g-square-btn-icon-1-hover) !important;
 }
 
 
 
-/* || NOTE LIST PANEL 3/4 | BODY *************************** */
-/* BODY > NOTE LIST ======================================== */
+/* || NOTE LIST PANEL 3/3 | BODY *************************** */
+/* BODY: NOTE LIST ========================================= */
 /* note list container ------------------------------------- */
-#react-root > div > div > .rli-root:nth-child(3) .rli-noteList > div > div > div:last-child {
-  background: var(--g-main-bg-color-1);
+.rli-noteList > div > div > div:last-child {
+  background: var(--g-main-bg-1);
   border: none;
 }
 /* note list ----------------------------------------------- */
@@ -1914,7 +2052,7 @@ body {
   padding: 3px 0 0 3px;
 }
 
-/* BODY > NOTE & TODO ITEM ================================= */
+/* BODY: NOTE LIST ITEM ==================================== */
 /* item container ------------------------------------------ */
 .note-list > .list-item-container {
   border-radius: 4px 9px;
@@ -1924,83 +2062,65 @@ body {
 .rli-noteList .note-list-item::before,
 .todo-list-item::before {
   width: calc(100% - 22px);
-  border-color: var(--g-item-divider-color);
+  border-color: var(--g-item-divider);
 }
 
-/* BODY > TODO ITEM ======================================== */
-/* todo list item container -------------------------------- */
+/* BODY: TODO ITEM ========================================= */
+/* todo item container ------------------------------------- */
 .rli-noteList .todo-list-item {
   background: none;
   transition: background 0.3s;
 }
-/* todo list item container hover -------------------------- */
+/* todo item container hover ------------------------------- */
 .rli-noteList .todo-list-item:hover {
-  background: var(--g-item-bg-color-hover) !important;
-  filter: drop-shadow(0 0 2px var(--g-item-shadow-hover));
+  background: var(--g-item-bgc-hover) !important;
+  filter: drop-shadow(0 0 var(--g-item-ds-hover));
   transition: background 0s;
 }
-/* todo list item container selected ----------------------- */
+/* todo item container selected ---------------------------- */
 .rli-noteList .todo-list-item.selected {
-  background: var(--g-item-bg-color-selected) !important;
+  background: var(--g-item-bgc-selected) !important;
 }
 .rli-noteList .todo-list-item.selected::before {
-  border-color: var(--g-item-bg-color-selected);
+  border-color: var(--g-item-bgc-selected);
 }
-/* todo list item text ------------------------------------- */
+/* todo item text ------------------------------------------ */
 .rli-noteList .todo-list-item > a > span {
-  color: var(--s-todo-text-color);
+  color: var(--s-nlp-todo-text);
 }
-/* todo list item hover > text ----------------------------- */
+/* todo item hover > text ---------------------------------- */
 .rli-noteList .todo-list-item > a:hover > span {
   animation: rtl-auto 4s linear 0.6s infinite;
 }
 /* checkbox ------------------------------------------------ */
 .rli-noteList .todo-list-item  input[type="checkbox"] {
-  filter: hue-rotate(calc(var(--usp-remoods-hue) + 145deg));
+  filter: hue-rotate(calc(var(--usp-hue) + 145deg));
 }
 
-/* BODY > NOTE ITEM ======================================== */
-/* note list item container -------------------------------- */
+/* BODY: NOTE ITEM ========================================= */
+/* note item container ------------------------------------- */
 .rli-noteList .note-list-item {
   background: none;
   transition: background 0.3s;
 }
-/* note list item hover ------------------------------------ */
+/* note item hover ----------------------------------------- */
 .rli-noteList .note-list-item:hover {
-  background: var(--g-item-bg-color-hover) !important;
-  filter: drop-shadow(0 0 2px var(--g-item-shadow-hover));
+  background: var(--g-item-bgc-hover) !important;
+  filter: drop-shadow(0 0 var(--g-item-ds-hover));
   transition: background 0s;
 }
-/* note list item selected --------------------------------- */
+/* note item selected -------------------------------------- */
 .rli-noteList .note-list-item.selected {
-  background: var(--g-item-bg-color-selected) !important;
+  background: var(--g-item-bgc-selected) !important;
 }
-/* note list item text ------------------------------------- */
+/* note item text ------------------------------------------ */
 .rli-noteList .note-list-item > a > span {
-  color: var(--g-item-text-color);
+  color: var(--g-item-text);
   opacity: 0.8;
 }
-/* note list item hover > text ----------------------------- */
+/* note item hover > text ---------------------------------- */
 .rli-noteList .note-list-item > a:hover > span {
   animation: var(--usp-note-list-item-auto-scroll);
-}
-
-
-
-/* || NOTE LIST PANEL 4/4 | SCROLLBAR ********************** */
-.rli-noteList ::-webkit-scrollbar {
-  height: 1px !important;
-  width: 1px !important;
-}
-.rli-noteList :hover::-webkit-scrollbar {
-  height: 6px !important;
-  width: var(--usp-np-nlp-scrollbar-width) !important;
-}
-.rli-noteList ::-webkit-scrollbar-thumb {
-  background: var(--g-scrollbar-thumb-bg-color-1);
-}
-.rli-noteList ::-webkit-scrollbar-track {
-  background: var(--g-scrollbar-track-bg-color-1);
 }
 
 
@@ -2013,26 +2133,36 @@ body {
 
 
 
-/* || EDITOR PANEL 1/3 | HEADER **************************** */
-/* header container ---------------------------------------- */
-#react-root > div > div > .rli-root:nth-child(3) .rli-editor > div > div > div > div:first-child {
+/* || EDITOR PANEL 1/5 | GENERAL *************************** */
+/* GENERAL: CONTAINER ====================================== */
+/* GROUP: | header | body | footer | ----------------------- */
+.rli-editor > div > div > div > div {
+  padding-left: 0px !important;
+}
+
+
+
+/* || EDITOR PANEL 1/5 | HEADER **************************** */
+/* HEADER: CONTAINER ======================================= */
+.rli-editor > div > div > div > div:first-child {
   min-height: 35px !important;
   max-height: 35px !important;
-  background: var(--g-panel-header-bg-color) !important;
+  background: var(--g-panel-header-bgc) !important;
   border-radius: 3px;
 }
 
-/* HEADER > TITLE INPUT ==================================== */
+/* HEADER: TITLE INPUT ===================================== */
 .title-input {
   padding: 0 !important;
   max-height: 35px !important;
   min-height: 35px !important;
   text-indent: 8px;
-  color: var(--g-panel-header-text-color) !important;
-  text-shadow: var(--g-panel-header-text-shadow);
-  background: var(--g-panel-header-bg-color) !important;
-  border-radius: 3px;
+  color: var(--g-panel-header-text) !important;
+  text-shadow: 0 0 var(--g-panel-header-ts);
+  background: var(--g-panel-header-bgc) !important;
+  border-radius: 3px 0 0 3px;
 }
+/* when creating new notes --------------------------------- */
 .title-input[placeholder="Creating new note..."] {
   text-shadow: none;
   -webkit-background-clip: text;
@@ -2041,17 +2171,20 @@ body {
   opacity: 0.6;
 }
 
-
-/* HEADER > SIDE TOOLBAR ==================================== */
-/* side toolbar container ----------------------------------- */
+/* HEADER: SIDE TOOLBAR ==================================== */
+/* container ----------------------------------------------- */
 .title-input ~ div {
   width: 0;
   max-width: -moz-fit-content;
   max-width: fit-content;
+  min-height: 35px;
+  max-height: 35px;
+  background: var(--g-panel-header-bgc);
   overflow: hidden;
   transition: width 1s;
   transition-delay: 1.2s;
 }
+/* hover --------------------------------------------------- */
 .rli-editor .title-input:hover ~ div,
 .rli-editor .title-input ~ div:hover {
   width: 100%;
@@ -2062,9 +2195,10 @@ body {
 /* updated time label -------------------------------------- */
 .updated-time-label {
   margin-right: 3px;
+  margin-left: 10px;
   padding: 3px 8px 0 0;
-  color: var(--s-update-time-label-text-color) !important;
-  background: var(--s-update-time-label-bg-color);
+  color: var(--s-ep-update-time-label-text) !important;
+  background: var(--s-ep-update-time-label-bg);
   border-radius: 1em;
 }
 /* button container ---------------------------------------- */
@@ -2075,14 +2209,14 @@ body {
 /* button -------------------------------------------------- */
 .updated-time-label ~ .editor-toolbar a {
   margin: 0 1px;
-  background: var(--g-lighter-square-btn-bg-color);
-  border: 0px solid var(--g-lighter-square-btn-bd-color);
+  background: var(--g-square-btn-bg-1);
+  border: 0px solid var(--g-square-btn-bd-1);
   border-radius: 0px;
   transition: background 0.8s, border 0.8s, border-radius 0.8s;
 }
 .updated-time-label ~ .editor-toolbar a:hover {
-  background: var(--g-lighter-square-btn-bg-color-hover);
-  border: 2px solid var(--g-lighter-square-btn-bd-color-hover);
+  background: var(--g-square-btn-bg-1-hover);
+  border: 2px solid var(--g-square-btn-bd-1-hover);
   border-radius: 7px;
   transition: background 0.3s, border 0.1s, border-radius 0.3s;
 }
@@ -2095,16 +2229,16 @@ body {
 .updated-time-label ~ .editor-toolbar > div:nth-child(2) > a,
 .updated-time-label ~ .editor-toolbar > div:nth-child(2) > a > i,
 .updated-time-label ~ .editor-toolbar > div:nth-child(2) > a > span {
-  color: var(--g-lighter-square-btn-icon-color);
+  color: var(--g-square-btn-icon-1);
 }
 .updated-time-label ~ .editor-toolbar > div:nth-child(2) > a:hover,
 .updated-time-label ~ .editor-toolbar > div:nth-child(2) > a:hover > i,
 .updated-time-label ~ .editor-toolbar > div:nth-child(2) > a:hover > span {
-  color: var(--g-lighter-square-btn-icon-color-hover);
+  color: var(--g-square-btn-icon-1-hover);
 }
 
-/* HEADER > NOTEBOOK NAVIGATION BUTTON ===================== */
-/* notebook navigation button container -------------------- */
+/* HEADER: NOTEBOOK NAVIGATION BUTTON ====================== */
+/* container ----------------------------------------------- */
 .rli-editor > div > div > div > div:nth-child(2)[style="padding-top: 10px; padding-bottom: 10px; padding-left: 8px;"] {
   position: relative;
   top: 5px;
@@ -2116,44 +2250,41 @@ body {
   padding: 0 10px;
   min-height: 28px;
   max-height: 28px;
-  background: var(--s-notebook-nav-btn-bg-color);
-  border: 1px solid var(--s-notebook-nav-btn-bd-color);
+  background: var(--s-ep-notebook-nav-btn-bg);
+  border: 1px solid var(--s-ep-notebook-nav-btn-bd);
   border-radius: 7px;
-  box-shadow: 0 0 3px var(--s-notebook-nav-btn-shadow);
+  box-shadow: 0 0 var(--s-ep-notebook-nav-btn-bs);
 }
 /* notebook navigation button > text ----------------------- */
 .rli-editor > div > div > div > div:nth-child(2)[style="padding-top: 10px; padding-bottom: 10px; padding-left: 8px;"] > button > span {
-  color: var(--s-notebook-nav-btn-text-color);
+  color: var(--s-ep-notebook-nav-btn-text);
 }
 
 
 
-/* || EDITOR PANEL 2/3 | BODY ****************************** */
-/* body container ------------------------------------------ */
-#react-root > div > div > .rli-root:nth-child(3) .rli-editor > div > div > div > div {
-  padding-left: 0px !important;
-}
-/* editor container ---------------------------------------- */
+/* || EDITOR PANEL 3/5 | BODY ****************************** */
+/* BODY: CONTAINER ========================================= */
 .rli-editor > div > div > div > div:nth-child(2) > div:not(.joplin-tinymce) > div:nth-child(2) {
   padding: 0 !important;
 }
-/* editor divider ------------------------------------------ */
+
+/* BODY: EDITOR DIVIDER ==================================== */
 .rli-editor > div > div > div > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) {
-  border-left: 1px solid var(--g-editor-panel-divider-color) !important;
+  border-left: 1px solid var(--g-ep-divider) !important;
 }
 
-/* BODY > TOOLBAR ========================================== */
+/* BODY: EDITOR TOOLBAR ==================================== */
 /* toolbar ------------------------------------------------- */
-.rli-editor > div > div > div > div > div > div > .editor-toolbar {
+.rli-editor div:first-child > .editor-toolbar {
   position: absolute;
   margin: 10px 0 0 15px !important;
   padding: 3px 3px 2px 3px !important;
   width: calc(100% - 30px);
   height: 0;
-  background: var(--g-toolbar-bg-color) !important;
+  background: var(--g-toolbar-bg) !important;
   border-radius: 7px;
-  border: 1px solid var(--g-toolbar-bd-color);
-  filter: drop-shadow(var(--s-toolbar-shadow));
+  border: 1px solid var(--g-toolbar-bd);
+  filter: drop-shadow(0 0 var(--s-ep-toolbar-ds));
   overflow: hidden;
   opacity: 0;
   visibility: collapse;
@@ -2161,308 +2292,231 @@ body {
   transition-delay: 1.2s;
   z-index: 99;
 }
-.rli-editor > div > div > div > div:nth-child(1):hover ~ div[style="display: flex; flex: 1 1 0%; padding-left: 8px; max-height: 100%;"] > div > div:first-child > .editor-toolbar,
-.rli-editor > div > div > div > div > div > div > .editor-toolbar:hover {
+/* hover > toolbar ----------------------------------------- */
+.rli-editor > div > div > div > div:nth-child(1):hover ~ div[style="display: flex; flex: 1 1 0%; padding-left: 8px; max-height: 100%;"] div:first-child > .editor-toolbar,
+.rli-editor div:first-child > .editor-toolbar:hover {
   height: 34px;
   opacity: 1;
   visibility: visible;
   transition: height 0.1s, opacity 0.2s, visibility 0.2s;
 }
-/* toolbar button ------------------------------------------ */
-.rli-editor > div > div > div > div > div > div > .editor-toolbar > div > a {
+/* button -------------------------------------------------- */
+.rli-editor div:first-child > .editor-toolbar > div > a {
   margin: 0 1px;
-  background: var(--g-darker-square-btn-bg-color);
-  border: 0px solid var(--g-darker-square-btn-bd-color);
+  background: var(--g-square-btn-bg-2);
+  border: 0px solid var(--g-square-btn-bd-2);
   border-radius: 0px;
   transition: background 0.8s, border 0.8s, border-radius 0.8s;
 }
-.rli-editor > div > div > div > div > div > div > .editor-toolbar > div > a:hover {
-  background: var(--g-darker-square-btn-bg-color-hover);
-  border: 2px solid var(--g-darker-square-btn-bd-color-hover);
+/* button hover -------------------------------------------- */
+.rli-editor div:first-child > .editor-toolbar > div > a:hover {
+  background: var(--g-square-btn-bg-2-hover);
+  border: 2px solid var(--g-square-btn-bd-2-hover);
   border-radius: 7px;
   transition: background 0.3s, border 0.1s, border-radius 0.3s;
 }
-/* toolbar button icon ------------------------------------- */
-.rli-editor > div > div > div > div > div > div > .editor-toolbar > div > a > span,
-.rli-editor > div > div > div > div > div > div > .editor-toolbar > div > a > i,
-.rli-editor > div > div > div > div > div > div > .editor-toolbar > div:last-child > button > div > i {
-  color: var(--g-darker-square-btn-icon-color) !important;
+/* button icon --------------------------------------------- */
+.rli-editor div:first-child > .editor-toolbar > div > a > span,
+.rli-editor div:first-child > .editor-toolbar > div > a > i,
+.rli-editor div:first-child > .editor-toolbar > div:last-child > button > div > i {
+  color: var(--g-square-btn-icon-2) !important;
 }
-.rli-editor > div > div > div > div > div > div > .editor-toolbar > div > a:hover > span,
-.rli-editor > div > div > div > div > div > div > .editor-toolbar > div > a:hover > i,
-.rli-editor > div > div > div > div > div > div > .editor-toolbar > div:last-child > button:hover > div > i {
-  color: var(--g-darker-square-btn-icon-color-hover) !important;
+.rli-editor div:first-child > .editor-toolbar > div > a:hover > span,
+.rli-editor div:first-child > .editor-toolbar > div > a:hover > i,
+.rli-editor div:first-child > .editor-toolbar > div:last-child > button:hover > div > i {
+  color: var(--g-square-btn-icon-2-hover) !important;
 }
 /* editor toggle button ------------------------------------ */
-.rli-editor > div > div > div > div > div > div > .editor-toolbar > div:last-child > button {
+.rli-editor div:first-child > .editor-toolbar > div:last-child > button {
   padding: 4px 6px !important;
   height: 27px;
-  background: var(--g-darker-square-btn-bg-color) !important;
-  border: 0px solid var(--g-darker-square-btn-bd-color) !important;
+  background: var(--g-square-btn-bg-2) !important;
+  border: 0px solid var(--g-square-btn-bd-2) !important;
   border-radius: 0px;
   transition: background 0.8s, border 0.8s, border-radius 0.8s;
 }
-.rli-editor > div > div > div > div > div > div > .editor-toolbar > div:last-child > button:hover {
-  background: var(--g-darker-square-btn-bg-color-hover) !important;
-  border: 2px solid var(--g-darker-square-btn-bd-color-hover) !important;
+/* editor toggle button hover ------------------------------ */
+.rli-editor div:first-child > .editor-toolbar > div:last-child > button:hover {
+  background: var(--g-square-btn-bg-2-hover) !important;
+  border: 2px solid var(--g-square-btn-bd-2-hover) !important;
   border-radius: 7px;
   transition: background 0.3s, border 0.1s, border-radius 0.3s;
 }
 /* editor toggle button icon ------------------------------- */
-.rli-editor > div > div > div > div > div > div > .editor-toolbar > div:last-child > button > div {
+.rli-editor div:first-child > .editor-toolbar > div:last-child > button > div {
   width: 30px !important;
   background: none !important;
-  border-color: var(--g-darker-square-btn-icon-color) !important;
+  border-color: var(--g-square-btn-bd-2) !important;
 }
-.rli-editor > div > div > div > div > div > div > .editor-toolbar > div:last-child > button:hover > div {
-  border-color: var(--g-darker-square-btn-icon-color-hover) !important;
-}
-
-/* BODY > TOOLBAR (RICH TEXT EDITOR) ======================= */
-/* rich text editor > toolbar container -------------------- */
-.joplin-tinymce:not(#fake) .tox-editor-header {
-  margin-top: 8px !important;
-  border-bottom: 1px solid var(--g-editor-panel-divider-color);
-}
-/* rich text editor > toolbar item container --------------- */
-.joplin-tinymce:not(#fake) > div:first-child,
-.joplin-tinymce:not(#fake) > div:nth-child(2) {
-  margin: 8px !important;
-  padding: 0 !important;
-  height: 34px !important;
-}
-.tox-editor-header:not(#fake),
-.tox-editor-header:not(#fake) > .tox-toolbar-overlord {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-.tox-editor-header:not(#fake)  > .tox-toolbar-overlord > .tox-toolbar__primary {
-  padding-left:  90px !important;
-}
-.tox-editor-header:not(#fake)  > .tox-toolbar-overlord > .tox-toolbar__primary > div {
-  margin: 0 !important;
-  padding: 0 !important;
-  min-height: 34px;
-  max-height: 34px;
-}
-.joplin-tinymce:not(#fake) > div:first-child,
-.joplin-tinymce:not(#fake) > div:nth-child(2),
-.tox-editor-header:not(#fake)  > .tox-toolbar-overlord > .tox-toolbar__primary,
-.tox-editor-header:not(#fake)  > .tox-toolbar-overlord > .tox-toolbar__primary > div {
-  background: var(--g-toolbar-bg-color) !important;
-}
-/* rich text editor > toolbar button ----------------------- */
-.joplin-tinymce:not(#fake) > div:first-child > a {
-  margin-top: 4px;
-}
-.joplin-tinymce:not(#fake) button,
-.joplin-tinymce:not(#fake) a {
-  margin-left: 1px !important;
-  background: var(--g-darker-square-btn-bg-color);
-  border: 0px solid var(--g-darker-square-btn-bd-color);
-  border-radius: 0px;
-  transition: background 0.8s, border 0.8s, border-radius 0.8s;
-}
-.joplin-tinymce:not(#fake) button:hover,
-.joplin-tinymce:not(#fake) a:hover {
-  background: var(--g-darker-square-btn-bg-color-hover);
-  border: 2px solid var(--g-darker-square-btn-bd-color-hover);
-  border-radius: 7px;
-  transition: background 0.3s, border 0.1s, border-radius 0.3s;
-}
-/* rich text editor > toolbar button icon ------------------ */
-.joplin-tinymce:not(#fake) > div:first-child > a > span,
-.tox-toolbar__group:not(#fake) .tox-tbtn svg,
-.tox-toolbar__group:not(#fake) .tox-tbtn span {
-  color: var(--g-darker-square-btn-icon-color)  !important;
-  fill: var(--g-darker-square-btn-icon-color)  !important;
-}
-.joplin-tinymce:not(#fake) > div:first-child > a:hover > span,
-.tox-toolbar__group:not(#fake) .tox-tbtn:hover svg,
-.tox-toolbar__group:not(#fake) .tox-tbtn:hover span {
-  color: var(--g-darker-square-btn-icon-color-hover) !important;
-  fill: var(--g-darker-square-btn-icon-color-hover) !important;
-}
-/* rich text editor > editor toggle button ----------------- */
-.joplin-tinymce:not(#fake) > div:nth-child(2) > button {
-  padding: 3px 6px !important;
-  background: var(--g-darker-square-btn-bg-color) !important;
-  border: 0px solid var(--g-darker-square-btn-bd-color) !important;
-  border-radius: 0px;
-  transition: background 0.8s, border 0.8s, border-radius 0.8s;
-}
-.joplin-tinymce:not(#fake) > div:nth-child(2) > button:hover {
-  background: var(--g-darker-square-btn-bg-color-hover) !important;
-  border: 2px solid var(--g-darker-square-btn-bd-color-hover) !important;
-  border-radius: 7px;
-  transition: background 0.3s, border 0.1s, border-radius 0.3s;
-}
-/* rich text editor > editor toggle button > icon ---------- */
-.joplin-tinymce:not(#fake) > div:nth-child(2) > button > div {
-  background: none !important;
-  border-color: var(--g-darker-square-btn-icon-color) !important;
-}
-.joplin-tinymce:not(#fake) > div:nth-child(2) > button > div > i {
-  color: var(--g-darker-square-btn-icon-color) !important;
-}
-.joplin-tinymce:not(#fake) > div:nth-child(2) > button:hover > div {
-  border-color: var(--g-darker-square-btn-icon-color-hover) !important;
-}
-.joplin-tinymce:not(#fake) > div:nth-child(2) > button:hover > div > i {
-  color: var(--g-darker-square-btn-icon-color-hover) !important;
+/* editor toggle button hover > icon ----------------------- */
+.rli-editor div:first-child > .editor-toolbar > div:last-child > button:hover > div {
+  border-color: var(--g-square-btn-icon-2-hover) !important;
 }
 
-/* BODY > SEARCH BAR ======================================= */
-/* search bar container ------------------------------------ */
+/* BODY: SEARCH BAR ======================================== */
+/* container ----------------------------------------------- */
 .rli-editor > div > div > div > div:nth-last-child(2)[style="display: flex; flex-direction: row; align-items: center;"] {
   position: absolute;
-  bottom: 23px;
+  bottom: 30px;
   left: 8px;
+}
+/* close button icon --------------------------------------- */
+.note-search-bar > div > a:first-child > i {
+  color: var(--g-square-btn-icon-2) !important;
+}
+/* close button hover > icon ------------------------------- */
+.note-search-bar > div > a:first-child:hover > i {
+  color: var(--g-square-btn-icon-2) !important;
+  transform: rotate(1turn);
+  transition: transform 0.3s;
 }
 /* search bar ---------------------------------------------- */
 .note-search-bar {
-  position: relative;
-  padding: 10px;
-  height: 36px;
-  margin: 0 0 5px 1px;
-  background: var(--g-toolbar-bg-color);
+  padding: 3px 8px;
+  height: 38px !important;
+  background: var(--g-toolbar-bg);
+  border: 1px solid var(--g-toolbar-bd) !important;
   border-radius: 7px;
-  border: 1px solid var(--g-toolbar-bd-color) !important;
   z-index: 99;
 }
 /* input bar ----------------------------------------------- */
 .note-search-bar input {
-  height: 23px;
-  padding-left: 6px;
-  color: var(--g-input-text-color-1) !important;
-  background: var(--g-input-bg-color-1) !important;
-  border: 1px solid var(--g-input-bd-color-1);
+  padding-left: 8px;
+  height: 25px;
+  color: var(--g-input-text) !important;
+  background: var(--g-input-bg) !important;
+  border: 1px solid var(--g-input-bd);
   border-radius: 7px;
+}
+/* search target count numbers ----------------------------- */
+.note-search-bar > div > div {
+  color: var(--g-square-btn-icon-2) !important;
+  background: none !important;
 }
 /* arrow button -------------------------------------------- */
 .note-search-bar > div > a:nth-child(3),
 .note-search-bar > div > a:nth-child(4) {
   margin: 1px !important;
-  background: var(--g-darker-square-btn-bg-color) !important;
-  border: 2px solid var(--g-darker-square-btn-bd-color);
+  padding: 2px !important;
+  width: 28px;
+  height: 28px;
+  background: var(--g-square-btn-bg-2) !important;
+  border: 2px solid var(--g-square-btn-bd-2);
   border-radius: 0px;
   transition: background 0.8s, border 0.8s, border-radius 0.8s;
 }
-.note-search-bar > div > a:nth-child(4) {
-  margin-right: 5px !important;
-}
+/* arrow button hover -------------------------------------- */
 .note-search-bar > div > a:nth-child(3):hover,
 .note-search-bar > div > a:nth-child(4):hover {
-  background: var(--g-darker-square-btn-bg-color-hover) !important;
-  border: 2px solid var(--g-darker-square-btn-bd-color-hover);
+  background: var(--g-square-btn-bg-2-hover) !important;
+  border: 2px solid var(--g-square-btn-bd-2-hover);
   border-radius: 7px;
   transition: background 0.3s, border 0.1s, border-radius 0.3s;
 }
-/* arrow button > icon ------------------------------------- */
+/* arrow button icon --------------------------------------- */
 .note-search-bar > div > a:nth-child(3) > i,
 .note-search-bar > div > a:nth-child(4) > i {
   padding: 5px;
-  width: 22px;
-  height: 22px;
-  color: var(--g-darker-square-btn-icon-color) !important;
+  color: var(--g-square-btn-icon-2) !important;
   opacity: 1 !important;
 }
+/* arrow button hover > icon ------------------------------- */
 .note-search-bar > div > a:nth-child(3):hover > i,
 .note-search-bar > div > a:nth-child(4):hover > i {
-  color: var(--g-darker-square-btn-icon-color-hover) !important;
-}
-/* close button > icon ------------------------------------- */
-.note-search-bar > div > a:first-child > i {
-  color: var(--g-darker-square-btn-icon-color) !important;
-}
-.note-search-bar > div > a:first-child:hover > i {
-  color: var(--g-darker-square-btn-icon-color) !important;
-  transform: rotate(1turn);
-  transition: transform 0.3s;
-}
-/* search target count numbers ----------------------------- */
-.note-search-bar > div > div {
-  color: var(--g-darker-square-btn-icon-color) !important;
-  background: none !important;
+  color: var(--g-square-btn-icon-2-hover) !important;
 }
 
-/* BODY > BATCH MENU ======================================= */
+/* BODY: BATCH MENU ======================================== */
 /* button -------------------------------------------------- */
 .rli-editor > div > div[style="display: inline-flex; justify-content: center; padding-top: 15px; width: 100%;"] > div > button {
-  color: var(--s-batch-menu-btn-text-color) !important;
-  background: var(--s-batch-menu-btn-bg-color) !important;
-  border: 1px solid var(--s-batch-menu-btn-bd-color) !important;
+  color: var(--s-ep-batch-menu-btn-text) !important;
+  background: var(--s-ep-batch-menu-btn-bg) !important;
+  border: 1px solid var(--s-ep-batch-menu-btn-bd) !important;
   border-radius: 7px !important;
 }
+/* button hover -------------------------------------------- */
 .rli-editor > div > div[style="display: inline-flex; justify-content: center; padding-top: 15px; width: 100%;"] > div > button:hover {
   filter: brightness(120%);
 }
 
 
 
-/* || EDITOR PANEL 3/3 | FOOTER **************************** */
-/* FOOTER > TAG BAR ======================================== */
+/* || EDITOR PANEL 4/5 | FOOTER **************************** */
+/* FOOTER: TAG BAR ========================================= */
+/* tag bar scrollbar --------------------------------------- */
+.tag-bar ::-webkit-scrollbar {
+  display: none;
+}
 /* tag bar container --------------------------------------- */
 .tag-bar {
+  display: var(--usp-tag-feature-display-2) !important;
   height: 27px;
   min-height: 27px;
   max-height: 27px;
-  background: var(--g-main-bg-color-1);
+  background: var(--g-main-bg-1);
   border-width: 1px 0 0 0;
   border-style: solid;
-  border-color: var(--g-editor-panel-divider-color);
+  border-color: var(--g-ep-divider);
   transition: height 0.8s, max-height 0.8s, min-height 0.8s;
 }
+/* tag bar container hover --------------------------------- */
 .tag-bar:hover {
   height: 50px;
   min-height: 50px;
   max-height: 50px;
   transition: height 0.3s, max-height 0.3s, min-height 0.3s;
 }
-/* tag list container -------------------------------------- */
+/* tag bar list container ---------------------------------- */
 .tag-bar > div {
   margin: 0 15px 0 0;
   max-height: 30px;
   overflow: scroll !important;
 }
+/* tag bar list -------------------------------------------- */
 .tag-bar .tag-list {
   padding: 0 !important; 
 }
+/* tag bar list item --------------------------------------- */
 .tag-bar > div,
 .tag-bar > a > span {
   margin-top: 5px;
 }
+/* tag bar list hint --------------------------------------- */
 .tag-list ~ span {
   margin-top: 1px;
 }
 /* tag button ---------------------------------------------- */
 .tag-bar > a {
   margin: 0 0 0 5px;
-  background: var(--g-darker-square-btn-bg-color);
-  border: 0px solid var(--g-darker-square-btn-bd-color) !important;
+  width: 28px !important;
+  height: 28px;
+  background: var(--g-square-btn-bg-2);
+  border: 0px solid var(--g-square-btn-bd-2) !important;
   border-radius: 0px;
   transition: background 0.8s, border 0.8s, border-radius 0.8s;
 }
+/* tag button hover ---------------------------------------- */
 .tag-bar > a:hover {
-  background: var(--g-darker-square-btn-bg-color-hover);
-  border: 2px solid var(--g-darker-square-btn-bd-color-hover) !important;
+  background: var(--g-square-btn-bg-2-hover);
+  border: 2px solid var(--g-square-btn-bd-2-hover) !important;
   border-radius: 7px;
   transition: background 0.3s, border 0.1s, border-radius 0.3s;
 }
 /* tag button icon ----------------------------------------- */
 .tag-bar .icon-tags {
   padding: 0;
-  color: var(--g-darker-square-btn-icon-color);
+  color: var(--g-square-btn-icon-2);
 }
+/* tag button icon hover ----------------------------------- */
 .tag-bar > a:hover > .icon-tags {
-  color: var(--g-darker-square-btn-icon-color-hover);
+  color: var(--g-square-btn-icon-2-hover);
 }
 /* tag ----------------------------------------------------- */
 .tag-bar > div > div > button {
   margin: 0 !important;
   padding: 0 !important;
   font-size: 14px !important;
-  color: var(--s-tagbar-tag-text-color) !important;
+  color: var(--s-ep-tagbar-tag-text) !important;
   background: none !important;
   text-shadow: none;
   transition: font-size 0.3s, color 0.3s, text-shadow 0.3s;
@@ -2470,11 +2524,11 @@ body {
 /* tag hover ----------------------------------------------- */
 .tag-bar > div > div > button:hover {
   font-size: 18px !important;
-  color: var(--s-tagbar-tag-text-color-hover) !important;
-  text-shadow: -1px -1px 2px var(--s-tagbar-tag-text-shadow-hover), 
-                1px -1px 2px var(--s-tagbar-tag-text-shadow-hover),
-               -1px  1px 2px var(--s-tagbar-tag-text-shadow-hover), 
-                1px  1px 2px var(--s-tagbar-tag-text-shadow-hover);
+  color: var(--s-ep-tagbar-tag-text-hover) !important;
+  text-shadow: -1px -1px 2px var(--s-ep-tagbar-tag-ts-hover), 
+                1px -1px 2px var(--s-ep-tagbar-tag-ts-hover),
+               -1px  1px 2px var(--s-ep-tagbar-tag-ts-hover), 
+                1px  1px 2px var(--s-ep-tagbar-tag-ts-hover);
   transition: font-size 0.3s, color 0.1s, text-shadow 0.6s;
 }
 /* tag divider --------------------------------------------- */
@@ -2484,26 +2538,129 @@ body {
   margin: 0 10px 4px 10px;
   font-weight: 100;
   font-size: 20px;
-  color: var(--s-tagbar-tag-divider-color);
+  color: var(--s-ep-tagbar-tag-divider);
 }
 /* tag bar hint -------------------------------------------- */
 .tag-bar > div > span {
-  color: var(--s-tagbar-hint-text-color) !important;
-}
-/* tag bar scrollbar --------------------------------------- */
-.tag-bar ::-webkit-scrollbar {
-  display: none;
+  color: var(--s-ep-tagbar-hint-text) !important;
 }
 
 /* FOOTER > POPUP MESSAGE ================================== */
 .tag-bar ~ div:last-child {
   text-indent: 10px;
-  color: var(--s-footer-popup-msg);
-  background: var(--s-footer-popup-msg-bg) !important;
+  color: var(--s-ep-footer-popup-msg-text);
+  background: var(--s-ep-footer-popup-msg-bg) !important;
 }
 .tag-bar ~ div:last-child a {
-  color: var(--s-footer-popup-msg-link) !important;
+  color: var(--s-ep-footer-popup-msg-link) !important;
 }
+
+
+
+/* || EDITOR PANEL 5/5 | RICH TEXT EDITOR ****************** */
+/* RICH TEXT EDITOR: TOOLBAR FIRST & LAST GROUP ============ */
+/* toolbar first & last group container -------------------- */
+.joplin-tinymce:not(#fake) > div:nth-child(1),
+.joplin-tinymce:not(#fake) > div:nth-child(2) {
+  align-items: center;
+  margin: 9px !important;
+  padding: 0 !important;
+  height: 34px !important;
+  background: var(--g-toolbar-bg) !important;
+}
+.joplin-tinymce:not(#fake) > div:nth-child(2) {
+  padding-right: 8px !important;
+}
+/* toolbar first group button icon ------------------------- */
+.joplin-tinymce:not(#fake) > div:nth-child(1) > a > span {
+  color: var(--g-square-btn-icon-2)  !important;
+  fill: var(--g-square-btn-icon-2)  !important;
+}
+/* toolbar first group button hover > icon ----------------- */
+.joplin-tinymce:not(#fake) > div:nth-child(1) > a:hover > span {
+  color: var(--g-square-btn-icon-2-hover) !important;
+  fill: var(--g-square-btn-icon-2-hover) !important;
+}
+/* toolbar last group button ------------------------------- */
+.joplin-tinymce:not(#fake) > div:nth-child(2) > button {
+  padding: 3px 6px !important;
+  background: var(--g-square-btn-bg-2) !important;
+  border: 0px solid var(--g-square-btn-bd-2) !important;
+  border-radius: 0px;
+  transition: background 0.8s, border 0.8s, border-radius 0.8s;
+}
+/* toolbar last group button hover ------------------------- */
+.joplin-tinymce:not(#fake) > div:nth-child(2) > button:hover {
+  background: var(--g-square-btn-bg-2-hover) !important;
+  border: 2px solid var(--g-square-btn-bd-2-hover) !important;
+  border-radius: 7px;
+  transition: background 0.3s, border 0.1s, border-radius 0.3s;
+}
+/* toolbar last group button icon -------------------------- */
+.joplin-tinymce:not(#fake) > div:nth-child(2) > button > div {
+  background: none !important;
+  border-color: var(--g-square-btn-icon-2) !important;
+}
+.joplin-tinymce:not(#fake) > div:nth-child(2) > button > div > i {
+  color: var(--g-square-btn-icon-2) !important;
+}
+/* toolbar last group button hover > icon ------------------ */
+.joplin-tinymce:not(#fake) > div:nth-child(2) button:hover > div {
+  border-color: var(--g-square-btn-icon-2-hover) !important;
+}
+.joplin-tinymce:not(#fake) > div:nth-child(2) button:hover > div > i {
+  color: var(--g-square-btn-icon-2-hover) !important;
+}
+
+/* RICH TEXT EDITOR: TOOLBAR MAIN GROUP ==================== */
+/* toolbar main group container ---------------------------- */
+.joplin-tinymce:not(#fake) .tox-editor-header {
+  margin-top: 9px !important;
+  padding: 0 !important;
+  border-bottom: 1px solid var(--g-ep-divider);
+}
+/* toolbar button group container -------------------------- */
+.joplin-tinymce:not(#fake) .tox-toolbar__primary {
+  padding-left:  93px !important;
+  background: var(--g-toolbar-bg) !important;
+}
+/* toolbar button container -------------------------------- */
+.joplin-tinymce:not(#fake) .tox-toolbar__group {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 34px;
+  max-height: 34px;
+  background: var(--g-toolbar-bg) !important;
+}
+/* toolbar button ------------------------------------------ */
+.joplin-tinymce:not(#fake) button,
+.joplin-tinymce:not(#fake) a {
+  background: var(--g-square-btn-bg-2);
+  border: 0px solid var(--g-square-btn-bd-2);
+  border-radius: 0px;
+  transition: background 0.8s, border 0.8s, border-radius 0.8s;
+}
+/* toolbar button hover ------------------------------------ */
+.joplin-tinymce:not(#fake) button:hover,
+.joplin-tinymce:not(#fake) a:hover {
+  background: var(--g-square-btn-bg-2-hover);
+  border: 2px solid var(--g-square-btn-bd-2-hover);
+  border-radius: 7px;
+  transition: background 0.3s, border 0.1s, border-radius 0.3s;
+}
+/* toolbar button icon ------------------------------------- */
+.joplin-tinymce:not(#fake) .tox-toolbar__group .tox-tbtn svg,
+.joplin-tinymce:not(#fake) .tox-toolbar__group .tox-tbtn span {
+  color: var(--g-square-btn-icon-2)  !important;
+  fill: var(--g-square-btn-icon-2)  !important;
+}
+/* toolbar button hover > icon ----------------------------- */
+.joplin-tinymce:not(#fake) .tox-toolbar__group .tox-tbtn:hover svg,
+.joplin-tinymce:not(#fake) .tox-toolbar__group .tox-tbtn:hover span {
+  color: var(--g-square-btn-icon-2-hover) !important;
+  fill: var(--g-square-btn-icon-2-hover) !important;
+}
+
 
 
 
@@ -2514,61 +2671,61 @@ body {
 
 
 
-/* || POPUP DIALOG 1/3 | TAG CREATOR *********************** */
-/* tag creator container ----------------------------------- */
+/* || MODAL DIALOG 1/3 | TAG CREATOR *********************** */
+/* TAG CREATOR: CONTAINER ================================== */
 .modal-layer > .modal-dialog,
-.modal-layer > .modal-dialog > div {
-  background: var(--s-modal-dialog-bg-color) !important;
+.modal-layer > .modal-dialog > div  {
+  background: var(--s-md-bg) !important;
   border-radius: 7px;
 }
 /* label --------------------------------------------------- */
 .modal-layer > .modal-dialog > label {
-  color: var(--s-modal-dialog-label-color) !important;
+  color: var(--s-md-label-text) !important;
 }
 
-/* TAG CREATOR > TAG SELECTOR ============================== */
+/* TAG CREATOR: TAG SELECTOR =============================== */
 /* tags selector container --------------------------------- */
 .modal-layer > .modal-dialog .tag-selector > div {
-  margin: 5px 0 0 0;
-  background: var(--s-tag-selector-bg-color);
-  border: 1px solid var(--s-tag-selector-bd-color);
+  margin: 8px 0 0 0;
+  background: var(--s-md-tag-selector-bg);
+  border: 1px solid var(--s-md-tag-selector-bd);
   border-radius: 7px;
 }
 /* tags selector input ------------------------------------- */
 .modal-layer > .modal-dialog .tag-selector input[id*="react-select-"] {
   font-size: 110% !important;
-  color: var(--s-tag-selector-input-text-color) !important;
+  color: var(--s-md-tag-selector-input-text) !important;
 }
 /* tag list divider ---------------------------------------- */
 .modal-layer > .modal-dialog .tag-selector span {
-  background: var(--s-tag-selector-divider-color) !important;
+  background: var(--s-md-tag-selector-divider) !important;
 }
 /* tag list button icon ------------------------------------ */
 .modal-layer > .modal-dialog .tag-selector > div > div:last-child svg {
-  color: var(--s-tag-selector-text-color);
+  color: var(--s-md-tag-selector-text);
 }
 /* tags ---------------------------------------------------- */
 .modal-layer > .modal-dialog .tag-selector div[class$="-multiValue"] {
-  margin: 0;
+  margin: 1px;
   background: none;
 }
 /* tags text ----------------------------------------------- */
 .modal-layer > .modal-dialog .tag-selector div[class$="-multiValue"] > div:first-child {
   font-size: 110%;
-  color: var(--s-tag-selector-text-color);
+  color: var(--s-md-tag-selector-text);
 }
 /* tag delete button --------------------------------------- */
 .modal-layer > .modal-dialog .tag-selector div[class$="-multiValue"] > div:last-child {
-  color: var(--s-tag-selector-text-color);
+  color: var(--s-md-tag-selector-text);
 }
 
 /* TAG CREATOR > CONFIRM BUTTON ============================ */
 /* button -------------------------------------------------- */
 .modal-layer > .modal-dialog > div:last-of-type > button {
   min-width: 80px !important;
-  color: var(--s-modal-dialog-confirm-btn-text-color) !important;
-  background: var(--s-modal-dialog-confirm-btn-bg-color) !important;
-  border: 1px solid var(--s-modal-dialog-confirm-btn-bd-color) !important;
+  color: var(--s-md-confirm-btn-text) !important;
+  background: var(--s-md-confirm-btn-bg) !important;
+  border: 1px solid var(--s-md-confirm-btn-bd) !important;
   border-radius: 7px;
 }
 .modal-layer > .modal-dialog > div:last-of-type > button:hover {
@@ -2577,89 +2734,95 @@ body {
 
 
 
-/* MODAL DIALOG 2/3 | COMMAND PALETTE ********************** */
+/* || MODAL DIALOG 2/3 | COMMAND PALETTE ******************* */
 /* input --------------------------------------------------- */
 .modal-layer > .modal-dialog > div > input {
   margin-bottom: 10px;
   min-height: 30px;
   max-height: 30px;
   font-size: 16px;
-  color: var(--g-input-text-color-1) !important;
-  background: var(--g-input-bg-color-1) !important;
-  border: 1px solid var(--g-input-bd-color-1) !important;
+  color: var(--g-input-text) !important;
+  background: var(--g-input-bg) !important;
+  border: 1px solid var(--g-input-bd) !important;
   border-radius: 7px;
 }
 
-/* COMMAND PALETTE > COMMAND LIST ========================== */
+/* COMMAND PALETTE: COMMAND LIST =========================== */
 .modal-layer > .modal-dialog > div:nth-child(2) {
   border-radius: 0px;
 }
 /* item list ----------------------------------------------- */
 .modal-layer > .modal-dialog > div ~ .item-list {
-  background: var(--s-command-palette-item-bg-color) !important;
+  background: var(--s-md-command-palette-item-bg) !important;
 }
+/* item list selected -------------------------------------- */
 .modal-layer > .modal-dialog > div ~ .item-list .selected {
-  background: var(--s-command-palette-item-bg-color-selected) !important;
+  background: var(--s-md-command-palette-item-bg-selected) !important;
 }
 /* item container ------------------------------------------ */
 .modal-layer > .modal-dialog > div ~ .item-list > div {
-  border-bottom: 1px solid var(--s-command-palette-item-bd-color) !important;
+  border-bottom: 1px solid var(--s-md-command-palette-item-bdb) !important;
 }
 /* item text ----------------------------------------------- */
 .modal-layer > .modal-dialog > div ~ .item-list * {
   font-size: 16px !important;
-  color: var(--s-command-palette-item-text-color) !important;
+  color: var(--s-md-command-palette-item-text) !important;
+}
+.modal-layer > .modal-dialog > div ~ .item-list span {
+  color:  black !important;
 }
 
 
 
-/* || POPUP DIALOG 3/3 | NOTEBOOK CREATOR ****************** */
+/* || MODAL DIALOG 3/3 | NOTEBOOK CREATOR ****************** */
 /* container ----------------------------------------------- */
 .master-password-dialog > div,
 .master-password-dialog .dialog-root,
 .master-password-dialog .dialog-root > div {
-  background: var(--s-modal-dialog-bg-color) !important;
+  background: var(--s-md-bg) !important;
   border-radius: 7px;
 }
 
 /* NOTEBOOK CREATOR > TITLE INPUT ========================== */
 /* title --------------------------------------------------- */
 .master-password-dialog .dialog-root > div:first-child {
-  color: var(--s-modal-dialog-title-text-color);
-  background: var(--s-modal-dialog-bg-color) !important;
+  color: var(--s-md-title-text);
+  background: var(--s-md-bg) !important;
 }
 /* label --------------------------------------------------- */
 .master-password-dialog .dialog-root label {
-  color: var(--s-modal-dialog-title-text-color);
+  color: var(--s-md-label-text);
 }
 /* input --------------------------------------------------- */
 .master-password-dialog .dialog-root input {
-  color: var(--g-input-text-color-1);
-  background: var(--g-input-bg-color-1);
-  border: 1px solid var(--g-input-bd-color-1);
+  color: var(--g-input-text);
+  background: var(--g-input-bg);
+  border: 1px solid var(--g-input-bd);
   border-radius: 7px;
 }
 
 /* NOTEBOOK CREATOR > ICON SELECTOR ======================== */
 /* button -------------------------------------------------- */
 .icon-selector-row > button {
-  background: var(--s-notebook-creator-icon-select-btn-bg-color);
-  border: 2px solid var(--s-notebook-creator-icon-select-btn-bd-color);
+  background: var(--s-md-notebook-creator-icon-select-btn-bg);
+  border: 2px solid var(--s-md-notebook-creator-icon-select-btn-bd);
   border-radius: 7px !important;
 }
+/* button text --------------------------------------------- */
 .icon-selector-row > button > span {
-  color: var(--s-notebook-creator-icon-select-btn-text-color) !important;
+  color: var(--s-md-notebook-creator-icon-select-btn-text) !important;
 }
 
 /* NOTEBOOK CREATOR > CONFIRM BUTTON ======================= */
 /* button -------------------------------------------------- */
 .master-password-dialog > div > .dialog-root > div:nth-child(3) > button {
   min-width: 80px !important;
-  color: var(--s-modal-dialog-confirm-btn-text-color) !important;
-  background: var(--s-modal-dialog-confirm-btn-bg-color) !important;
-  border: 1px solid var(--s-modal-dialog-confirm-btn-bd-color) !important;
+  color: var(--s-md-confirm-btn-text) !important;
+  background: var(--s-md-confirm-btn-bg) !important;
+  border: 1px solid var(--s-md-confirm-btn-bd) !important;
   border-radius: 7px !important;
 }
+/* button hover -------------------------------------------- */
 .master-password-dialog > div > .dialog-root > div:nth-child(3) > button:hover {
   filter: brightness(120%);
 }
@@ -2668,194 +2831,197 @@ body {
 
 
 /* --------------------------------------------------------- */
-/*                      OPTION PANEL                         */
+/*                      OPTIONS PANEL                        */
 /* --------------------------------------------------------- */
 
 
 
 
-/* || OPTION PANEL 1/6 | MENU ****************************** */
+/* || OPTIONS PANEL 1/6 | MENU ***************************** */
 /* menu container ------------------------------------------ */
 .config-screen > div:first-child {
-  background: var(--g-main-bg-color-1);
+  background: var(--g-main-bg-1);
   min-width: 260px;
 }
-/* option menu item ---------------------------------------- */
+/* menu item ----------------------------------------------- */
 .config-screen > div:first-child > a:hover {
-  background: var(--g-item-bg-color-hover);
-  box-shadow: 0 0 2px var(--g-item-shadow-hover);
+  background: var(--g-item-bgc-hover);
+  box-shadow: 0 0 var(--g-item-ds-hover);
 }
-.config-screen > div:first-child > a.hWxWTS,/* light theme selected */
-.config-screen > div:first-child > a.kpFtJJ/* dark theme selected */ {
-  background: var(--g-item-bg-color-selected);
+/* menu item selected -------------------------------------- */
+.config-screen > div:first-child > a.hWxWTS,/* light theme joplin v2.9 */
+.config-screen > div:first-child > a.kpFtJJ,/* dark theme joplin v2.9 */
+.config-screen > div:first-child > a.ckZpnt,/* light theme joplin v2.10 */
+.config-screen > div:first-child > a.eFgsZC/* dark theme joplin v2.10 */ {
+  background: var(--g-item-bgc-selected);
 }
-/* option menu item > icon & text -------------------------- */
+/* menu item > icon & text --------------------------------- */
 .config-screen > div:first-child > a > i,
 .config-screen > div:first-child > a > span {
-  color: var(--g-item-text-color);
+  color: var(--g-item-text);
 }
-/* option split menu title --------------------------------- */
+/* split title --------------------------------------------- */
 .config-screen > div:first-child > div {
-  background: var(--s-option-menu-sub-title-bg-color);
-  --s-option-menu-sub-title-bg-color: hsl(var(--usp-remoods-hue), 0%, 0%);
+  background: var(--s-op-menu-subtitle-bg);
 }
 
 
 
-/* || OPTION PANEL 2/6 | MAIN ****************************** */
-/* main container ------------------------------------------ */
+/* || OPTIONS PANEL 2/6 | MAIN SECTION ********************* */
+/* MAIN SECTION: CONTAINER ================================= */
 .config-screen > div:nth-child(2),
 .config-screen-content-wrapper,
 .config-screen-content-wrapper > div > div  {
-  background: var(--g-option-main-bg-color) !important;
+  background: var(--g-main-bg-2) !important;
 }
 .config-screen > div:nth-child(2) > div[style="overflow: auto; padding: 0px 24px 24px; display: flex; flex: 1 1 0%;"] {
   padding: 0px 50px !important;
 }
+/* content wrapper: | encryption | web clipper | keyboard shortcut | */
 .config-screen-content-wrapper {
   padding: 20px 50px !important;
 }
 /* main content bottom padding ----------------------------- */
-.config-screen > div > div > div > div > div:last-child > div:last-child {
+.config-screen > div > div > div > div > div:last-child {
   padding-bottom: 18px !important;
 }
 
-/* MAIN > GUIDE ============================================ */
+/* MAIN SECTION: CONTENT =================================== */
+/* guide text ---------------------------------------------- */
 .config-screen > div:nth-child(2) > div > div > div[style="font-family: Roboto; font-size: 12px; line-height: 1.6em; color: rgb(50, 55, 63); margin-bottom: 15px;"],
 .config-screen > div:nth-child(2) > div > div > div[style="font-family: Roboto; font-size: 12px; line-height: 1.6em; color: rgb(221, 221, 221); margin-bottom: 15px;"] {
   padding: 5px 10px;
-  color: var(--s-option-guide-text-color) !important;
-  background: var(--s-option-guide-bg-color) !important;
+  color: var(--s-op-guide-text) !important;
+  background: var(--s-op-guide-bg) !important;
   border-radius: 7px;
 }
-
-/* MAIN > LABEL ============================================ */
+/* label --------------------------------------------------- */
 .config-screen > div:nth-child(2) label,
 .config-screen div[style="margin-bottom: 5px;"] > div {
-  color: var(--s-option-label-text-color) !important;
+  color: var(--s-op-label-text) !important;
 }
-
-/* MAIN > SELECT & INPUT =================================== */
+/* input --------------------------------------------------- */
 .config-screen > div:nth-child(2) input,
 .config-screen > div:nth-child(2) select {
-  color: var(--s-op-input-color) !important;
-  background: var(--g-input-bg-color-1) !important;
-  border: 1px solid var(--g-input-bd-color-1) !important;
+  color: var(--s-op-input-text) !important;
+  background: var(--g-input-bg) !important;
+  border: 1px solid var(--g-input-bd) !important;
   border-radius: 7px !important;
 }
-
-/* MAIN > CHECKBOX ========================================= */
+/* checkbox ------------------------------------------------ */
 .config-screen > div:nth-child(2) [type^="checkbox"] {
-  filter: hue-rotate(calc(var(--usp-remoods-hue) + 145deg));
+  filter: hue-rotate(calc(var(--usp-hue) + 145deg));
 }
 /* checkbox text ------------------------------------------- */
 .config-screen > div:nth-child(2) [type^="checkbox"] ~ label {
-  color: var(--s-option-label-text-color) !important;
+  color: var(--s-op-label-text) !important;
 }
-
-/* MAIN > BUTTON =========================================== */
+/* button -------------------------------------------------- */
 .config-screen > div:nth-child(2) > div:not(:last-child) button:not(div[style="margin-bottom: 10px; width: 320px;"] input ~ button) {
-  background: var(--s-option-btn-bg-color) !important;
-  border: 2px solid var(--s-option-btn-bd-color) !important;
+  background: var(--s-op-btn-bg) !important;
+  border: 2px solid var(--s-op-btn-bd) !important;
   border-radius: 7px !important;
 }
+/* button hover -------------------------------------------- */
 .config-screen > div:nth-child(2) > div:not(:last-child) button:hover:not(div[style="margin-bottom: 10px; width: 320px;"] input ~ button) {
   filter: brightness(120%);
 }
 /* button text --------------------------------------------- */
 .config-screen > div:nth-child(2) > div:not(:last-child) button > span,
 .config-screen > div:nth-child(2) > div:not(:last-child) button {
-  color: var(--s-option-btn-text-color) !important;
+  color: var(--s-op-btn-text) !important;
 }
-
-/* MAIN > DESCRIPTION ====================================== */
+/* description --------------------------------------------- */
 .config-screen > div:nth-child(2) div[style*="font-style: italic;"] {
   font-size: 13px !important;
-  color: var(--s-option-description-text-color) !important;
+  color: var(--s-op-description-text) !important;
 }
-
-/* MAIN > TABLE ============================================ */
-.config-screen-content-wrapper table {
-  background: var(--g-main-bg-color-1) !important;
+/* table --------------------------------------------------- */
+.config-screen table {
+  background: var(--g-main-bg-1) !important;
 }
 /* table > head & row -------------------------------------- */
-.config-screen-content-wrapper table > thead > tr > th,
-.config-screen-content-wrapper table > tbody > tr > th,
-.config-screen-content-wrapper table > tbody > tr > td {
-  color: var(--s-option-table-text-color) !important;
-  border: 1px solid var(--g-option-main-bg-color) !important;
+.config-screen table > thead > tr > th,
+.config-screen table > tbody > tr > th,
+.config-screen table > tbody > tr > td {
+  color: var(--s-op-table-text) !important;
+  border: 1px solid var(--g-main-bg-2) !important;
 }
 /* table > kbd --------------------------------------------- */
 .config-screen-content-wrapper table kbd {
-  background: var(--g-option-main-bg-color) !important;
+  background: var(--g-main-bg-2) !important;
   border: none !important;
 }
 
 
 
-/* || OPTION PANEL 3/6 | PLUGIN PAGE *********************** */
+/* || OPTIONS PANEL 3/6 | PLUGIN PAGE ********************** */
 /* plugin card --------------------------------------------- */
 .config-screen div[style="margin-bottom: 0px;"] ~ div > div ~ div > div,
 .config-screen div[style="margin-bottom: 10px; width: 320px;"] ~ div > div {
-  background: var(--g-main-bg-color-1);
-  border: 1px solid var(--s-plugin-card-bd-color);
+  background: var(--g-main-bg-1);
+  border: 1px solid var(--s-op-plugin-card-bd);
   border-radius: 7px;
-  box-shadow: 0 0 3px var(--s-plugin-card-shadow);
+  box-shadow: 0 0 var(--s-op-plugin-card-bs);
 }
 /* plugin card content ------------------------------------- */
 .config-screen div[style="margin-bottom: 0px;"] ~ div > div ~ div > div *,
 .config-screen div[style="margin-bottom: 10px; width: 320px;"] ~ div > div * {
   font-size: 13px;
-  color: var(--s-plugin-card-text-color);
+  color: var(--s-op-plugin-card-text);
 }
-/* switcher ------------------------------------------------ */
+/* plugin switcher ----------------------------------------- */
 .config-screen div[style*="padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; opacity: 1; background-color:"] {
-  background: var(--s-plugin-card-switcher-bg-color) !important;
+  background: var(--s-op-plugin-card-switcher-bg) !important;
   border: none;
 }
 .config-screen div[style*="padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; opacity: 1; background-color:"] ~ div > div {
-  background: var(--g-main-bg-color-1) !important;
+  background: var(--g-main-bg-1) !important;
 }
 
 
 
-/* || OPTION PANEL 4/6 | ENCRYPTION PAGE ******************* */
+/* || OPTIONS PANEL 4/6 | ENCRYPTION PAGE ****************** */
 .encryption-section > h2,
 .encryption-section > p,
 .manage-password-section > h2,
 .manage-password-section > p,
 .config-screen-content-wrapper p {
-  color: var(--s-option-label-text-color) !important;
+  color: var(--s-op-label-text) !important;
 }
 
 
 
-/* || OPTION PANEL 5/6 | WEB CLIPPER PAGE ****************** */
+/* || OPTIONS PANEL 5/6 | WEB CLIPPER PAGE ***************** */
+/* content block ------------------------------------------- */
 .config-screen-content-wrapper > div > div > div > div {
   padding: 20px !important;
-  background: var(--g-main-bg-color-1) !important;
+  background: var(--g-main-bg-1) !important;
   border: none !important;
   border-radius: 7px;
 }
 
 
 
-/* || OPTION PANEL 6/6 | FOOTER **************************** */
-/* confirm button ------------------------------------------ */
+/* || OPTIONS PANEL 6/6 | FOOTER *************************** */
+/* container ----------------------------------------------- */
 .config-screen > div:nth-child(2) > div:last-child {
   margin-top: 3px;
-  background: var(--g-main-bg-color-1) !important;
+  background: var(--g-main-bg-1) !important;
   border-top: none !important;
 }
+/* confirm button ------------------------------------------ */
 .config-screen > div:nth-child(2) > div:last-child button {
-  background: var(--s-option-confirm-btn-bg-color);
-  border: 1px solid var(--s-option-confirm-btn-bd-color);
+  background: var(--s-op-confirm-btn-bg);
+  border: 1px solid var(--s-op-confirm-btn-bd);
   border-radius: 7px;
-  box-shadow: 0 0 3px var(--s-option-confirm-btn-shadow);
+  box-shadow: 0 0 var(--s-op-confirm-btn-bs);    
 }
+/* confirm button hover ------------------------------------ */
 .config-screen > div:nth-child(2) > div:last-child button:hover {
   filter: brightness(120%) !important;
 }
+/* confirm button text ------------------------------------- */
 .config-screen > div:nth-child(2) > div:last-child button > span {
-  color: var(--s-option-confirm-btn-text-color);
+  color: var(--s-op-confirm-btn-text);
 }

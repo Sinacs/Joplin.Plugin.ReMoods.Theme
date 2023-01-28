@@ -5,28 +5,33 @@ import { generateUserCSS } from './generateUserCSS';
 
 export type ThemeSettings = {
 
-	// SCREEN ***************************************
 	// Markdown Editor & Render Viewer ==============
 	remoodsHue: string;
 	themeMode: string;
 	baseFont: string;
 	monospaceFont: string;
   headingFont: string;
-	baseFontSize: string;
-	monospaceFontSize: string;
+	baseFontSize: number;
+	monospaceFontSize: number;
+	h1FontSize: number;
+	h2FontSize: number;
+	h3FontSize: number;
+	h4FontSize: number;
+	h5FontSize: number;
+	h6FontSize: number;
 	darkerEditorBackground: boolean;
 	h1TextTransform: boolean;
 	h1FontVariant: boolean;
 	emphasizeAddRemove: boolean,
 	emphasizeAddRemoveBg: boolean;
 	themeColorListText: boolean;
-	smallerCodeBlockFontSize: boolean;
-
+	smallerCodeBlockText: boolean;
+	
   // Markdown Editor ==============================
-	smallerMarkdownTableFontSize: number;
-	smallerMonospaceFontSize: number;
-	evidentHorizontalLine: boolean;
-
+	smallerMarkdownTableSyntax: number;
+	smallerMonospaceText: number;
+	evidentHorizontalRule: boolean;
+	
 	// Render Viewer ================================
 	headingRef: boolean;
 	h1Border: boolean;
@@ -43,7 +48,8 @@ export type ThemeSettings = {
 	snTextJustify: boolean;
 	dottedBlockquote: boolean;
 	dottedCodeBlock: boolean;
-	katexTextAlignLeft: boolean;
+	mathNotationFontSize: number; 
+	mathNotationAlignLeft: boolean;
 	mermaidEyeProtector: boolean;
 	imageEyeProtector: boolean;
 	codeBlockMaxHeight: boolean;
@@ -53,19 +59,30 @@ export type ThemeSettings = {
 	customTitleBlockSymbol: boolean;
 
 	// Joplin UI ====================================
-	notebookNotelistPanelScrollbar: boolean;
+	panelsScrollbar: boolean;
 	notebookTitleWrap: boolean;
 	notebookTitleScrollbar: boolean;
 	notebookFolderIcon: boolean;
+	allNotesButton: boolean;
+	syncFeature: boolean;
+	tagFeature: boolean;
 	noteListItemAutoScroll: boolean;
 
-	// PRINT ****************************************
+	
+	// ADVANCED *************************************
+	// PRINT ========================================
 	printBaseFont: string;
 	printMonospaceFont: string;
 	printHeadingFont: string;
-	printBaseFontSize: string;
-	printMonospaceFontSize: string;
-	printSmallerCodeBlockFontSize: boolean;
+	printBaseFontSize: number;
+	printMonospaceFontSize: number;
+	printH1FontSize: number;
+	printH2FontSize: number;
+	printH3FontSize: number;
+	printH4FontSize: number;
+	printH5FontSize: number;
+	printH6FontSize: number;
+	printSmallerCodeBlockText: boolean;
 	printNoteTitle: boolean;
 	printHeadingRef: boolean;
 	printH1Border: boolean;
@@ -74,13 +91,16 @@ export type ThemeSettings = {
 	printKeyMention: boolean;
 	printSnKm: boolean;
 	printSpoilerInlineText: boolean;
-
+	printAbbrDescription: boolean;
+	
 };
 
 
 
 joplin.plugins.register({
+
 	onStart: async function() {
+
 		const installDir = await joplin.plugins.installationDir();
 		const chromeCssFilePath = installDir + '/chrome.css';
 		const noteCssFilePath = installDir + '/note.css';
@@ -97,22 +117,26 @@ joplin.plugins.register({
 
 
 async function prepareThemeSettings(): Promise<void> {
+
 	await joplin.settings.registerSection('remoodsThemeSection', {
+
 		label: 'ReMoods Theme',
 		iconName: 'fas fa-palette',
 		description: `
-      ----- 1: It is required to quit and restart Joplin to take effect after any changes below.
-			----- 2: The original font settings which in the "Tools > Options > Appearance" will no longer work when running ReMoods Theme.
-			----- 3: The default font family will only work if you have already installed them on your computer.
-			----- 4: The below settings are affecting different parts of your Joplin, please note the beginning of them. (Render Viewer is also including the Rich Text Editor)
-			----- 5: The advanced settings section at the bottom contains all the settings of Print & Export PDF.
-			----- 6: Some properties that are not within the "Print & Export PDF Section" will also affect the "Print & Export PDF"; those properties are presented with (*) mark at the beginning.
+		----- 1: It is required to quit and restart Joplin to take effect after any changes below.
+		----- 2: The original font settings in the "Tools > Options > Appearance" will no longer work when running ReMoods Theme.
+		----- 3: The default font family will only work if you have already installed them on your computer.
+		----- 4: The advanced settings section at the bottom holds all of the "Print & Export PDF" settings.
+		----- 5: All below settings are affecting different parts of your Joplin, please note the beginning of them. (Render Viewer also includes the Rich Text Editor)
+		----- 6: Properties marked with (*) at the beginning stood for it also affects "Print & Export PDF".
 		`
+
 	});
 
 	await joplin.settings.registerSettings({
 		
 		'remoodsHue': {
+
 			section: 'remoodsThemeSection',
 			label: 'ReMoods Hue',
 			type: SettingItemType.String,
@@ -158,9 +182,11 @@ async function prepareThemeSettings(): Promise<void> {
 			},
 			description: 'Set color hue for the theme. (10-degrees difference for each)',
 			public: true,
+
 		},
 		
 		'themeMode': {
+
 			section: 'remoodsThemeSection',
 			label: 'Theme Mode',
 			type: SettingItemType.String,
@@ -173,423 +199,691 @@ async function prepareThemeSettings(): Promise<void> {
 			},
 			description: 'It required to go to `Options > Appearance > Theme` and change the Joplin built-in theme matching with the theme modes. | Day Mode > light theme. | Dusk Mode & Night Mode > Dark theme.',
 			public: true,
+
 		},
 
-    'baseFont': {
+		'baseFont': {
+
 			section: 'remoodsThemeSection',
-			label: 'Custom Base Font',
+			label: 'Markdown Editor & Render Viewer - Base Font',
 			type: SettingItemType.String,
-			value: 'none',
-			description: 'none: "mulish", "montserrat", "chiron hei hk extralight" | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
+			value: 'Default',
+			description: 'Default: "mulish", "montserrat", "chiron hei hk extralight" | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
 			public: true,
+
 		},
 
 		'monospaceFont': {
+
 			section: 'remoodsThemeSection',
-			label: 'Custom Monospace Font',
+			label: 'Markdown Editor & Render Viewer - Monospace Font',
 			type: SettingItemType.String,
-			value: 'none',
-			description: 'none: "cascadia mono light", "chiron hei hk extralight" | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
+			value: 'Default',
+			description: 'Default: "cascadia mono light", "chiron hei hk extralight" | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
 			public: true,
+
 		},
     
 		'headingFont': {
+
 			section: 'remoodsThemeSection',
-			label: 'Custom Heading Font',
+			label: 'Markdown Editor & Render Viewer - Heading Font',
 			type: SettingItemType.String,
-			value: 'none',
-			description: 'none: "montserrat", "mulish", "chiron hei hk" | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
+			value: 'Default',
+			description: 'Default: "montserrat", "mulish", "chiron hei hk" | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
 			public: true,
+
 		},
 
 		'baseFontSize': {
+
 			section: 'remoodsThemeSection',
-			label: 'Base Font Size',
-			type: SettingItemType.String,
-			value: '15px',
+			label: 'Markdown Editor & Render Viewer - Base Font Size (px)',
+			type: SettingItemType.Int,
+			value: 15,
 			public: true,
+
 		},
 
 		'monospaceFontSize': {
+
 			section: 'remoodsThemeSection',
-			label: 'Monospace Font Size',
-			type: SettingItemType.String,
-			value: '14px',
+			label: 'Markdown Editor & Render Viewer - Monospace Font Size (px)',
+			type: SettingItemType.Int,
+			value: 14,
 			public: true,
+
+		},
+
+		'h1FontSize': {
+
+			section: 'remoodsThemeSection',
+			label: 'Markdown Editor & Render Viewer - H1 Font Size ("%" of "Base Font Size")',
+			type: SettingItemType.Int,
+			value: 170,
+			public: true,
+
+		},
+
+		'h2FontSize': {
+
+			section: 'remoodsThemeSection',
+			label: 'Markdown Editor & Render Viewer - H2 Font Size ("%" of "Base Font Size")',
+			type: SettingItemType.Int,
+			value: 140,
+			public: true,
+
+		},
+
+		'h3FontSize': {
+
+			section: 'remoodsThemeSection',
+			label: 'Markdown Editor & Render Viewer - H3 Font Size ("%" of "Base Font Size")',
+			type: SettingItemType.Int,
+			value: 130,
+			public: true,
+
+		},
+
+		'h4FontSize': {
+
+			section: 'remoodsThemeSection',
+			label: 'Markdown Editor & Render Viewer - H4 Font Size ("%" of "Base Font Size")',
+			type: SettingItemType.Int,
+			value: 120,
+			public: true,
+
+		},
+
+		'h5FontSize': {
+
+			section: 'remoodsThemeSection',
+			label: 'Markdown Editor & Render Viewer - H5 Font Size ("%" of "Base Font Size")',
+			type: SettingItemType.Int,
+			value: 110,
+			public: true,
+
+		},
+
+		'h6FontSize': {
+
+			section: 'remoodsThemeSection',
+			label: 'Markdown Editor & Render Viewer - H6 Font Size ("%" of "Base Font Size")',
+			type: SettingItemType.Int,
+			value: 100,
+			public: true,
+
 		},
 
 		'darkerEditorBackground': {
+
 			section: 'remoodsThemeSection',
 			label: 'Markdown Editor & Render Viewer - Enable darker background color (Dusk Mode Only)',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
+
 		},
 
 		'h1TextTransform': {
+
 			section: 'remoodsThemeSection',
 			label: '*Markdown Editor & Render Viewer - Enable capitalize the first letter of each word on H1 heading',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
+
 		},
 		
 		'h1FontVariant': {
+
 			section: 'remoodsThemeSection',
 			label: '*Markdown Editor & Render Viewer - Enable small-caps effect on H1 heading',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
+
 		},
 
 		'emphasizeAddRemove': {
+
 			section: 'remoodsThemeSection',
 			label: '*Markdown Editor & Render Viewer - Enable emphasize colors for insert text & strikethrough text',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'Enable: Insert text -> green, strikethrough text -> red, and it would not change with the theme color. | Disable: Follow the theme color.',
 			public: true,
+
 		},
 		
 		'emphasizeAddRemoveBg': {
+
 			section: 'remoodsThemeSection',
 			label: '*Markdown Editor & Render Viewer - Enable background color for insert text & strikethrough text',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'The background color depends on its text color.',
 			public: true,
+
 		},
 
 		'themeColorListText': {
+
 			section: 'remoodsThemeSection',
 			label: '*Markdown Editor & Render Viewer - Enable theme color for list text',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: List text -> theme color, footnote marker -> complementary color. | Disable: List text -> paragraph text color, footnote marker -> theme color.',
 			public: true,
+
 		},
 
-		'smallerCodeBlockFontSize': {
+		'smallerCodeBlockText': {
+
 			section: 'remoodsThemeSection',
-			label: 'Markdown Editor & Render Viewer - Enable smaller font size for code block',
+			label: 'Markdown Editor & Render Viewer - Enable smaller font size for code block text',
 			type: SettingItemType.Bool,
 			value: false,
 			description: '(2px smaller than the "Monospace Font Size")',
 			public: true,
+
 		},
 
-		'smallerMarkdownTableFontSize': {
+		'smallerMarkdownTableSyntax': {
+
 			section: 'remoodsThemeSection',
 			label: 'Markdown Editor - Enable smaller font size for markdown table syntax',
 			type: SettingItemType.Bool,
 			value: false,
 			description: '(2px smaller than the "Monospace Font Size")',
 			public: true,
+
 		},
 
-		'smallerMonospaceFontSize': {
+		'smallerMonospaceText': {
+
 			section: 'remoodsThemeSection',
 			label: 'Markdown Editor - Enable smaller font size for non-essential contents',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Applied to anchor link path, image link, and footnote marker. (2px smaller than the "Monospace Font Size")',
 			public: true,
+
 		},
 
-		'evidentHorizontalLine': {
+		'evidentHorizontalRule': {
+
 			section: 'remoodsThemeSection',
-			label: 'Markdown Editor - Enable evident horizontal line',
+			label: 'Markdown Editor - Enable evident horizontal rule',
 			type: SettingItemType.Bool,
 			value: true,
-			description: 'It will add a long line in front of the horizontal line syntax `---` or `***`, It gives you better visual separation in the markdown editor.',
+			description: 'It will add a long line in front of the horizontal rule syntax `---` or `***`, It gives you better visual separation in the markdown editor.',
 			public: true,
+
 		},
 		
 		'headingRef': {
+
 			section: 'remoodsThemeSection',
 			label: 'Render Viewer - Enable heading reference in front of headings',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
+
 		},
 		
 		'h1Border': {
+
 			section: 'remoodsThemeSection',
 			label: '*Render Viewer - Enable H1 border',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
+
 		},
 		
 		'h2Border': {
+
 			section: 'remoodsThemeSection',
 			label: '*Render Viewer - Enable H2 border',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
+
 		},
 		
 		'h3Border': {
+
 			section: 'remoodsThemeSection',
 			label: '*Render Viewer - Enable H3 border',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
+
 		},
 		
 		'h4Border': {
+
 			section: 'remoodsThemeSection',
 			label: '*Render Viewer - Enable H4 border',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
+
 		},
 		
 		'h5Border': {
+
 			section: 'remoodsThemeSection',
 			label: '*Render Viewer - Enable H5 border',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
+
 		},
 		
 		'h6Border': {
+
 			section: 'remoodsThemeSection',
 			label: '*Render Viewer - Enable H6 border',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
+
 		},
 
 		'h1TwillPattern': {
+
 			section: 'remoodsThemeSection',
 			label: '*Render Viewer - Enable twill pattern for H1 heading',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'If enabled, you would need to use the HTML span tag for emoji to avoid the twill pattern affecting it.',
 			public: true,
+
 		},
 
 		'hrTwillPattern': {
+
 			section: 'remoodsThemeSection',
 			label: '*Render Viewer - Enable twill pattern for horizontal line',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: Twill pattern | Disable: Solid',
 			public: true,
+
 		},
 
 		'paragraphTextJustify': {
+
 			section: 'remoodsThemeSection',
 			label: '*Render Viewer - Enable "Justify" effect for paragraph text',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'Applied to all paragraph text, but not including list, checklist, footnote list and sticky notes.',
 			public: true,
+
 		},
 
 		'listTextJustify': {
+
 			section: 'remoodsThemeSection',
 			label: '*Render Viewer - Enable "Justify" effect for list text',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'Applied to unordered list, ordered list, and footnote list.',
 			public: true,
+
 		},
 
 		'checklistTextJustify': {
+
 			section: 'remoodsThemeSection',
 			label: '*Render Viewer - Enable "Justify" effect for checklist',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'Applied to checklist.',
 			public: true,
+
 		},
 
 		'snTextJustify': {
+
 			section: 'remoodsThemeSection',
 			label: '*Render Viewer - Enable "Justify" effect for Stick Notes text',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'Applied to sticky notes.',
 			public: true,
+
 		},
 
 		'dottedBlockquote': {
+
 			section: 'remoodsThemeSection',
 			label: '*Render Viewer - Enable dotted styles for blockquote',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: dotted border (better for single layer blockquote) | Disable: solid border (better for nested blockquote).',
 			public: true,
+
 		},
 
 		'dottedCodeBlock': {
+
 			section: 'remoodsThemeSection',
 			label: '*Render Viewer - Enable dotted styles for code block',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: dotted border | Disable: solid border',
 			public: true,
+
 		},
 
-		'katexTextAlignLeft': {
+		'mathNotationFontSize': {
+
+			section: 'remoodsThemeSection',
+			label: 'Render Viewer - Math Notation Font Size (px)',
+			type: SettingItemType.Int,
+			value: 0,
+			description: '0: Equal to Base Font Size.',
+			public: true,
+
+		},
+
+		'mathNotationAlignLeft': {
+
 			section: 'remoodsThemeSection',
 			label: '*Render Viewer - Align the math notation to the left',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
+
 		},
 		
 		'mermaidEyeProtector': {
+
 			section: 'remoodsThemeSection',
 			label: 'Render Viewer - Enable Eye-Protector effect for mermaid charts (Dusk Mode & Night Mode Only)',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
+
 		},
 		
 		'imageEyeProtector': {
+
 			section: 'remoodsThemeSection',
 			label: 'Render Viewer - Enable Eye-Protector effect for images (Dusk Mode & Night Mode Only)',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
+
 		},
 		
 		'codeBlockMaxHeight': {
+
 			section: 'remoodsThemeSection',
 			label: 'Render Viewer - Enable max height limit for code block',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
+
 		},
 		
 		'artGalleryMaxHeight': {
+
 			section: 'remoodsThemeSection',
 			label: 'Render Viewer - Enable max height limit for art gallery',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
+
 		},
 		
 		'addRemoveSymbol': {
+
 			section: 'remoodsThemeSection',
 			label: '*Render Viewer - Enable the `++` & `--` symbols in front of the insert text and strikethrough text',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
+
 		},
 		
 		'inlineCodeSymbol': {
+
 			section: 'remoodsThemeSection',
 			label: '*Render Viewer - Enable the `>|` symbol in front of inline code',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
+
 		},
 		
 		'customTitleBlockSymbol': {
+
 			section: 'remoodsThemeSection',
 			label: '*Render Viewer - Enable the symbol in front of the custom title block\'s title',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
+
 		},
 		
-		'notebookNotelistPanelScrollbar': {
+		'panelsScrollbar': {
+
 			section: 'remoodsThemeSection',
 			label: 'Notebook Panel & Notelist Panel - Enable bolder scrollbar',
 			type: SettingItemType.Bool,
 			value: false,
-			description: 'Enable: 8px(hover) | Disable: 3px(hover)',
+			description: 'Enable: 7px(hover) | Disable: 3px(hover)',
 			public: true,
+
 		},
 
 		'notebookTitleWrap': {
+
 			section: 'remoodsThemeSection',
 			label: 'Notebook Panel - Enable notebook title text wrapping',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
+
 		},
 		
 		'notebookTitleScrollbar': {
+
 			section: 'remoodsThemeSection',
 			label: 'Notebook Panel - Enable showing the horizontal scrollbar for the notebook title',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'If disabled, you can still use `shift + scroll` for scrolling.',
 			public: true,
+
 		},
 
 		'notebookFolderIcon': {
+
 			section: 'remoodsThemeSection',
 			label: 'Notebook Panel - Enable folder icon',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: Show | Disable: Hide | (Joplin v2.9.12+)',
 			public: true,
+
+		},
+
+		'allNotesButton': {
+
+			section: 'remoodsThemeSection',
+			label: 'Notebook Panel - Enable "All Notes" Button',
+			type: SettingItemType.Bool,
+			value: true,
+			description: 'Enable: Show | Disable: Hide',
+			public: true,
+
+		},
+
+		'syncFeature': {
+
+			section: 'remoodsThemeSection',
+			label: 'Notebook Panel - Enable sync feature panel.',
+			type: SettingItemType.Bool,
+			value: true,
+			description: 'Enable: Show | Disable: Hide | It will affect to the Sync information and button.',
+			public: true,
+
+		},
+
+		'tagFeature': {
+
+			section: 'remoodsThemeSection',
+			label: 'Notebook Panel & Editor Panel - Enable tag feature panel.',
+			type: SettingItemType.Bool,
+			value: true,
+			description: 'Enable: Show | Disable: Hide | It will affect to the tag list(Notebook Panel) and tag bar(Editor Panel).',
+			public: true,
+
 		},
 
 		'noteListItemAutoScroll': {
+
 			section: 'remoodsThemeSection',
 			label: 'Note List Panel - Enable auto-scroll effect for note list item.',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: mouse hover auto-scroll | Disable: no action',
 			public: true,
+
 		},
 
 		'printBaseFont': {
+
 			section: 'remoodsThemeSection',
-			label: 'Custom Print Base Font',
+			label: 'Print & Export PDF - Print Base Font',
 			type: SettingItemType.String,
-			value: 'var(--usp-print-base-font)',
-			description: 'The default "var(--usp-print-base-font)" is equal to "Custom Base Font". | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
+			value: 'Default',
+			description: 'Default: Equal to "Base Font". | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
 			public: true,
 			advanced: true,
+
 		},
 
 		'printMonospaceFont': {
+
 			section: 'remoodsThemeSection',
-			label: 'Custom Print Monospace Font',
+			label: 'Print & Export PDF - Print Monospace Font',
 			type: SettingItemType.String,
-			value: 'var(--usp-print-monospace-font)',
-			description: 'The default "var(--usp-print-monospace-font)" is equal to "Custom Monospace Font". | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
+			value: 'Default',
+			description: 'Default: Equal to "Monospace Font". | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
 			public: true,
 			advanced: true,
+
 		},
     
 		'printHeadingFont': {
+
 			section: 'remoodsThemeSection',
-			label: 'Custom Print Heading Font',
+			label: 'Print & Export PDF - Print Heading Font',
 			type: SettingItemType.String,
-			value: 'var(--usp-print-heading-font)',
-			description: 'The default "var(--usp-print-heading-font)" is equal to "Custom Heading Font". | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
+			value: 'Default',
+			description: 'Default: Equal to "Heading Font". | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
 			public: true,
 			advanced: true,
+			
 		},
 
 		'printBaseFontSize': {
+
 			section: 'remoodsThemeSection',
-			label: 'Print Base Font Size',
-			type: SettingItemType.String,
-			value: '13px',
+			label: 'Print & Export PDF - Print Base Font Size (px)',
+			type: SettingItemType.Int,
+			value: '13',
 			public: true,
 			advanced: true,
+
 		},
 
 		'printMonospaceFontSize': {
+
 			section: 'remoodsThemeSection',
-			label: 'Print Monospace Font Size',
-			type: SettingItemType.String,
-			value: '12px',
+			label: 'Print & Export PDF - Print Monospace Font Size (px)',
+			type: SettingItemType.Int,
+			value: '12',
 			public: true,
 			advanced: true,
+
 		},
 
-		'printSmallerCodeBlockFontSize': {
+		'printH1FontSize': {
+
+			section: 'remoodsThemeSection',
+			label: 'Print & Export PDF - Print H1 Font Size ("%" of "Print Base Font Size")',
+			type: SettingItemType.Int,
+			value: 180,
+			public: true,
+			advanced: true,
+
+		},
+
+		'printH2FontSize': {
+
+			section: 'remoodsThemeSection',
+			label: 'Print & Export PDF - Print H2 Font Size ("%" of "Print Base Font Size")',
+			type: SettingItemType.Int,
+			value: 160,
+			public: true,
+			advanced: true,
+
+		},
+
+		'printH3FontSize': {
+
+			section: 'remoodsThemeSection',
+			label: 'Print & Export PDF - Print H3 Font Size ("%" of "Print Base Font Size")',
+			type: SettingItemType.Int,
+			value: 140,
+			public: true,
+			advanced: true,
+
+		},
+
+		'printH4FontSize': {
+
+			section: 'remoodsThemeSection',
+			label: 'Print & Export PDF - Print H4 Font Size ("%" of "Print Base Font Size")',
+			type: SettingItemType.Int,
+			value: 130,
+			public: true,
+			advanced: true,
+
+		},
+
+		'printH5FontSize': {
+
+			section: 'remoodsThemeSection',
+			label: 'Print & Export PDF - Print H5 Font Size ("%" of "Print Base Font Size")',
+			type: SettingItemType.Int,
+			value: 120,
+			public: true,
+			advanced: true,
+
+		},
+
+		'printH6FontSize': {
+
+			section: 'remoodsThemeSection',
+			label: 'Print & Export PDF - Print H6 Font Size ("%" of "Print Base Font Size")',
+			type: SettingItemType.Int,
+			value: 110,
+			public: true,
+			advanced: true,
+
+		},
+
+		'printSmallerCodeBlockText': {
+
 			section: 'remoodsThemeSection',
 			label: 'Print & Export PDF - Enable smaller font size for code block',
 			type: SettingItemType.Bool,
@@ -597,81 +891,111 @@ async function prepareThemeSettings(): Promise<void> {
 			description: '(2px smaller than the the "Print Monospace Font Size")',
 			public: true,
 			advanced: true,
+
 		},
 
 		'printNoteTitle': {
+
 			section: 'remoodsThemeSection',
 			label: 'Print & Export PDF - Display note title',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
 			advanced: true,
+
 		},
 
 		'printHeadingRef': {
+
 			section: 'remoodsThemeSection',
 			label: 'Print & Export PDF - Display heading reference in front of headings',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
 			advanced: true,
+
 		},
 
 		'printH1Border': {
+
 			section: 'remoodsThemeSection',
 			label: 'Print & Export PDF - Display H1 border',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
 			advanced: true,
+
 		},
 
 		'printTOC': {
+
 			section: 'remoodsThemeSection',
 			label: 'Print & Export PDF - Display table of contents (If the syntax `[[toc]]` has used in the notes)',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
 			advanced: true,
+
 		},
 
 		'printStickyNotes': {
+
 			section: 'remoodsThemeSection',
 			label: 'Print & Export PDF - Display "Sticky Notes"',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
 			advanced: true,
+
 		},
 
 		'printKeyMention': {
+
 			section: 'remoodsThemeSection',
 			label: 'Print & Export PDF - Display "Key Mention"',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
 			advanced: true,
+
 		},
 
 		'printSnKm': {
+
 			section: 'remoodsThemeSection',
 			label: 'Print & Export PDF - Display "Key Mention" which is inside the Sticky Notes.',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
 			advanced: true,
+
 		},
 
 		'printSpoilerInlineText': {
+
 			section: 'remoodsThemeSection',
-			label: 'Print & Export PDF - Display the text of Spoiler Inline',
+			label: 'Print & Export PDF - Display the text of Spoiler Inline.',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
 			advanced: true,
+
+		},
+
+		'printAbbrDescription': {
+
+			section: 'remoodsThemeSection',
+			label: 'Print & Export PDF - Display abbreviation description.',
+			type: SettingItemType.Bool,
+			value: true,
+			description: 'Enable: Showing next to the abbreviation. | Disable: Hide |',
+			public: true,
+			advanced: true,
+
 		},
 
 	});
+
 }
 
 
@@ -687,17 +1011,23 @@ async function writeUserCSS(): Promise<void> {
 	const headingFont = await joplin.settings.value('headingFont');
 	const baseFontSize = await joplin.settings.value('baseFontSize');
 	const monospaceFontSize = await joplin.settings.value('monospaceFontSize');
+	const h1FontSize = await joplin.settings.value('h1FontSize');
+	const h2FontSize = await joplin.settings.value('h2FontSize');
+	const h3FontSize = await joplin.settings.value('h3FontSize');
+	const h4FontSize = await joplin.settings.value('h4FontSize');
+	const h5FontSize = await joplin.settings.value('h5FontSize');
+	const h6FontSize = await joplin.settings.value('h6FontSize');
 	const darkerEditorBackground = await joplin.settings.value('darkerEditorBackground');
 	const h1TextTransform = await joplin.settings.value('h1TextTransform');
 	const h1FontVariant = await joplin.settings.value('h1FontVariant');
 	const emphasizeAddRemove = await joplin.settings.value('emphasizeAddRemove');
 	const emphasizeAddRemoveBg = await joplin.settings.value('emphasizeAddRemoveBg');
 	const themeColorListText = await joplin.settings.value('themeColorListText');
-	const smallerCodeBlockFontSize = await joplin.settings.value('smallerCodeBlockFontSize');
+	const smallerCodeBlockText = await joplin.settings.value('smallerCodeBlockText');
 	
-	const smallerMonospaceFontSize = await joplin.settings.value('smallerMonospaceFontSize');
-	const smallerMarkdownTableFontSize = await joplin.settings.value('smallerMarkdownTableFontSize');
-	const evidentHorizontalLine = await joplin.settings.value('evidentHorizontalLine');
+	const smallerMonospaceText = await joplin.settings.value('smallerMonospaceText');
+	const smallerMarkdownTableSyntax = await joplin.settings.value('smallerMarkdownTableSyntax');
+	const evidentHorizontalRule = await joplin.settings.value('evidentHorizontalRule');
 	
 	const headingRef = await joplin.settings.value('headingRef');
 	const h1Border = await joplin.settings.value('h1Border');
@@ -714,7 +1044,8 @@ async function writeUserCSS(): Promise<void> {
 	const snTextJustify = await joplin.settings.value('snTextJustify');
 	const dottedBlockquote = await joplin.settings.value('dottedBlockquote');
 	const dottedCodeBlock = await joplin.settings.value('dottedCodeBlock');
-	const katexTextAlignLeft = await joplin.settings.value('katexTextAlignLeft');
+	const mathNotationFontSize = await joplin.settings.value('mathNotationFontSize');
+	const mathNotationAlignLeft = await joplin.settings.value('mathNotationAlignLeft');
 	const mermaidEyeProtector = await joplin.settings.value('mermaidEyeProtector');
 	const imageEyeProtector = await joplin.settings.value('imageEyeProtector');
 	const codeBlockMaxHeight = await joplin.settings.value('codeBlockMaxHeight');
@@ -723,10 +1054,13 @@ async function writeUserCSS(): Promise<void> {
 	const inlineCodeSymbol = await joplin.settings.value('inlineCodeSymbol');
 	const customTitleBlockSymbol = await joplin.settings.value('customTitleBlockSymbol');
 	
-	const notebookNotelistPanelScrollbar = await joplin.settings.value('notebookNotelistPanelScrollbar');
+	const panelsScrollbar = await joplin.settings.value('panelsScrollbar');
 	const notebookTitleWrap = await joplin.settings.value('notebookTitleWrap');
 	const notebookTitleScrollbar = await joplin.settings.value('notebookTitleScrollbar');
 	const notebookFolderIcon = await joplin.settings.value('notebookFolderIcon');
+	const allNotesButton = await joplin.settings.value('allNotesButton');
+	const syncFeature = await joplin.settings.value('syncFeature');
+	const tagFeature = await joplin.settings.value('tagFeature');
 	const noteListItemAutoScroll = await joplin.settings.value('noteListItemAutoScroll');
 	
 	const printBaseFont = await joplin.settings.value('printBaseFont');
@@ -734,7 +1068,13 @@ async function writeUserCSS(): Promise<void> {
 	const printHeadingFont = await joplin.settings.value('printHeadingFont');
 	const printBaseFontSize = await joplin.settings.value('printBaseFontSize');
 	const printMonospaceFontSize = await joplin.settings.value('printMonospaceFontSize');
-	const printSmallerCodeBlockFontSize = await joplin.settings.value('printSmallerCodeBlockFontSize');
+	const printH1FontSize = await joplin.settings.value('printH1FontSize');
+	const printH2FontSize = await joplin.settings.value('printH2FontSize');
+	const printH3FontSize = await joplin.settings.value('printH3FontSize');
+	const printH4FontSize = await joplin.settings.value('printH4FontSize');
+	const printH5FontSize = await joplin.settings.value('printH5FontSize');
+	const printH6FontSize = await joplin.settings.value('printH6FontSize');
+	const printSmallerCodeBlockText = await joplin.settings.value('printSmallerCodeBlockText');
 	const printNoteTitle = await joplin.settings.value('printNoteTitle');
 	const printHeadingRef = await joplin.settings.value('printHeadingRef');
 	const printH1Border = await joplin.settings.value('printH1Border');
@@ -743,8 +1083,10 @@ async function writeUserCSS(): Promise<void> {
 	const printKeyMention = await joplin.settings.value('printKeyMention');
 	const printSnKm = await joplin.settings.value('printSnKm');
 	const printSpoilerInlineText = await joplin.settings.value('printSpoilerInlineText');
-
+	const printAbbrDescription = await joplin.settings.value('printAbbrDescription');
+	
 	const settings = {
+		
 		remoodsHue,
 		themeMode,
 		baseFont,
@@ -752,18 +1094,24 @@ async function writeUserCSS(): Promise<void> {
 		headingFont,
 		baseFontSize,
 		monospaceFontSize,
+		h1FontSize,
+		h2FontSize,
+		h3FontSize,
+		h4FontSize,
+		h5FontSize,
+		h6FontSize,
 		darkerEditorBackground,
 		h1TextTransform,
 		h1FontVariant,
 		emphasizeAddRemove,
 		emphasizeAddRemoveBg,
 		themeColorListText,
-		smallerCodeBlockFontSize,
-
-		smallerMarkdownTableFontSize,
-		smallerMonospaceFontSize,
-		evidentHorizontalLine,
-
+		smallerCodeBlockText,
+		
+		smallerMarkdownTableSyntax,
+		smallerMonospaceText,
+		evidentHorizontalRule,
+		
 		headingRef,
 		h1Border,
 		h2Border,
@@ -779,7 +1127,8 @@ async function writeUserCSS(): Promise<void> {
 		snTextJustify,
 		dottedBlockquote,
 		dottedCodeBlock,
-		katexTextAlignLeft,
+		mathNotationFontSize,
+		mathNotationAlignLeft,
 		mermaidEyeProtector,
 		imageEyeProtector,
 		codeBlockMaxHeight,
@@ -788,10 +1137,13 @@ async function writeUserCSS(): Promise<void> {
 		inlineCodeSymbol,
 		customTitleBlockSymbol,
 
-		notebookNotelistPanelScrollbar,
+		panelsScrollbar,
 		notebookTitleWrap,
 		notebookTitleScrollbar,
 		notebookFolderIcon,
+		allNotesButton,
+		syncFeature,
+		tagFeature,
 		noteListItemAutoScroll,
 
 		printBaseFont,
@@ -799,7 +1151,13 @@ async function writeUserCSS(): Promise<void> {
 		printHeadingFont,
 		printBaseFontSize,
 		printMonospaceFontSize,
-		printSmallerCodeBlockFontSize,
+		printH1FontSize,
+		printH2FontSize,
+		printH3FontSize,
+		printH4FontSize,
+		printH5FontSize,
+		printH6FontSize,
+		printSmallerCodeBlockText,
 		printNoteTitle,
 		printHeadingRef,
 		printH1Border,
@@ -808,6 +1166,8 @@ async function writeUserCSS(): Promise<void> {
 		printKeyMention,
 		printSnKm,
 		printSpoilerInlineText,
+		printAbbrDescription,
+
 	};
 
 	await generateUserCSS(settings);

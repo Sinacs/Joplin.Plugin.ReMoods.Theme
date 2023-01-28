@@ -23,7 +23,7 @@ ReMoods beautifies your screen and documents and takes care of your writing mood
 
 > This section contains important information if there is any.
 
-  - [ReMoods Currently Not Compatible With Joplin V2.10.2](#remoods-currently-not-compatible-with-joplin-v2102)
+  - February update will focus on improving the Day Mode & Night Mode.
   - [Asking For Bits Of Help](#asking-for-bits-of-help)
   
 **REMOODS THEME GETTING STARTED GUIDE:**
@@ -75,7 +75,7 @@ ReMoods beautifies your screen and documents and takes care of your writing mood
 
 ## Download And Install Recommended Fonts
 
-👨‍🔬: **First thing first, ReMoods paid lots of time to test the best fonts for you, they've great performance on both read and write, and I developed everything based on using these fonts, so I recommended you use them:** 🤩
+👨‍🔬: **First things first, ReMoods paid lots of time to test the best fonts for you, they've great performance on both read and write, and I developed everything based on using these fonts, so I recommended you use them:** 🤩
 
 You can download... 
 
@@ -103,7 +103,7 @@ You can download...
 |Rich Markdown|This plugin supplies advanced CSS classes to help ReMoods create styling and that would cause some element styles to be missing if running without it.|
 |Quick HTML Tags (optional)|It provides you with a quick and easy way to create the useful custom elements which ReMoods provides you.|
 
-> Please mention that don't enable more than one theming plugin at the same time, it will cause ReMoods can't display properly.
+> Please mention that don't enable more than one theming plugin at the same time, it might cause ReMoods can't display properly.
 
 **Let's go:**
 
@@ -184,7 +184,7 @@ Ok, keep going next! 🏃🏼🏃🏼‍♀️🏃🏼‍♂️
 ```
 /* Set starting screen background color */
 body {
-  background-color: var(--code-mirror-bg-color) !important;
+  background-color: var(--me-bg) !important;
 }
 ```
 5. Quit and restart Joplin to apply all the above updates!
@@ -242,7 +242,7 @@ It uses low-contrast colors and minimizes unwanted glare within the notes and Jo
 
 ### 💡Tips
 
-1. You can set your favorite font for headings by editing the `Custom Heading Font` in options to improve the personality style of your notes.
+1. You can set your favorite font for headings by editing the `Heading Font` in options to improve the personality style of your notes.
 2. You can enable the heading's border, which you often use with a border, in options.
 3. You can add `---` or `***` to the next line of the target heading manually for the heading, for which you didn't enable the border in options.
 4. The heading's reference will appear right before each heading if you enable it.(Render Viewer Only)
@@ -575,12 +575,6 @@ That means you can have standalone font settings for them!
 For advanced, you can also control which elements should show on the PDF through the settings page, such as hiding the Sticky Notes, hiding the Key Mention, hiding the notebook title, etc. Play around the options menu advanced settings to discover more!
 
 ![Screenshot 2022-09-26 190704](https://user-images.githubusercontent.com/110529913/192261498-b95ee279-65f3-4dc3-9a1f-609023f62859.png)
-
-[:arrow_up:Back](#table-of-contents)
-
-## ReMoods Currently Not Compatible With Joplin V2.10.2
-
-The Joplin pre-release v2.10.2 has made some changes that will break the ReMoods theme styles. This problem will also cause the ReMoods theme plugin not to be compatible with older Joplin versions (before v2.10.2), so it won't be fixed until Joplin releases the next stable version update.
 
 [:arrow_up:Back](#table-of-contents)
 

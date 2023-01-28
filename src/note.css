@@ -1,6 +1,8 @@
 /*
   #REMARKS:
 
+  - note.css
+
   - All styles have separated into two parts - "screen" and "Print",
     but here also include some of the extra adjustments that only
     affect the "Export HTML File".
@@ -10,50 +12,55 @@
 
   - :not(#fake) / :not(.fake) are use for increasing the CSS specificity.
 
-  - The `#rendered-md` is use on all selectors to avoid the styles 
-  overwrite by other plugins.
-  
 
 
   #CODE STRUCTURE OVERVIEW:
 
   - ROOT
     - USER SETTING PROPERTIES
-      - SCREEN
-      - PRINT
-    - RENDER VIEWER & RICH TEXT EDITOR & EXPORT HTML PROPERTIES
-    - PRINT PDF & EXPORT PDF PROPERTIES
-  - RENDER VIEWER & RICH TEXT EDITOR
+    - SCREEN PROPERTIES
+    - PRINT PROPERTIES
+  - SCREEN
     - FONT
     - BASIC
     - ELEMENTS
     - CUSTOM ELEMENTS
     - PLUGINS
   - EXPORT HTML FILE
-  - PRINT & EXPORT PDF
+  - PRINT
     - PRINT FONT
     - PRINT READY
-    - PRINT ELEMENTS
-    - PRINT CUSTOM ELEMENTS
-    - PRINT PLUGINS
+    - PRINT STYLES ADJUSTMENTS
+    - PRINT COLOR ADJUSTMENTS
 */
+
+
+
+
+/* ********************************************************* */
+/* !!!!                      ROOT                       !!!! */
+/* ********************************************************* */
+
+
+
 
 :root {
 
-  /* ******************************************************* */
-  /* !!!!             USER SETTING PROPERTIES           !!!! */
-  /* ******************************************************* */
+
+
+
   /* ------------------------------------------------------- */
-  /*                          SCREEN                         */
+  /*                  USER SETTING PROPERTIES                */
   /* ------------------------------------------------------- */
-  
 
 
 
-  /* THEME COLOR ******************************************* */
-  --usp-remoods-hue: 260deg;
 
-  /* FONT ************************************************** */
+  /* || USER SETTING PROPERTIES 1/2 | SCREEN *************** */
+  /* SCREEN: THEME COLOR =================================== */
+  --usp-hue: 260deg;
+
+  /* SCREEN: FONT ========================================== */
   --usp-custom-base-font: none;
   --usp-custom-monospace-font: none;
   --usp-custom-heading-font: none;
@@ -61,61 +68,53 @@
   --usp-monospace-font: var(--usp-custom-monospace-font), "cascadia mono light", "chiron hei hk extralight";
   --usp-heading-font: var(--usp-custom-heading-font), "montserrat", "mulish", "chiron hei hk";
   
-  /* SIZES ************************************************* */
+  /* SCREEN: SIZES ========================================= */
   --usp-base-font-size: 15px;
   --usp-monospace-font-size: 14px;
   --usp-smaller-code-block-font-size: var(--usp-base-font-size);
-  --usp-h1-font-size: 200%;
-  --usp-h2-font-size: 170%;
-  --usp-h3-font-size: 150%;
-  --usp-h4-font-size: 130%;
-  --usp-h5-font-size: 120%;
-  --usp-h6-font-size: 110%;
-  --usp-h1-font-weight: 600;
+  --usp-h1-font-size: 170%;
+  --usp-h2-font-size: 140%;
+  --usp-h3-font-size: 130%;
+  --usp-h4-font-size: 120%;
+  --usp-h5-font-size: 110%;
+  --usp-h6-font-size: 100%;
   --usp-heading-font-weight: 600;
+  --usp-h1-font-weight: 600;
+  --usp-code-block-max-height: 56vh;
+  --usp-art-gallery-max-height: 56vh;
+  --usp-math-notation-font-size: var(--usp-base-font-size);
 
-  /* EFFECTS *********************************************** */
+  /* SCREEN: EFFECTS ======================================= */
   --usp-h1-font-variant: small-caps;
   --usp-h1-text-transform: capitalize;
-  --usp-h1-text-fill-color: none;
+  --usp-h1-text-fill: none;
   --usp-paragraph-text-align: initial;
   --usp-list-text-align: initial;
   --usp-checklist-text-align: initial;
-  --usp-sn-text-align: initial;
-  --usp-katex-text-align: center;
+  --usp-sticky-notes-text-align: initial;
+  --usp-math-notation-text-align: center;
   --usp-code-block-bd-style: dotted;
   --usp-mermaid-eye-protector-filter: brightness(80%);
   --usp-mermaid-eye-protector-transition: filter 1.2s;
   --usp-image-eye-protector-filter: brightness(80%);
   --usp-image-eye-protector-transition: filter 1.2s;
   
-  /* DISPLAY *********************************************** */
-  --usp-heading-ref-switcher: inline-block;
-  --usp-h1-border-switcher: block;
-  --usp-h2-border-switcher: block;
-  --usp-h3-border-switcher: none;
-  --usp-h4-border-switcher: none;
-  --usp-h5-border-switcher: block;
-  --usp-h6-border-switcher: none;
-  --usp-special-text-add-remove-symbol-switcher: inline-block;
-  --usp-inline-code-symbol-switcher: inline-block;
-  --usp-custom-title-block-symbol-switcher: inline-block;
-  
-  /* BLOCK MAX-HEIGHT LIMITATION *************************** */
-  --usp-code-block-max-height: 56vh;
-  --usp-art-gallery-max-height: 56vh;
-
-
-
-
-  /* ------------------------------------------------------- */
-  /*                           PRINT                         */
-  /* ------------------------------------------------------- */
-
+  /* SCREEN: DISPLAY ======================================= */
+  --usp-heading-ref-display: inline-block;
+  --usp-h1-border-display: block;
+  --usp-h2-border-display: block;
+  --usp-h3-border-display: none;
+  --usp-h4-border-display: none;
+  --usp-h5-border-display: block;
+  --usp-h6-border-display: none;
+  --usp-special-text-add-remove-symbol-display: inline-block;
+  --usp-inline-code-symbol-display: inline-block;
+  --usp-custom-title-block-symbol-display: inline-block;
 
 
   
-  /* PRINT FONT ******************************************** */
+  /* || USER SETTING PROPERTIES 2/2 | PRINT **************** */
+  /* PRINT: FONT =========================================== */
   --usp-print-custom-base-font: none;
   --usp-print-custom-monospace-font: none;
   --usp-print-custom-heading-font: none;
@@ -123,606 +122,576 @@
   --usp-print-monospace-font: var(--usp-print-custom-monospace-font), "cascadia mono light", "chiron hei hk extralight";
   --usp-print-heading-font: var(--usp-print-custom-heading-font), "montserrat", "mulish", "chiron hei hk";
   
-  /* PRINT: DISPLAY **************************************** */
+  /* PRINT: SIZES ========================================== */
   --usp-print-base-font-size: 13px;
   --usp-print-monospace-font-size: 10px;
+  --usp-print-h1-font-size: 180%;
+  --usp-print-h2-font-size: 160%;
+  --usp-print-h3-font-size: 140%;
+  --usp-print-h4-font-size: 130%;
+  --usp-print-h5-font-size: 120%;
+  --usp-print-h6-font-size: 110%;
   --usp-print-smaller-code-block-font-size: var(--usp-print-monospace-font-size);
+
+  /* PRINT: DISPLAY ======================================== */
   --usp-print-note-title-display: block;
-  --usp-print-heading-ref-switcher: inline-block;
+  --usp-print-heading-ref-display: inline-block;
   --usp-print-h1-bd-display: block;
   --usp-print-toc-display: block;
   --usp-print-sticky-notes-display: block;
   --usp-print-key-mention-display: block;
   --usp-print-spoiler-inline-text-visibility: visible;
-  /* print sticky notes > key mention ---------------------- */
-  --usp-print-sn-km-display: block;
+  --usp-print-abbreviation-text-description-display: inline;
+  --usp-print-sticky-notes-key-mention-display: block;
+  --usp-print-link-href-display: inline;
+  
 
   
 
 
-  /* **************************************************************************************** */
-  /* !!!!           RENDER VIEWER & RICH TEXT EDITOR & EXPORT HTML PROPERTIES            !!!! */
-  /* **************************************************************************************** */
+  /* ---------------------------------------------------------------------------------------- */
+  /*                                    SCREEN PROPERTIES                                     */
+  /* ---------------------------------------------------------------------------------------- */
 
 
 
 
-  /* GENERAL ================================================================================ */
-  --render-viewer-bg-color:                             hsl(var(--usp-remoods-hue),   8%,  27%);
-  --render-viewer-bg-color-2:                           hsl(var(--usp-remoods-hue),   8%,  17%);
-  --render-viewer-text-color:                           hsl(var(--usp-remoods-hue),   0%,  90%);
+  /* BASIC ================================================================================== */
+  --sc-bg-1:                                              hsl(var(--usp-hue),   8%,  27%);
+  --sc-bg-2:                                              hsl(var(--usp-hue),   8%,  17%);
+  --sc-text:                                              hsl(var(--usp-hue),   0%,  90%);
+  --sc-scrollbar-thumb-bg:                                hsl(var(--usp-hue), 100%,  75%);
+
+  --sc-hr-bgc:                                            none;
+  --sc-hr-bgi:                                            repeating-linear-gradient(114deg,
+                                                          hsl(var(--usp-hue), 100%,  80%),
+                                                          hsl(var(--usp-hue), 100%,  35%,  50%),
+                                                          hsl(var(--usp-hue), 100%,  80%)  3px);
   
-  --horizontal-line-bg:                                 none;
-  --horizontal-line-bgi:                                repeating-linear-gradient(114deg,
-                                                        hsl(var(--usp-remoods-hue), 100%,  80%),
-                                                        hsl(var(--usp-remoods-hue), 100%,  35%,  50%),
-                                                        hsl(var(--usp-remoods-hue), 100%,  80%)  3px);
-  
-  --render-viewer-scrollbar-thumb-bg-color:             hsl(var(--usp-remoods-hue), 100%, 75%);
-  
-  --bc-scrollbar-thumb-bd-color:                        transparent;
-  --bc-scrollbar-thumb-bg-color:                        radial-gradient(
-                                                        hsl(var(--usp-remoods-hue),  30%,  60%)  30%,
-                                                        hsl(var(--usp-remoods-hue),  40%,  70%)  70%);
-  --bc-scrollbar-thumb-bg-color-hover:                  radial-gradient(
-                                                        hsl(var(--usp-remoods-hue),  50%,  60%)  30%, 
-                                                        hsl(var(--usp-remoods-hue),  60%,  70%)  70%);
-  /* HEADING ================================================================================ */
-  --heading-ref-text-color:                             hsl(  0,   0%,  65%);
-
-  /* h1 ------------------------------------------------------------------------------------- */
-  --h1-color:                                           hsl(var(--usp-remoods-hue), 100%,  80%);
-  --h1-bg-color:                                        repeating-linear-gradient( 114deg,
-                                                        hsl(var(--usp-remoods-hue), 100%,  80%),
-                                                        hsl(var(--usp-remoods-hue), 100%,  65%,  30%),
-                                                        hsl(var(--usp-remoods-hue), 100%,  80%)  3px);
-  --h1-bd-color:                                        var(--h1-bg-color);
-  /* h2 ------------------------------------------------------------------------------------- */
-  --h2-color:                                           hsl(var(--usp-remoods-hue), 100%,  90%);
-  --h2-bd-color:                                        linear-gradient(to right,
-                                                        hsl(var(--usp-remoods-hue), 100%,  80%)  50%,
-                                                        transparent);
-  /* h3 ------------------------------------------------------------------------------------- */
-  --h3-color:                                           var(--h2-color);
-  --h3-bd-color:                                        var(--h2-bd-color);
-  /* h4 ------------------------------------------------------------------------------------- */
-  --h4-color:                                           var(--h2-color);
-  --h4-bd-color:                                        var(--h2-bd-color);
-  /* h5 ------------------------------------------------------------------------------------- */
-  --h5-color:                                           hsl(var(--usp-remoods-hue),  30%,  80%);
-  --h5-bd-color:                                        linear-gradient(to right, 
-                                                        transparent 50%,
-                                                        var(--render-viewer-bg-color) 100%),
-                                                        repeating-linear-gradient(to right,
-                                                        hsl(var(--usp-remoods-hue),  30%,  80%), 2px,
-                                                        transparent, 2px,
-                                                        transparent 5px);
-  /* h6 ------------------------------------------------------------------------------------- */
-  --h6-color:                                           var(--h5-color);
-  --h6-bd-color:                                        var(--h5-bd-color);
+  --sc-block-content-scrollbar-thumb-bd:                  transparent;
+  --sc-block-content-scrollbar-thumb-bg:                  radial-gradient(
+                                                          hsl(var(--usp-hue),  30%,  60%)  30%,
+                                                          hsl(var(--usp-hue),  40%,  70%)  70%);
+  --sc-block-content-scrollbar-thumb-bg-hover:            radial-gradient(
+                                                          hsl(var(--usp-hue),  50%,  60%)  30%, 
+                                                          hsl(var(--usp-hue),  60%,  70%)  70%);
 
   /* SPECIAL TEXT =========================================================================== */
-  --special-text-shadow:                                0 0 none;
-
-  --strong-text-color:                                  hsl(var(--usp-remoods-hue), 100%,  70%);
+  --sc-special-text-ts:                                   none;
   
-  --emphasize-text-color:                               var(--strong-text-color);
+  --sc-strong-text:                                       hsl(var(--usp-hue), 100%,  70%);
   
-  --strikethrough-text-color:                           hsl(var(--usp-remoods-hue),  25%,  60%);
-  --strikethrough-text-bg-color:                        none;
-  --strikethrough-symbol-color:                       hsl(  0,   0%, 100%);
-  --strikethrough-symbol-bg-color:                    hsl(  0,  70%,  55%);
+  --sc-emphasize-text:                                    var(--sc-strong-text);
+  
+  --sc-insert-text:                                       hsl(var(--usp-hue), 100%,  70%);
+  --sc-insert-bg:                                         none;
+  --sc-insert-bdb:                                        hsl(var(--usp-hue),  25%,  60%);
+  --sc-insert-symbol:                                   hsl(  0,   0%, 100%);
+  --sc-insert-symbol-bg:                                hsl(100,  60%,  45%);
 
-  --insert-text-color:                                  hsl(var(--usp-remoods-hue), 100%,  70%);
-  --insert-text-bg-color:                               none;
-  --insert-text-bd-color:                               hsl(var(--usp-remoods-hue),  25%,  60%);
-  --insert-symbol-color:                              hsl(  0,   0%, 100%);
-  --insert-symbol-bg-color:                           hsl(100,  60%,  45%);
+  --sc-strikethrough-text:                                hsl(var(--usp-hue),  25%,  60%);
+  --sc-strikethrough-bg:                                  none;
+  --sc-strikethrough-symbol:                            hsl(  0,   0%, 100%);
+  --sc-strikethrough-symbol-bg:                         hsl(  0,  70%,  55%);
 
-  --abbreviation-text-color:                            hsl(var(--usp-remoods-hue), 100%,  85%);
-  --abbreviation-bd-color:                              hsl(var(--usp-remoods-hue), 100%,  85%);
+  --sc-abbreviation-text:                                 hsl(var(--usp-hue), 100%,  85%);
+  --sc-abbreviation-td:                                   hsl(var(--usp-hue), 100%,  85%);
 
-  --mark-text-color:                                    hsl(var(--usp-remoods-hue),  30%,  30%);
-  --mark-text-bg-color:                                 hsl(var(--usp-remoods-hue), 100%,  85%);
+  --sc-mark-text:                                         hsl(var(--usp-hue),  30%,  30%);
+  --sc-mark-bg:                                           hsl(var(--usp-hue), 100%,  85%);
 
-  --search-text-color:                                  hsl(var(--usp-remoods-hue),   0%, 100%);
-  --search-text-bg-color:                               hsl(var(--usp-remoods-hue),   0%,   0%);
-  --search-text-bd-color:                             hsl(  0, 100%,  50%);
+  --sc-search-text:                                       hsl(var(--usp-hue),   0%, 100%);
+  --sc-search-bg:                                         hsl(var(--usp-hue),   0%,   0%);
+  --sc-search-bd:                                       hsl(  0, 100%,  50%);
 
-  --inline-code-color:                                  hsl(var(--usp-remoods-hue), 100%,  85%);
-  --inline-code-bg-color:                               hsl(var(--usp-remoods-hue),  30%,  25%);
-  --inline-code-symbol-color:                           hsl(var(--usp-remoods-hue),  40%,  60%);
-
-  --katex-text-color:                                   hsl(var(--usp-remoods-hue), 100%,  85%);
+  --sc-inline-code-text:                                  hsl(var(--usp-hue), 100%,  85%);
+  --sc-inline-code-bg:                                    hsl(var(--usp-hue),  30%,  25%);
+  --sc-inline-code-symbol:                                hsl(var(--usp-hue),  40%,  60%);
+  
+  /* LINK =================================================================================== */
+  --sc-link-text:                                         hsl(var(--usp-hue), 100%,  85%);
+  --sc-link-source-icon:                                  hsl(var(--usp-hue), 100%,  85%);
 
   /* LIST =================================================================================== */
-  --list-token-color:                                   hsl(calc(var(--usp-remoods-hue) + 180deg),  80%,  80%);
-  --list-text-color:                                    hsl(var(--usp-remoods-hue),  30%,  80%);
-  --list-span-color:                                    var(--render-viewer-text-color);
+  --sc-list-token:                                        hsl(calc(var(--usp-hue) + 180deg),  80%,  80%);
+  --sc-list-text:                                         hsl(var(--usp-hue),  30%,  80%);
+  --sc-list-span:                                         var(--sc-text);
 
-  /* LINK =================================================================================== */
-  --link-text-color:                                    hsl(var(--usp-remoods-hue), 100%,  85%);
-  --link-source-icon-color:                             hsl(var(--usp-remoods-hue), 100%,  85%);
-  
   /* FOOTNOTE =============================================================================== */
-  --fn-ref-color:                                       hsl(calc(var(--usp-remoods-hue) + 180deg), 100%,  85%);
+  --sc-footnote-ref:                                      hsl(calc(var(--usp-hue) + 180deg), 100%,  85%);
   
-  --fn-title-color:                                     hsl(var(--usp-remoods-hue),   0%,  70%);
-  --fn-title-bd-color:                       3px double hsl(var(--usp-remoods-hue),   0%,  70%);
+  --sc-footnote-title:                                    hsl(var(--usp-hue),   0%,  70%);
+  --sc-footnote-title-bdt:                     3px double hsl(var(--usp-hue),   0%,  70%);
   
-  --fn-list-text-color:                                 hsl(var(--usp-remoods-hue),   0%,  70%);
-  --fn-list-token-color:                                hsl(var(--usp-remoods-hue),   0%,  50%);
+  --sc-footnote-list-text:                                hsl(var(--usp-hue),   0%,  70%);
+  --sc-footnote-list-token:                               hsl(var(--usp-hue),   0%,  50%);
+
+  /* HEADINGS =============================================================================== */
+  --sc-heading-ref:                                     hsl(  0,   0%,  65%);
+
+  /* h1 ------------------------------------------------------------------------------------- */
+  --sc-h1-text:                                           hsl(var(--usp-hue), 100%,  80%);
+  --sc-h1-bg:                                             repeating-linear-gradient( 114deg,
+                                                          hsl(var(--usp-hue), 100%,  80%),
+                                                          hsl(var(--usp-hue), 100%,  65%,  30%),
+                                                          hsl(var(--usp-hue), 100%,  80%)  3px);
+  --sc-h1-bgi:                                            var(--sc-h1-bg);
+  /* h2 ------------------------------------------------------------------------------------- */
+  --sc-h2-text:                                           hsl(var(--usp-hue), 100%,  90%);
+  --sc-h2-bgi:                                            linear-gradient(to right,
+                                                          hsl(var(--usp-hue), 100%,  80%)  50%,
+                                                          transparent);
+  /* h3 ------------------------------------------------------------------------------------- */
+  --sc-h3-text:                                           var(--sc-h2-text);
+  --sc-h3-bgi:                                            var(--sc-h2-bgi);
+  /* h4 ------------------------------------------------------------------------------------- */
+  --sc-h4-text:                                           var(--sc-h2-text);
+  --sc-h4-bgi:                                            var(--sc-h2-bgi);
+  /* h5 ------------------------------------------------------------------------------------- */
+  --sc-h5-text:                                           hsl(var(--usp-hue),  30%,  80%);
+  --sc-h5-bgi:                                            linear-gradient(to right, 
+                                                          transparent 50%,
+                                                          var(--sc-bg-1) 100%),
+                                                          repeating-linear-gradient(to right,
+                                                          hsl(var(--usp-hue),  30%,  80%), 2px,
+                                                          transparent, 2px,
+                                                          transparent 5px);
+  /* h6 ------------------------------------------------------------------------------------- */
+  --sc-h6-text:                                           var(--sc-h5-text);
+  --sc-h6-bgi:                                            var(--sc-h5-bgi);
+
+  /* MATH NOTATION ========================================================================== */
+  --sc-math-notation-text:                                hsl(var(--usp-hue), 100%,  85%);
 
   /* BLOCKQUOTE ============================================================================= */
-  --blockquote-bd-color:                     5px dotted hsl(var(--usp-remoods-hue),  20%,  60%);
-  --blockquote-text-color:                              hsl(var(--usp-remoods-hue),   0%,  70%);
+  --sc-blockquote-bdl:                         5px dotted hsl(var(--usp-hue),  20%,  60%);
+  --sc-blockquote-text:                                   hsl(var(--usp-hue),   0%,  70%);
 
   /* TABLE ================================================================================== */
-  --table-text-color:                                   var(--render-viewer-text-color);
-  --table-header-bg-color:                              hsl(var(--usp-remoods-hue),  80%,  40%);
+  --sc-table-text:                                        var(--sc-text);
+  --sc-table-bd:                                2px solid var(--sc-bg-1);
 
-  --table-header-text-shadow:                 0 0 2px black; 
+  --sc-table-header-bg:                                   hsl(var(--usp-hue),  80%,  40%);
+  --sc-table-header-ts:                             2px black; 
   
-  --table-row-odd-bg-color:                             hsl(var(--usp-remoods-hue),  15%,  30%);
-  --table-row-even-bg-color:                            hsl(var(--usp-remoods-hue),  10%,  35%);
-  
-  --table-bd-color:                           2px solid var(--render-viewer-bg-color);
+  --sc-table-row-odd-bg:                                  hsl(var(--usp-hue),  15%,  30%);
+  --sc-table-row-even-bg:                                 hsl(var(--usp-hue),  10%,  35%);
   
   /* MARKDOWN TOC =========================================================================== */
-  /* toc block ------------------------------------------------------------------------------ */
-  --toc-bg-color:                                       var(--render-viewer-bg-color-2);
-  --toc-bd-color:                                       hsl(var(--usp-remoods-hue), 100%,  60%);
-  --toc-box-shadow:                            0 0 10px hsl(var(--usp-remoods-hue), 100%,  30%);
-  /* toc button ----------------------------------------------------------------------------- */
-  --toc-btn-text-color:                                 var(--render-viewer-bg-color);
-  --toc-btn-bg-color:                                   hsl(var(--usp-remoods-hue), 100%,  75%);
-  --toc-btn-bd-color:                         2px solid hsl(var(--usp-remoods-hue), 100%,  90%);
-  --toc-btn-box-shadow:                         0 0 5px hsl(var(--usp-remoods-hue), 100%,  60%);
-  /* toc list ------------------------------------------------------------------------------- */
-  --toc-list-bd-color:                        1px solid hsl(var(--usp-remoods-hue),  30%,  30%);
-  /* toc link ------------------------------------------------------------------------------- */
-  --toc-link-text-color-hover:                          hsl(var(--usp-remoods-hue),   0%, 100%);
-  --toc-link-bg-color-hover:                            hsl(var(--usp-remoods-hue),  25%,  20%);
+  --sc-toc-bg:                                            var(--sc-bg-2);
+  --sc-toc-bdc:                                           hsl(var(--usp-hue), 100%,  60%);
+  --sc-toc-bs:                                       10px hsl(var(--usp-hue), 100%,  30%);
+  
+  --sc-toc-btn-text:                                      var(--sc-bg-1);
+  --sc-toc-btn-bg:                                        hsl(var(--usp-hue), 100%,  75%);
+  --sc-toc-btn-bd:                              2px solid hsl(var(--usp-hue), 100%,  90%);
+  --sc-toc-btn-bs:                                    5px hsl(var(--usp-hue), 100%,  60%);
+  
+  --sc-toc-list-bdl:                            1px solid hsl(var(--usp-hue),  30%,  30%);
+  
+  --sc-toc-link-text-hover:                               hsl(var(--usp-hue),   0%, 100%);
+  --sc-toc-link-bg-hover:                                 hsl(var(--usp-hue),  25%,  20%);
 
   /* CODE BLOCK ============================================================================= */
-  --cb-bg-color:                                        var(--render-viewer-bg-color-2);
-  --cb-bd-color:                                        hsl(var(--usp-remoods-hue), 100%,  70%);
-  
-  --cb-shadow:                                  0 0 4px hsl(var(--usp-remoods-hue), 100%,  50%);
+  --sc-code-block-bg:                                     var(--sc-bg-2);
+  --sc-code-block-bdc:                                    hsl(var(--usp-hue), 100%,  70%);
+  --sc-code-block-bs:                                 4px hsl(var(--usp-hue), 100%,  50%);
   /* syntax highlight ----------------------------------------------------------------------- */
-  --cb-comment-color:                                   hsl(var(--usp-remoods-hue),   0%,  60%);
-  --cb-comment-shadow:                                  none;
+  --sc-code-block-comment-text:                           hsl(var(--usp-hue),   0%,  60%);
+  --sc-code-block-comment-ts:                             none;
 
-  --cb-number-color:                                    hsl(calc(var(--usp-remoods-hue) + 110deg), 100%,  66%);
-  --cb-number-shadow:                                   none;
+  --sc-code-block-number-text:                            hsl(calc(var(--usp-hue) + 110deg), 100%,  66%);
+  --sc-code-block-number-ts:                              none;
 
-  --cb-string-color:                                    hsl(calc(var(--usp-remoods-hue) + 180deg), 100%,  75%);
-  --cb-string-shadow:                                   none;
+  --sc-code-block-string-text:                            hsl(calc(var(--usp-hue) + 180deg), 100%,  75%);
+  --sc-code-block-string-ts:                              none;
   
-  --cb-params-color:                                    hsl(calc(var(--usp-remoods-hue) + 300deg), 100%,  70%);
-  --cb-params-shadow:                                   none;
+  --sc-code-block-params-text:                            hsl(calc(var(--usp-hue) + 300deg), 100%,  70%);
+  --sc-code-block-params-ts:                              none;
 
-  --cb-title-color:                                     hsl(calc(var(--usp-remoods-hue) + 180deg), 100%,  85%);
-  --cb-title-shadow:                                    none;
+  --sc-code-block-title-text:                             hsl(calc(var(--usp-hue) + 180deg), 100%,  85%);
+  --sc-code-block-title-ts:                               none;
 
-  --cb-selector-id-color:                               hsl(calc(var(--usp-remoods-hue) + 159deg), 100%,  75%);
-  --cb-selector-id-shadow:                              none;
+  --sc-code-block-selector-id-text:                       hsl(calc(var(--usp-hue) + 159deg), 100%,  75%);
+  --sc-code-block-selector-id-ts:                         none;
   
-  --cb-selector-pseudo-color:                           hsl(calc(var(--usp-remoods-hue) + 323deg),  87%,  75%);
-  --cb-selector-pseudo-shadow:                          none;
+  --sc-code-block-selector-pseudo-text:                   hsl(calc(var(--usp-hue) + 323deg),  87%,  75%);
+  --sc-code-block-selector-pseudo-ts:                     none;
   
-  --cb-selector-attr-color:                             hsl(calc(var(--usp-remoods-hue) + 300deg), 100%,  85%);
-  --cb-selector-attr-shadow:                            none;
+  --sc-code-block-selector-attr-text:                     hsl(calc(var(--usp-hue) + 300deg), 100%,  85%);
+  --sc-code-block-selector-attr-ts:                       none;
 
-  --cb-text-color:                                      hsl(var(--usp-remoods-hue),   0%,  90%);
-  --cb-text-shadow:                                     none;
-  --cb-title-class-color:                               var(--cb-text-color);
-  --cb-title-class-shadow:                              var(--cb-text-shadow);
-  --cb-function-color:                                  var(--cb-text-color);
-  --cb-function-shadow:                                 var(--cb-text-shadow);
-  --cb-function-title-color:                            var(--cb-text-color);
-  --cb-function-title-shadow:                           var(--cb-text-shadow);
-  --cb-function-params-color:                           var(--cb-text-color);
-  --cb-function-params-shadow:                          var(--cb-text-shadow);
-  --cb-class-title-color:                               var(--cb-text-color);
-  --cb-class-title-shadow:                              var(--cb-text-shadow);
-  --cb-operator-color:                                  var(--cb-text-color);
-  --cb-operator-shadow:                                 var(--cb-text-shadow);
+  --sc-code-block-text:                                   hsl(var(--usp-hue),   0%,  90%);
+  --sc-code-block-ts:                                     none;
+  --sc-code-block-title-class-text:                       var(--sc-code-block-text);
+  --sc-code-block-title-class-ts:                         var(--sc-code-block-ts);
+  --sc-code-block-function-text:                          var(--sc-code-block-text);
+  --sc-code-block-function-ts:                            var(--sc-code-block-ts);
+  --sc-code-block-function-title-text:                    var(--sc-code-block-text);
+  --sc-code-block-function-title-ts:                      var(--sc-code-block-ts);
+  --sc-code-block-function-params-text:                   var(--sc-code-block-text);
+  --sc-code-block-function-params-ts:                     var(--sc-code-block-ts);
+  --sc-code-block-class-title-text:                       var(--sc-code-block-text);
+  --sc-code-block-class-title-ts:                         var(--sc-code-block-ts);
+  --sc-code-block-operator-text:                          var(--sc-code-block-text);
+  --sc-code-block-operator-ts:                            var(--sc-code-block-ts);
 
-  --cb-keyword-color:                                   hsl(var(--usp-remoods-hue), 100%,  70%);
-  --cb-keyword-shadow:                                  none;
-  --cb-variable-language-color:                         var(--cb-keyword-color);
-  --cb-variable-language-shadow:                        var(--cb-keyword-shadow);
-  --cb-doctag-color:                                    var(--cb-keyword-color);
-  --cb-doctag-shadow:                                   var(--cb-keyword-shadow);
+  --sc-code-block-keyword-text:                           hsl(var(--usp-hue), 100%,  70%);
+  --sc-code-block-keyword-ts:                             none;
+  --sc-code-block-variable-language-text:                 var(--sc-code-block-keyword-text);
+  --sc-code-block-variable-language-ts:                   var(--sc-code-block-keyword-ts);
+  --sc-code-block-doctag-text:                            var(--sc-code-block-keyword-text);
+  --sc-code-block-doctag-ts:                              var(--sc-code-block-keyword-ts);
 
-  --cb-title-function-color:                            hsl(var(--usp-remoods-hue), 100%,  85%);
-  --cb-title-function-shadow:                           none;
-  --cb-property-color:                                  var(--cb-title-function-color);
-  --cb-property-shadow:                                 var(--cb-title-function-shadow);
-  --cb-attr-color:                                      var(--cb-title-function-color);
-  --cb-attr-shadow:                                     var(--cb-title-function-shadow);
-  --cb-attribute-color:                                 var(--cb-title-function-color);
-  --cb-attribute-shadow:                                var(--cb-title-function-shadow);
+  --sc-code-block-title-function-text:                    hsl(var(--usp-hue), 100%,  85%);
+  --sc-code-block-title-function-ts:                      none;
+  --sc-code-block-property-text:                          var(--sc-code-block-title-function-text);
+  --sc-code-block-property-ts:                            var(--sc-code-block-title-function-ts);
+  --sc-code-block-attr-text:                              var(--sc-code-block-title-function-text);
+  --sc-code-block-attr-ts:                                var(--sc-code-block-title-function-ts);
+  --sc-code-block-attribute-text:                         var(--sc-code-block-title-function-text);
+  --sc-code-block-attribute-ts:                           var(--sc-code-block-title-function-ts);
 
-  --cb-title-class-inherited-color:                     hsl(calc(var(--usp-remoods-hue) + 260deg), 100%,  75%);
-  --cb-title-class-inherited-shadow:                    none;
-  --cb-built-in-color:                                  var(--cb-title-class-inherited-color);
-  --cb-built-in-shadow:                                 var(--cb-title-class-inherited-shadow);
-  --cb-selector-class-color:                            var(--cb-title-class-inherited-color);
-  --cb-selector-class-shadow:                           var(--cb-title-class-inherited-shadow);
-  --cb-html-attr-color:                                 var(--cb-title-class-inherited-color);
-  --cb-html-attr-shadow:                                var(--cb-title-class-inherited-shadow);
-  --cb-type-color:                                      var(--cb-title-class-inherited-color);
-  --cb-type-shadow:                                     var(--cb-title-class-inherited-shadow);
+  --sc-code-block-title-class-inherited-text:             hsl(calc(var(--usp-hue) + 260deg), 100%,  75%);
+  --sc-code-block-title-class-inherited-ts:               none;
+  --sc-code-block-built-in-text:                          var(--sc-code-block-title-class-inherited-text);
+  --sc-code-block-built-in-ts:                            var(--sc-code-block-title-class-inherited-ts);
+  --sc-code-block-selector-class-text:                    var(--sc-code-block-title-class-inherited-text);
+  --sc-code-block-selector-class-ts:                      var(--sc-code-block-title-class-inherited-ts);
+  --sc-code-block-html-attr-text:                         var(--sc-code-block-title-class-inherited-text);
+  --sc-code-block-html-attr-ts:                           var(--sc-code-block-title-class-inherited-ts);
+  --sc-code-block-type-text:                              var(--sc-code-block-title-class-inherited-text);
+  --sc-code-block-type-ts:                                var(--sc-code-block-title-class-inherited-ts);
   
-  --cb-literal-color:                                   hsl(calc(var(--usp-remoods-hue) + 148deg), 100%,  65%);
-  --cb-literal-shadow:                                  none;
-  --cb-meta-color:                                      var(--cb-literal-color);
-  --cb-meta-shadow:                                     var(--cb-literal-shadow);
-  --cb-symbol-color:                                    var(--cb-literal-color);
-  --cb-symbol-shadow:                                   var(--cb-literal-shadow);
+  --sc-code-block-literal-text:                           hsl(calc(var(--usp-hue) + 148deg), 100%,  65%);
+  --sc-code-block-literal-ts:                             none;
+  --sc-code-block-meta-text:                              var(--sc-code-block-literal-text);
+  --sc-code-block-meta-ts:                                var(--sc-code-block-literal-ts);
+  --sc-code-block-symbol-text:                            var(--sc-code-block-literal-text);
+  --sc-code-block-symbol-ts:                              var(--sc-code-block-literal-ts);
   
-  --cb-subst-color:                                     hsl(calc(var(--usp-remoods-hue) +  90deg), 100%,  75%);
-  --cb-subst-shadow:                                    none;
-  --cb-variable-text-color:                             var(--cb-subst-color);
-  --cb-variable-shadow:                                 var(--cb-subst-shadow);
-  --cb-regexp-color:                                    var(--cb-subst-color);
-  --cb-regexp-shadow:                                   var(--cb-subst-shadow);
+  --sc-code-block-subst-text:                             hsl(calc(var(--usp-hue) +  90deg), 100%,  75%);
+  --sc-code-block-subst-ts:                               none;
+  --sc-code-block-variable-text:                          var(--sc-code-block-subst-text);
+  --sc-code-block-variable-ts:                            var(--sc-code-block-subst-ts);
+  --sc-code-block-regexp-text:                            var(--sc-code-block-subst-text);
+  --sc-code-block-regexp-ts:                              var(--sc-code-block-subst-ts);
   
-  --cb-selector-tag-color:                              hsl(calc(var(--usp-remoods-hue) + 120deg), 100%,  70%);
-  --cb-selector-tag-shadow:                             none;
-  --cb-tag-color:                                       var(--cb-selector-tag-color);
-  --cb-tag-shadow:                                      var(--cb-selector-tag-shadow);
+  --sc-code-block-selector-tag-text:                      hsl(calc(var(--usp-hue) + 120deg), 100%,  70%);
+  --sc-code-block-selector-tag-ts:                        none;
+  --sc-code-block-tag-text:                               var(--sc-code-block-selector-tag-text);
+  --sc-code-block-tag-ts:                                 var(--sc-code-block-selector-tag-ts);
 
   /* CUSTOM ELEMENT: ART GALLERY ============================================================ */
-  --ag-bg-color:                                        hsl(var(--usp-remoods-hue),  15%,  15%);
-  --ag-bd-color:                                        hsl(var(--usp-remoods-hue), 100%,  70%);
-  --ag-drop-shadow:                             0 0 2px hsl(var(--usp-remoods-hue), 100%,  50%);
+  --sc-art-gallery-bg:                                    hsl(var(--usp-hue),  15%,  15%);
+  --sc-art-gallery-bdc:                                   hsl(var(--usp-hue), 100%,  70%);
+  --sc-art-gallery-ds:                                2px hsl(var(--usp-hue), 100%,  50%);
 
   /* CUSTOM ELEMENT: STICKY NOTES =========================================================== */
   /* sticky notes body group:  not including the sticky note - "Important" ------------------ */
-  --sn-text-color:                                      var(--render-viewer-text-color);
-  --sn-bg-color:                                        var(--render-viewer-bg-color-2);
-  --sn-bd-color:                                        hsl(var(--usp-remoods-hue), 100%,  70%);
-  --sn-drop-shadow:                         0px 0px 2px hsl(var(--usp-remoods-hue), 100%,  50%);
+  --sc-sticky-notes-text:                                 var(--sc-text);
+  --sc-sticky-notes-bg:                                   var(--sc-bg-2);
+  --sc-sticky-notes-bdc:                                  hsl(var(--usp-hue), 100%,  70%);
+  --sc-sticky-notes-ds:                               2px hsl(var(--usp-hue), 100%,  50%);
   /* sticky notes - "important" > body ------------------------------------------------------ */
-  --sn-important-text-color:                          hsl( 40,  50%,  70%);
-  --sn-important-bg-color:                            hsl(  0, 100%,  30%);
-  --sn-important-bd-color:                            hsl(  0, 100%,  50%);
-  --sn-important-box-shadow:                  0 0 6px hsl(  0, 100%,  10%);
+  --sc-sticky-notes-important-text:                     hsl( 40,  50%,  70%);
+  --sc-sticky-notes-important-bg:                       hsl(  0, 100%,  30%);
+  --sc-sticky-notes-important-bd:                       hsl(  0, 100%,  50%);
+  --sc-sticky-notes-important-bs:                   6px hsl(  0, 100%,  10%);
   /* sticky notes tag group:  not including the stick note - "Important" -------------------- */
-  --sn-tags-text-color:                               hsl(  0,   0%,  90%);
-  --sn-tags-text-shadow:                    1px 1px 2px hsl(var(--usp-remoods-hue),   0%,   0%);
+  --sc-sticky-notes-tags-text:                          hsl(  0,   0%,  90%);
+  --sc-sticky-notes-tags-ts:                          2px hsl(var(--usp-hue),   0%,   0%);
   /* sticky notes tag ----------------------------------------------------------------------- */
-  --sn-note-tag-bg-color:                             hsl(206, 100%,  38%);
-  --sn-tip-tag-bg-color:                              hsl( 56, 100%,  38%);
-  --sn-question-tag-bg-color:                         hsl(270, 100%,  38%);
-  --sn-explain-tag-bg-color:                          hsl(163, 100%,  38%);
-  --sn-warning-tag-bg-color:                          hsl(  0, 100%,  38%);
-  --sn-keyword-tag-bg-color:                          hsl(324, 100%,  38%);
-  --sn-comment-tag-bg-color:                          hsl(100, 100%,  38%);
+  --sc-sticky-notes-note-tag-bg:                        hsl(206, 100%,  38%);
+  --sc-sticky-notes-tip-tag-bg:                         hsl( 56, 100%,  38%);
+  --sc-sticky-notes-question-tag-bg:                    hsl(270, 100%,  38%);
+  --sc-sticky-notes-explain-tag-bg:                     hsl(163, 100%,  38%);
+  --sc-sticky-notes-warning-tag-bg:                     hsl(  0, 100%,  38%);
+  --sc-sticky-notes-keyword-tag-bg:                     hsl(324, 100%,  38%);
+  --sc-sticky-notes-comment-tag-bg:                     hsl(100, 100%,  38%);
 
-  --sn-important-tag-text-color:                      hsl(  0, 100%,  50%);
-  --sn-important-tag-bg-color:                        hsl(  0, 100%,  12%);
-  --sn-important-tag-bd-color:                        hsl(  0, 100%,  50%);
+  --sc-sticky-notes-important-tag-text:                 hsl(  0, 100%,  50%);
+  --sc-sticky-notes-important-tag-bg:                   hsl(  0, 100%,  12%);
+  --sc-sticky-notes-important-tag-bdc:                  hsl(  0, 100%,  50%);
 
   /* CUSTOM ELEMENT: CUSTOM TITLE BLOCK ===================================================== */
-  --ctb-bg-color:                                       var(--render-viewer-bg-color-2);
-  --ctb-drop-shadow:                            0 0 2px hsl(var(--usp-remoods-hue), 100%,  70%);
-  --ctb-title-color:                                    hsl(var(--usp-remoods-hue), 100%,  80%);
-  --ctb-symbol-bg-color:                                repeating-radial-gradient(circle,
-                                                        hsl(var(--usp-remoods-hue), 100%,  80%),
-                                                        hsl(var(--usp-remoods-hue), 100%,  20%)  27%);
+  --sc-custom-title-block-bg:                             var(--sc-bg-2);
+  --sc-custom-title-block-ds:                         2px hsl(var(--usp-hue), 100%,  70%);
+  --sc-custom-title-block-title:                          hsl(var(--usp-hue), 100%,  80%);
+  --sc-custom-title-block-symbol-bg:                      repeating-radial-gradient(circle,
+                                                          hsl(var(--usp-hue), 100%,  80%),
+                                                          hsl(var(--usp-hue), 100%,  20%)  27%);
 
   /* CUSTOM ELEMENT: KEY POINT ============================================================== */
-  --kp-text-color:                                      hsl(var(--usp-remoods-hue), 100%,  75%);
-  --kp-text-shadow:                                 0 0 none;
-  --kp-bd-color:                                        hsl(var(--usp-remoods-hue), 100%,  85%);
+  --sc-key-point-text:                                    hsl(var(--usp-hue), 100%,  75%);
+  --sc-key-point-ts:                                      none;
+  --sc-key-point-bdc:                                     hsl(var(--usp-hue), 100%,  85%);
 
   /* CUSTOM ELEMENT: KEY MENTION ============================================================ */
-  --km-text-color:                                      var(--render-viewer-text-color);
-  --km-bg-color:                                        var(--render-viewer-bg-color-2);
-  --km-bd-color:                              1px solid hsl(var(--usp-remoods-hue),  70%,  70%);
-  --km-special-text-color:                            hsl(  0, 100%,  50%);
+  --sc-key-mention-text:                                  var(--sc-text);
+  --sc-key-mention-bg:                                    var(--sc-bg-2);
+  --sc-key-mention-bd:                          1px solid hsl(var(--usp-hue),  70%,  70%);
+  --sc-key-mention-special-text:                        hsl(  0, 100%,  50%);
 
   /* PLUGINS: SPOILER ======================================================================= */
   /* spoiler block -------------------------------------------------------------------------- */
-  --spoiler-block-text-color:                           var(--render-viewer-text-color);
-  --spoiler-block-bg-color:                             hsl(var(--usp-remoods-hue),  10%,  20%);
-  --spoiler-block-box-shadow:                   0 0 4px hsl(var(--usp-remoods-hue), 100%,  80%);
+  --sc-plugin-spoiler-text:                               var(--sc-text);
+  --sc-plugin-spoiler-bg:                                 hsl(var(--usp-hue),  10%,  20%);
+  --sc-plugin-spoiler-bs:                             4px hsl(var(--usp-hue), 100%,  80%);
   /* spoiler title -------------------------------------------------------------------------- */
-  --spoiler-title-color:                                hsl(var(--usp-remoods-hue), 100%,  90%);
+  --sc-plugin-spoiler-title:                              hsl(var(--usp-hue), 100%,  90%);
   /* spoiler > list ------------------------------------------------------------------------- */
-  --spoiler-list-text-color:                            hsl(var(--usp-remoods-hue), 100%,  80%);
+  --sc-plugin-spoiler-list-text:                          hsl(var(--usp-hue), 100%,  80%);
   /* spoiler > span ------------------------------------------------------------------------- */
-  --spoiler-span-title-color:                           hsl(var(--usp-remoods-hue),  40%,  80%);
-  --spoiler-span-title-bg-color:                        hsl(var(--usp-remoods-hue),  10%,  30%);
+  --sc-plugin-spoiler-span-title:                         hsl(var(--usp-hue),  40%,  80%);
+  --sc-plugin-spoiler-span-title-bg:                      hsl(var(--usp-hue),  10%,  30%);
   /* spoiler > list > span ------------------------------------------------------------------ */
-  --spoiler-list-span-color:                            hsl(var(--usp-remoods-hue),   0%,  90%);
+  --sc-plugin-spoiler-list-span:                          hsl(var(--usp-hue),   0%,  90%);
   /* spoiler > custom title block ----------------------------------------------------------- */
-  --spoiler-ctb-text-color:                             var(--render-viewer-text-color);
-  --spoiler-ctb-bg-color:                               hsl(var(--usp-remoods-hue),  10%,  30%);
-  --spoiler-ctb-title-color:                            hsl(var(--usp-remoods-hue), 100%,  90%);
+  --sc-plugin-spoiler-custom-title-block-text:            var(--sc-text);
+  --sc-plugin-spoiler-custom-title-block-bg:              hsl(var(--usp-hue),  10%,  30%);
+  --sc-plugin-spoiler-custom-title-block-title:           hsl(var(--usp-hue), 100%,  90%);
   /* spoiler inline ------------------------------------------------------------------------- */
-  --spoiler-inline-text-color:                        hsl(  0,   0%,  90%);
-  --spoiler-inline-bg-color:                          hsl(  0,   0%,   0%);
-  --spoiler-inline-bd-color:                  1px solid hsl(var(--usp-remoods-hue), 100%,  50%);
-  --spoiler-inline-symbol-color:                        hsl(var(--usp-remoods-hue), 100%,  80%);
-  --spoiler-inline-symbol-color-hover:                hsl(  0, 100%,  50%);
+  --sc-plugin-spoiler-inline-text:                      hsl(  0,   0%,  90%);
+  --sc-plugin-spoiler-inline-bg:                        hsl(  0,   0%,   0%);
+  --sc-plugin-spoiler-inline-bd:                1px solid hsl(var(--usp-hue), 100%,  50%);
+  --sc-plugin-spoiler-inline-symbol:                      hsl(var(--usp-hue), 100%,  80%);
+  --sc-plugin-spoiler-inline-symbol-hover:              hsl(  0, 100%,  50%);
 
   /* PLUGINS: TURNTOCHART =================================================================== */
-  --turntochart-bg-color:                               none;
-  --turntochart-text-color:                             hsl(var(--usp-remoods-hue),   0%,  80%);
-  --turntochart-info-bg-color:                          hsl(var(--usp-remoods-hue),  10%,  20%);
+  --sc-plugin-turntochart-bg:                             none;
+  --sc-plugin-turntochart-text:                           hsl(var(--usp-hue),   0%,  80%);
+  --sc-plugin-turntochart-info-bg:                        hsl(var(--usp-hue),  10%,  20%);
 
 
 
   
-  /* **************************************************************************************** */
-  /* !!!!                       PRINT PDF & EXPORT PDF PROPERTIES                        !!!! */
-  /* **************************************************************************************** */
+  /* ---------------------------------------------------------------------------------------- */
+  /*                                    PRINT PROPERTIES                                      */
+  /* ---------------------------------------------------------------------------------------- */
 
 
 
 
   /* PRINT GENERAL ========================================================================== */
-  --print-render-viewer-bg-color:                       hsl(  0,   0%, 100%);
-  --print-render-viewer-text-color:                     hsl(  0,   0%,  25%);
+  --pr-bg:                                              hsl(  0,   0%, 100%);
+  --pr-text:                                            hsl(  0,   0%,  25%);
   
-  --print-horizontal-line-color:                        repeating-linear-gradient(114deg,
-                                                        hsl(var(--usp-remoods-hue), 100%,  80%),
-                                                        hsl(var(--usp-remoods-hue), 100%,  35%,  50%),
-                                                        hsl(var(--usp-remoods-hue), 100%,  80%)  3px);
-  --print-note-title-color:                           hsl(  0,   0%,  60%); 
-  
-  /* PRINT HEADING ========================================================================== */
-  /* print h1 ------------------------------------------------------------------------------- */
-  --print-h1-color:                                     hsl(var(--usp-remoods-hue), 100%,  45%);
-  --print-h1-bg-color:                                  repeating-linear-gradient( 114deg,
-                                                        hsl(var(--usp-remoods-hue), 100%,  80%),
-                                                        hsl(var(--usp-remoods-hue), 100%,  35%,  30%),
-                                                        hsl(var(--usp-remoods-hue), 100%,  80%)  3px);
-  /* print h2 ------------------------------------------------------------------------------- */
-  --print-h2-color:                                     hsl(var(--usp-remoods-hue),  30%,  60%);
-  --print-h2-bd-color:                                  linear-gradient(to right,
-                                                        hsl(var(--usp-remoods-hue),  30%,  60%)  50%,
-                                                        transparent);
-  /* print h3 ------------------------------------------------------------------------------- */
-  --print-h3-color:                                     var(--print-h2-color);
-  --print-h3-bd-color:                                  var(--print-h2-bd-color);
-  /* print h4 ------------------------------------------------------------------------------- */
-  --print-h4-color:                                     var(--print-h2-color);
-  --print-h4-bd-color:                                  var(--print-h2-bd-color);
-  /* print h5 ------------------------------------------------------------------------------- */
-  --print-h5-color:                                     hsl(var(--usp-remoods-hue),  15%,  65%);
-  --print-h5-bd-color:                                  repeating-linear-gradient(to right,
-                                                        hsl(var(--usp-remoods-hue),  30%,  60%), 2px,
-                                                        transparent, 2px,
-                                                        transparent 5px);
-  /* print h6 ------------------------------------------------------------------------------- */
-  --print-h6-color:                                     var(--print-h5-color);
-  --print-h6-bd-color:                                  var(--print-h5-bd-color);
+  --pr-hr-bg: ;
+  --pr-hr-bgi:                                            repeating-linear-gradient(114deg,
+                                                          hsl(var(--usp-hue), 100%,  80%),
+                                                          hsl(var(--usp-hue), 100%,  35%,  50%),
+                                                          hsl(var(--usp-hue), 100%,  80%)  3px);
+  --pr-note-title:                                      hsl(  0,   0%,  60%); 
 
   /* PRINT SPECIAL TEXT ===================================================================== */
-  --print-special-text-shadow:                      0 0 none;
-
-  --print-strong-text-color:                            hsl(var(--usp-remoods-hue), 100%,  30%);
+  --pr-strong-text:                                       hsl(var(--usp-hue), 100%,  30%);
   
-  --print-emphasize-text-color:                         hsl(var(--usp-remoods-hue), 100%,  30%);
+  --pr-emphasize-text:                                    hsl(var(--usp-hue), 100%,  30%);
   
-  --print-strikethrough-text-color:                     hsl(var(--usp-remoods-hue),  25%,  50%);
-  --print-strikethrough-text-bg-color:                  none;
-  --print-strikethrough-symbol-color:                 hsl(  0,   0%, 100%);
-  --print-strikethrough-symbol-bg-color:              hsl(  0,  70%,  55%);
+  --pr-insert-text:                                       hsl(var(--usp-hue), 100%,  40%);
+  --pr-insert-bg:                                         none;
+  --pr-insert-bd:                                         hsl(var(--usp-hue),  25%,  50%);
+  --pr-insert-symbol:                                   hsl(  0,   0%, 100%);
+  --pr-insert-symbol-bg:                                hsl(100,  60%,  45%);
 
-  --print-insert-text-color:                            hsl(var(--usp-remoods-hue), 100%,  40%);
-  --print-insert-text-bg-color:                         none;
-  --print-insert-text-bd-color:                         hsl(var(--usp-remoods-hue),  25%,  50%);
-  --print-insert-symbol-color:                          hsl(  0,   0%, 100%);
-  --print-insert-symbol-bg-color:                       hsl(100,  60%,  45%);
+  --pr-strikethrough-text:                                hsl(var(--usp-hue),  25%,  50%);
+  --pr-strikethrough-bg:                                  none;
+  --pr-strikethrough-symbol:                            hsl(  0,   0%, 100%);
+  --pr-strikethrough-symbol-bg:                         hsl(  0,  70%,  55%);
 
-  --print-abbreviation-text-color:                      hsl(var(--usp-remoods-hue),  80%,  50%);
-  --print-abbreviation-bd-color:                        hsl(var(--usp-remoods-hue),  80%,  50%);
+  --pr-abbreviation-text:                                 hsl(var(--usp-hue),  80%,  50%);
+  --pr-abbreviation-td:                                   hsl(var(--usp-hue),  80%,  50%);
 
-  --print-mark-text-color:                              hsl(var(--usp-remoods-hue),  30%,  30%);
-  --print-mark-text-bg-color:                           hsl(var(--usp-remoods-hue), 100%,  85%);
+  --pr-mark-text:                                         hsl(var(--usp-hue),  30%,  30%);
+  --pr-mark-bg:                                           hsl(var(--usp-hue), 100%,  85%);
 
-  --print-inline-code-color:                            hsl(var(--usp-remoods-hue), 100%,  30%);
-  --print-inline-code-bg-color:                         hsl(var(--usp-remoods-hue),   0%, 100%);
-  --print-inline-code-bd-color:               2px solid hsl(var(--usp-remoods-hue),  20%,  80%);
-  --print-inline-code-symbol-color:                     hsl(var(--usp-remoods-hue),  20%,  80%);
+  --pr-inline-code-text:                                  hsl(var(--usp-hue), 100%,  30%);
+  --pr-inline-code-symbol:                                hsl(var(--usp-hue),  20%,  80%);
 
-  --print-katex-text-color:                             hsl(var(--usp-remoods-hue),  80%,  50%);
-
-  /* PRINT LIST ============================================================================= */
-  --print-list-text-color:                              hsl(var(--usp-remoods-hue),  30%,  60%);
-  --print-list-span-color:                              var(--print-render-viewer-text-color);
+  --pr-math-notation-text:                                hsl(var(--usp-hue),  80%,  50%);
 
   /* PRINT LINK ============================================================================= */
-  --print-link-text-color:                              hsl(var(--usp-remoods-hue),  80%,  50%);
-  --print-link-source-icon-color:                       hsl(var(--usp-remoods-hue),  80%,  50%);
-  
+  --pr-link-text:                                         hsl(var(--usp-hue),  80%,  50%);
+  --pr-link-source-icon:                                  hsl(var(--usp-hue),  80%,  50%);
+
+  /* PRINT LIST ============================================================================= */
+  --pr-list-text:                                         hsl(var(--usp-hue),  30%,  60%);
+  --pr-list-span:                                         var(--pr-text);
+  --pr-list-token: ;
+
   /* PRINT FOOTNOTE ========================================================================= */
-  --print-fn-title-color:                               hsl(var(--usp-remoods-hue),   0%,  50%);
-  --print-fn-title-bd-color:                 3px double hsl(var(--usp-remoods-hue),   0%,  50%);
+  --pr-fn-title:                                          hsl(var(--usp-hue),   0%,  50%);
+  --pr-footnote-title-bdt:                            3px double hsl(var(--usp-hue),   0%,  50%);
+
+  --pr-footnote-ref:                                            var(--pr-link-text);
   
-  --print-fn-list-text-color:                           hsl(var(--usp-remoods-hue),   0%,  50%);
-  --print-fn-list-token-color:                          hsl(var(--usp-remoods-hue),   0%,  50%);
+  --pr-footnote-list-text:                                      hsl(var(--usp-hue),   0%,  50%);
+  --pr-footnote-list-token:                                     hsl(var(--usp-hue),   0%,  50%);
+
+  /* PRINT HEADING ========================================================================== */
+  /* print h1 ------------------------------------------------------------------------------- */
+  --pr-h1-text:                                           hsl(var(--usp-hue), 100%,  45%);
+  --pr-h1-bgi:                                            repeating-linear-gradient( 114deg,
+                                                          hsl(var(--usp-hue), 100%,  80%),
+                                                          hsl(var(--usp-hue), 100%,  35%,  30%),
+                                                          hsl(var(--usp-hue), 100%,  80%)  3px);
+  /* print h2 ------------------------------------------------------------------------------- */
+  --pr-h2-text:                                           hsl(var(--usp-hue),  30%,  60%);
+  --pr-h2-bgi:                                            linear-gradient(to right,
+                                                          hsl(var(--usp-hue),  30%,  60%)  50%,
+                                                          transparent);
+  /* print h3 ------------------------------------------------------------------------------- */
+  --pr-h3-text:                                           var(--pr-h2-text);
+  --pr-h3-bgi:                                            var(--pr-h2-bgi);
+  /* print h4 ------------------------------------------------------------------------------- */
+  --pr-h4-text:                                           var(--pr-h2-text);
+  --pr-h4-bgi:                                            var(--pr-h2-bgi);
+  /* print h5 ------------------------------------------------------------------------------- */
+  --pr-h5-text:                                           hsl(var(--usp-hue),  15%,  65%);
+  --pr-h5-bgi:                                            repeating-linear-gradient(to right,
+                                                          hsl(var(--usp-hue),  30%,  60%), 2px,
+                                                          transparent, 2px,
+                                                          transparent 5px);
+  /* print h6 ------------------------------------------------------------------------------- */
+  --pr-h6-text:                                           var(--pr-h5-text);
+  --pr-h6-bgi:                                            var(--pr-h5-bgi);
 
   /* PRINT BLOCKQUOTE ======================================================================= */
-  --print-blockquote-bd-color:               5px dotted hsl(var(--usp-remoods-hue),  20%,  60%);
-  --print-blockquote-text-color:                        var(--print-fn-list-text-color);
+  --pr-blockquote-bdl:                         5px dotted hsl(var(--usp-hue),  20%,  60%);
+  --pr-blockquote-text:                                   var(--pr-footnote-list-text);
 
   /* PRINT TABLE ============================================================================ */
-  --print-table-text-color:                             hsl(var(--usp-remoods-hue),   0%,  25%);
-  --print-table-header-bg-color:                        hsl(var(--usp-remoods-hue), 100%,  70%);
+  --pr-table-text:                                        hsl(var(--usp-hue),   0%,  25%);
+  --pr-table-header-bg:                                   hsl(var(--usp-hue), 100%,  70%);
   
-  --print-table-row-odd-bg-color:                       hsl(var(--usp-remoods-hue), 100%,  85%);
-  --print-table-row-even-bg-color:                      hsl(var(--usp-remoods-hue), 100%,  85%);
+  --pr-table-row-odd-bg:                                  hsl(var(--usp-hue), 100%,  85%);
+  --pr-table-row-even-bg:                                 hsl(var(--usp-hue), 100%,  85%);
   
-  --print-table-bd-color:                     1px solid black;
+  --pr-table-bd:                              1px solid black;
   
   /* PRINT MARKDOWN TOC ===================================================================== */
   /* print toc button (title) --------------------------------------------------------------- */
-  --print-toc-btn-text-color:                           hsl(var(--usp-remoods-hue),  30%,  30%);
+  --pr-toc-btn-text:                                      hsl(var(--usp-hue),  30%,  30%);
   /* print toc list ------------------------------------------------------------------------- */
-  --print-toc-list-bd-color:                  1px solid hsl(var(--usp-remoods-hue),  45%,  45%);
+  --pr-toc-list-bdl:                             1px solid hsl(var(--usp-hue),  45%,  45%);
 
   /* PRINT CODE BLOCK ======================================================================= */
-  --print-cb-bd-color:                                  hsl(var(--usp-remoods-hue),  20%,  20%);
+  --pr-code-block-bdc:                                    hsl(var(--usp-hue),  20%,  20%);
   /* print syntax highlight ----------------------------------------------------------------- */
-  --print-cb-comment-color:                             hsl(var(--usp-remoods-hue),   0%,  60%);
-  --print-cb-comment-shadow:                        0 0 none;
+  --pr-code-block-comment-text:                           hsl(var(--usp-hue),   0%,  60%);
 
-  --print-cb-number-color:                              hsl(calc(var(--usp-remoods-hue) + 110deg), 100%,  26%);
-  --print-cb-number-shadow:                         0 0 none;
+  --pr-code-block-number-text:                            hsl(calc(var(--usp-hue) + 110deg), 100%,  26%);
 
-  --print-cb-string-color:                              hsl(calc(var(--usp-remoods-hue) + 180deg), 100%,  35%);
-  --print-cb-string-shadow:                         0 0 none;
+  --pr-code-block-string-text:                            hsl(calc(var(--usp-hue) + 180deg), 100%,  35%);
   
-  --print-cb-params-color:                              hsl(calc(var(--usp-remoods-hue) + 300deg), 100%,  30%);
-  --print-cb-params-shadow:                         0 0 none;
+  --pr-code-block-params-text:                            hsl(calc(var(--usp-hue) + 300deg), 100%,  30%);
 
-  --print-cb-title-color:                               hsl(calc(var(--usp-remoods-hue) + 180deg), 100%,  45%);
-  --print-cb-title-shadow:                          0 0 none;
+  --pr-code-block-title-text:                             hsl(calc(var(--usp-hue) + 180deg), 100%,  45%);
 
-  --print-cb-selector-id-color:                         hsl(calc(var(--usp-remoods-hue) + 159deg), 100%,  35%);
-  --print-cb-selector-id-shadow:                    0 0 none;
+  --pr-code-block-selector-id-text:                       hsl(calc(var(--usp-hue) + 159deg), 100%,  35%);
 
-  --print-cb-selector-pseudo-color:                     hsl(calc(var(--usp-remoods-hue) + 323deg),  87%,  35%);
-  --print-cb-selector-pseudo-shadow:                0 0 none;
+  --pr-code-block-selector-pseudo-text:                   hsl(calc(var(--usp-hue) + 323deg),  87%,  35%);
   
-  --print-cb-selector-attr-color:                       hsl(calc(var(--usp-remoods-hue) + 300deg), 100%,  45%);
-  --print-cb-selector-attr-shadow:                  0 0 none;
+  --pr-code-block-selector-attr-text:                     hsl(calc(var(--usp-hue) + 300deg), 100%,  45%);
 
-  --print-cb-text-color:                                hsl(var(--usp-remoods-hue),   0%,  30%);
-  --print-cb-text-shadow:                          0 0 none;
-  --print-cb-title-class-color:                         var(--print-cb-text-color);
-  --print-cb-title-class-shadow:                        var(--print-cb-text-shadow);
-  --print-cb-function-color:                            var(--print-cb-text-color);
-  --print-cb-function-shadow:                           var(--print-cb-text-shadow);
-  --print-cb-function-title-color:                      var(--print-cb-text-color);
-  --print-cb-function-title-shadow:                     var(--print-cb-text-shadow);
-  --print-cb-function-params-color:                     var(--print-cb-text-color);
-  --print-cb-function-params-shadow:                    var(--print-cb-text-shadow);
-  --print-cb-class-title-color:                         var(--print-cb-text-color);
-  --print-cb-class-title-shadow:                        var(--print-cb-text-shadow);
-  --print-cb-operator-color:                            var(--print-cb-text-color);
-  --print-cb-operator-shadow:                           var(--print-cb-text-shadow);
+  --pr-code-block-text:                                   hsl(var(--usp-hue),   0%,  30%);
+  --pr-code-block-title-class-text:                       var(--pr-code-block-text);
+  --pr-code-block-function-text:                          var(--pr-code-block-text);
+  --pr-code-block-function-title-text:                    var(--pr-code-block-text);
+  --pr-code-block-function-params-text:                   var(--pr-code-block-text);
+  --pr-code-block-class-title-text:                       var(--pr-code-block-text);
+  --pr-code-block-operator-text:                          var(--pr-code-block-text);
 
-  --print-cb-keyword-color:                             hsl(var(--usp-remoods-hue), 100%,  30%);
-  --print-cb-keyword-shadow:                       0 0 none;
-  --print-cb-variable-language-color:                   var(--print-cb-keyword-color);
-  --print-cb-variable-language-shadow:                  var(--print-cb-keyword-shadow);
-  --print-cb-doctag-color:                              var(--print-cb-keyword-color);
-  --print-cb-doctag-shadow:                             var(--print-cb-keyword-shadow);
+  --pr-code-block-keyword-text:                           hsl(var(--usp-hue), 100%,  30%);
+  --pr-code-block-variable-language-text:                 var(--pr-code-block-keyword-text);
+  --pr-code-block-doctag-text:                            var(--pr-code-block-keyword-text);
 
-  --print-cb-title-function-color:                      hsl(var(--usp-remoods-hue), 100%,  45%);
-  --print-cb-title-function-shadow:                 0 0 none;
-  --print-cb-property-color:                            var(--print-cb-title-function-color);
-  --print-cb-property-shadow:                           var(--print-cb-title-function-shadow);
-  --print-cb-attr-color:                                var(--print-cb-title-function-color);
-  --print-cb-attr-shadow:                               var(--print-cb-title-function-shadow);
-  --print-cb-attribute-color:                           var(--print-cb-title-function-color);
-  --print-cb-attribute-shadow:                          var(--print-cb-title-function-shadow);
+  --pr-code-block-title-function-text:                    hsl(var(--usp-hue), 100%,  45%);
+  --pr-code-block-property-text:                          var(--pr-code-block-title-function-text);
+  --pr-code-block-attr-text:                              var(--pr-code-block-title-function-text);
+  --pr-code-block-attribute-text:                         var(--pr-code-block-title-function-text);
 
-  --print-cb-title-class-inherited-color:               hsl(calc(var(--usp-remoods-hue) + 260deg), 100%,  35%);
-  --print-cb-title-class-inherited-shadow:          0 0 none;
-  --print-cb-built-in-color:                            var(--print-cb-title-class-inherited-color);
-  --print-cb-built-in-shadow:                           var(--print-cb-title-class-inherited-shadow);
-  --print-cb-selector-class-color:                      var(--print-cb-title-class-inherited-color);
-  --print-cb-selector-class-shadow:                     var(--print-cb-title-class-inherited-shadow);
-  --print-cb-html-attr-color:                           var(--print-cb-title-class-inherited-color);
-  --print-cb-html-attr-shadow:                          var(--print-cb-title-class-inherited-shadow);
-  --print-cb-type-color:                                var(--print-cb-title-class-inherited-color);
-  --print-cb-type-shadow:                               var(--print-cb-title-class-inherited-shadow);
+  --pr-code-block-title-class-inherited-text:             hsl(calc(var(--usp-hue) + 260deg), 100%,  35%);
+  --pr-code-block-built-in-text:                          var(--pr-code-block-title-class-inherited-text);
+  --pr-code-block-selector-class-text:                    var(--pr-code-block-title-class-inherited-text);
+  --pr-code-block-html-attr-text:                         var(--pr-code-block-title-class-inherited-text);
+  --pr-code-block-type-text:                              var(--pr-code-block-title-class-inherited-text);
   
-  --print-cb-literal-color:                             hsl(calc(var(--usp-remoods-hue) + 148deg), 100%,  25%);
-  --print-cb-literal-shadow:                        0 0 none;
-  --print-cb-meta-color:                                var(--print-cb-literal-color);
-  --print-cb-meta-shadow:                               var(--print-cb-literal-shadow);
-  --print-cb-symbol-color:                              var(--print-cb-literal-color);
-  --print-cb-symbol-shadow:                             var(--print-cb-literal-shadow);
+  --pr-code-block-literal-text:                           hsl(calc(var(--usp-hue) + 148deg), 100%,  25%);
+  --pr-code-block-meta-text:                              var(--pr-code-block-literal-text);
+  --pr-code-block-symbol-text:                            var(--pr-code-block-literal-text);
   
-  --print-cb-subst-color:                               hsl(calc(var(--usp-remoods-hue) +  90deg), 100%,  35%);
-  --print-cb-subst-shadow:                          0 0 none;
-  --print-cb-variable-text-color:                       var(--print-cb-subst-color);
-  --print-cb-variable-shadow:                           var(--print-cb-subst-shadow);
-  --print-cb-regexp-color:                              var(--print-cb-subst-color);
-  --print-cb-regexp-shadow:                             var(--print-cb-subst-shadow);
+  --pr-code-block-subst-text:                             hsl(calc(var(--usp-hue) +  90deg), 100%,  35%);
+  --pr-code-block-variable-text:                          var(--pr-code-block-subst-text);
+  --pr-code-block-regexp-text:                            var(--pr-code-block-subst-text);
 
-  --print-cb-selector-tag-color:                        hsl(calc(var(--usp-remoods-hue) + 120deg), 100%,  30%);
-  --print-cb-selector-tag-shadow:                  0 0 none;
-  --print-cb-tag-color:                                 var(--print-cb-selector-tag-color);
-  --print-cb-tag-shadow:                                var(--print-cb-selector-tag-shadow);
-
-  /* PRINT ART GALLERY ====================================================================== */
-  --print-ag-bd-color:                                  hsl(var(--usp-remoods-hue), 100%,  45%);
+  --pr-code-block-selector-tag-text:                      hsl(calc(var(--usp-hue) + 120deg), 100%,  30%);
+  --pr-code-block-tag-text:                               var(--pr-code-block-selector-tag-text);
  
   /* PRINT STICKY NOTES ===================================================================== */
-  --print-sn-text-color:                                var(--print-render-viewer-text-color);
-  --print-sn-bd-color:                                  hsl(var(--usp-remoods-hue), 100%,  70%);
-  --print-sn-box-shadow:                      0 0 2px hsl(  0,   0%,  30%);
+  --pr-sticky-notes-text:                                 var(--pr-text);
+  --pr-sticky-notes-bdc:                                  hsl(var(--usp-hue), 100%,  70%);
+  --pr-sticky-notes-bs:                             2px hsl(  0,   0%,  30%);
   /* print sticky notes - important --------------------------------------------------------- */
-  --print-sn-important-bd-color:                      hsl(  0, 100%,  50%);
-  --print-sn-important-text-color:                    hsl( 45, 100%,  43%);
-  --print-sn-important-tag-bd-color:                    var(--print-sn-important-bd-color);
+  --pr-sticky-notes-important-bdc:                      hsl(  0, 100%,  50%);
+  --pr-sticky-notes-important-text:                     hsl( 45, 100%,  43%);
+  --pr-sticky-notes-important-tag-bdc:                    var(--pr-sticky-notes-important-bdc);
   /* print sticky notes tag ----------------------------------------------------------------- */
-  --print-sn-tag-text-color:                          hsl(  0,   0%, 100%);
+  --pr-sticky-notes-tag-text:                           hsl(  0,   0%, 100%);
 
   /* PRINT CUSTOM TITLE BLOCK =============================================================== */
-  --print-ctb-bd-color:                       3px solid hsl(var(--usp-remoods-hue),  20%,  80%);
-  --print-ctb-title-color:                              hsl(var(--usp-remoods-hue), 100%,  45%);
-  --print-ctb-symbol-bg-color:                          radial-gradient(circle,
-                                                        hsl(var(--usp-remoods-hue), 100%,  45%)   0%,
-                                                        hsl(var(--usp-remoods-hue), 100%,  70%)  55%,
-                                                        hsl(var(--usp-remoods-hue), 100%,  35%)  80%);
+  --pr-custom-title-block-bd:                   3px solid hsl(var(--usp-hue),  20%,  80%);
+  --pr-custom-title-block-title:                          hsl(var(--usp-hue), 100%,  45%);
+  --pr-custom-title-block-symbol-bg:                      radial-gradient(circle,
+                                                          hsl(var(--usp-hue), 100%,  45%)   0%,
+                                                          hsl(var(--usp-hue), 100%,  70%)  55%,
+                                                          hsl(var(--usp-hue), 100%,  35%)  80%);
 
   /* PRINT KEY POINT ======================================================================== */
-  --print-kp-text-color:                                hsl(var(--usp-remoods-hue), 100%,  45%);
-  --print-kp-text-shadow:                           0 0 none;
-  --print-kp-bd-color:                                  hsl(var(--usp-remoods-hue), 100%,  40%);
+  --pr-key-point-text:                                    hsl(var(--usp-hue), 100%,  45%);
+  --pr-key-point-bdc:                                     hsl(var(--usp-hue), 100%,  40%);
 
   /* PRINT KEY MENTION ====================================================================== */
-  --print-km-text-color:                                hsl(var(--usp-remoods-hue),   0%,  20%);
-  --print-km-bd-color:                        1px solid hsl(var(--usp-remoods-hue),   0%,  60%);
-  --print-km-special-text-color:                      hsl(  0, 100%,  50%);
-  --print-km-link-text-color:                           hsl(var(--usp-remoods-hue),  40%,  40%);
+  --pr-key-mention-text:                                  hsl(var(--usp-hue),   0%,  20%);
+  --pr-key-mention-bd:                          1px solid hsl(var(--usp-hue),   0%,  60%);
+  --pr-key-mention-link-text:                             hsl(var(--usp-hue),  40%,  40%);
 
   /* PRINT SPOILER ========================================================================== */
-  --print-spoiler-block-bd-color:           1px solid hsl(  0,   0%,  60%);
+  --pr-plugin-spoiler-bd:                               hsl(  0,   0%,  60%);
   /* print spoiler title -------------------------------------------------------------------- */
-  --print-spoiler-title-color:                          hsl(var(--usp-remoods-hue),  20%,  40%);
-  --print-spoiler-title-bd-color:                     hsl(  0,   0%,  60%);
+  --pr-plugin-spoiler-title:                              hsl(var(--usp-hue),  20%,  40%);
   /* print spoiler list --------------------------------------------------------------------- */
-  --print-spoiler-list-text-color:                      var(--print-link-text-color);
+  --pr-plugin-spoiler-list-text:                          var(--pr-link-text);
   /* print spoiler span --------------------------------------------------------------------- */
-  --print-spoiler-span-title-color:                     hsl(var(--usp-remoods-hue),  10%,  50%);
-  --print-spoiler-span-title-bd-color:                hsl(  0,   0%,  80%);
+  --pr-plugin-spoiler-span-title:                         hsl(var(--usp-hue),  10%,  50%);
+  --pr-plugin-spoiler-span-title-bd:                    hsl(  0,   0%,  80%);
   /* print spoiler list > span -------------------------------------------------------------- */
-  --print-spoiler-list-span-color:                      hsl(var(--usp-remoods-hue),   0%,  20%);
+  --pr-plugin-spoiler-list-span:                          hsl(var(--usp-hue),   0%,  20%);
   /* print spoiler > custom title block ----------------------------------------------------- */
-  --print-spoiler-ctb-text-color:                       hsl(var(--usp-remoods-hue),   0%,  20%);
-  --print-spoiler-ctb-bd-color:                         hsl(var(--usp-remoods-hue),   0%,  60%);
-  --print-spoiler-ctb-title-color:                      hsl(var(--usp-remoods-hue),  20%,  40%);
+  --pr-plugin-spoiler-custom-title-block-text:            hsl(var(--usp-hue),   0%,  20%);
+  --pr-plugin-spoiler-custom-title-block-title:           hsl(var(--usp-hue),  20%,  40%);
   /* print spoiler inline ------------------------------------------------------------------- */
-  --print-spoiler-inline-bd-color:                      hsl(var(--usp-remoods-hue), 100%,  45%);
-  --print-spoiler-inline-text-color:                  hsl(  0,   0%,  40%);
-  --print-spoiler-inline-symbol-color:                  hsl(var(--usp-remoods-hue),  70%,  70%);
+  --pr-plugin-spoiler-inline-bd:                          hsl(var(--usp-hue), 100%,  45%);
+  --pr-plugin-spoiler-inline-text:                      hsl(  0,   0%,  40%);
+  --pr-plugin-spoiler-inline-symbol:                      hsl(var(--usp-hue),  70%,  70%);
 
   /* PRINT TURNTOCHART ====================================================================== */
-  --print-turntochart-text-color:                       hsl(var(--usp-remoods-hue),   0%,  20%);
-  --print-turntochart-info-bd-color:          3px solid hsl(var(--usp-remoods-hue),   0%,  80%);
-    
-} 
+  --pr-plugin-turntochart-text:                           hsl(var(--usp-hue),   0%,  20%);
+  --pr-plugin-turntochart-info-bd:              3px solid hsl(var(--usp-hue),   0%,  80%);
+
+}
 
 
 
 
 /* ********************************************************* */
-/* !!!!        RENDER VIEWER & RICH TEXT EDITOR         !!!! */
+/* !!!!                     SCREEN                      !!!! */
 /* ********************************************************* */
+
+
+
+
 /* --------------------------------------------------------- */
 /*                           FONT                            */
 /* --------------------------------------------------------- */
@@ -731,12 +700,12 @@
 
 
 /* || FONT 1/3 | BASE FONT ********************************* */
-body *,
+body *:not(.katex-display *),
 .spoiler-block .summary-title {
   font-family: var(--usp-base-font, sans-serif);
   font-size: var(--usp-base-font-size);
   line-height: 1.5em;
-  color: var(--render-viewer-text-color);
+  color: var(--sc-text);
 }
 
 
@@ -759,6 +728,10 @@ body *,
   font-family: var(--usp-monospace-font, monospace);
   font-size: var(--usp-monospace-font-size);
 }
+/* MONOSPACE FONT: SMALLER CODE BLOCK SYNTAX =============== */
+#rendered-md .joplin-editable > .hljs * {
+  font-size: var(--usp-smaller-code-block-font-size);
+}
 
 
 
@@ -770,35 +743,83 @@ body *,
 #rendered-md h5,
 #rendered-md h6 {
   font-family: var(--usp-heading-font, sans-serif);
+  font-weight: var(--usp-heading-font-weight);
+  line-height: 0.9em;
+}
+#rendered-md h1 {
+  font-size: var(--usp-h1-font-size);
+  font-weight: var(--usp-h1-font-weight);
+}
+#rendered-md h2 {
+  font-size: var(--usp-h2-font-size);
+}
+#rendered-md h3 {
+  font-size: var(--usp-h3-font-size);
+}
+#rendered-md h4 {
+  font-size: var(--usp-h4-font-size);
+}
+#rendered-md h5 {
+  font-size: var(--usp-h5-font-size);
+}
+#rendered-md h6 {
+  font-size: var(--usp-h6-font-size);
 }
 
 
 
 
 /* --------------------------------------------------------- */
-/*                           BASIC                           */
+/*                          BASIC                            */
 /* --------------------------------------------------------- */
 
 
 
 
-/* || BASIC | CONTAINER ************************************ */
+/* || BASIC 1/4 | CONTAINER ******************************** */
+/* CONTAINER: RENDER VIEWER ================================ */
 /* body container ------------------------------------------ */
 body,
-#rendered-md,
-#tinymce {
-  background: var(--render-viewer-bg-color);
-  padding-right: 5px;
+#joplin-container-body {
+  background: var(--sc-bg-1);
 }
-/* rich text editor container ------------------------------ */
+/* content container --------------------------------------- */
+#joplin-container-content {
+  padding-top: 13px !important;
+}
+
+/* CONTAINER: RICH TEXT EDITOR ============================= */
 #tinymce {
+  padding-top: 13px !important;
   padding-left: 10px;
+  background: var(--sc-bg-1);
 }
 
 
 
-/* || BASIC | SCROLLBAR ************************************ */
-/* RENDER VIEWER SCROLLBAR ================================= */
+/* || BASIC 2/4 | PARAGRAPH ******************************** */
+/* PARAGRAPH: PARAGRAPH TEXT =============================== */
+#rendered-md > p {
+  margin: 0 0 0 5px;
+  text-align: var(--usp-paragraph-text-align);
+  color: var(--sc-text);
+}
+/* PARAGRAPH: HORIZONTAL RULE ============================== */
+#rendered-md hr {
+  border: none;
+  margin: 1em auto;
+  height: 3px;
+  width: 90%;
+  background-color: var(--sc-hr-bgc);
+  background-image: var(--sc-hr-bgi);
+  border-radius: 1em;
+  opacity: 0.4;
+}
+
+
+
+/* || BASIC 3/4 | SCROLLBAR ******************************** */
+/* SCROLLBAR: RENDER VIEWER SCROLLBAR ====================== */
 #tinymce::-webkit-scrollbar,
 #joplin-container-content::-webkit-scrollbar {
   width: 7px !important;
@@ -807,7 +828,7 @@ body,
 /* thumb ----------------------------------------------------*/
 #tinymce::-webkit-scrollbar-thumb,
 #joplin-container-content::-webkit-scrollbar-thumb {
-  background: var(--render-viewer-scrollbar-thumb-bg-color);
+  background: var(--sc-scrollbar-thumb-bg);
 }
 /* hover ----------------------------------------------------*/
 #tinymce:hover::-webkit-scrollbar,
@@ -816,7 +837,9 @@ body,
   height: 7px !important;
 }
 
-/* BLOCK CONTENTS SCROLLBAR GROUP: | TOC | CODE BLOCK | ART GALLERY */
+/* SCROLLBAR: BLOCK ELEMENT SCROLLBAR ====================== */
+/* GROUP: | toc | code block | art gallery ----------------- */
+/* scrollbar ----------------------------------------------- */
 #rendered-md .table-of-contents::-webkit-scrollbar,
 #rendered-md .joplin-editable > .hljs::-webkit-scrollbar,
 ag2::-webkit-scrollbar,
@@ -832,44 +855,6 @@ ag11::-webkit-scrollbar,
 ag12::-webkit-scrollbar {
   width: 15px;
   height: 15px;
-}
-/* thumb --------------------------------------------------- */
-#rendered-md .table-of-contents::-webkit-scrollbar-thumb,
-#rendered-md .joplin-editable > .hljs::-webkit-scrollbar-thumb,
-ag2::-webkit-scrollbar-thumb,
-ag3::-webkit-scrollbar-thumb,
-ag4::-webkit-scrollbar-thumb,
-ag5::-webkit-scrollbar-thumb,
-ag6::-webkit-scrollbar-thumb,
-ag7::-webkit-scrollbar-thumb,
-ag8::-webkit-scrollbar-thumb,
-ag9::-webkit-scrollbar-thumb,
-ag10::-webkit-scrollbar-thumb,
-ag11::-webkit-scrollbar-thumb,
-ag12::-webkit-scrollbar-thumb {
-  border: 5px solid var(--bc-scrollbar-thumb-bd-color);
-  border-radius: 1em;
-  background: var(--bc-scrollbar-thumb-bg-color);
-  -webkit-background-clip: content-box;
-  background-clip: content-box;
-}
-/* thumb hover --------------------------------------------- */
-#rendered-md .table-of-contents::-webkit-scrollbar-thumb:hover,
-#rendered-md .joplin-editable > .hljs::-webkit-scrollbar-thumb:hover,
-ag2::-webkit-scrollbar-thumb:hover,
-ag3::-webkit-scrollbar-thumb:hover,
-ag4::-webkit-scrollbar-thumb:hover,
-ag5::-webkit-scrollbar-thumb:hover,
-ag6::-webkit-scrollbar-thumb:hover,
-ag7::-webkit-scrollbar-thumb:hover,
-ag8::-webkit-scrollbar-thumb:hover,
-ag9::-webkit-scrollbar-thumb:hover,
-ag10::-webkit-scrollbar-thumb:hover,
-ag11::-webkit-scrollbar-thumb:hover,
-ag12::-webkit-scrollbar-thumb:hover{
-  background: var(--bc-scrollbar-thumb-bg-color-hover);
-  -webkit-background-clip: content-box;
-  background-clip: content-box;
 }
 /* track --------------------------------------------------- */
 #rendered-md .table-of-contents::-webkit-scrollbar-track,
@@ -887,13 +872,51 @@ ag11::-webkit-scrollbar-track,
 ag12::-webkit-scrollbar-track {
   visibility: hidden;
 }
+/* thumb --------------------------------------------------- */
+#rendered-md .table-of-contents::-webkit-scrollbar-thumb,
+#rendered-md .joplin-editable > .hljs::-webkit-scrollbar-thumb,
+ag2::-webkit-scrollbar-thumb,
+ag3::-webkit-scrollbar-thumb,
+ag4::-webkit-scrollbar-thumb,
+ag5::-webkit-scrollbar-thumb,
+ag6::-webkit-scrollbar-thumb,
+ag7::-webkit-scrollbar-thumb,
+ag8::-webkit-scrollbar-thumb,
+ag9::-webkit-scrollbar-thumb,
+ag10::-webkit-scrollbar-thumb,
+ag11::-webkit-scrollbar-thumb,
+ag12::-webkit-scrollbar-thumb {
+  border: 5px solid var(--sc-block-content-scrollbar-thumb-bd);
+  border-radius: 1em;
+  background: var(--sc-block-content-scrollbar-thumb-bg);
+  -webkit-background-clip: content-box;
+  background-clip: content-box;
+}
+/* thumb hover --------------------------------------------- */
+#rendered-md .table-of-contents::-webkit-scrollbar-thumb:hover,
+#rendered-md .joplin-editable > .hljs::-webkit-scrollbar-thumb:hover,
+ag2::-webkit-scrollbar-thumb:hover,
+ag3::-webkit-scrollbar-thumb:hover,
+ag4::-webkit-scrollbar-thumb:hover,
+ag5::-webkit-scrollbar-thumb:hover,
+ag6::-webkit-scrollbar-thumb:hover,
+ag7::-webkit-scrollbar-thumb:hover,
+ag8::-webkit-scrollbar-thumb:hover,
+ag9::-webkit-scrollbar-thumb:hover,
+ag10::-webkit-scrollbar-thumb:hover,
+ag11::-webkit-scrollbar-thumb:hover,
+ag12::-webkit-scrollbar-thumb:hover {
+  background: var(--sc-block-content-scrollbar-thumb-bg-hover);
+  -webkit-background-clip: content-box;
+  background-clip: content-box;
+}
 
 
 
-/* || BASIC | ELEMENTS MARGIN ****************************** */
+/* || BASIC 4/4 | ELEMENTS MARGIN ************************** */
 /* first element of render viewer -------------------------- */
 #rendered-md > :first-child {
-  margin-top: 15px !important;
+  margin-top: 0px !important;
 }
 /* margin between headings and other elements -------------- */
 #rendered-md > h1 + *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(hr) {
@@ -924,232 +947,45 @@ ag12::-webkit-scrollbar-track {
 
 
 /* --------------------------------------------------------- */
-/*                         ELEMENTS                          */
+/*                          ELEMENTS                         */
 /* --------------------------------------------------------- */
 
 
 
 
-/* || ELEMENTS | PARAGRAPH ********************************* */
-#rendered-md > p {
-  margin: 0 0 0 5px;
-  text-align: var(--usp-paragraph-text-align);
-  color: var(--render-viewer-text-color);
-}
-/* horizontal line ----------------------------------------- */
-#rendered-md hr {
-  border: none;
-  margin: 1em auto;
-  height: 3px;
-  width: 90%;
-  background-color: var(--horizontal-line-bg);
-  background-image: var(--horizontal-line-bgi);
-  border-radius: 1em;
-  opacity: 0.4;
-}
-/* headings + horizontal line ------------------------------ */
-#rendered-md h2 + hr,
-#rendered-md h3 + hr,
-#rendered-md h4 + hr,
-#rendered-md h5 + hr,
-#rendered-md h6 + hr {
-  margin-top: 4px;
-  width: 100%;
-  height: 1px;
-  opacity: 1;
-}
-/* h2 + horizontal line ------------------------------------ */
-#rendered-md h2 + hr {
-  background-image: var(--h2-bd-color);
-}
-/* h3 + horizontal line ------------------------------------ */
-#rendered-md h3 + hr {
-  background-image: var(--h3-bd-color);
-}
-/* h4 + horizontal line ------------------------------------ */
-#rendered-md h4 + hr {
-  background-image: var(--h4-bd-color);
-}
-/* h5 + horizontal line ------------------------------------ */
-#rendered-md h5 + hr {
-  background-image: var(--h5-bd-color);
-}
-/* h6 + horizontal line ------------------------------------ */
-#rendered-md h6 + hr {
-  background-image: var(--h6-bd-color);
-}
-
-
-
-/* || ELEMENTS | HEADINGS ********************************** */
-/* heading group: h1 to h6 --------------------------------- */
-#rendered-md h1,
-#rendered-md h2,
-#rendered-md h3,
-#rendered-md h4,
-#rendered-md h5,
-#rendered-md h6 {
-  margin-bottom: 0;
-  padding: 0;
-  line-height: 1em;
-  font-weight: var(--usp-heading-font-weight);
-}
-#rendered-md h1:not(#rendered-md > .table-of-contents:first-child + h1),
-#rendered-md h2:not(#rendered-md > .table-of-contents:first-child + h2),
-#rendered-md h3:not(#rendered-md > .table-of-contents:first-child + h3),
-#rendered-md h4:not(#rendered-md > .table-of-contents:first-child + h4),
-#rendered-md h5:not(#rendered-md > .table-of-contents:first-child + h5),
-#rendered-md h6:not(#rendered-md > .table-of-contents:first-child + h6) {
-  margin-top: 1.5em;
-}
-/* heading border group: h1 to h6 -------------------------- */
-#rendered-md h1::after,
-#rendered-md h2::after,
-#rendered-md h3::after,
-#rendered-md h4::after,
-#rendered-md h5::after,
-#rendered-md h6::after {
-  margin-top: 4px;
-  content: "";
-  width: 100%;
-  height: 1px;
-}
-/* heading reference group: h1 to h6 ----------------------- */
-#rendered-md h1:before,
-#rendered-md h2:before,
-#rendered-md h3:before,
-#rendered-md h4:before,
-#rendered-md h5:before,
-#rendered-md h6:before {
-  display: var(--usp-heading-ref-switcher);
-  margin-right: 8px;
-  font-weight: 400;
-  line-height: 0;
-  font-size: 11px;
-  -webkit-text-fill-color: var(--heading-ref-text-color);
-}
-
-/* h1 ====================================================== */
-#rendered-md h1 {
-  margin-bottom: 0.8em;
-  text-transform: var(--usp-h1-text-transform);
-  font-variant: var(--usp-h1-font-variant);
-  font-weight: var(--usp-h1-font-weight);
-  font-size: var(--usp-h1-font-size);
-  color: var(--h1-color);
-  background: var(--h1-bg-color);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: var(--usp-h1-text-fill-color);
-  border: none;
-  filter: drop-shadow(var(--h1-drop-shadow));
-}
-/* h1 border ----------------------------------------------- */
-#rendered-md h1::after {
-  display: var(--usp-h1-border-switcher);
-  height: 3px;
-  background-image: var(--h1-bd-color);
-}
-/* h1 reference -------------------------------------------- */
-#rendered-md h1::before {
-  content: "H1:";
-}
-/* h1 > span ----------------------------------------------- */
-#rendered-md h1 > span {
-  -webkit-background-clip: initial; 
-  background-clip: initial;
-  -webkit-text-fill-color: initial;
-}
-
-/* h2 ====================================================== */
-#rendered-md h2 {
-  font-size: var(--usp-h2-font-size);
-  color: var(--h2-color);
-}
-/* h2 border ----------------------------------------------- */
-#rendered-md h2::after {
-  display: var(--usp-h2-border-switcher);
-  background-image: var(--h2-bd-color);
-}
-/* h2 reference -------------------------------------------- */
-#rendered-md h2::before {
-  content: "H2:";
-}
-
-/* h3 ====================================================== */
-#rendered-md h3 {
-  font-size: var(--usp-h3-font-size);
-  color: var(--h3-color);
-}
-/* h3 border ----------------------------------------------- */
-#rendered-md h3::after {
-  display: var(--usp-h3-border-switcher);
-  background-image: var(--h3-bd-color);
-}
-/* h3 reference -------------------------------------------- */
-#rendered-md h3::before {
-  content: "H3:";
-}
-
-/* h4 ====================================================== */
-#rendered-md h4 {
-  font-size: var(--usp-h4-font-size);
-  color: var(--h4-color);
-}
-/* h4 border ----------------------------------------------- */
-#rendered-md h4::after {
-  display: var(--usp-h4-border-switcher);
-  background-image: var(--h4-bd-color);
-}
-/* h4 reference -------------------------------------------- */
-#rendered-md h4::before {
-  content: "H4:";
-}
-
-/* h5 ====================================================== */
-#rendered-md h5 {
-  font-size: var(--usp-h5-font-size);
-  color: var(--h5-color);
-}
-/* h5 border ----------------------------------------------- */
-#rendered-md h5::after {
-  display: var(--usp-h5-border-switcher);
-  background-image: var(--h5-bd-color);
-}
-/* h5 reference -------------------------------------------- */
-#rendered-md h5::before {
-  content: "H5:";
-}
-
-/* h6 ====================================================== */
-#rendered-md h6 {
-  font-size: var(--usp-h6-font-size);
-  color: var(--h6-color);
-}
-/* h6 border ----------------------------------------------- */
-#rendered-md h6::after {
-  display: var(--usp-h6-border-switcher);
-  background-image: var(--h6-bd-color);
-}
-/* h6 reference -------------------------------------------- */
-#rendered-md h6::before {
-  content: "H6:";
-}
-
-
-
-/* || ELEMENTS | SPECIAL TEXT ****************************** */
-/* special text shadow group: | abbreviation | emphasize | strikethrough | insert */
+/* || ELEMENTS 1/12 | SPECIAL TEXT ************************* */
+/* GROUP: | abbreviation | emphasize | strikethrough | insert | */
 #rendered-md abbr,
 #rendered-md em,
 #rendered-md s,
 #rendered-md ins {
-  text-shadow: var(--special-text-shadow);
+  text-shadow: 0 0 var(--sc-special-text-ts);
 }
-/* symbol group: | strikethrough | insert text ------------- */
+
+/* SPECIAL TEXT: EMPHASIZE ================================= */
+#rendered-md em {
+  color: var(--sc-emphasize-text);
+}
+
+/* SPECIAL TEXT: STRONG ==================================== */
+#rendered-md strong {
+  color: var(--sc-strong-text);
+}
+
+/* SPECIAL TEXT: MARK ====================================== */
+#rendered-md mark {
+  padding: 0 6px;
+  color: var(--sc-mark-text);
+  background: var(--sc-mark-bg);
+  border-radius: 1em;
+}
+
+/* SPECIAL TEXT: INSERT & STRIKETHROUGH ==================== */
+/* symbol -------------------------------------------------- */
+/* GROUP: | insert | strikethrough | ----------------------- */
 #rendered-md s::before,
 #rendered-md ins::before {
-  display: var(--usp-special-text-add-remove-symbol-switcher);
+  display: var(--usp-special-text-add-remove-symbol-display);
   margin-right: 3px;
   padding: 0 3px;
   min-width: calc(var(--usp-base-font-size) + 2px);
@@ -1157,150 +993,64 @@ ag12::-webkit-scrollbar-track {
   white-space: nowrap;
   border-radius: 3px;
 }
-/* special text in headings group: | emphasize | strong | mark | */
-#rendered-md h1 em,
-#rendered-md h1 strong,
-#rendered-md h1 mark,
-#rendered-md h2 em,
-#rendered-md h2 strong,
-#rendered-md h2 mark,
-#rendered-md h3 em,
-#rendered-md h3 strong,
-#rendered-md h3 mark,
-#rendered-md h4 em,
-#rendered-md h4 strong,
-#rendered-md h4 mark,
-#rendered-md h5 em,
-#rendered-md h5 strong,
-#rendered-md h5 mark,
-#rendered-md h6 em,
-#rendered-md h6 strong,
-#rendered-md h6 mark {
-  font-size: inherit;
-}
-/* special text in headings group: | emphasize | strong | -- */
-#rendered-md h1 em,
-#rendered-md h1 strong,
-#rendered-md h2 em,
-#rendered-md h2 strong,
-#rendered-md h3 em,
-#rendered-md h3 strong,
-#rendered-md h4 em,
-#rendered-md h4 strong,
-#rendered-md h5 em,
-#rendered-md h5 strong,
-#rendered-md h6 em,
-#rendered-md h6 strong {
-  color: inherit;
-}
-
-/* STRONG ================================================== */
-#rendered-md strong {
-  color: var(--strong-text-color);
-}
-
-/* EMPHASIZE =============================================== */
-#rendered-md em {
-  color: var(--emphasize-text-color);
-}
-
-/* STRIKETHROUGH =========================================== */
-#rendered-md s {
-  color: var(--strikethrough-text-color);
-  background: var(--strikethrough-text-bg-color);
-}
-/* symbol ---------------------------------------------------*/
-#rendered-md s::before {
-  content: "--";
-  color: var(--strikethrough-symbol-color);
-  background: var(--strikethrough-symbol-bg-color);
-}
-/* hover --------------------------------------------------- */
-#rendered-md s:hover {
-  text-decoration: none;
-}
-
-/* INSERT ================================================== */
+/* insert -------------------------------------------------- */
 #rendered-md ins {
-  color: var(--insert-text-color);
-  background: var(--insert-text-bg-color);
+  color: var(--sc-insert-text);
+  background: var(--sc-insert-bg);
   text-decoration: none;
-  border-bottom: 1px solid var(--insert-text-bd-color);
+  border-bottom: 1px solid var(--sc-insert-bdb);
 }
-/* symbol -------------------------------------------------- */
-#rendered-md ins::before {
-  content: "++";
-  color: var(--insert-symbol-color);
-  background: var(--insert-symbol-bg-color);
-}
-/* hover --------------------------------------------------- */
+/* insert hover -------------------------------------------- */
 #rendered-md ins:hover {
   border: none;
 }
+/* insert symbol ------------------------------------------- */
+#rendered-md ins::before {
+  content: "++";
+  color: var(--sc-insert-symbol);
+  background: var(--sc-insert-symbol-bg);
+}
+/* strikethrough ------------------------------------------- */
+#rendered-md s {
+  color: var(--sc-strikethrough-text);
+  background: var(--sc-strikethrough-bg);
+}
+/* strikethrough hover --------------------------------------*/
+#rendered-md s:hover {
+  text-decoration: none;
+}
+/* strikethrough symbol ------------------------------------ */
+#rendered-md s::before {
+  content: "--";
+  color: var(--sc-strikethrough-symbol);
+  background: var(--sc-strikethrough-symbol-bg);
+}
 
-/* SUP & SUB =============================================== */
+/* SPECIAL TEXT: SUP & SUB ================================= */
 #rendered-md sup,
 #rendered-md sub {
   font-size: smaller;
   line-height: 0;
 }
-/* sup & sub in headings------------------------------------ */
-#rendered-md h1 sup,
-#rendered-md h1 sub,
-#rendered-md h2 sup,
-#rendered-md h2 sub,
-#rendered-md h3 sup,
-#rendered-md h3 sub,
-#rendered-md h4 sup,
-#rendered-md h4 sub,
-#rendered-md h5 sup,
-#rendered-md h5 sub,
-#rendered-md h6 sup,
-#rendered-md h6 sub {
-  color: inherit;
-}
 
-/* ABBREVIATION ============================================ */
+/* SPECIAL TEXT: ABBREVIATION ============================== */
 #rendered-md abbr {
-  color: var(--abbreviation-text-color);
-  text-decoration: 2px dotted underline var(--abbreviation-bd-color);
+  color: var(--sc-abbreviation-text);
+  text-decoration: 2px dotted underline var(--sc-abbreviation-td);
 }
 /* hover --------------------------------------------------- */
 #rendered-md abbr:hover {
   cursor: help;
 }
 
-/* MARK ==================================================== */
-#rendered-md mark {
-  padding: 0 6px;
-  color: var(--mark-text-color);
-  background: var(--mark-text-bg-color);
-  border-radius: 1em;
-}
-
-/* SEARCH ================================================== */
-#rendered-md mark[data-markjs="true"] {
-  display: inline-block;
-  padding: 3px 6px;
-  font-size: inherit;
-  color: var(--search-text-color) !important;
-  background: var(--search-text-bg-color) !important;
-  border: 2px solid var(--search-text-bd-color);
-  border-radius: 5px;
-}
-/* avoid h1 clip text effect ------------------------------- */
-#rendered-md h1 > mark[data-markjs="true"] {
-  -webkit-text-fill-color: var(--search-text-color);
-}
-
-/* INLINE CODE ============================================= */
+/* SPECIAL TEXT: INLINE CODE =============================== */
 #rendered-md code:not(pre code),
 #rendered-md .inline-code {
   padding: 0 3px;
   margin: 0 1px;
-  color: var(--inline-code-color);
-  background: var(--inline-code-bg-color);
-  border: 2px solid var(--inline-code-bg-color);
+  color: var(--sc-inline-code-text);
+  background: var(--sc-inline-code-bg);
+  border: 2px solid var(--sc-inline-code-bg);
   border-radius: 4px;
 }
 /* symbol -------------------------------------------------- */
@@ -1308,65 +1058,42 @@ ag12::-webkit-scrollbar-track {
 #rendered-md .inline-code::before {
   font-family: var(--usp-monospace-font, monospace);
   content: ">|";
-  display: var(--usp-inline-code-symbol-switcher);
+  display: var(--usp-inline-code-symbol-display);
   margin-right: 2px;
-  color: var(--inline-code-symbol-color);
-}
-/* inline code in headings --------------------------------- */
-#rendered-md h1 code:not(pre code),
-#rendered-md h1 .inline-code,
-#rendered-md h1 mark {
-  -webkit-background-clip: initial; 
-  background-clip: initial;
-  -webkit-text-fill-color: initial;
-}
-#rendered-md h1 code:not(pre code),
-#rendered-md h1 .inline-code {
-  text-transform: none;
-  font-variant: none;
-  font-size: calc(100% - 11px);
-}
-#rendered-md h2 code:not(pre code),
-#rendered-md h2 .inline-code {
-  font-size: calc(100% - 7px);
-}
-#rendered-md h3 code:not(pre code),
-#rendered-md h3 .inline-code {
-  font-size: calc(100% - 5px);
-}
-#rendered-md h4 code:not(pre code),
-#rendered-md h4 .inline-code {
-  font-size: calc(100% - 4px);
-}
-#rendered-md h5 code:not(pre code),
-#rendered-md h5 .inline-code,
-#rendered-md h6 .inline-code {
-  font-size: calc(100% - 3px);
+  color: var(--sc-inline-code-symbol);
 }
 
-/* MATH NOTATION =========================================== */
-#rendered-md .katex-display {
-  padding: 0 5px;
-  font-size: var(--usp-katex-font-size);
-  color: var(--katex-text-color);
-  transition: font-size 0.3s;
+/* SPECIAL TEXT: SEARCH ==================================== */
+#rendered-md mark[data-markjs="true"] {
+  display: inline-block;
+  padding: 3px 6px;
+  font-size: inherit;
+  color: var(--sc-search-text) !important;
+  background: var(--sc-search-bg) !important;
+  border: 2px solid var(--sc-search-bd);
+  border-radius: 5px;
 }
-#rendered-md .katex-display .katex {
-  text-align: var(--usp-katex-text-align);
-}
-#rendered-md .katex * {
-  color: var(--katex-text-color);
-}
-#rendered-md .katex-display:hover {
-  font-size: 150%;
-  transition: font-size 0.3s;
-  transition-delay: 1s;
-  cursor:  help;
+/* avoid h1 clip text effect ------------------------------- */
+#rendered-md h1 > mark[data-markjs="true"] {
+  -webkit-text-fill-color: var(--sc-search-text);
 }
 
 
 
-/* || ELEMENTS | LIST ************************************** */
+/* || ELEMENTS 2/12 | LINK ********************************* */
+#rendered-md a {
+  text-align: initial !important;
+  color: var(--sc-link-text);
+}
+/* source icon --------------------------------------------- */
+#rendered-md a > .resource-icon {
+  font-size: 78%;
+  background: var(--sc-link-source-icon);
+}
+
+
+
+/* || ELEMENTS 3/12 | LIST ********************************* */
 #rendered-md > ul,
 #rendered-md > ol {
   margin: 1em 0 1em 35px;
@@ -1376,7 +1103,7 @@ ag12::-webkit-scrollbar-track {
 #rendered-md ol:not(.footnotes-list) li,
 #rendered-md ol:not(.footnotes-list) li > p {
   margin: 0;
-  color: var(--list-text-color);
+  color: var(--sc-list-text);
 }
 #rendered-md li > ul,
 #rendered-md li > ol {
@@ -1390,7 +1117,7 @@ ag12::-webkit-scrollbar-track {
 #rendered-md ul > li::marker,
 #rendered-md ol:not(.footnotes-list) > li::marker {
   margin: 0;
-  color: var(--list-token-color);
+  color: var(--sc-list-token);
 }
 #rendered-md li > p {
   margin: 0 !important;
@@ -1406,7 +1133,7 @@ ag12::-webkit-scrollbar-track {
   top: 1px;
   margin-left: -23px;
   transform : scale(1.3);
-  filter: hue-rotate(calc(var(--usp-remoods-hue) + 145deg));
+  filter: hue-rotate(calc(var(--usp-hue) + 145deg));
   cursor: pointer;
 }
 /* checked ------------------------------------------------- */
@@ -1422,30 +1149,16 @@ ag12::-webkit-scrollbar-track {
 }
 /* checkbox (rich text editor) ----------------------------- */
 .jop-tinymce #rendered-md .joplin-checklist li::before {
-  color: hsl(var(--usp-remoods-hue), 100%, 80%);
+  color: hsl(var(--usp-hue), 100%, 80%);
 }
 /* list > span --------------------------------------------- */
 #rendered-md li > span {
-  color: var(--list-span-color);
+  color: var(--sc-list-span);
 }
 
 
 
-/* || ELEMENTS | LINK ************************************** */
-#rendered-md a {
-  text-align: initial !important;
-  color: var(--link-text-color);
-}
-/* source icon --------------------------------------------- */
-#rendered-md a > .resource-icon {
-  font-size: 78%;
-  background: var(--link-source-icon-color);
-}
-
-
-
-
-/* || ELEMENTS | FOOTNOTE ********************************** */
+/* || ELEMENTS 4/12 | FOOTNOTE ***************************** */
 /* FOOTNOTE REFERENCE ====================================== */
 #rendered-md [id*="fnref"] {
   display: inline-block;
@@ -1454,7 +1167,7 @@ ag12::-webkit-scrollbar-track {
   margin: 0 2px 0 1px;
   text-decoration: none;
   font-size: smaller !important;
-  color: var(--fn-ref-color);
+  color: var(--sc-footnote-ref);
 }
 /* hover --------------------------------------------------- */
 [id*="fnref"]:hover {
@@ -1476,12 +1189,12 @@ ag12::-webkit-scrollbar-track {
   margin-top: 20px;
   font-weight: 600;
   font-size: 110%;
-  color: var(--fn-title-color);
-  border-top: var(--fn-title-bd-color);
+  color: var(--sc-footnote-title);
+  border-top: var(--sc-footnote-title-bdt);
 }
 /* footnote backref ---------------------------------------- */
 #rendered-md .footnote-backref {
-  color: var(--fn-ref-color);
+  color: var(--sc-footnote-ref);
 }
 /* footnote list ------------------------------------------- */
 #rendered-md .footnotes-list > .footnote-item {
@@ -1493,26 +1206,317 @@ ag12::-webkit-scrollbar-track {
 }
 /* footnote list text -------------------------------------- */
 #rendered-md .footnote-item > p {
-  color: var(--fn-list-text-color);
+  color: var(--sc-footnote-list-text);
 }
 /* footnote list token ------------------------------------- */
 #rendered-md .footnote-item {
-  color: var(--fn-list-token-color);
+  color: var(--sc-footnote-list-token);
 }
 
 
 
-/* || ELEMENTS | BLOCKQUOTE ******************************** */
+/* || ELEMENTS 5/12 | HEADINGS ***************************** */
+/* GROUP: h1 to h6 ----------------------------------------- */
+#rendered-md h1,
+#rendered-md h2,
+#rendered-md h3,
+#rendered-md h4,
+#rendered-md h5,
+#rendered-md h6 {
+  margin-bottom: 0;
+  padding: 0;
+}
+#rendered-md h1:not(#rendered-md > .table-of-contents:first-child + h1),
+#rendered-md h2:not(#rendered-md > .table-of-contents:first-child + h2),
+#rendered-md h3:not(#rendered-md > .table-of-contents:first-child + h3),
+#rendered-md h4:not(#rendered-md > .table-of-contents:first-child + h4),
+#rendered-md h5:not(#rendered-md > .table-of-contents:first-child + h5),
+#rendered-md h6:not(#rendered-md > .table-of-contents:first-child + h6) {
+  margin-top: 1.5em;
+}
+/* heading border ------------------------------------------ */
+/* GROUP: h1 to h6 ----------------------------------------- */
+#rendered-md h1::after,
+#rendered-md h2::after,
+#rendered-md h3::after,
+#rendered-md h4::after,
+#rendered-md h5::after,
+#rendered-md h6::after {
+  margin-top: 4px;
+  content: "";
+  width: 100%;
+  height: 1px;
+}
+/* heading reference --------------------------------------- */
+/* GROUP: h1 to h6 ----------------------------------------- */
+#rendered-md h1:before,
+#rendered-md h2:before,
+#rendered-md h3:before,
+#rendered-md h4:before,
+#rendered-md h5:before,
+#rendered-md h6:before {
+  display: var(--usp-heading-ref-display);
+  margin-right: 8px;
+  font-weight: 400;
+  line-height: 0;
+  font-size: 11px;
+  -webkit-text-fill-color: var(--sc-heading-ref);
+}
+
+/* H1 ====================================================== */
+#rendered-md h1 {
+  margin-bottom: 0.8em;
+  text-transform: var(--usp-h1-text-transform);
+  font-variant: var(--usp-h1-font-variant);
+  color: var(--sc-h1-text);
+  background: var(--sc-h1-bg);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: var(--usp-h1-text-fill);
+  border: none;
+}
+/* h1 border ----------------------------------------------- */
+#rendered-md h1::after {
+  display: var(--usp-h1-border-display);
+  height: 3px;
+  background-image: var(--sc-h1-bgi);
+}
+/* h1 reference -------------------------------------------- */
+#rendered-md h1::before {
+  content: "H1:";
+}
+/* h1 > span ----------------------------------------------- */
+#rendered-md h1 > span {
+  -webkit-background-clip: initial; 
+  background-clip: initial;
+  -webkit-text-fill-color: initial;
+}
+
+/* H2 ====================================================== */
+#rendered-md h2 {
+  color: var(--sc-h2-text);
+}
+/* h2 border ----------------------------------------------- */
+#rendered-md h2::after {
+  display: var(--usp-h2-border-display);
+  background-image: var(--sc-h2-bgi);
+}
+/* h2 reference -------------------------------------------- */
+#rendered-md h2::before {
+  content: "H2:";
+}
+
+/* H3 ====================================================== */
+#rendered-md h3 {
+  color: var(--sc-h3-text);
+}
+/* h3 border ----------------------------------------------- */
+#rendered-md h3::after {
+  display: var(--usp-h3-border-display);
+  background-image: var(--sc-h3-bgi);
+}
+/* h3 reference -------------------------------------------- */
+#rendered-md h3::before {
+  content: "H3:";
+}
+
+/* H4 ====================================================== */
+#rendered-md h4 {
+  color: var(--sc-h4-text);
+}
+/* h4 border ----------------------------------------------- */
+#rendered-md h4::after {
+  display: var(--usp-h4-border-display);
+  background-image: var(--sc-h4-bgi);
+}
+/* h4 reference -------------------------------------------- */
+#rendered-md h4::before {
+  content: "H4:";
+}
+
+/* H5 ====================================================== */
+#rendered-md h5 {
+  color: var(--sc-h5-text);
+}
+/* h5 border ----------------------------------------------- */
+#rendered-md h5::after {
+  display: var(--usp-h5-border-display);
+  background-image: var(--sc-h5-bgi);
+}
+/* h5 reference -------------------------------------------- */
+#rendered-md h5::before {
+  content: "H5:";
+}
+
+/* H6 ====================================================== */
+#rendered-md h6 {
+  color: var(--sc-h6-text);
+}
+/* h6 border ----------------------------------------------- */
+#rendered-md h6::after {
+  display: var(--usp-h6-border-display);
+  background-image: var(--sc-h6-bgi);
+}
+/* h6 reference -------------------------------------------- */
+#rendered-md h6::before {
+  content: "H6:";
+}
+
+/* HEADINGS: MANUAL BORDER ================================= */
+#rendered-md h2 + hr,
+#rendered-md h3 + hr,
+#rendered-md h4 + hr,
+#rendered-md h5 + hr,
+#rendered-md h6 + hr {
+  margin-top: 4px;
+  width: 100%;
+  height: 1px;
+  opacity: 1;
+}
+/* h2 + horizontal rule ------------------------------------ */
+#rendered-md h2 + hr {
+  background-image: var(--sc-h2-bgi);
+}
+/* h3 + horizontal rule ------------------------------------ */
+#rendered-md h3 + hr {
+  background-image: var(--sc-h3-bgi);
+}
+/* h4 + horizontal rule ------------------------------------ */
+#rendered-md h4 + hr {
+  background-image: var(--sc-h4-bgi);
+}
+/* h5 + horizontal rule ------------------------------------ */
+#rendered-md h5 + hr {
+  background-image: var(--sc-h5-bgi);
+}
+/* h6 + horizontal rule ------------------------------------ */
+#rendered-md h6 + hr {
+  background-image: var(--sc-h6-bgi);
+}
+
+/* HEADINGS: SPECIAL TEXT ================================== */
+/* GROUP: h1 to h6 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* NESTED: | emphasize | strong | mark | abbr | ------------ */
+#rendered-md h1 em,
+#rendered-md h1 strong,
+#rendered-md h1 mark,
+#rendered-md h1 abbr,
+#rendered-md h2 em,
+#rendered-md h2 strong,
+#rendered-md h2 mark,
+#rendered-md h2 abbr,
+#rendered-md h3 em,
+#rendered-md h3 strong,
+#rendered-md h3 mark,
+#rendered-md h3 abbr,
+#rendered-md h4 em,
+#rendered-md h4 strong,
+#rendered-md h4 mark,
+#rendered-md h4 abbr,
+#rendered-md h5 em,
+#rendered-md h5 strong,
+#rendered-md h5 mark,
+#rendered-md h5 abbr,
+#rendered-md h6 em,
+#rendered-md h6 strong,
+#rendered-md h6 mark,
+#rendered-md h1 abbr {
+  font-size: inherit;
+}
+/* GROUP: h1 to h6 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* NESTED: | emphasize | strong | -------------------------- */
+#rendered-md h1 em,
+#rendered-md h1 strong,
+#rendered-md h2 em,
+#rendered-md h2 strong,
+#rendered-md h3 em,
+#rendered-md h3 strong,
+#rendered-md h4 em,
+#rendered-md h4 strong,
+#rendered-md h5 em,
+#rendered-md h5 strong,
+#rendered-md h6 em,
+#rendered-md h6 strong {
+  color: inherit;
+}
+/* GROUP: h1 to h6 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* NESTED: | sub | sup | ----------------------------------- */
+#rendered-md h1 sup,
+#rendered-md h1 sub,
+#rendered-md h2 sup,
+#rendered-md h2 sub,
+#rendered-md h3 sup,
+#rendered-md h3 sub,
+#rendered-md h4 sup,
+#rendered-md h4 sub,
+#rendered-md h5 sup,
+#rendered-md h5 sub,
+#rendered-md h6 sup,
+#rendered-md h6 sub {
+  color: inherit;
+}
+/* GROUP: h1 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* NESTED: | inline code | mark | -------------------------- */
+#rendered-md h1 code:not(pre code),
+#rendered-md h1 .inline-code,
+#rendered-md h1 mark {
+  -webkit-background-clip: initial; 
+  background-clip: initial;
+  -webkit-text-fill-color: initial;
+}
+/* GROUP: h1 to h6 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* NESTED: | inline code ----------------------------------- */
+#rendered-md h1 code:not(pre code),
+#rendered-md h1 .inline-code,
+#rendered-md h2 code:not(pre code),
+#rendered-md h2 .inline-code,
+#rendered-md h3 code:not(pre code),
+#rendered-md h3 .inline-code,
+#rendered-md h4 code:not(pre code),
+#rendered-md h4 .inline-code,
+#rendered-md h5 code:not(pre code),
+#rendered-md h5 .inline-code,
+#rendered-md h6 code:not(pre code),
+#rendered-md h6 .inline-code {
+  text-transform: none;
+  font-variant: none;
+  font-size: max(calc(var(--usp-h1-font-size) * 0.6), var(--usp-monospace-font-size));
+}
+
+
+
+/* || ELEMENTS 6/12 | MATH NOTATION ************************ */
+#rendered-md .katex-display .katex {
+  text-align: var(--usp-math-notation-text-align);
+}
+#rendered-md .katex-display {
+  padding: 0 5px;
+  font-size: var(--usp-math-notation-font-size);
+  color: var(--sc-math-notation-text);
+  transition: font-size 0.3s;
+  transition-delay: 1.5s;
+}
+/* hover --------------------------------------------------- */
+#rendered-md .katex-display:hover {
+  font-size: 150% !important;
+  transition: font-size 0.3s;
+  transition-delay: 0.5s;
+  cursor: help;
+}
+
+
+
+/* || ELEMENTS 7/12 | BLOCKQUOTE *************************** */
 #rendered-md blockquote {
   text-align: var(--usp-paragraph-text-align);
-  border-left: var(--blockquote-bd-color);
+  border-left: var(--sc-blockquote-bdl);
   margin: 0 0 0 5px;
   padding: 2px 15px 2px 10px;
   opacity: 1;
 }
 #rendered-md blockquote > p {
   margin: 7px 0 !important;
-  color: var(--blockquote-text-color);
+  color: var(--sc-blockquote-text);
 }
 /* nested blockquote --------------------------------------- */
 #rendered-md blockquote blockquote {
@@ -1522,25 +1526,25 @@ ag12::-webkit-scrollbar-track {
 
 
 
-/* || ELEMENTS | TABLE ************************************* */
+/* || ELEMENTS 8/12 | TABLE ******************************** */
 #rendered-md table {
   width: 100%;
   background-color: unset;
 }
 #rendered-md table > thead > tr > th,
 #rendered-md table > tbody > tr > td {
-  color: var(--table-text-color);
-  border: var(--table-bd-color);
+  color: var(--sc-table-text);
+  border: var(--sc-table-bd);
 }
 #rendered-md table > thead > tr > th {
-  background: var(--table-header-bg-color);
-  text-shadow: var(--table-header-text-shadow);
+  background: var(--sc-table-header-bg);
+  text-shadow: 0 0 var(--sc-table-header-ts);
 }
 #rendered-md table > tbody > tr:nth-child(odd) {
-  background: var(--table-row-odd-bg-color);
+  background: var(--sc-table-row-odd-bg);
 }
 #rendered-md table > tbody > tr:nth-child(even) {
-  background: var(--table-row-even-bg-color);
+  background: var(--sc-table-row-even-bg);
 }
 #rendered-md table tr:hover {
   background-color: none !important;
@@ -1548,8 +1552,7 @@ ag12::-webkit-scrollbar-track {
 
 
 
-/* || ELEMENTS | MERMAID *********************************** */
-/* MERMAID BODY & EYE PROTECTOR ============================ */
+/* || ELEMENTS 9/12 | MERMAID CHART ************************ */
 #rendered-md .mermaid {
   margin-left: auto;
   margin-right: auto;
@@ -1569,7 +1572,7 @@ ag12::-webkit-scrollbar-track {
 
 
 
-/* || ELEMENTS | IMAGE ************************************* */
+/* || ELEMENTS 10/12 | IMAGE ******************************* */
 /* IMAGE EYE PROTECTOR ===================================== */
 img {
   filter: var(--usp-image-eye-protector-filter);
@@ -1582,7 +1585,7 @@ img:hover {
 
 
 
-/* || ELEMENTS | MARKDOWN TOC ****************************** */
+/* || ELEMENTS 11/12 | MARKDOWN TOC ************************ */
 /* TOC BODY ================================================ */
 #rendered-md .table-of-contents,
 #rendered-md .table-of-contents::before {
@@ -1591,9 +1594,9 @@ img:hover {
   right: 15px;
   width: 30px;
   height: 20px;
-  background: var(--toc-bg-color);
-  border-color: var(--toc-bd-color);
-  box-shadow: var(--toc-box-shadow);
+  background: var(--sc-toc-bg);
+  border-color: var(--sc-toc-bdc);
+  box-shadow: 0 0 var(--sc-toc-bs);
   border-radius: 7px;
   overflow: hidden;
   z-index: 99;
@@ -1620,10 +1623,10 @@ img:hover {
   font-weight: 900;
   font-family: arial, sans-serif;
   font-size: 12px;
-  color: var(--toc-btn-text-color);
-  background: var(--toc-btn-bg-color);
-  border: var(--toc-btn-bd-color);
-  box-shadow: var(--toc-btn-box-shadow);
+  color: var(--sc-toc-btn-text);
+  background: var(--sc-toc-btn-bg);
+  border: var(--sc-toc-btn-bd);
+  box-shadow: 0 0 var(--sc-toc-btn-bs);
 }
 /* hover --------------------------------------------------- */
 #rendered-md .table-of-contents:hover::before {
@@ -1638,7 +1641,7 @@ img:hover {
 #rendered-md .table-of-contents ul {
   padding: 0;
   margin: 0 0 0 8px;
-  border-left: var(--toc-list-bd-color);
+  border-left: var(--sc-toc-list-bdl);
 }
 /* toc link ------------------------------------------------ */
 #rendered-md .table-of-contents li a {
@@ -1648,184 +1651,181 @@ img:hover {
 }
 #rendered-md .table-of-contents li a:hover {
   margin-left: -5px;
-  color: var(--toc-link-text-color-hover);
-  background: var(--toc-link-bg-color-hover);
+  color: var(--sc-toc-link-text-hover);
+  background: var(--sc-toc-link-bg-hover);
   transition: background .1s;
 }
 
 
 
-/* || ELEMENTS | CODE BLOCK ******************************** */
-/* CODE BLOCK BODY ========================================= */
-#rendered-md .joplin-editable > .hljs * {
-  font-size: var(--usp-smaller-code-block-font-size);
-}
+/* || ELEMENTS 12/12 | CODE BLOCK ************************** */
+/* CODE BLOCK: BODY ======================================== */
 #rendered-md .joplin-editable > .hljs {
   padding: 1em 0 1em 8px;
   max-height: var(--usp-code-block-max-height);
-  background: var(--cb-bg-color);
+  background: var(--sc-code-block-bg);
   border-width: 0 2px;
   border-style: var(--usp-code-block-bd-style);
-  border-color: var(--cb-bd-color);
+  border-color: var(--sc-code-block-bdc);
   border-radius: 7px;
-  box-shadow: var(--cb-shadow);
+  box-shadow: 0 0 var(--sc-code-block-bs);
 }
 
-/* CODE BLOCK > SYNTAX HIGHLIGHT =========================== */
+/* CODE BLOCK: SYNTAX HIGHLIGHT ============================ */
 #rendered-md .hljs * {
-  color: var(--cb-text-color);
-  text-shadow: 0 0 var(--cb-text-shadow);
+  color: var(--sc-code-block-text);
+  text-shadow: 0 0 var(--sc-code-block-ts);
 }
 #rendered-md .hljs-keyword {
-  color: var(--cb-keyword-color);
-  text-shadow: 0 0 var(--cb-keyword-shadow);
+  color: var(--sc-code-block-keyword-text);
+  text-shadow: 0 0 var(--sc-code-block-keyword-ts);
 }
 #rendered-md .hljs-params {
-  color: var(--cb-params-color);
-  text-shadow: 0 0 var(--cb-params-shadow);
+  color: var(--sc-code-block-params-text);
+  text-shadow: 0 0 var(--sc-code-block-params-ts);
 }
 #rendered-md .hljs-title {
-  color: var(--cb-title-color);
-  text-shadow: 0 0 var(--cb-title-shadow);
+  color: var(--sc-code-block-title-text);
+  text-shadow: 0 0 var(--sc-code-block-title-ts);
 }
 #rendered-md .hljs-title.function_ {
-  color: var(--cb-title-function-color);
-  text-shadow: 0 0 var(--cb-title-function-shadow);
+  color: var(--sc-code-block-title-function-text);
+  text-shadow: 0 0 var(--sc-code-block-title-function-ts);
 }
 #rendered-md .hljs-property {
-  color: var(--cb-property-color);
-  text-shadow: 0 0 var(--cb-property-shadow);
+  color: var(--sc-code-block-property-text);
+  text-shadow: 0 0 var(--sc-code-block-property-ts);
 }
 #rendered-md .hljs-string {
-  color: var(--cb-string-color);
-  text-shadow: 0 0 var(--cb-string-shadow);
+  color: var(--sc-code-block-string-text);
+  text-shadow: 0 0 var(--sc-code-block-string-ts);
 }
 #rendered-md .hljs-function {
-  color: var(--cb-function-color);
-  text-shadow: 0 0 var(--cb-function-shadow);
+  color: var(--sc-code-block-function-text);
+  text-shadow: 0 0 var(--sc-code-block-function-ts);
 }
 #rendered-md .hljs-function .hljs-params {
-  color: var(--cb-function-params-color);
-  text-shadow: 0 0 var(--cb-function-params-shadow);
+  color: var(--sc-code-block-function-params-text);
+  text-shadow: 0 0 var(--sc-code-block-function-params-ts);
 }
 #rendered-md .hljs-variable {
-  color: var(--cb-variable-text-color);
-  text-shadow: 0 0 var(--cb-variable-shadow);
+  color: var(--sc-code-block-variable-text);
+  text-shadow: 0 0 var(--sc-code-block-variable-ts);
 }
 #rendered-md .hljs-variable.language_ {
-  color: var(--cb-variable-language-color);
-  text-shadow: 0 0 var(--cb-variable-language-shadow);
+  color: var(--sc-code-block-variable-language-text);
+  text-shadow: 0 0 var(--sc-code-block-variable-language-ts);
 }
 #rendered-md .hljs-title.class_ {
-  color: var(--cb-title-class-color);
-  text-shadow: 0 0 var(--cb-title-class-shadow);
+  color: var(--sc-code-block-title-class-text);
+  text-shadow: 0 0 var(--sc-code-block-title-class-ts);
 }
 #rendered-md .hljs-built_in {
-  color: var(--cb-built-in-color);
-  text-shadow: 0 0 var(--cb-built-in-shadow);
+  color: var(--sc-code-block-built-in-text);
+  text-shadow: 0 0 var(--sc-code-block-built-in-ts);
 }
 #rendered-md .hljs-literal {
-  color: var(--cb-literal-color);
-  text-shadow: 0 0 var(--cb-literal-shadow);
+  color: var(--sc-code-block-literal-text);
+  text-shadow: 0 0 var(--sc-code-block-literal-ts);
 }
 #rendered-md .hljs-attr {
-  color: var(--cb-attr-color);
-  text-shadow: 0 0 var(--cb-attr-shadow);
+  color: var(--sc-code-block-attr-text);
+  text-shadow: 0 0 var(--sc-code-block-attr-ts);
 }
 #rendered-md .hljs-title.class_.inherited__ {
-  color: var(--cb-title-class-inherited-color);
-  text-shadow: 0 0 var(--cb-title-class-inherited-shadow);
+  color: var(--sc-code-block-title-class-inherited-text);
+  text-shadow: 0 0 var(--sc-code-block-title-class-inherited-ts);
 }
 #rendered-md .hljs-comment {
-  color: var(--cb-comment-color);
-  text-shadow: 0 0 var(--cb-comment-shadow);
+  color: var(--sc-code-block-comment-text);
+  text-shadow: 0 0 var(--sc-code-block-comment-ts);
 }
 #rendered-md .hljs-meta {
-  color: var(--cb-meta-color);
-  text-shadow: 0 0 var(--cb-meta-shadow);
+  color: var(--sc-code-block-meta-text);
+  text-shadow: 0 0 var(--sc-code-block-meta-ts);
 }
 #rendered-md .hljs-subst {
-  color: var(--cb-subst-color);
-  text-shadow: 0 0 var(--cb-subst-shadow);
+  color: var(--sc-code-block-subst-text);
+  text-shadow: 0 0 var(--sc-code-block-subst-ts);
 }
 #rendered-md .hljs-number {
-  color: var(--cb-number-color);
-  text-shadow: 0 0 var(--cb-number-shadow);
+  color: var(--sc-code-block-number-text);
+  text-shadow: 0 0 var(--sc-code-block-number-ts);
 }
 #rendered-md .hljs-selector-id {
-  color: var(--cb-selector-id-color);
-  text-shadow: 0 0 var(--cb-selector-id-shadow);
+  color: var(--sc-code-block-selector-id-text);
+  text-shadow: 0 0 var(--sc-code-block-selector-id-ts);
 }
 #rendered-md .hljs-selector-class {
-  color: var(--cb-selector-class-color);
-  text-shadow: 0 0 var(--cb-selector-class-shadow);
+  color: var(--sc-code-block-selector-class-text);
+  text-shadow: 0 0 var(--sc-code-block-selector-class-ts);
 }
 #rendered-md .hljs-selector-tag {
-  color: var(--cb-selector-tag-color);
-  text-shadow: 0 0 var(--cb-selector-tag-shadow);
+  color: var(--sc-code-block-selector-tag-text);
+  text-shadow: 0 0 var(--sc-code-block-selector-tag-ts);
 }
 #rendered-md .hljs-selector-pseudo {
-  color: var(--cb-selector-pseudo-color);
-  text-shadow: 0 0 var(--cb-selector-pseudo-shadow);
+  color: var(--sc-code-block-selector-pseudo-text);
+  text-shadow: 0 0 var(--sc-code-block-selector-pseudo-ts);
 }
 #rendered-md .hljs-selector-attr {
-  color: var(--cb-selector-attr-color);
-  text-shadow: 0 0 var(--cb-selector-attr-shadow);
+  color: var(--sc-code-block-selector-attr-text);
+  text-shadow: 0 0 var(--sc-code-block-selector-attr-ts);
 }
 #rendered-md .hljs-doctag {
-  color: var(--cb-doctag-color);
-  text-shadow: 0 0 var(--cb-doctag-shadow);
+  color: var(--sc-code-block-doctag-text);
+  text-shadow: 0 0 var(--sc-code-block-doctag-ts);
 }
 #rendered-md .hljs-attribute {
-  color: var(--cb-attribute-color);
-  text-shadow: 0 0 var(--cb-attribute-shadow);
+  color: var(--sc-code-block-attribute-text);
+  text-shadow: 0 0 var(--sc-code-block-attribute-ts);
 }
 #rendered-md .hljs-tag,
 #rendered-md .hljs-name {
-  color: var(--cb-tag-color);
-  text-shadow: 0 0 var(--cb-tag-shadow);
+  color: var(--sc-code-block-tag-text);
+  text-shadow: 0 0 var(--sc-code-block-tag-ts);
 }
 #rendered-md .hljs-tag .hljs-attr {
-  color: var(--cb-html-attr-color);
-  text-shadow: 0 0 var(--cb-html-attr-shadow);
+  color: var(--sc-code-block-html-attr-text);
+  text-shadow: 0 0 var(--sc-code-block-html-attr-ts);
 }
 #rendered-md .hljs-symbol {
-  color: var(--cb-symbol-color);
-  text-shadow: 0 0 var(--cb-symbol-shadow);
+  color: var(--sc-code-block-symbol-text);
+  text-shadow: 0 0 var(--sc-code-block-symbol-ts);
 }
 #rendered-md .hljs-type {
-  color: var(--cb-type-color);
-  text-shadow: 0 0 var(--cb-type-shadow);
+  color: var(--sc-code-block-type-text);
+  text-shadow: 0 0 var(--sc-code-block-type-ts);
 }
 #rendered-md .hljs-operator {
-  color: var(--cb-operator-color);
-  text-shadow: 0 0 var(--cb-operator-shadow);
+  color: var(--sc-code-block-operator-text);
+  text-shadow: 0 0 var(--sc-code-block-operator-ts);
 }
 #rendered-md .hljs-regexp {
-  color: var(--cb-regexp-color);
-  text-shadow: 0 0 var(--cb-regexp-shadow);
+  color: var(--sc-code-block-regexp-text);
+  text-shadow: 0 0 var(--sc-code-block-regexp-ts);
 }
 #rendered-md .hljs-class .hljs-title {
-  color: var(--cb-class-title-color);
-  text-shadow: 0 0 var(--cb-class-title-shadow);
+  color: var(--sc-code-block-class-title-text);
+  text-shadow: 0 0 var(--sc-code-block-class-title-ts);
 }
 #rendered-md .hljs-function .hljs-title {
-  color: var(--cb-function-title-color);
-  text-shadow: 0 0 var(--cb-function-title-shadow);
+  color: var(--sc-code-block-function-title-text);
+  text-shadow: 0 0 var(--sc-code-block-function-title-ts);
 }
 
 
 
 
-/*-----------------------------------------------------------*/
+/* --------------------------------------------------------- */
 /*                      CUSTOM ELEMENTS                      */
-/*-----------------------------------------------------------*/
+/* --------------------------------------------------------- */
 
 
 
 
-/* || CUSTOM ELEMENTS | ART GALLERY ************************ */
-/* ART GALLERY BODY ======================================== */
+/* || CUSTOM ELEMENTS 1/5 | ART GALLERY ******************** */
+/* ART GALLERY: BODY ======================================= */
 ag2,
 ag3,
 ag4,
@@ -1843,12 +1843,12 @@ ag12 {
   margin: 25px 0;
   padding: 20px;
   max-height: var(--usp-art-gallery-max-height);
-  background: var(--ag-bg-color); 
+  background: var(--sc-art-gallery-bg); 
   border-width: 3px 0;
   border-style: solid;
-  border-color: var(--ag-bd-color); 
+  border-color: var(--sc-art-gallery-bdc); 
   border-radius: 7px;
-  filter: drop-shadow(var(--ag-drop-shadow)); 
+  filter: drop-shadow(0 0 var(--sc-art-gallery-ds)); 
   overflow: scroll;
 }
 /* image padding ------------------------------------------- */
@@ -1902,9 +1902,9 @@ ag12 img {
 
 
 
-/* || CUSTOM ELEMENTS | STICK NOTES ************************ */
-/* STICKY NOTES BODY ======================================= */
-/* sticky notes body group: all ---------------------------- */
+/* || CUSTOM ELEMENTS 2/5 | STICKY NOTES ******************* */
+/* STICKY NOTES: BODY ====================================== */
+/* GROUP: all ---------------------------------------------- */
 #rendered-md note,
 #rendered-md tip,
 #rendered-md question,
@@ -1916,13 +1916,13 @@ ag12 img {
   display: block;
   margin: 1em 0;
   padding: 10px 20px;
-  text-align: var(--usp-sn-text-align);
+  text-align: var(--usp-sticky-notes-text-align);
   white-space: normal;
   border-width: 0px 3px;
   border-style: solid;
   border-radius: 6px 15px;
 }
-/* sticky notes body group:  without "Important" ----------- */
+/* GROUP: without "Important" ------------------------------ */
 #rendered-md note,
 #rendered-md tip,
 #rendered-md question,
@@ -1930,23 +1930,23 @@ ag12 img {
 #rendered-md warning,
 #rendered-md keyword,
 #rendered-md comment {
-  color: var(--sn-text-color);
-  background: var(--sn-bg-color);
-  border-color: var(--sn-bd-color);
-  filter: drop-shadow(var(--sn-drop-shadow));
+  color: var(--sc-sticky-notes-text);
+  background: var(--sc-sticky-notes-bg);
+  border-color: var(--sc-sticky-notes-bdc);
+  filter: drop-shadow(0 0 var(--sc-sticky-notes-ds));
 }
-/* sticky notes - "important" > body ----------------------- */
+/* "important": body --------------------------------------- */
 #rendered-md important {
   margin: 20px 10%;
   font-weight: 500;
-  color: var(--sn-important-text-color);
-  border-color: var(--sn-important-bd-color);
-  background: var(--sn-important-bg-color);
-  box-shadow: var(--sn-important-box-shadow);
+  color: var(--sc-sticky-notes-important-text);
+  border-color: var(--sc-sticky-notes-important-bd);
+  background: var(--sc-sticky-notes-important-bg);
+  box-shadow: 0 0 var(--sc-sticky-notes-important-bs);
 }
 
 /* STICKY NOTES TAG ======================================== */
-/* sticky notes tags group: not including the stick note - "Important" */
+/* GROUP : without "Important" ----------------------------- */
 #rendered-md note::after,
 #rendered-md tip::after,
 #rendered-md question::after,
@@ -1959,46 +1959,46 @@ ag12 img {
   margin: 8px 0 0 0;
   width: min-content;
   font-weight: 700;
-  color: var(--sn-tags-text-color);
+  color: var(--sc-sticky-notes-tags-text);
   border-radius: 4px 9px;
-  text-shadow: var(--sn-tags-text-shadow);
+  text-shadow: 1px 1px var(--sc-sticky-notes-tags-ts);
 }
-/* sticky notes: note tag ---------------------------------- */
+/* note tag ------------------------------------------------ */
 #rendered-md note::after {
   content: "NOTE";
-  background: var(--sn-note-tag-bg-color);
+  background: var(--sc-sticky-notes-note-tag-bg);
 }
-/* sticky notes: tip tag ----------------------------------- */
+/* tip tag ------------------------------------------------- */
 #rendered-md tip::after {
   content: "TIP";
-  background: var(--sn-tip-tag-bg-color);
+  background: var(--sc-sticky-notes-tip-tag-bg);
 }
-/* sticky notes: question tag ------------------------------ */
+/* question tag -------------------------------------------- */
 #rendered-md question::after {
   content: "QUESTION";
-  background: var(--sn-question-tag-bg-color);
+  background: var(--sc-sticky-notes-question-tag-bg);
 }
-/* sticky notes: explain tag ------------------------------- */
+/* explain tag --------------------------------------------- */
 #rendered-md explain::after {
   content: "EXPLAIN";
-  background: var(--sn-explain-tag-bg-color);
+  background: var(--sc-sticky-notes-explain-tag-bg);
 }
-/* sticky notes: warning tag ------------------------------- */
+/* warning tag --------------------------------------------- */
 #rendered-md warning::after {
   content: "WARNING";
-  background: var(--sn-warning-tag-bg-color);
+  background: var(--sc-sticky-notes-warning-tag-bg);
 }
-/* sticky notes: keyword tag ------------------------------- */
+/* keyword tag --------------------------------------------- */
 #rendered-md keyword::after {
   content: "KEYWORD";
-  background: var(--sn-keyword-tag-bg-color);
+  background: var(--sc-sticky-notes-keyword-tag-bg);
 }
-/* sticky notes: comment ----------------------------------- */
+/* comment tag --------------------------------------------- */
 #rendered-md comment::after {
   content: "COMMENT";
-  background: var(--sn-comment-tag-bg-color);
+  background: var(--sc-sticky-notes-comment-tag-bg);
 }
-/* sticky notes: important tag ----------------------------- */
+/* important tag ------------------------------------------- */
 #rendered-md important::before {
   content: "IMPORTANT";
   display: block;
@@ -2007,56 +2007,57 @@ ag12 img {
   margin: 0px 0 10px 0;
   font-weight: 700;
   text-align: center;
-  color: var(--sn-important-tag-text-color);
+  color: var(--sc-sticky-notes-important-tag-text);
   border-width: 1px 0 1px 0;
   border-style: solid;
-  border-color: var(--sn-important-tag-bd-color);
+  border-color: var(--sc-sticky-notes-important-tag-bdc);
   border-radius: 8px;
-  background: var(--sn-important-tag-bg-color);
+  background: var(--sc-sticky-notes-important-tag-bg);
 }
 
 
 
-/* || CUSTOM ELEMENTS | CUSTOM TITLE BLOCK ***************** */
-/* custom title block: container --------------------------- */
+/* || CUSTOM ELEMENTS 3/5 | CUSTOM TITLE BLOCK ************* */
+/* CUSTOM TITLE BLOCK: BODY ================================ */
 #rendered-md > p > ctb {
   display: block;
   margin: 0.6em 0;
   padding: 15px 20px;
   text-align: var(--usp-paragraph-text-align);
   border-radius: 7px;
-  background: var(--ctb-bg-color);
-  filter: drop-shadow(var(--ctb-drop-shadow));
+  background: var(--sc-custom-title-block-bg);
+  filter: drop-shadow(0 0 var(--sc-custom-title-block-ds));
 }
-/* custom title block: title --------------------------------*/
+/* title ----------------------------------------------------*/
 #rendered-md > p > ctb:first-line {
   font-weight: 700;
   font-size: 100%;
-  color: var(--ctb-title-color);
+  color: var(--sc-custom-title-block-title);
 }
-/* custom title block: symbol -------------------------------*/
+/* symbol ---------------------------------------------------*/
 #rendered-md > p > ctb::before {
   position: relative;
   bottom: -1px;
   content: "";
-  display: var(--usp-custom-title-block-symbol-switcher);
+  display: var(--usp-custom-title-block-symbol-display);
   margin: 0 6px 0 0;
   width: 0.9em;
   height: 0.9em;
   border-radius: 50%;
-  background: var(--ctb-symbol-bg-color);
+  background: var(--sc-custom-title-block-symbol-bg);
 }
 
 
 
-/* || CUSTOM ELEMENTS | KEY POINT ************************** */
+/* || CUSTOM ELEMENTS 4/5 | KEY POINT ********************** */
+/* KEY POINT: BODY ========================================= */
 #rendered-md kp {
   display: inline-block;
   font-weight: 500;
   margin: 0 5px 0 0;
-  color: var(--kp-text-color);
+  color: var(--sc-key-point-text);
   text-align: initial !important;
-  text-shadow: var(--kp-text-shadow);
+  text-shadow: 0 0 var(--sc-key-point-ts);
   border-radius: 4px;
 }
 /* brackets ------------------------------------------------ */
@@ -2067,7 +2068,7 @@ ag12 img {
   display: inline-block;
   height: 0.75em;
   border-style: solid;
-  border-color: var(--kp-bd-color);
+  border-color: var(--sc-key-point-bdc);
   border-radius: 5px;
 }
 #rendered-md kp::before {
@@ -2081,7 +2082,8 @@ ag12 img {
 
 
 
-/* || CUSTOM ELEMENTS | KEY MENTION ************************ */
+/* || CUSTOM ELEMENTS 5/5 | KEY MENTION ******************** */
+/* KEY MENTION: BODY ======================================= */
 #rendered-md km {
   display: inline-block;
   margin: 0 2px;
@@ -2090,9 +2092,9 @@ ag12 img {
   width: fit-content;
   line-height: 1.7em;
   font-weight: 600;
-  color: var(--km-text-color);
-  background: var(--km-bg-color);
-  border: var(--km-bd-color);
+  color: var(--sc-key-mention-text);
+  background: var(--sc-key-mention-bg);
+  border: var(--sc-key-mention-bd);
   border-radius: 4px;
   box-shadow: 0 0 2px black;
   transition: font-size 0.3s;
@@ -2134,7 +2136,7 @@ ag12 img {
 #rendered-md km ins,
 #rendered-md km mark,
 #rendered-md km s {
-  color: var(--km-special-text-color);
+  color: var(--sc-key-mention-special-text);
   opacity: 1;
 }
 #rendered-md km s::before,
@@ -2143,33 +2145,33 @@ ag12 img {
 }
 /* key mention > link -------------------------------------- */
 #rendered-md km > a {
-  color: var(--link-text-color);
+  color: var(--sc-link-text);
 }
 
 
 
 
-/*-----------------------------------------------------------*/
+/* --------------------------------------------------------- */
 /*                          PLUGINS                          */
-/*-----------------------------------------------------------*/
+/* --------------------------------------------------------- */
 
 
 
 
 /* || PLUGINS | SPOILER ************************************ */
-/* SPOILER BLOCK =========================================== */
+/* SPOILER: SPOILER BLOCK ================================== */
 /* spoiler block & title ----------------------------------- */
 #rendered-md .spoiler-block,
 #rendered-md .summary-title {
   border: none;
   border-radius: 6px 15px;
-  background: var(--spoiler-block-bg-color);
+  background: var(--sc-plugin-spoiler-bg);
   box-shadow: none;
 }
 /* spoiler block ------------------------------------------- */
 #rendered-md .spoiler-block {
-  color: var(--spoiler-block-text-color);
-  box-shadow: var(--spoiler-block-box-shadow);
+  color: var(--sc-plugin-spoiler-text);
+  box-shadow: 0 0 var(--sc-plugin-spoiler-bs);
 }
 #rendered-mg .spoiler-block p:not(li p) {
   text-align: var(--usp-paragraph-text-align);
@@ -2179,7 +2181,7 @@ ag12 img {
   padding: 10px 15px;
   font-weight: 700;
   font-size: 130%;
-  color: var(--spoiler-title-color);
+  color: var(--sc-plugin-spoiler-title);
 }
 #rendered-md .summary-title:hover {
   filter: brightness(115%);
@@ -2218,10 +2220,10 @@ ag12 img {
 /* spoiler block > list ------------------------------------ */
 #rendered-md .spoiler-block > .summary-content ul > li,
 #rendered-md .spoiler-block > .summary-content ol > li {
-  color: var(--spoiler-list-text-color);
+  color: var(--sc-plugin-spoiler-list-text);
 }
 
-/* SPOILER BLOCK > SPAN ==================================== */
+/* SPOILER BLOCK: SPAN ===================================== */
 /* span title ---------------------------------------------- */
 #rendered-md .spoiler-block > .summary-content > p > span:first-child {
   display: block;
@@ -2230,8 +2232,8 @@ ag12 img {
   width: calc(100% - 33px);
   font-weight: 700;
   font-size: 105%;
-  color: var(--spoiler-span-title-color);
-  background: var(--spoiler-span-title-bg-color);
+  color: var(--sc-plugin-spoiler-span-title);
+  background: var(--sc-plugin-spoiler-span-title-bg);
   border-radius: 3px;
 }
 /* custom span --------------------------------------------- */
@@ -2249,17 +2251,17 @@ ag12 img {
 }
 /* list > span --------------------------------------------- */
 #rendered-md .spoiler-block > .summary-content li span {
-  color: var(--spoiler-list-span-color);
+  color: var(--sc-plugin-spoiler-list-span);
 }
 
-/* SPOILER BLOCK > CUSTOM TITLE BLOCK ====================== */
+/* SPOILER BLOCK: CUSTOM TITLE BLOCK ======================= */
 /* block --------------------------------------------------- */
 #rendered-md .spoiler-block > .summary-content > p > ctb {
   display: block;
   padding: 5px 15px 15px 15px;
   margin: 20px 0 20px -3px;
-  color: var(--spoiler-ctb-text-color);
-  background: var(--spoiler-ctb-bg-color);
+  color: var(--sc-plugin-spoiler-custom-title-block-text);
+  background: var(--sc-plugin-spoiler-custom-title-block-bg);
   border-radius: 5px;
 }
 /* title --------------------------------------------------- */
@@ -2267,31 +2269,31 @@ ag12 img {
   font-size: 110%;
   font-weight: 700;
   line-height: 40px;
-  color: var(--spoiler-ctb-title-color);
+  color: var(--sc-plugin-spoiler-custom-title-block-title);
 }
 
-/* SPOILER INLINE ========================================== */
+/* SPOILER: SPOILER INLINE ================================= */
 /* spoiler inline: body ------------------------------------ */
 #rendered-md label.spoiler-inline {
   display: inline-block;
   padding: 0 12px 0 8px;
   margin: 0 3px;
   line-height: 150%;
-  color: var(--spoiler-inline-text-color);
-  border: var(--spoiler-inline-bd-color);
+  color: var(--sc-plugin-spoiler-inline-text);
+  border: var(--sc-plugin-spoiler-inline-bd);
   border-radius: 7px;
-  background: var(--spoiler-inline-bg-color);
+  background: var(--sc-plugin-spoiler-inline-bg);
 }
 /* spoiler inline: symbol ---------------------------------- */
 #rendered-md label.spoiler-inline::before {
   content: "(?)";
   font-weight: 700;
   margin-right: 6px;
-  color: var(--spoiler-inline-symbol-color);
+  color: var(--sc-plugin-spoiler-inline-symbol);
   transition: color 2.5s;
 }
 #rendered-md label.spoiler-inline:hover::before {
-  color: var(--spoiler-inline-symbol-color-hover);
+  color: var(--sc-plugin-spoiler-inline-symbol-hover);
   transition: color 2.5s;
 }
 #tinymce input.spoiler-inline {
@@ -2304,13 +2306,13 @@ ag12 img {
 /* CHART =================================================== */
 /* background ---------------------------------------------- */
 #rendered-md > div > svg > rect {
-  fill: var(--turntochart-bg-color) !important;
+  fill: var(--sc-plugin-turntochart-bg) !important;
 }
 /* text & line --------------------------------------------- */
 #rendered-md svg g text,
 #rendered-md svg g .visx-line{
-  fill: var(--turntochart-text-color);
-  color: var(--turntochart-text-color);
+  fill: var(--sc-plugin-turntochart-text);
+  color: var(--sc-plugin-turntochart-text);
 }
 /* text ---------------------------------------------------- */
 tspan {
@@ -2321,13 +2323,13 @@ tspan {
 /* background ---------------------------------------------- */
 #rendered-md > div > svg ~ div {
   padding: 1em !important;
-  background: var(--turntochart-info-bg-color) !important;
+  background: var(--sc-plugin-turntochart-info-bg) !important;
 }
 /* title & label ------------------------------------------- */
 #rendered-md > div > svg ~ div > div:first-child,
 #rendered-md > div > svg ~ div > .visx-legend {
-  fill: var(--turntochart-text-color);
-  color: var(--turntochart-text-color);
+  fill: var(--sc-plugin-turntochart-text);
+  color: var(--sc-plugin-turntochart-text);
 }
 
 
@@ -2336,8 +2338,8 @@ tspan {
 #rendered-md .inline-todo {
   position: relative;
   top: unset;
-  bottom: 1px;
-  padding: 2px 6px;
+  padding: 1px 5px;
+  height: 5px !important;
   font-weight: 600;
   border-radius: 3px;
   text-shadow: 0 0 5px hsl(0,0%,30%);
@@ -2350,7 +2352,7 @@ tspan {
 
 
 
-/* || PLUGINS | NOTE LINK SYSTEM =========================== */
+/* || PLUGINS | NOTE LINK SYSTEM *************************** */
 /* NOTE LINK SYSTEM > SPOILER ============================== */
 /* hide link hash ------------------------------------------ */
 .spoiler-block label > .note-link-identifier,
@@ -2364,12 +2366,15 @@ tspan {
 
 
 
+
 /* ********************************************************* */
-/* ===                 EXPORT HTML FILE                  === */
+/* !!!!                EXPORT HTML FILE                 !!!! */
 /* ********************************************************* */
+
+
+
 
 /* improve the reading experience of exported html file */
-
 .exported-note {
   margin: 0 10%;
 }
@@ -2381,7 +2386,7 @@ tspan {
 
 
 /* ********************************************************* */
-/* ===                 PRINT & EXPORT PDF                === */
+/* !!!!                      PRINT                      !!!! */
 /* ********************************************************* */
 
 
@@ -2389,59 +2394,84 @@ tspan {
 
 @media print {
 
-
-
-
-  /* ------------------------------------------------------- */
-  /*                       PRINT FONT                        */
-  /* ------------------------------------------------------- */
-
   
 
+  
+  /* ------------------------------------------------------- */
+  /*                        PRINT FONT                       */
+  /* ------------------------------------------------------- */
 
-  /* || PRINT FONT 1/3 | BASE FONT ************************* */
-  #rendered-md p,
-  #rendered-md li,
-  #rendered-md table thead th,
-  #rendered-md table tbody td,
-  #rendered-md note,
-  #rendered-md tip,
-  #rendered-md explain,
-  #rendered-md question,
-  #rendered-md warning,
-  #rendered-md keyword,
-  #rendered-md comment,
-  #rendered-md important,
-  #rendered-md .table-of-contents::before {
+
+
+  
+  /* || PRINT FONT 1/3 | PRINT BASE FONT ******************* */
+  body *:not(.katex-display *),
+  .spoiler-block .summary-title {
     font-family: var(--usp-print-base-font, sans-serif);
     font-size: var(--usp-print-base-font-size);
     line-height: 1.5em;
-  }
-
-
-
-  /* || PRINT FONT 2/3 | MONOSPACE FONT ******************** */
-  #rendered-md .hljs *,
-  #rendered-md .inline-code,
-  #rendered-md .inline-code::before {
-    font-family: var(--usp-print-monospace-font, monospace);
+    color: var(--pr-text);
   }
 
 
   
-  /* || PRINT FONT 3/3 | HEADING FONT ********************** */
+  /* || PRINT FONT 2/3 | PRINT MONOSPACE FONT ************** */
+  /* monospace font group: | code block | inline code | insert & strikethrough symbol | inline spoiler symbol | footnote ref num | headings ref | list token */
+  #rendered-md .hljs *,
+  #rendered-md .inline-code,
+  #rendered-md ins::before,
+  #rendered-md s::before,
+  #rendered-md label.spoiler-inline::before,
+  #rendered-md a[id*="fnref"],
+  #rendered-md h1:before,
+  #rendered-md h2:before,
+  #rendered-md h3:before,
+  #rendered-md h4:before,
+  #rendered-md h5:before,
+  #rendered-md h6:before,
+  #rendered-md ol:not(.footnotes-list) > li::marker {
+    font-family: var(--usp-print-monospace-font, monospace);
+    font-size: var(--usp-print-monospace-font-size);
+  }
+  
+  /* PRINT MONOSPACE FONT: PRINT SMALLER CODE BLOCK SYNTAX = */
+  #rendered-md .joplin-editable > .hljs * {
+    font-size: var(--usp-print-smaller-code-block-font-size);
+  }
+
+
+  
+  /* || PRINT FONT 3/3 | PRINT HEADING FONT **************** */
   #rendered-md h1,
   #rendered-md h2,
   #rendered-md h3,
   #rendered-md h4,
   #rendered-md h5,
   #rendered-md h6 {
-  font-family: var(--usp-print-heading-font, sans-serif);
+    line-height: 1.5em;
+  }
+  #rendered-md h1 {
+    font-size: var(--usp-print-h1-font-size);
+  }
+  #rendered-md h2 {
+    font-size: var(--usp-print-h2-font-size);
+  }
+  #rendered-md h3 {
+    font-size: var(--usp-print-h3-font-size);
+  }
+  #rendered-md h4 {
+    font-size: var(--usp-print-h4-font-size);
+  }
+  #rendered-md h5 {
+    font-size: var(--usp-print-h5-font-size);
+  }
+  #rendered-md h6 {
+    font-size: var(--usp-print-h6-font-size);
   }
 
 
 
-
+  
   /* ------------------------------------------------------- */
   /*                       PRINT READY                       */
   /* ------------------------------------------------------- */
@@ -2449,7 +2479,7 @@ tspan {
 
 
   
-  /* || PRINT READY | PRINT EXACT COLOR ******************** */
+  /* || PRINT READY 1/7 | PRINT EXACT COLOR **************** */
   #rendered-md *,
   #rendered-md .table-of-contents::before {
     -webkit-print-color-adjust: exact !important;
@@ -2458,14 +2488,16 @@ tspan {
     filter: unset !important;
   }
 
-  /* || PRINT READY | PAGE MARGIN ************************** */
+
+  
+  /* || PRINT READY 2/7 | PAGE MARGIN ********************** */
   .exported-note {
     margin: 0;
   }
 
-
-
-  /* || PRINT READY | REMOVE MAX-HEIGHT ******************** */
+  
+  
+  /* || PRINT READY 3/7 | REMOVE BLOCK ELEMENT MAX-HEIGHT ** */
   ag2,
   ag3,
   ag4,
@@ -2482,14 +2514,16 @@ tspan {
   }
 
 
-
-  /* || PRINT READY | PAGE BREAK *************************** */
+  
+  /* || PRINT READY 4/7 | PAGE BREAK *********************** */
   #rendered-md h1,
   #rendered-md h2,
   #rendered-md h3,
   #rendered-md h4,
   #rendered-md h5,
-  #rendered-md h6,
+  #rendered-md h6 {
+    page-break-after: avoid !important;
+  }
   #rendered-md note,
   #rendered-md tip,
   #rendered-md explain,
@@ -2504,24 +2538,16 @@ tspan {
   #rendered-md > div,
   #rendered-md .mermaid,
   #rendered-md img {
-    page-break-before: var(--print-render-viewer-bg-color) !important;
     page-break-inside: avoid !important;
   }
   #rendered-md > div .hljs {
     page-break-inside: always !important;
   }
-  #rendered-md h1,
-  #rendered-md h2,
-  #rendered-md h3,
-  #rendered-md h4,
-  #rendered-md h5,
-  #rendered-md h6 {
-    page-break-after: avoid !important;
-  }
 
 
-
-  /* || PRINT READY | AVOID BACKGROUND & FILTER ************ */
+  
+  /* || PRINT READY 5/7 | REMOVE BACKGROUND & FILTER ******* */
+  /* GROUP: | table | inline code | toc | art gallery | stick notes | custom title block | key mention | spoiler | turntochart | */
   ag2,
   ag3,
   ag4,
@@ -2558,8 +2584,10 @@ tspan {
   #rendered-md km ins,
   #rendered-md km s,
   #rendered-md km,
+  #rendered-md code:not(pre code),
+  #rendered-md .inline-code,
   body {
-    background: var(--print-render-viewer-bg-color) !important;
+    background: var(--pr-bg) !important;
     filter: none !important;
   }
   #rendered-md > div > svg > rect {
@@ -2568,11 +2596,33 @@ tspan {
 
 
 
-  /* || PRINT READY | DISPLAY ELEMENTS ********************* */
+  /* || PRINT READY 6/7 | REMOVE TEXT SHADOW *************** */
+  /* GROUP: | abbreviation | emphasize | strikethrough | insert | table head | syntax highlight | sticky notes | inline todo | */
+  #rendered-md abbr,
+  #rendered-md em,
+  #rendered-md s,
+  #rendered-md ins,
+  #rendered-md table > thead > tr > th,
+  #rendered-md .hljs *,
+  #rendered-md note::after,
+  #rendered-md tip::after,
+  #rendered-md explain::after,
+  #rendered-md question::after,
+  #rendered-md warning::after,
+  #rendered-md keyword::after,
+  #rendered-md comment::after,
+  #rendered-md kp,
+  #rendered-md .inline-todo {
+    text-shadow: none !important;
+  }
+
+
+  
+  /* || PRINT READY 7/7 | DISPLAY ELEMENTS ***************** */
   /* notes title ------------------------------------------- */
   .exported-note-title {
     display: var(--usp-print-note-title-display);
-    color: var(--print-note-title-color) !important;
+    color: var(--pr-note-title) !important;
   }
   /* heading ref ------------------------------------------- */
   #rendered-md h1:before,
@@ -2581,7 +2631,7 @@ tspan {
   #rendered-md h4:before,
   #rendered-md h5:before,
   #rendered-md h6:before {
-    display: var(--usp-print-heading-ref-switcher);
+    display: var(--usp-print-heading-ref-display);
   }
   /* h1 border --------------------------------------------- */
   #rendered-md > h1:after {
@@ -2616,219 +2666,52 @@ tspan {
   #rendered-md important km {
     display: var(--usp-print-sn-km-display)
   }
-
-
-
-
-  /*---------------------------------------------------------*/
-  /*                     PRINT: ELEMENTS                     */
-  /*---------------------------------------------------------*/
-
-
-
-
-  /* || PRINT ELEMENTS | PARAGRAPH ************************* */
-  #rendered-md p {
-    color: var(--print-render-viewer-text-color);
+  /* abbreviation description ------------------------------ */
+  #rendered-md abbr::after {
+    display: var(--usp-print-abbreviation-text-description-display);
   }
-  /* print horizontal line --------------------------------- */
-  #rendered-md hr {
-    background-image: var(--print-horizontal-line-color);
+  /* link href --------------------------------------------- */
+  #rendered-md a:not([title^="http"]):not([title^="file:"]):not([href^="joplin:"]):not([href^="data:"])::after {
+    display: var(--usp-print-link-href-display);
   }
-  /* print h2 + horizontal line ---------------------------- */
-  #rendered-md h2 + hr {
-    background-image: var(--print-h2-bd-color);
-  }
-  /* print h3 + horizontal line ---------------------------- */
-  #rendered-md h3 + hr {
-    background-image: var(--print-h3-bd-color);
-  }
-  /* print h4 + horizontal line ---------------------------- */
-  #rendered-md h4 + hr {
-    background-image: var(--print-h4-bd-color);
-  }
-  /* print h5 + horizontal line ---------------------------- */
-  #rendered-md h5 + hr {
-    background-image: var(--print-h5-bd-color);
-  }
-  /* print h6 + horizontal line ---------------------------- */
-  #rendered-md h6 + hr {
-    background-image: var(--print-h6-bd-color);
+  /* inline spoiler text ----------------------------------- */
+  #rendered-md span.spoiler-inline {
+    visibility: var(--usp-print-spoiler-inline-text-visibility);
   }
 
 
 
-  /* || PRINT ELEMENTS | HEADINGS ************************** */
-  /* PRINT H1 ============================================== */
-  #rendered-md h1 {
-    font-size: calc(var(--usp-print-base-font-size) * 2.0);
-    color: var(--print-h1-color);
-    background: initial;
-    -webkit-background-clip: initial;
-    background-clip: initial;
-    -webkit-text-fill-color: initial;
-    filter: none;
-  }
-  /* print h1 border --------------------------------------- */
-  #rendered-md h1::after {
-    background-image: var(--print-h1-bg-color);
-  }
-  /* h1 > span --------------------------------------------- */
-  #rendered-md h1 > span {
-    all: unset;
-    -webkit-background-clip: initial; 
-    background-clip: initial;
-    -webkit-text-fill-color: initial;
-  }
 
-  /* PRINT H2 ============================================== */
-  #rendered-md h2 {
-    font-size: calc(var(--usp-print-base-font-size) * 1.7);
-    color: var(--print-h2-color);
-  }
-  /* print h2 border --------------------------------------- */
-  #rendered-md h2::after {
-    background-image: var(--print-h2-bd-color);
-  }
+  /* ------------------------------------------------------- */
+  /*                 PRINT STYLE ADJUSTMENTS                 */
+  /* ------------------------------------------------------- */
 
-  /* PRINT H3 ============================================== */
-  #rendered-md h3 {
-    font-size: calc(var(--usp-print-base-font-size) * 1.5);
-    color: var(--print-h3-color);
-  }
-  /* print h3 border --------------------------------------- */
-  #rendered-md h3::after {
-    background-image: var(--print-h3-bd-color);
-  }
 
-  /* PRINT H4 ============================================== */
-  #rendered-md h4 {
-    font-size: calc(var(--usp-print-base-font-size) * 1.3);
-    color: var(--print-h4-color);
-  }
-  /* print h4 border --------------------------------------- */
-  #rendered-md h4::after {
-    background-image: var(--print-h4-bd-color);
-  }
 
-  /* PRINT H5 ============================================== */
-  #rendered-md h5 {
-    font-size: calc(var(--usp-print-base-font-size) * 1.2);
-    color: var(--print-h5-color);
-  }
-  /* print h5 border --------------------------------------- */
-  #rendered-md h5::after {
-    background-image: var(--print-h5-bd-color);
-  }
-
-  /* PRINT H6 ============================================== */
-  #rendered-md h6 {
-    font-size: calc(var(--usp-print-base-font-size) * 1.1);
-    color: var(--print-h6-color);
-  }
-  /* print h6 border --------------------------------------- */
-  #rendered-md h6::after {
-    background-image: var(--print-h6-bd-color);
-  }
   
-
-
-  /* || PRINT ELEMENTS | SPECIAL TEXT ********************** */
-  /* special text shadow group: | abbreviation | emphasize | strikethrough | insert */
-  #rendered-md abbr,
-  #rendered-md em,
-  #rendered-md s,
-  #rendered-md ins {
-    text-shadow: var(--print-special-text-shadow);
-  }
-  /* strong ------------------------------------------------ */
-  #rendered-md strong {
-    color: var(--print-strong-text-color);
-  }
-  /* emphasize --------------------------------------------- */
-  #rendered-md em {
-    color: var(--print-emphasize-text-color);
-  }
-  /* strikethrough ----------------------------------------- */
-  #rendered-md s {
-    color: var(--print-strikethrough-text-color);
-    background-color: var(--print-strikethrough-text-bg-color);
-  }
-  #rendered-md s::before {
-    color: var(--print-strikethrough-symbol-color);
-    background: var(--print-strikethrough-symbol-bg-color);
-  }
-  /* insert ------------------------------------------------ */
-  #rendered-md ins {
-    color: var(--print-insert-text-color);
-    background: var(--print-insert-text-bg-color);
-    border-bottom: 1px solid var(--print-insert-text-bd-color);
-  }
-  #rendered-md ins::before {
-    color: var(--print-insert-symbol-color);
-    background: var(--print-insert-symbol-bg-color);
-  }
-  /* abbreviation ------------------------------------------ */
+  /* || PRINT STYLE ADJUSTMENTS | PRINT SPECIAL TEXT ******* */
+  /* PRINT SPECIAL TEXT: ABBREVIATION ====================== */
   #rendered-md abbr {
-    color: var(--print-abbreviation-text-color);
-    text-decoration: 1px dotted underline var(--print-abbreviation-bd-color);
+    text-decoration: 1px dotted underline var(--pr-abbreviation-td);
   }
+  /* abbr description -------------------------------------- */
   #rendered-md abbr::after {
     content: "("attr(title)")";
-    display: var(--usp-abbreviation-text-description-display);
     margin-left: 2px;
-    --usp-abbreviation-text-description-display: inline;
   }
-  /* mark -------------------------------------------------- */
-  #rendered-md mark {
-    color: var(--print-mark-text-color);
-    background: var(--print-mark-text-bg-color);
-  }
-  /* inline code ------------------------------------------- */
+  
+  /* SPECIAL TEXT: INLINE CODE ============================= */
+  #rendered-md code:not(pre code),
   #rendered-md .inline-code {
-    color: var(--print-inline-code-color);
-    background: var(--print-inline-code-bg-color);
-    border: var(--print-inline-code-bd-color);
-  }
-  /* inline code symbol -------------------------------------- */
-  #rendered-md .inline-code::before {
-    content: ">|";
-    color: var(--print-inline-code-symbol-color);
-  }
-  /* katex ------------------------------------------------- */
-  #rendered-md .katex-display {
-    color: var(--print-katex-text-color);
-  }
-  #rendered-md .katex * {
-    color: var(--print-katex-text-color);
+    border: 2px solid var(--pr-inline-code-symbol);
   }
   
+
   
-  
-  /* || PRINT ELEMENTS | LIST ****************************** */
-  #rendered-md > ul,
-  #rendered-md > ol {
-    color: var(--print-list-text-color);
-  }
-  /* list > span ------------------------------------------- */
-  #rendered-md li > span {
-    color: var(--print-list-span-color);
-  }
-
-
-
-  /* || PRINT ELEMENTS | LINK ****************************** */
-  #rendered-md a {
-    color: var(--print-link-text-color);
-  }
-  /* source icon ------------------------------------------- */
-  #rendered-md a > .resource-icon {
-    background: var(--print-link-source-icon-color);
-  }
+  /* || PRINT STYLE ADJUSTMENTS | PRINT LINK *************** */
   /* print link href --------------------------------------- */
   #rendered-md a:not([title^="http"]):not([title^="file:"]):not([href^="joplin:"]):not([href^="data:"])::after {
     content: "("attr(href)")";
-    display: inline;
     margin-left: 2px;
   }
   /* remove meaningless link href -------------------------- */
@@ -2842,47 +2725,75 @@ tspan {
 
 
 
-  /* || PRINT ELEMENTS | FOOTNOTE ************************** */
-  /* footnote title ---------------------------------------- */
-  #rendered-md .footnotes::before {
-    color: var(--print-fn-title-color);
-    border-top: var(--print-fn-title-bd-color);
+  /* || PRINT STYLE ADJUSTMENTS | PRINT HEADINGS *********** */
+  /* heading border ---------------------------------------- */
+  /* GROUP: h1 to h6 --------------------------------------- */
+  #rendered-md h1::after,
+  #rendered-md h2::after,
+  #rendered-md h3::after,
+  #rendered-md h4::after,
+  #rendered-md h5::after,
+  #rendered-md h6::after {
+    margin-top: 0px;
   }
-  /* footnote list text ------------------------------------ */
-  #rendered-md .footnote-item > p {
-    color: var(--print-fn-list-text-color);
+  /* heading reference ------------------------------------- */
+  /* GROUP: h1 to h6 --------------------------------------- */
+  #rendered-md h1:before,
+  #rendered-md h2:before,
+  #rendered-md h3:before,
+  #rendered-md h4:before,
+  #rendered-md h5:before,
+  #rendered-md h6:before {
+    font-size: 12px;
   }
-  /* footnote list token ----------------------------------- */
-  #rendered-md .footnote-item {
-    color: var(--print-fn-list-token-color);
+  /* headings line height ---------------------------------- */
+  #rendered-md h1,
+  #rendered-md h2,
+  #rendered-md h3,
+  #rendered-md h4,
+  #rendered-md h5,
+  #rendered-md h6 {
+    line-height: 1.2em;
   }
   
-
-
-  /* || PRINT ELEMENTS | BLOCKQUOTE ************************ */
-  #rendered-md blockquote {
-    border-left: var(--print-blockquote-bd-color);
+  /* PRINT HEADINGS: H1 ==================================== */
+  #rendered-md h1 {
+    color: var(--pr-h1-text);
+    background: initial;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    -webkit-text-fill-color: initial;
+    border: none;
   }
-  #rendered-md blockquote > p {
-    color: var(--print-blockquote-text-color);
-  }
-
-
-
-  /* || PRINT ELEMENTS | TABLE ***************************** */
-  #rendered-md table > thead > tr > th,
-  #rendered-md table > tbody > tr > td {
-    color: var(--print-table-text-color);
-    border: var(--print-table-bd-color);
-  }
-  #rendered-md table > thead > tr > th {
-    background: var(--print-table-header-bg-color);
-    text-shadow: none;
+  /* h1 > span --------------------------------------------- */
+  #rendered-md h1 > span {
+    -webkit-background-clip: initial; 
+    background-clip: initial;
+    -webkit-text-fill-color: initial;
   }
 
+  /* PRINT HEADINGS: MANUAL BORDER ========================= */
+  #rendered-md h2 + hr,
+  #rendered-md h3 + hr,
+  #rendered-md h4 + hr,
+  #rendered-md h5 + hr,
+  #rendered-md h6 + hr {
+    margin-top: 0px;
+    width: 100%;
+    height: 1px;
+    opacity: 1;
+  }
 
 
-  /* || PRINT ELEMENTS | MARKDOWN TOC ********************** */
+
+  /* || PRINT STYLE ADJUSTMENTS | PRINT MERMAID ************ */
+  #rendered-md [id^="mermaid-"] {
+    max-height: 45vh;
+  }
+
+
+
+  /* || PRINT STYLE ADJUSTMENTS | PRINT MARKDOWN TOC ******* */
   #rendered-md .table-of-contents,
   #rendered-md .table-of-contents::before {
     position: static;
@@ -2905,11 +2816,11 @@ tspan {
     text-align: left;
     font-weight: 700;
     font-size: calc(var(--usp-print-base-font-size) * 1.5);
-    color: var(--print-toc-btn-text-color);
+    color: var(--pr-toc-btn-text);
     background: unset;
     border-width: 1px 0 0 0;
     border-style: dashed;
-    border-color: var(--print-render-viewer-text-color);
+    border-color: var(--pr-text);
     border-radius: 7px;
   }
   #rendered-md .table-of-contents:hover::before{
@@ -2920,7 +2831,7 @@ tspan {
     display: block;
     padding-top: 20px;
     width: 100%;
-    border-bottom: 1px dashed var(--print-render-viewer-text-color);
+    border-bottom: 1px dashed var(--pr-text);
     border-radius: 7px;
   }
   /* print toc list ---------------------------------------- */
@@ -2931,7 +2842,7 @@ tspan {
   #rendered-md .table-of-contents ul {
     padding: 0;
     margin: 0 0 0 8px;
-    border-left: var(--print-toc-list-bd-color);
+    border-left: var(--pr-toc-list-bdl);
   }
   /* print toc link ---------------------------------------- */
   #rendered-md .table-of-contents li a {
@@ -2948,179 +2859,27 @@ tspan {
 
 
 
-  /* || PRINT ELEMENTS | CODE BLOCK ************************ */
-  /* code block body --------------------------------------- */
-  #rendered-md .hljs * {
-    font-size: var(--usp-print-smaller-code-block-font-size);
+  /* || PRINT STYLE ADJUSTMENTS | PRINT ART GALLERY ******** */
+  ag2,
+  ag3,
+  ag4,
+  ag5,
+  ag6,
+  ag7,
+  ag8,
+  ag9,
+  ag10,
+  ag11,
+  ag12 {
+    margin: 0px;
+    padding: 15px;
+    border: none;
   }
-  #rendered-md .hljs {
-    line-height: 1.2em;
-    border-width: 0 3px;
-    border-style: dotted;
-    border-color: var(--print-cb-bd-color);
-    border-radius: 7px;
-  }
-  /* print syntax highlight -------------------------------- */
-  #rendered-md .hljs {
-  color: var(--print-cb-text-color);
-  text-shadow: var(--print-cb-text-shadow);
-  }
-  #rendered-md .hljs-keyword {
-    color: var(--print-cb-keyword-color);
-    text-shadow: var(--print-cb-keyword-shadow);
-  }
-  #rendered-md .hljs-params {
-    color: var(--print-cb-params-color);
-    text-shadow: var(--print-cb-params-shadow);
-  }
-  #rendered-md .hljs-title {
-    color: var(--print-cb-title-color);
-    text-shadow: var(--print-cb-title-shadow);
-  }
-  #rendered-md .hljs-title.function_ {
-    color: var(--print-cb-title-function-color);
-    text-shadow: var(--print-cb-title-function-shadow);
-  }
-  #rendered-md .hljs-property {
-    color: var(--print-cb-property-color);
-    text-shadow: var(--print-cb-property-shadow);
-  }
-  #rendered-md .hljs-string {
-    color: var(--print-cb-string-color);
-    text-shadow: var(--print-cb-string-shadow);
-  }
-  #rendered-md .hljs-function {
-    color: var(--print-cb-function-color);
-    text-shadow: var(--print-cb-function-shadow);
-  }
-  #rendered-md .hljs-function .hljs-params {
-    color: var(--print-cb-function-params-color);
-    text-shadow: var(--print-cb-function-params-shadow);
-  }
-  #rendered-md .hljs-variable {
-    color: var(--print-cb-variable-text-color);
-    text-shadow: var(--print-cb-variable-shadow);
-  }
-  #rendered-md .hljs-variable.language_ {
-    color: var(--print-cb-variable-language-color);
-    text-shadow: var(--print-cb-variable-language-shadow);
-  }
-  #rendered-md .hljs-title.class_ {
-    color: var(--print-cb-title-class-color);
-    text-shadow: var(--print-cb-title-class-shadow);
-  }
-  #rendered-md .hljs-built_in {
-    color: var(--print-cb-built-in-color);
-    text-shadow: var(--print-cb-built-in-shadow);
-  }
-  #rendered-md .hljs-literal {
-    color: var(--print-cb-literal-color);
-    text-shadow: var(--print-cb-literal-shadow);
-  }
-  #rendered-md .hljs-attr {
-    color: var(--print-cb-attr-color);
-    text-shadow: var(--print-cb-attr-shadow);
-  }
-  #rendered-md .hljs-title.class_.inherited__ {
-    color: var(--print-cb-title-class-inherited-color);
-    text-shadow: var(--print-cb-title-class-inherited-shadow);
-  }
-  #rendered-md .hljs-comment {
-    color: var(--print-cb-comment-color);
-    text-shadow: var(--print-cb-comment-shadow);
-  }
-  #rendered-md .hljs-meta {
-    color: var(--print-cb-meta-color);
-    text-shadow: var(--print-cb-meta-shadow);
-  }
-  #rendered-md .hljs-subst {
-    color: var(--print-cb-subst-color);
-    text-shadow: var(--print-cb-subst-shadow);
-  }
-  #rendered-md .hljs-number {
-    color: var(--print-cb-number-color);
-    text-shadow: var(--print-cb-number-shadow);
-  }
-  #rendered-md .hljs-selector-id {
-    color: var(--print-cb-selector-id-color);
-    text-shadow: var(--print-cb-selector-id-shadow);
-  }
-  #rendered-md .hljs-selector-class {
-    color: var(--print-cb-selector-class-color);
-    text-shadow: var(--print-cb-selector-class-shadow);
-  }
-  #rendered-md .hljs-selector-tag {
-    color: var(--print-cb-selector-tag-color);
-    text-shadow: var(--print-cb-selector-tag-shadow);
-  }
-  #rendered-md .hljs-selector-pseudo {
-    color: var(--print-cb-selector-pseudo-color);
-    text-shadow: var(--print-cb-selector-pseudo-shadow);
-  }
-  #rendered-md .hljs-selector-attr {
-    color: var(--print-cb-selector-attr-color);
-    text-shadow: var(--print-cb-selector-attr-shadow);
-  }
-  #rendered-md .hljs-doctag {
-    color: var(--print-cb-doctag-color);
-    text-shadow: var(--print-cb-doctag-shadow);
-  }
-  #rendered-md .hljs-attribute {
-    color: var(--print-cb-attribute-color);
-    text-shadow: var(--print-cb-attribute-shadow);
-  }
-  #rendered-md .hljs-tag, .hljs-name {
-    color: var(--print-cb-tag-color);
-    text-shadow: var(--print-cb-tag-shadow);
-  }
-  #rendered-md .hljs-tag .hljs-attr {
-    color: var(--print-cb-html-attr-color);
-    text-shadow: var(--print-cb-html-attr-shadow);
-  }
-  #rendered-md .hljs-symbol {
-    color: var(--print-cb-symbol-color);
-    text-shadow: var(--print-cb-symbol-shadow);
-  }
-  #rendered-md .hljs-type {
-    color: var(--print-cb-type-color);
-    text-shadow: var(--print-cb-type-shadow);
-  }
-  #rendered-md .hljs-operator {
-    color: var(--print-cb-operator-color);
-    text-shadow: var(--print-cb-operator-shadow);
-  }
-  #rendered-md .hljs-regexp {
-    color: var(--print-cb-regexp-color);
-    text-shadow: var(--print-cb-regexp-shadow);
-  }
-  #rendered-md .hljs-class .hljs-title {
-    color: var(--print-cb-class-title-color);
-    text-shadow: var(--print-cb-class-title-shadow);
-  }
-  #rendered-md .hljs-function .hljs-title {
-    color: var(--print-cb-function-title-color);
-    text-shadow: var(--print-cb-function-title-shadow);
-  }
-
-
-
-
-  /*---------------------------------------------------------*/
-  /*                  PRINT: CUSTOM ELEMENTS                 */
-  /*---------------------------------------------------------*/
-
 
 
   
-  /* || PRINT CUSTOM ELEMENTS | ART GALLERY **************** */
-  ag2,ag3,ag4,ag5,ag6,ag7,ag8,ag9,ag10,ag11,ag12 {
-    background: var(--print-ag-bg-color); 
-    border-color: var(--print-ag-bd-color); 
-  }
-
-
-
-  /* || PRINT CUSTOM ELEMENTS | STICKY NOTES *************** */
+  /* || PRINT STYLE ADJUSTMENTS | PRINT STICKY NOTES ******* */
+  /* PRINT STICKY NOTES: BODY ============================== */
   #rendered-md note,
   #rendered-md tip,
   #rendered-md explain,
@@ -3129,20 +2888,473 @@ tspan {
   #rendered-md keyword,
   #rendered-md comment,
   #rendered-md important {
-    color: var(--print-sn-text-color);
     border-width: 0 5px;
-    border-color: var(--print-sn-bd-color);
-    box-shadow: var(--print-sn-box-shadow) !important;
   }
-  /* PRINT STICKY NOTES - IMPORTANT ======================== */
+
+
+
+  /* || PRINT STYLE ADJUSTMENTS | PRINT PLUGINS | SPOILER ** */
+  /* SPOILER: SPOILER BLOCK ================================ */
+  #rendered-md .spoiler-block {
+    border: 1px solid var(--pr-plugin-spoiler-bd);
+  }
+  /* spoiler title ----------------------------------------- */
+  #rendered-md .summary-title {
+    color: var(--pr-plugin-spoiler-title);
+    border-color: var(--pr-plugin-spoiler-bd) !important;
+  }
+  /* spoiler block > list ---------------------------------- */
+  #rendered-md .spoiler-block > .summary-content ul > li,
+  #rendered-md .spoiler-block > .summary-content ol > li {
+    color: var(--pr-plugin-spoiler-list-text);
+  }
+  
+  /* SPOILER BLOCK: SPAN =================================== */
+  /* span title -------------------------------------------- */
+  #rendered-md .spoiler-block > .summary-content > p > span:first-child {
+    color: var(--pr-plugin-spoiler-span-title);
+    border: 1px solid var(--pr-plugin-spoiler-span-title-bd);
+  }
+  /* list > span --------------------------------------------- */
+  #rendered-md .spoiler-block > .summary-content li span {
+    color: var(--pr-plugin-spoiler-list-span);
+  }
+  
+  /* SPOILER BLOCK: CUSTOM TITLE BLOCK ===================== */
+  /* block ------------------------------------------------- */
+  #rendered-md .spoiler-block > .summary-content > p > ctb {
+    color: var(--pr-plugin-spoiler-custom-title-block-text);
+    border: 1px solid var(--pr-plugin-spoiler-span-title-bd);
+  }
+  /* title --------------------------------------------------- */
+  #rendered-md .spoiler-block > .summary-content > p > ctb:first-line {
+    color: var(--pr-plugin-spoiler-custom-title-block-title);
+  }
+  
+  /* SPOILER: SPOILER INLINE =============================== */
+  /* spoiler inline: body ---------------------------------- */
+  #rendered-md label.spoiler-inline {
+    color: var(--pr-plugin-spoiler-inline-text);
+    border: 1px solid var(--pr-plugin-spoiler-inline-bd);
+  }
+  /* spoiler inline: symbol -------------------------------- */
+  #rendered-md label.spoiler-inline::before {
+    color: var(--pr-plugin-spoiler-inline-symbol);
+  }
+
+
+
+  
+  /* ------------------------------------------------------- */
+  /*                 PRINT COLOR ADJUSTMENTS                 */
+  /* ------------------------------------------------------- */
+  
+  
+  
+  
+  /* || PRINT COLOR ADJUSTMENTS | PRINT PARAGRAPH ********** */
+  /* PARAGRAPH: PARAGRAPH TEXT ============================= */
+  #rendered-md > p {
+    color: var(--pr-text);
+  }
+  /* PARAGRAPH: HORIZONTAL RULE ============================ */
+  #rendered-md hr {
+    background-color: var(--pr-hr-bg);
+    background-image: var(--pr-hr-bgi);
+  }
+
+
+  
+  /* || PRINT COLOR ADJUSTMENTS | PRINT SPECIAL TEXT ******* */
+  /* SPECIAL TEXT: EMPHASIZE =============================== */
+  #rendered-md em {
+    color: var(--pr-emphasize-text);
+  }
+  
+  /* SPECIAL TEXT: STRONG ================================== */
+  #rendered-md strong {
+    color: var(--pr-strong-text);
+  }
+  
+  /* SPECIAL TEXT: MARK ==================================== */
+  #rendered-md mark {
+    color: var(--pr-mark-text);
+    background: var(--pr-mark-bg);
+  }
+  
+  /* SPECIAL TEXT: INSERT & STRIKETHROUGH ================== */
+  /* insert ------------------------------------------------ */
+  #rendered-md ins {
+    color: var(--pr-insert-text);
+    background: var(--pr-insert-bg);
+    border-bottom: 1px solid var(--pr-insert-bd);
+  }
+  /* insert symbol ----------------------------------------- */
+  #rendered-md ins::before {
+    color: var(--pr-insert-symbol);
+    background: var(--pr-insert-symbol-bg);
+  }
+  /* strikethrough ----------------------------------------- */
+  #rendered-md s {
+    color: var(--pr-strikethrough-text);
+    background: var(--pr-strikethrough-bg);
+  }
+  /* strikethrough symbol ---------------------------------- */
+  #rendered-md s::before {
+    color: var(--pr-strikethrough-symbol);
+    background: var(--pr-strikethrough-symbol-bg);
+  }
+
+  /* SPECIAL TEXT: ABBREVIATION ============================ */
+  #rendered-md abbr {
+    color: var(--pr-abbreviation-text);
+  }
+
+  /* SPECIAL TEXT: INLINE CODE ============================= */
+  #rendered-md code:not(pre code),
+  #rendered-md .inline-code {
+    color: var(--pr-inline-code-text);
+  }
+  /* symbol ------------------------------------------------ */
+  #rendered-md code:not(pre code)::before,
+  #rendered-md .inline-code::before {
+    color: var(--pr-inline-code-symbol);
+  }
+
+
+
+  /* || PRINT COLOR ADJUSTMENTS | PRINT LINK *************** */
+  #rendered-md a {
+    color: var(--pr-link-text);
+  }
+  /* source icon ------------------------------------------- */
+  #rendered-md a > .resource-icon {
+    background: var(--pr-link-source-icon);
+  }
+  
+  
+  
+  /* || PRINT COLOR ADJUSTMENTS | PRINT LIST *************** */
+  #rendered-md ul li,
+  #rendered-md ul li > p,
+  #rendered-md ol:not(.footnotes-list) li,
+  #rendered-md ol:not(.footnotes-list) li > p {
+    color: var(--pr-list-text);
+  }
+  /* token ------------------------------------------------- */
+  #rendered-md ul > li::marker,
+  #rendered-md ol:not(.footnotes-list) > li::marker {
+    color: var(--pr-list-token);
+  }
+  /* list > span ------------------------------------------- */
+  #rendered-md li > span {
+    color: var(--pr-list-span);
+  }
+  
+  
+  
+  /* || PRINT COLOR ADJUSTMENTS | PRINT FOOTNOTE *********** */
+  /* FOOTNOTE REFERENCE ==================================== */
+  #rendered-md [id*="fnref"] {
+    color: var(--pr-footnote-ref);
+  }
+  
+  /* FOOTNOTE ============================================== */
+  /* footnote separate title ------------------------------- */
+  #rendered-md .footnotes::before {
+    color: var(--pr-fn-title);
+    border-top: var(--pr-footnote-title-bdt);
+  }
+  /* footnote backref -------------------------------------- */
+  #rendered-md .footnote-backref {
+    color: var(--pr-footnote-ref);
+  }
+  /* footnote list text ------------------------------------ */
+  #rendered-md .footnote-item > p {
+    color: var(--pr-footnote-list-text);
+  }
+  /* footnote list token ----------------------------------- */
+  #rendered-md .footnote-item {
+    color: var(--pr-footnote-list-token);
+  }
+  
+  
+
+  /* || PRINT COLOR ADJUSTMENTS | PRINT HEADINGS *********** */
+  /* heading reference ------------------------------------- */
+  /* GROUP: h1 to h6 --------------------------------------- */
+  #rendered-md h1:before,
+  #rendered-md h2:before,
+  #rendered-md h3:before,
+  #rendered-md h4:before,
+  #rendered-md h5:before,
+  #rendered-md h6:before {
+    -webkit-text-fill-color: var(--pr-heading-ref);
+  }
+  
+  /* H1 ==================================================== */
+  #rendered-md h1 {
+    color: var(--pr-h1-text);
+  }
+  /* h1 border --------------------------------------------- */
+  #rendered-md h1::after {
+    background-image: var(--pr-h1-bgi);
+  }
+  
+  /* H2 ==================================================== */
+  #rendered-md h2 {
+    color: var(--pr-h2-text);
+  }
+  /* h2 border --------------------------------------------- */
+  #rendered-md h2::after {
+    background-image: var(--pr-h2-bgi);
+  }
+  
+  /* H3 ==================================================== */
+  #rendered-md h3 {
+    color: var(--pr-h3-text);
+  }
+  /* h3 border --------------------------------------------- */
+  #rendered-md h3::after {
+    background-image: var(--pr-h3-bgi);
+  }
+  
+  /* H4 ==================================================== */
+  #rendered-md h4 {
+    color: var(--pr-h4-text);
+  }
+  /* h4 border --------------------------------------------- */
+  #rendered-md h4::after {
+    background-image: var(--pr-h4-bgi);
+  }
+  
+  /* H5 ==================================================== */
+  #rendered-md h5 {
+    color: var(--pr-h5-text);
+  }
+  /* h5 border --------------------------------------------- */
+  #rendered-md h5::after {
+    background-image: var(--pr-h5-bgi);
+  }
+  
+  /* H6 ==================================================== */
+  #rendered-md h6 {
+    color: var(--pr-h6-text);
+  }
+  /* h6 border --------------------------------------------- */
+  #rendered-md h6::after {
+    background-image: var(--pr-h6-bgi);
+  }
+  
+  /* HEADINGS: MANUAL BORDER =============================== */
+  /* h2 + horizontal rule ---------------------------------- */
+  #rendered-md h2 + hr {
+    background-image: var(--pr-h2-bgi);
+  }
+  /* h3 + horizontal rule ---------------------------------- */
+  #rendered-md h3 + hr {
+    background-image: var(--pr-h3-bgi);
+  }
+  /* h4 + horizontal rule ---------------------------------- */
+  #rendered-md h4 + hr {
+    background-image: var(--pr-h4-bgi);
+  }
+  /* h5 + horizontal rule ---------------------------------- */
+  #rendered-md h5 + hr {
+    background-image: var(--pr-h5-bgi);
+  }
+  /* h6 + horizontal rule ---------------------------------- */
+  #rendered-md h6 + hr {
+    background-image: var(--pr-h6-bgi);
+  }
+
+
+
+  /* || PRINT COLOR ADJUSTMENTS | PRINT MATH NOTATION ****** */
+  #rendered-md .katex-display {
+    font-size: var(--usp-math-notation-font-size);
+    color: var(--pr-math-notation-text);
+  }
+  #rendered-md .katex * {
+    color: var(--pr-math-notation-text);
+  }
+  
+  
+  
+  /* || PRINT COLOR ADJUSTMENTS | PRINT BLOCKQUOTE ********* */
+  #rendered-md blockquote {
+    border-left: var(--pr-blockquote-bdl);
+  }
+  #rendered-md blockquote > p {
+    color: var(--pr-blockquote-text);
+  }
+  
+  
+  
+  /* || PRINT COLOR ADJUSTMENTS | PRINT TABLE ************** */
+  #rendered-md table > thead > tr > th,
+  #rendered-md table > tbody > tr > td {
+    color: var(--pr-table-text);
+    border: var(--pr-table-bd);
+  }
+  #rendered-md table > thead > tr > th {
+    background: var(--pr-table-header-bg);
+  }
+  #rendered-md table > tbody > tr:nth-child(odd) {
+    background: var(--pr-table-row-odd-bg);
+  }
+  #rendered-md table > tbody > tr:nth-child(even) {
+    background: var(--pr-table-row-even-bg);
+  }
+  
+  
+
+  /* || PRINT COLOR ADJUSTMENTS | PRINT MARKDOWN TOC ******* */
+  /* print toc button = toc title -------------------------- */
+  #rendered-md .table-of-contents::before {
+    color: var(--pr-toc-btn-text);
+    border-color: var(--pr-text);
+  }
+  /* print toc list ---------------------------------------- */
+  #rendered-md .table-of-contents ul {
+    border-left: var(--pr-toc-list-bdl);
+  }
+
+
+  
+  /* || PRINT COLOR ADJUSTMENTS | PRINT CODE BLOCK ********* */
+  /* CODE BLOCK: BODY ====================================== */
+  #rendered-md .joplin-editable > .hljs {
+    border-color: var(--pr-code-block-bdc);
+  }
+  
+  /* CODE BLOCK: SYNTAX HIGHLIGHT ========================== */
+  #rendered-md .hljs * {
+    color: var(--pr-code-block-text);
+  }
+  #rendered-md .hljs-keyword {
+    color: var(--pr-code-block-keyword-text);
+  }
+  #rendered-md .hljs-params {
+    color: var(--pr-code-block-params-text);
+  }
+  #rendered-md .hljs-title {
+    color: var(--pr-code-block-title-text);
+  }
+  #rendered-md .hljs-title.function_ {
+    color: var(--pr-code-block-title-function-text);
+  }
+  #rendered-md .hljs-property {
+    color: var(--pr-code-block-property-text);
+  }
+  #rendered-md .hljs-string {
+    color: var(--pr-code-block-string-text);
+  }
+  #rendered-md .hljs-function {
+    color: var(--pr-code-block-function-text);
+  }
+  #rendered-md .hljs-function .hljs-params {
+    color: var(--pr-code-block-function-params-text);
+  }
+  #rendered-md .hljs-variable {
+    color: var(--pr-code-block-variable-text);
+  }
+  #rendered-md .hljs-variable.language_ {
+    color: var(--pr-code-block-variable-language-text);
+  }
+  #rendered-md .hljs-title.class_ {
+    color: var(--pr-code-block-title-class-text);
+  }
+  #rendered-md .hljs-built_in {
+    color: var(--pr-code-block-built-in-text);
+  }
+  #rendered-md .hljs-literal {
+    color: var(--pr-code-block-literal-text);
+  }
+  #rendered-md .hljs-attr {
+    color: var(--pr-code-block-attr-text);
+  }
+  #rendered-md .hljs-title.class_.inherited__ {
+    color: var(--pr-code-block-title-class-inherited-text);
+  }
+  #rendered-md .hljs-comment {
+    color: var(--pr-code-block-comment-text);
+  }
+  #rendered-md .hljs-meta {
+    color: var(--pr-code-block-meta-text);
+  }
+  #rendered-md .hljs-subst {
+    color: var(--pr-code-block-subst-text);
+  }
+  #rendered-md .hljs-number {
+    color: var(--pr-code-block-number-text);
+  }
+  #rendered-md .hljs-selector-id {
+    color: var(--pr-code-block-selector-id-text);
+  }
+  #rendered-md .hljs-selector-class {
+    color: var(--pr-code-block-selector-class-text);
+  }
+  #rendered-md .hljs-selector-tag {
+    color: var(--pr-code-block-selector-tag-text);
+  }
+  #rendered-md .hljs-selector-pseudo {
+    color: var(--pr-code-block-selector-pseudo-text);
+  }
+  #rendered-md .hljs-selector-attr {
+    color: var(--pr-code-block-selector-attr-text);
+  }
+  #rendered-md .hljs-doctag {
+    color: var(--pr-code-block-doctag-text);
+  }
+  #rendered-md .hljs-attribute {
+    color: var(--pr-code-block-attribute-text);
+  }
+  #rendered-md .hljs-tag,
+  #rendered-md .hljs-name {
+    color: var(--pr-code-block-tag-text);
+  }
+  #rendered-md .hljs-tag .hljs-attr {
+    color: var(--pr-code-block-html-attr-text);
+  }
+  #rendered-md .hljs-symbol {
+    color: var(--pr-code-block-symbol-text);
+  }
+  #rendered-md .hljs-type {
+    color: var(--pr-code-block-type-text);
+  }
+  #rendered-md .hljs-operator {
+    color: var(--pr-code-block-operator-text);
+  }
+  #rendered-md .hljs-regexp {
+    color: var(--pr-code-block-regexp-text);
+  }
+  #rendered-md .hljs-class .hljs-title {
+    color: var(--pr-code-block-class-title-text);
+  }
+  #rendered-md .hljs-function .hljs-title {
+    color: var(--pr-code-block-function-title-text);
+  }
+
+
+  
+  /* || PRINT COLOR ADJUSTMENTS | PRINT STICKY NOTES ******* */
+  /* PRINT STICKY NOTES: BODY ============================== */
+  #rendered-md note,
+  #rendered-md tip,
+  #rendered-md explain,
+  #rendered-md question,
+  #rendered-md warning,
+  #rendered-md keyword,
+  #rendered-md comment,
   #rendered-md important {
-    color: var(--print-sn-important-text-color);
-    border-color: var(--print-sn-important-bd-color);
+    color: var(--pr-sticky-notes-text);
+    border-color: var(--pr-sticky-notes-bdc);
+    box-shadow: 0 0 var(--pr-sticky-notes-bs) !important;
   }
-  /* important tag ----------------------------------------- */
-  #rendered-md important::before {
-    border-color: var(--print-sn-important-tag-bd-color);
-  }
+  
+  /* PRINT STICKY NOTES: TAGS ============================== */
+  /* without "important" ----------------------------------- */
   #rendered-md note::after,
   #rendered-md tip::after,
   #rendered-md explain::after,
@@ -3150,162 +3362,80 @@ tspan {
   #rendered-md warning::after,
   #rendered-md keyword::after,
   #rendered-md comment::after {
-    color: var(--print-sn-tag-text-color);
-    text-shadow: none;
+    color: var(--pr-sticky-notes-tag-text);
   }
+  
+  /* PRINT STICKY NOTES: IMPORTANT ========================= */
+  #rendered-md important {
+    color: var(--pr-sticky-notes-important-text);
+    border-color: var(--pr-sticky-notes-important-bdc);
+  }
+  /* important tag ----------------------------------------- */
+  #rendered-md important::before {
+    border-color: var(--pr-sticky-notes-important-tag-bdc);
+  }
+  
 
-
-
-  /* || PRINT CUSTOM ELEMENTS | CUSTOM TITLE BLOCK ********* */
+  
+  /* || PRINT COLOR ADJUSTMENTS | PRINT CUSTOM TITLE BLOCK * */
   #rendered-md > p > ctb {
-    border: var(--print-ctb-bd-color);
+    border: var(--pr-custom-title-block-bd);
   }
   /* custom title block: title ------------------------------*/
   #rendered-md > p > ctb:first-line {
-    font-weight: 700;
-    font-size: 100%;
-    color: var(--print-ctb-title-color);
+    color: var(--pr-custom-title-block-title);
   }
   /* custom title block: symbol -----------------------------*/
   #rendered-md > p > ctb::before {
-    background: var(--print-ctb-symbol-bg-color);
+    background: var(--pr-custom-title-block-symbol-bg);
   }
 
 
-
-  /* || PRINT CUSTOM ELEMENTS | KEY POINT ****************** */
+  
+  /* || PRINT COLOR ADJUSTMENTS | PRINT KEY POINT ********** */
   #rendered-md kp {
-    color: var(--print-kp-text-color);
-    text-shadow: var(--print-kp-text-shadow);
+    color: var(--pr-key-point-text);
   }
   /* brackets ---------------------------------------------- */
   #rendered-md kp::before,
   #rendered-md kp::after {
-    border-color: var(--print-kp-bd-color);
+    border-color: var(--pr-key-point-bdc);
   }
+
 
   
-
-  /* || CUSTOM ELEMENTS | KEY MENTION ********************** */
+  /* || PRINT COLOR ADJUSTMENTS | PRINT KEY MENTION ******** */
   #rendered-md km {
-    color: var(--print-km-text-color);
-    background: var(--print-km-bg-color);
-    border: var(--print-km-bd-color);
-    box-shadow: 0 0 2px black;
-  }
-  /* when key mention is using right behind any elements --- */
-  #rendered-md * + p > km {
-    display: block;
-    margin-right: 0px;
-    margin-left: auto;
-  }
-  /* key mention > special text ---------------------------- */
-  #rendered-md km strong,
-  #rendered-md km em,
-  #rendered-md km abbr,
-  #rendered-md km ins,
-  #rendered-md km mark,
-  #rendered-md km s {
-    color: var(--print-km-special-text-color);
+    color: var(--pr-key-mention-text);
+    border: var(--pr-key-mention-bd);
   }
   /* key mention > link ------------------------------------ */
   #rendered-md km > a {
-    color: var(--print-km-link-text-color);
+    color: var(--pr-key-mention-link-text);
     text-decoration: none;
   }
 
+  
 
-
-
-  /*---------------------------------------------------------*/
-  /*                      PRINT: PLUGINS                     */
-  /*---------------------------------------------------------*/
-
-
-
-
-  /* || PRINT PLUGINS | SPOILER **************************** */
-  /* PRINT SPOILER BLOCK =================================== */
-  #rendered-md .spoiler-block {
-    border: var(--print-spoiler-block-bd-color);
-  }
-  /* print spoiler title ----------------------------------- */
-  #rendered-md .summary-title {
-    font-size: calc(var(--usp-print-base-font-size) * 1.3);
-  }
-  #rendered-md .summary-title,
-  #tinymce #rendered-md .summary-title {
-    color: var(--print-spoiler-title-color);
-    border-color: var(--print-spoiler-title-bd-color);
-  }
-  /* spoiler block > list ---------------------------------- */
-  #rendered-md .spoiler-block > .summary-content ul > li,
-  #rendered-md .spoiler-block > .summary-content ol > li {
-    color: var(--print-spoiler-list-text-color);
-  }
-
-  /* PRINT SPOILER SPAN ==================================== */
-  /* print spoiler span title ------------------------------ */
-  #rendered-md .spoiler-block > .summary-content > p > span:first-child {
-    color: var(--print-spoiler-span-title-color);
-    border-width: 1px 0;
-    border-style: solid;
-    border-color: var(--print-spoiler-span-title-bd-color);
-  }
-  /* print spoiler list > span ----------------------------- */
-  #rendered-md .spoiler-block > .summary-content li span {
-    color: var(--print-spoiler-list-span-color);
-  }
-  /* print spoiler custom title block > block -------------- */
-  #rendered-md .spoiler-block > .summary-content > p > ctb {
-     color: var(--print-spoiler-ctb-text-color);
-     border: 1px solid var(--print-spoiler-ctb-bd-color);
-  }
-  /* print spoiler custom title block > title -------------- */
-  #rendered-md .spoiler-block > .summary-content > p > ctb:first-line {
-     color: var(--print-spoiler-ctb-title-color);
-  }
-  /* PRINT SPOILER INLINE ********************************** */
-  #rendered-md label.spoiler-inline {
-    border-color: var(--print-spoiler-inline-bd-color);
-  }
-  /* print spoiler inline text ----------------------------- */
-  #rendered-md span.spoiler-inline {
-    color: var(--print-spoiler-inline-text-color);      
-    visibility: var(--usp-print-spoiler-inline-text-visibility);
-  }
-  /* print spoiler inline symbol --------------------------- */
-  #rendered-md label.spoiler-inline::before {
-    color: var(--print-spoiler-inline-symbol-color);
-  }
-
-
-
-  /* PRINT TURNTOCHART ************************************* */
-  /* PRINT CHART =========================================== */
-  /* print text & line ------------------------------------- */
+  /* || PRINT COLOR ADJUSTMENTS | PRINT TURNTOCHART(TTC) *** */
+  /* PRINT TTC: CHART ====================================== */
+  /* text & line ------------------------------------------- */
   #rendered-md svg g text,
   #rendered-md svg g .visx-line {
-    fill: var(--print-turntochart-text-color);
-    color: var(--print-turntochart-text-color);
+    fill: var(--pr-plugin-turntochart-text);
+    color: var(--pr-plugin-turntochart-text);
   }
   
-  /* PRINT INFO BLOCK ====================================== */
-  /* print background -------------------------------------- */
+  /* PRINT TTC: INFO BLOCK ================================= */
+  /* background -------------------------------------------- */
   #rendered-md > div > svg ~ div {
-    border: var(--print-turntochart-info-bd-color);
+    border: var(--pr-plugin-turntochart-info-bd);
   }
-  /* print title & label ----------------------------------- */
+  /* title & label ----------------------------------------- */
   #rendered-md > div > svg ~ div > div:first-child,
   #rendered-md > div > svg ~ div > .visx-legend {
-    fill: var(--print-turntochart-text-color);
-    color: var(--print-turntochart-text-color);
+    fill: var(--pr-plugin-turntochart-text);
+    color: var(--pr-plugin-turntochart-text);
   }
 
-
-
-  /* PRINT INLINE TODO ************************************* */
-  #rendered-md .inline-todo {
-    text-shadow: none;
-  }
 }
