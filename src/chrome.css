@@ -2049,7 +2049,7 @@ body {
 /* note list ----------------------------------------------- */
 .item-list.note-list {
   display: block;
-  padding: 3px 0 0 3px;
+  padding: 3px -3px 0 3px;
 }
 
 /* BODY: NOTE LIST ITEM ==================================== */
