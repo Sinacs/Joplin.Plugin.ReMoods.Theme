@@ -1633,6 +1633,10 @@ body {
   border-bottom: 1px solid var(--g-item-divider);
   overflow-x: scroll;
 }
+/* notebook item selected ---------------------------------- */
+.sidebar .list-item-container.selected > .list-item {
+  border-color: var(--g-item-bgc-selected);
+}
 /* notebook item indent ------------------------------------ */
 .sidebar .list-item-depth-0:not(.all-notes) {
   padding-left: 8px;
@@ -1773,6 +1777,10 @@ body {
 .sidebar .all-notes.bdNHyQ,/* light theme Joplin v2.10 */
 .sidebar .all-notes.ixgtav/* dark theme Joplin v2.10 */ {
   background: var(--g-item-bgc-selected) !important;
+}
+.sidebar .bdNHyQ.list-item-container .list-item,/* light theme Joplin v2.10 */
+.sidebar .ixgtav.list-item-container .list-item/* light theme Joplin v2.10 */ {
+  border-color: var(--g-item-bgc-selected);
 }
 /* all notes button icon ----------------------------------- */
 .sidebar .all-notes > .icon-notes {
@@ -2112,6 +2120,9 @@ body {
 /* note item selected -------------------------------------- */
 .rli-noteList .note-list-item.selected {
   background: var(--g-item-bgc-selected) !important;
+}
+.rli-noteList .note-list-item.selected::before {
+  border-color: var(--g-item-bgc-selected);
 }
 /* note item text ------------------------------------------ */
 .rli-noteList .note-list-item > a > span {
