@@ -1465,7 +1465,7 @@ body {
 }
 
 /* CONTAINER: DIVIDER ====================================== */
-#react-root .rli-root div[style="position: absolute; user-select: none; width: 10px; height: 100%; top: 0px; right: -5px; cursor: col-resize;"] {
+#react-root .rli-root div[style*="position: absolute; user-select: none; width: 10px; height: 100%;"] {
   background: linear-gradient(to right, var(--s-panel-divider) 50%, transparent 51%);
 }
 
