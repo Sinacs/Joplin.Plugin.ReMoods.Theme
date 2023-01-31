@@ -319,7 +319,7 @@
   --g-item-ds-hover:                                  2px hsl(var(--usp-hue), 100%,  35%);
   --g-item-divider:                                       hsl(var(--usp-hue),  20%,  20%);
   --g-item-text:                                          hsl(var(--usp-hue), 100%,  98%);
-
+  --g-item-ts-selected:                               4px hsl(var(--usp-hue), 100%,  20%);
   /* notebook panel all notes button & tag list ---------------------------------------------- */
   --g-item-text-2:                                        hsl(var(--usp-hue), 100%,  80%);
   
@@ -1696,6 +1696,10 @@ body {
   overflow-y: hidden;
   white-space: var(--usp-notebook-title-wrap);
 }
+/* notebook title selected --------------------------------- */
+.sidebar .list-item-container.selected .title {
+  text-shadow: 0 0 var(--g-item-ts-selected);
+}
 /* directory icon ------------------------------------------ */
 .sidebar i.fas.fa-caret-down,
 .sidebar i.fas.fa-caret-right {
@@ -1794,6 +1798,11 @@ body {
   font-weight: 700;
   color: var(--g-item-text-2);
 }
+/* all notes button text selected -------------------------- */
+.sidebar .all-notes.bdNHyQ > *,/* light theme Joplin v2.10 */
+.sidebar .all-notes.ixgtav > */* dark theme Joplin v2.10 */ {
+  text-shadow: 0 0 var(--g-item-ts-selected);
+}
 
 /* BODY: NOTE COUNT LABEL ================================== */
 .sidebar .note-count-label {
@@ -1851,6 +1860,10 @@ body {
 .sidebar .tag-label {
   width: 100%;
   color: var(--g-item-text-2);
+}
+/* tag list item text selected ----------------------------- */
+.sidebar .list-item-container.selected .tag-label {
+  text-shadow: 0 0 var(--g-item-ts-selected);
 }
 
 
@@ -2100,6 +2113,10 @@ body {
 .rli-noteList .todo-list-item > a:hover > span {
   animation: rtl-auto 4s linear 0.6s infinite;
 }
+/* todo item text selected --------------------------------- */
+.rli-noteList .todo-list-item.selected span {
+  text-shadow: 0 0 var(--g-item-ts-selected);
+}
 /* checkbox ------------------------------------------------ */
 .rli-noteList .todo-list-item  input[type="checkbox"] {
   filter: hue-rotate(calc(var(--usp-hue) + 145deg));
@@ -2133,7 +2150,10 @@ body {
 .rli-noteList .note-list-item > a:hover > span {
   animation: var(--usp-note-list-item-auto-scroll);
 }
-
+/* note item text selected --------------------------------- */
+.rli-noteList .note-list-item.selected span {
+  text-shadow: 0 0 var(--g-item-ts-selected);
+}
 
 
 
@@ -2870,6 +2890,17 @@ body {
 .config-screen > div:first-child > a > i,
 .config-screen > div:first-child > a > span {
   color: var(--g-item-text);
+}
+/* menu item > icon & text selected ------------------------ */
+.config-screen > div:first-child > a.hWxWTS > i,/* light theme joplin v2.9 */
+.config-screen > div:first-child > a.hWxWTS > span,/* light theme joplin v2.9 */
+.config-screen > div:first-child > a.kpFtJJ > i,/* dark theme joplin v2.9 */
+.config-screen > div:first-child > a.kpFtJJ > span,/* dark theme joplin v2.9 */
+.config-screen > div:first-child > a.ckZpnt > i,/* light theme joplin v2.10 */
+.config-screen > div:first-child > a.ckZpnt > span,/* light theme joplin v2.10 */
+.config-screen > div:first-child > a.eFgsZC > i,/* dark theme joplin v2.10 */
+.config-screen > div:first-child > a.eFgsZC > span /* dark theme joplin v2.10 */ {
+  text-shadow: 0 0 var(--g-item-ts-selected);
 }
 /* split title --------------------------------------------- */
 .config-screen > div:first-child > div {

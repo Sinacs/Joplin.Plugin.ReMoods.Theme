@@ -1537,7 +1537,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       chromeCSS = chromeCSS.replace(/^  --g-item-bgc-selected:.+?;/gms, '  --g-item-bgc-selected: hsl(var(--usp-hue),  55%,  45%);');
       chromeCSS = chromeCSS.replace(/^  --g-item-ds-hover:.+?;/gms, '  --g-item-ds-hover: hsl(var(--usp-hue), 100%,  45%);');
       chromeCSS = chromeCSS.replace(/^  --g-item-divider:.+?;/gms, '  --g-item-divider: hsl(var(--usp-hue),  20%,  20%);');
-      chromeCSS = chromeCSS.replace(/^  --g-item-text:.+?;/gms, '  --g-item-text: hsl(var(--usp-hue),  40%,  95%);');
+      chromeCSS = chromeCSS.replace(/^  --g-item-ts-selected:.+?;/gms, '  --g-item-ts-selected: 4px hsl(var(--usp-hue), 100%,  20%);');
       chromeCSS = chromeCSS.replace(/^  --g-item-text-2:.+?;/gms, '  --g-item-text-2: hsl(var(--usp-hue),  75%,  75%);');
       chromeCSS = chromeCSS.replace(/^  --g-square-btn-bg-1:.+?;/gms, '  --g-square-btn-bg-1: none;');
       chromeCSS = chromeCSS.replace(/^  --g-square-btn-bg-1-hover:.+?;/gms, '  --g-square-btn-bg-1-hover: hsl(var(--usp-hue),  20%,  20%);');
