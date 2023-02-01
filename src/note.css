@@ -438,16 +438,15 @@
   --sc-plugin-spoiler-text:                               var(--sc-text);
   --sc-plugin-spoiler-bg:                                 hsl(var(--usp-hue),  10%,  20%);
   --sc-plugin-spoiler-bs:                             4px hsl(var(--usp-hue), 100%,  80%);
-  /* spoiler title -------------------------------------------------------------------------- */
+
   --sc-plugin-spoiler-title:                              hsl(var(--usp-hue), 100%,  90%);
-  /* spoiler > list ------------------------------------------------------------------------- */
-  --sc-plugin-spoiler-list-text:                          hsl(var(--usp-hue), 100%,  80%);
-  /* spoiler > span ------------------------------------------------------------------------- */
+  
   --sc-plugin-spoiler-span-title:                         hsl(var(--usp-hue),  40%,  80%);
   --sc-plugin-spoiler-span-title-bg:                      hsl(var(--usp-hue),  10%,  30%);
-  /* spoiler > list > span ------------------------------------------------------------------ */
+  
+  --sc-plugin-spoiler-list-text:                          hsl(var(--usp-hue), 100%,  80%);
   --sc-plugin-spoiler-list-span:                          hsl(var(--usp-hue),   0%,  90%);
-  /* spoiler > custom title block ----------------------------------------------------------- */
+
   --sc-plugin-spoiler-custom-title-block-text:            var(--sc-text);
   --sc-plugin-spoiler-custom-title-block-bg:              hsl(var(--usp-hue),  10%,  30%);
   --sc-plugin-spoiler-custom-title-block-title:           hsl(var(--usp-hue), 100%,  90%);
@@ -2189,7 +2188,8 @@ ag12 img {
 }
 /* spoiler title icon -------------------------------------- */
 #rendered-md .summary-title::before {
-  font-size: 100%;
+  content: "\25B6";
+  vertical-align: text-bottom;
 }
 /* spoiler title (rich text editor) -------------------------*/
 #tinymce #rendered-md .summary-title {

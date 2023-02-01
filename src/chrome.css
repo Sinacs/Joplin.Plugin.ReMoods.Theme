@@ -55,6 +55,7 @@
 
 
 
+
   /* || USER SETTING PROPERTIES 1/1 | SCREEN *************** */
   /* THEME COLOR ******************************************* */
   --usp-hue: 260deg;
@@ -126,7 +127,8 @@
   --me-cursor-bdl:                              2px solid hsl(var(--usp-hue), 100%,  70%);
 
   --me-selected-text:                                     var(--me-text);
-  --me-selected-bg:                                       hsl(calc(var(--usp-hue) + 180deg),  10%,  50%,  50%);
+  --me-selected-bg:                                       hsl(calc(var(--usp-hue) + 180deg),  10%,  45%,  50%);
+  --me-selected-bg-focused:                               hsl(calc(var(--usp-hue) + 180deg),  10%,  50%,  50%);
   
   /* SPECIAL TEXT =========================================================================== */
   --me-special-text:                                      hsl(var(--usp-hue), 100%,  20%);
@@ -318,7 +320,7 @@
   --g-item-bgc-selected:                                  hsl(var(--usp-hue),  40%,  35%);
   --g-item-ds-hover:                                  2px hsl(var(--usp-hue), 100%,  35%);
   --g-item-divider:                                       hsl(var(--usp-hue),  20%,  20%);
-  --g-item-text:                                          hsl(var(--usp-hue), 100%,  98%);
+  --g-item-text-1:                                        hsl(var(--usp-hue), 100%,  98%);
   --g-item-ts-selected:                               4px hsl(var(--usp-hue), 100%,  20%);
   /* notebook panel all notes button & tag list ---------------------------------------------- */
   --g-item-text-2:                                        hsl(var(--usp-hue), 100%,  80%);
@@ -443,6 +445,7 @@
   --s-md-bg:                                              hsl(var(--usp-hue),  11%,  13%);
   --s-md-label-text:                                      hsl(var(--usp-hue),  60%,  90%);
   --s-md-title-text:                                      hsl(var(--usp-hue),  60%,  90%);
+  
   --s-md-confirm-btn-text:                                hsl(var(--usp-hue),  60%,  90%);
   --s-md-confirm-btn-bg:                                  hsl(var(--usp-hue),  40%,  15%);
   --s-md-confirm-btn-bd:                                  hsl(var(--usp-hue), 100%,  30%);
@@ -478,6 +481,7 @@
   --s-op-description-text:                                hsl(var(--usp-hue),  20%,  60%);
   
   --s-op-table-text:                                      hsl(var(--usp-hue),  40%,  70%);
+  --s-op-table-kbd-bdc:                                   hsl(var(--usp-hue),  10%,  20%);
   
   --s-op-plugin-card-bd:                                  hsl(var(--usp-hue),  30%,  30%);
   --s-op-plugin-card-bs:                              3px hsl(var(--usp-hue), 100%,  20%);
@@ -676,7 +680,7 @@
   background: var(--me-selected-bg) !important;
 }
 .CodeMirror-focused .CodeMirror-selected {
-  background: var(--me-selected-bg) !important;
+  background: var(--me-selected-bg-focused) !important;
 }
 .CodeMirror-line::selection,
 .CodeMirror-line > span::selection,
@@ -687,6 +691,10 @@
 .CodeMirror-line > span::-moz-selection,
 .CodeMirror-line > span > span::-moz-selection {
   background: var(--me-selected-bg) !important;
+}
+/* selected code block text -------------------------------- */
+.CodeMirror-code .cm-jn-code-block .CodeMirror-selectedtext {
+  background: var(--me-selected-bg);
 }
 /* selected special text ----------------------------------- */
 /* GROUP: | emphasize | strong | insert | strikethrough | mark | inline code | */
@@ -711,10 +719,9 @@
 
 /* || MARKDOWN 1/9 | SPECIAL TEXT ************************** */
 /* SPECIAL TEXT: GENERAL =================================== */
-/* GROUP: | emphasize | abbreviation | strong | mark | ----- */
+/* GROUP: | emphasize | abbreviation | strong | ------------ */
 .CodeMirror-code .CodeMirror-line .cm-em:not(.cm-header),
-.CodeMirror-code .CodeMirror-line .cm-strong:not(.cm-header),
-.CodeMirror-code .CodeMirror-line .cm-rm-highlight:not(.cm-header) {
+.CodeMirror-code .CodeMirror-line .cm-strong:not(.cm-header) {
   color: var(--me-special-text) !important;
   background: var(--me-special-bg);
 }
@@ -725,10 +732,9 @@
 }
 
 /* SPECIAL TEXT: MARK ====================================== */
-.CodeMirror-code .CodeMirror-line .cm-rm-highlight {
-  border-width: 2px 0;
-  border-style: solid;
-  border: var(--me-mark-bd);
+.CodeMirror-code .CodeMirror-line .cm-rm-highlight:not(.cm-header) {
+  color: var(--me-mark-text) !important;
+  background: var(--me-mark-bg) !important;
 }
 
 /* SPECIAL TEXT: INSERT ==================================== */
@@ -773,7 +779,7 @@
 
 /* SPECIAL TEXT: INLINE CODE =============================== */
 .CodeMirror-code .CodeMirror-line .cm-jn-inline-code.cm-jn-monospace:not(.CodeMirror-selectedtext) {
-  color: var(--me-inline-code-text);
+  color: var(--me-inline-code-text) !important;
   background: var(--me-inline-code-bg) !important;
   border: 2px solid var(--me-inline-code-bg) !important;
   border-radius: 3px !important;
@@ -1692,7 +1698,7 @@ body {
   margin: 4px 0;
   width: 100%;
   line-height: normal !important;
-  color: var(--g-item-text);
+  color: var(--g-item-text-1);
   overflow-y: hidden;
   white-space: var(--usp-notebook-title-wrap);
 }
@@ -1941,7 +1947,15 @@ body {
 
 
 
-/* || NOTE LIST PANEL 1/3 | SCROLLBAR ********************** */
+/* || NOTE LIST PANEL 1/4 | ANIMATIONS ********************* */
+@keyframes rtl-auto {
+  0% {transform: translateX(0%);}
+  100% {transform: translateX(-70%);}
+}
+
+
+
+/* || NOTE LIST PANEL 2/4 | SCROLLBAR ********************** */
 /* SCROLLBAR: NOTE LIST PANEL ============================== */
 .rli-noteList ::-webkit-scrollbar {
   height: 1px !important;
@@ -1963,7 +1977,7 @@ body {
 
 
 
-/* || NOTE LIST PANEL 2/3 | HEADER ************************* */
+/* || NOTE LIST PANEL 3/4 | HEADER ************************* */
 /* HEADER: CONTAINER ======================================= */
 .rli-noteList > div > div > div[height="50"] {
   min-height: 35px;
@@ -2060,10 +2074,11 @@ body {
 
 
 
-/* || NOTE LIST PANEL 3/3 | BODY *************************** */
+/* || NOTE LIST PANEL 4/4 | BODY *************************** */
 /* BODY: NOTE LIST ========================================= */
 /* note list container ------------------------------------- */
 .rli-noteList > div > div > div:last-child {
+  padding-top: 4px;
   background: var(--g-main-bg-1);
   border: none;
 }
@@ -2143,7 +2158,7 @@ body {
 }
 /* note item text ------------------------------------------ */
 .rli-noteList .note-list-item > a > span {
-  color: var(--g-item-text);
+  color: var(--g-item-text-1);
   opacity: 0.8;
 }
 /* note item hover > text ---------------------------------- */
@@ -2154,6 +2169,7 @@ body {
 .rli-noteList .note-list-item.selected span {
   text-shadow: 0 0 var(--g-item-ts-selected);
 }
+
 
 
 
@@ -2173,7 +2189,7 @@ body {
 
 
 
-/* || EDITOR PANEL 1/5 | HEADER **************************** */
+/* || EDITOR PANEL 2/5 | HEADER **************************** */
 /* HEADER: CONTAINER ======================================= */
 .rli-editor > div > div > div > div:first-child {
   min-height: 35px !important;
@@ -2889,7 +2905,7 @@ body {
 /* menu item > icon & text --------------------------------- */
 .config-screen > div:first-child > a > i,
 .config-screen > div:first-child > a > span {
-  color: var(--g-item-text);
+  color: var(--g-item-text-1);
 }
 /* menu item > icon & text selected ------------------------ */
 .config-screen > div:first-child > a.hWxWTS > i,/* light theme joplin v2.9 */
@@ -2902,9 +2918,15 @@ body {
 .config-screen > div:first-child > a.eFgsZC > span /* dark theme joplin v2.10 */ {
   text-shadow: 0 0 var(--g-item-ts-selected);
 }
-/* split title --------------------------------------------- */
+/* menu subtitle ------------------------------------------- */
 .config-screen > div:first-child > div {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 900;
+  color: var(--g-item-bgc-selected);
   background: var(--s-op-menu-subtitle-bg);
+  border-color: var(--g-item-bgc-selected);
+  opacity: 1;
 }
 
 
@@ -2992,7 +3014,7 @@ body {
 /* table > kbd --------------------------------------------- */
 .config-screen-content-wrapper table kbd {
   background: var(--g-main-bg-2) !important;
-  border: none !important;
+  border-color: var(--s-op-table-kbd-bdc) !important;
 }
 
 
