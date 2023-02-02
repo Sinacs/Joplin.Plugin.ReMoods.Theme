@@ -86,6 +86,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     printKeyMention,
     printSnKm,
     printSpoilerInlineText,
+    printLinkHref,
     printAbbrDescription,
 
   } = settings;
@@ -2445,6 +2446,12 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --usp-print-spoiler-inline-text-visibility:.+?;/gms, '  --usp-print-spoiler-inline-text-visibility: hidden;');
   } else {
     noteCSS = noteCSS.replace(/^  --usp-print-spoiler-inline-text-visibility:.+?;/gms, '  --usp-print-spoiler-inline-text-visibility: visible;');
+  }
+
+  if(!printLinkHref) {
+    noteCSS = noteCSS.replace(/^  --usp-print-link-href-display:.+?;/gms, '  --usp-print-link-href-display: none;');
+  } else {
+    noteCSS = noteCSS.replace(/^  --usp-print-link-href-display:.+?;/gms, '  --usp-print-link-href-display: inline;');
   }
 
   if(!printAbbrDescription) {

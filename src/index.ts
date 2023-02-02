@@ -91,6 +91,7 @@ export type ThemeSettings = {
 	printKeyMention: boolean;
 	printSnKm: boolean;
 	printSpoilerInlineText: boolean;
+	printLinkHref: boolean;
 	printAbbrDescription: boolean;
 	
 };
@@ -982,6 +983,18 @@ async function prepareThemeSettings(): Promise<void> {
 
 		},
 
+		'printLinkHref': {
+
+			section: 'remoodsThemeSection',
+			label: 'Print & Export PDF - Display Link Href',
+			type: SettingItemType.Bool,
+			value: true,
+			description: 'Enable: Showing next to the link but only works when you create the link with a title. e.g. [Joplin](https://www.joplinapp.org "Joplin") | Disable: Hide |',
+			public: true,
+			advanced: true,
+			
+		},
+
 		'printAbbrDescription': {
 
 			section: 'remoodsThemeSection',
@@ -1083,6 +1096,7 @@ async function writeUserCSS(): Promise<void> {
 	const printKeyMention = await joplin.settings.value('printKeyMention');
 	const printSnKm = await joplin.settings.value('printSnKm');
 	const printSpoilerInlineText = await joplin.settings.value('printSpoilerInlineText');
+	const printLinkHref = await joplin.settings.value('printLinkHref');
 	const printAbbrDescription = await joplin.settings.value('printAbbrDescription');
 	
 	const settings = {
@@ -1166,6 +1180,7 @@ async function writeUserCSS(): Promise<void> {
 		printKeyMention,
 		printSnKm,
 		printSpoilerInlineText,
+		printLinkHref,
 		printAbbrDescription,
 
 	};

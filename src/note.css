@@ -141,9 +141,9 @@
   --usp-print-sticky-notes-display: block;
   --usp-print-key-mention-display: block;
   --usp-print-spoiler-inline-text-visibility: visible;
+  --usp-print-link-href-display: inline;
   --usp-print-abbreviation-text-description-display: inline;
   --usp-print-sticky-notes-key-mention-display: block;
-  --usp-print-link-href-display: inline;
   
 
   
