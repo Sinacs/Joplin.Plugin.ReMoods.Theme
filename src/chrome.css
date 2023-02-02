@@ -523,54 +523,54 @@
 
 /* || FONT 2/3 | MONOSPACE FONT **************************** */
 /* GROUP: | inline code | list token | anchor text | abbr | link path | html | katex | sup | sub | footnote ref. | table syntax | code block | enhancement: footnotes marker text | */
-.CodeMirror-code .CodeMirror-line .cm-comment.cm-jn-inline-code.cm-jn-monospace,
-.CodeMirror-code .CodeMirror-line [class*="cm-variable"].cm-rm-list-token,
-.CodeMirror-code .CodeMirror-line .cm-keyword.cm-rm-list-token,
-.CodeMirror-code .CodeMirror-line .cm-rm-list-token.cm-rm-checkbox,
-.CodeMirror-code .CodeMirror-line .cm-link-text, /* anchor text */
-.CodeMirror-code .CodeMirror-line .cm-em.cm-link-text, /* abbr des */
-.CodeMirror-code .CodeMirror-line .cm-em.cm-link-text ~ .cm-em, /* abbr des */
-.CodeMirror-code .CodeMirror-line .cm-overlay.cm-rm-link,
-.CodeMirror-code .CodeMirror-line .cm-bracket,
-.CodeMirror-code .CodeMirror-line .cm-tag,
-.CodeMirror-code .CodeMirror-line .cm-attribute,
-.CodeMirror-code .CodeMirror-line .cm-string:not(.cm-url), /* avoid the first word of footnote */
-.CodeMirror-code .CodeMirror-line .cm-number,
-.CodeMirror-code .CodeMirror-line [class|="cm-katex"],
-.CodeMirror-code .CodeMirror-line [class|="cm-katex"] ~ *,
-.CodeMirror-code .CodeMirror-line .cm-hr,
-.CodeMirror-code .CodeMirror-line .cm-url.cm-rm-link, /* anchor link */
-.CodeMirror-code .CodeMirror-line .cm-image,
-.CodeMirror-code .CodeMirror-line .cm-rm-link.cm-rm-image,
-.CodeMirror-code .CodeMirror-line .cm-rm-sup,
-.CodeMirror-code .CodeMirror-line .cm-rm-sub,
-.CodeMirror-code .CodeMirror-line .cm-rm-sup-token,
-.CodeMirror-code .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em), /* footnote ref. */
-.CodeMirror-code .CodeMirror-line .cm-null.cm-jn-monospace /* table */,
-.CodeMirror-code .cm-jn-code-block .cm-string.cm-jn-monospace,
-.CodeMirror-code .cm-jn-code-block .cm-jn-monospace,
-.CodeMirror-code .CodeMirror-line .enhancement-footnote-marker-text {
+.CodeMirror-lines .CodeMirror-line .cm-comment.cm-jn-inline-code.cm-jn-monospace,
+.CodeMirror-lines .CodeMirror-line [class*="cm-variable"].cm-rm-list-token,
+.CodeMirror-lines .CodeMirror-line .cm-keyword.cm-rm-list-token,
+.CodeMirror-lines .CodeMirror-line .cm-rm-list-token.cm-rm-checkbox,
+.CodeMirror-lines .CodeMirror-line .cm-link-text, /* anchor text */
+.CodeMirror-lines .CodeMirror-line .cm-em.cm-link-text, /* abbr des */
+.CodeMirror-lines .CodeMirror-line .cm-em.cm-link-text ~ .cm-em, /* abbr des */
+.CodeMirror-lines .CodeMirror-line .cm-overlay.cm-rm-link,
+.CodeMirror-lines .CodeMirror-line .cm-bracket,
+.CodeMirror-lines .CodeMirror-line .cm-tag,
+.CodeMirror-lines .CodeMirror-line .cm-attribute,
+.CodeMirror-lines .CodeMirror-line .cm-string:not(.cm-url), /* avoid the first word of footnote */
+.CodeMirror-lines .CodeMirror-line .cm-number,
+.CodeMirror-lines .CodeMirror-line [class|="cm-katex"],
+.CodeMirror-lines .CodeMirror-line [class|="cm-katex"] ~ *,
+.CodeMirror-lines .CodeMirror-line .cm-hr,
+.CodeMirror-lines .CodeMirror-line .cm-url.cm-rm-link, /* anchor link */
+.CodeMirror-lines .CodeMirror-line .cm-image,
+.CodeMirror-lines .CodeMirror-line .cm-rm-link.cm-rm-image,
+.CodeMirror-lines .CodeMirror-line .cm-rm-sup,
+.CodeMirror-lines .CodeMirror-line .cm-rm-sub,
+.CodeMirror-lines .CodeMirror-line .cm-rm-sup-token,
+.CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em), /* footnote ref. */
+.CodeMirror-lines .CodeMirror-line .cm-null.cm-jn-monospace /* table */,
+.CodeMirror-lines .cm-jn-code-block .cm-string.cm-jn-monospace,
+.CodeMirror-lines .cm-jn-code-block .cm-jn-monospace,
+.CodeMirror-lines .CodeMirror-line .enhancement-footnote-marker-text {
   font-family: var(--usp-monospace-font, monospace) !important;
   font-size: var(--usp-monospace-font-size) !important;
 }
 
 /* MONOSPACE FONT: SMALLER MARKDOWN SYNTAX ================= */
 /* GROUP: | link path | image link | footnote ref. | ------- */
-.CodeMirror-code .CodeMirror-line .cm-url.cm-rm-link, /* anchor link */
-.CodeMirror-code .CodeMirror-line .cm-image,
-.CodeMirror-code .CodeMirror-line .cm-rm-link.cm-rm-image,
-.CodeMirror-code .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em) /* footnote ref. */ {
+.CodeMirror-lines .CodeMirror-line .cm-url.cm-rm-link, /* anchor link */
+.CodeMirror-lines .CodeMirror-line .cm-image,
+.CodeMirror-lines .CodeMirror-line .cm-rm-link.cm-rm-image,
+.CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em) /* footnote ref. */ {
   font-size: var(--usp-smaller-markdown-syntax-font-size) !important;
 }
 
 /* MONOSPACE FONT: SMALLER CODE BLOCK SYNTAX =============== */
-.CodeMirror-code .cm-jn-code-block .cm-string.cm-jn-monospace,
-.CodeMirror-code .cm-jn-code-block .cm-jn-monospace {
+.CodeMirror-lines .cm-jn-code-block .cm-string.cm-jn-monospace,
+.CodeMirror-lines .cm-jn-code-block .cm-jn-monospace {
   font-size: var(--usp-smaller-code-block-syntax-font-size) !important;
 }
 
 /* MONOSPACE FONT: SMALLER TABLE SYNTAX ==================== */
-.CodeMirror-code .CodeMirror-line .cm-null.cm-jn-monospace {
+.CodeMirror-lines .CodeMirror-line .cm-null.cm-jn-monospace {
   font-size: var(--usp-smaller-table-syntax-font-size) !important;
 }
 
@@ -623,6 +623,10 @@
   margin-top: 9px !important;
   padding-left: 8px !important;
 }
+.CodeMirror-sizer {
+  padding-left: 0;
+}
+
 
 
 
@@ -633,10 +637,10 @@
 }
 
 /* PARAGRAPH: HORIZONTAL RULE ============================== */
-.CodeMirror-code .CodeMirror-line .cm-hr {
+.CodeMirror-lines .CodeMirror-line .cm-hr {
   color: var(--me-hr-syntax-text);
 }
-.CodeMirror-code .CodeMirror-line .cm-hr::before {
+.CodeMirror-lines .CodeMirror-line .cm-hr::before {
   display: var(--usp-evident-hr-display);
   content: "";
   width: 95%;
@@ -693,17 +697,17 @@
   background: var(--me-selected-bg) !important;
 }
 /* selected code block text -------------------------------- */
-.CodeMirror-code .cm-jn-code-block .CodeMirror-selectedtext {
+.CodeMirror-lines .cm-jn-code-block .CodeMirror-selectedtext {
   background: var(--me-selected-bg);
 }
 /* selected special text ----------------------------------- */
 /* GROUP: | emphasize | strong | insert | strikethrough | mark | inline code | */
-.CodeMirror-code .CodeMirror-line .CodeMirror-selectedtext.cm-em,
-.CodeMirror-code .CodeMirror-line .CodeMirror-selectedtext.cm-strong,
-.CodeMirror-code .CodeMirror-line .CodeMirror-selectedtext.cm-strikethrough,
-.CodeMirror-code .CodeMirror-line .CodeMirror-selectedtext.cm-rm-ins,
-.CodeMirror-code .CodeMirror-line .CodeMirror-selectedtext.cm-rm-highlight,
-.CodeMirror-code .CodeMirror-line .CodeMirror-selectedtext.cm-jn-inline-code {
+.CodeMirror-lines .CodeMirror-line .CodeMirror-selectedtext.cm-em,
+.CodeMirror-lines .CodeMirror-line .CodeMirror-selectedtext.cm-strong,
+.CodeMirror-lines .CodeMirror-line .CodeMirror-selectedtext.cm-strikethrough,
+.CodeMirror-lines .CodeMirror-line .CodeMirror-selectedtext.cm-rm-ins,
+.CodeMirror-lines .CodeMirror-line .CodeMirror-selectedtext.cm-rm-highlight,
+.CodeMirror-lines .CodeMirror-line .CodeMirror-selectedtext.cm-jn-inline-code {
   opacity: 0.5;
 }
 
@@ -720,49 +724,49 @@
 /* || MARKDOWN 1/9 | SPECIAL TEXT ************************** */
 /* SPECIAL TEXT: GENERAL =================================== */
 /* GROUP: | emphasize | abbreviation | strong | ------------ */
-.CodeMirror-code .CodeMirror-line .cm-em:not(.cm-header),
-.CodeMirror-code .CodeMirror-line .cm-strong:not(.cm-header) {
+.CodeMirror-lines .CodeMirror-line .cm-em:not(.cm-header),
+.CodeMirror-lines .CodeMirror-line .cm-strong:not(.cm-header) {
   color: var(--me-special-text) !important;
   background: var(--me-special-bg);
 }
 
 /* SPECIAL TEXT: STRONG ==================================== */
-.CodeMirror-code .CodeMirror-line .cm-strong {
+.CodeMirror-lines .CodeMirror-line .cm-strong {
   font-weight: 700;
 }
 
 /* SPECIAL TEXT: MARK ====================================== */
-.CodeMirror-code .CodeMirror-line .cm-rm-highlight:not(.cm-header) {
+.CodeMirror-lines .CodeMirror-line .cm-rm-highlight:not(.cm-header) {
   color: var(--me-mark-text) !important;
   background: var(--me-mark-bg) !important;
 }
 
 /* SPECIAL TEXT: INSERT ==================================== */
-.CodeMirror-code .CodeMirror-line .cm-rm-ins {
+.CodeMirror-lines .CodeMirror-line .cm-rm-ins {
   text-decoration: none;
   color: var(--me-insert-text);
   background: var(--me-insert-bg);
   border-bottom: 1px solid var(--me-insert-bdb);
 }
 /* insert text hover --------------------------------------- */
-.CodeMirror-code .CodeMirror-line .cm-rm-ins:hover {
+.CodeMirror-lines .CodeMirror-line .cm-rm-ins:hover {
   border: none;
 }
 
 /* SPECIAL TEXT: STRIKETHROUGH ============================= */
-.CodeMirror-code .CodeMirror-line .cm-strikethrough {
+.CodeMirror-lines .CodeMirror-line .cm-strikethrough {
   text-decoration: line-through;
   color: var(--me-strikethrough-text);
   background: var(--me-strikethrough-bg);
 }
 /* strikethrough text hover -------------------------------- */
-.CodeMirror-code .CodeMirror-line .cm-strikethrough:hover {
+.CodeMirror-lines .CodeMirror-line .cm-strikethrough:hover {
   text-decoration: none;
 }
 
 /* SPECIAL TEXT: SUP & SUB ================================= */
-.CodeMirror-code .CodeMirror-line .cm-rm-sup,
-.CodeMirror-code .CodeMirror-line .cm-rm-sub {
+.CodeMirror-lines .CodeMirror-line .cm-rm-sup,
+.CodeMirror-lines .CodeMirror-line .cm-rm-sub {
   display: inline-block;
   position: relative;
   font-size: smaller !important;
@@ -770,15 +774,15 @@
   color: var(--me-sub-sup-text);
 }
 /* sup & sub position -------------------------------------- */
-.CodeMirror-code .CodeMirror-line .cm-rm-sup {
+.CodeMirror-lines .CodeMirror-line .cm-rm-sup {
   top: 2px;
 }
-.CodeMirror-code .CodeMirror-line .cm-rm-sub {
+.CodeMirror-lines .CodeMirror-line .cm-rm-sub {
   bottom: 2px;
 }
 
 /* SPECIAL TEXT: INLINE CODE =============================== */
-.CodeMirror-code .CodeMirror-line .cm-jn-inline-code.cm-jn-monospace:not(.CodeMirror-selectedtext) {
+.CodeMirror-lines .CodeMirror-line .cm-jn-inline-code.cm-jn-monospace:not(.CodeMirror-selectedtext) {
   color: var(--me-inline-code-text) !important;
   background: var(--me-inline-code-bg) !important;
   border: 2px solid var(--me-inline-code-bg) !important;
@@ -786,19 +790,19 @@
 }
 
 /* SPECIAL TEXT: SEARCH ==================================== */
-.CodeMirror-code .CodeMirror-line .cm-search-marker:not(#fake),
-.CodeMirror-code .CodeMirror-line .cm-overlay.cm-search-marker.CodeMirror-selectedtext.cm-search-marker-selected:not(#fake) {
+.CodeMirror-lines .CodeMirror-line .cm-search-marker:not(#fake),
+.CodeMirror-lines .CodeMirror-line .cm-overlay.cm-search-marker.CodeMirror-selectedtext.cm-search-marker-selected:not(#fake) {
   display: inline-block;
   padding: 3px 6px;
   color: white !important;
   background: black !important;
   border-radius: 5px;
 }
-.CodeMirror-code .CodeMirror-line .cm-search-marker:not(#fake) {
+.CodeMirror-lines .CodeMirror-line .cm-search-marker:not(#fake) {
   border: 2px solid red;
 }
 /* search text selected ------------------------------------ */
-.CodeMirror-code .CodeMirror-line .cm-overlay.cm-search-marker.CodeMirror-selectedtext.cm-search-marker-selected:not(#fake) {
+.CodeMirror-lines .CodeMirror-line .cm-overlay.cm-search-marker.CodeMirror-selectedtext.cm-search-marker-selected:not(#fake) {
   border: 5px solid red;
   opacity: 1;
 }
@@ -806,14 +810,14 @@
 
 
 /* || MARKDOWN 2/9 | LINK ********************************** */
-.CodeMirror-code .CodeMirror-line:not(.cm-jn-code-block) .cm-rm-link:not(.cm-link-text):not(.cm-string),
-.CodeMirror-code .CodeMirror-line .cm-link-text:not(.cm-em),
-.CodeMirror-code .CodeMirror-line .cm-string.cm-url,
-.CodeMirror-code .CodeMirror-line .cm-rm-image {
+.CodeMirror-lines .CodeMirror-line:not(.cm-jn-code-block) .cm-rm-link:not(.cm-link-text):not(.cm-string),
+.CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-em),
+.CodeMirror-lines .CodeMirror-line .cm-string.cm-url,
+.CodeMirror-lines .CodeMirror-line .cm-rm-image {
   color: var(--me-link-text);
 }
-.CodeMirror-code .CodeMirror-line .cm-string.cm-url,
-.CodeMirror-code .CodeMirror-line .cm-rm-image {
+.CodeMirror-lines .CodeMirror-line .cm-string.cm-url,
+.CodeMirror-lines .CodeMirror-line .cm-rm-image {
   opacity: 0.6;
 }
 
@@ -844,7 +848,7 @@
 
 /* || MARKDOWN 4/9 | KATEX ********************************* */
 /* KATEX: SYNTAX =========================================== */
-.CodeMirror-code .CodeMirror-line:not(.cm-jn-code-block) .cm-variable-2 {
+.CodeMirror-lines .CodeMirror-line:not(.cm-jn-code-block) .cm-variable-2 {
   color: var(--me-list-text);
 }
 
@@ -852,47 +856,47 @@
 
 /* || MARKDOWN 5/9 | LIST ********************************** */
 /* GROUP: | unordered list | ordered list | checklist | ---- */
-.CodeMirror-code .CodeMirror-line .cm-rm-list-token ~ .cm-keyword,
-.CodeMirror-code .CodeMirror-line .cm-rm-list-token ~ [class*="cm-variable"],
-.CodeMirror-code .CodeMirror-line .cm-variable-2.cm-rm-list-token.cm-rm-checkbox {
+.CodeMirror-lines .CodeMirror-line .cm-rm-list-token ~ .cm-keyword,
+.CodeMirror-lines .CodeMirror-line .cm-rm-list-token ~ [class*="cm-variable"],
+.CodeMirror-lines .CodeMirror-line .cm-variable-2.cm-rm-list-token.cm-rm-checkbox {
   color: var(--me-list-text);
 }
 /* list token ---------------------------------------------- */
-.CodeMirror-code .CodeMirror-line [class*="cm-variable"].cm-rm-list-token:not(.cm-meta),
-.CodeMirror-code .CodeMirror-line .cm-keyword.cm-rm-list-token,
-.CodeMirror-code .CodeMirror-line .cm-rm-checkbox.cm-rm-list-token:not(.cm-meta) {
+.CodeMirror-lines .CodeMirror-line [class*="cm-variable"].cm-rm-list-token:not(.cm-meta),
+.CodeMirror-lines .CodeMirror-line .cm-keyword.cm-rm-list-token,
+.CodeMirror-lines .CodeMirror-line .cm-rm-checkbox.cm-rm-list-token:not(.cm-meta) {
   color: var(--me-list-token);
 }
 
 /* CHECKLIST =============================================== */
 /* checkbox ------------------------------------------------ */
-.CodeMirror-code .CodeMirror-line .cm-meta.cm-rm-checkbox {
+.CodeMirror-lines .CodeMirror-line .cm-meta.cm-rm-checkbox {
   color: var(--me-checkbox-text);
 }
 /* GROUP: | checkbox | checklist | ------------------------- */
 /* checked ------------------------------------------------- */
-.CodeMirror-code .CodeMirror-line .cm-property.cm-rm-checkbox,
-.CodeMirror-code .CodeMirror-line .cm-property.cm-rm-checkbox ~ .cm-rm-checkbox {
+.CodeMirror-lines .CodeMirror-line .cm-property.cm-rm-checkbox,
+.CodeMirror-lines .CodeMirror-line .cm-property.cm-rm-checkbox ~ .cm-rm-checkbox {
   text-decoration: line-through;
   filter: grayscale(0.6);
   opacity: 0.6;
 }
 /* hover --------------------------------------------------- */
-.CodeMirror-code .CodeMirror-line .cm-rm-checkbox:hover {
+.CodeMirror-lines .CodeMirror-line .cm-rm-checkbox:hover {
   text-decoration: none;
 }
 
 
 
 /* || MARKDOWN 6/9 | FOOTNOTE ****************************** */
-.CodeMirror-code .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em),
-.CodeMirror-code .CodeMirror-line .cm-rm-sup-token:not(.cm-rm-sup) {
+.CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em),
+.CodeMirror-lines .CodeMirror-line .cm-rm-sup-token:not(.cm-rm-sup) {
   color: var(--me-footnote-ref);
 }
-.CodeMirror-code .CodeMirror-line .cm-comment.cm-jn-monospace {
+.CodeMirror-lines .CodeMirror-line .cm-comment.cm-jn-monospace {
   color: var(--me-text);
 }
-.CodeMirror-code .CodeMirror-line .cm-rm-sup-token:not(.cm-rm-sup) ~ .cm-string.cm-url {
+.CodeMirror-lines .CodeMirror-line .cm-rm-sup-token:not(.cm-rm-sup) ~ .cm-string.cm-url {
   color: var(--me-text);
   opacity: 1;
 }
@@ -902,13 +906,13 @@
 /* || MARKDOWN 7/9 | HEADINGS ****************************** */
 /* HEADINGS: GENERAL ======================================= */
 /* GROUP: | h1 to h6 | ------------------------------------- */
-.CodeMirror-code .CodeMirror-line .cm-header {
+.CodeMirror-lines .CodeMirror-line .cm-header {
   font-weight: var(--usp-heading-font-weight) !important;
   line-height: 1.5em !important;
 }
 
 /* HEADINGS: H1 ============================================ */
-.CodeMirror-code .CodeMirror-line .cm-header-1 {
+.CodeMirror-lines .CodeMirror-line .cm-header-1 {
   font-weight: var(--usp-h1-font-weight) !important;
   font-variant: var(--usp-h1-font-variant);
   text-transform: var(--usp-h1-text-transform);
@@ -916,27 +920,27 @@
 }
 
 /* HEADINGS: H2 ============================================ */
-.CodeMirror-code .CodeMirror-line .cm-header-2 {
+.CodeMirror-lines .CodeMirror-line .cm-header-2 {
   color: var(--me-h2-text);
 }
 
 /* HEADINGS: H3 ============================================ */
-.CodeMirror-code .CodeMirror-line .cm-header-3 {
+.CodeMirror-lines .CodeMirror-line .cm-header-3 {
   color: var(--me-h3-text);
 }
 
 /* HEADINGS: H4 ============================================ */
-.CodeMirror-code .CodeMirror-line .cm-header-4 {
+.CodeMirror-lines .CodeMirror-line .cm-header-4 {
   color: var(--me-h4-text);
 }
 
 /* HEADINGS: H5 ============================================ */
-.CodeMirror-code .CodeMirror-line .cm-header-5 {
+.CodeMirror-lines .CodeMirror-line .cm-header-5 {
   color: var(--me-h5-text);
 }
 
 /* HEADINGS: H6 ============================================ */
-.CodeMirror-code .CodeMirror-line .cm-header-6 {
+.CodeMirror-lines .CodeMirror-line .cm-header-6 {
   color: var(--me-h6-text);
 }
 
@@ -1065,7 +1069,7 @@
 
 
 /* || MARKDOWN 8/9 | BLOCKQUOTE **************************** */
-.CodeMirror-code .CodeMirror-line .cm-quote {
+.CodeMirror-lines .CodeMirror-line .cm-quote {
   color: var(--me-blockquote-text);
   opacity: 1;
 }
@@ -1073,7 +1077,7 @@
 
 
 /* || MARKDOWN 9/9 | CODE BLOCK **************************** */
-.CodeMirror-code .cm-jn-code-block {
+.CodeMirror-lines .cm-jn-code-block {
   padding-left: 8px;
   background: var(--me-code-block-bg) !important;
   border-width: var(--me-code-block-bdw) !important;
@@ -1081,108 +1085,108 @@
   border-color: var(--me-code-block-bdc);
 }
 /* code block syntax highlight ----------------------------- */
-.CodeMirror-code .cm-jn-code-block .cm-keyword {
+.CodeMirror-lines .cm-jn-code-block .cm-keyword {
   color: var(--me-code-block-keyword-text) !important;
   text-shadow: 0 0 var(--me-code-block-keyword-ts);
 }
-.CodeMirror-code .cm-jn-code-block .cm-def {
+.CodeMirror-lines .cm-jn-code-block .cm-def {
   color: var(--me-code-block-def-text) !important;
   text-shadow: 0 0 var(--me-code-block-def-ts);
 }
-.CodeMirror-code .cm-jn-code-block .cm-property {
+.CodeMirror-lines .cm-jn-code-block .cm-property {
   color: var(--me-code-block-property-text) !important;
   text-shadow: 0 0 var(--me-code-block-property-ts);
 }
-.CodeMirror-code .cm-jn-code-block .cm-variable {
+.CodeMirror-lines .cm-jn-code-block .cm-variable {
   color: var(--me-code-block-variable-text) !important;
   text-shadow: 0 0 var(--me-code-block-variable-ts);
 }
-.CodeMirror-code .cm-jn-code-block .cm-variable-2 {
+.CodeMirror-lines .cm-jn-code-block .cm-variable-2 {
   color: var(--me-code-block-variable-2-text) !important;
   text-shadow: 0 0 var(--me-code-block-variable-2-ts);
 }
-.CodeMirror-code .cm-jn-code-block .cm-variable-3 {
+.CodeMirror-lines .cm-jn-code-block .cm-variable-3 {
   color: var(--me-code-block-variable-3-text) !important;
   text-shadow: 0 0 var(--me-code-block-variable-3-ts);
 }
-.CodeMirror-code .cm-jn-code-block .cm-number {
+.CodeMirror-lines .cm-jn-code-block .cm-number {
   color: var(--me-code-block-number-text) !important;
   text-shadow: 0 0 var(--me-code-block-number-ts);
 }
-.CodeMirror-code .cm-jn-code-block .cm-comment.cm-jn-monospace:not([class*="cm-tabcolor-"]) {
+.CodeMirror-lines .cm-jn-code-block .cm-comment.cm-jn-monospace:not([class*="cm-tabcolor-"]) {
   color: var(--me-code-block-comment-text) !important;
   text-shadow: 0 0 var(--me-code-block-comment-ts);
 }
-.CodeMirror-code .cm-jn-code-block .cm-string {
+.CodeMirror-lines .cm-jn-code-block .cm-string {
   color: var(--me-code-block-string-text) !important;
   text-shadow: 0 0 var(--me-code-block-string-ts);
 }
-.CodeMirror-code .cm-jn-code-block .cm-string-2 {
+.CodeMirror-lines .cm-jn-code-block .cm-string-2 {
   color: var(--me-code-block-string-2-text) !important;
   text-shadow: 0 0 var(--me-code-block-string-2-ts);
 }
-.CodeMirror-code .cm-jn-code-block .cm-atom {
+.CodeMirror-lines .cm-jn-code-block .cm-atom {
   color: var(--me-code-block-atom-text) !important;
   text-shadow: 0 0 var(--me-code-block-atom-ts);
 }
-.CodeMirror-code .cm-jn-code-block .cm-qualifier {
+.CodeMirror-lines .cm-jn-code-block .cm-qualifier {
   color: var(--me-code-block-qualifier-text) !important;
   text-shadow: 0 0 var(--me-code-block-qualifier-ts);
 }
-.CodeMirror-code .cm-jn-code-block .cm-tag {
+.CodeMirror-lines .cm-jn-code-block .cm-tag {
   color: var(--me-code-block-tag-text) !important;
   text-shadow: 0 0 var(--me-code-block-tag-ts);
 }
-.CodeMirror-code .cm-jn-code-block .cm-attribute {
+.CodeMirror-lines .cm-jn-code-block .cm-attribute {
   color: var(--me-code-block-attribute-text) !important;
   text-shadow: 0 0 var(--me-code-block-attribute-ts);
 }
-.CodeMirror-code .cm-jn-code-block .cm-type {
+.CodeMirror-lines .cm-jn-code-block .cm-type {
   color: var(--me-code-block-type-text) !important;
   text-shadow: 0 0 var(--me-code-block-type-ts);
 }
-.CodeMirror-code .cm-jn-code-block .cm-meta {
+.CodeMirror-lines .cm-jn-code-block .cm-meta {
   color: var(--me-code-block-meta-text) !important;
   text-shadow: 0 0 var(--me-code-block-meta-ts);
 }
-.CodeMirror-code .cm-jn-code-block .cm-undefined {
+.CodeMirror-lines .cm-jn-code-block .cm-undefined {
   color: var(--me-code-block-undefined-text) !important;
   text-shadow: 0 0 var(--me-code-block-undefined-ts);
 }
-.CodeMirror-code .cm-jn-code-block .cm-operator {
+.CodeMirror-lines .cm-jn-code-block .cm-operator {
   color: var(--me-code-block-operator-text) !important;
   text-shadow: 0 0 var(--me-code-block-operator-ts);
 }
-.CodeMirror-code .cm-jn-code-block .cm-null {
+.CodeMirror-lines .cm-jn-code-block .cm-null {
   color: var(--me-code-block-null-text) !important;
   text-shadow: 0 0 var(--me-code-block-null-ts);
 }
-.CodeMirror-code .cm-jn-code-block .cm-error {
+.CodeMirror-lines .cm-jn-code-block .cm-error {
   color: var(--me-code-block-error-text) !important;
   border-bottom: var(--me-code-block-error-bdb);
 }
-.CodeMirror-code .cm-jn-code-block .cm-invalidchar {
+.CodeMirror-lines .cm-jn-code-block .cm-invalidchar {
   color: var(--me-code-block-invalidchar-text) !important;
   text-shadow: 0 0 var(--me-code-block-invalidchar-ts);
 }
-.CodeMirror-code .cm-jn-code-block .cm-builtin {
+.CodeMirror-lines .cm-jn-code-block .cm-builtin {
   color: var(--me-code-block-builtin-text) !important;
   text-shadow: 0 0 var(--me-code-block-builtin-ts);
 }
-.CodeMirror-code .cm-jn-code-block .CodeMirror-matching-bracket {
+.CodeMirror-lines .cm-jn-code-block .CodeMirror-matching-bracket {
   color: var(--me-code-block-matching-bracket-text) !important;
   text-shadow: 0 0 var(--me-code-block-matching-bracket-ts);
 }
 /* GROUP: CODE BLOCK >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 /* NESTED: | emphasize | strong | insert | strikethrough | mark | sub | sup | */
 /* avoid special text styles ------------------------------- */
-.CodeMirror-code .cm-jn-code-block .cm-em,
-.CodeMirror-code .cm-jn-code-block .cm-strong,
-.CodeMirror-code .cm-jn-code-block .cm-rm-ins,
-.CodeMirror-code .cm-jn-code-block .cm-strikethrough,
-.CodeMirror-code .cm-jn-code-block .cm-rm-highlight,
-.CodeMirror-code .cm-jn-code-block .cm-rm-sup,
-.CodeMirror-code .cm-jn-code-block .cm-rm-sub {
+.CodeMirror-lines .cm-jn-code-block .cm-em,
+.CodeMirror-lines .cm-jn-code-block .cm-strong,
+.CodeMirror-lines .cm-jn-code-block .cm-rm-ins,
+.CodeMirror-lines .cm-jn-code-block .cm-strikethrough,
+.CodeMirror-lines .cm-jn-code-block .cm-rm-highlight,
+.CodeMirror-lines .cm-jn-code-block .cm-rm-sup,
+.CodeMirror-lines .cm-jn-code-block .cm-rm-sub {
   all: unset;
 }
 
@@ -1199,7 +1203,7 @@
 /* || PLUGINS | MARKDOWN TABLE COLORIZE (MTC) ************** */
 /* MTC: ROW ================================================ */
 /* row separator ------------------------------------------- */
-.CodeMirror-code .CodeMirror-line .cm-tabcolor-firstch:first-child::before {
+.CodeMirror-lines .CodeMirror-line .cm-tabcolor-firstch:first-child::before {
   display: block;
   content: " ";
   width: 100%;
@@ -1207,18 +1211,18 @@
   background: var(--me-plugin-mtc-separator-bg);
   border-radius: 4px;
 }
-.CodeMirror-code .CodeMirror-line .cm-tabcolor-header.cm-tabcolor-firstch:first-child::before {
+.CodeMirror-lines .CodeMirror-line .cm-tabcolor-header.cm-tabcolor-firstch:first-child::before {
   content: "  H E A D >";
   height: 20px;
   color: var(--me-plugin-mtc-separator-text);
 }
-.CodeMirror-code .CodeMirror-line .cm-tabcolor-header {
+.CodeMirror-lines .CodeMirror-line .cm-tabcolor-header {
   font-weight: normal;
 }
 
 /* MTC: COLUMN ============================================= */
 /* removed original column background ---------------------- */
-.CodeMirror-code .CodeMirror-line [class*="cm-tabcolor-col"] {
+.CodeMirror-lines .CodeMirror-line [class*="cm-tabcolor-col"] {
   background: none;
 }
 /* column mark --------------------------------------------- */
@@ -1381,15 +1385,15 @@
 
 /* MTC: CONTENT ============================================ */
 /* vertical bar -------------------------------------------- */
-.CodeMirror-code .CodeMirror-line .cm-tabcolor-pipe {
+.CodeMirror-lines .CodeMirror-line .cm-tabcolor-pipe {
   color: var(--me-plugin-mtc-table-vertical-bar) !important;
 }
 /* table text ---------------------------------------------- */
-.CodeMirror-code .CodeMirror-line [class*="cm-tabcolor-col"]:not(.cm-tabcolor-pipe) {
+.CodeMirror-lines .CodeMirror-line [class*="cm-tabcolor-col"]:not(.cm-tabcolor-pipe) {
   color: var(--me-plugin-mtc-table-text) !important;
 }
 /* anchor link path ---------------------------------------- */
-.CodeMirror-code .CodeMirror-line .cm-string.cm-url[class*="cm-tabcolor-"]:not(#fake) {
+.CodeMirror-lines .CodeMirror-line .cm-string.cm-url[class*="cm-tabcolor-"]:not(#fake) {
   color: var(--me-link-text) !important;
 }
 
