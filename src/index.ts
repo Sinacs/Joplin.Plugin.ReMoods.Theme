@@ -196,7 +196,7 @@ async function prepareThemeSettings(): Promise<void> {
 			options: {
 				'dayMode': 'Day Mode (EXPERIMENTAL)',
 				'duskMode': 'Dusk Mode',
-				'nightMode': 'Night Mode (EXPERIMENTAL)'
+				'nightMode': 'Night Mode'
 			},
 			description: 'It required to go to `Options > Appearance > Theme` and change the Joplin built-in theme matching with the theme modes. | Day Mode > light theme. | Dusk Mode & Night Mode > Dark theme.',
 			public: true,
@@ -329,7 +329,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'h1TextTransform': {
 
 			section: 'remoodsThemeSection',
-			label: '*Markdown Editor & Render Viewer - Enable capitalize the first letter of each word on H1 heading',
+			label: '* Markdown Editor & Render Viewer - Enable capitalize the first letter of each word on H1 heading',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -339,7 +339,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'h1FontVariant': {
 
 			section: 'remoodsThemeSection',
-			label: '*Markdown Editor & Render Viewer - Enable small-caps effect on H1 heading',
+			label: '* Markdown Editor & Render Viewer - Enable small-caps effect on H1 heading',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -349,7 +349,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'emphasizeAddRemove': {
 
 			section: 'remoodsThemeSection',
-			label: '*Markdown Editor & Render Viewer - Enable emphasize colors for insert text & strikethrough text',
+			label: '* Markdown Editor & Render Viewer - Enable emphasize colors for insert text & strikethrough text',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'Enable: Insert text -> green, strikethrough text -> red, and it would not change with the theme color. | Disable: Follow the theme color.',
@@ -360,7 +360,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'emphasizeAddRemoveBg': {
 
 			section: 'remoodsThemeSection',
-			label: '*Markdown Editor & Render Viewer - Enable background color for insert text & strikethrough text',
+			label: '* Markdown Editor & Render Viewer - Enable background color for insert text & strikethrough text',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'The background color depends on its text color.',
@@ -371,7 +371,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'themeColorListText': {
 
 			section: 'remoodsThemeSection',
-			label: '*Markdown Editor & Render Viewer - Enable theme color for list text',
+			label: '* Markdown Editor & Render Viewer - Enable theme color for list text',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: List text -> theme color, footnote marker -> complementary color. | Disable: List text -> paragraph text color, footnote marker -> theme color.',
@@ -436,7 +436,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'h1Border': {
 
 			section: 'remoodsThemeSection',
-			label: '*Render Viewer - Enable H1 border',
+			label: '* Render Viewer - Enable H1 border',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -446,7 +446,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'h2Border': {
 
 			section: 'remoodsThemeSection',
-			label: '*Render Viewer - Enable H2 border',
+			label: '* Render Viewer - Enable H2 border',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -456,7 +456,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'h3Border': {
 
 			section: 'remoodsThemeSection',
-			label: '*Render Viewer - Enable H3 border',
+			label: '* Render Viewer - Enable H3 border',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
@@ -466,7 +466,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'h4Border': {
 
 			section: 'remoodsThemeSection',
-			label: '*Render Viewer - Enable H4 border',
+			label: '* Render Viewer - Enable H4 border',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
@@ -476,7 +476,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'h5Border': {
 
 			section: 'remoodsThemeSection',
-			label: '*Render Viewer - Enable H5 border',
+			label: '* Render Viewer - Enable H5 border',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -486,7 +486,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'h6Border': {
 
 			section: 'remoodsThemeSection',
-			label: '*Render Viewer - Enable H6 border',
+			label: '* Render Viewer - Enable H6 border',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
@@ -496,7 +496,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'h1TwillPattern': {
 
 			section: 'remoodsThemeSection',
-			label: '*Render Viewer - Enable twill pattern for H1 heading',
+			label: '* Render Viewer - Enable twill pattern for H1 heading',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'If enabled, you would need to use the HTML span tag for emoji to avoid the twill pattern affecting it.',
@@ -507,7 +507,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'hrTwillPattern': {
 
 			section: 'remoodsThemeSection',
-			label: '*Render Viewer - Enable twill pattern for horizontal line',
+			label: '* Render Viewer - Enable twill pattern for horizontal line',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: Twill pattern | Disable: Solid',
@@ -518,7 +518,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'paragraphTextJustify': {
 
 			section: 'remoodsThemeSection',
-			label: '*Render Viewer - Enable "Justify" effect for paragraph text',
+			label: '* Render Viewer - Enable "Justify" effect for paragraph text',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'Applied to all paragraph text, but not including list, checklist, footnote list and sticky notes.',
@@ -529,7 +529,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'listTextJustify': {
 
 			section: 'remoodsThemeSection',
-			label: '*Render Viewer - Enable "Justify" effect for list text',
+			label: '* Render Viewer - Enable "Justify" effect for list text',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'Applied to unordered list, ordered list, and footnote list.',
@@ -540,7 +540,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'checklistTextJustify': {
 
 			section: 'remoodsThemeSection',
-			label: '*Render Viewer - Enable "Justify" effect for checklist',
+			label: '* Render Viewer - Enable "Justify" effect for checklist',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'Applied to checklist.',
@@ -551,7 +551,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'snTextJustify': {
 
 			section: 'remoodsThemeSection',
-			label: '*Render Viewer - Enable "Justify" effect for Stick Notes text',
+			label: '* Render Viewer - Enable "Justify" effect for Stick Notes text',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'Applied to sticky notes.',
@@ -562,7 +562,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'dottedBlockquote': {
 
 			section: 'remoodsThemeSection',
-			label: '*Render Viewer - Enable dotted styles for blockquote',
+			label: '* Render Viewer - Enable dotted styles for blockquote',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: dotted border (better for single layer blockquote) | Disable: solid border (better for nested blockquote).',
@@ -573,7 +573,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'dottedCodeBlock': {
 
 			section: 'remoodsThemeSection',
-			label: '*Render Viewer - Enable dotted styles for code block',
+			label: '* Render Viewer - Enable dotted styles for code block',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: dotted border | Disable: solid border',
@@ -595,7 +595,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'mathNotationAlignLeft': {
 
 			section: 'remoodsThemeSection',
-			label: '*Render Viewer - Align the math notation to the left',
+			label: '* Render Viewer - Align the math notation to the left',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
@@ -645,7 +645,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'addRemoveSymbol': {
 
 			section: 'remoodsThemeSection',
-			label: '*Render Viewer - Enable the `++` & `--` symbols in front of the insert text and strikethrough text',
+			label: '* Render Viewer - Enable the `++` & `--` symbols in front of the insert text and strikethrough text',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
@@ -655,7 +655,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'inlineCodeSymbol': {
 
 			section: 'remoodsThemeSection',
-			label: '*Render Viewer - Enable the `>|` symbol in front of inline code',
+			label: '* Render Viewer - Enable the `>|` symbol in front of inline code',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -665,7 +665,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'customTitleBlockSymbol': {
 
 			section: 'remoodsThemeSection',
-			label: '*Render Viewer - Enable the symbol in front of the custom title block\'s title',
+			label: '* Render Viewer - Enable the symbol in front of the custom title block\'s title',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -986,19 +986,19 @@ async function prepareThemeSettings(): Promise<void> {
 		'printLinkHref': {
 
 			section: 'remoodsThemeSection',
-			label: 'Print & Export PDF - Display Link Href',
+			label: 'Print & Export PDF - Display link href',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: Showing next to the link but only works when you create the link with a title. e.g. [Joplin](https://www.joplinapp.org "Joplin") | Disable: Hide |',
 			public: true,
 			advanced: true,
-			
+
 		},
 
 		'printAbbrDescription': {
 
 			section: 'remoodsThemeSection',
-			label: 'Print & Export PDF - Display abbreviation description.',
+			label: 'Print & Export PDF - Display abbreviation description',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: Showing next to the abbreviation. | Disable: Hide |',
