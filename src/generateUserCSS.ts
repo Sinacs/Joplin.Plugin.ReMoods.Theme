@@ -1983,16 +1983,16 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
         noteCSS = noteCSS.replace(/^  --usp-mermaid-eye-protector-filter:.+?;/gms, '  --usp-mermaid-eye-protector-filter: none;');
         noteCSS = noteCSS.replace(/^  --usp-mermaid-eye-protector-transition:.+?;/gms, '  --usp-mermaid-eye-protector-transition: none;');
       } else {
-        noteCSS = noteCSS.replace(/^  --usp-mermaid-eye-protector-filter:.+?;/gms, '  --usp-mermaid-eye-protector-filter: brightness(75%);');
-        noteCSS = noteCSS.replace(/^  --usp-mermaid-eye-protector-transition:.+?;/gms, '  --usp-mermaid-eye-protector-transition: filter 1.2s;');
+        noteCSS = noteCSS.replace(/^  --usp-mermaid-eye-protector-filter:.+?;/gms, '  --usp-mermaid-eye-protector-filter: brightness(60%);');
+        noteCSS = noteCSS.replace(/^  --usp-mermaid-eye-protector-transition:.+?;/gms, '  --usp-mermaid-eye-protector-transition: filter 2.5s;');
       }
     
       if(!imageEyeProtector) {
         noteCSS = noteCSS.replace(/^  --usp-image-eye-protector-filter:.+?;/gms, '  --usp-image-eye-protector-filter: none;');
         noteCSS = noteCSS.replace(/^  --usp-image-eye-protector-transition:.+?;/gms, '  --usp-image-eye-protector-transition: none;');
       } else {
-        noteCSS = noteCSS.replace(/^  --usp-image-eye-protector-filter:.+?;/gms, '  --usp-image-eye-protector-filter: brightness(75%);');
-        noteCSS = noteCSS.replace(/^  --usp-image-eye-protector-transition:.+?;/gms, '  --usp-image-eye-protector-transition: filter 1.2s;');
+        noteCSS = noteCSS.replace(/^  --usp-image-eye-protector-filter:.+?;/gms, '  --usp-image-eye-protector-filter: brightness(60%);');
+        noteCSS = noteCSS.replace(/^  --usp-image-eye-protector-transition:.+?;/gms, '  --usp-image-eye-protector-transition: filter 2.5s;');
       }
         
       break;

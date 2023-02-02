@@ -302,11 +302,11 @@ Joplin provides a great built-in Markdown TOC feature which helps you create the
 
 Eye-Protector is only available for `Dusk Mode` and `Night Mode`, it will automatically reduce the brightness for all attached images and mermaid charts within your notes to avoid bright light flashing your eyes while reading.
 
-|Theme Mode|Reduce Brightness|
+|Theme Mode|Reduce Brightness|Mouse Hover Effect|
 |-|-|
-|Day Mode|Not available|
-|Dusk Mode|20% Darker|
-|Night Mode|25% Darker|
+|Day Mode|Not available|Not available|
+|Dusk Mode|20% Darker|Return to original brightness in 1.2 seconds|
+|Night Mode|40% Darker|Return to original brightness in 2.5 seconds|
 
 ### 💡Tips
 
