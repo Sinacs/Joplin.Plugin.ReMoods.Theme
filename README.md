@@ -24,6 +24,7 @@ ReMoods beautifies your screen and documents and takes care of your writing mood
 > This section contains important information if there is any.
 
   - February update will focus on improving the Day Mode & Night Mode.
+  - [Met problem when updating ReMoods from v3 to v4?](#met-problem-when-updating-remoods-from-v3-to-v4)
   - [Asking For Bits Of Help](#asking-for-bits-of-help)
   
 **REMOODS THEME GETTING STARTED GUIDE:**
@@ -577,6 +578,40 @@ For advanced, you can also control which elements should show on the PDF through
 ![Screenshot 2022-09-26 190704](https://user-images.githubusercontent.com/110529913/192261498-b95ee279-65f3-4dc3-9a1f-609023f62859.png)
 
 [:arrow_up:Back](#table-of-contents)
+
+## Met problem when updating ReMoods from v3 to v4?
+
+If you found that the content of your note doesn't display as usual after updating to ReMoods Theme V4, it might be due to the font settings didn't load the default values, please follow the below steps in case you meet the problem:
+
+1. Open Joplin
+2. Navigate to `tools` > `options` > `ReMoods Theme`
+3. Please check all the font settings values and ensure they do not go blank or unreasonable.
+4. Below are the default settings values for reference, or you can enter any other of your expected values:
+   - `Base Font`                 > `Default`
+   - `Monospace Font`            > `Default`
+   - `Heading Font`              > `Default`
+   - `Base Font Size`            > `15`
+   - `Monospace Font Size`       > `14` 
+   - `H1 Font Size`              > `170`
+   - `H2 Font Size`              > `140`
+   - `H3 Font Size`              > `130`
+   - `H4 Font Size`              > `120`
+   - `H5 Font Size`              > `110`
+   - `H6 Font Size`              > `100`
+   - `Math Notation Font Size`   > `0`
+5. Go to `Show advanced Settings`
+   - `Print Base Font`           > `Default`
+   - `Print Monospace Font`      > `Default`
+   - `Print Heading Font`        > `Default`
+   - `Print Base Font Size`      > `13`
+   - `Print Monospace Font Size` > `12` 
+   - `Print H1 Font Size`        > `180`
+   - `Print H2 Font Size`        > `160`
+   - `Print H3 Font Size`        > `140`
+   - `Print H4 Font Size`        > `130`
+   - `Print H5 Font Size`        > `120`
+   - `Print H6 Font Size`        > `110`
+6. Quit and restart Joplin.
 
 ## Asking For Bits Of Help
 
