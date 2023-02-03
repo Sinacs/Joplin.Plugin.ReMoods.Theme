@@ -245,7 +245,7 @@ It uses low-contrast colors and minimizes unwanted glare within the notes and Jo
 
 1. You can set your favorite font for headings by editing the `Heading Font` in options to improve the personality style of your notes.
 2. You can enable the heading's border, which you often use with a border, in options.
-3. You can add `---` or `***` to the next line of the target heading manually for the heading, for which you didn't enable the border in options.
+3. You can add `---` or `***` to the next line of the target heading manually, for which you didn't enable the border in options.
 4. The heading's reference will appear right before each heading if you enable it.(Render Viewer Only)
 5. If the H1 twill pattern style is enabled, it's required to use HTML `span` for wrapping the emoji to avoid the styles affecting it. (H1 only)
 
@@ -304,7 +304,7 @@ Joplin provides a great built-in Markdown TOC feature which helps you create the
 Eye-Protector is only available for `Dusk Mode` and `Night Mode`, it will automatically reduce the brightness for all attached images and mermaid charts within your notes to avoid bright light flashing your eyes while reading.
 
 |Theme Mode|Reduce Brightness|Mouse Hover Effect|
-|-|-|
+|-|-|-|
 |Day Mode|Not available|Not available|
 |Dusk Mode|20% Darker|Return to original brightness in 1.2 seconds|
 |Night Mode|40% Darker|Return to original brightness in 2.5 seconds|
