@@ -55,7 +55,7 @@
 
 
 
-
+  
   /* || USER SETTING PROPERTIES 1/1 | SCREEN *************** */
   /* THEME COLOR ******************************************* */
   --usp-hue: 260deg;
@@ -64,9 +64,9 @@
   --usp-custom-base-font: none;
   --usp-custom-monospace-font: none;
   --usp-custom-heading-font: none;
-  --usp-base-font: var(--usp-custom-base-font), "mulish", "montserrat", "chiron hei hk extralight";
-  --usp-monospace-font: var(--usp-custom-monospace-font), "cascadia mono light", "chiron hei hk extralight";
-  --usp-heading-font: var(--usp-custom-heading-font), "montserrat", "mulish", "chiron hei hk";
+  --usp-base-font: var(--usp-custom-base-font), "Mulish", "Montserrat", "GenSenRounded TW", "Chiron Hei HK ExtraLight", Avenir, Arial;
+  --usp-monospace-font: var(--usp-custom-monospace-font), "Cascadia Mono Light", "GenSenRounded TW", "Chiron Hei HK ExtraLight", Roboto;
+  --usp-heading-font: var(--usp-custom-heading-font), "Montserrat", "Mulish", "GenSenRounded TW", "Chiron Hei HK", Avenir, Arial;
 
   /* SIZES ************************************************* */
   --usp-base-font-size: 15px;

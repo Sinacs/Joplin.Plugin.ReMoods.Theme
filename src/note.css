@@ -64,9 +64,9 @@
   --usp-custom-base-font: none;
   --usp-custom-monospace-font: none;
   --usp-custom-heading-font: none;
-  --usp-base-font: var(--usp-custom-base-font), "mulish", "montserrat", "chiron hei hk extralight";
-  --usp-monospace-font: var(--usp-custom-monospace-font), "cascadia mono light", "chiron hei hk extralight";
-  --usp-heading-font: var(--usp-custom-heading-font), "montserrat", "mulish", "chiron hei hk";
+  --usp-base-font: var(--usp-custom-base-font), "Mulish", "Montserrat", "GenSenRounded TW", "Chiron Hei HK ExtraLight", Avenir, Arial;
+  --usp-monospace-font: var(--usp-custom-monospace-font), "Cascadia Mono Light", "GenSenRounded TW", "Chiron Hei HK ExtraLight", Roboto;
+  --usp-heading-font: var(--usp-custom-heading-font), "Montserrat", "Mulish", "GenSenRounded TW", "Chiron Hei HK", Avenir, Arial;
   
   /* SCREEN: SIZES ========================================= */
   --usp-base-font-size: 15px;
@@ -118,9 +118,9 @@
   --usp-print-custom-base-font: none;
   --usp-print-custom-monospace-font: none;
   --usp-print-custom-heading-font: none;
-  --usp-print-base-font: var(--usp-print-custom-base-font), "mulish", "montserrat", "chiron hei hk extralight";
-  --usp-print-monospace-font: var(--usp-print-custom-monospace-font), "cascadia mono light", "chiron hei hk extralight";
-  --usp-print-heading-font: var(--usp-print-custom-heading-font), "montserrat", "mulish", "chiron hei hk";
+  --usp-print-base-font: var(--usp-print-custom-base-font), "Mulish", "Montserrat", "GenSenRounded TW", "Chiron Hei HK Light", Avenir, Arial;
+  --usp-print-monospace-font: var(--usp-print-custom-monospace-font), "Cascadia Mono Light", "GenSenRounded TW", "Chiron Hei HK Light", Roboto;
+  --usp-print-heading-font: var(--usp-print-custom-heading-font), "Montserrat", "Mulish", "GenSenRounded TW", "Chiron Hei HK", Avenir, Arial;
   
   /* PRINT: SIZES ========================================== */
   --usp-print-base-font-size: 13px;
@@ -229,10 +229,9 @@
 
   /* HEADINGS =============================================================================== */
   --sc-heading-ref:                                     hsl(  0,   0%,  65%);
-
   /* h1 ------------------------------------------------------------------------------------- */
   --sc-h1-text:                                           hsl(var(--usp-hue), 100%,  80%);
-  --sc-h1-bg:                                             repeating-linear-gradient( 114deg,
+  --sc-h1-bg:                                             repeating-linear-gradient(114deg,
                                                           hsl(var(--usp-hue), 100%,  80%),
                                                           hsl(var(--usp-hue), 100%,  65%,  30%),
                                                           hsl(var(--usp-hue), 100%,  80%)  3px);
@@ -522,12 +521,12 @@
 
   /* PRINT FOOTNOTE ========================================================================= */
   --pr-fn-title:                                          hsl(var(--usp-hue),   0%,  50%);
-  --pr-footnote-title-bdt:                            3px double hsl(var(--usp-hue),   0%,  50%);
+  --pr-footnote-title-bdt:                     3px double hsl(var(--usp-hue),   0%,  50%);
 
-  --pr-footnote-ref:                                            var(--pr-link-text);
+  --pr-footnote-ref:                                      var(--pr-link-text);
   
-  --pr-footnote-list-text:                                      hsl(var(--usp-hue),   0%,  50%);
-  --pr-footnote-list-token:                                     hsl(var(--usp-hue),   0%,  50%);
+  --pr-footnote-list-text:                                hsl(var(--usp-hue),   0%,  50%);
+  --pr-footnote-list-token:                               hsl(var(--usp-hue),   0%,  50%);
 
   /* PRINT HEADING ========================================================================== */
   /* print h1 ------------------------------------------------------------------------------- */

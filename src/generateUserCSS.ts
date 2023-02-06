@@ -693,10 +693,15 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --sc-plugin-turntochart-text:.+?;/gms, '  --sc-plugin-turntochart-text: hsl(var(--usp-hue),   0%,  40%);');
       noteCSS = noteCSS.replace(/^  --sc-plugin-turntochart-info-bg:.+?;/gms, '  --sc-plugin-turntochart-info-bg: hsl(var(--usp-hue),   0%,  95%);');
 
-      chromeCSS = chromeCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "mulish", "montserrat", "chiron hei hk light";');
-      chromeCSS = chromeCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "cascadia mono light", "chiron hei hk light";');
-      noteCSS = noteCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "mulish", "montserrat", "chiron hei hk light";');
-      noteCSS = noteCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "cascadia mono light", "chiron hei hk light";');
+      chromeCSS = chromeCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "Mulish", "Montserrat", "GenSenRounded TW", "Chiron Hei HK Light", Avenir, Arial;');
+      chromeCSS = chromeCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "Cascadia Mono Light", "GenSenRounded TW", "Chiron Hei HK Light", Roboto;');
+      chromeCSS = chromeCSS.replace(/^  --usp-heading-font:.+?;/gms, '  --usp-heading-font: var(--usp-custom-heading-font), "Montserrat", "Mulish", "GenSenRounded TW", "Chiron Hei HK", Avenir, Arial;');
+      noteCSS = noteCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "Mulish", "Montserrat", "GenSenRounded TW", "Chiron Hei HK Light", Avenir, Arial;');
+      noteCSS = noteCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "Cascadia Mono Light", "GenSenRounded TW", "Chiron Hei HK Light";');
+      noteCSS = noteCSS.replace(/^  --usp-heading-font:.+?;/gms, '  --usp-heading-font: var(--usp-custom-heading-font), "Montserrat", "Mulish", "GenSenRounded TW", "Chiron Hei HK", Avenir, Arial;');
+      noteCSS = noteCSS.replace(/^  --usp-print-base-font:.+?;/gms, '  --usp-print-base-font: var(--usp-print-custom-base-font), "Mulish", "Montserrat", "GenSenRounded TW", "Chiron Hei HK Light", Avenir, Arial;');
+      noteCSS = noteCSS.replace(/^  --usp-print-monospace-font:.+?;/gms, '  --usp-print-monospace-font: var(--usp-print-custom-monospace-font), "Cascadia Mono Light", "GenSenRounded TW", "Chiron Hei HK Light", Roboto;');
+      noteCSS = noteCSS.replace(/^  --usp-print-heading-font:.+?;/gms, '  --usp-print-heading-font: var(--usp-print-custom-heading-font), "Montserrat", "Mulish", "GenSenRounded TW", "Chiron Hei HK", Avenir, Arial;');
 
       if(!darkerEditorBackground) {
         chromeCSS = chromeCSS.replace(/^  --me-bg:.+?;/gms, '  --me-bg: hsl(var(--usp-hue),   0%, 100%);');
@@ -1281,10 +1286,15 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --sc-plugin-turntochart-text:.+?;/gms, '  --sc-plugin-turntochart-text: hsl(var(--usp-hue),   0%,  80%);');
       noteCSS = noteCSS.replace(/^  --sc-plugin-turntochart-info-bg:.+?;/gms, '  --sc-plugin-turntochart-info-bg: hsl(var(--usp-hue),  10%,  20%);');
     
-      chromeCSS = chromeCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "mulish", "montserrat", "chiron hei hk extralight";');
-      chromeCSS = chromeCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "cascadia mono light", "chiron hei hk extralight";');
-      noteCSS = noteCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "mulish", "montserrat", "chiron hei hk extralight";');
-      noteCSS = noteCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "cascadia mono light", "chiron hei hk extralight";');
+      chromeCSS = chromeCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "Mulish", "Montserrat", "GenSenRounded TW", "Chiron Hei HK ExtraLight", Avenir, Arial;');
+      chromeCSS = chromeCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "Cascadia Mono Light", "GenSenRounded TW", "Chiron Hei HK ExtraLight", Roboto;');
+      chromeCSS = chromeCSS.replace(/^  --usp-heading-font:.+?;/gms, '  --usp-heading-font: var(--usp-custom-heading-font), "Montserrat", "Mulish", "GenSenRounded TW", "Chiron Hei HK", Avenir, Arial;');
+      noteCSS = noteCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "Mulish", "Montserrat", "GenSenRounded TW", "Chiron Hei HK ExtraLight", Avenir, Arial;');
+      noteCSS = noteCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "Cascadia Mono Light", "GenSenRounded TW", "Chiron Hei HK ExtraLight";');
+      noteCSS = noteCSS.replace(/^  --usp-heading-font:.+?;/gms, '  --usp-heading-font: var(--usp-custom-heading-font), "Montserrat", "Mulish", "GenSenRounded TW", "Chiron Hei HK", Avenir, Arial;');
+      noteCSS = noteCSS.replace(/^  --usp-print-base-font:.+?;/gms, '  --usp-print-base-font: var(--usp-print-custom-base-font), "Mulish", "Montserrat", "GenSenRounded TW", "Chiron Hei HK Light", Avenir, Arial;');
+      noteCSS = noteCSS.replace(/^  --usp-print-monospace-font:.+?;/gms, '  --usp-print-monospace-font: var(--usp-print-custom-monospace-font), "Cascadia Mono Light", "GenSenRounded TW", "Chiron Hei HK Light", Roboto;');
+      noteCSS = noteCSS.replace(/^  --usp-print-heading-font:.+?;/gms, '  --usp-print-heading-font: var(--usp-print-custom-heading-font), "Montserrat", "Mulish", "GenSenRounded TW", "Chiron Hei HK", Avenir, Arial;');
     
       if(!darkerEditorBackground) {
         chromeCSS = chromeCSS.replace(/^  --me-bg:.+?;/gms, '  --me-bg: hsl(var(--usp-hue),   8%,  27%);');
@@ -1872,10 +1882,16 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --sc-plugin-turntochart-text:.+?;/gms, '  --sc-plugin-turntochart-text: hsl(var(--usp-hue),   0%,  77%);');
       noteCSS = noteCSS.replace(/^  --sc-plugin-turntochart-info-bg:.+?;/gms, '  --sc-plugin-turntochart-info-bg: hsl(var(--usp-hue),  15%,  10%);');
 
-      chromeCSS = chromeCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "mulish", "montserrat", "chiron hei hk extralight";');
-      chromeCSS = chromeCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "cascadia mono light", "chiron hei hk extralight";');
-      noteCSS = noteCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "mulish", "montserrat", "chiron hei hk extralight";');
-      noteCSS = noteCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "cascadia mono light", "chiron hei hk extralight";');
+      chromeCSS = chromeCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "Mulish", "Montserrat", "GenSenRounded TW Light", "Chiron Hei HK ExtraLight", Avenir, Arial;');
+      chromeCSS = chromeCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "Cascadia Mono Light", "GenSenRounded TW Light", "Chiron Hei HK ExtraLight", Roboto;');
+      chromeCSS = chromeCSS.replace(/^  --usp-heading-font:.+?;/gms, '  --usp-heading-font: var(--usp-custom-heading-font), "Montserrat", "Mulish", "GenSenRounded TW", "Chiron Hei HK", Avenir, Arial;');
+      noteCSS = noteCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "Mulish", "Montserrat", "GenSenRounded TW Light", "Chiron Hei HK ExtraLight", Avenir, Arial;');
+      noteCSS = noteCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "Cascadia Mono Light", "GenSenRounded TW Light", "Chiron Hei HK ExtraLight";');
+      noteCSS = noteCSS.replace(/^  --usp-heading-font:.+?;/gms, '  --usp-heading-font: var(--usp-custom-heading-font), "Montserrat", "Mulish", "GenSenRounded TW", "Chiron Hei HK", Avenir, Arial;');
+      noteCSS = noteCSS.replace(/^  --usp-print-base-font:.+?;/gms, '  --usp-print-base-font: var(--usp-print-custom-base-font), "Mulish", "Montserrat", "GenSenRounded TW", "Chiron Hei HK Light", Avenir, Arial;');
+      noteCSS = noteCSS.replace(/^  --usp-print-monospace-font:.+?;/gms, '  --usp-print-monospace-font: var(--usp-print-custom-monospace-font), "Cascadia Mono Light", "GenSenRounded TW", "Chiron Hei HK Light", Roboto;');
+      noteCSS = noteCSS.replace(/^  --usp-print-heading-font:.+?;/gms, '  --usp-print-heading-font: var(--usp-print-custom-heading-font), "Montserrat", "Mulish", "GenSenRounded TW", "Chiron Hei HK", Avenir, Arial;');
+
 
       if(!emphasizeAddRemove && !emphasizeAddRemoveBg) {
         chromeCSS = chromeCSS.replace(/^  --me-insert-text:.+?;/gms, '  --me-insert-text: hsl(var(--usp-hue), 100%,  70%);');
