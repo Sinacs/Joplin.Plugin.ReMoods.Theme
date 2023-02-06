@@ -1892,6 +1892,17 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --usp-print-monospace-font:.+?;/gms, '  --usp-print-monospace-font: var(--usp-print-custom-monospace-font), "Cascadia Mono Light", "GenSenRounded TW", "Chiron Hei HK Light", Roboto;');
       noteCSS = noteCSS.replace(/^  --usp-print-heading-font:.+?;/gms, '  --usp-print-heading-font: var(--usp-print-custom-heading-font), "Montserrat", "Mulish", "GenSenRounded TW", "Chiron Hei HK", Avenir, Arial;');
 
+      if(!darkerEditorBackground) {
+        chromeCSS = chromeCSS.replace(/^  --me-bg:.+?;/gms, '  --me-bg: hsl(var(--usp-hue),  11%,  13%);');
+        chromeCSS = chromeCSS.replace(/^  --me-code-block-bg:.+?;/gms, '  --me-code-block-bg: hsl(var(--usp-hue),   8%,  11%);');
+        noteCSS = noteCSS.replace(/^  --sc-bg-1:.+?;/gms, '  --sc-bg-1: hsl(var(--usp-hue),  11%,  13%);');
+        noteCSS = noteCSS.replace(/^  --sc-bg-2:.+?;/gms, '  --sc-bg-2: hsl(var(--usp-hue),   8%,  11%);');
+      } else {
+        chromeCSS = chromeCSS.replace(/^  --me-bg:.+?;/gms, '  --me-bg: hsl(var(--usp-hue),  11%,  13%);');
+        chromeCSS = chromeCSS.replace(/^  --me-code-block-bg:.+?;/gms, '  --me-code-block-bg: hsl(var(--usp-hue),   8%,  11%);');
+        noteCSS = noteCSS.replace(/^  --sc-bg-1:.+?;/gms, '  --sc-bg-1: hsl(var(--usp-hue),  11%,  13%);');
+        noteCSS = noteCSS.replace(/^  --sc-bg-2:.+?;/gms, '  --sc-bg-2: hsl(var(--usp-hue),   8%,  11%);');
+      }
 
       if(!emphasizeAddRemove && !emphasizeAddRemoveBg) {
         chromeCSS = chromeCSS.replace(/^  --me-insert-text:.+?;/gms, '  --me-insert-text: hsl(var(--usp-hue), 100%,  70%);');
