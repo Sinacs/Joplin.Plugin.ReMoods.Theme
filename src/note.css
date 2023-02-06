@@ -980,6 +980,10 @@ ag12::-webkit-scrollbar-thumb:hover {
   text-shadow: 0 0 var(--sc-mark-ts);
   border-radius: 1em;
 }
+/* marked abbreviation ------------------------------------- */
+#rendered-md mark abbr {
+  color: var(--sc-mark-text);
+}
 
 /* SPECIAL TEXT: INSERT & STRIKETHROUGH ==================== */
 /* symbol -------------------------------------------------- */

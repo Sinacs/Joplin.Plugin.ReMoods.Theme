@@ -134,7 +134,9 @@
   --me-special-text:                                      hsl(var(--usp-hue), 100%,  20%);
   --me-special-bg:                                        hsl(var(--usp-hue),  30%,  70%);
 
+  --me-mark-text:                                         hsl(var(--usp-hue),  30%,  30%);
   --me-mark-ts:                                           none;
+  --me-mark-bg:                                           hsl(var(--usp-hue), 100%,  85%);
 
   --me-insert-text:                                       hsl(var(--usp-hue), 100%,  70%);
   --me-insert-bg:                                         none;
@@ -1391,7 +1393,7 @@
 }
 /* table text ---------------------------------------------- */
 .CodeMirror-lines .CodeMirror-line [class*="cm-tabcolor-col"]:not(.cm-tabcolor-pipe) {
-  color: var(--me-plugin-mtc-table-text) !important;
+  color: var(--me-plugin-mtc-table-text);
 }
 /* anchor link path ---------------------------------------- */
 .CodeMirror-lines .CodeMirror-line .cm-string.cm-url[class*="cm-tabcolor-"]:not(#fake) {
