@@ -134,7 +134,7 @@
   --me-special-text:                                      hsl(var(--usp-hue), 100%,  20%);
   --me-special-bg:                                        hsl(var(--usp-hue),  30%,  70%);
 
-  --me-mark-bd:                                           hsl(var(--usp-hue), 100%,  50%);
+  --me-mark-ts:                                           none;
 
   --me-insert-text:                                       hsl(var(--usp-hue), 100%,  70%);
   --me-insert-bg:                                         none;
@@ -739,6 +739,7 @@
 .CodeMirror-lines .CodeMirror-line .cm-rm-highlight:not(.cm-header) {
   color: var(--me-mark-text) !important;
   background: var(--me-mark-bg) !important;
+  text-shadow: 0 0 var(--me-mark-ts);
 }
 
 /* SPECIAL TEXT: INSERT ==================================== */

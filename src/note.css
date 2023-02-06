@@ -198,6 +198,7 @@
   --sc-abbreviation-td:                                   hsl(var(--usp-hue), 100%,  85%);
 
   --sc-mark-text:                                         hsl(var(--usp-hue),  30%,  30%);
+  --sc-mark-ts:                                           none;
   --sc-mark-bg:                                           hsl(var(--usp-hue), 100%,  85%);
 
   --sc-search-text:                                       hsl(var(--usp-hue),   0%, 100%);
@@ -976,6 +977,7 @@ ag12::-webkit-scrollbar-thumb:hover {
   padding: 0 6px;
   color: var(--sc-mark-text);
   background: var(--sc-mark-bg);
+  text-shadow: 0 0 var(--sc-mark-ts);
   border-radius: 1em;
 }
 

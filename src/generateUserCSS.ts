@@ -264,6 +264,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       chromeCSS = chromeCSS.replace(/^  --me-special-text:.+?;/gms, '  --me-special-text: hsl(var(--usp-hue), 100%,  20%);');
       chromeCSS = chromeCSS.replace(/^  --me-special-bg:.+?;/gms, '  --me-special-bg: hsl(var(--usp-hue), 100%,  90%);');
       chromeCSS = chromeCSS.replace(/^  --me-mark-text:.+?;/gms, '  --me-mark-text: hsl(var(--usp-hue),   0%,   0%);');
+      chromeCSS = chromeCSS.replace(/^  --me-mark-ts:.+?;/gms, '  --me-mark-ts: none;');
       chromeCSS = chromeCSS.replace(/^  --me-mark-bg:.+?;/gms, '  --me-mark-bg: hsl(var(--usp-hue), 100%,  80%);');
       chromeCSS = chromeCSS.replace(/^  --me-insert-text:.+?;/gms, '  --me-insert-text: hsl(var(--usp-hue),  25%,  50%);');
       chromeCSS = chromeCSS.replace(/^  --me-insert-bg:.+?;/gms, '  --me-insert-bg: none;');
@@ -514,6 +515,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --sc-abbreviation-text:.+?;/gms, '  --sc-abbreviation-text: hsl(var(--usp-hue),  90%,  30%);');
       noteCSS = noteCSS.replace(/^  --sc-abbreviation-td:.+?;/gms, '  --sc-abbreviation-td: hsl(var(--usp-hue),  90%,  30%);');
       noteCSS = noteCSS.replace(/^  --sc-mark-text:.+?;/gms, '  --sc-mark-text: hsl(var(--usp-hue),   0%,   0%);');
+      noteCSS = noteCSS.replace(/^  --sc-mark-ts:.+?;/gms, '  --sc-mark-ts: none;');
       noteCSS = noteCSS.replace(/^  --sc-mark-bg:.+?;/gms, '  --sc-mark-bg: hsl(var(--usp-hue), 100%,  80%);');
       noteCSS = noteCSS.replace(/^  --sc-search-text:.+?;/gms, '  --sc-search-text: hsl(var(--usp-hue),   0%, 100%);');
       noteCSS = noteCSS.replace(/^  --sc-search-bg:.+?;/gms, '  --sc-search-bg: hsl(var(--usp-hue),   0%,   0%);');
@@ -850,6 +852,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       chromeCSS = chromeCSS.replace(/^  --me-special-text:.+?;/gms, '  --me-special-text: hsl(var(--usp-hue), 100%,  20%);');
       chromeCSS = chromeCSS.replace(/^  --me-special-bg:.+?;/gms, '  --me-special-bg: hsl(var(--usp-hue),  30%,  70%);');
       chromeCSS = chromeCSS.replace(/^  --me-mark-text:.+?;/gms, '  --me-mark-text: hsl(var(--usp-hue),  30%,  30%);');
+      chromeCSS = chromeCSS.replace(/^  --me-mark-ts:.+?;/gms, '  --me-mark-ts: none;');
       chromeCSS = chromeCSS.replace(/^  --me-mark-bg:.+?;/gms, '  --me-mark-bg: hsl(var(--usp-hue), 100%,  85%);');
       chromeCSS = chromeCSS.replace(/^  --me-insert-text:.+?;/gms, '  --me-insert-text: hsl(var(--usp-hue), 100%,  70%);');
       chromeCSS = chromeCSS.replace(/^  --me-insert-bg:.+?;/gms, '  --me-insert-bg: none;');
@@ -1100,6 +1103,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --sc-abbreviation-text:.+?;/gms, '  --sc-abbreviation-text: hsl(var(--usp-hue), 100%,  85%);');
       noteCSS = noteCSS.replace(/^  --sc-abbreviation-td:.+?;/gms, '  --sc-abbreviation-td: hsl(var(--usp-hue), 100%,  85%);');
       noteCSS = noteCSS.replace(/^  --sc-mark-text:.+?;/gms, '  --sc-mark-text: hsl(var(--usp-hue),  30%,  30%);');
+      noteCSS = noteCSS.replace(/^  --sc-mark-ts:.+?;/gms, '  --sc-mark-ts: none;');
       noteCSS = noteCSS.replace(/^  --sc-mark-bg:.+?;/gms, '  --sc-mark-bg: hsl(var(--usp-hue), 100%,  85%);');
       noteCSS = noteCSS.replace(/^  --sc-search-text:.+?;/gms, '  --sc-search-text: hsl(var(--usp-hue),   0%, 100%);');
       noteCSS = noteCSS.replace(/^  --sc-search-bg:.+?;/gms, '  --sc-search-bg: hsl(var(--usp-hue),   0%,   0%);');
@@ -1439,6 +1443,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       chromeCSS = chromeCSS.replace(/^  --me-special-text:.+?;/gms, '  --me-special-text: hsl(var(--usp-hue),  80%,  80%);');
       chromeCSS = chromeCSS.replace(/^  --me-special-bg:.+?;/gms, '  --me-special-bg: hsl(var(--usp-hue),  15%,  28%);');
       chromeCSS = chromeCSS.replace(/^  --me-mark-text:.+?;/gms, '  --me-mark-text: hsl(var(--usp-hue),  20%,  20%);');
+      chromeCSS = chromeCSS.replace(/^  --me-mark-ts:.+?;/gms, '  --me-mark-ts: var(--me-mark-text);');
       chromeCSS = chromeCSS.replace(/^  --me-mark-bg:.+?;/gms, '  --me-mark-bg: hsl(var(--usp-hue),  60%,  65%);');
       chromeCSS = chromeCSS.replace(/^  --me-insert-text:.+?;/gms, '  --me-insert-text: hsl(var(--usp-hue),  40%,  60%);');
       chromeCSS = chromeCSS.replace(/^  --me-insert-bg:.+?;/gms, '  --me-insert-bg: none;');
@@ -1689,6 +1694,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --sc-abbreviation-text:.+?;/gms, '  --sc-abbreviation-text: hsl(var(--usp-hue),  40%,  85%);');
       noteCSS = noteCSS.replace(/^  --sc-abbreviation-td:.+?;/gms, '  --sc-abbreviation-td: hsl(var(--usp-hue),  20%,  20%);');
       noteCSS = noteCSS.replace(/^  --sc-mark-text:.+?;/gms, '  --sc-mark-text: hsl(var(--usp-hue),  20%,  20%);');
+      noteCSS = noteCSS.replace(/^  --sc-mark-ts:.+?;/gms, '  --sc-mark-ts: var(--sc-mark-ts);');
       noteCSS = noteCSS.replace(/^  --sc-mark-bg:.+?;/gms, '  --sc-mark-bg: hsl(var(--usp-hue),  60%,  65%);');
       noteCSS = noteCSS.replace(/^  --sc-search-text:.+?;/gms, '  --sc-search-text: hsl(var(--usp-hue),   0%, 100%);');
       noteCSS = noteCSS.replace(/^  --sc-search-bg:.+?;/gms, '  --sc-search-bg: hsl(var(--usp-hue),   0%,   0%);');
