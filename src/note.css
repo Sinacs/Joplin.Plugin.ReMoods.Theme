@@ -1291,6 +1291,7 @@ ag12::-webkit-scrollbar-thumb:hover {
 }
 /* h1 > span ----------------------------------------------- */
 #rendered-md h1 > span {
+  font-size: inherit;
   -webkit-background-clip: initial; 
   background-clip: initial;
   -webkit-text-fill-color: initial;
