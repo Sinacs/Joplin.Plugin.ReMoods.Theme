@@ -2348,7 +2348,7 @@ tspan {
   height: 5px !important;
   font-weight: 600;
   border-radius: 3px;
-  text-shadow: 0 0 5px hsl(0,0%,30%);
+  text-shadow: 0 0 hsl(0,0%,30%);
 }
 #rendered-md .tag::before,
 #rendered-md .tag::after {
