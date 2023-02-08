@@ -886,7 +886,7 @@
 }
 /* hover --------------------------------------------------- */
 .CodeMirror-lines .CodeMirror-line .cm-rm-checkbox:hover {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 
