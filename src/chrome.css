@@ -645,8 +645,8 @@
 .CodeMirror-lines .CodeMirror-line .cm-hr::before {
   display: var(--usp-evident-hr-display);
   content: "";
-  width: 95%;
-  max-width: auto;
+  width: 100%;
+  max-width: 94%;
   height: 1px;
   background: var(--me-hr-syntax-bg);
 }
@@ -1081,7 +1081,7 @@
 
 /* || MARKDOWN 9/9 | CODE BLOCK **************************** */
 .CodeMirror-lines .cm-jn-code-block {
-  padding-left: 8px;
+  padding-left: 5px !important;
   background: var(--me-code-block-bg) !important;
   border-width: var(--me-code-block-bdw) !important;
   border-style: solid;
