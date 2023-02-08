@@ -1012,32 +1012,32 @@
 #react-root .cm-header-1.cm-rm-sup {
   font-variant: none;
   text-transform: none;
-  font-size: calc(var(--usp-h1-font-size) * 0.9) !important;
+  font-size: calc(var(--usp-h1-font-size) * 0.85) !important;
 }
 /* h2 > sup & sub ------------------------------------------ */
 #react-root .cm-header-2.cm-rm-sub,
 #react-root .cm-header-2.cm-rm-sup {
-  font-size: calc(var(--usp-h2-font-size) * 0.9) !important;
+  font-size: calc(var(--usp-h2-font-size) * 0.85) !important;
 }
 /* h3 > sup & sub ------------------------------------------ */
 #react-root .cm-header-3.cm-rm-sub,
 #react-root .cm-header-3.cm-rm-sup {
-  font-size: calc(var(--usp-h3-font-size) * 0.9) !important;
+  font-size: calc(var(--usp-h3-font-size) * 0.85) !important;
 }
 /* h4 > sup & sub ------------------------------------------ */
 #react-root .cm-header-4.cm-rm-sub,
 #react-root .cm-header-4.cm-rm-sup {
-  font-size: calc(var(--usp-h4-font-size) * 0.9) !important;
+  font-size: calc(var(--usp-h4-font-size) * 0.85) !important;
 }
 /* h5 > sup & sub ------------------------------------------ */
 #react-root .cm-header-5.cm-rm-sub,
 #react-root .cm-header-5.cm-rm-sup {
-  font-size: calc(var(--usp-h5-font-size) * 0.9) !important;
+  font-size: calc(var(--usp-h5-font-size) * 0.85) !important;
 }
 /* h6 > sup & sub ------------------------------------------ */
 #react-root .cm-header-6.cm-rm-sub,
 #react-root .cm-header-6.cm-rm-sup {
-  font-size: calc(var(--usp-h6-font-size) * 0.9) !important;
+  font-size: calc(var(--usp-h6-font-size) * 0.85) !important;
 }
 /* GROUP: | h1 to h6 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 /* NESTED: | inline code | --------------------------------- */
@@ -1048,7 +1048,7 @@
   font-size: var(--usp-h1-font-size) !important;
 }
 /* h2 > inline code ---------------------------------------- */
-#react-root .cm-header.cm-rm-sub,#react-root .cm-header-2.cm-jn-inline-code {
+#react-root .cm-header-2.cm-jn-inline-code {
   font-size: var(--usp-h2-font-size) !important;
 }
 /* h3 > inline code ---------------------------------------- */
