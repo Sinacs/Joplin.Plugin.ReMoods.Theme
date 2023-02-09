@@ -181,7 +181,7 @@ async function prepareThemeSettings(): Promise<void> {
 				'330deg': 'Magenta-Red 330',
 				'340deg': 'Magenta-Red +',
 			},
-			description: 'Set color hue for the theme. (10-degrees difference for each)',
+			description: 'Set color hue degrees for the theme. (10-degrees difference for each option)',
 			public: true,
 
 		},
@@ -194,7 +194,7 @@ async function prepareThemeSettings(): Promise<void> {
 			value: 'duskMode',
 			isEnum: true,
 			options: {
-				'dayMode': 'Day Mode (EXPERIMENTAL)',
+				'dayMode': 'Day Mode',
 				'duskMode': 'Dusk Mode',
 				'nightMode': 'Night Mode'
 			},
@@ -209,7 +209,7 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Markdown Editor & Render Viewer - Base Font',
 			type: SettingItemType.String,
 			value: 'Default',
-			description: 'Default: "mulish", "montserrat", "chiron hei hk extralight" | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
+			description: 'Default: "mulish", "montserrat", "GenSenRounded TW", "chiron hei hk light" | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
 			public: true,
 
 		},
@@ -220,7 +220,7 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Markdown Editor & Render Viewer - Monospace Font',
 			type: SettingItemType.String,
 			value: 'Default',
-			description: 'Default: "cascadia mono light", "chiron hei hk extralight" | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
+			description: 'Default: "cascadia mono light", "GenSenRounded TW", "chiron hei hk light" | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
 			public: true,
 
 		},
@@ -231,7 +231,7 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Markdown Editor & Render Viewer - Heading Font',
 			type: SettingItemType.String,
 			value: 'Default',
-			description: 'Default: "montserrat", "mulish", "chiron hei hk" | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
+			description: 'Default: "montserrat", "mulish", "GenSenRounded TW", "chiron hei hk" | Please add quotation mark for each font\'s name and add comma for separating multiple fonts.',
 			public: true,
 
 		},
@@ -595,7 +595,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'mathNotationAlignLeft': {
 
 			section: 'remoodsThemeSection',
-			label: '* Render Viewer - Align the math notation to the left',
+			label: '* Render Viewer - Enable math notation aligned-left',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
@@ -625,7 +625,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'codeBlockMaxHeight': {
 
 			section: 'remoodsThemeSection',
-			label: 'Render Viewer - Enable max height limit for code block',
+			label: 'Render Viewer - Enable max height limit for code block (56% viewport high)',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -635,7 +635,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'artGalleryMaxHeight': {
 
 			section: 'remoodsThemeSection',
-			label: 'Render Viewer - Enable max height limit for art gallery',
+			label: 'Render Viewer - Enable max height limit for art gallery (56% viewport high)',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -696,7 +696,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'notebookTitleScrollbar': {
 
 			section: 'remoodsThemeSection',
-			label: 'Notebook Panel - Enable showing the horizontal scrollbar for the notebook title',
+			label: 'Notebook Panel - Enable horizontal scrollbar for the notebook title',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'If disabled, you can still use `shift + scroll` for scrolling.',
@@ -707,7 +707,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'notebookFolderIcon': {
 
 			section: 'remoodsThemeSection',
-			label: 'Notebook Panel - Enable folder icon',
+			label: 'Notebook Panel - Enable notebook folder icon',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: Show | Disable: Hide | (Joplin v2.9.12+)',
@@ -729,7 +729,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'syncFeature': {
 
 			section: 'remoodsThemeSection',
-			label: 'Notebook Panel - Enable sync feature panel.',
+			label: 'Notebook Panel - Enable sync feature panel',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: Show | Disable: Hide | It will affect to the Sync information and button.',
@@ -740,7 +740,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'tagFeature': {
 
 			section: 'remoodsThemeSection',
-			label: 'Notebook Panel & Editor Panel - Enable tag feature panel.',
+			label: 'Notebook Panel & Editor Panel - Enable tag feature panel',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: Show | Disable: Hide | It will affect to the tag list(Notebook Panel) and tag bar(Editor Panel).',
@@ -751,7 +751,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'noteListItemAutoScroll': {
 
 			section: 'remoodsThemeSection',
-			label: 'Note List Panel - Enable auto-scroll effect for note list item.',
+			label: 'Note List Panel - Enable auto-scroll effect for note list items',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: mouse hover auto-scroll | Disable: no action',
@@ -964,7 +964,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'printSnKm': {
 
 			section: 'remoodsThemeSection',
-			label: 'Print & Export PDF - Display "Key Mention" which is inside the Sticky Notes.',
+			label: 'Print & Export PDF - Display "Key Mention" which is inside the Sticky Notes',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -975,7 +975,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'printSpoilerInlineText': {
 
 			section: 'remoodsThemeSection',
-			label: 'Print & Export PDF - Display the text of Spoiler Inline.',
+			label: 'Print & Export PDF - Display the text of Spoiler Inline',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
