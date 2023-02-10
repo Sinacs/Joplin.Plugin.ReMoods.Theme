@@ -679,24 +679,24 @@
 }
 
 /* OTHERS: SELECTED TEXT =================================== */
-.CodeMirror-selectedtext {
+#react-root .CodeMirror-selectedtext {
   color: var(--me-selected-text) !important;
 }
-.CodeMirror-selected {
+#react-root .CodeMirror-selected {
   background: var(--me-selected-bg) !important;
 }
-.CodeMirror-focused .CodeMirror-selected {
+#react-root .CodeMirror-line::selection,
+#react-root .CodeMirror-line > span::selection,
+#react-root .CodeMirror-line > span > span::selection {
+  background: var(--me-selected-bg) !important;
+}
+#react-root .CodeMirror-line::-moz-selection,
+#react-root .CodeMirror-line > span::-moz-selection,
+#react-root .CodeMirror-line > span > span::-moz-selection {
+  background: var(--me-selected-bg) !important;
+}
+#react-root .CodeMirror-focused .CodeMirror-selected {
   background: var(--me-selected-bg-focused) !important;
-}
-.CodeMirror-line::selection,
-.CodeMirror-line > span::selection,
-.CodeMirror-line > span > span::selection {
-  background: var(--me-selected-bg) !important;
-}
-.CodeMirror-line::-moz-selection,
-.CodeMirror-line > span::-moz-selection,
-.CodeMirror-line > span > span::-moz-selection {
-  background: var(--me-selected-bg) !important;
 }
 /* selected code block text -------------------------------- */
 .CodeMirror-lines .cm-jn-code-block .CodeMirror-selectedtext {
