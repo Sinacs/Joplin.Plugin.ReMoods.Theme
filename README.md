@@ -26,7 +26,7 @@ ReMoods beautifies your screen and documents and takes care of your writing mood
   - February updates will focus on improving the Day Mode & Night Mode.
   - [The Recommended Chinese Font Has Replaced By "GenSenRounded TW"](#the-recommended-chinese-font-has-replaced-by-gensenrounded-tw)
   - [Met problem when updating ReMoods from v3 to v4?](#met-problem-when-updating-remoods-from-v3-to-v4)
-  - [Collecting users feedback and issue report](#collecting-users-feedback-and-issue-report)
+  - [Collecting issue report and users feedback](#collecting-issues-report-and-users-feedback)
   
 **REMOODS THEME GETTING STARTED GUIDE:**
 
