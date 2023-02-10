@@ -444,7 +444,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       chromeCSS = chromeCSS.replace(/^  --s-ep-batch-menu-btn-bg:.+?;/gms, '  --s-ep-batch-menu-btn-bg: hsl(var(--usp-hue), 100%,  97%);');
       chromeCSS = chromeCSS.replace(/^  --s-ep-batch-menu-btn-bd:.+?;/gms, '  --s-ep-batch-menu-btn-bd: hsl(var(--usp-hue),  70%,  70%);');
       chromeCSS = chromeCSS.replace(/^  --s-ep-update-time-label-bg:.+?;/gms, '  --s-ep-update-time-label-bg: hsl(var(--usp-hue),   0%, 100%);');
-      chromeCSS = chromeCSS.replace(/^  --s-ep-update-time-label-text:.+?;/gms, '  --s-ep-update-time-label-text: hsl(var(--usp-hue), 100%,  90%);');
+      chromeCSS = chromeCSS.replace(/^  --s-ep-update-time-label-text:.+?;/gms, '  --s-ep-update-time-label-text: hsl(var(--usp-hue), 100%,  20%);');
       chromeCSS = chromeCSS.replace(/^  --s-ep-tagbar-tag-text:.+?;/gms, '  --s-ep-tagbar-tag-text: hsl(var(--usp-hue), 100%,  20%);');
       chromeCSS = chromeCSS.replace(/^  --s-ep-tagbar-tag-text-hover:.+?;/gms, '  --s-ep-tagbar-tag-text-hover: hsl(var(--usp-hue), 100%,  40%);');
       chromeCSS = chromeCSS.replace(/^  --s-ep-tagbar-tag-ts-hover:.+?;/gms, '  --s-ep-tagbar-tag-ts-hover: none;');
@@ -695,6 +695,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --sc-plugin-turntochart-bg:.+?;/gms, '  --sc-plugin-turntochart-bg: none;');
       noteCSS = noteCSS.replace(/^  --sc-plugin-turntochart-text:.+?;/gms, '  --sc-plugin-turntochart-text: hsl(var(--usp-hue),   0%,  40%);');
       noteCSS = noteCSS.replace(/^  --sc-plugin-turntochart-info-bg:.+?;/gms, '  --sc-plugin-turntochart-info-bg: hsl(var(--usp-hue),   0%,  95%);');
+      noteCSS = noteCSS.replace(/^  --sc-plugin-code-clipboard-btn-icon:.+?;/gms, '  --sc-plugin-code-clipboard-btn-icon: hsl(calc(var(--usp-hue) + 180deg), 60%,  60%);');
 
       chromeCSS = chromeCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "Mulish", "Montserrat", "GenSenRounded TW", "Chiron Hei HK Light", Avenir, Arial;');
       chromeCSS = chromeCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "Cascadia Mono Light", "GenSenRounded TW", "Chiron Hei HK Light", Roboto;');
@@ -1291,7 +1292,8 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --sc-plugin-turntochart-bg:.+?;/gms, '  --sc-plugin-turntochart-bg: none;');
       noteCSS = noteCSS.replace(/^  --sc-plugin-turntochart-text:.+?;/gms, '  --sc-plugin-turntochart-text: hsl(var(--usp-hue),   0%,  80%);');
       noteCSS = noteCSS.replace(/^  --sc-plugin-turntochart-info-bg:.+?;/gms, '  --sc-plugin-turntochart-info-bg: hsl(var(--usp-hue),  10%,  20%);');
-    
+      noteCSS = noteCSS.replace(/^  --sc-plugin-code-clipboard-btn-icon:.+?;/gms, '  --sc-plugin-code-clipboard-btn-icon: hsl(calc(var(--usp-hue) + 180deg), 100%,  80%);');
+
       chromeCSS = chromeCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "Mulish", "Montserrat", "GenSenRounded TW", "Chiron Hei HK ExtraLight", Avenir, Arial;');
       chromeCSS = chromeCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "Cascadia Mono Light", "GenSenRounded TW", "Chiron Hei HK ExtraLight", Roboto;');
       chromeCSS = chromeCSS.replace(/^  --usp-heading-font:.+?;/gms, '  --usp-heading-font: var(--usp-custom-heading-font), "Montserrat", "Mulish", "GenSenRounded TW", "Chiron Hei HK", Avenir, Arial;');
@@ -1301,7 +1303,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --usp-print-base-font:.+?;/gms, '  --usp-print-base-font: var(--usp-print-custom-base-font), "Mulish", "Montserrat", "GenSenRounded TW", "Chiron Hei HK Light", Avenir, Arial;');
       noteCSS = noteCSS.replace(/^  --usp-print-monospace-font:.+?;/gms, '  --usp-print-monospace-font: var(--usp-print-custom-monospace-font), "Cascadia Mono Light", "GenSenRounded TW", "Chiron Hei HK Light", Roboto;');
       noteCSS = noteCSS.replace(/^  --usp-print-heading-font:.+?;/gms, '  --usp-print-heading-font: var(--usp-print-custom-heading-font), "Montserrat", "Mulish", "GenSenRounded TW", "Chiron Hei HK", Avenir, Arial;');
-    
+
       if(!darkerEditorBackground) {
         chromeCSS = chromeCSS.replace(/^  --me-bg:.+?;/gms, '  --me-bg: hsl(var(--usp-hue),   8%,  27%);');
         chromeCSS = chromeCSS.replace(/^  --me-code-block-bg:.+?;/gms, '  --me-code-block-bg: hsl(var(--usp-hue),   8%,  17%);');
@@ -1330,7 +1332,6 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
         noteCSS = noteCSS.replace(/^  --pr-insert-bdb:.+?;/gms, '  --pr-insert-bdb: hsl(var(--usp-hue),  25%,  50%);');
         noteCSS = noteCSS.replace(/^  --pr-strikethrough-text:.+?;/gms, '  --pr-strikethrough-text: hsl(var(--usp-hue),  25%,  50%);');
         noteCSS = noteCSS.replace(/^  --pr-strikethrough-bg:.+?;/gms, '  --pr-strikethrough-bg: none;');
-        
       } else if(!emphasizeAddRemove && emphasizeAddRemoveBg) {
         chromeCSS = chromeCSS.replace(/^  --me-insert-text:.+?;/gms, '  --me-insert-text: hsl(var(--usp-hue), 100%,  70%);');
         chromeCSS = chromeCSS.replace(/^  --me-insert-bg:.+?;/gms, '  --me-insert-bg: hsl(var(--usp-hue),  35%,  25%);');
@@ -1347,7 +1348,6 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
         noteCSS = noteCSS.replace(/^  --pr-insert-bdb:.+?;/gms, '  --pr-insert-bdb: hsl(var(--usp-hue),  25%,  50%);');
         noteCSS = noteCSS.replace(/^  --pr-strikethrough-text:.+?;/gms, '  --pr-strikethrough-text: hsl(var(--usp-hue),  25%,  50%);');
         noteCSS = noteCSS.replace(/^  --pr-strikethrough-bg:.+?;/gms, '  --pr-strikethrough-bg: hsl(var(--usp-hue),  25%,  85%);');
-        
       } else if(emphasizeAddRemove && !emphasizeAddRemoveBg) {
         chromeCSS = chromeCSS.replace(/^  --me-insert-text:.+?;/gms, '  --me-insert-text: hsl(100,  50%,  75%);');
         chromeCSS = chromeCSS.replace(/^  --me-insert-bg:.+?;/gms, '  --me-insert-bg: none;');
@@ -1364,7 +1364,6 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
         noteCSS = noteCSS.replace(/^  --pr-insert-bdb:.+?;/gms, '  --pr-insert-bdb: hsl(100,  70%,  35%);');
         noteCSS = noteCSS.replace(/^  --pr-strikethrough-text:.+?;/gms, '  --pr-strikethrough-text: hsl(0, 100%,  65%);');
         noteCSS = noteCSS.replace(/^  --pr-strikethrough-bg:.+?;/gms, '  --pr-strikethrough-bg: none;');
-        
       } else {
         chromeCSS = chromeCSS.replace(/^  --me-insert-text:.+?;/gms, '  --me-insert-text: hsl(100,  50%,  75%);');
         chromeCSS = chromeCSS.replace(/^  --me-insert-bg:.+?;/gms, '  --me-insert-bg: hsl(100,  70%,  15%);');
@@ -1890,6 +1889,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --sc-plugin-turntochart-bg:.+?;/gms, '  --sc-plugin-turntochart-bg: none;');
       noteCSS = noteCSS.replace(/^  --sc-plugin-turntochart-text:.+?;/gms, '  --sc-plugin-turntochart-text: hsl(var(--usp-hue),   0%,  77%);');
       noteCSS = noteCSS.replace(/^  --sc-plugin-turntochart-info-bg:.+?;/gms, '  --sc-plugin-turntochart-info-bg: hsl(var(--usp-hue),  15%,  10%);');
+      noteCSS = noteCSS.replace(/^  --sc-plugin-code-clipboard-btn-icon:.+?;/gms, '  --sc-plugin-code-clipboard-btn-icon: hsl(calc(var(--usp-hue) + 180deg), 100%,  80%);');
 
       chromeCSS = chromeCSS.replace(/^  --usp-base-font:.+?;/gms, '  --usp-base-font: var(--usp-custom-base-font), "Mulish", "Montserrat", "GenSenRounded TW Light", "Chiron Hei HK ExtraLight", Avenir, Arial;');
       chromeCSS = chromeCSS.replace(/^  --usp-monospace-font:.+?;/gms, '  --usp-monospace-font: var(--usp-custom-monospace-font), "Cascadia Mono Light", "GenSenRounded TW Light", "Chiron Hei HK ExtraLight", Roboto;');

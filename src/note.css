@@ -462,6 +462,9 @@
   --sc-plugin-turntochart-text:                           hsl(var(--usp-hue),   0%,  80%);
   --sc-plugin-turntochart-info-bg:                        hsl(var(--usp-hue),  10%,  20%);
 
+  /* PLUGINS: CODE CLIPBOARD ================================================================ */
+  --sc-plugin-code-clipboard-btn-icon:                    hsl(calc(var(--usp-hue) + 180deg), 100%,  80%);
+
 
 
   
@@ -2369,6 +2372,34 @@ tspan {
 /* hover --------------------------------------------------- */
 .spoiler-block label:hover > .note-link-identifier {
   display: inline-block;
+}
+
+
+
+/* || PLUGINS | CODE CLIPBOARD ***************************** */
+/* copy button --------------------------------------------- */
+.code-clipboard-button {
+  right: 18px !important;
+  visibility: hidden;
+  transform: rotateZ(0deg) scale(0%);
+  transition: transform 0.2s, visibility 0.2s;
+}
+/* copy button hover --------------------------------------- */
+.code-clipboard-button:hover .code-clipboard-icon {
+  font-size: 95%;
+  opacity: 1;
+  transition: font-size 0.2s;
+}
+/* container hover > copy button --------------------------- */
+.code-clipboard-container:hover .code-clipboard-button {
+  visibility: visiable;
+  transform: rotateZ(720deg) scale(120%);
+  transition: transform 0.2s, visibility 0.2s;
+}
+/* copy button icon ---------------------------------------- */
+.code-clipboard-icon {
+  color: var(--sc-plugin-code-clipboard-btn-icon) !important;
+  opacity: 0.8;
 }
 
 
