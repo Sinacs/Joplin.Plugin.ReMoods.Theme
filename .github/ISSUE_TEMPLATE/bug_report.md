@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: Report a feature or visual problem in ReMoods
-title: ""
+title: ''
 labels: ''
 assignees: ''
 
