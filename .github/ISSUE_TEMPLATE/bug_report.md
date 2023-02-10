@@ -11,7 +11,7 @@ assignees: ''
 The bug report should be related to one of the below:
 
 - Report a feature that doesn't work as expected. (Please describe with more details)
-- Report a visual problem. (This can simplify the description but please supply a screenshot(s))
+- Report a visual problem. (You can simplify the description but please supply a screenshot(s))
 -->
 
 ## Environment:
