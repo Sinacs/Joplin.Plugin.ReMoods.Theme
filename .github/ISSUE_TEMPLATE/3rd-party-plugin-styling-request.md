@@ -9,7 +9,7 @@ assignees: ''
 
 <!--
 Note:
-- The plugin must be appearing in the [Joplin Plugin Repository](https://github.com/joplin/plugins)
+- The plugin must be appearing in the Joplin Plugin Repository (https://github.com/joplin/plugins)
 - ReMoods cannot style the private panel of other plugins, please make sure your request is targeted to only the Markdown Editor and Render Viewer.
 - I wouldn't keep testing every 3rd-party plugin in the future, so I will only fix problems based on your report.
 -->
