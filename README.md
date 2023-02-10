@@ -23,9 +23,10 @@ ReMoods beautifies your screen and documents and takes care of your writing mood
 
 > This section contains important information if there is any.
 
-  - February update will focus on improving the Day Mode & Night Mode.
+  - February updates will focus on improving the Day Mode & Night Mode.
+  - [The Recommended Chinese Font Has Replaced By "GenSenRounded TW"](#the-recommended-chinese-font-has-replaced-by-gensenrounded-tw)
   - [Met problem when updating ReMoods from v3 to v4?](#met-problem-when-updating-remoods-from-v3-to-v4)
-  - [Asking For Bits Of Help](#asking-for-bits-of-help)
+  - [Collecting users feedback and issue report](#collecting-users-feedback-and-issue-report)
   
 **REMOODS THEME GETTING STARTED GUIDE:**
 
@@ -64,7 +65,7 @@ ReMoods beautifies your screen and documents and takes care of your writing mood
 
   - [Spoiler](#spoiler)
   - [Markdown Table Colorize](#markdown-table-colorize)
-  - [Tested Third-Party Plugins](#tested-third-party-plugins) (Latest: 26.NOV.2022)
+  - [Third-Party Plugins Styling](#third-party-plugins-styling)
   
 **PRINT & EXPORT:**
 
@@ -73,7 +74,6 @@ ReMoods beautifies your screen and documents and takes care of your writing mood
   - [Export HTML File](#export-html-file) (soon...)
   - [Export PDF Document](#export-pdf-document) 
 
-
 ## Download And Install Recommended Fonts
 
 👨‍🔬: **First things first, ReMoods paid lots of time to test the best fonts for you, they've great performance on both read and write, and I developed everything based on using these fonts, so I recommended you use them:** 🤩
@@ -81,16 +81,16 @@ ReMoods beautifies your screen and documents and takes care of your writing mood
 You can download... 
 
 1. The abridged package from my [Google Drive🎁](https://drive.google.com/drive/folders/1oQVRSix1hw5zgmJiphZIEAqMrEH5EuLQ?usp=sharing)
-2. The full packages by clicking below fonts name to visit the official sources.
+2. The full packages by clicking below fonts selection to visit the official sources:
 
 - Base Font: 🛻[Mulish](https://fonts.google.com/specimen/Mulish?query=mulish)
-- Base Font: 🛻[Chiron Hei HK](https://github.com/chiron-fonts/chiron-hei-hk/releases) (Traditional & Simplified Chinese)
+- Base Font: 🛻[GenSenRounded TW](https://github.com/ButTaiwan/gensen-font/releases) (Traditional & Simplified Chinese)
 - Monospace Font: 🛻[Cascadia Mono Light](https://github.com/microsoft/cascadia-code/releases) (markdown syntax, code block, list token, etc.)
 - Heading Font: 🛻[Montserrat](https://fonts.google.com/specimen/Montserrat?query=montserrat) (heading only)
 
 > To Chinese Language Users:
 > 
-> 👨‍🔬: "Mulish" have a great visual identification experience when combine using with the Chinese font, and it supplies monospace number characters, it would make your notes neater. Moreover, the "Chiron Hei HK" font-weight will automatically switch between "light" and "extralight" based on the theme mode you use, it's for improving the reading experience under different theme modes.
+> 👨‍🔬: "Mulish" has a great visual identification experience when combine using with the Chinese font, and it supplies monospace number characters, it would make your notes neater. Moreover, the "GenSenRounded TW" font-weight will automatically switch to "light" to improve the reading experience in Night Mode.
 
 [:arrow_up:Back](#table-of-contents)
 
@@ -235,7 +235,7 @@ It uses low-contrast colors and minimizes unwanted glare within the notes and Jo
 
 **Q: Can I only change the theme mode but not change the built-in theme?**
 
-**A:** *Yes, you can, but you will find that other plugins' background colors might not match your ReMoods theme, and the selected text background color in Markdown Editor will become hard to read. (I can't edit that.)*
+**A:** *Yes, you can, but you will find that other plugins' background colors might not match your ReMoods theme, and the selected text background color in Markdown Editor will become hard to read.*
 
 ## Customizable Heading
 
@@ -404,7 +404,7 @@ See the below:
 
 1. The custom element name `kp` stands for *Key Point*.
 2. I recommend **only** use it at **the beginning of the line**.
-3. If a Key Point **only have one paragraph of content**, it's better to type your description **near it**.
+3. If a Key Point **only has one paragraph of content**, it's better to type your description **near it**.
 4. If there are multiple Key Points and **each of them with one paragraph of description**, it's better to type your description **right below to it**.
 5. If your Key Point is a **long title**, such as a whole sentence, a question, etc. and **with multiple paragraphs of descriptions**, it's better to **add a blank line between all of them**.
 
@@ -532,9 +532,9 @@ I would like to share the steps of how I create a markdown table. And these step
 
 [:arrow_up:Back](#table-of-contents)
 
-## TESTED THIRD-PARTY PLUGINS
+## Third-Party Plugins Styling
 
-The below table shows you the details of what plugins I've already tested, and will keep update it:
+ReMoods want to provide your notes a consistent styles, so I will test some of the helpful plugins and modify their appearance.
 
 |Plugin|Status|Updated|Modified|Remarks|
 |:-----|:----:|:-----:|:-------|:-----|
@@ -545,6 +545,7 @@ The below table shows you the details of what plugins I've already tested, and w
 |Draw.io|Tested|25AUG2022|-|-|
 |Enhancement|Done|22OCT2022|1.Removed the left color bar of admonition.<br>2.Changed footnote marker text to monospace font.<br>3.Changed cursor type when mouse hovering link marker.<br>4.Changed link and footnote colors.<br>5.Changed admonition color. |I'm not using this plugin, so I'll only fix bugs based on user requests. |
 |Note Link System|Done|20NOV2022|1.Fix the link hash keep showing on the spoiler block title and content top.| - |
+|Code Clipboard|Done|10FEB2023|1.Reposition the copy button.<br>2.Added animations for copy button.|-|
 <!-- |Admonition Markdown Extension|Done|30NOV2022|1.Admonition block styles.|| -->
 
 [:arrow_up:Back](#table-of-contents)
@@ -573,7 +574,7 @@ The font settings for Print & Export PDF:
 
 That means you can have standalone font settings for them!
 
-For advanced, you can also control which elements should show on the PDF through the settings page, such as hiding the Sticky Notes, hiding the Key Mention, hiding the notebook title, etc. Play around the options menu advanced settings to discover more!
+For advanced management, you can also control which elements should show on the PDF through the settings page, such as hiding the Sticky Notes, hiding the Key Mention, hiding the notebook title, etc. Play around the options menu advanced settings to discover more!
 
 ![Screenshot 2022-09-26 190704](https://user-images.githubusercontent.com/110529913/192261498-b95ee279-65f3-4dc3-9a1f-609023f62859.png)
 
@@ -581,7 +582,7 @@ For advanced, you can also control which elements should show on the PDF through
 
 ## Met problem when updating ReMoods from v3 to v4?
 
-If you found that the content of your note doesn't display as usual after updating to ReMoods Theme V4, it might be due to the font settings didn't load the default values, please follow the below steps in case you meet the problem:
+If you found that the content of your note doesn't display as usual after updating to ReMoods Theme V4, it might be due to the font settings didn't load the default values. Please follow the below steps in case you meet the problem:
 
 1. Open Joplin
 2. Navigate to `tools` > `options` > `ReMoods Theme`
@@ -613,22 +614,50 @@ If you found that the content of your note doesn't display as usual after updati
    - `Print H6 Font Size`        > `110`
 6. Quit and restart Joplin.
 
-## Asking For Bits Of Help
+[:arrow_up:Back](#table-of-contents)
+## The Recommended Chinese Font Has Replaced By "GenSenRounded TW"
 
-**Help Report Issues:** 
+Since the ReMoods Theme v4.0.4+, the recommended Chinese font `Chiron Hei HK(昭源黑體)` has been replaced by `GenSenRounded TW(源泉圓體)`. `GenSenRounded TW` appears more clearly in terms of the font strokes, especially in Traditional Chinese.
 
-It would be helpful for improving the theme if you report me anything that make you feel uncomfortable when using ReMoods, such as colors, unclear text, bugs, etc.
+So, the `Chiron Hei HK` is already removed from the recommended font list, if you are enjoy using it you don't have to make any changes in settings. But one exception, if you have installed both `Chiron Hei HK` & `GenSenRounded TW` on your computer, ReMoods will always use the "GenSenRounded TW" as a priority.
+
+[Go to download the new recommended chinese font](#download-and-install-recommended-fonts)
+
+[:arrow_up:Back](#table-of-contents)
+
+## Collecting Issues Report And Users Feedback
+
+**Help Report Issues:**
+
+ReMoods is currently focusing on improving the theme mode experience and all eye-health-related issues. It would be super helpful if you report any related issues to me, such as unclear text, color missing, or any eye-health-related advice would be welcome.
+
+You can also tell me whatever you want, but I will handle them according to the below priority:
+
+1. Eye-health experience improvements
+2. Theme modes & editor visual improvements
+3. "Custom Elements" improvements
+4. "Print & Export PDF" improvements 
+5. Requests for adding helpful settings properties
+6. Documentation improvements
+7. 3rd-party plugins compatibility
+8. "Export HTML File" improvements
+9. UI components' visual improvements
+
+If your suggestion is not one of the above, I would still try to understand your point of view and try to figure out what I can do, so just take it easy and enjoy the chat.
+
+>P.S. Regarding the UI Components, ReMoods would not accept any requests which pointed to redesigning the original Joplin UI behavior.
+ But I would be accepting requests to Show/Hide something and implementing simple animations.
 
 - [Create an issue post on GitHub](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/issues/new/choose)
 - [Leave me a message on Joplin forum](https://discourse.joplinapp.org/t/plugin-remoods-theme-v3/27547?u=sinacs)
 
 **Send User Feedback:** 
 
-Tell me whatever you feel through the time you using this theme.
+Tell me whatever you feel through the time you using ReMoods.
 
 - [Leave me a message on Joplin forum](https://discourse.joplinapp.org/t/plugin-remoods-theme-v3/27547?u=sinacs)
 - [Send by email](mailto:sinacs.dev@gmail.com?subject=ReMoods&nbsp;Theme&nbsp;User&nbsp;Feedback!)
 
-That means a lots to me! Thank you guys!
+Whatever you tell me, that means a lot to me! Thank you, guys!
 
 [:arrow_up:Back](#table-of-contents)
