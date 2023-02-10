@@ -348,7 +348,7 @@
   --g-scrollbar-track-bg:                                 hsl(var(--usp-hue),  20%,  20%);
 
   /* note list panel search bar | editor panel search bar | command palette search bar | option panel select & input */
-  --g-input-text:                                         hsl(var(--usp-hue), 100%,  70%);
+  --g-input-text:                                         hsl(var(--usp-hue), 100%,  90%);
   --g-input-bg:                                           hsl(var(--usp-hue),  11%,  13%);
   --g-input-bd:                                           hsl(var(--usp-hue),  50%,  40%);
 
@@ -463,9 +463,13 @@
   --s-md-tag-selector-text:                               hsl(var(--usp-hue),  20%,  80%);
 
   --s-md-command-palette-item-bg:                         hsl(var(--usp-hue),  11%,  13%);
-  --s-md-command-palette-item-bg-selected:                hsl(var(--usp-hue),  30%,  30%);
+  --s-md-command-palette-item-bg-selected:                hsl(var(--usp-hue),  30%,  30%,  40%);
   --s-md-command-palette-item-bdb:                        hsl(var(--usp-hue),  30%,  30%);
-  --s-md-command-palette-item-text:                       hsl(var(--usp-hue),  60%,  90%);
+  --s-md-command-palette-item-title:                      hsl(calc(var(--usp-hue) + 180deg), 100%, 75%);
+  --s-md-command-palette-item-text:                       hsl(var(--usp-hue), 100%,  90%);
+  --s-md-command-palette-item-matching-text:            hsl(  0,   0%,   0%);
+  --s-md-command-palette-item-matching-bgc:               hsl(calc(var(--usp-hue) + 180deg), 100%,  85%);
+  
 
   /* OPTION PANEL =========================================================================== */
   --s-op-menu-subtitle-bg:                                hsl(var(--usp-hue),   0%,   0%);
@@ -2826,8 +2830,14 @@ body {
   font-size: 16px !important;
   color: var(--s-md-command-palette-item-text) !important;
 }
-.modal-layer > .modal-dialog > div ~ .item-list span {
-  color:  black !important;
+/* item title ---------------------------------------------- */
+.modal-layer > .modal-dialog > div ~ .item-list span:not([style*="background-color:"]) {
+  color: var(--s-md-command-palette-item-title) !important;
+}
+/* item search matching ------------------------------------ */
+.modal-layer > .modal-dialog > div ~ .item-list span[style*="background-color:"] {
+  color: var(--s-md-command-palette-item-matching-text) !important;
+  background-color: var(--s-md-command-palette-item-matching-bgc) !important;
 }
 
 
