@@ -65,7 +65,7 @@ ReMoods beautifies your screen and documents and takes care of your writing mood
 
   - [Spoiler](#spoiler)
   - [Markdown Table Colorize](#markdown-table-colorize)
-  - [Third-Party Plugins Styling](#third-party-plugins-styling)
+  - [More Third-Party Plugins](#more-third-party-plugins)
   
 **PRINT & EXPORT:**
 
@@ -532,9 +532,9 @@ I would like to share the steps of how I create a markdown table. And these step
 
 [:arrow_up:Back](#table-of-contents)
 
-## Third-Party Plugins Styling
+## More Third-Party Plugins
 
-ReMoods want to provide your notes a consistent styles, so I will test some of the helpful plugins and modify their appearance.
+Here show you all plugins that ReMoods has additional styles:
 
 |Plugin|Status|Updated|Modified|Remarks|
 |:-----|:----:|:-----:|:-------|:-----|
