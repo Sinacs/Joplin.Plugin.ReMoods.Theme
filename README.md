@@ -204,7 +204,7 @@ Day Mode ☀️ is perfect for working under sunlight and white light environmen
 
 It uses the brightest colors and white background to welcome every sunny day🌞.
 
-![batch_dm](https://user-images.githubusercontent.com/110529913/205424011-ab3f2ccc-4f10-48e9-9f98-ec24f46c72f5.png)
+![batch_Screenshot 2023-02-12 001055](https://user-images.githubusercontent.com/110529913/218269464-a9af6389-e996-48cd-9cde-fee15214bada.png)
 
 ### Dusk Mode
 
@@ -214,8 +214,7 @@ Dusk Mode 🌆 is perfect for working under medium light and warm light environm
 
 It uses medium contrast colors and grey background to cope with uneven lighting environments, one difference to the other two is dusk mode has its own settings property to apply a darker background.
 
-![batch_dkm](https://user-images.githubusercontent.com/110529913/205424027-bc19db19-eb23-4110-9f4d-e9e135b19fd1.png)
-
+![batch_Screenshot 2023-02-12 000801](https://user-images.githubusercontent.com/110529913/218269474-0445bbad-7dcd-4495-b991-2f5c6b081b06.png)
 
 ### Night Mode
 
@@ -225,7 +224,7 @@ Night Mode 🌙 is perfect for working under low light environments:
 
 It uses low-contrast colors and minimizes unwanted glare within the notes and Joplin to protect the eyes of a hardworking night owl🦉.
 
-![batch_nm](https://user-images.githubusercontent.com/110529913/205424032-22767db4-3c50-438c-9a7b-58f44f503274.png)
+![batch_Screenshot 2023-02-12 000924](https://user-images.githubusercontent.com/110529913/218269481-78783853-0ccd-4d12-9531-47b2fc5e4694.png)
 
 ### 💡Tips
 
