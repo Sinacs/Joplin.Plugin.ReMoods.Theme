@@ -17,6 +17,8 @@ ReMoods beautifies your screen and documents and takes care of your writing mood
 - Supports standalone settings for exporting PDF.
 - Supports styling for 3rd-party plugins to increase consistency in the overall appearance.
 
+![ReMoods Theme Colors](https://user-images.githubusercontent.com/110529913/218322224-daf5ff6a-b5c1-4810-a74c-7dd540631777.png)
+
 # Table Of Contents
 
 **BULLETIN:**
