@@ -187,7 +187,7 @@ Ok, keep going next! 🏃🏼🏃🏼‍♀️🏃🏼‍♂️
 ```
 /* Set starting screen background color */
 body {
-  background-color: var(--me-bg) !important;
+  background-color: hsl(0,0%,40%) !important;
 }
 ```
 5. Quit and restart Joplin to apply all the above updates!
