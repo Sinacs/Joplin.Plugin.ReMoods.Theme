@@ -1928,7 +1928,7 @@ body {
   z-index: 1;
 }
 /* notebook panel hover > note count label ----------------- */
-.rli-sideBar :hover .note-count-label {
+.sidebar > div:hover .note-count-label {
   margin: 0 1px 0 10px;
 }
 
