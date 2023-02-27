@@ -1655,53 +1655,129 @@ body {
   border-color: var(--g-item-bgc-selected);
 }
 /* notebook item indent ------------------------------------ */
+@keyframes fade-d1 {
+  from {padding-left: 0; opacity: 0;}
+  to {padding-left: 18px; opacity: 1;}
+}
+@keyframes fade-d2 {
+  from {padding-left: 0; opacity: 0;}
+  to {padding-left: 28px; opacity: 1;}
+}
+@keyframes fade-d3 {
+  from {padding-left: 0; opacity: 0;}
+  to {padding-left: 38px; opacity: 1;}
+}
+@keyframes fade-d4 {
+  from {padding-left: 0; opacity: 0;}
+  to {padding-left: 48px; opacity: 1;}
+}
+@keyframes fade-d5 {
+  from {padding-left: 0; opacity: 0;}
+  to {padding-left: 58px; opacity: 1;}
+}
+@keyframes fade-d6 {
+  from {padding-left: 0; opacity: 0;}
+  to {padding-left: 68px; opacity: 1;}
+}
+@keyframes fade-d7 {
+  from {padding-left: 0; opacity: 0;}
+  to {padding-left: 78px; opacity: 1;}
+}
+@keyframes fade-d8 {
+  from {padding-left: 0; opacity: 0;}
+  to {padding-left: 88px; opacity: 1;}
+}
+@keyframes fade-d9 {
+  from {padding-left: 0; opacity: 0;}
+  to {padding-left: 98px; opacity: 1;}
+}
+@keyframes fade-d10 {
+  from {padding-left: 0; opacity: 0;}
+  to {padding-left: 108px; opacity: 1;}
+}
+@keyframes fade-d11 {
+  from {padding-left: 0; opacity: 0;}
+  to {padding-left: 118px; opacity: 1;}
+}
+@keyframes fade-d12 {
+  from {padding-left: 0; opacity: 0;}
+  to {padding-left: 128px; opacity: 1;}
+}
+@keyframes fade-d13 {
+  from {padding-left: 0; opacity: 0;}
+  to {padding-left: 138px; opacity: 1;}
+}
+@keyframes fade-d14 {
+  from {padding-left: 0; opacity: 0;}
+  to {padding-left: 148px; opacity: 1;}
+}
+@keyframes fade-d15 {
+  from {padding-left: 0; opacity: 0;}
+  to {padding-left: 158px; opacity: 1;}
+}
+
 .sidebar .list-item-depth-0:not(.all-notes) {
   padding-left: 8px;
 }
 .sidebar .list-item-depth-1 {
   padding-left: 18px;
+  animation: fade-d1 0.8s;
 }
 .sidebar .list-item-depth-2 {
   padding-left: 28px;
+  animation: fade-d2 0.8s;
 }
 .sidebar .list-item-depth-3 {
   padding-left: 38px;
+  animation: fade-d3 0.8s;
 }
 .sidebar .list-item-depth-4 {
   padding-left: 48px;
+  animation: fade-d4 0.8s;
 }
 .sidebar .list-item-depth-5 {
   padding-left: 58px;
+  animation: fade-d5 0.8s;
 }
 .sidebar .list-item-depth-6 {
   padding-left: 68px;
+  animation: fade-d6 0.8s;
 }
 .sidebar .list-item-depth-7 {
   padding-left: 78px;
+  animation: fade-d7 0.8s;
 }
 .sidebar .list-item-depth-8 {
   padding-left: 88px;
+  animation: fade-d8 0.8s;
 }
 .sidebar .list-item-depth-9 {
   padding-left: 98px;
+  animation: fade-d9 0.8s;
 }
 .sidebar .list-item-depth-10 {
   padding-left: 108px;
+  animation: fade-d10 0.8s;
 }
 .sidebar .list-item-depth-11 {
   padding-left: 118px;
+  animation: fade-d11 0.8s;
 }
 .sidebar .list-item-depth-12 {
   padding-left: 128px;
+  animation: fade-d12 0.8s;
 }
 .sidebar .list-item-depth-13 {
   padding-left: 138px;
+  animation: fade-d13 0.8s;
 }
 .sidebar .list-item-depth-14 {
   padding-left: 148px;
+  animation: fade-d14 0.8s;
 }
 .sidebar .list-item-depth-15 {
   padding-left: 158px;
+  animation: fade-d15 0.8s;
 }
 /* notebook title ------------------------------------------ */
 .sidebar .list-item-container > .list-item > .title {
@@ -1718,17 +1794,20 @@ body {
   text-shadow: 0 0 var(--g-item-ts-selected);
 }
 /* directory icon ------------------------------------------ */
-.sidebar i.fas.fa-caret-down,
-.sidebar i.fas.fa-caret-right {
-  opacity: 1 !important;
+@keyframes dirRoll {
+  0% {color: var(--s-np-directory-icon-close); transform:rotate(-90deg);}
+  50% {color: var(--s-np-directory-icon-close); opacity: 1 !important;}
+  100% {color: var(--s-np-directory-icon-open); transform:rotate(720deg);}
 }
 .sidebar i.fas.fa-caret-right {
   color: var(--s-np-directory-icon-close);
-  filter: drop-shadow(0 0 var(--s-np-directory-icon-close-ds));
+  opacity: 1 !important;
+  transition: color 0.5s;
 }
 .sidebar i.fas.fa-caret-down {
   color: var(--s-np-directory-icon-open);
-  filter: drop-shadow(0 0 var(--s-np-directory-icon-open-ds));
+  opacity: 0.5 !important;
+}
 }
 /* notebook title emoji ------------------------------------ */
 .sidebar .emoji-box {
