@@ -1808,6 +1808,14 @@ body {
   color: var(--s-np-directory-icon-open);
   opacity: 0.5 !important;
 }
+.sidebar i.fas.fa-caret-right::before {
+  content: "\f138";
+  font-size: 11px;
+}
+.sidebar i.fas.fa-caret-down::before {
+  content: "\f13a";
+  font-size: 11px;
+  animation: dirRoll 0.8s;
 }
 /* notebook title emoji ------------------------------------ */
 .sidebar .emoji-box {
