@@ -2080,10 +2080,16 @@ body {
 
 
 /* || NOTE LIST PANEL 3/4 | HEADER ************************* */
-/* HEADER: CONTAINER ======================================= */
+/* HEADER: CONTAINER (Joplin v2.10.4) ====================== */
 .rli-noteList > div > div > div[height="50"] {
   min-height: 35px;
   max-height: 35px;
+  padding: 5px;
+  background: var(--g-panel-header-bgc);
+  border-radius: 3px;
+}
+/* header: container (Joplin v2.10.6) ---------------------- */
+.rli-noteList > div > div > div.sc-hTBuwn {
   padding: 5px;
   background: var(--g-panel-header-bgc);
   border-radius: 3px;
@@ -2124,6 +2130,42 @@ body {
   transition: transform 0.3s;
 }
 
+/* HEADER: NEW NOTE & NEW TODO BUTTON (Joplin v2.10.6) ===== */
+/* button -------------------------------------------------- */
+.rli-noteList > div > div > div.sc-hTBuwn .new-note-button,
+.rli-noteList > div > div > div.sc-hTBuwn .new-todo-button {
+  height: 0;
+  background: var(--g-square-btn-bg-1);
+  border: 2px solid var(--g-square-btn-bd-1);
+  border-radius: 0px;
+  transition: background 0.8s, border 0.8s, border-radius 0.8s, height 0.8s;
+}
+/* button hover -------------------------------------------- */
+.rli-noteList > div > div > div.sc-hTBuwn .new-note-button:hover,
+.rli-noteList > div > div > div.sc-hTBuwn .new-todo-button:hover {
+  height: 22px;
+  background: var(--g-square-btn-bg-1-hover);
+  border: 2px solid var(--g-square-btn-bd-1-hover);
+  border-radius: 7px;
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, height 0.3s;
+}
+/* button icon & text -------------------------------------- */
+.rli-noteList > div > div > div.sc-hTBuwn .new-note-button span,
+.rli-noteList > div > div > div.sc-hTBuwn .new-todo-button span {
+  font-size: 1rem !important;
+  color: var(--g-square-btn-icon-1);
+}
+/* button text --------------------------------------------- */
+.rli-noteList > div > div > div.sc-hTBuwn .new-note-button span:last-child,
+.rli-noteList > div > div > div.sc-hTBuwn .new-todo-button span:last-child {
+  font-weight: 600;
+}
+/* button hover > icon & text ------------------------------ */
+.rli-noteList > div > div > div.sc-hTBuwn .new-note-button:hover span,
+.rli-noteList > div > div > div.sc-hTBuwn .new-todo-button:hover span {
+  color: var(--g-square-btn-icon-1-hover);
+}
+
 /* HEADER: BUTTON ========================================== */
 /* button container ---------------------------------------- */
 .rli-noteList .search-bar ~ div {
@@ -2131,8 +2173,13 @@ body {
   transition: max-width 1s;
   transition-delay: 1.2s;
 }
-/* header hover > button container ------------------------- */
-.rli-noteList > div > div > div:hover .search-bar ~ div {
+/* header hover > button container (Joplin v2.10.4) -------- */
+.rli-noteList > div > div > div[height="50"]:hover .search-bar ~ div {
+  max-width: 100%;
+  transition: max-width 0.5s;
+}
+/* header hover > button container (Joplin v2.10.6) -------- */
+.rli-noteList > div > div > div.sc-hTBuwn:hover .search-bar ~ div {
   max-width: 100%;
   transition: max-width 0.5s;
 }
@@ -3158,6 +3205,7 @@ body {
 .encryption-section > p,
 .manage-password-section > h2,
 .manage-password-section > p,
+.config-screen-content-wrapper h2,
 .config-screen-content-wrapper p {
   color: var(--s-op-label-text) !important;
 }
