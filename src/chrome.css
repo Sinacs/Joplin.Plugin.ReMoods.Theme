@@ -3054,7 +3054,9 @@ body {
 .config-screen > div:first-child > a.hWxWTS,/* light theme joplin v2.9 */
 .config-screen > div:first-child > a.kpFtJJ,/* dark theme joplin v2.9 */
 .config-screen > div:first-child > a.ckZpnt,/* light theme joplin v2.10 */
-.config-screen > div:first-child > a.eFgsZC/* dark theme joplin v2.10 */ {
+.config-screen > div:first-child > a.eFgsZC,/* dark theme joplin v2.10 */
+.config-screen > div:first-child > a.hffFwT,/* light theme joplin v2.10.6 */
+.config-screen > div:first-child > a.cZkwRo/* dark theme joplin v2.10.6 */ {
   background: var(--g-item-bgc-selected);
 }
 /* menu item > icon & text --------------------------------- */
@@ -3070,7 +3072,11 @@ body {
 .config-screen > div:first-child > a.ckZpnt > i,/* light theme joplin v2.10 */
 .config-screen > div:first-child > a.ckZpnt > span,/* light theme joplin v2.10 */
 .config-screen > div:first-child > a.eFgsZC > i,/* dark theme joplin v2.10 */
-.config-screen > div:first-child > a.eFgsZC > span /* dark theme joplin v2.10 */ {
+.config-screen > div:first-child > a.eFgsZC > span /* dark theme joplin v2.10 */
+.config-screen > div:first-child > a.hffFwT > i,/* light theme joplin v2.10.6 */
+.config-screen > div:first-child > a.hffFwT > span,/* light theme joplin v2.10.6 */
+.config-screen > div:first-child > a.cZkwRo > i,/* dark theme joplin v2.10.6 */
+.config-screen > div:first-child > a.cZkwRo > span /* dark theme joplin v2.10.6 */{
   text-shadow: 0 0 var(--g-item-ts-selected);
 }
 /* menu subtitle ------------------------------------------- */
