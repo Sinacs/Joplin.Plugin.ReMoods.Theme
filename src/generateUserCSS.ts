@@ -394,12 +394,12 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       chromeCSS = chromeCSS.replace(/^  --g-scrollbar-track-bg:.+?;/gms, '  --g-scrollbar-track-bg: hsl(var(--usp-hue),  20%,  70%,  30%);');
       chromeCSS = chromeCSS.replace(/^  --g-input-text:.+?;/gms, '  --g-input-text: hsl(var(--usp-hue), 100%,  20%);');
       chromeCSS = chromeCSS.replace(/^  --g-input-bg:.+?;/gms, '  --g-input-bg: hsl(var(--usp-hue),   0%, 100%);');
-      chromeCSS = chromeCSS.replace(/^  --g-input-bd:.+?;/gms, '  --g-input-bd: hsl(var(--usp-hue), 100%,  20%);');
+      chromeCSS = chromeCSS.replace(/^  --g-input-bd:.+?;/gms, '  --g-input-bd: hsl(var(--usp-hue),  50%,  80%);');
       chromeCSS = chromeCSS.replace(/^  --g-toolbar-bg:.+?;/gms, '  --g-toolbar-bg: hsl(var(--usp-hue),   0%, 100%);');
-      chromeCSS = chromeCSS.replace(/^  --g-toolbar-bd:.+?;/gms, '  --g-toolbar-bd: hsl(var(--usp-hue), 100%,  20%);');
+      chromeCSS = chromeCSS.replace(/^  --g-toolbar-bd:.+?;/gms, '  --g-toolbar-bd: hsl(var(--usp-hue),  50%,  80%);');
       chromeCSS = chromeCSS.replace(/^  --g-ep-divider:.+?;/gms, '  --g-ep-divider: hsl(var(--usp-hue),   0%,  93%);');
       chromeCSS = chromeCSS.replace(/^  --s-panel-divider:.+?;/gms, '  --s-panel-divider: hsl(var(--usp-hue),  50%,  98%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-directory-icon-open:.+?;/gms, '  --s-np-directory-icon-open: hsl(var(--usp-hue),  20%,  85%);');
+      chromeCSS = chromeCSS.replace(/^  --s-np-directory-icon-open:.+?;/gms, '  --s-np-directory-icon-open: hsl(var(--usp-hue),   0%,  40%);');
       chromeCSS = chromeCSS.replace(/^  --s-np-directory-icon-open-ds:.+?;/gms, '  --s-np-directory-icon-open-ds: none;');
       chromeCSS = chromeCSS.replace(/^  --s-np-directory-icon-close:.+?;/gms, '  --s-np-directory-icon-close: hsl(var(--usp-hue),   0%,   0%);');
       chromeCSS = chromeCSS.replace(/^  --s-np-directory-icon-close-ds:.+?;/gms, '  --s-np-directory-icon-close-ds: none;');
@@ -435,7 +435,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       chromeCSS = chromeCSS.replace(/^  --s-np-sync-btn-icon-ts-hover:.+?;/gms, '  --s-np-sync-btn-icon-ts-hover: 3px hsl(var(--usp-hue), 100%,  70%);');
       chromeCSS = chromeCSS.replace(/^  --s-nlp-todo-text:.+?;/gms, '  --s-nlp-todo-text: hsl(var(--usp-hue), 100%,  35%);');
       chromeCSS = chromeCSS.replace(/^  --s-nlp-search-btn:.+?;/gms, '  --s-nlp-search-btn: hsl(var(--usp-hue),   0%,  70%);');
-      chromeCSS = chromeCSS.replace(/^  --s-ep-toolbar-ds:.+?;/gms, '  --s-ep-toolbar-ds: 1px hsl(var(--usp-hue), 100%,  25%);');
+      chromeCSS = chromeCSS.replace(/^  --s-ep-toolbar-ds:.+?;/gms, '  --s-ep-toolbar-ds: 1px hsl(var(--usp-hue), 100%,  70%);');
       chromeCSS = chromeCSS.replace(/^  --s-ep-notebook-nav-btn-bg:.+?;/gms, '  --s-ep-notebook-nav-btn-bg: hsl(var(--usp-hue), 100%,  90%);');
       chromeCSS = chromeCSS.replace(/^  --s-ep-notebook-nav-btn-bd:.+?;/gms, '  --s-ep-notebook-nav-btn-bd: hsl(var(--usp-hue),  60%,  60%);');
       chromeCSS = chromeCSS.replace(/^  --s-ep-notebook-nav-btn-bs:.+?;/gms, '  --s-ep-notebook-nav-btn-bs: 2px hsl(var(--usp-hue),  65%,  65%);');
