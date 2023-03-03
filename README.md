@@ -25,7 +25,6 @@ ReMoods beautifies your screen and documents and takes care of your writing mood
 
 > This section contains important information if there is any.
 
-  - February updates will focus on improving the Day Mode & Night Mode.
   - [The Recommended Chinese Font Has Replaced By "GenSenRounded TW"](#the-recommended-chinese-font-has-replaced-by-gensenrounded-tw)
   - [Met problem when updating ReMoods from v3 to v4?](#met-problem-when-updating-remoods-from-v3-to-v4)
   - [Collecting issue report and users feedback](#collecting-issues-report-and-users-feedback)
@@ -630,23 +629,23 @@ So, the `Chiron Hei HK` is already removed from the recommended font list, if yo
 
 **Help Report Issues:**
 
-ReMoods is currently focusing on improving the theme mode experience and all eye-health-related issues. It would be super helpful if you report any related issues to me, such as unclear text, color missing, or any eye-health-related advice would be welcome.
+ReMoods is currently focusing on improving the documentation and bug fixes. It would be super helpful if you report any related issues to me, such as unclear text, color missing, or any eye-health-related advice would be welcome.
 
 You can also tell me whatever you want, but I will handle them according to the below priority:
 
 1. Eye-health experience improvements
 2. Theme modes & editor visual improvements
-3. "Custom Elements" improvements
-4. "Print & Export PDF" improvements 
-5. Requests for adding helpful settings properties
-6. Documentation improvements
+3. Documentation improvements
+4. "Custom Elements" improvements
+5. "Print & Export PDF" improvements 
+6. Requests for adding helpful settings properties 
 7. 3rd-party plugins compatibility
 8. "Export HTML File" improvements
 9. UI components' visual improvements
 
 If your suggestion is not one of the above, I would still try to understand your point of view and try to figure out what I can do, so just take it easy and enjoy the chat.
 
->P.S. Regarding the UI Components, ReMoods would not accept any requests which pointed to redesigning the original Joplin UI behavior.
+>P.S. Regarding the UI Components, ReMoods would not accept any requests which pointed to redesigning the original behavior of Joplin UI.
  But I would be accepting requests to Show/Hide something and implementing simple animations.
 
 - [Create an issue post on GitHub](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/issues/new/choose)
