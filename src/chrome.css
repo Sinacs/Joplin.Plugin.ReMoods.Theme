@@ -22,16 +22,54 @@
     - JOPLIN UI: STANDALONE PROPERTIES
   - MARKDOWN EDITOR
     - FONT
+      - BASE FONT
+      - MONOSPACE FONT
+      - HEADING FONT
     - BASIC
+      - CONTAINER
+      - PARAGRAPH
+      - SCROLLBAR
+      - OTHERS
     - MARKDOWN
+      - SPECIAL TEXT
+      - LINK
+      - HTML
+      - KATEX
+      - LIST
+      - FOOTNOTE
+      - HEADINGS
+      - BLOCKQUOTE
+      - CODE BLOCK
     - PLUGINS
+      - MARKDOWN TABLE COLORIZE (MTC)
+      - ENHANCEMENT (EH)
   - JOPLIN UI
     - LAYOUT
+      - SECTION
+      - COLUMN
+      - ROW
     - NOTEBOOK PANEL
+      - SCROLLBAR
+      - HEADER
+      - BODY
+      - FOOTER
     - NOTE LIST PANEL
+      - SCROLLBAR
+      - HEADER
+      - BODY
     - EDITOR PANEL
+      - SCROLLBAR
+      - HEADER
+      - BODY
+      - FOOTER
     - MODAL DIALOG
     - OPTIONS PANEL
+      - MENU
+      - MAIN SECTION
+      - PLUGIN PAGE
+      - ENCRYPTION PAGE
+      - WEB CLIPPER PAGE
+      - FOOTER
 */
 
 
@@ -56,7 +94,7 @@
 
 
   
-  /* || USER SETTING PROPERTIES 1/1 | SCREEN *************** */
+  /* || USER SETTING PROPERTIES | ************************** */
   /* THEME COLOR ******************************************* */
   --usp-hue: 260deg;
 
@@ -518,7 +556,7 @@
 
 
 
-/* || FONT 1/3 | BASE FONT ********************************* */
+/* || FONT 1 | BASE FONT *********************************** */
 .CodeMirror * {
   font-family: var(--usp-base-font, sans-serif) !important;
   font-size: var(--usp-base-font-size) !important;
@@ -527,7 +565,7 @@
 
 
 
-/* || FONT 2/3 | MONOSPACE FONT **************************** */
+/* || FONT 2 | MONOSPACE FONT ****************************** */
 /* GROUP: | inline code | list token | anchor text | abbr | link path | html | katex | sup | sub | footnote ref. | table syntax | code block | enhancement: footnotes marker text | */
 .CodeMirror-lines .CodeMirror-line .cm-comment.cm-jn-inline-code.cm-jn-monospace,
 .CodeMirror-lines .CodeMirror-line [class*="cm-variable"].cm-rm-list-token,
@@ -582,7 +620,7 @@
 
 
 
-/* || FONT 3/3 | HEADING FONT ****************************** */
+/* || FONT 3 | HEADING FONT ******************************** */
 #react-root .CodeMirror-line .cm-header {
   font-family: var(--usp-heading-font, sans-serif) !important;
 }
@@ -621,7 +659,7 @@
 
 
 
-/* || BASIC 1/4 | CONTAINER ******************************** */
+/* || BASIC 1 | CONTAINER ********************************** */
 .codeMirrorEditor {
   background: var(--me-bg) !important;
 }
@@ -636,7 +674,7 @@
 
 
 
-/* || BASIC 2/4 | PARAGRAPH ******************************** */
+/* || BASIC 2 | PARAGRAPH ********************************** */
 /* PARAGRAPH: TEXT ========================================= */
 .codeMirrorEditor {
   color: var(--me-text) !important;
@@ -727,7 +765,7 @@
 
 
 
-/* || MARKDOWN 1/9 | SPECIAL TEXT ************************** */
+/* || MARKDOWN 1 | SPECIAL TEXT **************************** */
 /* SPECIAL TEXT: GENERAL =================================== */
 /* GROUP: | emphasize | abbreviation | strong | ------------ */
 .CodeMirror-lines .CodeMirror-line .cm-em:not(.cm-header),
@@ -816,7 +854,7 @@
 
 
 
-/* || MARKDOWN 2/9 | LINK ********************************** */
+/* || MARKDOWN 2 | LINK ************************************ */
 .CodeMirror-lines .CodeMirror-line:not(.cm-jn-code-block) .cm-rm-link:not(.cm-link-text):not(.cm-string),
 .CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-em),
 .CodeMirror-lines .CodeMirror-line .cm-string.cm-url,
@@ -830,7 +868,7 @@
 
 
 
-/* || MARKDOWN 3/9 | HTML ********************************** */
+/* || MARKDOWN 3 | HTML ************************************ */
 /* HTML: SYNTAX ============================================ */
 /* tag ----------------------------------------------------- */
 .CodeMirror-line:not(.cm-jn-code-block) .cm-tag,
@@ -853,7 +891,7 @@
 
 
 
-/* || MARKDOWN 4/9 | KATEX ********************************* */
+/* || MARKDOWN 4 | KATEX *********************************** */
 /* KATEX: SYNTAX =========================================== */
 .CodeMirror-lines .CodeMirror-line:not(.cm-jn-code-block) .cm-variable-2 {
   color: var(--me-list-text);
@@ -861,7 +899,7 @@
 
 
 
-/* || MARKDOWN 5/9 | LIST ********************************** */
+/* || MARKDOWN 5 | LIST ************************************ */
 /* GROUP: | unordered list | ordered list | checklist | ---- */
 .CodeMirror-lines .CodeMirror-line .cm-rm-list-token ~ .cm-keyword,
 .CodeMirror-lines .CodeMirror-line .cm-rm-list-token ~ [class*="cm-variable"],
@@ -895,7 +933,7 @@
 
 
 
-/* || MARKDOWN 6/9 | FOOTNOTE ****************************** */
+/* || MARKDOWN 6 | FOOTNOTE ******************************** */
 .CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em),
 .CodeMirror-lines .CodeMirror-line .cm-rm-sup-token:not(.cm-rm-sup) {
   color: var(--me-footnote-ref);
@@ -910,7 +948,7 @@
 
 
 
-/* || MARKDOWN 7/9 | HEADINGS ****************************** */
+/* || MARKDOWN 7 | HEADINGS ******************************** */
 /* HEADINGS: GENERAL ======================================= */
 /* GROUP: | h1 to h6 | ------------------------------------- */
 .CodeMirror-lines .CodeMirror-line .cm-header {
@@ -1984,7 +2022,7 @@ body {
 
 
 
-/* || NOTEBOOK PANEL 4/4 | FOOTER ************************** */
+/* || NOTEBOOK PANEL 4 | FOOTER **************************** */
 /* FOOTER: CONTAINER ======================================= */
 .sidebar > div:last-child {
   display: var(--usp-sync-feature-display) !important;
@@ -2057,7 +2095,7 @@ body {
 
 
 
-/* || NOTE LIST PANEL 1/4 | ANIMATIONS ********************* */
+/* || NOTE LIST PANEL 1 | ANIMATIONS *********************** */
 @keyframes rtl-auto {
   0% {transform: translateX(0%);}
   100% {transform: translateX(-70%);}
@@ -2065,7 +2103,7 @@ body {
 
 
 
-/* || NOTE LIST PANEL 2/4 | SCROLLBAR ********************** */
+/* || NOTE LIST PANEL 2 | SCROLLBAR ************************ */
 /* SCROLLBAR: NOTE LIST PANEL ============================== */
 .rli-noteList ::-webkit-scrollbar {
   height: 1px !important;
@@ -2285,6 +2323,7 @@ body {
 
 
 
+/* || NOTE LIST PANEL 4 | BODY ***************************** */
 /* BODY: NOTE LIST ========================================= */
 /* note list container ------------------------------------- */
 .rli-noteList > div > div > div:last-child {
@@ -2390,7 +2429,7 @@ body {
 
 
 
-/* || EDITOR PANEL 1/5 | GENERAL *************************** */
+/* || EDITOR PANEL 1 | GENERAL ***************************** */
 /* GENERAL: CONTAINER ====================================== */
 /* GROUP: | header | body | footer | ----------------------- */
 .rli-editor > div > div > div > div {
@@ -2399,9 +2438,9 @@ body {
 
 
 
-/* || EDITOR PANEL 2/5 | HEADER **************************** */
+/* || EDITOR PANEL 2 | HEADER ****************************** */
 /* HEADER: CONTAINER ======================================= */
-.rli-editor > div > div > div > div:first-child {
+.rli-editor > div > div > div[style*="display: flex"] > div:first-child {
   min-height: 35px !important;
   max-height: 35px !important;
   background: var(--g-panel-header-bgc) !important;
@@ -2519,7 +2558,7 @@ body {
 
 
 
-/* || EDITOR PANEL 3/5 | BODY ****************************** */
+/* || EDITOR PANEL 3 | BODY ******************************** */
 /* BODY: CONTAINER ========================================= */
 .rli-editor > div > div > div > div:nth-child(2) > div:not(.joplin-tinymce) > div:nth-child(2) {
   padding: 0 !important;
@@ -2698,7 +2737,7 @@ body {
 
 
 
-/* || EDITOR PANEL 4/5 | FOOTER **************************** */
+/* || EDITOR PANEL 4 | FOOTER ****************************** */
 /* FOOTER: TAG BAR ========================================= */
 /* tag bar scrollbar --------------------------------------- */
 .tag-bar ::-webkit-scrollbar {
@@ -2744,7 +2783,7 @@ body {
 }
 /* tag button ---------------------------------------------- */
 .tag-bar > a {
-  margin: 0 0 0 5px;
+  margin: 2px 0 0 5px;
   width: 28px !important;
   height: 28px;
   background: var(--g-square-btn-bg-2);
@@ -2761,7 +2800,7 @@ body {
 }
 /* tag button icon ----------------------------------------- */
 .tag-bar .icon-tags {
-  padding: 0;
+  margin: 2px !important;
   color: var(--g-square-btn-icon-2);
 }
 /* tag button icon hover ----------------------------------- */
@@ -2814,7 +2853,7 @@ body {
 
 
 
-/* || EDITOR PANEL 5/5 | RICH TEXT EDITOR ****************** */
+/* || EDITOR PANEL 5 | RICH TEXT EDITOR ******************** */
 /* RICH TEXT EDITOR: TOOLBAR FIRST & LAST GROUP ============ */
 /* toolbar first & last group container -------------------- */
 .joplin-tinymce:not(#fake) > div:nth-child(1),
@@ -2928,7 +2967,7 @@ body {
 
 
 
-/* || MODAL DIALOG 1/3 | TAG CREATOR *********************** */
+/* || MODAL DIALOG 1 | TAG CREATOR ************************* */
 /* TAG CREATOR: CONTAINER ================================== */
 .modal-layer > .modal-dialog,
 .modal-layer > .modal-dialog > div  {
@@ -2991,7 +3030,7 @@ body {
 
 
 
-/* || MODAL DIALOG 2/3 | COMMAND PALETTE ******************* */
+/* || MODAL DIALOG 2 | COMMAND PALETTE ********************* */
 /* input --------------------------------------------------- */
 .modal-layer > .modal-dialog > div > input {
   margin-bottom: 10px;
@@ -3037,7 +3076,7 @@ body {
 
 
 
-/* || MODAL DIALOG 3/3 | NOTEBOOK CREATOR ****************** */
+/* || MODAL DIALOG 3 | NOTEBOOK CREATOR ******************** */
 /* container ----------------------------------------------- */
 .master-password-dialog > div,
 .master-password-dialog .dialog-root,
@@ -3100,7 +3139,7 @@ body {
 
 
 
-/* || OPTIONS PANEL 1/6 | MENU ***************************** */
+/* || OPTIONS PANEL 1 | MENU ******************************* */
 /* menu container ------------------------------------------ */
 .config-screen > div:first-child {
   background: var(--g-main-bg-1);
@@ -3116,8 +3155,8 @@ body {
 .config-screen > div:first-child > a.kpFtJJ,/* dark theme joplin v2.9 */
 .config-screen > div:first-child > a.ckZpnt,/* light theme joplin v2.10 */
 .config-screen > div:first-child > a.eFgsZC,/* dark theme joplin v2.10 */
-.config-screen > div:first-child > a.hffFwT,/* light theme joplin v2.10.6 */
-.config-screen > div:first-child > a.cZkwRo/* dark theme joplin v2.10.6 */ {
+.config-screen > div:first-child > a.jDEtBO,/* light theme joplin v2.10.9 */
+.config-screen > div:first-child > a.cFfpOB/* dark theme joplin v2.10.9 */ {
   background: var(--g-item-bgc-selected);
 }
 /* menu item > icon & text --------------------------------- */
@@ -3134,10 +3173,10 @@ body {
 .config-screen > div:first-child > a.ckZpnt > span,/* light theme joplin v2.10 */
 .config-screen > div:first-child > a.eFgsZC > i,/* dark theme joplin v2.10 */
 .config-screen > div:first-child > a.eFgsZC > span /* dark theme joplin v2.10 */
-.config-screen > div:first-child > a.hffFwT > i,/* light theme joplin v2.10.6 */
-.config-screen > div:first-child > a.hffFwT > span,/* light theme joplin v2.10.6 */
-.config-screen > div:first-child > a.cZkwRo > i,/* dark theme joplin v2.10.6 */
-.config-screen > div:first-child > a.cZkwRo > span /* dark theme joplin v2.10.6 */{
+.config-screen > div:first-child > a.jDEtBO > i,/* light theme joplin v2.10.9 */
+.config-screen > div:first-child > a.jDEtBO > span,/* light theme joplin v2.10.9 */
+.config-screen > div:first-child > a.cFfpOB > i,/* dark theme joplin v2.10.9 */
+.config-screen > div:first-child > a.cFfpOB > span /* dark theme joplin v2.10.9 */{
   text-shadow: 0 0 var(--g-item-ts-selected);
 }
 /* menu subtitle ------------------------------------------- */
@@ -3153,7 +3192,7 @@ body {
 
 
 
-/* || OPTIONS PANEL 2/6 | MAIN SECTION ********************* */
+/* || OPTIONS PANEL 2 | MAIN SECTION *********************** */
 /* MAIN SECTION: CONTAINER ================================= */
 .config-screen > div:nth-child(2),
 .config-screen-content-wrapper,
@@ -3241,7 +3280,7 @@ body {
 
 
 
-/* || OPTIONS PANEL 3/6 | PLUGIN PAGE ********************** */
+/* || OPTIONS PANEL 3 | PLUGIN PAGE ************************ */
 /* plugin card --------------------------------------------- */
 .config-screen div[style="margin-bottom: 0px;"] ~ div > div ~ div > div,
 .config-screen div[style="margin-bottom: 10px; width: 320px;"] ~ div > div {
@@ -3267,7 +3306,7 @@ body {
 
 
 
-/* || OPTIONS PANEL 4/6 | ENCRYPTION PAGE ****************** */
+/* || OPTIONS PANEL 4 | ENCRYPTION PAGE ******************** */
 .encryption-section > h2,
 .encryption-section > p,
 .manage-password-section > h2,
@@ -3279,7 +3318,7 @@ body {
 
 
 
-/* || OPTIONS PANEL 5/6 | WEB CLIPPER PAGE ***************** */
+/* || OPTIONS PANEL 5 | WEB CLIPPER PAGE ******************* */
 /* content block ------------------------------------------- */
 .config-screen-content-wrapper > div > div > div > div {
   padding: 20px !important;
@@ -3290,7 +3329,7 @@ body {
 
 
 
-/* || OPTIONS PANEL 6/6 | FOOTER *************************** */
+/* || OPTIONS PANEL 6 | FOOTER ***************************** */
 /* container ----------------------------------------------- */
 .config-screen > div:nth-child(2) > div:last-child {
   margin-top: 3px;
