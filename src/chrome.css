@@ -1599,6 +1599,14 @@ body {
 .sidebar > div:first-child > div:first-child > button > span {
   font-size: 12px;
 }
+.sidebar > div:first-child > div:first-child > button > span:before {
+  content: "\f518";
+}
+/* plus button hover > icon -------------------------------- */
+.sidebar > div:first-child > div:first-child > button:hover > span:before {
+  content: "\2b";
+  font-size: 16px;
+}
 /* plus button hover > icon -------------------------------- */
 .sidebar > div:first-child > div:first-child > button:hover > span {
   transform: rotate(1turn);
