@@ -165,8 +165,8 @@
   --me-cursor-bdl:                              2px solid hsl(var(--usp-hue), 100%,  70%);
 
   --me-selected-text:                                     var(--me-text);
-  --me-selected-bg:                                       hsl(calc(var(--usp-hue) + 180deg),  10%,  45%,  50%);
-  --me-selected-bg-focused:                               hsl(calc(var(--usp-hue) + 180deg),  10%,  50%,  50%);
+  --me-selected-bg:                                       hsl(calc(var(--usp-hue) + 180deg),   5%,  40%);
+  --me-selected-bg-focused:                               hsl(calc(var(--usp-hue) + 180deg),   5%,  40%);
   
   /* SPECIAL TEXT =========================================================================== */
   --me-special-text:                                      hsl(var(--usp-hue), 100%,  20%);
@@ -721,12 +721,6 @@
 }
 
 /* OTHERS: SELECTED TEXT =================================== */
-#react-root .CodeMirror-selectedtext {
-  color: var(--me-selected-text) !important;
-}
-#react-root .CodeMirror-selected {
-  background: var(--me-selected-bg) !important;
-}
 #react-root .CodeMirror-line::selection,
 #react-root .CodeMirror-line > span::selection,
 #react-root .CodeMirror-line > span > span::selection {
@@ -737,8 +731,16 @@
 #react-root .CodeMirror-line > span > span::-moz-selection {
   background: var(--me-selected-bg) !important;
 }
+#react-root .CodeMirror-selected {
+  background: var(--me-selected-bg) !important;
+}
 #react-root .CodeMirror-focused .CodeMirror-selected {
-  background: var(--me-selected-bg-focused) !important;
+  background: var(--me-selected-bg) !important;
+}
+#react-root:not(#fake) .CodeMirror-selectedtext {
+  color: var(--me-selected-text) !important;
+  background: var(--me-selected-bg) !important;
+  opacity: 0.8 !important;
 }
 /* selected code block text -------------------------------- */
 .CodeMirror-lines .cm-jn-code-block .CodeMirror-selectedtext {
