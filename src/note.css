@@ -71,7 +71,7 @@
   /* SCREEN: SIZES ========================================= */
   --usp-base-font-size: 15px;
   --usp-monospace-font-size: 14px;
-  --usp-smaller-code-block-font-size: var(--usp-base-font-size);
+  --usp-smaller-code-block-syntax-font-size: var(--usp-base-font-size);
   --usp-h1-font-size: 170%;
   --usp-h2-font-size: 140%;
   --usp-h3-font-size: 130%;
@@ -732,7 +732,7 @@ body *:not(.katex-display *),
 }
 /* MONOSPACE FONT: SMALLER CODE BLOCK SYNTAX =============== */
 #rendered-md .joplin-editable > .hljs * {
-  font-size: var(--usp-smaller-code-block-font-size);
+  font-size: var(--usp-smaller-code-block-syntax-font-size);
 }
 
 
