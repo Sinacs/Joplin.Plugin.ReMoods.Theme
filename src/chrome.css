@@ -508,7 +508,6 @@
   --s-md-command-palette-item-matching-text:            hsl(  0,   0%,   0%);
   --s-md-command-palette-item-matching-bgc:               hsl(calc(var(--usp-hue) + 180deg), 100%,  85%);
   
-
   /* OPTION PANEL =========================================================================== */
   --s-op-menu-subtitle-bg:                                hsl(var(--usp-hue),   0%,   0%);
 
@@ -1453,11 +1452,13 @@
   cursor: pointer;
 }
 /* link text ----------------------------------------------- */
-.enhancement-link-marker-text:not(#fake) {
+.enhancement-link-marker-text:not(#fake),
+.enhancement-image-marker-text:not(#fake) {
   color: var(--me-link-text);
 }
 /* link icon ----------------------------------------------- */
-.enhancement-link-marker-icon:not(#fake) {
+.enhancement-link-marker-icon:not(#fake),
+.enhancement-image-marker-icon:not(#fake) {
   margin-right: 3px;
   color: var(--me-link-text);
 }
@@ -1468,6 +1469,11 @@
   width: 1.2em;
   height: 1.2em;
   background: var(--me-link-text);
+}
+/* image link ---------------------------------------------- */
+.enhancement-image-marker:not(#fake) {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* EH: FOOTNOTE ============================================ */
@@ -1977,7 +1983,7 @@ body {
 }
 /* notebook panel hover > note count label ----------------- */
 .sidebar > div:hover .note-count-label {
-  margin: 0 1px 0 10px;
+  margin-right: 1px !important;
 }
 
 /* BODY: TAG LIST ========================================== */
