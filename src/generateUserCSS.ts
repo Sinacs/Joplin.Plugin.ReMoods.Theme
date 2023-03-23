@@ -525,7 +525,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --sc-search-bd:.+?;/gms, '  --sc-search-bd: hsl(  0, 100%,  50%);');
       noteCSS = noteCSS.replace(/^  --sc-inline-code-text:.+?;/gms, '  --sc-inline-code-text: hsl(var(--usp-hue),  20%,  30%);');
       noteCSS = noteCSS.replace(/^  --sc-inline-code-bg:.+?;/gms, '  --sc-inline-code-bg: hsl(var(--usp-hue),  20%,  90%);');
-      noteCSS = noteCSS.replace(/^  --sc-inline-code-symbol:.+?;/gms, '  --sc-inline-code-symbol: hsl(var(--usp-hue),  20%,  30%);');
+      noteCSS = noteCSS.replace(/^  --sc-inline-code-symbol:.+?;/gms, '  --sc-inline-code-symbol: hsl(var(--usp-hue),  20%,  75%);');
       noteCSS = noteCSS.replace(/^  --sc-link-text:.+?;/gms, '  --sc-link-text: hsl(var(--usp-hue), 100%,  40%);');
       noteCSS = noteCSS.replace(/^  --sc-link-source-icon:.+?;/gms, '  --sc-link-source-icon: hsl(var(--usp-hue), 100%,  40%);');
       noteCSS = noteCSS.replace(/^  --sc-list-token:.+?;/gms, '  --sc-list-token: hsl(calc(var(--usp-hue) + 180deg), 100%,  40%);');
@@ -1122,7 +1122,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --sc-search-bd:.+?;/gms, '  --sc-search-bd: hsl(  0, 100%,  50%);');
       noteCSS = noteCSS.replace(/^  --sc-inline-code-text:.+?;/gms, '  --sc-inline-code-text: hsl(var(--usp-hue), 100%,  85%);');
       noteCSS = noteCSS.replace(/^  --sc-inline-code-bg:.+?;/gms, '  --sc-inline-code-bg: hsl(var(--usp-hue),  30%,  25%);');
-      noteCSS = noteCSS.replace(/^  --sc-inline-code-symbol:.+?;/gms, '  --sc-inline-code-symbol: hsl(var(--usp-hue),  40%,  60%);');
+      noteCSS = noteCSS.replace(/^  --sc-inline-code-symbol:.+?;/gms, '  --sc-inline-code-symbol: hsl(var(--usp-hue),  23%,  46%);');
       noteCSS = noteCSS.replace(/^  --sc-link-text:.+?;/gms, '  --sc-link-text: hsl(var(--usp-hue), 100%,  85%);');
       noteCSS = noteCSS.replace(/^  --sc-link-source-icon:.+?;/gms, '  --sc-link-source-icon: hsl(var(--usp-hue), 100%,  85%);');
       noteCSS = noteCSS.replace(/^  --sc-list-token:.+?;/gms, '  --sc-list-token: hsl(calc(var(--usp-hue) + 180deg),  80%,  80%);');
@@ -1719,7 +1719,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --sc-search-bd:.+?;/gms, '  --sc-search-bd: hsl(  0, 100%,  50%);');
       noteCSS = noteCSS.replace(/^  --sc-inline-code-text:.+?;/gms, '  --sc-inline-code-text: hsl(var(--usp-hue),  75%,  75%);');
       noteCSS = noteCSS.replace(/^  --sc-inline-code-bg:.+?;/gms, '  --sc-inline-code-bg: hsl(var(--usp-hue),  40%,  20%);');
-      noteCSS = noteCSS.replace(/^  --sc-inline-code-symbol:.+?;/gms, '  --sc-inline-code-symbol: hsl(var(--usp-hue),  30%,  50%);');
+      noteCSS = noteCSS.replace(/^  --sc-inline-code-symbol:.+?;/gms, '  --sc-inline-code-symbol: hsl(var(--usp-hue),  30%,  35%);');
       noteCSS = noteCSS.replace(/^  --sc-link-text:.+?;/gms, '  --sc-link-text: hsl(var(--usp-hue),  40%,  75%);');
       noteCSS = noteCSS.replace(/^  --sc-link-source-icon:.+?;/gms, '  --sc-link-source-icon: hsl(var(--usp-hue),  40%,  75%);');
       noteCSS = noteCSS.replace(/^  --sc-list-token:.+?;/gms, '  --sc-list-token: hsl(calc(var(--usp-hue) + 180deg),  35%,  80%);');

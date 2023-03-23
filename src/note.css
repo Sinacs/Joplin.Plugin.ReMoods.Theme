@@ -207,7 +207,7 @@
 
   --sc-inline-code-text:                                  hsl(var(--usp-hue), 100%,  85%);
   --sc-inline-code-bg:                                    hsl(var(--usp-hue),  30%,  25%);
-  --sc-inline-code-symbol:                                hsl(var(--usp-hue),  40%,  60%);
+  --sc-inline-code-symbol:                                hsl(var(--usp-hue),  23%,  46%);
   
   /* LINK =================================================================================== */
   --sc-link-text:                                         hsl(var(--usp-hue), 100%,  85%);
@@ -2392,7 +2392,7 @@ tspan {
 }
 /* container hover > copy button --------------------------- */
 .code-clipboard-container:hover .code-clipboard-button {
-  visibility: visiable;
+  visibility: visible;
   transform: rotateZ(720deg) scale(120%);
   transition: transform 0.2s, visibility 0.2s;
 }
