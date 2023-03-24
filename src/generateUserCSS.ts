@@ -1710,7 +1710,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --sc-strikethrough-symbol:.+?;/gms, '  --sc-strikethrough-symbol: hsl(  0,   0%, 100%);');
       noteCSS = noteCSS.replace(/^  --sc-strikethrough-symbol-bg:.+?;/gms, '  --sc-strikethrough-symbol-bg: hsl(  0,  70%,  55%);');
       noteCSS = noteCSS.replace(/^  --sc-abbreviation-text:.+?;/gms, '  --sc-abbreviation-text: hsl(var(--usp-hue),  40%,  85%);');
-      noteCSS = noteCSS.replace(/^  --sc-abbreviation-td:.+?;/gms, '  --sc-abbreviation-td: hsl(var(--usp-hue),  20%,  20%);');
+      noteCSS = noteCSS.replace(/^  --sc-abbreviation-td:.+?;/gms, '  --sc-abbreviation-td: hsl(var(--usp-hue),  40%,  85%);');
       noteCSS = noteCSS.replace(/^  --sc-mark-text:.+?;/gms, '  --sc-mark-text: hsl(var(--usp-hue),  20%,  20%);');
       noteCSS = noteCSS.replace(/^  --sc-mark-ts:.+?;/gms, '  --sc-mark-ts: var(--sc-mark-ts);');
       noteCSS = noteCSS.replace(/^  --sc-mark-bg:.+?;/gms, '  --sc-mark-bg: hsl(var(--usp-hue),  60%,  65%);');
