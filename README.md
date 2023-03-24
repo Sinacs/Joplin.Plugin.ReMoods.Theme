@@ -120,6 +120,8 @@ It uses low-contrast colors and minimizes unwanted glare within Joplin to protec
 
 ReMoods has changed some of the Joplin's UI behavior, and here shows you the simple description about them:
 
+![Screenshot 2023-03-24 144102](https://user-images.githubusercontent.com/110529913/227563112-4431a698-5833-46c6-ab14-ed814bd5f486.jpg)
+
 1. Notebook panel header: Click the header to open/close the notebook list; Click the notebook icon to create a new notebook.
 2. Notebook list: The notebook title is set to multiple lines by default, and if a single word is too long, it will come out a horizontal scrollbar, you can also use `Shift + scroll` to move back and forth.
 3. Note list panel header: In the Joplin v2.10.12+, the new buttons have changed to bigger, but ReMoods keeps them smaller.
