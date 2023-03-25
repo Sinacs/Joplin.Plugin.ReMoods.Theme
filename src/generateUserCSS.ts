@@ -856,8 +856,8 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       chromeCSS = chromeCSS.replace(/^  --me-hr-syntax-bg:.+?;/gms, '  --me-hr-syntax-bg: hsl(var(--usp-hue), 100%,  70%);');
       chromeCSS = chromeCSS.replace(/^  --me-cursor-bdl:.+?;/gms, '  --me-cursor-bdl: 2px solid hsl(var(--usp-hue), 100%,  70%);');
       chromeCSS = chromeCSS.replace(/^  --me-selected-text:.+?;/gms, '  --me-selected-text: var(--me-text);');
-      chromeCSS = chromeCSS.replace(/^  --me-selected-bg:.+?;/gms, '  --me-selected-bg: hsl(calc(var(--usp-hue) + 180deg),  10%,   5%,  40%);');
-      chromeCSS = chromeCSS.replace(/^  --me-selected-bg-focused:.+?;/gms, '  --me-selected-bg-focused: hsl(calc(var(--usp-hue) + 180deg),  10%,   5%,  40%);');
+      chromeCSS = chromeCSS.replace(/^  --me-selected-bg:.+?;/gms, '  --me-selected-bg: hsl(calc(var(--usp-hue) + 180deg),   5%,  40%);');
+      chromeCSS = chromeCSS.replace(/^  --me-selected-bg-focused:.+?;/gms, '  --me-selected-bg-focused: hsl(calc(var(--usp-hue) + 180deg),   5%,  40%);');
       chromeCSS = chromeCSS.replace(/^  --me-special-text:.+?;/gms, '  --me-special-text: hsl(var(--usp-hue), 100%,  20%);');
       chromeCSS = chromeCSS.replace(/^  --me-special-bg:.+?;/gms, '  --me-special-bg: hsl(var(--usp-hue),  30%,  70%);');
       chromeCSS = chromeCSS.replace(/^  --me-mark-text:.+?;/gms, '  --me-mark-text: hsl(var(--usp-hue),  30%,  30%);');
