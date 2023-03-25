@@ -1052,6 +1052,18 @@ ag12::-webkit-scrollbar-thumb:hover {
   color: var(--sc-mark-text) !important;
   background: var(--sc-mark-bg) !important;
 }
+/* mark > abbr --------------------------------------------- */
+#rendered-md mark abbr {
+  text-decoration: 2px dotted underline var(--sc-mark-text) !important;
+}
+/* mark > ins ---------------------------------------------- */
+#rendered-md mark ins {
+  border-bottom: 3px solid var(--sc-insert-bdb) !important;
+}
+/* mark > ins hover ---------------------------------------- */
+#rendered-md mark ins:hover {
+  border-bottom: none !important;
+}
 
 /* SPECIAL TEXT: INSERT & STRIKETHROUGH ==================== */
 /* symbol -------------------------------------------------- */
