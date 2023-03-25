@@ -11,15 +11,20 @@
 
   - :not(#fake) / :not(.fake) are use for increasing the CSS specificity.
 
+  - Some random CSS classes would be changed in every Joplin update,
+  they are related to the below elements: 
+    - All notes button
+    - Options menu selected item
+    - Note list panel header
 
-
-  #CODE STRUCTURE OVERVIEW:
+  #STRUCTURE OVERVIEW:
 
   - ROOT
     - USER SETTING PROPERTIES
     - MARKDOWN EDITOR PROPERTIES
     - JOPLIN UI: GROUP PROPERTIES
     - JOPLIN UI: STANDALONE PROPERTIES
+    
   - MARKDOWN EDITOR
     - FONT
       - BASE FONT
@@ -43,6 +48,7 @@
     - PLUGINS
       - MARKDOWN TABLE COLORIZE (MTC)
       - ENHANCEMENT (EH)
+
   - JOPLIN UI
     - LAYOUT
       - SECTION
@@ -63,6 +69,9 @@
       - BODY
       - FOOTER
     - MODAL DIALOG
+      - TAG CREATOR
+      - COMMAND PALETTE
+      - NOTEBOOK CREATOR
     - OPTIONS PANEL
       - MENU
       - MAIN SECTION

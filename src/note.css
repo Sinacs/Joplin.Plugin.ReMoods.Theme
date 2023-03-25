@@ -12,7 +12,7 @@
 
   - :not(#fake) / :not(.fake) are use for increasing the CSS specificity.
 
-
+  - Some element styles have adjusted for exporting PDF.
 
   #CODE STRUCTURE OVERVIEW:
 
@@ -22,16 +22,81 @@
     - PRINT PROPERTIES
   - SCREEN
     - FONT
+      - BASE FONT
+      - MONOSPACE FONT
+      - HEADING FONT
     - BASIC
+      - CONTAINER
+      - PARAGRAPH
+      - SCROLLBAR
+      - ELEMENT MARGIN
     - ELEMENTS
+      - SPECIAL TEXT
+      - LINK
+      - LIST
+      - FOOTNOTE
+      - HEADINGS
+      - MATH NOTATION
+      - BLOCKQUOTE
+      - TABLE
+      - MERMAID CHART
+      - IMAGE
+      - MARKDOWN TOC
+      - CODE BLOCK
     - CUSTOM ELEMENTS
+      - ART GALLERY
+      - STICKY NOTES
+      - CUSTOM TITLE BLOCK
+      - KEY POINT
+      - KEY MENTION
     - PLUGINS
+      - SPOILER
+      - TURNTOCHART (TTC)
+      - INLINE TODO (IT)
+      - NOTE LINK SYSTEM (NLS)
+      - CODE CLIPBOARD (CC)
+
   - EXPORT HTML FILE
+
   - PRINT
     - PRINT FONT
+      - PRINT BASE FONT
+      - PRINT MONOSPACE FONT
+      - PRINT HEADING FONT
     - PRINT READY
+      - PRINT EXACT COLOR
+      - PAGE MARGIN
+      - REMOVE BLOCK ELEMENT MAX-HEIGHT
+      - PAGE BREAK
+      - REMOVE BACKGROUND & FILTER
+      - REMOVE TEXT SHADOW
+      - DISPLAY ELEMENTS
     - PRINT STYLES ADJUSTMENTS
+      - PRINT SPECIAL TEXT
+      - PRINT LINK
+      - PRINT HEADINGS
+      - PRINT MERMAID CHART
+      - PRINT MARKDOWN TOC
+      - PRINT ART GALLERY
+      - PRINT STICKY NOTES
+      - PRINT SPOILER
     - PRINT COLOR ADJUSTMENTS
+      - PRINT PARAGRAPH
+      - PRINT SPECIAL TEXT
+      - PRINT LINK
+      - PRINT LIST
+      - PRINT FOOTNOTE
+      - PRINT HEADINGS
+      - PRINT MATH NOTATION
+      - PRINT BLOCKQUOTE
+      - PRINT TABLE
+      - PRINT MARKDOWN TOC
+      - PRINT CODE BLOCK
+      - PRINT STICKY NOTES
+      - PRINT CUSTOM TITLE BLOCK
+      - PRINT KEY POINT
+      - PRINT KEY MENTION
+      - PRINT TURNTOCHART (TTC)
 */
 
 
@@ -701,7 +766,7 @@
 
 
 
-/* || FONT 1/3 | BASE FONT ********************************* */
+/* || FONT 1 | BASE FONT *********************************** */
 body *:not(.katex-display *),
 .spoiler-block .summary-title {
   font-family: var(--usp-base-font, sans-serif);
@@ -712,7 +777,7 @@ body *:not(.katex-display *),
 
 
 
-/* || FONT 2/3 | MONOSPACE FONT **************************** */
+/* || FONT 2 | MONOSPACE FONT ****************************** */
 /* monospace font group: | code block | inline code | insert & strikethrough symbol | inline spoiler symbol | footnote ref num | headings ref | list token */
 #rendered-md .hljs *,
 #rendered-md .inline-code,
@@ -737,7 +802,7 @@ body *:not(.katex-display *),
 
 
 
-/* || FONT 3/3 | HEADING FONT ****************************** */
+/* || FONT 3 | HEADING FONT ******************************** */
 #rendered-md h1,
 #rendered-md h2,
 #rendered-md h3,
@@ -778,7 +843,7 @@ body *:not(.katex-display *),
 
 
 
-/* || BASIC 1/4 | CONTAINER ******************************** */
+/* || BASIC 1 | CONTAINER ********************************** */
 /* CONTAINER: RENDER VIEWER ================================ */
 /* body container ------------------------------------------ */
 body,
@@ -799,7 +864,7 @@ body,
 
 
 
-/* || BASIC 2/4 | PARAGRAPH ******************************** */
+/* || BASIC 2 | PARAGRAPH ********************************** */
 /* PARAGRAPH: PARAGRAPH TEXT =============================== */
 #rendered-md > p {
   margin: 0 0 0 5px;
@@ -820,7 +885,7 @@ body,
 
 
 
-/* || BASIC 3/4 | SCROLLBAR ******************************** */
+/* || BASIC 3 | SCROLLBAR ********************************** */
 /* SCROLLBAR: RENDER VIEWER SCROLLBAR ====================== */
 #tinymce::-webkit-scrollbar,
 #joplin-container-content::-webkit-scrollbar {
@@ -915,7 +980,7 @@ ag12::-webkit-scrollbar-thumb:hover {
 
 
 
-/* || BASIC 4/4 | ELEMENTS MARGIN ************************** */
+/* || BASIC 4 | ELEMENTS MARGIN **************************** */
 /* first element of render viewer -------------------------- */
 #rendered-md > :first-child {
   margin-top: 0px !important;
@@ -955,7 +1020,7 @@ ag12::-webkit-scrollbar-thumb:hover {
 
 
 
-/* || ELEMENTS 1/12 | SPECIAL TEXT ************************* */
+/* || ELEMENTS 1 | SPECIAL TEXT **************************** */
 /* GROUP: | abbreviation | emphasize | strikethrough | insert | */
 #rendered-md abbr,
 #rendered-md em,
@@ -1088,7 +1153,7 @@ ag12::-webkit-scrollbar-thumb:hover {
 
 
 
-/* || ELEMENTS 2/12 | LINK ********************************* */
+/* || ELEMENTS 2 | LINK ************************************ */
 #rendered-md a {
   text-align: initial !important;
   color: var(--sc-link-text);
@@ -1101,7 +1166,7 @@ ag12::-webkit-scrollbar-thumb:hover {
 
 
 
-/* || ELEMENTS 3/12 | LIST ********************************* */
+/* || ELEMENTS 3 | LIST ************************************ */
 #rendered-md > ul,
 #rendered-md > ol {
   margin: 1em 0 1em 35px;
@@ -1166,7 +1231,7 @@ ag12::-webkit-scrollbar-thumb:hover {
 
 
 
-/* || ELEMENTS 4/12 | FOOTNOTE ***************************** */
+/* || ELEMENTS 4 | FOOTNOTE ******************************** */
 /* FOOTNOTE REFERENCE ====================================== */
 #rendered-md [id*="fnref"] {
   display: inline-block;
@@ -1223,7 +1288,7 @@ ag12::-webkit-scrollbar-thumb:hover {
 
 
 
-/* || ELEMENTS 5/12 | HEADINGS ***************************** */
+/* || ELEMENTS 5 | HEADINGS ******************************** */
 /* GROUP: h1 to h6 ----------------------------------------- */
 #rendered-md h1,
 #rendered-md h2,
@@ -1494,7 +1559,7 @@ ag12::-webkit-scrollbar-thumb:hover {
 
 
 
-/* || ELEMENTS 6/12 | MATH NOTATION ************************ */
+/* || ELEMENTS 6 | MATH NOTATION *************************** */
 #rendered-md .katex-display .katex {
   text-align: var(--usp-math-notation-text-align);
 }
@@ -1515,7 +1580,7 @@ ag12::-webkit-scrollbar-thumb:hover {
 
 
 
-/* || ELEMENTS 7/12 | BLOCKQUOTE *************************** */
+/* || ELEMENTS 7 | BLOCKQUOTE ****************************** */
 #rendered-md blockquote {
   text-align: var(--usp-paragraph-text-align);
   border-left: var(--sc-blockquote-bdl);
@@ -1535,7 +1600,7 @@ ag12::-webkit-scrollbar-thumb:hover {
 
 
 
-/* || ELEMENTS 8/12 | TABLE ******************************** */
+/* || ELEMENTS 8 | TABLE *********************************** */
 #rendered-md table {
   width: 100%;
   background-color: unset;
@@ -1561,7 +1626,7 @@ ag12::-webkit-scrollbar-thumb:hover {
 
 
 
-/* || ELEMENTS 9/12 | MERMAID CHART ************************ */
+/* || ELEMENTS 9 | MERMAID CHART *************************** */
 #rendered-md .mermaid {
   margin-left: auto;
   margin-right: auto;
@@ -1581,7 +1646,7 @@ ag12::-webkit-scrollbar-thumb:hover {
 
 
 
-/* || ELEMENTS 10/12 | IMAGE ******************************* */
+/* || ELEMENTS 10 | IMAGE ********************************** */
 /* IMAGE EYE PROTECTOR ===================================== */
 img {
   filter: var(--usp-image-eye-protector-filter);
@@ -1594,7 +1659,7 @@ img:hover {
 
 
 
-/* || ELEMENTS 11/12 | MARKDOWN TOC ************************ */
+/* || ELEMENTS 11 | MARKDOWN TOC *************************** */
 /* TOC BODY ================================================ */
 #rendered-md .table-of-contents,
 #rendered-md .table-of-contents::before {
@@ -1667,7 +1732,7 @@ img:hover {
 
 
 
-/* || ELEMENTS 12/12 | CODE BLOCK ************************** */
+/* || ELEMENTS 12 | CODE BLOCK ***************************** */
 /* CODE BLOCK: BODY ======================================== */
 #rendered-md .joplin-editable > .hljs {
   padding: 1em 0 1em 8px;
@@ -1833,7 +1898,7 @@ img:hover {
 
 
 
-/* || CUSTOM ELEMENTS 1/5 | ART GALLERY ******************** */
+/* || CUSTOM ELEMENTS 1 | ART GALLERY ********************** */
 /* ART GALLERY: BODY ======================================= */
 ag2,
 ag3,
@@ -1911,7 +1976,7 @@ ag12 img {
 
 
 
-/* || CUSTOM ELEMENTS 2/5 | STICKY NOTES ******************* */
+/* || CUSTOM ELEMENTS 2 | STICKY NOTES ********************* */
 /* STICKY NOTES: BODY ====================================== */
 /* GROUP: all ---------------------------------------------- */
 #rendered-md note,
@@ -2026,7 +2091,7 @@ ag12 img {
 
 
 
-/* || CUSTOM ELEMENTS 3/5 | CUSTOM TITLE BLOCK ************* */
+/* || CUSTOM ELEMENTS 3 | CUSTOM TITLE BLOCK *************** */
 /* CUSTOM TITLE BLOCK: BODY ================================ */
 #rendered-md > p > ctb {
   display: block;
@@ -2058,7 +2123,7 @@ ag12 img {
 
 
 
-/* || CUSTOM ELEMENTS 4/5 | KEY POINT ********************** */
+/* || CUSTOM ELEMENTS 4 | KEY POINT ************************ */
 /* KEY POINT: BODY ========================================= */
 #rendered-md kp {
   display: inline-block;
@@ -2091,7 +2156,7 @@ ag12 img {
 
 
 
-/* || CUSTOM ELEMENTS 5/5 | KEY MENTION ******************** */
+/* || CUSTOM ELEMENTS 5 | KEY MENTION ********************** */
 /* KEY MENTION: BODY ======================================= */
 #rendered-md km {
   display: inline-block;
@@ -2167,7 +2232,7 @@ ag12 img {
 
 
 
-/* || PLUGINS | SPOILER ************************************ */
+/* || PLUGINS 1 | SPOILER ********************************** */
 /* SPOILER: SPOILER BLOCK ================================== */
 /* spoiler block & title ----------------------------------- */
 #rendered-md .spoiler-block,
@@ -2312,7 +2377,7 @@ ag12 img {
 
 
 
-/* || PLUGINS | TURNTOCHART ******************************** */
+/* || PLUGINS 2 | TURNTOCHART ****************************** */
 /* CHART =================================================== */
 /* background ---------------------------------------------- */
 #rendered-md > div > svg > rect {
@@ -2344,7 +2409,7 @@ tspan {
 
 
 
-/* || PLUGINS | INLINE TODO ******************************** */
+/* || PLUGINS 3 | INLINE TODO ****************************** */
 #rendered-md .inline-todo {
   position: relative;
   top: unset;
@@ -2362,7 +2427,7 @@ tspan {
 
 
 
-/* || PLUGINS | NOTE LINK SYSTEM *************************** */
+/* || PLUGINS 4 | NOTE LINK SYSTEM ************************* */
 /* NOTE LINK SYSTEM > SPOILER ============================== */
 /* hide link hash ------------------------------------------ */
 .spoiler-block label > .note-link-identifier,
@@ -2376,7 +2441,7 @@ tspan {
 
 
 
-/* || PLUGINS | CODE CLIPBOARD ***************************** */
+/* || PLUGINS 5 | CODE CLIPBOARD *************************** */
 /* copy button --------------------------------------------- */
 .code-clipboard-button {
   right: 18px !important;
@@ -2442,7 +2507,7 @@ tspan {
 
 
   
-  /* || PRINT FONT 1/3 | PRINT BASE FONT ******************* */
+  /* || PRINT FONT 1 | PRINT BASE FONT ********************* */
   body *:not(.katex-display *),
   .spoiler-block .summary-title {
     font-family: var(--usp-print-base-font, sans-serif);
@@ -2453,7 +2518,7 @@ tspan {
 
 
   
-  /* || PRINT FONT 2/3 | PRINT MONOSPACE FONT ************** */
+  /* || PRINT FONT 2 | PRINT MONOSPACE FONT **************** */
   /* monospace font group: | code block | inline code | insert & strikethrough symbol | inline spoiler symbol | footnote ref num | headings ref | list token */
   #rendered-md .hljs *,
   #rendered-md .inline-code,
@@ -2479,7 +2544,7 @@ tspan {
 
 
   
-  /* || PRINT FONT 3/3 | PRINT HEADING FONT **************** */
+  /* || PRINT FONT 3 | PRINT HEADING FONT ****************** */
   #rendered-md h1,
   #rendered-md h2,
   #rendered-md h3,
@@ -2517,7 +2582,7 @@ tspan {
 
 
   
-  /* || PRINT READY 1/7 | PRINT EXACT COLOR **************** */
+  /* || PRINT READY 1 | PRINT EXACT COLOR ****************** */
   #rendered-md *,
   #rendered-md .table-of-contents::before {
     -webkit-print-color-adjust: exact !important;
@@ -2528,14 +2593,14 @@ tspan {
 
 
   
-  /* || PRINT READY 2/7 | PAGE MARGIN ********************** */
+  /* || PRINT READY 2 | PAGE MARGIN ************************ */
   .exported-note {
     margin: 0;
   }
 
   
   
-  /* || PRINT READY 3/7 | REMOVE BLOCK ELEMENT MAX-HEIGHT ** */
+  /* || PRINT READY 3 | REMOVE BLOCK ELEMENT MAX-HEIGHT **** */
   ag2,
   ag3,
   ag4,
@@ -2553,7 +2618,7 @@ tspan {
 
 
   
-  /* || PRINT READY 4/7 | PAGE BREAK *********************** */
+  /* || PRINT READY 4 | PAGE BREAK ************************* */
   #rendered-md h1,
   #rendered-md h2,
   #rendered-md h3,
@@ -2584,7 +2649,7 @@ tspan {
 
 
   
-  /* || PRINT READY 5/7 | REMOVE BACKGROUND & FILTER ******* */
+  /* || PRINT READY 5 | REMOVE BACKGROUND & FILTER ********* */
   /* GROUP: | table | inline code | toc | art gallery | stick notes | custom title block | key mention | spoiler | turntochart | */
   ag2,
   ag3,
@@ -2634,7 +2699,7 @@ tspan {
 
 
 
-  /* || PRINT READY 6/7 | REMOVE TEXT SHADOW *************** */
+  /* || PRINT READY 6 | REMOVE TEXT SHADOW ***************** */
   /* GROUP: | abbreviation | emphasize | strikethrough | insert | table head | syntax highlight | sticky notes | inline todo | */
   #rendered-md abbr,
   #rendered-md em,
@@ -2656,7 +2721,7 @@ tspan {
 
 
   
-  /* || PRINT READY 7/7 | DISPLAY ELEMENTS ***************** */
+  /* || PRINT READY 7 | DISPLAY ELEMENTS ******************* */
   /* notes title ------------------------------------------- */
   .exported-note-title {
     display: var(--usp-print-note-title-display);
@@ -2727,7 +2792,7 @@ tspan {
 
 
   
-  /* || PRINT STYLE ADJUSTMENTS | PRINT SPECIAL TEXT ******* */
+  /* || PRINT STYLE ADJUSTMENTS 1 | PRINT SPECIAL TEXT ***** */
   /* PRINT SPECIAL TEXT: ABBREVIATION ====================== */
   #rendered-md abbr {
     text-decoration: 1px dotted underline var(--pr-abbreviation-td);
@@ -2746,7 +2811,7 @@ tspan {
   
 
   
-  /* || PRINT STYLE ADJUSTMENTS | PRINT LINK *************** */
+  /* || PRINT STYLE ADJUSTMENTS 2 | PRINT LINK ************* */
   /* print link href --------------------------------------- */
   #rendered-md a:not([title^="http"]):not([title^="file:"]):not([href^="joplin:"]):not([href^="data:"])::after {
     content: "("attr(href)")";
@@ -2763,7 +2828,7 @@ tspan {
 
 
 
-  /* || PRINT STYLE ADJUSTMENTS | PRINT HEADINGS *********** */
+  /* || PRINT STYLE ADJUSTMENTS 3 | PRINT HEADINGS ********* */
   /* heading border ---------------------------------------- */
   /* GROUP: h1 to h6 --------------------------------------- */
   #rendered-md h1::after,
@@ -2824,14 +2889,14 @@ tspan {
 
 
 
-  /* || PRINT STYLE ADJUSTMENTS | PRINT MERMAID ************ */
+  /* || PRINT STYLE ADJUSTMENTS 4 | PRINT MERMAID ********** */
   #rendered-md [id^="mermaid-"] {
     max-height: 45vh;
   }
 
 
 
-  /* || PRINT STYLE ADJUSTMENTS | PRINT MARKDOWN TOC ******* */
+  /* || PRINT STYLE ADJUSTMENTS 5 | PRINT MARKDOWN TOC ***** */
   #rendered-md .table-of-contents,
   #rendered-md .table-of-contents::before {
     position: static;
@@ -2897,7 +2962,7 @@ tspan {
 
 
 
-  /* || PRINT STYLE ADJUSTMENTS | PRINT ART GALLERY ******** */
+  /* || PRINT STYLE ADJUSTMENTS 6 | PRINT ART GALLERY ****** */
   ag2,
   ag3,
   ag4,
@@ -2916,7 +2981,7 @@ tspan {
 
 
   
-  /* || PRINT STYLE ADJUSTMENTS | PRINT STICKY NOTES ******* */
+  /* || PRINT STYLE ADJUSTMENTS 7 | PRINT STICKY NOTES ***** */
   /* PRINT STICKY NOTES: BODY ============================== */
   #rendered-md note,
   #rendered-md tip,
@@ -2931,7 +2996,7 @@ tspan {
 
 
 
-  /* || PRINT STYLE ADJUSTMENTS | PRINT PLUGINS | SPOILER ** */
+  /* || PRINT STYLE ADJUSTMENTS 8 | PRINT PLUGINS | SPOILER  */
   /* SPOILER: SPOILER BLOCK ================================ */
   #rendered-md .spoiler-block {
     border: 1px solid var(--pr-plugin-spoiler-bd);
@@ -2990,7 +3055,7 @@ tspan {
   
   
   
-  /* || PRINT COLOR ADJUSTMENTS | PRINT PARAGRAPH ********** */
+  /* || PRINT COLOR ADJUSTMENTS 1 | PRINT PARAGRAPH ******** */
   /* PARAGRAPH: PARAGRAPH TEXT ============================= */
   #rendered-md > p {
     color: var(--pr-text);
@@ -3003,7 +3068,7 @@ tspan {
 
 
   
-  /* || PRINT COLOR ADJUSTMENTS | PRINT SPECIAL TEXT ******* */
+  /* || PRINT COLOR ADJUSTMENTS 2 | PRINT SPECIAL TEXT ***** */
   /* SPECIAL TEXT: EMPHASIZE =============================== */
   #rendered-md em {
     color: var(--pr-emphasize-text);
@@ -3061,7 +3126,7 @@ tspan {
 
 
 
-  /* || PRINT COLOR ADJUSTMENTS | PRINT LINK *************** */
+  /* || PRINT COLOR ADJUSTMENTS 3 | PRINT LINK ************* */
   #rendered-md a {
     color: var(--pr-link-text);
   }
@@ -3072,7 +3137,7 @@ tspan {
   
   
   
-  /* || PRINT COLOR ADJUSTMENTS | PRINT LIST *************** */
+  /* || PRINT COLOR ADJUSTMENTS 4 | PRINT LIST ************* */
   #rendered-md ul li,
   #rendered-md ul li > p,
   #rendered-md ol:not(.footnotes-list) li,
@@ -3091,7 +3156,7 @@ tspan {
   
   
   
-  /* || PRINT COLOR ADJUSTMENTS | PRINT FOOTNOTE *********** */
+  /* || PRINT COLOR ADJUSTMENTS 5 | PRINT FOOTNOTE ********* */
   /* FOOTNOTE REFERENCE ==================================== */
   #rendered-md [id*="fnref"] {
     color: var(--pr-footnote-ref);
@@ -3118,7 +3183,7 @@ tspan {
   
   
 
-  /* || PRINT COLOR ADJUSTMENTS | PRINT HEADINGS *********** */
+  /* || PRINT COLOR ADJUSTMENTS 6 | PRINT HEADINGS ********* */
   /* heading reference ------------------------------------- */
   /* GROUP: h1 to h6 --------------------------------------- */
   #rendered-md h1:before,
@@ -3208,7 +3273,7 @@ tspan {
 
 
 
-  /* || PRINT COLOR ADJUSTMENTS | PRINT MATH NOTATION ****** */
+  /* || PRINT COLOR ADJUSTMENTS 7 | PRINT MATH NOTATION **** */
   #rendered-md .katex-display {
     font-size: var(--usp-math-notation-font-size);
     color: var(--pr-math-notation-text);
@@ -3219,7 +3284,7 @@ tspan {
   
   
   
-  /* || PRINT COLOR ADJUSTMENTS | PRINT BLOCKQUOTE ********* */
+  /* || PRINT COLOR ADJUSTMENTS 8 | PRINT BLOCKQUOTE ******* */
   #rendered-md blockquote {
     border-left: var(--pr-blockquote-bdl);
   }
@@ -3229,7 +3294,7 @@ tspan {
   
   
   
-  /* || PRINT COLOR ADJUSTMENTS | PRINT TABLE ************** */
+  /* || PRINT COLOR ADJUSTMENTS 9 | PRINT TABLE ************ */
   #rendered-md table > thead > tr > th,
   #rendered-md table > tbody > tr > td {
     color: var(--pr-table-text);
@@ -3247,7 +3312,7 @@ tspan {
   
   
 
-  /* || PRINT COLOR ADJUSTMENTS | PRINT MARKDOWN TOC ******* */
+  /* || PRINT COLOR ADJUSTMENTS 10 | PRINT MARKDOWN TOC **** */
   /* print toc button = toc title -------------------------- */
   #rendered-md .table-of-contents::before {
     color: var(--pr-toc-btn-text);
@@ -3260,7 +3325,7 @@ tspan {
 
 
   
-  /* || PRINT COLOR ADJUSTMENTS | PRINT CODE BLOCK ********* */
+  /* || PRINT COLOR ADJUSTMENTS 11 | PRINT CODE BLOCK ****** */
   /* CODE BLOCK: BODY ====================================== */
   #rendered-md .joplin-editable > .hljs {
     border-color: var(--pr-code-block-bdc);
@@ -3376,7 +3441,7 @@ tspan {
 
 
   
-  /* || PRINT COLOR ADJUSTMENTS | PRINT STICKY NOTES ******* */
+  /* || PRINT COLOR ADJUSTMENTS 12 | PRINT STICKY NOTES **** */
   /* PRINT STICKY NOTES: BODY ============================== */
   #rendered-md note,
   #rendered-md tip,
@@ -3415,7 +3480,7 @@ tspan {
   
 
   
-  /* || PRINT COLOR ADJUSTMENTS | PRINT CUSTOM TITLE BLOCK * */
+  /* || PRINT COLOR ADJUSTMENTS 13 | PRINT CUSTOM TITLE BLOCK */
   #rendered-md > p > ctb {
     border: var(--pr-custom-title-block-bd);
   }
@@ -3430,7 +3495,7 @@ tspan {
 
 
   
-  /* || PRINT COLOR ADJUSTMENTS | PRINT KEY POINT ********** */
+  /* || PRINT COLOR ADJUSTMENTS 14 | PRINT KEY POINT ******* */
   #rendered-md kp {
     color: var(--pr-key-point-text);
   }
@@ -3442,7 +3507,7 @@ tspan {
 
 
   
-  /* || PRINT COLOR ADJUSTMENTS | PRINT KEY MENTION ******** */
+  /* || PRINT COLOR ADJUSTMENTS 15 | PRINT KEY MENTION ***** */
   #rendered-md km {
     color: var(--pr-key-mention-text);
     border: var(--pr-key-mention-bd);
@@ -3455,7 +3520,7 @@ tspan {
 
   
 
-  /* || PRINT COLOR ADJUSTMENTS | PRINT TURNTOCHART(TTC) *** */
+  /* || PRINT COLOR ADJUSTMENTS 16 | PRINT TURNTOCHART(TTC)  */
   /* PRINT TTC: CHART ====================================== */
   /* text & line ------------------------------------------- */
   #rendered-md svg g text,
