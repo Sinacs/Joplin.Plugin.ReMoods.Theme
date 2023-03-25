@@ -1484,6 +1484,12 @@
   text-decoration: none;
   cursor: pointer;
 }
+/* mark text link ------------------------------------------ */
+.cm-rm-highlight-token ~ .CodeMirror-widget [class^="enhancement-link-"]:not(#fake) {
+  line-height: 0;
+  color: var(--me-mark-text);
+  background: var(--me-mark-bg);
+}
 
 /* EH: FOOTNOTE ============================================ */
 /* footnote marker ----------------------------------------- */
