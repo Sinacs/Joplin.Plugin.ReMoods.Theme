@@ -28,11 +28,11 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
 		themeColorListText,
 		smallerCodeBlockText,
 
-		smallerMarkdownTableSyntax,
-		smallerMonospaceText,
+		smallerMarkdownSyntax,
+		smallerTableSyntax,
 		evidentHorizontalRule,
 
-    headingRef,
+    headingMarker,
 		h1Border,
 		h2Border,
 		h3Border,
@@ -79,7 +79,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
 		printH6FontSize,
     printSmallerCodeBlockText,
     printNoteTitle,
-    printHeadingRef,
+    printHeadingMarker,
     printH1Border,
     printTOC,
     printStickyNotes,
@@ -2175,25 +2175,25 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --usp-smaller-code-block-syntax-font-size:.+?;/gms, '  --usp-smaller-code-block-syntax-font-size: calc(var(--usp-monospace-font-size) - 2px);');
   }
 
-  if(!smallerMarkdownTableSyntax) {
-    chromeCSS = chromeCSS.replace(/^  --usp-smaller-table-syntax-font-size:.+?;/gms, '  --usp-smaller-table-syntax-font-size: var(--usp-monospace-font-size);');
-  } else {
-    chromeCSS = chromeCSS.replace(/^  --usp-smaller-table-syntax-font-size:.+?;/gms, '  --usp-smaller-table-syntax-font-size: calc(var(--usp-monospace-font-size) - 2px);');
-  }
-
-  if(!smallerMonospaceText) {
+  if(!smallerMarkdownSyntax) {
     chromeCSS = chromeCSS.replace(/^  --usp-smaller-markdown-syntax-font-size:.+?;/gms, '  --usp-smaller-markdown-syntax-font-size: var(--usp-monospace-font-size);');
   } else {
     chromeCSS = chromeCSS.replace(/^  --usp-smaller-markdown-syntax-font-size:.+?;/gms, '  --usp-smaller-markdown-syntax-font-size: calc(var(--usp-monospace-font-size) - 2px);');
   }
   
+  if(!smallerTableSyntax) {
+    chromeCSS = chromeCSS.replace(/^  --usp-smaller-table-syntax-font-size:.+?;/gms, '  --usp-smaller-table-syntax-font-size: var(--usp-monospace-font-size);');
+  } else {
+    chromeCSS = chromeCSS.replace(/^  --usp-smaller-table-syntax-font-size:.+?;/gms, '  --usp-smaller-table-syntax-font-size: calc(var(--usp-monospace-font-size) - 2px);');
+  }
+
   if(!evidentHorizontalRule) {
     chromeCSS = chromeCSS.replace(/^  --usp-evident-hr-display:.+?;/gms, '  --usp-evident-hr-display: none;');
   } else {
     chromeCSS = chromeCSS.replace(/^  --usp-evident-hr-display:.+?;/gms, '  --usp-evident-hr-display: inline-block;');
   }
   
-  if(!headingRef) {
+  if(!headingMarker) {
     noteCSS = noteCSS.replace(/^  --usp-heading-ref-display:.+?;/gms, '  --usp-heading-ref-display: none;');
   } else {
     noteCSS = noteCSS.replace(/^  --usp-heading-ref-display:.+?;/gms, '  --usp-heading-ref-display: inline-block;');
@@ -2448,7 +2448,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --usp-print-note-title-display:.+?;/gms, '  --usp-print-note-title-display: block;');
   }
 
-  if(!printHeadingRef) {
+  if(!printHeadingMarker) {
     noteCSS = noteCSS.replace(/^  --usp-print-heading-ref-display:.+?;/gms, '  --usp-print-heading-ref-display: none;');
   } else {
     noteCSS = noteCSS.replace(/^  --usp-print-heading-ref-display:.+?;/gms, '  --usp-print-heading-ref-display: inline-block;');

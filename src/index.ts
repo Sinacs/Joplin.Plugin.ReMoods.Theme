@@ -28,12 +28,12 @@ export type ThemeSettings = {
 	smallerCodeBlockText: boolean;
 	
   // Markdown Editor ==============================
-	smallerMarkdownTableSyntax: number;
-	smallerMonospaceText: number;
+	smallerMarkdownSyntax: number;
+	smallerTableSyntax: number;
 	evidentHorizontalRule: boolean;
 	
 	// Render Viewer ================================
-	headingRef: boolean;
+	headingMarker: boolean;
 	h1Border: boolean;
 	h2Border: boolean;
 	h3Border: boolean;
@@ -84,7 +84,7 @@ export type ThemeSettings = {
 	printH6FontSize: number;
 	printSmallerCodeBlockText: boolean;
 	printNoteTitle: boolean;
-	printHeadingRef: boolean;
+	printHeadingMarker: boolean;
 	printH1Border: boolean;
 	printTOC: boolean;
 	printStickyNotes: boolean;
@@ -126,10 +126,10 @@ async function prepareThemeSettings(): Promise<void> {
 		description: `
 		----- 1: It is required to quit and restart Joplin to take effect after any changes below.
 		----- 2: The original font settings in the "Tools > Options > Appearance" will no longer work when running ReMoods Theme.
-		----- 3: The default font family will only work if you have already installed them on your computer.
-		----- 4: The advanced settings section at the bottom holds all of the "Print & Export PDF" settings.
-		----- 5: All below settings are affecting different parts of your Joplin, please note the beginning of them. (Render Viewer also includes the Rich Text Editor)
-		----- 6: Properties marked with (*) at the beginning stood for it also affects "Print & Export PDF".
+		----- 3: The default font family will only work if you have already installed the recommended fonts on your computer.
+		----- 4: The advanced settings section at the bottom contains all the "Print & Export PDF" settings.
+		----- 5: The beginning of the property name describes the area that the setting is related to.
+		----- 6: Properties marked with (*) represents it also affects the appearance of "Print & Export PDF".
 		`
 
 	});
@@ -181,7 +181,7 @@ async function prepareThemeSettings(): Promise<void> {
 				'330deg': 'Magenta-Red 330',
 				'340deg': 'Magenta-Red +',
 			},
-			description: 'Set color hue degrees for the theme. (10-degrees difference for each option)',
+			description: 'Set the theme color by selecting the hue degrees. (10-degrees difference for each option)',
 			public: true,
 
 		},
@@ -198,7 +198,7 @@ async function prepareThemeSettings(): Promise<void> {
 				'duskMode': 'Dusk Mode',
 				'nightMode': 'Night Mode'
 			},
-			description: 'It required to go to `Options > Appearance > Theme` and change the Joplin built-in theme matching with the theme modes. | Day Mode > light theme. | Dusk Mode & Night Mode > Dark theme.',
+			description: 'It required to go to `Options > Appearance > Theme` and set the Joplin built-in theme matching with the theme mode you choose. | Day Mode > Light theme. | Dusk Mode & Night Mode > Dark theme.',
 			public: true,
 
 		},
@@ -329,7 +329,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'h1TextTransform': {
 
 			section: 'remoodsThemeSection',
-			label: '* Markdown Editor & Render Viewer - Enable capitalize the first letter of each word on H1 heading',
+			label: 'Markdown Editor & Render Viewer - * Enable capitalize the first letter of each word on H1 heading',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -339,7 +339,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'h1FontVariant': {
 
 			section: 'remoodsThemeSection',
-			label: '* Markdown Editor & Render Viewer - Enable small-caps effect on H1 heading',
+			label: 'Markdown Editor & Render Viewer - * Enable small-caps effect on H1 heading',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -349,10 +349,10 @@ async function prepareThemeSettings(): Promise<void> {
 		'emphasizeAddRemove': {
 
 			section: 'remoodsThemeSection',
-			label: '* Markdown Editor & Render Viewer - Enable emphasize colors for insert text & strikethrough text',
+			label: 'Markdown Editor & Render Viewer - * Enable emphasize colors for insert text & strikethrough text',
 			type: SettingItemType.Bool,
 			value: false,
-			description: 'Enable: Insert text -> green, strikethrough text -> red, and it would not change with the theme color. | Disable: Follow the theme color.',
+			description: 'Enable: Insert text -> green, strikethrough text -> red, and it would not change with the theme color. | Disable: Change with the theme color.',
 			public: true,
 
 		},
@@ -360,7 +360,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'emphasizeAddRemoveBg': {
 
 			section: 'remoodsThemeSection',
-			label: '* Markdown Editor & Render Viewer - Enable background color for insert text & strikethrough text',
+			label: 'Markdown Editor & Render Viewer - * Enable background color for insert text & strikethrough text',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'The background color depends on its text color.',
@@ -371,7 +371,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'themeColorListText': {
 
 			section: 'remoodsThemeSection',
-			label: '* Markdown Editor & Render Viewer - Enable theme color for list text',
+			label: 'Markdown Editor & Render Viewer - * Enable theme color for list text',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: List text -> theme color, footnote marker -> complementary color. | Disable: List text -> paragraph text color, footnote marker -> theme color.',
@@ -382,7 +382,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'smallerCodeBlockText': {
 
 			section: 'remoodsThemeSection',
-			label: 'Markdown Editor & Render Viewer - Enable smaller font size for code block text',
+			label: 'Markdown Editor & Render Viewer - Enable smaller code block text',
 			type: SettingItemType.Bool,
 			value: false,
 			description: '(2px smaller than the "Monospace Font Size")',
@@ -390,24 +390,24 @@ async function prepareThemeSettings(): Promise<void> {
 
 		},
 
-		'smallerMarkdownTableSyntax': {
+		'smallerMarkdownSyntax': {
 
 			section: 'remoodsThemeSection',
-			label: 'Markdown Editor - Enable smaller font size for markdown table syntax',
-			type: SettingItemType.Bool,
-			value: false,
-			description: '(2px smaller than the "Monospace Font Size")',
-			public: true,
-
-		},
-
-		'smallerMonospaceText': {
-
-			section: 'remoodsThemeSection',
-			label: 'Markdown Editor - Enable smaller font size for non-essential contents',
+			label: 'Markdown Editor - Enable smaller markdown syntax',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Applied to anchor link path, image link, and footnote marker. (2px smaller than the "Monospace Font Size")',
+			public: true,
+
+		},
+
+		'smallerTableSyntax': {
+
+			section: 'remoodsThemeSection',
+			label: 'Markdown Editor - Enable smaller table syntax',
+			type: SettingItemType.Bool,
+			value: false,
+			description: '(2px smaller than the "Monospace Font Size")',
 			public: true,
 
 		},
@@ -423,10 +423,10 @@ async function prepareThemeSettings(): Promise<void> {
 
 		},
 		
-		'headingRef': {
+		'headingMarker': {
 
 			section: 'remoodsThemeSection',
-			label: 'Render Viewer - Enable heading reference in front of headings',
+			label: 'Render Viewer - Enable heading marker',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
@@ -436,7 +436,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'h1Border': {
 
 			section: 'remoodsThemeSection',
-			label: '* Render Viewer - Enable H1 border',
+			label: 'Render Viewer - * Enable H1 border',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -446,7 +446,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'h2Border': {
 
 			section: 'remoodsThemeSection',
-			label: '* Render Viewer - Enable H2 border',
+			label: 'Render Viewer - * Enable H2 border',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -456,7 +456,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'h3Border': {
 
 			section: 'remoodsThemeSection',
-			label: '* Render Viewer - Enable H3 border',
+			label: 'Render Viewer - * Enable H3 border',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
@@ -466,7 +466,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'h4Border': {
 
 			section: 'remoodsThemeSection',
-			label: '* Render Viewer - Enable H4 border',
+			label: 'Render Viewer - * Enable H4 border',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
@@ -476,7 +476,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'h5Border': {
 
 			section: 'remoodsThemeSection',
-			label: '* Render Viewer - Enable H5 border',
+			label: 'Render Viewer - * Enable H5 border',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -486,7 +486,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'h6Border': {
 
 			section: 'remoodsThemeSection',
-			label: '* Render Viewer - Enable H6 border',
+			label: 'Render Viewer - * Enable H6 border',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
@@ -496,7 +496,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'h1TwillPattern': {
 
 			section: 'remoodsThemeSection',
-			label: '* Render Viewer - Enable twill pattern for H1 heading',
+			label: 'Render Viewer - * Enable twill pattern for H1 heading',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'If enabled, you would need to use the HTML span tag for emoji to avoid the twill pattern affecting it.',
@@ -507,7 +507,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'hrTwillPattern': {
 
 			section: 'remoodsThemeSection',
-			label: '* Render Viewer - Enable twill pattern for horizontal line',
+			label: 'Render Viewer - * Enable twill pattern for horizontal rule',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: Twill pattern | Disable: Solid',
@@ -518,7 +518,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'paragraphTextJustify': {
 
 			section: 'remoodsThemeSection',
-			label: '* Render Viewer - Enable "Justify" effect for paragraph text',
+			label: 'Render Viewer - * Enable "Justify" effect for paragraph text',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'Applied to all paragraph text, but not including list, checklist, footnote list and sticky notes.',
@@ -529,7 +529,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'listTextJustify': {
 
 			section: 'remoodsThemeSection',
-			label: '* Render Viewer - Enable "Justify" effect for list text',
+			label: 'Render Viewer - * Enable "Justify" effect for list text',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'Applied to unordered list, ordered list, and footnote list.',
@@ -540,7 +540,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'checklistTextJustify': {
 
 			section: 'remoodsThemeSection',
-			label: '* Render Viewer - Enable "Justify" effect for checklist',
+			label: 'Render Viewer - * Enable "Justify" effect for checklist',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'Applied to checklist.',
@@ -551,7 +551,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'snTextJustify': {
 
 			section: 'remoodsThemeSection',
-			label: '* Render Viewer - Enable "Justify" effect for Stick Notes text',
+			label: 'Render Viewer - * Enable "Justify" effect for Stick Notes text',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'Applied to sticky notes.',
@@ -562,7 +562,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'dottedBlockquote': {
 
 			section: 'remoodsThemeSection',
-			label: '* Render Viewer - Enable dotted styles for blockquote',
+			label: 'Render Viewer - * Enable dotted border for blockquote',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: dotted border (better for single layer blockquote) | Disable: solid border (better for nested blockquote).',
@@ -573,7 +573,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'dottedCodeBlock': {
 
 			section: 'remoodsThemeSection',
-			label: '* Render Viewer - Enable dotted styles for code block',
+			label: 'Render Viewer - * Enable dotted border for code block',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: dotted border | Disable: solid border',
@@ -595,7 +595,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'mathNotationAlignLeft': {
 
 			section: 'remoodsThemeSection',
-			label: '* Render Viewer - Enable math notation aligned-left',
+			label: 'Render Viewer - * Enable math notation aligned-left',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
@@ -645,7 +645,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'addRemoveSymbol': {
 
 			section: 'remoodsThemeSection',
-			label: '* Render Viewer - Enable the `++` & `--` symbols in front of the insert text and strikethrough text',
+			label: 'Render Viewer - * Enable the `++` & `--` symbols at the beginning of the insert text and strikethrough text',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
@@ -655,7 +655,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'inlineCodeSymbol': {
 
 			section: 'remoodsThemeSection',
-			label: '* Render Viewer - Enable the `>|` symbol in front of inline code',
+			label: 'Render Viewer - * Enable the `>|` symbol at the beginning of the inline code',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -665,7 +665,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'customTitleBlockSymbol': {
 
 			section: 'remoodsThemeSection',
-			label: '* Render Viewer - Enable the symbol in front of the custom title block\'s title',
+			label: 'Render Viewer - * Enable the symbol at the beginning of the custom title block',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -675,7 +675,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'panelsScrollbar': {
 
 			section: 'remoodsThemeSection',
-			label: 'Notebook Panel & Notelist Panel - Enable bolder scrollbar',
+			label: 'Notebook Panel & Notelist Panel - Enable wider scrollbar',
 			type: SettingItemType.Bool,
 			value: false,
 			description: 'Enable: 7px(hover) | Disable: 3px(hover)',
@@ -686,7 +686,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'notebookTitleWrap': {
 
 			section: 'remoodsThemeSection',
-			label: 'Notebook Panel - Enable notebook title text wrapping',
+			label: 'Notebook Panel - Enable multiple lines notebook name',
 			type: SettingItemType.Bool,
 			value: true,
 			public: true,
@@ -696,7 +696,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'notebookTitleScrollbar': {
 
 			section: 'remoodsThemeSection',
-			label: 'Notebook Panel - Enable horizontal scrollbar for the notebook title',
+			label: 'Notebook Panel - Enable horizontal scrollbar for the notebook name',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'If disabled, you can still use `shift + scroll` for scrolling.',
@@ -718,7 +718,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'allNotesButton': {
 
 			section: 'remoodsThemeSection',
-			label: 'Notebook Panel - Enable "All Notes" Button',
+			label: 'Notebook Panel - Enable "All Notes" button',
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: Show | Disable: Hide',
@@ -886,7 +886,7 @@ async function prepareThemeSettings(): Promise<void> {
 		'printSmallerCodeBlockText': {
 
 			section: 'remoodsThemeSection',
-			label: 'Print & Export PDF - Enable smaller font size for code block',
+			label: 'Print & Export PDF - Enable smaller code block text',
 			type: SettingItemType.Bool,
 			value: true,
 			description: '(2px smaller than the the "Print Monospace Font Size")',
@@ -906,10 +906,10 @@ async function prepareThemeSettings(): Promise<void> {
 
 		},
 
-		'printHeadingRef': {
+		'printHeadingMarker': {
 
 			section: 'remoodsThemeSection',
-			label: 'Print & Export PDF - Display heading reference in front of headings',
+			label: 'Print & Export PDF - Display heading marker',
 			type: SettingItemType.Bool,
 			value: false,
 			public: true,
@@ -931,9 +931,10 @@ async function prepareThemeSettings(): Promise<void> {
 		'printTOC': {
 
 			section: 'remoodsThemeSection',
-			label: 'Print & Export PDF - Display table of contents (If the syntax `[[toc]]` has used in the notes)',
+			label: 'Print & Export PDF - Display table of contents',
 			type: SettingItemType.Bool,
 			value: true,
+			description: 'If the syntax `[[toc]]` has been used within the note.',
 			public: true,
 			advanced: true,
 
@@ -1038,11 +1039,11 @@ async function writeUserCSS(): Promise<void> {
 	const themeColorListText = await joplin.settings.value('themeColorListText');
 	const smallerCodeBlockText = await joplin.settings.value('smallerCodeBlockText');
 	
-	const smallerMonospaceText = await joplin.settings.value('smallerMonospaceText');
-	const smallerMarkdownTableSyntax = await joplin.settings.value('smallerMarkdownTableSyntax');
+	const smallerMarkdownSyntax = await joplin.settings.value('smallerMarkdownSyntax');
+	const smallerTableSyntax = await joplin.settings.value('smallerTableSyntax');
 	const evidentHorizontalRule = await joplin.settings.value('evidentHorizontalRule');
 	
-	const headingRef = await joplin.settings.value('headingRef');
+	const headingMarker = await joplin.settings.value('headingMarker');
 	const h1Border = await joplin.settings.value('h1Border');
 	const h2Border = await joplin.settings.value('h2Border');
 	const h3Border = await joplin.settings.value('h3Border');
@@ -1089,7 +1090,7 @@ async function writeUserCSS(): Promise<void> {
 	const printH6FontSize = await joplin.settings.value('printH6FontSize');
 	const printSmallerCodeBlockText = await joplin.settings.value('printSmallerCodeBlockText');
 	const printNoteTitle = await joplin.settings.value('printNoteTitle');
-	const printHeadingRef = await joplin.settings.value('printHeadingRef');
+	const printHeadingMarker = await joplin.settings.value('printHeadingMarker');
 	const printH1Border = await joplin.settings.value('printH1Border');
 	const printTOC = await joplin.settings.value('printTOC');
 	const printStickyNotes = await joplin.settings.value('printStickyNotes');
@@ -1122,11 +1123,11 @@ async function writeUserCSS(): Promise<void> {
 		themeColorListText,
 		smallerCodeBlockText,
 		
-		smallerMarkdownTableSyntax,
-		smallerMonospaceText,
+		smallerMarkdownSyntax,
+		smallerTableSyntax,
 		evidentHorizontalRule,
 		
-		headingRef,
+		headingMarker,
 		h1Border,
 		h2Border,
 		h3Border,
@@ -1173,7 +1174,7 @@ async function writeUserCSS(): Promise<void> {
 		printH6FontSize,
 		printSmallerCodeBlockText,
 		printNoteTitle,
-		printHeadingRef,
+		printHeadingMarker,
 		printH1Border,
 		printTOC,
 		printStickyNotes,
