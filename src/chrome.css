@@ -802,6 +802,13 @@
   background: var(--me-mark-bg) !important;
   text-shadow: 0 0 var(--me-mark-ts);
 }
+/* mark > link --------------------------------------------- */
+.CodeMirror-lines .CodeMirror-line .cm-rm-highlight.cm-rm-link {
+  font-family: var(--usp-base-font) !important;
+  font-size: var(--usp-base-font-size) !important;
+  line-height: 100% !important;
+  opacity: 1 !important;
+}
 
 /* SPECIAL TEXT: INSERT ==================================== */
 .CodeMirror-lines .CodeMirror-line .cm-rm-ins {
