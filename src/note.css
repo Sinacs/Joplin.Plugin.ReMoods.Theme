@@ -10,9 +10,18 @@
   - Screen: Render Viewer, Rich Text Editor, Export HTML File.
   - Print: Print & Export PDF.
 
+  - This is the first load template for each time starting ReMoods, and
+  this template is based on dusk mode. 
+
+  - This document is 100% the same as "userstyle.css". So, you can 
+  directly test it with the in-app development tools, customize it and 
+  develop your own CSS theme.
+
   - :not(#fake) / :not(.fake) are use for increasing the CSS specificity.
 
-  - Some element styles have adjusted for exporting PDF.
+  - Some element styles have only been adjusted for the export PDF, they 
+  are in the code section of "PRINT STYLES ADJUSTMENTS" and "PRINT COLOR 
+  ADJUSTMENTS".
 
   #CODE STRUCTURE OVERVIEW:
 

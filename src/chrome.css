@@ -5,6 +5,13 @@
   
   - All styles have separated into two parts - "markdown editor" and 
   "joplin ui".
+  
+  - This is the first load template for each time starting ReMoods, and
+  this template is based on dusk mode. 
+
+  - This document is 100% the same as "userchrome.css". So, you can 
+  directly test it with the in-app development tools, customize it and 
+  develop your own CSS theme.
 
   - This CSS document might include complex CSS Selectors, which is 
   necessary to avoid the CSS styles affecting the non-related elements.
