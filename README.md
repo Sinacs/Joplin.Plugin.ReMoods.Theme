@@ -23,9 +23,9 @@ ReMoods is an eye-health based theming plugin for the open source note-taking ap
 
 > This section contains important information if there is any.
 
-- [The Recommended Chinese Font Has Replaced By "GenSenRounded TW"](#the-recommended-chinese-font-has-replaced-by-gensenrounded-tw)
-- [Met problem when updating ReMoods from v3 to v4?](#met-problem-when-updating-remoods-from-v3-to-v4)
-- [Collecting issue report and users feedback](#collecting-issues-report-and-users-feedback)
+- [Is "Chiron Hei HK" Still Works In ReMoods?](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/discussions/38)
+- [Met problem when updating ReMoods from v3 to v4?](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/discussions/37)
+- [Help Reporting Issues](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/discussions/39)
   
 **DOCUMENTATION:**
 
@@ -470,88 +470,5 @@ That means you can have standalone font settings for them!
 For advanced management, you can also control which elements should show on the PDF through the settings page, such as hiding the Sticky Notes, hiding the Key Mention, hiding the notebook title, etc. Play around the options menu advanced settings to discover more!
 
 ![Screenshot 2022-09-26 190704](https://user-images.githubusercontent.com/110529913/192261498-b95ee279-65f3-4dc3-9a1f-609023f62859.png)
-
-[⬆️Back](#table-of-contents)
-
-## Met problem when updating ReMoods from v3 to v4?
-
-If you found that the content of your note doesn't display as usual after updating to ReMoods Theme V4, it might be due to the font settings didn't load the default values. Please follow the below steps in case you meet the problem:
-
-1. Open Joplin
-2. Navigate to `tools` > `options` > `ReMoods Theme`
-3. Please check all the font settings values and ensure they do not go blank or unreasonable.
-4. Below are the default settings values for reference, or you can enter any other of your expected values:
-   - `Base Font`                 > `Default`
-   - `Monospace Font`            > `Default`
-   - `Heading Font`              > `Default`
-   - `Base Font Size`            > `15`
-   - `Monospace Font Size`       > `14`
-   - `H1 Font Size`              > `170`
-   - `H2 Font Size`              > `140`
-   - `H3 Font Size`              > `130`
-   - `H4 Font Size`              > `120`
-   - `H5 Font Size`              > `110`
-   - `H6 Font Size`              > `100`
-   - `Math Notation Font Size`   > `0`
-5. Go to `Show advanced Settings`
-   - `Print Base Font`           > `Default`
-   - `Print Monospace Font`      > `Default`
-   - `Print Heading Font`        > `Default`
-   - `Print Base Font Size`      > `13`
-   - `Print Monospace Font Size` > `12`
-   - `Print H1 Font Size`        > `180`
-   - `Print H2 Font Size`        > `160`
-   - `Print H3 Font Size`        > `140`
-   - `Print H4 Font Size`        > `130`
-   - `Print H5 Font Size`        > `120`
-   - `Print H6 Font Size`        > `110`
-6. Quit and restart Joplin.
-
-[⬆️Back](#table-of-contents)
-
-## The Recommended Chinese Font Has Replaced By "GenSenRounded TW"
-
-Since the ReMoods Theme v4.0.4+, the recommended Chinese font `Chiron Hei HK(昭源黑體)` has been replaced by `GenSenRounded TW(源泉圓體)`. `GenSenRounded TW` appears more clearly in terms of the font strokes, especially in Traditional Chinese.
-
-So, the `Chiron Hei HK` is already removed from the recommended font list, if you are enjoy using it you don't have to make any changes in settings. But one exception, if you have installed both `Chiron Hei HK` & `GenSenRounded TW` on your computer, ReMoods will always use the "GenSenRounded TW" as a priority.
-
-[Go to download the new recommended chinese font](#download-and-install-recommended-fonts)
-
-[⬆️Back](#table-of-contents)
-
-## Collecting Issues Report And Users Feedback
-
-**Help Report Issues:**
-
-ReMoods is currently focusing on improving the documentation and bug fixes. It would be super helpful if you report any related issues to me, such as unclear text, color missing, or any eye-health-related advice would be welcome.
-
-You can also tell me whatever you want, but I will handle them according to the below priority:
-
-1. Eye-health experience improvements
-2. Theme modes & editor visual improvements
-3. Documentation improvements
-4. "Custom Elements" improvements
-5. "Print & Export PDF" improvements 
-6. Requests for adding helpful settings properties 
-7. 3rd-party plugins compatibility
-8. "Export HTML File" improvements
-9. UI components' visual improvements
-
-If your suggestion is not one of the above, I would still try to understand your point of view and try to figure out what I can do, so just take it easy and enjoy the chat.
-
->P.S. Regarding the UI Components, ReMoods would not accept any requests which pointed to redesigning the original behavior of Joplin UI.
- But I would be accepting requests to Show/Hide something and implementing simple animations.
-
-- [Create an issue post on GitHub](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/issues/new/choose)
-- [Leave me a message on Joplin forum](https://discourse.joplinapp.org/t/plugin-remoods-theme-v3/27547?u=sinacs)
-
-**Send User Feedback:**
-
-Tell me whatever you feel through the time you using ReMoods.
-
-- [Leave me a message on Joplin forum](https://discourse.joplinapp.org/t/plugin-remoods-theme-v3/27547?u=sinacs)
-- [Send by email](mailto:sinacs.dev@gmail.com?subject=ReMoods Theme User Feedback!)
-
-Whatever you tell me, that means a lot to me! Thank you, guys!
 
 [⬆️Back](#table-of-contents)
