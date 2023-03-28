@@ -291,7 +291,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       chromeCSS = chromeCSS.replace(/^  --me-h4-text:.+?;/gms, '  --me-h4-text: hsl(var(--usp-hue),   0%,  40%);');
       chromeCSS = chromeCSS.replace(/^  --me-h5-text:.+?;/gms, '  --me-h5-text: hsl(var(--usp-hue),   0%,  60%);');
       chromeCSS = chromeCSS.replace(/^  --me-h6-text:.+?;/gms, '  --me-h6-text: hsl(var(--usp-hue),   0%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --me-blockquote-text:.+?;/gms, '  --me-blockquote-text: hsl(var(--usp-hue),   0%,  60%);');
+      chromeCSS = chromeCSS.replace(/^  --me-blockquote-text:.+?;/gms, '  --me-blockquote-text: hsl(var(--usp-hue),   0%,  65%);');
       chromeCSS = chromeCSS.replace(/^  --me-code-block-bg:.+?;/gms, '  --me-code-block-bg: hsl(var(--usp-hue), 100%,  99%);');
       chromeCSS = chromeCSS.replace(/^  --me-code-block-bdw:.+?;/gms, '  --me-code-block-bdw: 0 3px;');
       chromeCSS = chromeCSS.replace(/^  --me-code-block-bdc:.+?;/gms, '  --me-code-block-bdc: hsl(var(--usp-hue),  85%,  85%);');
@@ -888,7 +888,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       chromeCSS = chromeCSS.replace(/^  --me-h4-text:.+?;/gms, '  --me-h4-text: hsl(var(--usp-hue), 100%,  90%);');
       chromeCSS = chromeCSS.replace(/^  --me-h5-text:.+?;/gms, '  --me-h5-text: hsl(var(--usp-hue),  30%,  80%);');
       chromeCSS = chromeCSS.replace(/^  --me-h6-text:.+?;/gms, '  --me-h6-text: hsl(var(--usp-hue),  30%,  80%);');
-      chromeCSS = chromeCSS.replace(/^  --me-blockquote-text:.+?;/gms, '  --me-blockquote-text: hsl(var(--usp-hue),  30%,  80%);');
+      chromeCSS = chromeCSS.replace(/^  --me-blockquote-text:.+?;/gms, '  --me-blockquote-text: hsl(var(--usp-hue),   0%,  70%);');
       chromeCSS = chromeCSS.replace(/^  --me-code-block-bg:.+?;/gms, '  --me-code-block-bg: hsl(var(--usp-hue),   8%,  17%);');
       chromeCSS = chromeCSS.replace(/^  --me-code-block-bdw:.+?;/gms, '  --me-code-block-bdw: 0 3px;');
       chromeCSS = chromeCSS.replace(/^  --me-code-block-bdc:.+?;/gms, '  --me-code-block-bdc: hsl(var(--usp-hue),  40%,  60%);');
