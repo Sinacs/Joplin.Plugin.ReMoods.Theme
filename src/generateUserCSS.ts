@@ -49,6 +49,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
 		dottedCodeBlock,
 		mathNotationFontSize,
 		mathNotationAlignLeft,
+    mathNotationHoverZoom,
 		mermaidEyeProtector,
 		imageEyeProtector,
 		codeBlockMaxHeight,
@@ -2269,6 +2270,12 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --usp-math-notation-text-align:.+?;/gms, '  --usp-math-notation-text-align: center;');
   } else {
     noteCSS = noteCSS.replace(/^  --usp-math-notation-text-align:.+?;/gms, '  --usp-math-notation-text-align: left;');
+  }
+
+  if(!mathNotationHoverZoom) {
+    noteCSS = noteCSS.replace(/^  --usp-math-notation-font-size-hover:.+?;/gms, '  --usp-math-notation-font-size-hover: unset;');
+  } else {
+    noteCSS = noteCSS.replace(/^  --usp-math-notation-font-size-hover:.+?;/gms, '  --usp-math-notation-font-size-hover: 150%;');
   }
 
   if(!codeBlockMaxHeight) {

@@ -50,6 +50,7 @@ export type ThemeSettings = {
 	dottedCodeBlock: boolean;
 	mathNotationFontSize: number; 
 	mathNotationAlignLeft: boolean;
+	mathNotationHoverZoom: boolean;
 	mermaidEyeProtector: boolean;
 	imageEyeProtector: boolean;
 	codeBlockMaxHeight: boolean;
@@ -601,6 +602,17 @@ async function prepareThemeSettings(): Promise<void> {
 			public: true,
 
 		},
+
+		'mathNotationHoverZoom': {
+
+			section: 'remoodsThemeSection',
+			label: 'Render Viewer - * Enable math notation hover zoom effect',
+			type: SettingItemType.Bool,
+			value: true,
+			description: 'Enable: Mouse hovering over the math notation to zoom bigger. | Disable: No action. |',
+			public: true,
+
+		},
 		
 		'mermaidEyeProtector': {
 
@@ -1060,6 +1072,7 @@ async function writeUserCSS(): Promise<void> {
 	const dottedCodeBlock = await joplin.settings.value('dottedCodeBlock');
 	const mathNotationFontSize = await joplin.settings.value('mathNotationFontSize');
 	const mathNotationAlignLeft = await joplin.settings.value('mathNotationAlignLeft');
+	const mathNotationHoverZoom = await joplin.settings.value('mathNotationHoverZoom');
 	const mermaidEyeProtector = await joplin.settings.value('mermaidEyeProtector');
 	const imageEyeProtector = await joplin.settings.value('imageEyeProtector');
 	const codeBlockMaxHeight = await joplin.settings.value('codeBlockMaxHeight');
@@ -1144,6 +1157,7 @@ async function writeUserCSS(): Promise<void> {
 		dottedCodeBlock,
 		mathNotationFontSize,
 		mathNotationAlignLeft,
+		mathNotationHoverZoom,
 		mermaidEyeProtector,
 		imageEyeProtector,
 		codeBlockMaxHeight,

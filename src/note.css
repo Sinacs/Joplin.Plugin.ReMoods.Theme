@@ -157,6 +157,7 @@
   --usp-code-block-max-height: 56vh;
   --usp-art-gallery-max-height: 56vh;
   --usp-math-notation-font-size: var(--usp-base-font-size);
+  --usp-math-notation-font-size-hover: 150%;
 
   /* SCREEN: EFFECTS ======================================= */
   --usp-h1-font-variant: small-caps;
@@ -1593,7 +1594,7 @@ ag12::-webkit-scrollbar-thumb:hover {
 }
 /* hover --------------------------------------------------- */
 #rendered-md .katex-display:hover {
-  font-size: 150% !important;
+  font-size: var(--usp-math-notation-font-size-hover) !important;
   transition: font-size 0.3s;
   transition-delay: 0.5s;
   cursor: help;
