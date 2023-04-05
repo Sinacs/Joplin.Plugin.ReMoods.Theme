@@ -1,6 +1,10 @@
 # ReMoods Theme Getting Started Guide
 
-Hi there! If you are first time to use ReMoods Theme, this guide would guiding you to get complete experience with a few quick steps! Hope you would enjoy the time using ReMoods Theme! Let's Go!
+Hi there! Welcome to ReMoods! This guide will be guiding you to get a complete experience of ReMoods in a few quick steps! Hope you will enjoy the time using ReMoods Theme! Let's Go!
+
+## Page Navigation
+
+| [Home](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme#remoods-theme) | [Getting Started Guide](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/blob/master/Doc-GettingStartedGuide.md#remoods-theme-getting-started-guide) | [Settings Introduction](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/blob/master/Doc-SettingsIntroduction.md) |
 
 ## Table Of Contents
 
@@ -129,4 +133,4 @@ body {
 
 🎉🎉🎉 WOW! Congratulations! You made it! 🚀🛸🪐🍺🍺🍺
 
-[⬆️Back](#table-of-contents) | [🏠Home](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme)
+[⬆️Back](#table-of-contents)

@@ -1,6 +1,6 @@
 dist/
 node_modules/
 publish/
-screenshot/
+designFiles/
 CHANGELOG.md
-ReMoodsSettingsIntroduction.md
+Doc-SettingsIntroduction.md

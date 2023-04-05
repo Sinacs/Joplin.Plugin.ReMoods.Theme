@@ -2,7 +2,7 @@
 
 ReMoods is an eye-health based theming plugin for the open source note-taking app Joplin.
 
-![collage 6](https://user-images.githubusercontent.com/110529913/204046340-6045e673-049c-49f2-ae6f-66146a335a8c.png)
+![Cover](screenshots/ReMoodsTheme-Cover.png)
 
 ## Features
 
@@ -15,7 +15,7 @@ ReMoods is an eye-health based theming plugin for the open source note-taking ap
 - Supports standalone settings for exporting PDF.
 - Supports additional styling for 3rd-party plugins to increase consistency in the overall appearance.
 
-![ReMoods Theme Colors](https://user-images.githubusercontent.com/110529913/218322224-daf5ff6a-b5c1-4810-a74c-7dd540631777.png)
+![ThemeColors](screenshots/Features-ThemeColors.png)
 
 # Table Of Contents
 
@@ -23,20 +23,20 @@ ReMoods is an eye-health based theming plugin for the open source note-taking ap
 
 > This section contains important information if there is any.
 
-- [Is "Chiron Hei HK" Still Works In ReMoods?](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/discussions/38)
+- [Is &#34;Chiron Hei HK&#34; Still Works In ReMoods?](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/discussions/38)
 - [Met problem when updating ReMoods from v3 to v4?](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/discussions/37)
 - [Help Reporting Issues](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/discussions/39)
-  
+
 **DOCUMENTATION:**
 
-> Guiding you to get the complete experience of ReMoods Theme with the quick steps!
+> Information for new users.
 
 - [ReMoods Theme Getting Started Guide](Doc-GettingStartedGuide.md)
-<!-- - [Settings Introduction](ReMoodsThemeSettingsIntroduction.md) -->
+- [Settings Introduction](ReMoodsThemeSettingsIntroduction.md)
 
 **APPEARANCE & USE TIPS:**
 
-> Information about the general appearance of ReMoods and provides you with some use tips!
+> An overview for the general appearance and use tips.
 
 - [Theme Mode](#theme-mode)
 - [Interface](#interface)
@@ -48,7 +48,7 @@ ReMoods is an eye-health based theming plugin for the open source note-taking ap
 
 **CUSTOM ELEMENTS & USE TIPS:**
 
-> Details about the 5 major custom elements of ReMoods Theme. If you feel comfortable taking notes with HTML, these custom elements are the best helper for formatting your notes!
+> Details about the 5 major custom elements of ReMoods Theme. If you feel comfortable taking notes with a bit HTML, these custom elements are the best helper for formatting your notes!
 
 - [Art Gallery](#art-gallery)
 - [Sticky Notes](#sticky-notes)
@@ -76,35 +76,40 @@ ReMoods is an eye-health based theming plugin for the open source note-taking ap
 # Theme Mode
 
 ReMoods is most concerned about people who take long-time working with Joplin screen per day and aims to give you the best quality of eye-health experience. ReMoods completely fine tune every single color for your eyes and provides 3 theme modes for the needs of working under different lighting environments.
+
 ### Day Mode
 
 Day Mode ☀️ is perfect for working under sunlight and white light environments:
 
-![dayMode](https://user-images.githubusercontent.com/110529913/203996190-8fac31d5-b55f-41c8-aeb6-936010c4d86d.png)
+![dayEnv](screenshots/ThemeMode-DayEnv.png)
 
 It uses the brightest colors and white background to welcome every sunny day🌞.
 
-![batch_Screenshot 2023-02-12 001055](https://user-images.githubusercontent.com/110529913/218269464-a9af6389-e996-48cd-9cde-fee15214bada.png)
+![DayMode](screenshots/ThemeMode-DayMode.png)
+
+[⬆️Back](#table-of-contents)
 
 ### Dusk Mode
 
 Dusk Mode 🌆 is perfect for working under medium light and warm light environments, but it’s also fine for all lighting environments if you feel lazy switching to other theme modes:
 
-![duskMode](https://user-images.githubusercontent.com/110529913/203996215-cde1bc84-eb08-4e35-9a34-b35807848f73.png)
+![duskEnv](screenshots/ThemeMode-DuskEnv.png)
 
 It uses medium contrast colors and grey background to cope with uneven lighting environments, one difference to the other two is dusk mode has its own settings property to apply a darker background.
 
-![batch_Screenshot 2023-02-12 000801](https://user-images.githubusercontent.com/110529913/218269474-0445bbad-7dcd-4495-b991-2f5c6b081b06.png)
+![duskMode](screenshots/ThemeMode-DuskMode.png)
+
+[⬆️Back](#table-of-contents)
 
 ### Night Mode
 
 Night Mode 🌙 is perfect for working under low light environments:
 
-![nightMode](https://user-images.githubusercontent.com/110529913/203996199-6a29f26d-8a63-4c99-bd97-0969ebf854a7.png)
+![NightEnv](screenshots/ThemeMode-NightEnv.png)
 
 It uses low-contrast colors and minimizes unwanted glare within Joplin to protect the eyes of a hardworking night owl🦉.
 
-![batch_Screenshot 2023-02-12 000924](https://user-images.githubusercontent.com/110529913/218269481-78783853-0ccd-4d12-9531-47b2fc5e4694.png)
+![NightMode](screenshots/ThemeMode-NightMode.png)
 
 ### 💡Tips
 
@@ -116,34 +121,41 @@ It uses low-contrast colors and minimizes unwanted glare within Joplin to protec
 
 **A:** *Yes, you can, but you will find that other plugins' background colors might not match your ReMoods theme, and some of the text colors might become hard to read.*
 
+[⬆️Back](#table-of-contents)
+
 ## Interface
 
-ReMoods has changed some of the Joplin's UI behavior, and here shows you the simple description about them:
+Here shows you the core changing of the Joplin UI elements:
 
-![Screenshot 2023-03-24 144102](https://user-images.githubusercontent.com/110529913/227563112-4431a698-5833-46c6-ab14-ed814bd5f486.jpg)
+![Interface-1](screenshots/Interface-1.png)
 
-1. Notebook panel header: Click the header to open/close the notebook list; Click the notebook icon to create a new notebook.
-2. Notebook list: The notebook title is set to multiple lines by default, and if a single word is too long, it will come out a horizontal scrollbar, you can also use `Shift + scroll` to move back and forth.
-3. Note list panel header: In the Joplin v2.10.12+, the new buttons have changed to bigger, but ReMoods keeps them smaller.
-4. Editor panel header: The toolbar has hidden to get more space for the note content, you can use the mouse to hover over the header then you will see the toolbar appearing for you.
-5. Tag bar: You can create a long tag name or ever many tags without worrying about the container space, it can show unlimited tags, and you can use `shift + scroll` to lookups your tags.
+| No. | Object                 | Description                                                                                                                                                                                          |
+| :-- | :--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | Notebook panel header  | - Click the header to open/close the notebook list<br /> - Click the notebook icon to create a new notebook                                                                                          |
+| 2   | Notebook list          | - The notebook title is set to multiple lines by default<br /> - If a single word is too long, it will come out a horizontal scrollbar<br /> - You can use `Shift + scroll` to move back and forth |
+| 3   | Note list panel header | - In Joplin v2.10.12+, ReMoods keeps the new buttons small                                                                                                                                           |
+| 4   | Editor panel header    | - The toolbar has hidden to get more space for the note content<br /> - Mouse hovering over the header, then you will see the toolbar appearing                                                      |
+| 5   | Tag bar                | - You can create many tags without worrying about the container space<br /> - It can show unlimited tags<br /> - You can use `shift + scroll` to lookups your tags                                 |
+| 6   | Plugin panel           | - ReMoods cannot modify any colors of the plugin panel<br /> - ReMoods has minimized the sense of incongruity when using the built-in light theme and dark theme                                     |
+
+[⬆️Back](#table-of-contents)
 
 ## Customizable Heading
 
-ReMoods provides several different settings properties that can be used to customize the headings' style.
+ReMoods supplies multiple settings properties that can help you customize the appearance of headings, making them more outstanding.
 
-![Screenshot 2022-09-25 164824](https://user-images.githubusercontent.com/110529913/192136884-4a05f5e1-8e36-45c0-b880-fb8252b1ebce.png)
-
+![Default](screenshots/CustomizableHeadings-Default.png)
+![AddManualBorder](screenshots/CustomizableHeadings-AddManualBorder.png)
+![WithSpecialText](screenshots/CustomizableHeadings-WithSpecialText.png)
 ### 💡Tips
 
 1. You can set your favorite font for headings to improve the personality style of your notes.
-2. You can enable the heading's border for the headings which you often use with a border.
-3. You can also border to headings by adding `---` or `***` to the next line of the target heading manually, for which you didn't enable the border in options.
+2. You can enable border for the headings which you often use with a border.
+3. You can also add border to headings by typing `---` or `***` below the target heading, for which you didn't enable the border in options.
 4. You can enable the heading's marker, and it will appear right before each heading.(Render Viewer Only)
-5. You can enable the the H1 twill pattern style to create a more outstanding H1, but it would be required to use HTML `span` when you want to add emoji on H1. The `span` is for avoiding the twill pattern styles affecting the emoji.
+5. You can enable the H1 twill pattern style to make it more outstanding, but this effect would also affect the emoji icons on H1, so it is required to use `span` to avoid the twill pattern affecting it.
 
-![Screenshot 2022-09-25 203245](https://user-images.githubusercontent.com/110529913/192143564-00ae82a5-55ac-4c87-abec-5baa9bbc1f0b.png)
-![Screenshot 2022-09-25 203723](https://user-images.githubusercontent.com/110529913/192143773-76b71e07-7310-44b2-a34e-1022f4d02ff6.png)
+
 
 [⬆️Back](#table-of-contents)
 
@@ -151,16 +163,18 @@ ReMoods provides several different settings properties that can be used to custo
 
 Most of the text colors would change depends on the theme color you are using. Let's compare the difference after the theme color changed:
 
-![Screenshot 2022-09-25 025053](https://user-images.githubusercontent.com/110529913/192114108-06e98831-c1f6-4dc4-b754-3a98bb6315dc.png)
+![Color1](screenshots/TextStyle-Color1.png)
 
-![Screenshot 2022-09-26 002351](https://user-images.githubusercontent.com/110529913/192154325-b19c269b-2c6c-42ab-82d9-87751f96e7aa.png)
+![Color2](screenshots/TextStyle-Color2.png)
 
+![ListColor1](screenshots/TextStyle-ListColor1.png)
+![ListColor2](screenshots/TextStyle-ListColor2.png)
 ### 💡Tips
 
 1. If you mostly use *Insert Text and Strikethrough Text* as the meanings of add & remove, you would feel comfortable with the red & green style.
 2. If you mostly use *Insert Text* as underline text, it would be better to use the theme color style.(default)
 3. You can use the HTML `span` tag below a list item and add description to it, and the `span` text would be present in a different color.
-4. More other text settings can discover in options.
+4. More other text settings can be discovered in the options.
 
 [⬆️Back](#table-of-contents)
 
@@ -168,11 +182,11 @@ Most of the text colors would change depends on the theme color you are using. L
 
 Here show you the syntax highlighting styles:
 
-![Screenshot 2022-09-26 000631](https://user-images.githubusercontent.com/110529913/192153453-4d51e804-769d-47f8-abac-0794ad4266a1.png)
+![Color1](screenshots/CodeBlockSyntaxHighlight-Color1.png)
 
 It would change with the theme color too:
 
-![Screenshot 2022-09-26 003511](https://user-images.githubusercontent.com/110529913/192154770-10349a7e-6364-4ff4-a9f7-3caa95771865.png)
+![Color2](screenshots/CodeBlockSyntaxHighlight-Color2.png)
 
 [⬆️Back](#table-of-contents)
 
@@ -180,7 +194,8 @@ It would change with the theme color too:
 
 Joplin provides a great built-in Markdown TOC feature which helps you create the TOC by typing a simple command `[[toc]]` within your notes. ReMoods has restyled the TOC and made it float at the bottom right of the Render Viewer.
 
-![Screenshot 2022-09-25 032314](https://user-images.githubusercontent.com/110529913/192115112-9432ac02-94de-4894-b0a6-3fcc8333d32f.png)
+![Collapse](screenshots/FloatingTOC-Collapse.png)
+![Expand](screenshots/FloatingTOC-Expand.png)
 
 ### 💡Tips
 
@@ -229,7 +244,7 @@ Art Gallery has default limiting the `max-height` to 56% viewport height. Let's 
 
 Below is the sample of the art gallery(ag6) with 30 images:
 
-![Screenshot 2022-09-25 171257](https://user-images.githubusercontent.com/110529913/192136954-9ef7c0e7-9bf7-466d-a945-dcc222df3ff1.png)
+![ArtGallery-30ag6](screenshots/CustomElement-ArtGallery-30ag6.png)
 
 ### 💡Tips
 
@@ -247,7 +262,7 @@ ReMoods has 8 custom elements for creating the Sticky Notes: `note` , `tip` , `q
 
 Let’s see what are the Sticky Notes for:
 
-![Screenshot 2022-09-25 193253](https://user-images.githubusercontent.com/110529913/192141288-388a53d8-e9d2-4177-9ef8-40ebb4149d01.png)
+![StickyNotes](screenshots/CustomElement-StickyNotes.png)
 
 ### 💡Tips
 
@@ -263,7 +278,7 @@ Custom Title Block would be suitable for emphasizing a key concept, making it mo
 
 Let's see what it looks like:
 
-![Screenshot 2022-09-25 180612](https://user-images.githubusercontent.com/110529913/192138206-2c66c33d-5121-40bf-a5aa-2227d17c8260.png)
+![CustomTitleBlock](screenshots/CustomElement-CustomTitleBlock.png)
 
 ### 💡Tips
 
@@ -289,7 +304,9 @@ The custom element Key Point is super useful when you want to separate the conte
 
 See the below:
 
-![Screenshot 2022-09-25 181155](https://user-images.githubusercontent.com/110529913/192138395-287ca10b-4abf-4b57-99e7-eb7f89634120.png)
+![Short](screenshots/CustomElement-KeyPoint-Short.png)
+![Steps](screenshots/CustomElement-KeyPoint-Steps.png)
+![MultipleParagraphs](screenshots/CustomElement-KeyPoint-MultipleParagraphs.png)
 
 ### 💡Tips
 
@@ -305,8 +322,8 @@ See the below:
 
 The custom element Key Mention is good for creating additional short information for reference. You can use it to markup the last update time of the table or paragraph or more other usage.
 
-![Screenshot 2022-09-25 185512](https://user-images.githubusercontent.com/110529913/192140048-a6384ac9-069b-4d88-924c-9eb4a64c778a.png)
-
+![KeyMention](screenshots/CustomElement-KeyMetion.png)
+![KeyMention](screenshots/CustomElement-KeyMetion-StickyNotes.png)
 ### 💡Tips
 
 1. The custom element name `km` stands for *Key Mention*.
@@ -316,26 +333,6 @@ The custom element Key Mention is good for creating additional short information
 5. The special text `strong`, `emphasize`, `insert`, and `strikethrough` will all present as red color when used within the `km`.
 6. Mouse hovers on it to zoom bigger.
 
-**More use cases for reference:**
-
-```
-
-<km>Call Me: [+12345678910](tel:+12345678910)</km>
-
-<km>Contact Me: [jesscia@example.com](mailto:jesscia@example.com)</km>
-
-<km>*Girl In Ice* | Erica Ferencik</km>
-
-<km>Toothbrush ~~USD 8.00~~ USD 3.00</km>
-
-<km>Reference: [Joplin Home Page](https://www.joplin.org)</km>
-
-<comment>
-<km>Jasper >> Layla | 20/11/2022 00:30</km> Jasper leave a comment to Layla within a note.
-</comment>
-
-```
-
 [⬆️Back](#table-of-contents)
 
 ## Spoiler
@@ -344,7 +341,7 @@ This plugin allows you to create inline spoilers and spoiler blocks with a title
 
 Let's take a look at the spoiler block:
 
-![Screenshot 2022-09-25 233436](https://user-images.githubusercontent.com/110529913/192151983-f7da56cc-add8-4638-9224-60abeb4894c7.png)
+![Spoiler](screenshots/Plugin-Spoiler.png)
 
 ### 💡Tips
 
@@ -365,7 +362,7 @@ While an informative markdown table can be hard to read, using markdown table fo
 
 After installing the Markdown Table Colorize plugin and ReMoods, you will see the markdown table syntax looks like below:
 
-![Screenshot 2022-09-25 234159](https://user-images.githubusercontent.com/110529913/192152301-b4e3608d-f4f7-4191-a80e-8f804b117dc9.png)
+![MarkdownTableColorize](screenshots/Plugin-MarkdownTableColorize.png)
 
 - Separating table rows into independent sections
 - Use colored letters as a column mark
@@ -428,16 +425,16 @@ I would like to share the steps of how I create a markdown table. And these step
 
 Here show you all plugins that ReMoods has additional styles:
 
-| Plugin                  | Status |  Updated  | Modified                                                                                                                                                                                                                                                                                                                                                           | Remarks                                                                  |
-| :---------------------- | :----: | :-------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------- |
-| Spoiler                 |  Done  | 25AUG2022 | 1. Matching theme styles`<br>`2. Added use `<span>` within spoiler block as a title.`<br>`3. Added `<ctb>` style for spoiler block.`<br>`4. List text color changed.`<br>`5. Added use `<span>` within between list items for description.`<br>`6. Added symbol and hover effect for spoiler inline.`<br>`7. Adjustments for print & export PDF. | -                                                                        |
-| TurnToChart             |  Done  | 20OCT2022 | 1. Color adjustments for Render Viewer & PDF.`<br>`2.Removed chart background color.`<br>`3.                                                                                                                                                                                                                                                                   | -                                                                        |
-| Inline Todo             |  Done  | 25AUG2022 | 1. Improved alignment for Montserrat font.`<br>`2. Changed assignee tag style.`<br>`3. Improved text clarity for tags.`<br>`4. Added line-through effect for checked items. (hover for hiding the line)                                                                                                                                                      | -                                                                        |
-| Markdown Table Colorize |  Done  | 25AUG2022 | 1. Added column marks, max support up to 52 columns.`<br>`2. Added row separation.`<br>`3. Added hover zoom effect for column marks.                                                                                                                                                                                                                           | -                                                                        |
-| Draw.io                 | Tested | 25AUG2022 | -                                                                                                                                                                                                                                                                                                                                                                  | -                                                                        |
-| Enhancement             |  Done  | 22OCT2022 | 1.Removed the left color bar of admonition.`<br>`2.Changed footnote marker text to monospace font.`<br>`3.Changed cursor type when mouse hovering link marker.`<br>`4.Changed link and footnote colors.`<br>`5.Changed admonition color.                                                                                                                   | I'm not using this plugin, so I'll only fix bugs based on user requests. |
-| Note Link System        |  Done  | 20NOV2022 | 1.Fix the link hash keep showing on the spoiler block title and content top.                                                                                                                                                                                                                                                                                       | -                                                                        |
-| Code Clipboard          |  Done  | 10FEB2023 | 1.Reposition the copy button.`<br>`2.Added animations for copy button.                                                                                                                                                                                                                                                                                           | -                                                                        |
+| Plugin                  | Status |  Updated  | Modified                                                                                                                                                                                                                                                                                                                                               | Remarks                                                                  |
+| :---------------------- | :----: | :-------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------- |
+| Spoiler                 |  Done  | 25AUG2022 | 1. Matching theme styles<br />2. Added use `<span>` within spoiler block as a title.<br />3. Added `<ctb>` style for spoiler block.<br />4. List text color changed.<br />5. Added use `<span>` within between list items for description.<br />6. Added symbol and hover effect for spoiler inline.<br />7. Adjustments for print & export PDF. | -                                                                        |
+| TurnToChart             |  Done  | 20OCT2022 | 1. Color adjustments for Render Viewer & PDF.<br />2.Removed chart background color.<br />3.                                                                                                                                                                                                                                                           | -                                                                        |
+| Inline Todo             |  Done  | 25AUG2022 | 1. Improved alignment for Montserrat font.<br />2. Changed assignee tag style.<br />3. Improved text clarity for tags.<br />4. Added line-through effect for checked items. (hover for hiding the line)                                                                                                                                                | -                                                                        |
+| Markdown Table Colorize |  Done  | 25AUG2022 | 1. Added column marks, max support up to 52 columns.<br />2. Added row separation.<br />3. Added hover zoom effect for column marks.                                                                                                                                                                                                                   | -                                                                        |
+| Draw.io                 | Tested | 25AUG2022 | -                                                                                                                                                                                                                                                                                                                                                      | -                                                                        |
+| Enhancement             |  Done  | 22OCT2022 | 1.Removed the left color bar of admonition.<br />2.Changed footnote marker text to monospace font.<br />3.Changed cursor type when mouse hovering link marker.<br />4.Changed link and footnote colors.`<br>`5.Changed admonition color.                                                                                                             | I'm not using this plugin, so I'll only fix bugs based on user requests. |
+| Note Link System        |  Done  | 20NOV2022 | 1.Fix the link hash keep showing on the spoiler block title and content top.                                                                                                                                                                                                                                                                           | -                                                                        |
+| Code Clipboard          |  Done  | 10FEB2023 | 1.Reposition the copy button.<br />2.Added animations for copy button.                                                                                                                                                                                                                                                                                 | -                                                                        |
 
 <!-- |Admonition Markdown Extension|Done|30NOV2022|1.Admonition block styles.|| -->
 
@@ -469,6 +466,7 @@ That means you can have standalone font settings for them!
 
 For advanced management, you can also control which elements should show on the PDF through the settings page, such as hiding the Sticky Notes, hiding the Key Mention, hiding the notebook title, etc. Play around the options menu advanced settings to discover more!
 
-![Screenshot 2022-09-26 190704](https://user-images.githubusercontent.com/110529913/192261498-b95ee279-65f3-4dc3-9a1f-609023f62859.png)
+![FontSettings](screenshots/Print&ExportPDF-FontSettings.png)
+![Settings](screenshots/Print&ExportPDF-Settings.png)
 
 [⬆️Back](#table-of-contents)
