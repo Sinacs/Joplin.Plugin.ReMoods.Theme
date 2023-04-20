@@ -404,7 +404,7 @@ Disable:
 | --------------------------------------------------------------------------------------------- | ------------- |
 | `Enable the "++" & "--" symbols at the beginning of the insert text and strikethrough text` | Render Viewer |
 | `Enable the ">\|" symbol at the beginning of the inline code`                                | Render Viewer |
-| `Enable the symbol at the beginninh of the custom title block`                              | Render Viewer |
+| `Enable the symbol at the beginning of the custom title block`                              | Render Viewer |
 
 Enable:
 
@@ -475,10 +475,10 @@ The horizontal scrollbar will become thick when mouse hovering over the notebook
 See the difference in the depth-7 directory.
 
 Enable:
-![notebookNameHorizontalScollbar-enable](screenshots/preview/notebookNameHorizontalScrollbar-enable.png)
+![notebookNameHorizontalScrollbar-enable](screenshots/preview/notebookNameHorizontalScrollbar-enable.png)
 
 Disable:
-![notebookNameHorizontalScollbar-disable](screenshots/preview/notebookNameHorizontalScrollbar-disable.png)
+![notebookNameHorizontalScrollbar-disable](screenshots/preview/notebookNameHorizontalScrollbar-disable.png)
 
 [⬆️Back](#table-of-contents)
 
@@ -514,7 +514,7 @@ Disable:
 
 | Property                      | Area           |
 | ----------------------------- | -------------- |
-| `Enabel sync feature panel` | Notebook Panel |
+| `Enable sync feature panel` | Notebook Panel |
 
 See the difference from the sync details and sync button which at the bottom of the notebook panel.
 
@@ -532,7 +532,7 @@ Disable:
 | ---------------------------- | --------------------------------- |
 | `Enable tag feature panel` | Notebook Panel<br /> Editor Panel |
 
-See the difference from the tags section of noteboook panel and the tag bar of editor panel.
+See the difference from the tags section of notebook panel and the tag bar of editor panel.
 
 Enable:
 ![tagFeaturePanel-Enable](screenshots/preview/tagFeaturePanel-Enable.png)
