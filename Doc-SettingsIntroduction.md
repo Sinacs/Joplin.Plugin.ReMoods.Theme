@@ -441,9 +441,11 @@ Below are the settings properties for UI elements:
 This effect only appears when mouse hovers over the notebook panel or note list panel.
 
 Enable:
+
 ![widerScrollbar-enable](screenshots/preview/widerScrollbar-enable.png)
 
 Disable:
+
 ![widerScrollbar-disable](screenshots/preview/widerScrollbar-disable.png)
 
 [⬆️Back](#table-of-contents)
@@ -457,9 +459,11 @@ Disable:
 See the difference in the dept-7 and depth-10 directory.
 
 Enable:
+
 ![multipleLinesNotebookName-enable](screenshots/preview/multipleLinesNotebookName-enable.png)
 
 Disable:
+
 ![multipleLinesNotebookName-disable](screenshots/preview/multipleLinesNotebookName-disable.png)
 
 [⬆️Back](#table-of-contents)
@@ -475,9 +479,11 @@ The horizontal scrollbar will become thick when mouse hovering over the notebook
 See the difference in the depth-7 directory.
 
 Enable:
+
 ![notebookNameHorizontalScrollbar-enable](screenshots/preview/notebookNameHorizontalScrollbar-enable.png)
 
 Disable:
+
 ![notebookNameHorizontalScrollbar-disable](screenshots/preview/notebookNameHorizontalScrollbar-disable.png)
 
 [⬆️Back](#table-of-contents)
@@ -489,9 +495,11 @@ Disable:
 | `Enable notebook folder icon` | Notebook Panel |
 
 Enable:
+
 ![notebookFolderIcon-enable](screenshots/preview/notebookFolderIcon-enable.png)
 
 Disable:
+
 ![notebookFolderIcon-disable](screenshots/preview/notebookFolderIcon-disable.png)
 
 [⬆️Back](#table-of-contents)
@@ -503,9 +511,11 @@ Disable:
 | `Enable "All Notes" button` | Notebook Panel |
 
 Enable:
+
 ![allNotesButton-enable](screenshots/preview/allNotesButton-enable.png)
 
 Disable:
+
 ![allNotesButton-disable](screenshots/preview/allNotesButton-disable.png)
 
 [⬆️Back](#table-of-contents)
@@ -519,9 +529,11 @@ Disable:
 See the difference from the sync details and sync button which at the bottom of the notebook panel.
 
 Enable:
+
 ![syncFeaturePanel-enable](screenshots/preview/syncFeaturePanel-enable.png)
 
 Disable:
+
 ![syncFeaturePanel-disable](screenshots/preview/syncFeaturePanel-disable.png)
 
 [⬆️Back](#table-of-contents)
@@ -535,9 +547,11 @@ Disable:
 See the difference from the tags section of notebook panel and the tag bar of editor panel.
 
 Enable:
+
 ![tagFeaturePanel-Enable](screenshots/preview/tagFeaturePanel-Enable.png)
 
 Disable:
+
 ![tagFeaturePanel-disable](screenshots/preview/tagFeaturePanel-disable.png)
 
 [⬆️Back](#table-of-contents)
@@ -585,6 +599,7 @@ Disable, pdf output:
 When the PDF is showing the note title, h1, and h2 at the same time, you might find that they are all having a border. So, in some similar situation, you might want to disable the H1 border.
 
 In editor:
+
 ![printH1Border-editor](screenshots/preview/printH1Border-editor.png)
 
 Enable:
