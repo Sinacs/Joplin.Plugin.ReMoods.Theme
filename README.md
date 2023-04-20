@@ -32,7 +32,7 @@ ReMoods is an eye-health based theming plugin for the open source note-taking ap
 > Information for new users.
 
 - [ReMoods Theme Getting Started Guide](Doc-GettingStartedGuide.md)
-<!-- - [Settings Introduction](Doc-SettingsIntroduction.md) -->
+- [Settings Introduction](Doc-SettingsIntroduction.md)
 
 **APPEARANCE & USE TIPS:**
 
