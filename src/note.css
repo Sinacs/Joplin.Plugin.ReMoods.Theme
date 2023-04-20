@@ -863,6 +863,7 @@ body,
 /* content container --------------------------------------- */
 #joplin-container-content {
   padding-top: 13px !important;
+  height: calc(100% - 13px) !important;
 }
 
 /* CONTAINER: RICH TEXT EDITOR ============================= */
