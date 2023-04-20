@@ -181,7 +181,7 @@ Disable:
 
 [⬆️Back](#table-of-contents)
 
-### Enable emphasize color for insert text & strikethrough text
+### Enable emphasize colors for insert text & strikethrough text
 
 | Property                                                        | Area                                |
 | --------------------------------------------------------------- | ----------------------------------- |
@@ -195,7 +195,7 @@ Disable:
 
 [⬆️Back](#table-of-contents)
 
-### Enable background color for insert text & strikethrough text
+### Enable background colors for insert text & strikethrough text
 
 | Property                                                         | Area                                |
 | ---------------------------------------------------------------- | ----------------------------------- |
