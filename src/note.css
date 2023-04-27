@@ -31,81 +31,81 @@
     - PRINT PROPERTIES
   - SCREEN
     - FONT
-      - BASE FONT
-      - MONOSPACE FONT
-      - HEADING FONT
+      - 1  BASE FONT
+      - 2  MONOSPACE FONT
+      - 3  HEADING FONT
     - BASIC
-      - CONTAINER
-      - PARAGRAPH
-      - SCROLLBAR
-      - ELEMENT MARGIN
+      - 1  CONTAINER
+      - 2  PARAGRAPH
+      - 3  SCROLLBAR
+      - 4  ELEMENT MARGIN
     - ELEMENTS
-      - SPECIAL TEXT
-      - LINK
-      - LIST
-      - FOOTNOTE
-      - HEADINGS
-      - MATH NOTATION
-      - BLOCKQUOTE
-      - TABLE
-      - MERMAID CHART
-      - IMAGE
-      - MARKDOWN TOC
-      - CODE BLOCK
+      - 1  SPECIAL TEXT
+      - 2  LINK
+      - 3  LIST
+      - 4  FOOTNOTE
+      - 5  HEADINGS
+      - 6  MATH NOTATION
+      - 7  BLOCKQUOTE
+      - 8  TABLE
+      - 9  MERMAID CHART
+      - 10 IMAGE
+      - 11 MARKDOWN TOC
+      - 12 CODE BLOCK
     - CUSTOM ELEMENTS
-      - ART GALLERY
-      - STICKY NOTES
-      - CUSTOM TITLE BLOCK
-      - KEY POINT
-      - KEY MENTION
+      - 1  ART GALLERY
+      - 2  STICKY NOTES
+      - 3  CUSTOM TITLE BLOCK
+      - 4  KEY POINT
+      - 5  KEY MENTION
     - PLUGINS
-      - SPOILER
-      - TURNTOCHART (TTC)
-      - INLINE TODO (IT)
-      - NOTE LINK SYSTEM (NLS)
-      - CODE CLIPBOARD (CC)
+      - 1  SPOILER
+      - 2  TURNTOCHART (TTC)
+      - 3  INLINE TODO (IT)
+      - 4  NOTE LINK SYSTEM (NLS)
+      - 5  CODE CLIPBOARD (CC)
 
   - EXPORT HTML FILE
 
   - PRINT
     - PRINT FONT
-      - PRINT BASE FONT
-      - PRINT MONOSPACE FONT
-      - PRINT HEADING FONT
+      - 1  PRINT BASE FONT
+      - 2  PRINT MONOSPACE FONT
+      - 3  PRINT HEADING FONT
     - PRINT READY
-      - PRINT EXACT COLOR
-      - PAGE MARGIN
-      - REMOVE BLOCK ELEMENT MAX-HEIGHT
-      - PAGE BREAK
-      - REMOVE BACKGROUND & FILTER
-      - REMOVE TEXT SHADOW
-      - DISPLAY ELEMENTS
+      - 1  PRINT EXACT COLOR
+      - 2  PAGE MARGIN
+      - 3  REMOVE BLOCK ELEMENT MAX-HEIGHT
+      - 4  PAGE BREAK
+      - 5  REMOVE BACKGROUND & FILTER
+      - 6  REMOVE TEXT SHADOW
+      - 7  DISPLAY ELEMENTS
     - PRINT STYLES ADJUSTMENTS
-      - PRINT SPECIAL TEXT
-      - PRINT LINK
-      - PRINT HEADINGS
-      - PRINT MERMAID CHART
-      - PRINT MARKDOWN TOC
-      - PRINT ART GALLERY
-      - PRINT STICKY NOTES
-      - PRINT SPOILER
+      - 1  PRINT SPECIAL TEXT
+      - 2  PRINT LINK
+      - 3  PRINT HEADINGS
+      - 4  PRINT MERMAID CHART
+      - 5  PRINT MARKDOWN TOC
+      - 6  PRINT ART GALLERY
+      - 7  PRINT STICKY NOTES
+      - 8  PRINT SPOILER
     - PRINT COLOR ADJUSTMENTS
-      - PRINT PARAGRAPH
-      - PRINT SPECIAL TEXT
-      - PRINT LINK
-      - PRINT LIST
-      - PRINT FOOTNOTE
-      - PRINT HEADINGS
-      - PRINT MATH NOTATION
-      - PRINT BLOCKQUOTE
-      - PRINT TABLE
-      - PRINT MARKDOWN TOC
-      - PRINT CODE BLOCK
-      - PRINT STICKY NOTES
-      - PRINT CUSTOM TITLE BLOCK
-      - PRINT KEY POINT
-      - PRINT KEY MENTION
-      - PRINT TURNTOCHART (TTC)
+      - 1  PRINT PARAGRAPH
+      - 2  PRINT SPECIAL TEXT
+      - 3  PRINT LINK
+      - 4  PRINT LIST
+      - 5  PRINT FOOTNOTE
+      - 6  PRINT HEADINGS
+      - 7  PRINT MATH NOTATION
+      - 8  PRINT BLOCKQUOTE
+      - 9  PRINT TABLE
+      - 10 PRINT MARKDOWN TOC
+      - 11 PRINT CODE BLOCK
+      - 12 PRINT STICKY NOTES
+      - 13 PRINT CUSTOM TITLE BLOCK
+      - 14 PRINT KEY POINT
+      - 15 PRINT KEY MENTION
+      - 16 PRINT TURNTOCHART (TTC)
 */
 
 
@@ -130,7 +130,7 @@
 
 
 
-  /* || USER SETTING PROPERTIES 1/2 | SCREEN *************** */
+  /* || USER SETTING PROPERTIES 1 | SCREEN ***************** */
   /* SCREEN: THEME COLOR =================================== */
   --usp-hue: 260deg;
 
@@ -186,9 +186,8 @@
   --usp-inline-code-symbol-display: inline-block;
   --usp-custom-title-block-symbol-display: inline-block;
 
-
   
-  /* || USER SETTING PROPERTIES 2/2 | PRINT **************** */
+  /* || USER SETTING PROPERTIES 2 | PRINT ****************** */
   /* PRINT: FONT =========================================== */
   --usp-print-custom-base-font: none;
   --usp-print-custom-monospace-font: none;
@@ -1746,6 +1745,7 @@ img:hover {
   width: 100%;
   transition: color .1s, background 0.8s, margin 0.1s;
 }
+/* toc link hover ------------------------------------------ */
 #rendered-md .table-of-contents li a:hover {
   margin-left: -5px;
   color: var(--sc-toc-link-text-hover);

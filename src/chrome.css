@@ -34,58 +34,58 @@
     
   - MARKDOWN EDITOR
     - FONT
-      - BASE FONT
-      - MONOSPACE FONT
-      - HEADING FONT
+      - 1  BASE FONT
+      - 2  MONOSPACE FONT
+      - 3  HEADING FONT
     - BASIC
-      - CONTAINER
-      - PARAGRAPH
-      - SCROLLBAR
-      - OTHERS
+      - 1  CONTAINER
+      - 2  PARAGRAPH
+      - 3  SCROLLBAR
+      - 4  OTHERS
     - MARKDOWN
-      - SPECIAL TEXT
-      - LINK
-      - HTML
-      - KATEX
-      - LIST
-      - FOOTNOTE
-      - HEADINGS
-      - BLOCKQUOTE
-      - CODE BLOCK
+      - 1  SPECIAL TEXT
+      - 2  LINK
+      - 3  HTML
+      - 4  KATEX
+      - 5  LIST
+      - 6  FOOTNOTE
+      - 7  HEADINGS
+      - 8  BLOCKQUOTE
+      - 9  CODE BLOCK
     - PLUGINS
-      - MARKDOWN TABLE COLORIZE (MTC)
-      - ENHANCEMENT (EH)
+      - 1  MARKDOWN TABLE COLORIZE (MTC)
+      - 2  ENHANCEMENT (EH)
 
   - JOPLIN UI
     - LAYOUT
-      - SECTION
-      - COLUMN
-      - ROW
+      - 1  SECTION
+      - 2  COLUMN
+      - 3  ROW
     - NOTEBOOK PANEL
-      - SCROLLBAR
-      - HEADER
-      - BODY
-      - FOOTER
+      - 1  SCROLLBAR
+      - 2  HEADER
+      - 3  BODY
+      - 4  FOOTER
     - NOTE LIST PANEL
-      - SCROLLBAR
-      - HEADER
-      - BODY
+      - 1  SCROLLBAR
+      - 2  HEADER
+      - 3  BODY
     - EDITOR PANEL
-      - SCROLLBAR
-      - HEADER
-      - BODY
-      - FOOTER
+      - 1  SCROLLBAR
+      - 2  HEADER
+      - 3  BODY
+      - 4  FOOTER
     - MODAL DIALOG
-      - TAG CREATOR
-      - COMMAND PALETTE
-      - NOTEBOOK CREATOR
+      - 1  TAG CREATOR
+      - 2  COMMAND PALETTE
+      - 3  NOTEBOOK CREATOR
     - OPTIONS PANEL
-      - MENU
-      - MAIN SECTION
-      - PLUGIN PAGE
-      - ENCRYPTION PAGE
-      - WEB CLIPPER PAGE
-      - FOOTER
+      - 1  MENU
+      - 2  MAIN SECTION
+      - 3  PLUGIN PAGE
+      - 4  ENCRYPTION PAGE
+      - 5  WEB CLIPPER PAGE
+      - 6  FOOTER
 */
 
 
@@ -605,7 +605,7 @@
 .CodeMirror-lines .CodeMirror-line .cm-rm-sub,
 .CodeMirror-lines .CodeMirror-line .cm-rm-sup-token,
 .CodeMirror-lines .CodeMirror-line .cm-link-text:not(.cm-rm-link):not(.cm-em), /* footnote ref. */
-.CodeMirror-lines .CodeMirror-line .cm-null.cm-jn-monospace /* table */,
+.CodeMirror-lines .CodeMirror-line .cm-null.cm-jn-monospace, /* table */
 .CodeMirror-lines .cm-jn-code-block .cm-string.cm-jn-monospace,
 .CodeMirror-lines .cm-jn-code-block .cm-jn-monospace,
 .CodeMirror-lines .CodeMirror-line .enhancement-footnote-marker-text {
@@ -710,7 +710,7 @@
 
 
 
-/* || BASIC 3/4 | SCROLLBAR ******************************** */
+/* || BASIC 3 | SCROLLBAR ********************************** */
 /* SCROLLBAR: MARKDOWN EDITOR SCROLLBAR ==================== */
 /* thumb --------------------------------------------------- */
 .codeMirrorEditor ::-webkit-scrollbar-thumb {
@@ -729,7 +729,7 @@
 
 
 
-/* || BASIC 4/4 | OTHERS *********************************** */
+/* || BASIC 4 | OTHERS ************************************* */
 /* OTHERS: CURSOR ========================================== */
 .CodeMirror-cursor {
   border-left: var(--me-cursor-bdl) !important;
@@ -1137,7 +1137,7 @@
 
 
 
-/* || MARKDOWN 8/9 | BLOCKQUOTE **************************** */
+/* || MARKDOWN 8 | BLOCKQUOTE ****************************** */
 .CodeMirror-lines .CodeMirror-line .cm-quote {
   color: var(--me-blockquote-text);
   opacity: 1;
@@ -1145,7 +1145,7 @@
 
 
 
-/* || MARKDOWN 9/9 | CODE BLOCK **************************** */
+/* || MARKDOWN 9 | CODE BLOCK ****************************** */
 .CodeMirror-lines .cm-jn-code-block {
   padding-left: 5px !important;
   background: var(--me-code-block-bg) !important;
@@ -1269,7 +1269,7 @@
 
 
 
-/* || PLUGINS | MARKDOWN TABLE COLORIZE (MTC) ************** */
+/* || PLUGINS 1 | MARKDOWN TABLE COLORIZE (MTC) ************ */
 /* MTC: ROW ================================================ */
 /* row separator ------------------------------------------- */
 .CodeMirror-lines .CodeMirror-line .cm-tabcolor-firstch:first-child::before {
@@ -1468,7 +1468,7 @@
 
 
 
-/* || PLUGINS | ENHANCEMENT(EH) **************************** */
+/* || PLUGINS 2 | ENHANCEMENT(EH) ************************** */
 /* EH: LINK ================================================ */
 /* link marker --------------------------------------------- */
 .enhancement-link-marker:not(#fake) {
@@ -1549,7 +1549,7 @@
 
 
 
-/* || LAYOUT 1/3 | SECTION ********************************* */
+/* || LAYOUT 1 | SECTION *********************************** */
 /* CONTAINER: BACKGROUND =================================== */
 #react-root > div[class^="profile-"] > div,
 body {
@@ -1563,9 +1563,9 @@ body {
 
 
 
-/* || LAYOUT 2/3 | COLUMN ********************************** */
+/* || LAYOUT 2 | COLUMN ************************************ */
 /* COLUMN: EDITOR PANEL ==================================== */
-/* :: when editor panel occupies a column >>>>>>>>>>>>>>>>>> */
+/* :: when editor panel occupies a whole column >>>>>>>>>>>> */
 /* >> tag bar ---------------------------------------------- */
 #react-root .rli-root > .rli-editor > div > div > div .tag-bar {
   margin-bottom: 5px;
@@ -1583,7 +1583,7 @@ body {
 
 
 
-/* || LAYOUT 3/3 | ROW ************************************* */
+/* || LAYOUT 3 | ROW *************************************** */
 
 
 
@@ -1595,7 +1595,7 @@ body {
 
 
 
-/* || NOTEBOOK PANEL 1/4 | SCROLLBAR *********************** */
+/* || NOTEBOOK PANEL 1 | SCROLLBAR ************************* */
 /* SCROLLBAR: NOTEBOOK PANEL =============================== */
 .rli-sideBar ::-webkit-scrollbar {
   height: 1px !important;
@@ -1627,7 +1627,7 @@ body {
 
 
 
-/* || NOTEBOOK PANEL 2/4 | HEADER ************************** */
+/* || NOTEBOOK PANEL 2 | HEADER **************************** */
 /* HEADER: CONTAINER ======================================= */
 .sidebar > div:first-child > div:first-child {
   position: -webkit-sticky;
@@ -1690,7 +1690,7 @@ body {
 
 
 
-/* || NOTEBOOK PANEL 3/4 | BODY **************************** */
+/* || NOTEBOOK PANEL 3 | BODY ****************************** */
 /* BODY: NOTEBOOK LIST ===================================== */
 /* notebook list container --------------------------------- */
 .sidebar > div:first-child {
