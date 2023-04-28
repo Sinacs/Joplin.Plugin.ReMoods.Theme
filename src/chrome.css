@@ -2615,7 +2615,7 @@ body {
 }
 /* render viewer container --------------------------------- */
 .rli-editor > div > div > div > div:nth-child(2) > div:not(.joplin-tinymce) > div:nth-child(2) > div:nth-child(2) {
-  flex: var(--usp-ep-render-viewer-flex:) !important;
+  flex: var(--usp-ep-render-viewer-flex) !important;
 }
 /* BODY: EDITOR DIVIDER ==================================== */
 .rli-editor > div > div > div > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) {
