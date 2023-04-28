@@ -353,19 +353,17 @@
   
   /* MARKDOWN TOC =========================================================================== */
   --sc-toc-bg:                                            var(--sc-bg-2);
-  --sc-toc-bdc:                                           hsl(var(--usp-hue), 100%,  60%);
-  --sc-toc-bs:                                       10px hsl(var(--usp-hue), 100%,  30%);
   
-  --sc-toc-btn-text:                                      var(--sc-bg-1);
-  --sc-toc-btn-bg:                                        hsl(var(--usp-hue), 100%,  75%);
-  --sc-toc-btn-bd:                              2px solid hsl(var(--usp-hue), 100%,  90%);
-  --sc-toc-btn-bs:                                    5px hsl(var(--usp-hue), 100%,  60%);
+  --sc-toc-floating-text-k1:                              hsl(var(--usp-hue),   0%, 100%);
+  --sc-toc-floating-text-k2:                              hsl(var(--usp-hue), 100%,  75%);
+  --sc-toc-floating-text-ds-k1:                   0 0 2px hsl(var(--usp-hue), 100%,  50%);
+  --sc-toc-floating-text-ds-k2:                   0 0 2px hsl(var(--usp-hue), 100%,  30%);
   
   --sc-toc-list-bdl:                            1px solid hsl(var(--usp-hue),  30%,  30%);
   
   --sc-toc-link-text-hover:                               hsl(var(--usp-hue),   0%, 100%);
   --sc-toc-link-bg-hover:                                 hsl(var(--usp-hue),  25%,  20%);
-
+  
   /* CODE BLOCK ============================================================================= */
   --sc-code-block-bg:                                     var(--sc-bg-2);
   --sc-code-block-bdc:                                    hsl(var(--usp-hue), 100%,  70%);
@@ -1686,47 +1684,56 @@ img:hover {
 #rendered-md .table-of-contents,
 #rendered-md .table-of-contents::before {
   position: fixed;
-  bottom: 10px;
-  right: 15px;
-  width: 30px;
-  height: 20px;
-  background: var(--sc-toc-bg);
-  border-color: var(--sc-toc-bdc);
-  box-shadow: 0 0 var(--sc-toc-bs);
-  border-radius: 7px;
-  overflow: hidden;
+  display: block;
+  top: 0px;
+  right: 7px !important;
+  height: 100%;
+  width: 50px;
+  border-radius: 7px 0 0 7px;
+  overflow: scroll;
   z-index: 99;
-  transition: height 0.1s, width 0.1s;
+  transition: width 0.3, background 0.3s;
 }
 /* hover --------------------------------------------------- */
 #rendered-md .table-of-contents:hover {
-  padding: 20px 10px;
   width: 400px;
-  height: 45vh;
-  border-width: 4px 0;
-  border-style: solid;
-  overflow: scroll;
-  transition: height 0.3s, width 0.3s;
+  background: var(--sc-toc-bg);
+  transition: width 0.3s, background 0.3s;
 }
 
-/* TOC FLOATING BUTTON ===================================== */
+/* TOC FLOATING TEXT ======================================= */
+@keyframes flash {
+  0% {
+    transform: scale(100%);
+    color: var(--sc-toc-floating-text-k1);
+    filter: drop-shadow(0 0 2px var(--sc-toc-floating-text-ds-k1));
+  }
+  50% {
+    transform: scale(110%);
+    color: var(--sc-toc-floating-text-k2);
+    filter: drop-shadow(0 0 2px var(--sc-toc-floating-text-ds-k2));
+  }
+  100% {
+    transform: scale(100%);
+    color: var(--sc-toc-floating-text-k1);
+    filter: drop-shadow(0 0 2px var(--sc-toc-floating-text-ds-k1));
+  }
+}
 #rendered-md .table-of-contents::before {
-  content: "TOC";
-  display: block;
-  padding: 10px 0 0 0;
-  text-align: center;
-  line-height: 1em;
+  content: "- TOC -";
+  margin: auto 0;
+  font-family: sans-serif;
+  font-size: 10px;
   font-weight: 900;
-  font-family: arial, sans-serif;
-  font-size: 12px;
-  color: var(--sc-toc-btn-text);
-  background: var(--sc-toc-btn-bg);
-  border: var(--sc-toc-btn-bd);
-  box-shadow: 0 0 var(--sc-toc-btn-bs);
+  text-align: center;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  overflow: hidden;
+  animation: flash 3s infinite;
 }
 /* hover --------------------------------------------------- */
 #rendered-md .table-of-contents:hover::before {
-  visibility: hidden; 
+  visibility: hidden;
 }
 
 /* TOC LIST ================================================ */
@@ -1735,9 +1742,25 @@ img:hover {
   padding-left: 8px;
 }
 #rendered-md .table-of-contents ul {
+  display: none;
   padding: 0;
   margin: 0 0 0 8px;
+}
+#rendered-md .table-of-contents ul:first-child {
+  padding: 30px 0 0 0;
+}
+#rendered-md .table-of-contents ul:first-child::after {
+  content: "-- END --";
+  display: block;
+  margin: 15px;
+  text-align: center;
+}
+#rendered-md .table-of-contents ul:not(:first-child) {
   border-left: var(--sc-toc-list-bdl);
+}
+/* hover text ---------------------------------------------- */
+#rendered-md .table-of-contents:hover ul {
+  display: block;
 }
 /* toc link ------------------------------------------------ */
 #rendered-md .table-of-contents li a {
