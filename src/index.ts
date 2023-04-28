@@ -5,14 +5,17 @@ import { generateUserCSS } from './generateUserCSS';
 
 export type ThemeSettings = {
 
-	// Markdown Editor & Render Viewer ==============
+  // General ======================================
 	remoodsHue: string;
 	themeMode: string;
-	baseFont: string;
+  splitViewLayout: string;
+  baseFont: string;
 	monospaceFont: string;
   headingFont: string;
 	baseFontSize: number;
 	monospaceFontSize: number;
+
+	// Markdown Editor & Render Viewer ==============
 	h1FontSize: number;
 	h2FontSize: number;
 	h3FontSize: number;
@@ -200,6 +203,23 @@ async function prepareThemeSettings(): Promise<void> {
 				'nightMode': 'Night Mode'
 			},
 			description: 'It required to go to `Options > Appearance > Theme` and set the Joplin built-in theme matching with the theme mode you choose. | Day Mode > Light theme. | Dusk Mode & Night Mode > Dark theme.',
+			public: true,
+
+		},
+
+		'splitViewLayout': {
+
+			section: 'remoodsThemeSection',
+			label: 'Split View Layout',
+			type: SettingItemType.String,
+			value: 'meLeft',
+			isEnum: true,
+			options: {
+				'meTop': 'Markdown editor to top',
+				'meBottom': 'Markdown editor to bottom',
+				'meLeft': 'Markdown editor to left',
+			},
+			description: 'Set the markdown editor position in split view.',
 			public: true,
 
 		},
@@ -1032,11 +1052,13 @@ async function writeUserCSS(): Promise<void> {
 	
 	const remoodsHue = await joplin.settings.value('remoodsHue');
 	const themeMode = await joplin.settings.value('themeMode');
+	const splitViewLayout = await joplin.settings.value('splitViewLayout');
 	const baseFont = await joplin.settings.value('baseFont');
 	const monospaceFont = await joplin.settings.value('monospaceFont');
 	const headingFont = await joplin.settings.value('headingFont');
 	const baseFontSize = await joplin.settings.value('baseFontSize');
 	const monospaceFontSize = await joplin.settings.value('monospaceFontSize');
+
 	const h1FontSize = await joplin.settings.value('h1FontSize');
 	const h2FontSize = await joplin.settings.value('h2FontSize');
 	const h3FontSize = await joplin.settings.value('h3FontSize');
@@ -1117,11 +1139,13 @@ async function writeUserCSS(): Promise<void> {
 		
 		remoodsHue,
 		themeMode,
+		splitViewLayout,
 		baseFont,
 		monospaceFont,
 		headingFont,
 		baseFontSize,
 		monospaceFontSize,
+
 		h1FontSize,
 		h2FontSize,
 		h3FontSize,

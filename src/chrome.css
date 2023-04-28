@@ -154,6 +154,12 @@
   --usp-tag-feature-display-2: flex;
   --usp-all-notes-button-display: flex;
 
+  /* LAYOUT ************************************************ */
+  --usp-split-view-flex-direction: column;
+  --usp-editor-divider-bw: 5px 0 0 0px;
+  --usp-ep-markdown-editor-flex: 1 1 0%;
+  --usp-ep-render-viewer-flex: 1 1 0%;
+
 
 
 
@@ -474,6 +480,8 @@
 
   /* EDITOR PANEL =========================================================================== */
   --s-ep-toolbar-ds:                                  1px hsl(var(--usp-hue), 100%,  30%);
+  
+  --s-ep-divider-bd-hover:                                hsl(calc(var(--usp-hue) + 180deg), 100%, 80%);
 
   --s-ep-notebook-nav-btn-bg:                             hsl(var(--usp-hue),  30%,  20%);
   --s-ep-notebook-nav-btn-bd:                             hsl(var(--usp-hue), 100%,  30%);
@@ -2599,11 +2607,26 @@ body {
 /* BODY: CONTAINER ========================================= */
 .rli-editor > div > div > div > div:nth-child(2) > div:not(.joplin-tinymce) > div:nth-child(2) {
   padding: 0 !important;
+  flex-direction: var(--usp-split-view-flex-direction) !important;
 }
-
+/* markdown editor container ------------------------------- */
+.rli-editor > div > div > div > div:nth-child(2) > div:not(.joplin-tinymce) > div:nth-child(2) > div:nth-child(1) {
+  flex: var(--usp-ep-markdown-editor-flex) !important;
+}
+/* render viewer container --------------------------------- */
+.rli-editor > div > div > div > div:nth-child(2) > div:not(.joplin-tinymce) > div:nth-child(2) > div:nth-child(2) {
+  flex: var(--usp-ep-render-viewer-flex:) !important;
+}
 /* BODY: EDITOR DIVIDER ==================================== */
 .rli-editor > div > div > div > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) {
-  border-left: 1px solid var(--g-ep-divider) !important;
+  border-width: var(--usp-editor-divider-bw) !important;
+  border-style: solid;
+  border-color: var(--g-ep-divider);
+  transition: border-color 0.3s;
+}
+/* hover ----------------------------------------------------*/
+.rli-editor > div > div > div > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2):hover {
+  border-color: var(--s-ep-divider-bd-hover) !important;
 }
 
 /* BODY: EDITOR TOOLBAR ==================================== */

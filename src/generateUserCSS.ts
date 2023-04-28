@@ -9,6 +9,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
 
     remoodsHue,
 		themeMode,
+    splitViewLayout,
     baseFont,
 		monospaceFont,
 		headingFont,
@@ -2044,6 +2045,50 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
 
       alert('ReMoods Theme: There seems to be a problem loading the "Theme Mode", please restart Joplin and try again.')
 
+  }
+
+  switch(splitViewLayout) {
+
+    case 'meTop':
+      chromeCSS = chromeCSS.replace(/^  --usp-split-view-flex-direction:.+?;/gms, '  --usp-split-view-flex-direction: column;');
+      chromeCSS = chromeCSS.replace(/^  --usp-editor-divider-bw:.+?;/gms, '  --usp-editor-divider-bw: 5px 0 0 0;');
+      chromeCSS = chromeCSS.replace(/^  --g-ep-divider:.+?;/gms, '  --g-ep-divider: var(--s-panel-divider);');
+      
+      if (settings.themeMode === 'dayMode') {
+        chromeCSS = chromeCSS.replace(/^  --s-ep-divider-bd-hover:.+?;/gms,  '  --s-ep-divider-bd-hover: hsl(calc(var(--usp-hue) + 180deg), 100%, 80%);');
+      } else if (settings.themeMode === 'nightMode') {
+        chromeCSS = chromeCSS.replace(/^  --s-ep-divider-bd-hover:.+?;/gms,  '  --s-ep-divider-bd-hover: hsl(calc(var(--usp-hue) + 180deg), 60%, 25%);');
+      } else {
+        chromeCSS = chromeCSS.replace(/^  --s-ep-divider-bd-hover:.+?;/gms,  '  --s-ep-divider-bd-hover: hsl(calc(var(--usp-hue) + 180deg), 60%, 35%);');
+      }
+
+      break;
+
+    case 'meBottom':
+      chromeCSS = chromeCSS.replace(/^  --usp-split-view-flex-direction:.+?;/gms, '  --usp-split-view-flex-direction: column-reverse;');
+      chromeCSS = chromeCSS.replace(/^  --usp-editor-divider-bw:.+?;/gms, '  --usp-editor-divider-bw: 0 0 5px 0;');
+      chromeCSS = chromeCSS.replace(/^  --g-ep-divider:.+?;/gms, '  --g-ep-divider: var(--s-panel-divider);');
+      
+      if (settings.themeMode === 'dayMode') {
+        chromeCSS = chromeCSS.replace(/^  --s-ep-divider-bd-hover:.+?;/gms,  '  --s-ep-divider-bd-hover: hsl(calc(var(--usp-hue) + 180deg), 100%, 80%);');
+      } else if (settings.themeMode === 'nightMode') {
+        chromeCSS = chromeCSS.replace(/^  --s-ep-divider-bd-hover:.+?;/gms,  '  --s-ep-divider-bd-hover: hsl(calc(var(--usp-hue) + 180deg), 60%, 25%);');
+      } else {
+        chromeCSS = chromeCSS.replace(/^  --s-ep-divider-bd-hover:.+?;/gms,  '  --s-ep-divider-bd-hover: hsl(calc(var(--usp-hue) + 180deg), 60%, 35%);');
+      }
+
+      break;
+
+    case 'meLeft':
+      chromeCSS = chromeCSS.replace(/^  --usp-split-view-flex-direction:.+?;/gms, '  --usp-split-view-flex-direction: row;');
+      chromeCSS = chromeCSS.replace(/^  --usp-editor-divider-bw:.+?;/gms, '  --usp-editor-divider-bw: 0 0 0 1px;');
+      chromeCSS = chromeCSS.replace(/^  --s-ep-divider-bd-hover:.+?;/gms,  '  --s-ep-divider-bd-hover: unset;');
+
+      break;
+
+    default:
+      alert('ReMoods Theme: There seems to be a problem loading the "Split View Layout" setting, please restart Joplin and try again.')
+  
   }
 
   if(baseFont !== 'Default') {
