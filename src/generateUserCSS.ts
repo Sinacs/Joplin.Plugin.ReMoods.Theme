@@ -10,6 +10,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     remoodsHue,
 		themeMode,
     splitViewLayout,
+    splitViewScale,
     baseFont,
 		monospaceFont,
 		headingFont,
@@ -561,13 +562,11 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --sc-table-header-ts:.+?;/gms, '  --sc-table-header-ts: none;');
       noteCSS = noteCSS.replace(/^  --sc-table-row-odd-bg:.+?;/gms, '  --sc-table-row-odd-bg: hsl(var(--usp-hue), 100%,  96%);');
       noteCSS = noteCSS.replace(/^  --sc-table-row-even-bg:.+?;/gms, '  --sc-table-row-even-bg: hsl(var(--usp-hue), 100%,  90%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-bg:.+?;/gms, '  --sc-toc-bg: var(--sc-bg-2);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-bdc:.+?;/gms, '  --sc-toc-bdc: hsl(var(--usp-hue), 100%,  80%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-bs:.+?;/gms, '  --sc-toc-bs: 5px hsl(var(--usp-hue), 100%,  20%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-btn-text:.+?;/gms, '  --sc-toc-btn-text: hsl(var(--usp-hue),  20%,  40%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-btn-bg:.+?;/gms, '  --sc-toc-btn-bg: hsl(var(--usp-hue), 100%,  80%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-btn-bd:.+?;/gms, '  --sc-toc-btn-bd: 2px solid hsl(var(--usp-hue),  80%,  80%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-btn-bs:.+?;/gms, '  --sc-toc-btn-bs: 3px hsl(var(--usp-hue), 100%,  20%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-bg:.+?;/gms, '  --sc-toc-bg: hsl(var(--usp-hue),  50%,  96%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-k1:.+?;/gms, '  --sc-toc-floating-text-k1: hsl(var(--usp-hue),   0%, 50%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-k2:.+?;/gms, '  --sc-toc-floating-text-k2: hsl(var(--usp-hue), 100%,  45%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-ds-k1:.+?;/gms, '  --sc-toc-floating-text-ds-k1: 0 0 2px hsl(var(--usp-hue), 100%,  30%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-ds-k2:.+?;/gms, '  --sc-toc-floating-text-ds-k2: 0 0 2px hsl(var(--usp-hue), 100%,  10%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-list-bdl:.+?;/gms, '  --sc-toc-list-bdl: 1px solid hsl(var(--usp-hue),  30%,  30%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-link-text-hover:.+?;/gms, '  --sc-toc-link-text-hover: hsl(var(--usp-hue),   0%,   0%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-link-bg-hover:.+?;/gms, '  --sc-toc-link-bg-hover: hsl(var(--usp-hue), 100%,  85%);');
@@ -1159,12 +1158,10 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --sc-table-row-odd-bg:.+?;/gms, '  --sc-table-row-odd-bg: hsl(var(--usp-hue),  15%,  30%);');
       noteCSS = noteCSS.replace(/^  --sc-table-row-even-bg:.+?;/gms, '  --sc-table-row-even-bg: hsl(var(--usp-hue),  10%,  35%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-bg:.+?;/gms, '  --sc-toc-bg: var(--sc-bg-2);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-bdc:.+?;/gms, '  --sc-toc-bdc: hsl(var(--usp-hue), 100%,  60%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-bs:.+?;/gms, '  --sc-toc-bs: 10px hsl(var(--usp-hue), 100%,  30%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-btn-text:.+?;/gms, '  --sc-toc-btn-text: var(--sc-bg-1);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-btn-bg:.+?;/gms, '  --sc-toc-btn-bg: hsl(var(--usp-hue), 100%,  75%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-btn-bd:.+?;/gms, '  --sc-toc-btn-bd: 2px solid hsl(var(--usp-hue), 100%,  90%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-btn-bs:.+?;/gms, '  --sc-toc-btn-bs: 5px hsl(var(--usp-hue), 100%,  60%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-k1:.+?;/gms, '  --sc-toc-floating-text-k1: hsl(var(--usp-hue),   0%, 100%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-k2:.+?;/gms, '  --sc-toc-floating-text-k2: hsl(var(--usp-hue), 100%,  75%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-ds-k1:.+?;/gms, '  --sc-toc-floating-text-ds-k1: 0 0 2px hsl(var(--usp-hue), 100%,  50%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-ds-k2:.+?;/gms, '  --sc-toc-floating-text-ds-k2: 0 0 2px hsl(var(--usp-hue), 100%,  30%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-list-bdl:.+?;/gms, '  --sc-toc-list-bdl: 1px solid hsl(var(--usp-hue),  30%,  30%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-link-text-hover:.+?;/gms, '  --sc-toc-link-text-hover: hsl(var(--usp-hue),   0%, 100%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-link-bg-hover:.+?;/gms, '  --sc-toc-link-bg-hover: hsl(var(--usp-hue),  25%,  20%);');
@@ -1756,12 +1753,10 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --sc-table-row-odd-bg:.+?;/gms, '  --sc-table-row-odd-bg: hsl(var(--usp-hue),  20%,  16%);');
       noteCSS = noteCSS.replace(/^  --sc-table-row-even-bg:.+?;/gms, '  --sc-table-row-even-bg: hsl(var(--usp-hue),  20%,  22%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-bg:.+?;/gms, '  --sc-toc-bg: var(--sc-bg-2);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-bdc:.+?;/gms, '  --sc-toc-bdc: hsl(var(--usp-hue),  40%,  60%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-bs:.+?;/gms, '  --sc-toc-bs: 10px hsl(var(--usp-hue),  40%,  30%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-btn-text:.+?;/gms, '  --sc-toc-btn-text: var(--sc-bg-1);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-btn-bg:.+?;/gms, '  --sc-toc-btn-bg: hsl(var(--usp-hue),  40%,  75%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-btn-bd:.+?;/gms, '  --sc-toc-btn-bd: 2px solid hsl(var(--usp-hue),  40%,  90%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-btn-bs:.+?;/gms, '  --sc-toc-btn-bs: 5px hsl(var(--usp-hue),   40%,   60%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-k1:.+?;/gms, '  --sc-toc-floating-text-k1: hsl(var(--usp-hue),   0%, 100%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-k2:.+?;/gms, '  --sc-toc-floating-text-k2: hsl(var(--usp-hue), 100%,  75%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-ds-k1:.+?;/gms, '  --sc-toc-floating-text-ds-k1: 0 0 2px hsl(var(--usp-hue), 100%,  50%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-ds-k2:.+?;/gms, '  --sc-toc-floating-text-ds-k2: 0 0 2px hsl(var(--usp-hue), 100%,  30%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-list-bdl:.+?;/gms, '  --sc-toc-list-bdl: 1px solid hsl(var(--usp-hue),  25%,  25%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-link-text-hover:.+?;/gms, '  --sc-toc-link-text-hover: hsl(var(--usp-hue),   0%,  90%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-link-bg-hover:.+?;/gms, '  --sc-toc-link-bg-hover: hsl(var(--usp-hue),  25%,  20%);');
@@ -2088,6 +2083,41 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
 
     default:
       alert('ReMoods Theme: There seems to be a problem loading the "Split View Layout" setting, please restart Joplin and try again.')
+  
+  }
+
+  switch(splitViewScale) {
+
+    case '0':
+      chromeCSS = chromeCSS.replace(/^  --usp-ep-markdown-editor-flex:.+?;/gms, '  --usp-ep-markdown-editor-flex: 1 1 0%;');
+      chromeCSS = chromeCSS.replace(/^  --usp-ep-render-viewer-flex:.+?;/gms, '  --usp-ep-render-viewer-flex: 1 1 0%;');
+      break;
+    case 'me20':
+      chromeCSS = chromeCSS.replace(/^  --usp-ep-markdown-editor-flex:.+?;/gms, '  --usp-ep-markdown-editor-flex: 1 1 20%;');
+      chromeCSS = chromeCSS.replace(/^  --usp-ep-render-viewer-flex:.+?;/gms, '  --usp-ep-render-viewer-flex: 1 1 0%;');
+      break;
+    case 'me30':
+      chromeCSS = chromeCSS.replace(/^  --usp-ep-markdown-editor-flex:.+?;/gms, '  --usp-ep-markdown-editor-flex: 1 1 30%;');
+      chromeCSS = chromeCSS.replace(/^  --usp-ep-render-viewer-flex:.+?;/gms, '  --usp-ep-render-viewer-flex: 1 1 0%;');
+      break;
+    case 'me40':
+      chromeCSS = chromeCSS.replace(/^  --usp-ep-markdown-editor-flex:.+?;/gms, '  --usp-ep-markdown-editor-flex: 1 1 40%;');
+      chromeCSS = chromeCSS.replace(/^  --usp-ep-render-viewer-flex:.+?;/gms, '  --usp-ep-render-viewer-flex: 1 1 0%;');
+      break;
+    case 'rv20':
+      chromeCSS = chromeCSS.replace(/^  --usp-ep-markdown-editor-flex:.+?;/gms, '  --usp-ep-markdown-editor-flex: 1 1 0%;');
+      chromeCSS = chromeCSS.replace(/^  --usp-ep-render-viewer-flex:.+?;/gms, '  --usp-ep-render-viewer-flex: 1 1 20%;');
+      break;
+    case 'rv30':
+      chromeCSS = chromeCSS.replace(/^  --usp-ep-markdown-editor-flex:.+?;/gms, '  --usp-ep-markdown-editor-flex: 1 1 0%;');
+      chromeCSS = chromeCSS.replace(/^  --usp-ep-render-viewer-flex:.+?;/gms, '  --usp-ep-render-viewer-flex: 1 1 30%;');
+      break;
+    case 'rv40':
+      chromeCSS = chromeCSS.replace(/^  --usp-ep-markdown-editor-flex:.+?;/gms, '  --usp-ep-markdown-editor-flex: 1 1 0%;');
+      chromeCSS = chromeCSS.replace(/^  --usp-ep-render-viewer-flex:.+?;/gms, '  --usp-ep-render-viewer-flex: 1 1 40%;');
+      break;
+    default:
+      alert('ReMoods Theme: There seems to be a problem loading the "Split View Scale" setting, please restart Joplin and try again.')
   
   }
 

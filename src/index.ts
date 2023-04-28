@@ -9,6 +9,7 @@ export type ThemeSettings = {
 	remoodsHue: string;
 	themeMode: string;
   splitViewLayout: string;
+	splitViewScale: string;
   baseFont: string;
 	monospaceFont: string;
   headingFont: string;
@@ -220,6 +221,27 @@ async function prepareThemeSettings(): Promise<void> {
 				'meLeft': 'Markdown editor to left',
 			},
 			description: 'Set the markdown editor position in split view.',
+			public: true,
+
+		},
+
+		'splitViewScale': {
+
+			section: 'remoodsThemeSection',
+			label: 'Split View Scale',
+			type: SettingItemType.String,
+			value: '0',
+			isEnum: true,
+			options: {
+				'0': 'Balanced',
+				'me20': 'Markdown editor +20%',
+				'me30': 'Markdown editor +30%',
+				'me40': 'Markdown editor +40%',
+				'rv20': 'Render Viewer +20%',
+				'rv30': 'Render Viewer +30%',
+				'rv40': 'Render Viewer +40%',
+			},
+			description: 'Set the panel scale in split view.',
 			public: true,
 
 		},
@@ -1053,6 +1075,7 @@ async function writeUserCSS(): Promise<void> {
 	const remoodsHue = await joplin.settings.value('remoodsHue');
 	const themeMode = await joplin.settings.value('themeMode');
 	const splitViewLayout = await joplin.settings.value('splitViewLayout');
+	const splitViewScale = await joplin.settings.value('splitViewScale');
 	const baseFont = await joplin.settings.value('baseFont');
 	const monospaceFont = await joplin.settings.value('monospaceFont');
 	const headingFont = await joplin.settings.value('headingFont');
@@ -1140,6 +1163,7 @@ async function writeUserCSS(): Promise<void> {
 		remoodsHue,
 		themeMode,
 		splitViewLayout,
+    splitViewScale,
 		baseFont,
 		monospaceFont,
 		headingFont,
