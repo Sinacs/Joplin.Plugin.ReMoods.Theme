@@ -185,6 +185,7 @@
   --usp-special-text-add-remove-symbol-display: inline-block;
   --usp-inline-code-symbol-display: inline-block;
   --usp-custom-title-block-symbol-display: inline-block;
+  --usp-toc-floating-text-display: block;
 
   
   /* || USER SETTING PROPERTIES 2 | PRINT ****************** */
@@ -1721,6 +1722,7 @@ img:hover {
 }
 #rendered-md .table-of-contents::before {
   content: "- TOC -";
+  display: var(--usp-toc-floating-text-display);
   margin: auto 0;
   font-family: sans-serif;
   font-size: 10px;

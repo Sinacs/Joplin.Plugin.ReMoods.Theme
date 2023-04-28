@@ -43,6 +43,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
 		h6Border,
 		h1TwillPattern,
 		hrTwillPattern,
+    tocFloatingText,
 		paragraphTextJustify,
 		listTextJustify,
 		checklistTextJustify,
@@ -2309,6 +2310,12 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --usp-h6-border-display:.+?;/gms, '  --usp-h6-border-display: none;');
   } else {
     noteCSS = noteCSS.replace(/^  --usp-h6-border-display:.+?;/gms, '  --usp-h6-border-display: block;');
+  }
+
+  if (!tocFloatingText) {
+    noteCSS = noteCSS.replace(/^  --usp-toc-floating-text-display:.+?;/gms, '  --usp-toc-floating-text-display: none;');
+  } else {
+    noteCSS = noteCSS.replace(/^  --usp-toc-floating-text-display:.+?;/gms, '  --usp-toc-floating-text-display: block;');
   }
   
   if(!paragraphTextJustify) {
