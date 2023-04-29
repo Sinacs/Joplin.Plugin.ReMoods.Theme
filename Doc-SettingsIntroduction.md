@@ -74,6 +74,7 @@ ReMoods offers 3 theme modes for different lighting environments. Choose your fa
 There are 2 settings for controlling the split view appearance:
 
 | Property|Area|Options|Remarks|
+|-|-|-|-|
 |Split View Layout| Editor Panel| 1.Markdown editor to top<br /> 2.Markdown editor to bottom<br /> 3.Markdown editor to left |When set to top or bottom, the divider would be unclear. You can mouse hover over the Render Viewer then will appears clearly.|
 |Split View Scale| Editor Panel| 1.Balanced<br /> 2. Markdown editor +20%<br /> 3. Markdown editor +30%<br /> 4. Markdown editor +40%<br /> 5. Render viewer +20%<br /> 6. Render viewer +30%<br /> 7. Render viewer +40%|-|
 
@@ -106,6 +107,8 @@ Render viewer +30%:
 Render viewer +40%:
 
 ![rv40](screenshots/preview/splitViewLayout-meBottom-splitViewScale-rv40.png)
+
+[⬆️Back](#table-of-contents)
 ### Font
 
 Font settings are divided into two separate parts:
@@ -365,6 +368,7 @@ Disable:
 
 ![markdownTocFloatingText-disable](screenshots/preview/markdownTocFloatingText-disable.png)
 
+[⬆️Back](#table-of-contents)
 ### Enable "Justify" effect
 
 The below 4 settings are just center the text of specific elements:
