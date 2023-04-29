@@ -2051,11 +2051,11 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       chromeCSS = chromeCSS.replace(/^  --g-ep-divider:.+?;/gms, '  --g-ep-divider: var(--s-panel-divider);');
       
       if (settings.themeMode === 'dayMode') {
-        chromeCSS = chromeCSS.replace(/^  --s-ep-divider-bd-hover:.+?;/gms,  '  --s-ep-divider-bd-hover: hsl(calc(var(--usp-hue) + 180deg), 100%, 80%);');
+        chromeCSS = chromeCSS.replace(/^  --s-ep-divider-hover:.+?;/gms,  '  --s-ep-divider-hover: hsl(calc(var(--usp-hue) + 180deg), 100%, 80%);');
       } else if (settings.themeMode === 'nightMode') {
-        chromeCSS = chromeCSS.replace(/^  --s-ep-divider-bd-hover:.+?;/gms,  '  --s-ep-divider-bd-hover: hsl(calc(var(--usp-hue) + 180deg), 60%, 25%);');
+        chromeCSS = chromeCSS.replace(/^  --s-ep-divider-hover:.+?;/gms,  '  --s-ep-divider-hover: hsl(calc(var(--usp-hue) + 180deg), 60%, 25%);');
       } else {
-        chromeCSS = chromeCSS.replace(/^  --s-ep-divider-bd-hover:.+?;/gms,  '  --s-ep-divider-bd-hover: hsl(calc(var(--usp-hue) + 180deg), 60%, 35%);');
+        chromeCSS = chromeCSS.replace(/^  --s-ep-divider-hover:.+?;/gms,  '  --s-ep-divider-hover: hsl(calc(var(--usp-hue) + 180deg), 60%, 35%);');
       }
 
       break;
@@ -2066,11 +2066,11 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       chromeCSS = chromeCSS.replace(/^  --g-ep-divider:.+?;/gms, '  --g-ep-divider: var(--s-panel-divider);');
       
       if (settings.themeMode === 'dayMode') {
-        chromeCSS = chromeCSS.replace(/^  --s-ep-divider-bd-hover:.+?;/gms,  '  --s-ep-divider-bd-hover: hsl(calc(var(--usp-hue) + 180deg), 100%, 80%);');
+        chromeCSS = chromeCSS.replace(/^  --s-ep-divider-hover:.+?;/gms,  '  --s-ep-divider-hover: hsl(calc(var(--usp-hue) + 180deg), 100%, 80%);');
       } else if (settings.themeMode === 'nightMode') {
-        chromeCSS = chromeCSS.replace(/^  --s-ep-divider-bd-hover:.+?;/gms,  '  --s-ep-divider-bd-hover: hsl(calc(var(--usp-hue) + 180deg), 60%, 25%);');
+        chromeCSS = chromeCSS.replace(/^  --s-ep-divider-hover:.+?;/gms,  '  --s-ep-divider-hover: hsl(calc(var(--usp-hue) + 180deg), 60%, 25%);');
       } else {
-        chromeCSS = chromeCSS.replace(/^  --s-ep-divider-bd-hover:.+?;/gms,  '  --s-ep-divider-bd-hover: hsl(calc(var(--usp-hue) + 180deg), 60%, 35%);');
+        chromeCSS = chromeCSS.replace(/^  --s-ep-divider-hover:.+?;/gms,  '  --s-ep-divider-hover: hsl(calc(var(--usp-hue) + 180deg), 60%, 35%);');
       }
 
       break;
@@ -2078,7 +2078,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     case 'meLeft':
       chromeCSS = chromeCSS.replace(/^  --usp-split-view-flex-direction:.+?;/gms, '  --usp-split-view-flex-direction: row;');
       chromeCSS = chromeCSS.replace(/^  --usp-editor-divider-bw:.+?;/gms, '  --usp-editor-divider-bw: 0 0 0 1px;');
-      chromeCSS = chromeCSS.replace(/^  --s-ep-divider-bd-hover:.+?;/gms,  '  --s-ep-divider-bd-hover: unset;');
+      chromeCSS = chromeCSS.replace(/^  --s-ep-divider-hover:.+?;/gms,  '  --s-ep-divider-hover: var(--g-ep-divider);');
 
       break;
 
