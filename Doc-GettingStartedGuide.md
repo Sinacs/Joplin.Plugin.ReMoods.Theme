@@ -4,7 +4,7 @@ Hi there! Welcome to ReMoods! This guide will be guiding you to get a complete e
 
 ## Page Navigation
 
-| [Home](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme#remoods-theme) | [Getting Started Guide](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/blob/master/Doc-GettingStartedGuide.md#remoods-theme-getting-started-guide) | [Settings Introduction](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/blob/master/Doc-SettingsIntroduction.md) |
+| [Home](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme#remoods-theme) | Getting Started Guide| [Settings Introduction](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/blob/master/Doc-SettingsIntroduction.md) |
 
 ## Table Of Contents
 

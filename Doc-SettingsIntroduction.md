@@ -4,13 +4,14 @@ ReMoods Theme provides you with a deep customization experience for the notes an
 
 ## Page Navigation
 
-| [Home](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme#remoods-theme) | [Getting Started Guide](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/blob/master/Doc-GettingStartedGuide.md#remoods-theme-getting-started-guide) | [Settings Introduction](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/blob/master/Doc-SettingsIntroduction.md) |
+| [Home](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme#remoods-theme) | [Getting Started Guide](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/blob/master/Doc-GettingStartedGuide.md#remoods-theme-getting-started-guide) | Settings Introduction |
 
 ## Table Of Contents
 
-- [Basic Settings](#basic-settings)
+- [General Settings](#general-settings)
   - [ReMoods Hue](#remoods-hue)
   - [Theme Mode](#theme-mode)
+  - [Split View](#split-view) [NEW]
   - [Font](#font)
   - [Font Size](#font-size)
 - [Note Element Settings](#note-element-settings)
@@ -25,6 +26,7 @@ ReMoods Theme provides you with a deep customization experience for the notes an
   - [Enable heading marker](#enable-heading-marker)
   - [Enable twill pattern for H1 heading](#enable-twill-pattern-for-h1-heading)
   - [Enable twill pattern for horizontal rule](#enable-twill-pattern-for-horizontal-rule)
+  - [Enable Markdown TOC floating text](#enable-markdown-toc-floating-text) [NEW]
   - [Enable &#34;Justify&#34; effect](#enable-justify-effect)
   - [Enable dotted border](#enable-dotted-border)
   - [Enable math notation aligned-left](#enable-math-notation-aligned-left)
@@ -47,9 +49,9 @@ ReMoods Theme provides you with a deep customization experience for the notes an
   - [Display abbreviation description](#display-abbreviation-description)
   - [Other display elements](#other-display-elements)
 
-## Basic Settings
+## General Settings
 
-Below are the basic settings for the entire theme:
+Below are the general settings for the entire theme:
 
 [⬆️Back](#table-of-contents)
 
@@ -67,6 +69,43 @@ ReMoods offers 3 theme modes for different lighting environments. Choose your fa
 
 [⬆️Back](#table-of-contents)
 
+### Split View
+
+There are 2 settings for controlling the split view appearance:
+
+| Property|Area|Options|Remarks|
+|Split View Layout| Editor Panel| 1.Markdown editor to top<br /> 2.Markdown editor to bottom<br /> 3.Markdown editor to left |When set to top or bottom, the divider would be unclear. You can mouse hover over the Render Viewer then will appears clearly.|
+|Split View Scale| Editor Panel| 1.Balanced<br /> 2. Markdown editor +20%<br /> 3. Markdown editor +30%<br /> 4. Markdown editor +40%<br /> 5. Render viewer +20%<br /> 6. Render viewer +30%<br /> 7. Render viewer +40%|-|
+
+Below showing the previews based on the setting "Markdown editor to bottom" on different scales:
+
+Markdown editor +40%:
+
+![me40](screenshots/preview/splitViewLayout-meBottom-splitViewScale-me40.png)
+
+Markdown editor +30%:
+
+![me30](screenshots/preview/splitViewLayout-meBottom-splitViewScale-me30.png)
+
+Markdown editor +20%:
+
+![me20](screenshots/preview/splitViewLayout-meBottom-splitViewScale-me20.png)
+
+Balanced:
+
+![bal](screenshots/preview/splitViewLayout-meBottom-splitViewScale-balanced.png)
+
+Render viewer +20%:
+
+![rv20](screenshots/preview/splitViewLayout-meBottom-splitViewScale-rv20.png)
+
+Render viewer +30%:
+
+![rv30](screenshots/preview/splitViewLayout-meBottom-splitViewScale-rv30.png)
+
+Render viewer +40%:
+
+![rv40](screenshots/preview/splitViewLayout-meBottom-splitViewScale-rv40.png)
 ### Font
 
 Font settings are divided into two separate parts:
@@ -311,6 +350,20 @@ Disable:
 ![hrTwill-disable](screenshots/preview/hrTwill-disable.png)
 
 [⬆️Back](#table-of-contents)
+
+### Enable Markdown TOC floating text
+
+| Property| Area|
+|-|-|
+|`Enable Markdown TOC floating text`| Render Viewer|
+
+Enable:
+
+![markdownTocFloatingText-enable](screenshots/preview/markdownTocFloatingText-enable.png)
+
+Disable:
+
+![markdownTocFloatingText-disable](screenshots/preview/markdownTocFloatingText-disable.png)
 
 ### Enable "Justify" effect
 

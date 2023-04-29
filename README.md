@@ -199,8 +199,9 @@ Joplin provides a great built-in Markdown TOC feature which helps you create the
 
 ### 💡Tips
 
-1. The TOC button will only appear after you type the `[[toc]]` command within your notes.
-2. Mouse hovers on the TOC button to open it.
+1. The TOC floating text will only appear after you type the `[[toc]]` command within your notes.
+2. Mouse hover over the trigger area (the right hand side of render viewer) to open it.
+3. You can hide the floating text by disabling the `Enable Markdown TOC floating text` in options.
 
 [⬆️Back](#table-of-contents)
 

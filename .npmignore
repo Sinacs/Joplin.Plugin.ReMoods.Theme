@@ -1,12 +1,8 @@
 *.md
 !README.md
-!Doc-GettingStartedGuide.md
-!Doc-SettingsIntroduction.md
 /*.jpl
 /api
 /src
 /dist
 tsconfig.json
 webpack.config.js
-/designFiles
-.afdesign
