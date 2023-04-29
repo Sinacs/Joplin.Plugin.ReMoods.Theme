@@ -2959,6 +2959,7 @@ tspan {
   }
   /* print toc button = toc title -------------------------- */
   #rendered-md .table-of-contents::before {
+    all: unset;
     content: "Table Of Contents";
     display: block;
     margin: 0 0 10px 0;
@@ -2991,9 +2992,17 @@ tspan {
     padding-left: 8px;
   }
   #rendered-md .table-of-contents ul {
+    display: block;
     padding: 0;
     margin: 0 0 0 8px;
     border-left: var(--pr-toc-list-bdl);
+  }
+  #rendered-md .table-of-contents ul:first-child {
+    padding: 8px;
+    border-left: none;
+  }
+  #rendered-md .table-of-contents ul:first-child::after {
+    all: unset;
   }
   /* print toc link ---------------------------------------- */
   #rendered-md .table-of-contents li a {
