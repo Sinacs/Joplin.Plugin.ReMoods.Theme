@@ -75,8 +75,8 @@ There are 2 settings for controlling the split view appearance:
 
 | Property|Area|Options|Remarks|
 |-|-|-|-|
-|Split View Layout| Editor Panel| 1.Markdown editor to top<br /> 2.Markdown editor to bottom<br /> 3.Markdown editor to left |When set to top or bottom, the divider would be unclear. You can mouse hover over the Render Viewer then will appears clearly.|
-|Split View Scale| Editor Panel| 1.Balanced<br /> 2. Markdown editor +20%<br /> 3. Markdown editor +30%<br /> 4. Markdown editor +40%<br /> 5. Render viewer +20%<br /> 6. Render viewer +30%<br /> 7. Render viewer +40%|-|
+|`Split View Layout`| Editor Panel| 1.Markdown editor to top<br /> 2.Markdown editor to bottom<br /> 3.Markdown editor to left |- When set to top or bottom, mouse hover over the Render Viewer the divider will appears clearly.|
+|`Split View Scale`| Editor Panel| 1.Balanced<br /> 2.Markdown editor +20%<br /> 3.Markdown editor +30%<br /> 4.Markdown editor +40%<br /> 5.Render viewer +20%<br /> 6.Render viewer +30%<br /> 7.Render viewer +40%|-|
 
 Below showing the previews based on the setting "Markdown editor to bottom" on different scales:
 
