@@ -192,7 +192,7 @@ It would change with the theme color too:
 
 ## Floating TOC
 
-Joplin provides a great built-in Markdown TOC feature which helps you create the TOC by typing a simple command `[[toc]]` within your notes. ReMoods has restyled the TOC and made it float at the bottom right of the Render Viewer.
+Joplin provides a great built-in Markdown TOC feature which helps you create the TOC by typing a simple command `[[toc]]` within your notes. ReMoods has restyled the TOC and made it float at the right of the Render Viewer.
 
 ![Collapse](screenshots/FloatingTOC-Collapse.png)
 ![Expand](screenshots/FloatingTOC-Expand.png)
