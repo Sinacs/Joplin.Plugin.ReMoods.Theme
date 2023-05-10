@@ -26,10 +26,11 @@ ReMoods Theme provides you with a deep customization experience for the notes an
   - [Enable heading marker](#enable-heading-marker)
   - [Enable twill pattern for H1 heading](#enable-twill-pattern-for-h1-heading)
   - [Enable twill pattern for horizontal rule](#enable-twill-pattern-for-horizontal-rule)
-  - [Enable Markdown TOC floating text](#enable-markdown-toc-floating-text) [NEW]
+  - [Enable Markdown TOC floating button](#enable-markdown-toc-floating-button)
   - [Enable &#34;Justify&#34; effect](#enable-justify-effect)
   - [Enable dotted border](#enable-dotted-border)
   - [Enable math notation aligned-left](#enable-math-notation-aligned-left)
+  - [Enable math notation auto-enlarged effect](#enable-math-notation-auto-enlarged-effect)
   - [Enable Eye-Protector effect](#enable-eye-protector-effect)
   - [Enable Max-height limit](#enable-max-height-limit)
   - [Enable symbols](#enable-symbols)
@@ -354,17 +355,19 @@ Disable:
 
 [⬆️Back](#table-of-contents)
 
-### Enable Markdown TOC floating text
+### Enable Markdown TOC floating button
 
 | Property| Area|
 |-|-|
-|`Enable Markdown TOC floating text`| Render Viewer|
+|`Enable Markdown TOC floating button`| Render Viewer|
 
 Enable:
 
 ![markdownTocFloatingText-enable](screenshots/preview/markdownTocFloatingText-enable.png)
 
 Disable:
+
+(It only disappears the button, you can still triggering the TOC at the same area.)
 
 ![markdownTocFloatingText-disable](screenshots/preview/markdownTocFloatingText-disable.png)
 
@@ -413,6 +416,15 @@ Disable:
 
 [⬆️Back](#table-of-contents)
 
+### Enable math notation auto-enlarged effect
+
+| Property                              | Area                                   |
+| ------------------------------------- | -------------------------------------- |
+| `Enable math notation auto-enlarged effect` | Render Viewer |
+
+When you hover the mouse over the math notation, this setting will increase the text size by 1.5 times, depending on the `Math notation font size`.
+
+[⬆️Back](#table-of-contents)
 ### Enable Eye-Protector effect
 
 | Property                                           | Area          |
