@@ -689,6 +689,7 @@
 .CodeMirror-scroll {
   margin-top: 9px !important;
   padding-left: 8px !important;
+  padding-bottom: 0px !important;
 }
 .CodeMirror-sizer {
   padding-left: 0 !important;
