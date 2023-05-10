@@ -155,8 +155,8 @@
   --usp-all-notes-button-display: flex;
 
   /* LAYOUT ************************************************ */
-  --usp-split-view-flex-direction: column;
-  --usp-editor-divider-bw: 5px 0 0 0px;
+  --usp-split-view-flex-direction: row;
+  --usp-editor-divider-bw: 0 0 0 1px;
   --usp-ep-markdown-editor-flex: 1 1 0%;
   --usp-ep-render-viewer-flex: 1 1 0%;
 
@@ -481,7 +481,7 @@
   /* EDITOR PANEL =========================================================================== */
   --s-ep-toolbar-ds:                                  1px hsl(var(--usp-hue), 100%,  30%);
   
-  --s-ep-divider-hover:                                   hsl(calc(var(--usp-hue) + 180deg), 100%, 80%);
+  --s-ep-divider-hover:                                   var(--g-ep-divider);
 
   --s-ep-notebook-nav-btn-bg:                             hsl(var(--usp-hue),  30%,  20%);
   --s-ep-notebook-nav-btn-bd:                             hsl(var(--usp-hue), 100%,  30%);
