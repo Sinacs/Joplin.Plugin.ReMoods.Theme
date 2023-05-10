@@ -46,7 +46,7 @@ export type ThemeSettings = {
 	h6Border: boolean;
 	h1TwillPattern: boolean;
 	hrTwillPattern: boolean;
-	tocFloatingText: boolean;
+	tocFloatingBtn: boolean;
 	paragraphTextJustify: boolean;
 	listTextJustify: boolean;
 	checklistTextJustify: boolean;
@@ -559,13 +559,13 @@ async function prepareThemeSettings(): Promise<void> {
 
 		},
 
-		'tocFloatingText': {
+		'tocFloatingBtn': {
 
 			section: 'remoodsThemeSection',
-			label: 'Render Viewer - Enable Markdown TOC floating text',
+			label: 'Render Viewer - Enable Markdown TOC floating button',
 			type: SettingItemType.Bool,
 			value: true,
-			description: 'Enable: Show | Disable: Hide | This setting is only for the visibility of floating text, and will not affect the function of triggering TOC.',
+			description: 'Enable: Show | Disable: Hide | This setting is only for the visibility of floating button, and will not affect the function of triggering TOC.',
 			public: true,
 			
 		},
@@ -1121,7 +1121,7 @@ async function writeUserCSS(): Promise<void> {
 	const h6Border = await joplin.settings.value('h6Border');
 	const h1TwillPattern = await joplin.settings.value('h1TwillPattern');
 	const hrTwillPattern = await joplin.settings.value('hrTwillPattern');
-	const tocFloatingText = await joplin.settings.value('tocFloatingText');
+	const tocFloatingBtn = await joplin.settings.value('tocFloatingBtn');
 	const paragraphTextJustify = await joplin.settings.value('paragraphTextJustify');
 	const listTextJustify = await joplin.settings.value('listTextJustify');
 	const checklistTextJustify = await joplin.settings.value('checklistTextJustify');
@@ -1210,7 +1210,7 @@ async function writeUserCSS(): Promise<void> {
 		h6Border,
 		h1TwillPattern,
 		hrTwillPattern,
-		tocFloatingText,
+		tocFloatingBtn,
 		paragraphTextJustify,
 		listTextJustify,
 		checklistTextJustify,

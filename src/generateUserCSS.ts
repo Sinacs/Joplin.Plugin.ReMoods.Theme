@@ -43,7 +43,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
 		h6Border,
 		h1TwillPattern,
 		hrTwillPattern,
-    tocFloatingText,
+    tocFloatingBtn,
 		paragraphTextJustify,
 		listTextJustify,
 		checklistTextJustify,
@@ -563,9 +563,11 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --sc-table-header-ts:.+?;/gms, '  --sc-table-header-ts: none;');
       noteCSS = noteCSS.replace(/^  --sc-table-row-odd-bg:.+?;/gms, '  --sc-table-row-odd-bg: hsl(var(--usp-hue), 100%,  96%);');
       noteCSS = noteCSS.replace(/^  --sc-table-row-even-bg:.+?;/gms, '  --sc-table-row-even-bg: hsl(var(--usp-hue), 100%,  90%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-bg:.+?;/gms, '  --sc-toc-bg: hsl(var(--usp-hue),  50%,  96%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-k1:.+?;/gms, '  --sc-toc-floating-text-k1: hsl(var(--usp-hue),   0%, 50%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-k2:.+?;/gms, '  --sc-toc-floating-text-k2: hsl(var(--usp-hue), 100%,  45%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-bg:.+?;/gms, '  --sc-toc-bg: hsl(var(--usp-hue),  10%,  97%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-bs:.+?;/gms, '  --sc-toc-bs: -2px 0 5px hsl(var(--usp-hue), 100%,  40%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-btn-text:.+?;/gms, '  --sc-toc-btn-text: hsl(var(--usp-hue), 100%,  30%,  30%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-btn-bgc:.+?;/gms, '  --sc-toc-btn-bgc: hsl(var(--usp-hue), 100%,  90%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-btn-ts:.+?;/gms, '  --sc-toc-btn-ts: 0 0 3px hsl(var(--usp-hue), 100%,  90%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-ds-k1:.+?;/gms, '  --sc-toc-floating-text-ds-k1: 0 0 2px hsl(var(--usp-hue), 100%,  30%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-ds-k2:.+?;/gms, '  --sc-toc-floating-text-ds-k2: 0 0 2px hsl(var(--usp-hue), 100%,  10%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-list-bdl:.+?;/gms, '  --sc-toc-list-bdl: 1px solid hsl(var(--usp-hue),  30%,  30%);');
@@ -1159,10 +1161,10 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --sc-table-row-odd-bg:.+?;/gms, '  --sc-table-row-odd-bg: hsl(var(--usp-hue),  15%,  30%);');
       noteCSS = noteCSS.replace(/^  --sc-table-row-even-bg:.+?;/gms, '  --sc-table-row-even-bg: hsl(var(--usp-hue),  10%,  35%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-bg:.+?;/gms, '  --sc-toc-bg: var(--sc-bg-2);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-k1:.+?;/gms, '  --sc-toc-floating-text-k1: hsl(var(--usp-hue),   0%, 100%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-k2:.+?;/gms, '  --sc-toc-floating-text-k2: hsl(var(--usp-hue), 100%,  75%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-ds-k1:.+?;/gms, '  --sc-toc-floating-text-ds-k1: 0 0 2px hsl(var(--usp-hue), 100%,  50%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-ds-k2:.+?;/gms, '  --sc-toc-floating-text-ds-k2: 0 0 2px hsl(var(--usp-hue), 100%,  30%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-bs:.+?;/gms, '  --sc-toc-bs: -2px 0 5px hsl(var(--usp-hue), 100%,  70%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-btn-text:.+?;/gms, '  --sc-toc-btn-text: hsl(var(--usp-hue),   0%, 100%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-btn-bgc:.+?;/gms, '  --sc-toc-btn-bgc: hsl(var(--usp-hue), 100%,  75%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-btn-ts:.+?;/gms, '  --sc-toc-btn-ts: 0 0 3px hsl(var(--usp-hue), 100%,  10%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-list-bdl:.+?;/gms, '  --sc-toc-list-bdl: 1px solid hsl(var(--usp-hue),  30%,  30%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-link-text-hover:.+?;/gms, '  --sc-toc-link-text-hover: hsl(var(--usp-hue),   0%, 100%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-link-bg-hover:.+?;/gms, '  --sc-toc-link-bg-hover: hsl(var(--usp-hue),  25%,  20%);');
@@ -1754,10 +1756,10 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --sc-table-row-odd-bg:.+?;/gms, '  --sc-table-row-odd-bg: hsl(var(--usp-hue),  20%,  16%);');
       noteCSS = noteCSS.replace(/^  --sc-table-row-even-bg:.+?;/gms, '  --sc-table-row-even-bg: hsl(var(--usp-hue),  20%,  22%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-bg:.+?;/gms, '  --sc-toc-bg: var(--sc-bg-2);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-k1:.+?;/gms, '  --sc-toc-floating-text-k1: hsl(var(--usp-hue),   0%, 100%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-k2:.+?;/gms, '  --sc-toc-floating-text-k2: hsl(var(--usp-hue), 100%,  75%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-ds-k1:.+?;/gms, '  --sc-toc-floating-text-ds-k1: 0 0 2px hsl(var(--usp-hue), 100%,  50%);');
-      noteCSS = noteCSS.replace(/^  --sc-toc-floating-text-ds-k2:.+?;/gms, '  --sc-toc-floating-text-ds-k2: 0 0 2px hsl(var(--usp-hue), 100%,  30%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-bs:.+?;/gms, '  --sc-toc-bs: -2px 0 5px hsl(var(--usp-hue), 100%,  60%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-btn-text:.+?;/gms, '  --sc-toc-btn-text: hsl(var(--usp-hue),   0%, 100%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-btn-bgc:.+?;/gms, '  --sc-toc-btn-bgc: hsl(var(--usp-hue), 100%,  75%);');
+      noteCSS = noteCSS.replace(/^  --sc-toc-btn-ts:.+?;/gms, '  --sc-toc-btn-ts: 0 0 3px hsl(var(--usp-hue), 100%,  10%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-list-bdl:.+?;/gms, '  --sc-toc-list-bdl: 1px solid hsl(var(--usp-hue),  25%,  25%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-link-text-hover:.+?;/gms, '  --sc-toc-link-text-hover: hsl(var(--usp-hue),   0%,  90%);');
       noteCSS = noteCSS.replace(/^  --sc-toc-link-bg-hover:.+?;/gms, '  --sc-toc-link-bg-hover: hsl(var(--usp-hue),  25%,  20%);');
@@ -2312,10 +2314,10 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --usp-h6-border-display:.+?;/gms, '  --usp-h6-border-display: block;');
   }
 
-  if (!tocFloatingText) {
-    noteCSS = noteCSS.replace(/^  --usp-toc-floating-text-display:.+?;/gms, '  --usp-toc-floating-text-display: none;');
+  if (!tocFloatingBtn) {
+    noteCSS = noteCSS.replace(/^  --usp-toc-btn-display:.+?;/gms, '  --usp-toc-btn-display: none;');
   } else {
-    noteCSS = noteCSS.replace(/^  --usp-toc-floating-text-display:.+?;/gms, '  --usp-toc-floating-text-display: block;');
+    noteCSS = noteCSS.replace(/^  --usp-toc-btn-display:.+?;/gms, '  --usp-toc-btn-display: block;');
   }
   
   if(!paragraphTextJustify) {

@@ -185,7 +185,7 @@
   --usp-special-text-add-remove-symbol-display: inline-block;
   --usp-inline-code-symbol-display: inline-block;
   --usp-custom-title-block-symbol-display: inline-block;
-  --usp-toc-floating-text-display: block;
+  --usp-toc-btn-display: block;
 
   
   /* || USER SETTING PROPERTIES 2 | PRINT ****************** */
@@ -354,11 +354,11 @@
   
   /* MARKDOWN TOC =========================================================================== */
   --sc-toc-bg:                                            var(--sc-bg-2);
+  --sc-toc-bs:                                    0 0 5px hsl(var(--usp-hue), 100%,  40%);
   
-  --sc-toc-floating-text-k1:                              hsl(var(--usp-hue),   0%, 100%);
-  --sc-toc-floating-text-k2:                              hsl(var(--usp-hue), 100%,  75%);
-  --sc-toc-floating-text-ds-k1:                   0 0 2px hsl(var(--usp-hue), 100%,  50%);
-  --sc-toc-floating-text-ds-k2:                   0 0 2px hsl(var(--usp-hue), 100%,  30%);
+  --sc-toc-btn-text:                                      hsl(var(--usp-hue),   0%, 100%);
+  --sc-toc-btn-bgc:                                       hsl(var(--usp-hue), 100%,  75%);
+  --sc-toc-btn-ts:                                0 0 3px hsl(var(--usp-hue), 100%,  10%);
   
   --sc-toc-list-bdl:                            1px solid hsl(var(--usp-hue),  30%,  30%);
   
@@ -1686,52 +1686,40 @@ img:hover {
 #rendered-md .table-of-contents::before {
   position: fixed;
   display: block;
-  top: 0px;
+  bottom: -2px;
   right: 7px !important;
-  height: 100%;
-  width: 50px;
-  border-radius: 7px 0 0 7px;
+  height: 24px;
+  width: 60px;
+  border-radius: 7px 7px 0 0;
   overflow: scroll;
-  z-index: 99;
+  z-index: 1;
   transition: width 0.3, background 0.3s;
 }
 /* hover --------------------------------------------------- */
 #rendered-md .table-of-contents:hover {
+  bottom: 0;
   width: 400px;
+  height: 100%;
   background: var(--sc-toc-bg);
+  box-shadow: var(--sc-toc-bs);
   transition: width 0.3s, background 0.3s;
 }
 
-/* TOC FLOATING TEXT ======================================= */
-@keyframes flash {
-  0% {
-    transform: scale(100%);
-    color: var(--sc-toc-floating-text-k1);
-    filter: drop-shadow(0 0 2px var(--sc-toc-floating-text-ds-k1));
-  }
-  50% {
-    transform: scale(110%);
-    color: var(--sc-toc-floating-text-k2);
-    filter: drop-shadow(0 0 2px var(--sc-toc-floating-text-ds-k2));
-  }
-  100% {
-    transform: scale(100%);
-    color: var(--sc-toc-floating-text-k1);
-    filter: drop-shadow(0 0 2px var(--sc-toc-floating-text-ds-k1));
-  }
-}
+/* TOC BUTTON ============================================== */
 #rendered-md .table-of-contents::before {
-  content: "- TOC -";
-  display: var(--usp-toc-floating-text-display);
+  content: "TOC";
+  display: var(--usp-toc-btn-display);
   margin: auto 0;
-  font-family: sans-serif;
-  font-size: 10px;
+  font-family: arial, sans-serif;
+  font-size: 12px;
   font-weight: 900;
   text-align: center;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
+  height: 22px;
+  color: var(--sc-toc-btn-text);
+  background-color: var(--sc-toc-btn-bgc);
+  border: 2px solid var(--sc-toc-btn-text);
+  text-shadow: var(--sc-toc-btn-ts);
   overflow: hidden;
-  animation: flash 3s infinite;
 }
 /* hover --------------------------------------------------- */
 #rendered-md .table-of-contents:hover::before {
