@@ -55,7 +55,7 @@ export type ThemeSettings = {
 	dottedCodeBlock: boolean;
 	mathNotationFontSize: number; 
 	mathNotationAlignLeft: boolean;
-	mathNotationHoverZoom: boolean;
+	mathNotationAutoEnlarged: boolean;
 	mermaidEyeProtector: boolean;
 	imageEyeProtector: boolean;
 	codeBlockMaxHeight: boolean;
@@ -639,10 +639,10 @@ async function prepareThemeSettings(): Promise<void> {
 		'mathNotationFontSize': {
 
 			section: 'remoodsThemeSection',
-			label: 'Render Viewer - Math Notation Font Size (px)',
+			label: 'Render Viewer - * Math Notation Font Size (px)',
 			type: SettingItemType.Int,
 			value: 0,
-			description: '0: Equal to Base Font Size.',
+			description: 'Please enter the exact font size. (The default value “0” is a special case which means the font size will automatically adjust to match the "Base Font Size" even if it changes.)',
 			public: true,
 
 		},
@@ -657,13 +657,13 @@ async function prepareThemeSettings(): Promise<void> {
 
 		},
 
-		'mathNotationHoverZoom': {
+		'mathNotationAutoEnlarged': {
 
 			section: 'remoodsThemeSection',
-			label: 'Render Viewer - * Enable math notation hover zoom effect',
+			label: 'Render Viewer - Enable math notation auto-enlarged effect',
 			type: SettingItemType.Bool,
 			value: true,
-			description: 'Enable: Mouse hovering over the math notation to zoom bigger. | Disable: No action. |',
+			description: 'Enable: Mouse hovering over the math notation to zoom 1.5 times bigger. | Disable: No action. |',
 			public: true,
 
 		},
@@ -1130,7 +1130,7 @@ async function writeUserCSS(): Promise<void> {
 	const dottedCodeBlock = await joplin.settings.value('dottedCodeBlock');
 	const mathNotationFontSize = await joplin.settings.value('mathNotationFontSize');
 	const mathNotationAlignLeft = await joplin.settings.value('mathNotationAlignLeft');
-	const mathNotationHoverZoom = await joplin.settings.value('mathNotationHoverZoom');
+	const mathNotationAutoEnlarged = await joplin.settings.value('mathNotationAutoEnlarged');
 	const mermaidEyeProtector = await joplin.settings.value('mermaidEyeProtector');
 	const imageEyeProtector = await joplin.settings.value('imageEyeProtector');
 	const codeBlockMaxHeight = await joplin.settings.value('codeBlockMaxHeight');
@@ -1219,7 +1219,7 @@ async function writeUserCSS(): Promise<void> {
 		dottedCodeBlock,
 		mathNotationFontSize,
 		mathNotationAlignLeft,
-		mathNotationHoverZoom,
+		mathNotationAutoEnlarged,
 		mermaidEyeProtector,
 		imageEyeProtector,
 		codeBlockMaxHeight,

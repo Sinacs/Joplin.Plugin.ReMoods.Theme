@@ -52,7 +52,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
 		dottedCodeBlock,
 		mathNotationFontSize,
 		mathNotationAlignLeft,
-    mathNotationHoverZoom,
+    mathNotationAutoEnlarged,
 		mermaidEyeProtector,
 		imageEyeProtector,
 		codeBlockMaxHeight,
@@ -2359,10 +2359,12 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     noteCSS = noteCSS.replace(/^  --usp-math-notation-text-align:.+?;/gms, '  --usp-math-notation-text-align: left;');
   }
 
-  if(!mathNotationHoverZoom) {
-    noteCSS = noteCSS.replace(/^  --usp-math-notation-font-size-hover:.+?;/gms, '  --usp-math-notation-font-size-hover: unset;');
+  if(!mathNotationAutoEnlarged) {
+    noteCSS = noteCSS.replace(/^  --usp-math-notation-font-size-hover:.+?;/gms, '  --usp-math-notation-font-size-hover: var(--usp-math-notation-font-size);');
+    noteCSS = noteCSS.replace(/^  --usp-math-notation-cursor-hover:.+?;/gms, '  --usp-math-notation-cursor-hover: default;');
   } else {
-    noteCSS = noteCSS.replace(/^  --usp-math-notation-font-size-hover:.+?;/gms, '  --usp-math-notation-font-size-hover: 150%;');
+    noteCSS = noteCSS.replace(/^  --usp-math-notation-font-size-hover:.+?;/gms, '  --usp-math-notation-font-size-hover: calc(var(--usp-math-notation-font-size) * 1.5);');
+    noteCSS = noteCSS.replace(/^  --usp-math-notation-cursor-hover:.+?;/gms, '  --usp-math-notation-cursor-hover: help;');
   }
 
   if(!codeBlockMaxHeight) {
