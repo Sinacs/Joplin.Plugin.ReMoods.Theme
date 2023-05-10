@@ -2746,6 +2746,7 @@ body {
 }
 /* search target count numbers ----------------------------- */
 .note-search-bar > div > div {
+  margin-left: 5px;
   color: var(--g-square-btn-icon-2) !important;
   background: none !important;
 }
@@ -2754,10 +2755,10 @@ body {
 .note-search-bar > div > a:nth-child(4) {
   margin: 1px !important;
   padding: 2px !important;
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
   background: var(--g-square-btn-bg-2) !important;
-  border: 2px solid var(--g-square-btn-bd-2);
+  border: 1px solid var(--g-square-btn-bd-2);
   border-radius: 0px;
   transition: background 0.8s, border 0.8s, border-radius 0.8s;
 }
@@ -2765,7 +2766,7 @@ body {
 .note-search-bar > div > a:nth-child(3):hover,
 .note-search-bar > div > a:nth-child(4):hover {
   background: var(--g-square-btn-bg-2-hover) !important;
-  border: 2px solid var(--g-square-btn-bd-2-hover);
+  border: 1px solid var(--g-square-btn-bd-2-hover);
   border-radius: 7px;
   transition: background 0.3s, border 0.1s, border-radius 0.3s;
 }
