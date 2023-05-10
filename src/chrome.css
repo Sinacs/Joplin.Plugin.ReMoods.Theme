@@ -2815,13 +2815,6 @@ body {
   border-color: var(--g-ep-divider);
   transition: height 0.8s, max-height 0.8s, min-height 0.8s;
 }
-/* tag bar container hover --------------------------------- */
-.tag-bar:hover {
-  height: 50px;
-  min-height: 50px;
-  max-height: 50px;
-  transition: height 0.3s, max-height 0.3s, min-height 0.3s;
-}
 /* tag bar list container ---------------------------------- */
 .tag-bar > div {
   margin: 0 15px 0 0;
