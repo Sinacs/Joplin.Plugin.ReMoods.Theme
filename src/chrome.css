@@ -24,6 +24,10 @@
     - Options menu selected item
     - Note list panel header
 
+  - Joplin has been changed the note list panel header styles since Joplin
+  v2.10.9. To keep this theme compatible with v2.8, ReMoods has seperated
+  the CSS into two standalone section.
+  
   #STRUCTURE OVERVIEW:
 
   - ROOT
@@ -67,9 +71,11 @@
       - 3  BODY
       - 4  FOOTER
     - NOTE LIST PANEL
-      - 1  SCROLLBAR
-      - 2  HEADER
-      - 3  BODY
+      - 1  ANIMATIONS
+      - 2  SCROLLBAR
+      - 3a HEADER (Joplin v2.8.0+)
+      - 3b HEADER (Joplin v2.10.9+)
+      - 4  BODY
     - EDITOR PANEL
       - 1  SCROLLBAR
       - 2  HEADER
@@ -2278,6 +2284,7 @@ body {
 /* || NOTE LIST PANEL 3b | HEADER (Joplin v2.10.9+) ********* */
 /* Joplin has changed the ui since v2.10.9 */
 /* HEADER: CONTAINER  ====================================== */
+.rli-noteList > div > div > div.sc-hIiahf, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-jfTVlA {/* Joplin v2.10.9+ */
   padding: 5px;
@@ -2286,11 +2293,13 @@ body {
   justify-content: center;
 }
 /* new button container ------------------------------------ */
+.rli-noteList > div > div > div.sc-hIiahf > .new-note-todo-buttons, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK > .new-note-todo-buttons, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-jfTVlA > .new-note-todo-buttons {/* Joplin v2.10.9+ */
   gap: 5px !important;
 }
 /* search bar and sort buttons container ------------------- */
+.rli-noteList > div > div > div.sc-hIiahf > .search-and-sort, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK > .search-and-sort, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-jfTVlA > .search-and-sort {/* Joplin v2.10.9+ */
   gap: 0 !important;
@@ -2298,6 +2307,8 @@ body {
 
 /* HEADER: NEW NOTE & NEW TODO BUTTON ====================== */
 /* button -------------------------------------------------- */
+.rli-noteList > div > div > div.sc-hIiahf .new-note-button, /* joplin v2.11.6+ */
+.rli-noteList > div > div > div.sc-hIiahf .new-todo-button, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK .new-note-button, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-IeChK .new-todo-button, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-jfTVlA .new-note-button, /* Joplin v2.10.9+ */
@@ -2311,6 +2322,8 @@ body {
   overflow: hidden;
   transition: background 0.8s, border 0.8s, border-radius 0.8s;
 }
+.rli-noteList > div > div > div.sc-hIiahf[style*="flex-direction: row"] .new-note-button, /* joplin v2.11.6+ */
+.rli-noteList > div > div > div.sc-hIiahf[style*="flex-direction: row"] .new-todo-button, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK[style*="flex-direction: row"] .new-note-button, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-IeChK[style*="flex-direction: row"] .new-todo-button, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-jfTVlA[style*="flex-direction: row"] .new-note-button, /* Joplin v2.10.9+ */
@@ -2320,6 +2333,8 @@ body {
   justify-content: left;
 }
 /* button hover -------------------------------------------- */
+.rli-noteList > div > div > div.sc-hIiahf .new-note-button:hover, /* joplin v2.11.6+ */
+.rli-noteList > div > div > div.sc-hIiahf .new-todo-button:hover, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK .new-note-button:hover, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-IeChK .new-todo-button:hover, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-jfTVlA .new-note-button:hover, /* Joplin v2.10.9+ */
@@ -2331,25 +2346,31 @@ body {
   transition: background 0.3s, border 0.3s, border-radius 0.3s, height 0.3s;
 }
 /* button icon & text -------------------------------------- */
+.rli-noteList > div > div > div.sc-hIiahf .new-note-button span, /* joplin v2.11.6+ */
+.rli-noteList > div > div > div.sc-hIiahf .new-todo-button span, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK .new-note-button span, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-IeChK .new-todo-button span, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-jfTVlA .new-note-button span, /* Joplin v2.10.9+ */
 .rli-noteList > div > div > div.sc-jfTVlA .new-todo-button span {/* Joplin v2.10.9+ */
-  font-size: 1rem !important;
+  font-size: 15px !important;
   color: var(--g-square-btn-icon-1);
 }
 /* button icon --------------------------------------------- */
+.rli-noteList > div > div > div.sc-hIiahf .new-note-button span:first-child:before, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK .new-note-button span:first-child::before, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-jfTVlA .new-note-button span:first-child::before {/* Joplin v2.10.9+ */
   content:"\f15c";
   padding-left: 1px;
 }
+.rli-noteList > div > div > div.sc-hIiahf .new-todo-button span:first-child:before, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK .new-todo-button span:first-child::before, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-jfTVlA .new-todo-button span:first-child::before {/* Joplin v2.10.9+ */
   content:"\f274";
   padding-left: 1px;
 }
 /* button hover > icon ------------------------------------- */
+.rli-noteList > div > div > div.sc-hIiahf .new-note-button:hover span:first-child:before, /* joplin v2.11.6+ */
+.rli-noteList > div > div > div.sc-hIiahf .new-todo-button:hover span:first-child:before, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK .new-note-button:hover span:first-child::before, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-IeChK .new-todo-button:hover span:first-child::before, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-jfTVlA .new-note-button:hover span:first-child::before, /* Joplin v2.10.9+ */
@@ -2359,6 +2380,8 @@ body {
   line-height: 0;
   font-size: 1.2rem;
 }
+.rli-noteList > div > div > div.sc-hIiahf .new-note-button:hover .fas.fa-plus, /* joplin v2.11.6+ */
+.rli-noteList > div > div > div.sc-hIiahf .new-todo-button:hover .fas.fa-plus, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK .new-note-button:hover .fas.fa-plus, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-IeChK .new-todo-button:hover .fas.fa-plus, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-jfTVlA .new-note-button:hover .fas.fa-plus, /* Joplin v2.10.9+ */
@@ -2367,6 +2390,8 @@ body {
   transition: transform 0.3s;
 }
 /* button text --------------------------------------------- */
+.rli-noteList > div > div > div.sc-hIiahf .new-note-button span:last-child, /* joplin v2.11.6+ */
+.rli-noteList > div > div > div.sc-hIiahf .new-todo-button span:last-child, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK .new-note-button span:last-child, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-IeChK .new-todo-button span:last-child, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-jfTVlA .new-note-button span:last-child, /* Joplin v2.10.9+ */
@@ -2374,6 +2399,8 @@ body {
   font-weight: 600;
 }
 /* button hover > icon & text ------------------------------ */
+.rli-noteList > div > div > div.sc-hIiahf .new-note-button:hover span, /* joplin v2.11.6+ */
+.rli-noteList > div > div > div.sc-hIiahf .new-todo-button:hover span, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK .new-note-button:hover span, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-IeChK .new-todo-button:hover span, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-jfTVlA .new-note-button:hover span, /* Joplin v2.10.9+ */
@@ -2383,6 +2410,7 @@ body {
 
 /* HEADER: SEARCH & ORDER BUTTONS (joplin v2.10.9+) ======== */
 /* button container ---------------------------------------- */
+.rli-noteList > div > div > div.sc-hIiahf > div .search-bar ~ div, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK > div .search-bar ~ div, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-jfTVlA > div .search-bar ~ div {/* Joplin v2.10.9+ */
   max-width: 100% !important;
@@ -2391,6 +2419,7 @@ body {
   transition-delay: 1.2s;
 }
 /* header hover > button container ------------------------- */
+.rli-noteList > div > div > div.sc-hIiahf:hover > div .search-bar ~ div, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-IeChK:hover > div .search-bar ~ div, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-jfTVlA:hover > div .search-bar ~ div {/* Joplin v2.10.9+ */
   max-width: 100% !important;
@@ -3236,7 +3265,8 @@ body {
   box-shadow: 0 0 var(--g-item-ds-hover);
 }
 /* menu item selected -------------------------------------- */
-
+.config-screen > div:first-child > a.kfwfhi,/* light theme joplin v2.11.6+ */
+.config-screen > div:first-child > a.dOYnYd,/* dark theme joplin v2.11.6+ */
 .config-screen > div:first-child > a.hGqsBS,/* light theme joplin v2.11.3+ */
 .config-screen > div:first-child > a.ejlfAF,/* dark theme joplin v2.11.3+ */
 .config-screen > div:first-child > a.jDEtBO,/* light theme joplin v2.10.9 */
@@ -3253,7 +3283,10 @@ body {
   color: var(--g-item-text-1);
 }
 /* menu item > icon & text selected ------------------------ */
-
+.config-screen > div:first-child > a.kfwfhi > i,/* light theme joplin v2.11.6+ */
+.config-screen > div:first-child > a.kfwfhi > span,/* light theme joplin v2.11.6+ */
+.config-screen > div:first-child > a.dOYnYd > i,/* dark theme joplin v2.11.6+ */
+.config-screen > div:first-child > a.dOYnYd > span,/* dark theme joplin v2.11.6+ */
 .config-screen > div:first-child > a.hGqsBS > i,/* light theme joplin v2.11.3+ */
 .config-screen > div:first-child > a.hGqsBS > span,/* light theme joplin v2.11.3+ */
 .config-screen > div:first-child > a.ejlfAF > i,/* dark theme joplin v2.11.3+ */
