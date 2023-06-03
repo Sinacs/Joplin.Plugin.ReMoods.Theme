@@ -11,7 +11,7 @@ ReMoods Theme provides you with a deep customization experience for the notes an
 - [General Settings](#general-settings)
   - [ReMoods Hue](#remoods-hue)
   - [Theme Mode](#theme-mode)
-  - [Split View](#split-view) [NEW]
+  - [Split View](#split-view)
   - [Font](#font)
   - [Font Size](#font-size)
 - [Note Element Settings](#note-element-settings)
@@ -42,6 +42,7 @@ ReMoods Theme provides you with a deep customization experience for the notes an
   - [Enable &#34;All Notes&#34; button](#enable-all-notes-button)
   - [Enable sync feature panel](#enable-sync-feature-panel)
   - [Enable tag feature panel](#enable-tag-feature-panel)
+  - [Enable smaller "New Note" \& "New Todo" button](#enable-smaller-new-note--new-todo-button) [NEW]
   - [Enable auto-scroll effect for note list items](#enable-auto-scroll-effect-for-note-list-items)
 - [Print \& Export PDF (Advanced Settings)](#print--export-pdf-advanced-settings)
   - [Display note title](#display-note-title)
@@ -624,6 +625,20 @@ Disable:
 ![tagFeaturePanel-disable](screenshots/preview/tagFeaturePanel-disable.png)
 
 [⬆️Back](#table-of-contents)
+
+### Enable smaller "New Note" & "New Todo" button
+
+| Property | Area |
+|-|-|
+|`Enable smaller "New Note" & "New Todo" button`| Note List Panel |
+
+Enable:
+
+![smallerNewNoteNewTodoButton-enable](screenshots/preview/smallerNewNoteNewTodoButton-enable.png)
+
+Disable:
+
+![smallerNewNoteNewTodoButton-disable](screenshots/preview/smallerNewNoteNewTodoButton-disable.png)
 
 ### Enable auto-scroll effect for note list items
 

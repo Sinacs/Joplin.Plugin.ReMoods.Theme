@@ -68,6 +68,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     allNotesButton,
 		syncFeature,
 		tagFeature,
+    smallerNewNoteTodoButton,
 		noteListItemAutoScroll,
 
     printBaseFont,
@@ -2441,6 +2442,12 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
   } else {
     chromeCSS = chromeCSS.replace(/^  --usp-tag-feature-display-1:.+?;/gms, '  --usp-tag-feature-display-1: block;');
     chromeCSS = chromeCSS.replace(/^  --usp-tag-feature-display-2:.+?;/gms, '  --usp-tag-feature-display-2: flex;');
+  }
+
+  if(!smallerNewNoteTodoButton) {
+    chromeCSS = chromeCSS.replace(/^  --usp-nlp-new-note-todo-btn-width:.+?;/gms, '  --usp-nlp-new-note-todo-btn-width: 100px;');
+  } else {
+    chromeCSS = chromeCSS.replace(/^  --usp-nlp-new-note-todo-btn-width:.+?;/gms, '  --usp-nlp-new-note-todo-btn-width: 26px;');
   }
 
   if(!noteListItemAutoScroll) {

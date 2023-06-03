@@ -72,6 +72,7 @@ export type ThemeSettings = {
 	allNotesButton: boolean;
 	syncFeature: boolean;
 	tagFeature: boolean;
+	smallerNewNoteTodoButton: boolean;
 	noteListItemAutoScroll: boolean;
 
 	
@@ -814,6 +815,15 @@ async function prepareThemeSettings(): Promise<void> {
 
 		},
 
+		'smallerNewNoteTodoButton': {
+      section: 'remoodsThemeSection',
+			label: 'Note List Panel - Enable smaller "New Note" & "New Todo" button',
+			type: SettingItemType.Bool,
+			value: true,
+			description: 'Enable: Bigger button | Disable: Smaller button (Only when the buttons are in the same row with the search bar.)',
+		  public: true,
+		},
+
 		'noteListItemAutoScroll': {
 
 			section: 'remoodsThemeSection',
@@ -1146,6 +1156,7 @@ async function writeUserCSS(): Promise<void> {
 	const allNotesButton = await joplin.settings.value('allNotesButton');
 	const syncFeature = await joplin.settings.value('syncFeature');
 	const tagFeature = await joplin.settings.value('tagFeature');
+	const smallerNewNoteTodoButton = await joplin.settings.value('smallerNewNoteTodoButton');
 	const noteListItemAutoScroll = await joplin.settings.value('noteListItemAutoScroll');
 	
 	const printBaseFont = await joplin.settings.value('printBaseFont');
@@ -1235,6 +1246,7 @@ async function writeUserCSS(): Promise<void> {
 		allNotesButton,
 		syncFeature,
 		tagFeature,
+		smallerNewNoteTodoButton,
 		noteListItemAutoScroll,
 
 		printBaseFont,

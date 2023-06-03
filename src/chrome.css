@@ -144,6 +144,7 @@
   --usp-h1-font-weight: 600;
   --usp-notebook-panel-scrollbar-width: 3px;
   --usp-note-list-panel-scrollbar-width: 3px;
+  --usp-nlp-new-note-todo-btn-width: 26px;
 
   /* EFFECTS *********************************************** */
   --usp-h1-text-transform: capitalize;
@@ -2328,8 +2329,8 @@ body {
 .rli-noteList > div > div > div.sc-IeChK[style*="flex-direction: row"] .new-todo-button, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-jfTVlA[style*="flex-direction: row"] .new-note-button, /* Joplin v2.10.9+ */
 .rli-noteList > div > div > div.sc-jfTVlA[style*="flex-direction: row"] .new-todo-button {/* Joplin v2.10.9+ */
-  min-width: 26px !important;
-  max-width: 26px !important;
+  min-width: var(--usp-nlp-new-note-todo-btn-width) !important;
+  max-width: var(--usp-nlp-new-note-todo-btn-width) !important;
   justify-content: left;
 }
 /* button hover -------------------------------------------- */

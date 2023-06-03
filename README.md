@@ -32,7 +32,7 @@ ReMoods is an eye-health based theming plugin for the open source note-taking ap
 > Information for new users.
 
 - [ReMoods Theme Getting Started Guide](Doc-GettingStartedGuide.md)
-- [Settings Introduction](Doc-SettingsIntroduction.md) [NEW]
+- [Settings Introduction](Doc-SettingsIntroduction.md)
 
 **APPEARANCE & USE TIPS:**
 
@@ -313,7 +313,7 @@ See the below:
 
 1. The custom element name `kp` stands for *Key Point*.
 2. I recommend **only** use it at **the beginning of the line**.
-3. If a Key Point **only has one paragraph of content**, it's better to type your description **near it**.
+3. If a Key Point **only has short description**, it's better to type your description **near it**.
 4. If there are multiple Key Points and **each of them with one paragraph of description**, it's better to type your description **right below to it**.
 5. If your Key Point is a **long title**, such as a whole sentence, a question, etc. and **with multiple paragraphs of descriptions**, it's better to **add a blank line between all of them**.
 
