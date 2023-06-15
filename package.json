@@ -1,6 +1,6 @@
 {
   "name": "joplin-plugin-remoods-theme",
-  "version": "4.4.0",
+  "version": "4.5.0",
   "scripts": {
     "dist": "webpack --joplin-plugin-config buildMain && webpack --joplin-plugin-config buildExtraScripts && webpack --joplin-plugin-config createArchive",
     "prepare": "npm run dist",
