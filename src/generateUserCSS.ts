@@ -70,6 +70,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
 		tagFeature,
     smallerNewNoteTodoButton,
 		noteListItemAutoScroll,
+    headerToolbarAutoHide,
 
     printBaseFont,
 		printMonospaceFont,
@@ -371,6 +372,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       chromeCSS = chromeCSS.replace(/^  --me-plugin-mtc-column-mark-10:.+?;/gms, '  --me-plugin-mtc-column-mark-10: hsl(310,  70%,  70%);');
       chromeCSS = chromeCSS.replace(/^  --me-plugin-mtc-column-mark-10-ts:.+?;/gms, '  --me-plugin-mtc-column-mark-10-ts: hsl(310,  70%,  70%);');
       chromeCSS = chromeCSS.replace(/^  --me-plugin-eh-footnote-ref:.+?;/gms, '  --me-plugin-eh-footnote-ref: hsl(calc(var(--usp-hue) + 180deg),   0%, 100%);');
+      chromeCSS = chromeCSS.replace(/^  --me-plugin-eh-admonition-title-opacity:.+?;/gms, '  --me-plugin-eh-admonition-title-opacity: 0.8;');
       chromeCSS = chromeCSS.replace(/^  --g-main-bg-1:.+?;/gms, '  --g-main-bg-1: hsl(var(--usp-hue),   0%, 100%);');
       chromeCSS = chromeCSS.replace(/^  --g-main-bg-2:.+?;/gms, '  --g-main-bg-2: hsl(var(--usp-hue),  95%,  95%);');
       chromeCSS = chromeCSS.replace(/^  --g-panel-header-bgc:.+?;/gms, '  --g-panel-header-bgc: hsl(var(--usp-hue), 100%,  90%);');
@@ -969,6 +971,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       chromeCSS = chromeCSS.replace(/^  --me-plugin-mtc-column-mark-10:.+?;/gms, '  --me-plugin-mtc-column-mark-10: hsl(310,  70%,  70%);');
       chromeCSS = chromeCSS.replace(/^  --me-plugin-mtc-column-mark-10-ts:.+?;/gms, '  --me-plugin-mtc-column-mark-10-ts: none;');
       chromeCSS = chromeCSS.replace(/^  --me-plugin-eh-footnote-ref:.+?;/gms, '  --me-plugin-eh-footnote-ref: hsl(calc(var(--usp-hue) + 180deg), 100%,  10%);');
+      chromeCSS = chromeCSS.replace(/^  --me-plugin-eh-admonition-title-opacity:.+?;/gms, '  --me-plugin-eh-admonition-title-opacity: 1;');
       chromeCSS = chromeCSS.replace(/^  --g-main-bg-1:.+?;/gms, '  --g-main-bg-1: hsl(var(--usp-hue),  11%,  13%);');
       chromeCSS = chromeCSS.replace(/^  --g-main-bg-2:.+?;/gms, '  --g-main-bg-2: hsl(var(--usp-hue),   8%,  27%);');
       chromeCSS = chromeCSS.replace(/^  --g-panel-header-bgc:.+?;/gms, '  --g-panel-header-bgc: hsl(var(--usp-hue),  80%,  50%);');
@@ -1565,6 +1568,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       chromeCSS = chromeCSS.replace(/^  --me-plugin-mtc-column-mark-10:.+?;/gms, '  --me-plugin-mtc-column-mark-10: hsl(310, 100%,  75%);');
       chromeCSS = chromeCSS.replace(/^  --me-plugin-mtc-column-mark-10-ts:.+?;/gms, '  --me-plugin-mtc-column-mark-10-ts: none;');
       chromeCSS = chromeCSS.replace(/^  --me-plugin-eh-footnote-ref:.+?;/gms, '  --me-plugin-eh-footnote-ref: hsl(calc(var(--usp-hue) + 180deg), 100%,  10%);');
+      chromeCSS = chromeCSS.replace(/^  --me-plugin-eh-admonition-title-opacity:.+?;/gms, '  --me-plugin-eh-admonition-title-opacity: 0.8;');
       chromeCSS = chromeCSS.replace(/^  --g-main-bg-1:.+?;/gms, '  --g-main-bg-1: hsl(var(--usp-hue),  11%,  13%);');
       chromeCSS = chromeCSS.replace(/^  --g-main-bg-2:.+?;/gms, '  --g-main-bg-2: hsl(var(--usp-hue),   8%,  11%);');
       chromeCSS = chromeCSS.replace(/^  --g-panel-header-bgc:.+?;/gms, '  --g-panel-header-bgc: hsl(var(--usp-hue),  55%,  35%);');
@@ -2362,9 +2366,11 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
 
   if(!mathNotationAutoEnlarged) {
     noteCSS = noteCSS.replace(/^  --usp-math-notation-font-size-hover:.+?;/gms, '  --usp-math-notation-font-size-hover: var(--usp-math-notation-font-size);');
+    noteCSS = noteCSS.replace(/^  --usp-math-notation-mtight-font-size-hover:.+?;/gms, '  --usp-math-notation-mtight-font-size-hover: var(--usp-math-notation-font-size);');
     noteCSS = noteCSS.replace(/^  --usp-math-notation-cursor-hover:.+?;/gms, '  --usp-math-notation-cursor-hover: default;');
   } else {
     noteCSS = noteCSS.replace(/^  --usp-math-notation-font-size-hover:.+?;/gms, '  --usp-math-notation-font-size-hover: calc(var(--usp-math-notation-font-size) * 1.5);');
+    noteCSS = noteCSS.replace(/^  --usp-math-notation-mtight-font-size-hover:.+?;/gms, '  --usp-math-notation-mtight-font-size-hover: calc(var(--usp-math-notation-font-size) * 0.7 * 1.5);');
     noteCSS = noteCSS.replace(/^  --usp-math-notation-cursor-hover:.+?;/gms, '  --usp-math-notation-cursor-hover: help;');
   }
 
@@ -2454,6 +2460,12 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
     chromeCSS = chromeCSS.replace(/^  --usp-note-list-item-auto-scroll:.+?;/gms, '  --usp-note-list-item-auto-scroll: none;');
   } else {
     chromeCSS = chromeCSS.replace(/^  --usp-note-list-item-auto-scroll:.+?;/gms, '  --usp-note-list-item-auto-scroll: rtl-auto 4s linear 0.6s infinite;');
+  }
+
+  if(!headerToolbarAutoHide) {
+    chromeCSS = chromeCSS.replace(/^  --usp-ep-header-toolbar-width:.+?;/gms, '  --usp-ep-header-toolbar-width: 100%;');
+  } else {
+    chromeCSS = chromeCSS.replace(/^  --usp-ep-header-toolbar-width:.+?;/gms, '  --usp-ep-header-toolbar-width: 0;');
   }
 
   if(printBaseFont !== 'Default') {

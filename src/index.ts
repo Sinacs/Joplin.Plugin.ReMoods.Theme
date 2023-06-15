@@ -74,6 +74,8 @@ export type ThemeSettings = {
 	tagFeature: boolean;
 	smallerNewNoteTodoButton: boolean;
 	noteListItemAutoScroll: boolean;
+	headerToolbarAutoHide: boolean;
+
 
 	
 	// ADVANCED *************************************
@@ -820,7 +822,7 @@ async function prepareThemeSettings(): Promise<void> {
 			label: 'Note List Panel - Enable smaller "New Note" & "New Todo" button',
 			type: SettingItemType.Bool,
 			value: true,
-			description: 'Enable: Bigger button | Disable: Smaller button (Only when the buttons are in the same row with the search bar.)',
+			description: 'Enable: Smaller button (Only when the buttons are in the same row with the search bar.) | Disable: Bigger button',
 		  public: true,
 		},
 
@@ -831,6 +833,17 @@ async function prepareThemeSettings(): Promise<void> {
 			type: SettingItemType.Bool,
 			value: true,
 			description: 'Enable: mouse hover auto-scroll | Disable: no action',
+			public: true,
+
+		},
+
+		'headerToolbarAutoHide': {
+
+			section: 'remoodsThemeSection',
+			label: 'Editor Panel - Enable auto hide effect for the top right toolbar when idle',
+			type: SettingItemType.Bool,
+			value: true,
+			description: 'Enable: Auto hide when idle | Disable: Always show',
 			public: true,
 
 		},
@@ -1158,7 +1171,8 @@ async function writeUserCSS(): Promise<void> {
 	const tagFeature = await joplin.settings.value('tagFeature');
 	const smallerNewNoteTodoButton = await joplin.settings.value('smallerNewNoteTodoButton');
 	const noteListItemAutoScroll = await joplin.settings.value('noteListItemAutoScroll');
-	
+	const headerToolbarAutoHide = await joplin.settings.value('headerToolbarAutoHide');
+
 	const printBaseFont = await joplin.settings.value('printBaseFont');
 	const printMonospaceFont = await joplin.settings.value('printMonospaceFont');
 	const printHeadingFont = await joplin.settings.value('printHeadingFont');
@@ -1238,6 +1252,7 @@ async function writeUserCSS(): Promise<void> {
 		addRemoveSymbol,
 		inlineCodeSymbol,
 		customTitleBlockSymbol,
+		headerToolbarAutoHide,
 
 		panelsScrollbar,
 		notebookTitleWrap,

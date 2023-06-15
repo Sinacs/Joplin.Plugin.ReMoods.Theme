@@ -64,6 +64,7 @@
       - 3  INLINE TODO (IT)
       - 4  NOTE LINK SYSTEM (NLS)
       - 5  CODE CLIPBOARD (CC)
+      - 6  ADMONITION
 
   - EXPORT HTML FILE
 
@@ -158,6 +159,7 @@
   --usp-art-gallery-max-height: 56vh;
   --usp-math-notation-font-size: var(--usp-base-font-size);
   --usp-math-notation-font-size-hover: calc(var(--usp-math-notation-font-size) * 1.5);
+  --usp-math-notation-mtight-font-size-hover: calc(var(--usp-math-notation-font-size) * 0.7 * 1.5);
 
   /* SCREEN: EFFECTS ======================================= */
   --usp-h1-font-variant: small-caps;
@@ -777,7 +779,7 @@
 
 
 /* || FONT 1 | BASE FONT *********************************** */
-body *:not(.katex-display *),
+body *:not([class*="katex-"] *),
 .spoiler-block .summary-title {
   font-family: var(--usp-base-font, sans-serif);
   font-size: var(--usp-base-font-size);
@@ -1008,7 +1010,7 @@ ag12::-webkit-scrollbar-thumb:hover {
   margin-top: 1em !important;
 }
 /* margin between paragraph and other elements ------------- */
-#rendered-md p:not(li p) {
+#rendered-md p:not(li p):not(.admonition-title) {
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -1583,24 +1585,31 @@ ag12::-webkit-scrollbar-thumb:hover {
 
 
 /* || ELEMENTS 6 | MATH NOTATION *************************** */
-#rendered-md .katex-display .katex {
-  text-align: var(--usp-math-notation-text-align);
-}
-#rendered-md .katex-display {
-  padding: 0 5px;
-  font-size: var(--usp-math-notation-font-size);
+#rendered-md .katex * {
+  font-family: katex_main, monospace !important;
+  font-size: var(--usp-math-notation-font-size) !important;
   color: var(--sc-math-notation-text);
   transition: font-size 0.3s;
   transition-delay: 1.5s;
 }
 /* hover --------------------------------------------------- */
-#rendered-md .katex-display:hover {
+#rendered-md .katex:hover * {
   font-size: var(--usp-math-notation-font-size-hover) !important;
   transition: font-size 0.3s;
   transition-delay: 0.5s;
   cursor: var(--usp-math-notation-cursor-hover);
 }
+#rendered-md .katex .mord.mtight {
+  font-size: calc(var(--usp-math-notation-font-size) * 0.7) !important;
+}
 
+#rendered-md .katex:hover .mord.mtight {
+  font-size: var(--usp-math-notation-mtight-font-size-hover) !important;
+}
+/* block math notation ------------------------------------ */
+#rendered-md .katex-display .katex {
+  text-align: var(--usp-math-notation-text-align);
+}
 
 
 /* || ELEMENTS 7 | BLOCKQUOTE ****************************** */
@@ -1665,6 +1674,28 @@ ag12::-webkit-scrollbar-thumb:hover {
 /* hover --------------------------------------------------- */
 #rendered-md .mermaid:hover {
   filter: none;
+}
+
+/* SAVE BUTTON ============================================= */
+#rendered-md .mermaid-export-graph {
+  position: sticky !important;
+  left: 100%;
+  width: 29px;
+  height: 25px;
+  color: #dddddd !important;
+  background: var(--sc-plugin-code-clipboard-btn) !important;
+  border: none !important;  
+}
+/* hover --------------------------------------------------- */
+#rendered-md .mermaid-export-graph:hover {
+  cursor: pointer;
+}
+/* button icon --------------------------------------------- */
+#rendered-md .mermaid-export-graph > svg:first-child {
+  position: relative;
+  right: 0px;
+  bottom: 1px;
+  width: 17px;
 }
 
 
@@ -2482,7 +2513,8 @@ tspan {
 /* || PLUGINS 5 | CODE CLIPBOARD *************************** */
 /* copy button --------------------------------------------- */
 .code-clipboard-button {
-  right: 23px !important;  
+  top: 2px !important;
+  right: 35px !important;  
   visibility: hidden;
   transform: rotateZ(0deg) scale(0%);
   transition: transform 0.2s, visibility 0.2s;
@@ -2508,6 +2540,18 @@ tspan {
 .code-clipboard-icon {
   color: var(--sc-plugin-code-clipboard-btn-icon) !important;
   opacity: 0.8;
+}
+
+
+
+/* || PLUGINS 6 | ADMONITION ******************************* */
+/* admonition title ---------------------------------------- */
+.admonition-title::before {
+  display: inline-block !important;
+  margin-right: 10px !important;
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+  text-align: center;
 }
 
 

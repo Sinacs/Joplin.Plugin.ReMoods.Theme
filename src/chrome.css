@@ -145,6 +145,7 @@
   --usp-notebook-panel-scrollbar-width: 3px;
   --usp-note-list-panel-scrollbar-width: 3px;
   --usp-nlp-new-note-todo-btn-width: 26px;
+  --usp-ep-header-toolbar-width: 100%;
 
   /* EFFECTS *********************************************** */
   --usp-h1-text-transform: capitalize;
@@ -362,7 +363,7 @@
 
   /* PLUGIN: ENHANCEMENT ******************************************************************** */
   --me-plugin-eh-footnote-ref:                            hsl(calc(var(--usp-hue) + 180deg), 100%,  10%);
-
+  --me-plugin-eh-admonition-title-opacity:                1;
 
 
 
@@ -1542,11 +1543,12 @@
 }
 
 /* EH: ADMONITIONS ========================================= */
-/* title text */
+/* title text ---------------------------------------------- */
 .cm-admonition-type:not(#fake),
 .cm-admonition-end:not(#fake) {
-  opacity: 1;
+  opacity: var(--me-plugin-eh-admonition-title-opacity) !important;
 }
+
 
 
 
@@ -2576,7 +2578,7 @@ body {
 /* HEADER: SIDE TOOLBAR ==================================== */
 /* container ----------------------------------------------- */
 .title-input ~ div {
-  width: 0;
+  width: var(--usp-ep-header-toolbar-width);
   max-width: -moz-fit-content;
   max-width: fit-content;
   min-height: 35px;
