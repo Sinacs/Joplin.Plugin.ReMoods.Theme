@@ -157,9 +157,6 @@
   --usp-h1-font-weight: 600;
   --usp-code-block-max-height: 56vh;
   --usp-art-gallery-max-height: 56vh;
-  --usp-math-notation-font-size: var(--usp-base-font-size);
-  --usp-math-notation-font-size-hover: calc(var(--usp-math-notation-font-size) * 1.5);
-  --usp-math-notation-mtight-font-size-hover: calc(var(--usp-math-notation-font-size) * 0.7 * 1.5);
 
   /* SCREEN: EFFECTS ======================================= */
   --usp-h1-font-variant: small-caps;
@@ -175,7 +172,6 @@
   --usp-mermaid-eye-protector-transition: filter 1.2s;
   --usp-image-eye-protector-filter: brightness(80%);
   --usp-image-eye-protector-transition: filter 1.2s;
-  --usp-math-notation-cursor-hover: help;
   
   /* SCREEN: DISPLAY ======================================= */
   --usp-heading-ref-display: inline-block;
@@ -1585,26 +1581,8 @@ ag12::-webkit-scrollbar-thumb:hover {
 
 
 /* || ELEMENTS 6 | MATH NOTATION *************************** */
-#rendered-md .katex *, {
-  font-family: katex_main, monospace !important;
-  font-size: var(--usp-math-notation-font-size) !important;
+#rendered-md .katex * {
   color: var(--sc-math-notation-text);
-  transition: font-size 0.3s;
-  transition-delay: 1.5s;
-}
-/* hover --------------------------------------------------- */
-#rendered-md .katex:hover * {
-  font-size: var(--usp-math-notation-font-size-hover) !important;
-  transition: font-size 0.3s;
-  transition-delay: 0.5s;
-  cursor: var(--usp-math-notation-cursor-hover);
-}
-#rendered-md .katex .mord.mtight {
-  font-size: var(--usp-math-notation-font-size) !important;
-}
-
-#rendered-md .katex:hover .mord.mtight {
-  font-size: var(--usp-math-notation-mtight-font-size-hover) !important;
 }
 /* block math notation ------------------------------------ */
 #rendered-md .katex-display .katex {

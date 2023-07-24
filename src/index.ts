@@ -54,9 +54,7 @@ export type ThemeSettings = {
 	snTextJustify: boolean;
 	dottedBlockquote: boolean;
 	dottedCodeBlock: boolean;
-	mathNotationFontSize: number; 
 	mathNotationAlignLeft: boolean;
-	mathNotationAutoEnlarged: boolean;
 	mermaidEyeProtector: boolean;
 	imageEyeProtector: boolean;
 	codeBlockMaxHeight: boolean;
@@ -652,34 +650,12 @@ async function prepareThemeSettings(): Promise<void> {
 
 		},
 
-		'mathNotationFontSize': {
-
-			section: 'remoodsThemeSection',
-			label: 'Render Viewer - * Math Notation Font Size (px)',
-			type: SettingItemType.Int,
-			value: 0,
-			description: 'Please enter the exact font size. (The default value “0” is a special case which means the font size will automatically adjust to match the "Base Font Size" even if it changes.)',
-			public: true,
-
-		},
-
 		'mathNotationAlignLeft': {
 
 			section: 'remoodsThemeSection',
 			label: 'Render Viewer - * Enable math notation aligned-left',
 			type: SettingItemType.Bool,
 			value: false,
-			public: true,
-
-		},
-
-		'mathNotationAutoEnlarged': {
-
-			section: 'remoodsThemeSection',
-			label: 'Render Viewer - Enable math notation auto-enlarged effect',
-			type: SettingItemType.Bool,
-			value: true,
-			description: 'Enable: Mouse hovering over the math notation to zoom 1.5 times bigger. | Disable: No action. |',
 			public: true,
 
 		},
@@ -800,10 +776,10 @@ async function prepareThemeSettings(): Promise<void> {
 		'notebookFolderIconColor': {
 
 			section: 'remoodsThemeSection',
-			label: 'Notebook Panel - Enable multiple colors for nested notebook folder',
+			label: 'Notebook Panel - Enable single color for all nested notebook folder',
 			type: SettingItemType.Bool,
 			value: true,
-			description: 'Enable: Multiple colors | Disable: Single color | (Joplin v2.9.12+)',
+			description: 'Enable: Single color | Disable: Multiple colors | (Joplin v2.9.12+)',
 			public: true,
 
 		},
@@ -1176,9 +1152,7 @@ async function writeUserCSS(): Promise<void> {
 	const snTextJustify = await joplin.settings.value('snTextJustify');
 	const dottedBlockquote = await joplin.settings.value('dottedBlockquote');
 	const dottedCodeBlock = await joplin.settings.value('dottedCodeBlock');
-	const mathNotationFontSize = await joplin.settings.value('mathNotationFontSize');
 	const mathNotationAlignLeft = await joplin.settings.value('mathNotationAlignLeft');
-	const mathNotationAutoEnlarged = await joplin.settings.value('mathNotationAutoEnlarged');
 	const mermaidEyeProtector = await joplin.settings.value('mermaidEyeProtector');
 	const imageEyeProtector = await joplin.settings.value('imageEyeProtector');
 	const codeBlockMaxHeight = await joplin.settings.value('codeBlockMaxHeight');
@@ -1269,9 +1243,7 @@ async function writeUserCSS(): Promise<void> {
 		snTextJustify,
 		dottedBlockquote,
 		dottedCodeBlock,
-		mathNotationFontSize,
 		mathNotationAlignLeft,
-		mathNotationAutoEnlarged,
 		mermaidEyeProtector,
 		imageEyeProtector,
 		codeBlockMaxHeight,
