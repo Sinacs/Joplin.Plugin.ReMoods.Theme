@@ -23,7 +23,8 @@ export type ThemeSettings = {
 	h4FontSize: number;
 	h5FontSize: number;
 	h6FontSize: number;
-	darkerEditorBackground: boolean;
+	darkerDuskBackground: boolean;
+	darkerNightBackground: boolean;
 	h1TextTransform: boolean;
 	h1FontVariant: boolean;
 	emphasizeAddRemove: boolean,
@@ -69,6 +70,7 @@ export type ThemeSettings = {
 	notebookTitleWrap: boolean;
 	notebookTitleScrollbar: boolean;
 	notebookFolderIcon: boolean;
+	notebookFolderIconColor: boolean;
 	allNotesButton: boolean;
 	syncFeature: boolean;
 	tagFeature: boolean;
@@ -363,11 +365,22 @@ async function prepareThemeSettings(): Promise<void> {
 
 		},
 
-		'darkerEditorBackground': {
+		'darkerDuskBackground': {
 
 			section: 'remoodsThemeSection',
 			label: 'Markdown Editor & Render Viewer - Enable darker background color (Dusk Mode Only)',
 			type: SettingItemType.Bool,
+			value: false,
+			public: true,
+
+		},
+
+		'darkerNightBackground': {
+
+			section: 'remoodsThemeSection',
+			label: 'Markdown Editor & Render Viewer - Enable darker background color (Night Mode Only | Experimental)',
+			type: SettingItemType.Bool,
+			description: 'It will also changing the background color of notebook panel and note list panel.',
 			value: false,
 			public: true,
 
@@ -784,6 +797,17 @@ async function prepareThemeSettings(): Promise<void> {
 
 		},
 
+		'notebookFolderIconColor': {
+
+			section: 'remoodsThemeSection',
+			label: 'Notebook Panel - Enable multiple colors for nested notebook folder',
+			type: SettingItemType.Bool,
+			value: true,
+			description: 'Enable: Multiple colors | Disable: Single color | (Joplin v2.9.12+)',
+			public: true,
+
+		},
+
 		'allNotesButton': {
 
 			section: 'remoodsThemeSection',
@@ -1123,7 +1147,8 @@ async function writeUserCSS(): Promise<void> {
 	const h4FontSize = await joplin.settings.value('h4FontSize');
 	const h5FontSize = await joplin.settings.value('h5FontSize');
 	const h6FontSize = await joplin.settings.value('h6FontSize');
-	const darkerEditorBackground = await joplin.settings.value('darkerEditorBackground');
+	const darkerDuskBackground = await joplin.settings.value('darkerDuskBackground');
+	const darkerNightBackground = await joplin.settings.value('darkerNightBackground');
 	const h1TextTransform = await joplin.settings.value('h1TextTransform');
 	const h1FontVariant = await joplin.settings.value('h1FontVariant');
 	const emphasizeAddRemove = await joplin.settings.value('emphasizeAddRemove');
@@ -1166,6 +1191,7 @@ async function writeUserCSS(): Promise<void> {
 	const notebookTitleWrap = await joplin.settings.value('notebookTitleWrap');
 	const notebookTitleScrollbar = await joplin.settings.value('notebookTitleScrollbar');
 	const notebookFolderIcon = await joplin.settings.value('notebookFolderIcon');
+	const notebookFolderIconColor = await joplin.settings.value('notebookFolderIconColor');
 	const allNotesButton = await joplin.settings.value('allNotesButton');
 	const syncFeature = await joplin.settings.value('syncFeature');
 	const tagFeature = await joplin.settings.value('tagFeature');
@@ -1214,7 +1240,8 @@ async function writeUserCSS(): Promise<void> {
 		h4FontSize,
 		h5FontSize,
 		h6FontSize,
-		darkerEditorBackground,
+		darkerDuskBackground,
+		darkerNightBackground,
 		h1TextTransform,
 		h1FontVariant,
 		emphasizeAddRemove,
@@ -1258,6 +1285,7 @@ async function writeUserCSS(): Promise<void> {
 		notebookTitleWrap,
 		notebookTitleScrollbar,
 		notebookFolderIcon,
+		notebookFolderIconColor,
 		allNotesButton,
 		syncFeature,
 		tagFeature,

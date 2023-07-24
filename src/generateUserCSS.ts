@@ -22,7 +22,8 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
 		h4FontSize,
 		h5FontSize,
 		h6FontSize,
-		darkerEditorBackground,
+		darkerDuskBackground,
+    darkerNightBackground,
 		h1TextTransform,
 		h1FontVariant,
 		emphasizeAddRemove,
@@ -65,6 +66,7 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
 		notebookTitleWrap,
 		notebookTitleScrollbar,
 		notebookFolderIcon,
+    notebookFolderIconColor,
     allNotesButton,
 		syncFeature,
 		tagFeature,
@@ -410,22 +412,6 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       chromeCSS = chromeCSS.replace(/^  --s-np-directory-icon-open-ds:.+?;/gms, '  --s-np-directory-icon-open-ds: none;');
       chromeCSS = chromeCSS.replace(/^  --s-np-directory-icon-close:.+?;/gms, '  --s-np-directory-icon-close: hsl(var(--usp-hue),   0%,   0%);');
       chromeCSS = chromeCSS.replace(/^  --s-np-directory-icon-close-ds:.+?;/gms, '  --s-np-directory-icon-close-ds: none;');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-0:.+?;/gms, '  --s-np-notebook-folder-icon-0: hsl(var(--usp-hue), 80%, 60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-1:.+?;/gms, '  --s-np-notebook-folder-icon-1: hsl(calc(var(--usp-hue) + 50deg),  80%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-2:.+?;/gms, '  --s-np-notebook-folder-icon-2: hsl(calc(var(--usp-hue) + 100deg),  80%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-3:.+?;/gms, '  --s-np-notebook-folder-icon-3: hsl(calc(var(--usp-hue) + 150deg),  80%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-4:.+?;/gms, '  --s-np-notebook-folder-icon-4: hsl(calc(var(--usp-hue) + 200deg),  80%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-5:.+?;/gms, '  --s-np-notebook-folder-icon-5: hsl(calc(var(--usp-hue) + 250deg),  80%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-6:.+?;/gms, '  --s-np-notebook-folder-icon-6: hsl(calc(var(--usp-hue) + 300deg),  80%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-7:.+?;/gms, '  --s-np-notebook-folder-icon-7: hsl(calc(var(--usp-hue) + 350deg),  80%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-8:.+?;/gms, '  --s-np-notebook-folder-icon-8: hsl(calc(var(--usp-hue) + 40deg),  80%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-9:.+?;/gms, '  --s-np-notebook-folder-icon-9: hsl(calc(var(--usp-hue) + 90deg),  80%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-10:.+?;/gms, '  --s-np-notebook-folder-icon-10: hsl(calc(var(--usp-hue) + 140deg),  80%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-11:.+?;/gms, '  --s-np-notebook-folder-icon-11: hsl(calc(var(--usp-hue) + 190deg),  80%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-12:.+?;/gms, '  --s-np-notebook-folder-icon-12: hsl(calc(var(--usp-hue) + 240deg),  80%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-13:.+?;/gms, '  --s-np-notebook-folder-icon-13: hsl(calc(var(--usp-hue) + 290deg),  80%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-14:.+?;/gms, '  --s-np-notebook-folder-icon-14: hsl(calc(var(--usp-hue) + 340deg),  80%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-15:.+?;/gms, '  --s-np-notebook-folder-icon-15: hsl(calc(var(--usp-hue) + 30deg),  80%,  60%);');
       chromeCSS = chromeCSS.replace(/^  --s-np-note-count-label-text:.+?;/gms, '  --s-np-note-count-label-text: hsl(var(--usp-hue), 100%,  20%);');
       chromeCSS = chromeCSS.replace(/^  --s-np-note-count-label-bgc:.+?;/gms, '  --s-np-note-count-label-bgc: hsl(var(--usp-hue), 100%,  96%);');
       chromeCSS = chromeCSS.replace(/^  --s-np-note-count-label-bd:.+?;/gms, '  --s-np-note-count-label-bd: hsl(var(--usp-hue),  70%,  70%);');
@@ -715,7 +701,43 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --usp-print-monospace-font:.+?;/gms, '  --usp-print-monospace-font: var(--usp-print-custom-monospace-font), "Cascadia Mono Light", "GenSenRounded TW", "Chiron Hei HK Light", Roboto;');
       noteCSS = noteCSS.replace(/^  --usp-print-heading-font:.+?;/gms, '  --usp-print-heading-font: var(--usp-print-custom-heading-font), "Montserrat", "Mulish", "GenSenRounded TW", "Chiron Hei HK", Avenir, Arial;');
 
-      if(!darkerEditorBackground) {
+      if(!notebookFolderIconColor) {
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-0:.+?;/gms, '  --s-np-notebook-folder-icon-0: hsl(var(--usp-hue), 80%, 60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-1:.+?;/gms, '  --s-np-notebook-folder-icon-1: hsl(calc(var(--usp-hue) + 50deg),  80%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-2:.+?;/gms, '  --s-np-notebook-folder-icon-2: hsl(calc(var(--usp-hue) + 100deg),  80%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-3:.+?;/gms, '  --s-np-notebook-folder-icon-3: hsl(calc(var(--usp-hue) + 150deg),  80%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-4:.+?;/gms, '  --s-np-notebook-folder-icon-4: hsl(calc(var(--usp-hue) + 200deg),  80%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-5:.+?;/gms, '  --s-np-notebook-folder-icon-5: hsl(calc(var(--usp-hue) + 250deg),  80%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-6:.+?;/gms, '  --s-np-notebook-folder-icon-6: hsl(calc(var(--usp-hue) + 300deg),  80%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-7:.+?;/gms, '  --s-np-notebook-folder-icon-7: hsl(calc(var(--usp-hue) + 350deg),  80%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-8:.+?;/gms, '  --s-np-notebook-folder-icon-8: hsl(calc(var(--usp-hue) + 40deg),  80%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-9:.+?;/gms, '  --s-np-notebook-folder-icon-9: hsl(calc(var(--usp-hue) + 90deg),  80%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-10:.+?;/gms, '  --s-np-notebook-folder-icon-10: hsl(calc(var(--usp-hue) + 140deg),  80%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-11:.+?;/gms, '  --s-np-notebook-folder-icon-11: hsl(calc(var(--usp-hue) + 190deg),  80%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-12:.+?;/gms, '  --s-np-notebook-folder-icon-12: hsl(calc(var(--usp-hue) + 240deg),  80%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-13:.+?;/gms, '  --s-np-notebook-folder-icon-13: hsl(calc(var(--usp-hue) + 290deg),  80%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-14:.+?;/gms, '  --s-np-notebook-folder-icon-14: hsl(calc(var(--usp-hue) + 340deg),  80%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-15:.+?;/gms, '  --s-np-notebook-folder-icon-15: hsl(calc(var(--usp-hue) + 30deg),  80%,  60%);');
+      } else {
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-0:.+?;/gms, '  --s-np-notebook-folder-icon-0: hsl(var(--usp-hue), 80%, 60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-1:.+?;/gms, '  --s-np-notebook-folder-icon-1: hsl(var(--usp-hue), 80%, 60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-2:.+?;/gms, '  --s-np-notebook-folder-icon-2: hsl(var(--usp-hue), 80%, 60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-3:.+?;/gms, '  --s-np-notebook-folder-icon-3: hsl(var(--usp-hue), 80%, 60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-4:.+?;/gms, '  --s-np-notebook-folder-icon-4: hsl(var(--usp-hue), 80%, 60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-5:.+?;/gms, '  --s-np-notebook-folder-icon-5: hsl(var(--usp-hue), 80%, 60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-6:.+?;/gms, '  --s-np-notebook-folder-icon-6: hsl(var(--usp-hue), 80%, 60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-7:.+?;/gms, '  --s-np-notebook-folder-icon-7: hsl(var(--usp-hue), 80%, 60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-8:.+?;/gms, '  --s-np-notebook-folder-icon-8: hsl(var(--usp-hue), 80%, 60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-9:.+?;/gms, '  --s-np-notebook-folder-icon-9: hsl(var(--usp-hue), 80%, 60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-10:.+?;/gms, '  --s-np-notebook-folder-icon-10: hsl(var(--usp-hue), 80%, 60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-11:.+?;/gms, '  --s-np-notebook-folder-icon-11: hsl(var(--usp-hue), 80%, 60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-12:.+?;/gms, '  --s-np-notebook-folder-icon-12: hsl(var(--usp-hue), 80%, 60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-13:.+?;/gms, '  --s-np-notebook-folder-icon-13: hsl(var(--usp-hue), 80%, 60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-14:.+?;/gms, '  --s-np-notebook-folder-icon-14: hsl(var(--usp-hue), 80%, 60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-15:.+?;/gms, '  --s-np-notebook-folder-icon-15: hsl(var(--usp-hue), 80%, 60%);');
+      }
+
+      if(!darkerDuskBackground) {
         chromeCSS = chromeCSS.replace(/^  --me-bg:.+?;/gms, '  --me-bg: hsl(var(--usp-hue),   0%, 100%);');
         chromeCSS = chromeCSS.replace(/^  --me-code-block-bg:.+?;/gms, '  --me-code-block-bg: hsl(var(--usp-hue),   0%, 100%);');
         noteCSS = noteCSS.replace(/^  --sc-bg-1:.+?;/gms, '  --sc-bg-1: hsl(var(--usp-hue),   0%, 100%);');
@@ -1009,22 +1031,6 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       chromeCSS = chromeCSS.replace(/^  --s-np-directory-icon-open-ds:.+?;/gms, '  --s-np-directory-icon-open-ds: 0px hsl(var(--usp-hue), 100%,  40%);');
       chromeCSS = chromeCSS.replace(/^  --s-np-directory-icon-close:.+?;/gms, '  --s-np-directory-icon-close: hsl(var(--usp-hue), 100%,  60%);');
       chromeCSS = chromeCSS.replace(/^  --s-np-directory-icon-close-ds:.+?;/gms, '  --s-np-directory-icon-close-ds: 2px hsl(var(--usp-hue), 100%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-0:.+?;/gms, '  --s-np-notebook-folder-icon-0: hsl(var(--usp-hue), 100%,  70%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-1:.+?;/gms, '  --s-np-notebook-folder-icon-1: hsl(calc(var(--usp-hue) +  50deg), 100%,  70%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-2:.+?;/gms, '  --s-np-notebook-folder-icon-2: hsl(calc(var(--usp-hue) + 100deg), 100%,  70%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-3:.+?;/gms, '  --s-np-notebook-folder-icon-3: hsl(calc(var(--usp-hue) + 150deg), 100%,  70%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-4:.+?;/gms, '  --s-np-notebook-folder-icon-4: hsl(calc(var(--usp-hue) + 200deg), 100%,  70%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-5:.+?;/gms, '  --s-np-notebook-folder-icon-5: hsl(calc(var(--usp-hue) + 250deg), 100%,  70%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-6:.+?;/gms, '  --s-np-notebook-folder-icon-6: hsl(calc(var(--usp-hue) + 300deg), 100%,  70%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-7:.+?;/gms, '  --s-np-notebook-folder-icon-7: hsl(calc(var(--usp-hue) + 350deg), 100%,  70%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-8:.+?;/gms, '  --s-np-notebook-folder-icon-8: hsl(calc(var(--usp-hue) + 40deg), 100%,  70%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-9:.+?;/gms, '  --s-np-notebook-folder-icon-9: hsl(calc(var(--usp-hue) + 90deg), 100%,  70%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-10:.+?;/gms, '  --s-np-notebook-folder-icon-10: hsl(calc(var(--usp-hue) + 140deg), 100%,  70%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-11:.+?;/gms, '  --s-np-notebook-folder-icon-11: hsl(calc(var(--usp-hue) + 190deg), 100%,  70%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-12:.+?;/gms, '  --s-np-notebook-folder-icon-12: hsl(calc(var(--usp-hue) + 240deg), 100%,  70%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-13:.+?;/gms, '  --s-np-notebook-folder-icon-13: hsl(calc(var(--usp-hue) + 290deg), 100%,  70%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-14:.+?;/gms, '  --s-np-notebook-folder-icon-14: hsl(calc(var(--usp-hue) + 340deg), 100%,  70%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-15:.+?;/gms, '  --s-np-notebook-folder-icon-15: hsl(calc(var(--usp-hue) + 30deg), 100%,  70%);');
       chromeCSS = chromeCSS.replace(/^  --s-np-note-count-label-text:.+?;/gms, '  --s-np-note-count-label-text: hsl(var(--usp-hue),   0%, 100%);');
       chromeCSS = chromeCSS.replace(/^  --s-np-note-count-label-bgc:.+?;/gms, '  --s-np-note-count-label-bgc: hsl(var(--usp-hue),  40%,  20%);');
       chromeCSS = chromeCSS.replace(/^  --s-np-note-count-label-bd:.+?;/gms, '  --s-np-note-count-label-bd: hsl(var(--usp-hue),  50%,  80%);');
@@ -1312,7 +1318,43 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --usp-print-monospace-font:.+?;/gms, '  --usp-print-monospace-font: var(--usp-print-custom-monospace-font), "Cascadia Mono Light", "GenSenRounded TW", "Chiron Hei HK Light", Roboto;');
       noteCSS = noteCSS.replace(/^  --usp-print-heading-font:.+?;/gms, '  --usp-print-heading-font: var(--usp-print-custom-heading-font), "Montserrat", "Mulish", "GenSenRounded TW", "Chiron Hei HK", Avenir, Arial;');
 
-      if(!darkerEditorBackground) {
+      if(!notebookFolderIconColor) {
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-0:.+?;/gms, '  --s-np-notebook-folder-icon-0: hsl(var(--usp-hue), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-1:.+?;/gms, '  --s-np-notebook-folder-icon-1: hsl(calc(var(--usp-hue) +  50deg), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-2:.+?;/gms, '  --s-np-notebook-folder-icon-2: hsl(calc(var(--usp-hue) + 100deg), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-3:.+?;/gms, '  --s-np-notebook-folder-icon-3: hsl(calc(var(--usp-hue) + 150deg), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-4:.+?;/gms, '  --s-np-notebook-folder-icon-4: hsl(calc(var(--usp-hue) + 200deg), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-5:.+?;/gms, '  --s-np-notebook-folder-icon-5: hsl(calc(var(--usp-hue) + 250deg), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-6:.+?;/gms, '  --s-np-notebook-folder-icon-6: hsl(calc(var(--usp-hue) + 300deg), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-7:.+?;/gms, '  --s-np-notebook-folder-icon-7: hsl(calc(var(--usp-hue) + 350deg), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-8:.+?;/gms, '  --s-np-notebook-folder-icon-8: hsl(calc(var(--usp-hue) + 40deg), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-9:.+?;/gms, '  --s-np-notebook-folder-icon-9: hsl(calc(var(--usp-hue) + 90deg), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-10:.+?;/gms, '  --s-np-notebook-folder-icon-10: hsl(calc(var(--usp-hue) + 140deg), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-11:.+?;/gms, '  --s-np-notebook-folder-icon-11: hsl(calc(var(--usp-hue) + 190deg), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-12:.+?;/gms, '  --s-np-notebook-folder-icon-12: hsl(calc(var(--usp-hue) + 240deg), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-13:.+?;/gms, '  --s-np-notebook-folder-icon-13: hsl(calc(var(--usp-hue) + 290deg), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-14:.+?;/gms, '  --s-np-notebook-folder-icon-14: hsl(calc(var(--usp-hue) + 340deg), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-15:.+?;/gms, '  --s-np-notebook-folder-icon-15: hsl(calc(var(--usp-hue) + 30deg), 100%,  70%);');
+      } else {
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-0:.+?;/gms, '  --s-np-notebook-folder-icon-0: hsl(var(--usp-hue), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-1:.+?;/gms, '  --s-np-notebook-folder-icon-1: hsl(var(--usp-hue), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-2:.+?;/gms, '  --s-np-notebook-folder-icon-2: hsl(var(--usp-hue), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-3:.+?;/gms, '  --s-np-notebook-folder-icon-3: hsl(var(--usp-hue), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-4:.+?;/gms, '  --s-np-notebook-folder-icon-4: hsl(var(--usp-hue), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-5:.+?;/gms, '  --s-np-notebook-folder-icon-5: hsl(var(--usp-hue), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-6:.+?;/gms, '  --s-np-notebook-folder-icon-6: hsl(var(--usp-hue), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-7:.+?;/gms, '  --s-np-notebook-folder-icon-7: hsl(var(--usp-hue), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-8:.+?;/gms, '  --s-np-notebook-folder-icon-8: hsl(var(--usp-hue), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-9:.+?;/gms, '  --s-np-notebook-folder-icon-9: hsl(var(--usp-hue), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-10:.+?;/gms, '  --s-np-notebook-folder-icon-10: hsl(var(--usp-hue), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-11:.+?;/gms, '  --s-np-notebook-folder-icon-11: hsl(var(--usp-hue), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-12:.+?;/gms, '  --s-np-notebook-folder-icon-12: hsl(var(--usp-hue), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-13:.+?;/gms, '  --s-np-notebook-folder-icon-13: hsl(var(--usp-hue), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-14:.+?;/gms, '  --s-np-notebook-folder-icon-14: hsl(var(--usp-hue), 100%,  70%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-15:.+?;/gms, '  --s-np-notebook-folder-icon-15: hsl(var(--usp-hue), 100%,  70%);');
+      }
+
+      if(!darkerDuskBackground) {
         chromeCSS = chromeCSS.replace(/^  --me-bg:.+?;/gms, '  --me-bg: hsl(var(--usp-hue),   8%,  27%);');
         chromeCSS = chromeCSS.replace(/^  --me-code-block-bg:.+?;/gms, '  --me-code-block-bg: hsl(var(--usp-hue),   8%,  17%);');
         noteCSS = noteCSS.replace(/^  --sc-bg-1:.+?;/gms, '  --sc-bg-1: hsl(var(--usp-hue),   8%,  27%);');
@@ -1606,22 +1648,6 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       chromeCSS = chromeCSS.replace(/^  --s-np-directory-icon-open-ds:.+?;/gms, '  --s-np-directory-icon-open-ds: 0px hsl(var(--usp-hue), 100%,  40%);');
       chromeCSS = chromeCSS.replace(/^  --s-np-directory-icon-close:.+?;/gms, '  --s-np-directory-icon-close: hsl(calc(var(--usp-hue) + 180deg), 100%,  65%);');
       chromeCSS = chromeCSS.replace(/^  --s-np-directory-icon-close-ds:.+?;/gms, '  --s-np-directory-icon-close-ds: 2px hsl(calc(var(--usp-hue) + 180deg), 100%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-0:.+?;/gms, '  --s-np-notebook-folder-icon-0: hsl(var(--usp-hue),  50%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-1:.+?;/gms, '  --s-np-notebook-folder-icon-1: hsl(calc(var(--usp-hue) +  50deg),  50%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-2:.+?;/gms, '  --s-np-notebook-folder-icon-2: hsl(calc(var(--usp-hue) + 100deg),  50%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-3:.+?;/gms, '  --s-np-notebook-folder-icon-3: hsl(calc(var(--usp-hue) + 150deg),  50%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-4:.+?;/gms, '  --s-np-notebook-folder-icon-4: hsl(calc(var(--usp-hue) + 200deg),  50%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-5:.+?;/gms, '  --s-np-notebook-folder-icon-5: hsl(calc(var(--usp-hue) + 250deg),  50%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-6:.+?;/gms, '  --s-np-notebook-folder-icon-6: hsl(calc(var(--usp-hue) + 300deg),  50%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-7:.+?;/gms, '  --s-np-notebook-folder-icon-7: hsl(calc(var(--usp-hue) + 350deg),  50%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-8:.+?;/gms, '  --s-np-notebook-folder-icon-8: hsl(calc(var(--usp-hue) +  40deg),  50%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-9:.+?;/gms, '  --s-np-notebook-folder-icon-9: hsl(calc(var(--usp-hue) +  90deg),  50%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-10:.+?;/gms, '  --s-np-notebook-folder-icon-10: hsl(calc(var(--usp-hue) + 140deg),  50%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-11:.+?;/gms, '  --s-np-notebook-folder-icon-11: hsl(calc(var(--usp-hue) + 190deg),  50%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-12:.+?;/gms, '  --s-np-notebook-folder-icon-12: hsl(calc(var(--usp-hue) + 240deg),  50%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-13:.+?;/gms, '  --s-np-notebook-folder-icon-13: hsl(calc(var(--usp-hue) + 290deg),  50%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-14:.+?;/gms, '  --s-np-notebook-folder-icon-14: hsl(calc(var(--usp-hue) + 340deg),  50%,  60%);');
-      chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-15:.+?;/gms, '  --s-np-notebook-folder-icon-15: hsl(calc(var(--usp-hue) +  30deg),  50%,  60%);');
       chromeCSS = chromeCSS.replace(/^  --s-np-note-count-label-text:.+?;/gms, '  --s-np-note-count-label-text: hsl(var(--usp-hue),   0%, 100%);');
       chromeCSS = chromeCSS.replace(/^  --s-np-note-count-label-bgc:.+?;/gms, '  --s-np-note-count-label-bgc: hsl(var(--usp-hue),  40%,  15%);');
       chromeCSS = chromeCSS.replace(/^  --s-np-note-count-label-bd:.+?;/gms, '  --s-np-note-count-label-bd: hsl(var(--usp-hue),  50%,  80%);');
@@ -1909,7 +1935,43 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
       noteCSS = noteCSS.replace(/^  --usp-print-monospace-font:.+?;/gms, '  --usp-print-monospace-font: var(--usp-print-custom-monospace-font), "Cascadia Mono Light", "GenSenRounded TW", "Chiron Hei HK Light", Roboto;');
       noteCSS = noteCSS.replace(/^  --usp-print-heading-font:.+?;/gms, '  --usp-print-heading-font: var(--usp-print-custom-heading-font), "Montserrat", "Mulish", "GenSenRounded TW", "Chiron Hei HK", Avenir, Arial;');
 
-      if(!darkerEditorBackground) {
+      if(!notebookFolderIconColor) {
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-0:.+?;/gms, '  --s-np-notebook-folder-icon-0: hsl(var(--usp-hue),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-1:.+?;/gms, '  --s-np-notebook-folder-icon-1: hsl(calc(var(--usp-hue) +  50deg),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-2:.+?;/gms, '  --s-np-notebook-folder-icon-2: hsl(calc(var(--usp-hue) + 100deg),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-3:.+?;/gms, '  --s-np-notebook-folder-icon-3: hsl(calc(var(--usp-hue) + 150deg),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-4:.+?;/gms, '  --s-np-notebook-folder-icon-4: hsl(calc(var(--usp-hue) + 200deg),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-5:.+?;/gms, '  --s-np-notebook-folder-icon-5: hsl(calc(var(--usp-hue) + 250deg),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-6:.+?;/gms, '  --s-np-notebook-folder-icon-6: hsl(calc(var(--usp-hue) + 300deg),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-7:.+?;/gms, '  --s-np-notebook-folder-icon-7: hsl(calc(var(--usp-hue) + 350deg),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-8:.+?;/gms, '  --s-np-notebook-folder-icon-8: hsl(calc(var(--usp-hue) +  40deg),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-9:.+?;/gms, '  --s-np-notebook-folder-icon-9: hsl(calc(var(--usp-hue) +  90deg),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-10:.+?;/gms, '  --s-np-notebook-folder-icon-10: hsl(calc(var(--usp-hue) + 140deg),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-11:.+?;/gms, '  --s-np-notebook-folder-icon-11: hsl(calc(var(--usp-hue) + 190deg),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-12:.+?;/gms, '  --s-np-notebook-folder-icon-12: hsl(calc(var(--usp-hue) + 240deg),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-13:.+?;/gms, '  --s-np-notebook-folder-icon-13: hsl(calc(var(--usp-hue) + 290deg),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-14:.+?;/gms, '  --s-np-notebook-folder-icon-14: hsl(calc(var(--usp-hue) + 340deg),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-15:.+?;/gms, '  --s-np-notebook-folder-icon-15: hsl(calc(var(--usp-hue) +  30deg),  50%,  60%);');
+      } else {
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-0:.+?;/gms, '  --s-np-notebook-folder-icon-0: hsl(var(--usp-hue),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-1:.+?;/gms, '  --s-np-notebook-folder-icon-1: hsl(var(--usp-hue),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-2:.+?;/gms, '  --s-np-notebook-folder-icon-2: hsl(var(--usp-hue),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-3:.+?;/gms, '  --s-np-notebook-folder-icon-3: hsl(var(--usp-hue),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-4:.+?;/gms, '  --s-np-notebook-folder-icon-4: hsl(var(--usp-hue),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-5:.+?;/gms, '  --s-np-notebook-folder-icon-5: hsl(var(--usp-hue),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-6:.+?;/gms, '  --s-np-notebook-folder-icon-6: hsl(var(--usp-hue),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-7:.+?;/gms, '  --s-np-notebook-folder-icon-7: hsl(var(--usp-hue),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-8:.+?;/gms, '  --s-np-notebook-folder-icon-8: hsl(var(--usp-hue),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-9:.+?;/gms, '  --s-np-notebook-folder-icon-9: hsl(var(--usp-hue),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-10:.+?;/gms, '  --s-np-notebook-folder-icon-10: hsl(var(--usp-hue),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-11:.+?;/gms, '  --s-np-notebook-folder-icon-11: hsl(var(--usp-hue),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-12:.+?;/gms, '  --s-np-notebook-folder-icon-12: hsl(var(--usp-hue),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-13:.+?;/gms, '  --s-np-notebook-folder-icon-13: hsl(var(--usp-hue),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-14:.+?;/gms, '  --s-np-notebook-folder-icon-14: hsl(var(--usp-hue),  50%,  60%);');
+        chromeCSS = chromeCSS.replace(/^  --s-np-notebook-folder-icon-15:.+?;/gms, '  --s-np-notebook-folder-icon-15: hsl(var(--usp-hue),  50%,  60%);');
+      }
+
+      if(!darkerDuskBackground) {
         chromeCSS = chromeCSS.replace(/^  --me-bg:.+?;/gms, '  --me-bg: hsl(var(--usp-hue),  11%,  13%);');
         chromeCSS = chromeCSS.replace(/^  --me-code-block-bg:.+?;/gms, '  --me-code-block-bg: hsl(var(--usp-hue),   8%,  11%);');
         noteCSS = noteCSS.replace(/^  --sc-bg-1:.+?;/gms, '  --sc-bg-1: hsl(var(--usp-hue),  11%,  13%);');
@@ -1919,6 +1981,20 @@ export const generateUserCSS = async (settings: ThemeSettings) => {
         chromeCSS = chromeCSS.replace(/^  --me-code-block-bg:.+?;/gms, '  --me-code-block-bg: hsl(var(--usp-hue),   8%,  11%);');
         noteCSS = noteCSS.replace(/^  --sc-bg-1:.+?;/gms, '  --sc-bg-1: hsl(var(--usp-hue),  11%,  13%);');
         noteCSS = noteCSS.replace(/^  --sc-bg-2:.+?;/gms, '  --sc-bg-2: hsl(var(--usp-hue),   8%,  11%);');
+      }
+
+      if(!darkerNightBackground) {
+        chromeCSS = chromeCSS.replace(/^  --me-bg:.+?;/gms, '  --me-bg: hsl(var(--usp-hue),   11%,  13%);');
+        chromeCSS = chromeCSS.replace(/^  --me-code-block-bg:.+?;/gms, '  --me-code-block-bg: hsl(var(--usp-hue),   8%,  11%);');
+        chromeCSS = chromeCSS.replace(/^  --g-main-bg-1:.+?;/gms, '  --g-main-bg-1: hsl(var(--usp-hue),   11%,  13%);');
+        noteCSS = noteCSS.replace(/^  --sc-bg-1:.+?;/gms, '  --sc-bg-1: hsl(var(--usp-hue),   11%,  13%);');
+        noteCSS = noteCSS.replace(/^  --sc-bg-2:.+?;/gms, '  --sc-bg-2: hsl(var(--usp-hue),    8%,  11%);');
+      } else {
+        chromeCSS = chromeCSS.replace(/^  --me-bg:.+?;/gms, '  --me-bg: hsl(var(--usp-hue),    0%,   0%);');
+        chromeCSS = chromeCSS.replace(/^  --me-code-block-bg:.+?;/gms, '  --me-code-block-bg: hsl(var(--usp-hue),   5%,  5%);');
+        chromeCSS = chromeCSS.replace(/^  --g-main-bg-1:.+?;/gms, '  --g-main-bg-1: hsl(var(--usp-hue),    5%,   5%);');
+        noteCSS = noteCSS.replace(/^  --sc-bg-1:.+?;/gms, '  --sc-bg-1: hsl(var(--usp-hue),    0%,   0%);');
+        noteCSS = noteCSS.replace(/^  --sc-bg-2:.+?;/gms, '  --sc-bg-2: hsl(var(--usp-hue),    5%,   5%);');
       }
 
       if(!emphasizeAddRemove && !emphasizeAddRemoveBg) {

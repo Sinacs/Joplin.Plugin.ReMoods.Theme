@@ -1585,7 +1585,7 @@ ag12::-webkit-scrollbar-thumb:hover {
 
 
 /* || ELEMENTS 6 | MATH NOTATION *************************** */
-#rendered-md .katex * {
+#rendered-md .katex *, {
   font-family: katex_main, monospace !important;
   font-size: var(--usp-math-notation-font-size) !important;
   color: var(--sc-math-notation-text);
@@ -1600,7 +1600,7 @@ ag12::-webkit-scrollbar-thumb:hover {
   cursor: var(--usp-math-notation-cursor-hover);
 }
 #rendered-md .katex .mord.mtight {
-  font-size: calc(var(--usp-math-notation-font-size) * 0.7) !important;
+  font-size: var(--usp-math-notation-font-size) !important;
 }
 
 #rendered-md .katex:hover .mord.mtight {
