@@ -29,8 +29,6 @@ ReMoods Theme provides you with a deep customization experience for the notes an
   - [Enable Markdown TOC floating button](#enable-markdown-toc-floating-button)
   - [Enable &#34;Justify&#34; effect](#enable-justify-effect)
   - [Enable dotted border](#enable-dotted-border)
-  - [Enable math notation aligned-left](#enable-math-notation-aligned-left)
-  - [Enable math notation auto-enlarged effect](#enable-math-notation-auto-enlarged-effect)
   - [Enable Eye-Protector effect](#enable-eye-protector-effect)
   - [Enable Max-height limit](#enable-max-height-limit)
   - [Enable symbols](#enable-symbols)
@@ -403,29 +401,6 @@ Disable:
 
 [⬆️Back](#table-of-contents)
 
-### Enable math notation aligned-left
-
-| Property                              | Area                                   |
-| ------------------------------------- | -------------------------------------- |
-| `Enable math notation aligned-left` | Render Viewer<br /> Print & Export PDF |
-
-Enable:
-![mathNotation-alignLeft-enable](screenshots/preview/mathNotation-alignLeft-enable.png)
-
-Disable:
-![mathNotation-alignLeft-disable](screenshots/preview/mathNotation-alignLeft-disable.png)
-
-[⬆️Back](#table-of-contents)
-
-### Enable math notation auto-enlarged effect
-
-| Property                              | Area                                   |
-| ------------------------------------- | -------------------------------------- |
-| `Enable math notation auto-enlarged effect` | Render Viewer |
-
-When you hover the mouse over the math notation, this setting will increase the text size by 1.5 times, depending on the `Math notation font size`.
-
-[⬆️Back](#table-of-contents)
 ### Enable Eye-Protector effect
 
 | Property                                           | Area          |
