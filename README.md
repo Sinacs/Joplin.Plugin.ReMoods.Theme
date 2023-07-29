@@ -70,7 +70,7 @@ ReMoods is an eye-health based theming plugin for the open source note-taking ap
 
 > Details about converting notes to PDF and HTML files!
 
-- [Export HTML File](#export-html-file) (soon...)
+<!-- - [Export HTML File](#export-html-file) (soon...) -->
 - [Export PDF Document](#export-pdf-document)
 
 # Theme Mode
@@ -440,11 +440,11 @@ Here show you all plugins that ReMoods has additional styles:
 
 [⬆️Back](#table-of-contents)
 
-## Export HTML File
+<!-- ## Export HTML File
 
 (soon...)
 
-[⬆️Back](#table-of-contents)
+[⬆️Back](#table-of-contents) -->
 
 ## Export PDF Document
 
