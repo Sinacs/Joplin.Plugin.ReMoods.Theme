@@ -1,6 +1,6 @@
 # ⚠️WARNING: REMOODS THEME HAS BEEN STOP MAINTAINING
 
-### Author has already moved to other note-taking software, so this theme would not update anymore. You should maintain it by yourself if you continue using this theme. It's welcome to clone this repo and develop your own theme.
+### The author has already moved to other note-taking software, so this theme will not be updated anymore. You should maintain it by yourself if you continue using this theme. It's welcome to clone the repo and develop your own theme.
 
 ---
 
