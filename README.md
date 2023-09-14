@@ -1,3 +1,9 @@
+# ⚠️WARNING: REMOODS THEME HAS BEEN STOP MAINTAINING
+
+### Author has already moved to other note-taking software, so this theme would not update anymore. You should maintain it by yourself if you continue using this theme. It's welcome to clone this repo and develop your own theme.
+
+---
+
 # ReMoods Theme
 
 ReMoods is an eye-health based theming plugin for the open source note-taking app Joplin.
@@ -18,14 +24,6 @@ ReMoods is an eye-health based theming plugin for the open source note-taking ap
 ![ThemeColors](screenshots/Features-ThemeColors.png)
 
 # Table Of Contents
-
-**BULLETIN:**
-
-> This section contains important information if there is any.
-
-- [Is &#34;Chiron Hei HK&#34; Still Works In ReMoods?](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/discussions/38)
-- [Met problem when updating ReMoods from v3 to v4?](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/discussions/37)
-- [Help Reporting Issues](https://github.com/Sinacs/Joplin.Plugin.ReMoods.Theme/discussions/39)
 
 **DOCUMENTATION:**
 
@@ -439,12 +437,6 @@ Here show you all plugins that ReMoods has additional styles:
 |Admonition |Done|15JUN2023|1.Aligned the admonition icon and title.|-|
 
 [⬆️Back](#table-of-contents)
-
-<!-- ## Export HTML File
-
-(soon...)
-
-[⬆️Back](#table-of-contents) -->
 
 ## Export PDF Document
 
