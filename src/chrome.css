@@ -3330,6 +3330,10 @@ body {
   min-width: 260px;
 }
 /* menu item ----------------------------------------------- */
+.config-screen > div:first-child > a {
+  padding-left: 15px !important;
+}
+/* menu item hover ----------------------------------------- */
 .config-screen > div:first-child > a:hover {
   background: var(--g-item-bgc-hover);
   box-shadow: 0 0 var(--g-item-ds-hover);
