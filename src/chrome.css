@@ -2578,15 +2578,18 @@ body {
   border-color: var(--g-item-bgc-selected);
 }
 /* note item text ------------------------------------------ */
+.rli-noteList .note-list-item > .content span /* Joplin v2.13.15+ */,
 .rli-noteList .note-list-item > a > span {
   color: var(--g-item-text-1);
   opacity: 0.8;
 }
 /* note item hover > text ---------------------------------- */
+.rli-noteList .note-list-item > .content:hover span /* Joplin v2.13.15+ */,
 .rli-noteList .note-list-item > a:hover > span {
   animation: var(--usp-note-list-item-auto-scroll);
 }
 /* note item text selected --------------------------------- */
+.rli-noteList .note-list-item .content.-selected span /* Joplin v2.13.15+ */,
 .rli-noteList .note-list-item.selected span {
   text-shadow: 0 0 var(--g-item-ts-selected);
 }
@@ -2776,11 +2779,11 @@ body {
   z-index: 99;
 }
 /* hover > toolbar ----------------------------------------- */
-.rli-editor > div > div > div > div:nth-child(1):hover ~ div[style="display: flex; flex: 1 1 0%; padding-left: 8px; max-height: 100%;"] div:first-child > .editor-toolbar,
+.rli-editor > div > div > div > div:nth-child(1):hover ~ div[style="display: flex; flex: 1 1 0%; padding-left: 8px; max-height: 100%; min-height: 0px;"] div:first-child > .editor-toolbar,
 .rli-editor div:first-child > .editor-toolbar:hover {
-  height: 34px;
-  opacity: 1;
-  visibility: visible;
+  height: 34px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
   transition: height 0.1s, opacity 0.2s, visibility 0.2s;
 }
 /* button -------------------------------------------------- */
