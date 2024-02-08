@@ -1983,6 +1983,8 @@ body {
   padding-left: 0px;
 }
 /* container selected -------------------------------------- */
+.sidebar .all-notes.dNhKsN,/* light theme Joplin v2.13.15+ */
+.sidebar .all-notes.gXcbDC,/* dark theme Joplin v2.13.15+ */
 .sidebar .all-notes.enJHjt,/* light theme Joplin v2.11.11+ */
 .sidebar .all-notes.dZWLAq,/* dark theme Joplin v2.11.11+ */
 .sidebar .all-notes.hRiCQl,/* light theme Joplin v2.11.3+ */
@@ -1991,6 +1993,8 @@ body {
 .sidebar .all-notes.ixgtav/* dark theme Joplin v2.10 */ {
   background: var(--g-item-bgc-selected) !important;
 }
+.sidebar .dNhKsN.list-item-container .list-item,/* light theme Joplin v2.13.15+ */
+.sidebar .gXcbDC.list-item-container .list-item,/* dark theme Joplin v2.13.15+ */
 .sidebar .enJHjt.list-item-container .list-item,/* light theme Joplin v2.11.11+ */
 .sidebar .dZWLAq.list-item-container .list-item,/* dark theme Joplin v2.11.11+ */
 .sidebar .hRiCQl.list-item-container .list-item,/* light theme Joplin v2.11.3+ */
@@ -2012,6 +2016,8 @@ body {
   color: var(--g-item-text-2);
 }
 /* all notes button text selected -------------------------- */
+.sidebar .all-notes,/* light theme Joplin v2.13.15+ */
+.sidebar .all-notes.gXcbDC,/* dark theme Joplin v2.13.15+ */
 .sidebar .all-notes.enJHjt,/* light theme Joplin v2.11.11+ */
 .sidebar .all-notes.dZWLAq,/* dark theme Joplin v2.11.11+ */
 .sidebar .all-notes.hRiCQl > *,/* light theme Joplin v2.11.3+ */
@@ -2293,6 +2299,7 @@ body {
 /* || NOTE LIST PANEL 3b | HEADER (Joplin v2.10.9+) ********* */
 /* Joplin has changed the ui since v2.10.9 */
 /* HEADER: CONTAINER  ====================================== */
+.rli-noteList > div > div > div.sc-hknOHE, /* joplin v2.13.15+ */
 .rli-noteList > div > div > div.sc-hCPjZK, /* joplin v2.11.11+ */
 .rli-noteList > div > div > div.sc-hIiahf, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK, /* joplin v2.11.3+ */
@@ -2303,6 +2310,7 @@ body {
   justify-content: center;
 }
 /* new button container ------------------------------------ */
+.rli-noteList > div > div > div.sc-hknOHE > .new-note-todo-buttons, /* joplin v2.13.15+ */
 .rli-noteList > div > div > div.sc-hCPjZK > .new-note-todo-buttons, /* joplin v2.11.11+ */
 .rli-noteList > div > div > div.sc-hIiahf > .new-note-todo-buttons, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK > .new-note-todo-buttons, /* joplin v2.11.3+ */
@@ -2310,6 +2318,7 @@ body {
   gap: 5px !important;
 }
 /* search bar and sort buttons container ------------------- */
+.rli-noteList > div > div > div.sc-hknOHE > .search-and-sort, /* joplin v2.13.15+ */
 .rli-noteList > div > div > div.sc-hCPjZK > .search-and-sort, /* joplin v2.11.11+ */
 .rli-noteList > div > div > div.sc-hIiahf > .search-and-sort, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK > .search-and-sort, /* joplin v2.11.3+ */
@@ -2319,6 +2328,8 @@ body {
 
 /* HEADER: NEW NOTE & NEW TODO BUTTON ====================== */
 /* button -------------------------------------------------- */
+.rli-noteList > div > div > div.sc-hknOHE .new-note-button, /* joplin v2.13.15+ */
+.rli-noteList > div > div > div.sc-hknOHE .new-todo-button, /* joplin v2.13.15+ */
 .rli-noteList > div > div > div.sc-hCPjZK .new-note-button, /* joplin v2.11.11+ */
 .rli-noteList > div > div > div.sc-hCPjZK .new-todo-button, /* joplin v2.11.11+ */
 .rli-noteList > div > div > div.sc-hIiahf .new-note-button, /* joplin v2.11.6+ */
@@ -2335,7 +2346,10 @@ body {
   white-space: nowrap !important;
   overflow: hidden;
   transition: background 0.8s, border 0.8s, border-radius 0.8s;
+  opacity: 0.8 !important;
 }
+.rli-noteList > div > div > div.sc-hknOHE[style*="flex-direction: row"] .new-note-button, /* joplin v2.13.15+ */
+.rli-noteList > div > div > div.sc-hknOHE[style*="flex-direction: row"] .new-todo-button, /* joplin v2.13.15+ */
 .rli-noteList > div > div > div.sc-hCPjZK[style*="flex-direction: row"] .new-note-button, /* joplin v2.11.11+ */
 .rli-noteList > div > div > div.sc-hCPjZK[style*="flex-direction: row"] .new-todo-button, /* joplin v2.11.11+ */
 .rli-noteList > div > div > div.sc-hIiahf[style*="flex-direction: row"] .new-note-button, /* joplin v2.11.6+ */
@@ -2349,6 +2363,8 @@ body {
   justify-content: left;
 }
 /* button hover -------------------------------------------- */
+.rli-noteList > div > div > div.sc-hknOHE .new-note-button:hover, /* joplin v2.13.15+ */
+.rli-noteList > div > div > div.sc-hknOHE .new-todo-button:hover, /* joplin v2.13.15+ */
 .rli-noteList > div > div > div.sc-hCPjZK .new-note-button:hover, /* joplin v2.11.11+ */
 .rli-noteList > div > div > div.sc-hCPjZK .new-todo-button:hover, /* joplin v2.11.11+ */
 .rli-noteList > div > div > div.sc-hIiahf .new-note-button:hover, /* joplin v2.11.6+ */
@@ -2362,8 +2378,11 @@ body {
   border: 2px solid var(--g-square-btn-bd-1-hover);
   border-radius: 7px;
   transition: background 0.3s, border 0.3s, border-radius 0.3s, height 0.3s;
+  opacity: 1 !important;
 }
 /* button icon & text -------------------------------------- */
+.rli-noteList > div > div > div.sc-hknOHE .new-note-button span, /* joplin v2.13.15+ */
+.rli-noteList > div > div > div.sc-hknOHE .new-todo-button span, /* joplin v2.13.15+ */
 .rli-noteList > div > div > div.sc-hCPjZK .new-note-button span, /* joplin v2.11.11+ */
 .rli-noteList > div > div > div.sc-hCPjZK .new-todo-button span, /* joplin v2.11.11+ */
 .rli-noteList > div > div > div.sc-hIiahf .new-note-button span, /* joplin v2.11.6+ */
@@ -2376,25 +2395,29 @@ body {
   color: var(--g-square-btn-icon-1);
 }
 /* button icon --------------------------------------------- */
-.rli-noteList > div > div > div.sc-hCPjZK .new-note-button span:first-child:before, /* joplin v2.11.11+ */
-.rli-noteList > div > div > div.sc-hIiahf .new-note-button span:first-child:before, /* joplin v2.11.6+ */
+.rli-noteList > div > div > div.sc-hknOHE .new-note-button span:first-child::before, /* joplin v2.13.15+ */
+.rli-noteList > div > div > div.sc-hCPjZK .new-note-button span:first-child::before, /* joplin v2.11.11+ */
+.rli-noteList > div > div > div.sc-hIiahf .new-note-button span:first-child::before, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK .new-note-button span:first-child::before, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-jfTVlA .new-note-button span:first-child::before {/* Joplin v2.10.9+ */
   content:"\f15c";
   padding-left: 1px;
 }
-.rli-noteList > div > div > div.sc-hCPjZK .new-todo-button span:first-child:before, /* joplin v2.11.11+ */
-.rli-noteList > div > div > div.sc-hIiahf .new-todo-button span:first-child:before, /* joplin v2.11.6+ */
+.rli-noteList > div > div > div.sc-hknOHE .new-todo-button span:first-child::before, /* joplin v2.13.15+ */
+.rli-noteList > div > div > div.sc-hCPjZK .new-todo-button span:first-child::before, /* joplin v2.11.11+ */
+.rli-noteList > div > div > div.sc-hIiahf .new-todo-button span:first-child::before, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK .new-todo-button span:first-child::before, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-jfTVlA .new-todo-button span:first-child::before {/* Joplin v2.10.9+ */
   content:"\f274";
   padding-left: 1px;
 }
 /* button hover > icon ------------------------------------- */
-.rli-noteList > div > div > div.sc-hCPjZK .new-note-button:hover span:first-child:before, /* joplin v2.11.11+ */
-.rli-noteList > div > div > div.sc-hCPjZK .new-todo-button:hover span:first-child:before, /* joplin v2.11.11+ */
-.rli-noteList > div > div > div.sc-hIiahf .new-note-button:hover span:first-child:before, /* joplin v2.11.6+ */
-.rli-noteList > div > div > div.sc-hIiahf .new-todo-button:hover span:first-child:before, /* joplin v2.11.6+ */
+.rli-noteList > div > div > div.sc-hknOHE .new-note-button:hover span:first-child::before, /* joplin v2.13.15+ */
+.rli-noteList > div > div > div.sc-hknOHE .new-todo-button:hover span:first-child::before, /* joplin v2.13.15+ */
+.rli-noteList > div > div > div.sc-hCPjZK .new-note-button:hover span:first-child::before, /* joplin v2.11.11+ */
+.rli-noteList > div > div > div.sc-hCPjZK .new-todo-button:hover span:first-child::before, /* joplin v2.11.11+ */
+.rli-noteList > div > div > div.sc-hIiahf .new-note-button:hover span:first-child::before, /* joplin v2.11.6+ */
+.rli-noteList > div > div > div.sc-hIiahf .new-todo-button:hover span:first-child::before, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK .new-note-button:hover span:first-child::before, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-IeChK .new-todo-button:hover span:first-child::before, /* joplin v2.11.3+ */
 .rli-noteList > div > div > div.sc-jfTVlA .new-note-button:hover span:first-child::before, /* Joplin v2.10.9+ */
@@ -2404,6 +2427,8 @@ body {
   line-height: 0;
   font-size: 1.2rem;
 }
+.rli-noteList > div > div > div.sc-hknOHE .new-note-button:hover .fas.fa-plus, /* joplin v2.13.15+ */
+.rli-noteList > div > div > div.sc-hknOHE .new-todo-button:hover .fas.fa-plus, /* joplin v2.13.15+ */
 .rli-noteList > div > div > div.sc-hCPjZK .new-note-button:hover .fas.fa-plus, /* joplin v2.11.11+ */
 .rli-noteList > div > div > div.sc-hCPjZK .new-todo-button:hover .fas.fa-plus, /* joplin v2.11.11+ */
 .rli-noteList > div > div > div.sc-hIiahf .new-note-button:hover .fas.fa-plus, /* joplin v2.11.6+ */
@@ -2416,6 +2441,8 @@ body {
   transition: transform 0.3s;
 }
 /* button text --------------------------------------------- */
+.rli-noteList > div > div > div.sc-hknOHE .new-note-button span:last-child, /* joplin v2.13.15+ */
+.rli-noteList > div > div > div.sc-hknOHE .new-todo-button span:last-child, /* joplin v2.13.15+ */
 .rli-noteList > div > div > div.sc-hCPjZK .new-note-button span:last-child, /* joplin v2.11.11+ */
 .rli-noteList > div > div > div.sc-hCPjZK .new-todo-button span:last-child, /* joplin v2.11.11+ */
 .rli-noteList > div > div > div.sc-hIiahf .new-note-button span:last-child, /* joplin v2.11.6+ */
@@ -2427,6 +2454,8 @@ body {
   font-weight: 600;
 }
 /* button hover > icon & text ------------------------------ */
+.rli-noteList > div > div > div.sc-hknOHE .new-note-button:hover span, /* joplin v2.13.15+ */
+.rli-noteList > div > div > div.sc-hknOHE .new-todo-button:hover span, /* joplin v2.13.15+ */
 .rli-noteList > div > div > div.sc-hCPjZK .new-note-button:hover span, /* joplin v2.11.11+ */
 .rli-noteList > div > div > div.sc-hCPjZK .new-todo-button:hover span, /* joplin v2.11.11+ */
 .rli-noteList > div > div > div.sc-hIiahf .new-note-button:hover span, /* joplin v2.11.6+ */
@@ -2440,6 +2469,7 @@ body {
 
 /* HEADER: SEARCH & ORDER BUTTONS (joplin v2.10.9+) ======== */
 /* button container ---------------------------------------- */
+.rli-noteList > div > div > div.sc-hknOHE > div .search-bar ~ div, /* joplin v2.13.15+ */
 .rli-noteList > div > div > div.sc-hCPjZK > div .search-bar ~ div, /* joplin v2.11.11+ */
 .rli-noteList > div > div > div.sc-hIiahf > div .search-bar ~ div, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK > div .search-bar ~ div, /* joplin v2.11.3+ */
@@ -2450,6 +2480,7 @@ body {
   transition-delay: 1.2s;
 }
 /* header hover > button container ------------------------- */
+.rli-noteList > div > div > div.sc-hknOHE:hover > div .search-bar ~ div, /* joplin v2.13.15+ */
 .rli-noteList > div > div > div.sc-hCPjZK:hover > div .search-bar ~ div, /* joplin v2.11.11+ */
 .rli-noteList > div > div > div.sc-hIiahf:hover > div .search-bar ~ div, /* joplin v2.11.6+ */
 .rli-noteList > div > div > div.sc-IeChK:hover > div .search-bar ~ div, /* joplin v2.11.3+ */
@@ -2500,9 +2531,11 @@ body {
   transition: background 0s;
 }
 /* todo item container selected ---------------------------- */
+.rli-noteList .todo-list-item .content.-selected /* Joplin v2.13.15+ */,
 .rli-noteList .todo-list-item.selected {
   background: var(--g-item-bgc-selected) !important;
 }
+.rli-noteList .note-list-item .content.-selected::before /* Joplin v2.13.15+ */,
 .rli-noteList .todo-list-item.selected::before {
   border-color: var(--g-item-bgc-selected);
 }
@@ -2536,9 +2569,11 @@ body {
   transition: background 0s;
 }
 /* note item selected -------------------------------------- */
+.rli-noteList .note-list-item .content.-selected /* Joplin v2.13.15+ */,
 .rli-noteList .note-list-item.selected {
   background: var(--g-item-bgc-selected) !important;
 }
+.rli-noteList .note-list-item .content.-selected::before /* Joplin v2.13.15+ */,
 .rli-noteList .note-list-item.selected::before {
   border-color: var(--g-item-bgc-selected);
 }
@@ -3297,6 +3332,7 @@ body {
   box-shadow: 0 0 var(--g-item-ds-hover);
 }
 /* menu item selected -------------------------------------- */
+.config-screen > div:first-child > a[aria-selected="true"],/* joplin v2.13.15+ */
 .config-screen > div:first-child > a.cqRsFx,/* light theme joplin v2.11.11+ */
 .config-screen > div:first-child > a.gESAzi,/* dark theme joplin v2.11.11+ */
 .config-screen > div:first-child > a.kfwfhi,/* light theme joplin v2.11.6+ */
@@ -3317,6 +3353,8 @@ body {
   color: var(--g-item-text-1);
 }
 /* menu item > icon & text selected ------------------------ */
+.config-screen > div:first-child > a[aria-selected="true"] > i,/* joplin v2.13.15+ */
+.config-screen > div:first-child > a[aria-selected="true"] > span,/* joplin v2.13.15+ */
 .config-screen > div:first-child > a.cqRsFx > i,/* light theme joplin v2.11.11+ */
 .config-screen > div:first-child > a.cqRsFx > span,/* light theme joplin v2.11.11+ */
 .config-screen > div:first-child > a.gESAzi > i,/* dark theme joplin v2.11.11+ */
