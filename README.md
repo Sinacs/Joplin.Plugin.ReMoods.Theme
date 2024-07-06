@@ -1,6 +1,8 @@
-# ⚠️WARNING: REMOODS THEME HAS BEEN STOP MAINTAINING
+# ⚠️THIS REPO HAS BEEN COMPLETELY TURNED TO ARCHIVED
 
-### The author has already moved to other note-taking software, so this theme will not be updated anymore. You should maintain it by yourself if you continue using this theme. It's welcome to clone the repo and develop your own theme.
+### Since the Joplin V3 is released, ReMoods Theme has already removed from the Joplin Plugins Repository. I'm so thank you for every one who was loving this theme but it's time to say goodbye to ReMoods! Lucky for us!
+
+-Sinacs
 
 ---
 
